@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users{
+  id Int @default(autoincrement()) @id
+  user_email String @unique
+  user_wallet_address String @unique
+  user_name String @unique
+  is_creator Boolean @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+  ticket Boolean @default(false)
+  ticket_list tickets[]
+  creator_list creator[]
+  favoliste favorites[]
+  playlist playlist[]
+}
+
+model creator{
+  id Int @default(autoincrement()) @id
+  creators_id users @relation(fields: [creator_id],references: [id])
+  creator_id Int 
+  creator_CA String?
+  creator_abi String?
+}
+
+model tickets{
+  id Int @default(autoincrement()) @id
+  ticket_name String 
+  ticket_period Int // 달 아니고 일로 받음
+  users_id users @relation(fields: [user_id],references: [id])
+  user_id Int 
+  created_at DateTime @default(now())
+}
+
+model albums{
+  id Int @default(autoincrement()) @id
+  album_name String
+  singer String
+  music_list musics[]
+}
+
+model musics{
+  id Int @default(autoincrement()) @id
+  music_name String
+  music_lyrics String?
+  music_genre String
+  music_maker String
+  lyrics_maker String?
+  singer String
+  play_number Int @default(0)
+  albums albums @relation(fields: [album_id], references: [id])
+  album_id Int
+  favorite favorites[]
+  playlist playlist[]
+}
+
+model funding{
+  id Int @default(autoincrement()) @id
+  category String
+  music_maker_info String? // sns or info
+  lyrics_maker_info String? // sns or info
+  singer_info String
+  music_feel String
+  funding_info String
+  sale_date Int
+}
+
+model favorites{
+  id Int @default(autoincrement()) @id
+  users_id users @relation(fields: [user_id],references: [id])
+  user_id Int
+  musics_id musics @relation(fields: [music_id],references: [id])
+  music_id Int
+}
+
+model playlist{
+  id Int @default(autoincrement()) @id
+  users_id users @relation(fields: [user_id],references: [id])
+  user_id Int
+  musics_id musics @relation(fields: [music_id],references: [id])
+  music_id Int
+}
+// 펀딩 == 민팅 펀딩할 때 nft 민팅해주기 // 원하는 모금액 50프로
+// 가스비 제외 환불 모금액 100프로 이상 됐어요 그래도 nft 가지고 투표도 하는거고 
