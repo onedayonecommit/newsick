@@ -1,7 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { users } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
-import { SignupEmailService } from 'src/signup-email/service/signup-email.service';
-import { CreateUserDto } from '../dto/create-user.dto';
+import { CreateUserDto } from '../../dto/create-user/create-user.dto';
+import { SignupEmailService } from '../signup-email/signup-email.service';
 
 @Injectable()
 export class CreateUserService {
@@ -10,15 +11,12 @@ export class CreateUserService {
     private readonly emailService: SignupEmailService,
   ) {}
   /** 유저 가입 함수 */
-  async createUser(data: CreateUserDto) {
+  async createUser(data: CreateUserDto): Promise<users | null> {
     await this.checkUser(data.user_email);
     await this.checkWallet(data.user_wallet_address);
     await this.checkName(data.user_name);
-    await this.emailService
-      .sendMemberJoinVerification(data.user_email)
-      .then(async () => {
-        // return await this.prismaService.users.create({ data });
-      });
+    await this.emailService.sendSignUpAuthMail(data.user_email);
+    return await this.prismaService.users.create({ data });
   }
 
   /** 유저 아이디 중복 검사 함수 */

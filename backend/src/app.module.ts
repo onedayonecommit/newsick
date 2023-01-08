@@ -1,21 +1,26 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 import { UsersController } from './users/users.controller';
 import { UsersService } from './users/users.service';
-import { CreateUserController } from './create-user/controller/create-user.controller';
-import { CreateUserService } from './create-user/service/create-user.service';
 import { PrismaService } from './prisma.service';
-import { SignupEmailController } from './signup-email/controller/signup-email.controller';
 import { EnvModule } from './env/env.module';
-import { SignupEmailService } from './signup-email/service/signup-email.service';
-
+import * as redisStore from 'cache-manager-ioredis';
+import { SignupEmailController } from './controller/signup-email/signup-email.controller';
+import { CreateUserController } from './controller/create-user/create-user.controller';
+import { CreateUserService } from './service/create-user/create-user.service';
+import { RedisService } from './service/redis/redis.service';
+import { SignupEmailService } from './service/signup-email/signup-email.service';
 @Module({
-  imports: [EnvModule],
+  imports: [
+    EnvModule,
+    CacheModule.register({ store: redisStore, host: 'localhost', port: 6379 }),
+  ],
   controllers: [UsersController, CreateUserController, SignupEmailController],
   providers: [
     UsersService,
     CreateUserService,
     PrismaService,
     SignupEmailService,
+    RedisService,
   ],
 })
 export class AppModule {}
