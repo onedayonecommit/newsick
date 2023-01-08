@@ -37,6 +37,6 @@ export class SignupEmailService {
     };
 
     // transporter 객체를 이용해 메일 전송
-    return await this.transporter.sendMail(mailOptions);
+    await this.transporter.sendMail(mailOptions);
   }
 }
