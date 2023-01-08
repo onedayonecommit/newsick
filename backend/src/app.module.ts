@@ -4,10 +4,18 @@ import { UsersService } from './users/users.service';
 import { CreateUserController } from './create-user/controller/create-user.controller';
 import { CreateUserService } from './create-user/service/create-user.service';
 import { PrismaService } from './prisma.service';
+import { SignupEmailController } from './signup-email/controller/signup-email.controller';
+import { EnvModule } from './env/env.module';
+import { SignupEmailService } from './signup-email/service/signup-email.service';
 
 @Module({
-  imports: [],
-  controllers: [UsersController, CreateUserController],
-  providers: [UsersService, CreateUserService, PrismaService],
+  imports: [EnvModule],
+  controllers: [UsersController, CreateUserController, SignupEmailController],
+  providers: [
+    UsersService,
+    CreateUserService,
+    PrismaService,
+    SignupEmailService,
+  ],
 })
 export class AppModule {}
