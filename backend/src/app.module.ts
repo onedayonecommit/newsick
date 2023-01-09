@@ -9,6 +9,8 @@ import { RedisService } from './service/redis/redis.service';
 import { SignupEmailService } from './service/signup-email/signup-email.service';
 import { UpdateUserController } from './controller/update-user/update-user.controller';
 import { UpdateUserService } from './service/update-user/update-user.service';
+import { ProfileUploadsService } from './service/profile-uploads/profile-uploads.service';
+import { ProfileUploadsController } from './controller/profile-uploads/profile-uploads.controller';
 @Module({
   imports: [
     EnvModule,
@@ -18,6 +20,7 @@ import { UpdateUserService } from './service/update-user/update-user.service';
     CreateUserController,
     SignupEmailController,
     UpdateUserController,
+    ProfileUploadsController,
   ],
   providers: [
     CreateUserService,
@@ -25,6 +28,7 @@ import { UpdateUserService } from './service/update-user/update-user.service';
     SignupEmailService,
     RedisService,
     UpdateUserService,
+    ProfileUploadsService,
   ],
 })
 export class AppModule {}
