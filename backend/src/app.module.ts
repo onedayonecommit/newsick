@@ -1,6 +1,4 @@
 import { CacheModule, Module } from '@nestjs/common';
-import { UsersController } from './users/users.controller';
-import { UsersService } from './users/users.service';
 import { PrismaService } from './prisma.service';
 import { EnvModule } from './env/env.module';
 import * as redisStore from 'cache-manager-ioredis';
@@ -17,13 +15,11 @@ import { UpdateUserService } from './service/update-user/update-user.service';
     CacheModule.register({ store: redisStore, host: 'localhost', port: 6379 }),
   ],
   controllers: [
-    UsersController,
     CreateUserController,
     SignupEmailController,
     UpdateUserController,
   ],
   providers: [
-    UsersService,
     CreateUserService,
     PrismaService,
     SignupEmailService,
