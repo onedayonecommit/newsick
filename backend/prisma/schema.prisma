@@ -20,6 +20,7 @@ model users{
   updated_at DateTime @default(now()) @updatedAt
   ticket Boolean @default(false)
   signup_status Boolean @default(false)
+  profile_image String @default("")
   ticket_list tickets[]
   creator_list creator[]
   favoliste favorites[]

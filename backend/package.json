@@ -26,6 +26,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/mapped-types": "^1.2.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.1.4",
     "@prisma/client": "^4.8.1",
     "aws-sdk": "^2.1290.0",
     "cache-manager": "^5.1.4",
@@ -37,6 +38,7 @@
     "nodemailer": "^6.8.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
+    "swagger-ui-express": "^4.6.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
