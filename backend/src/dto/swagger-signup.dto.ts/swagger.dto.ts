@@ -14,17 +14,14 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class swaggerSignupDto {
   @ApiProperty({
-    description: `user's nick-name`,
+    description: `sign_up_status`,
+    example: true,
   })
-  user_name: string;
+  signUpStatus: boolean;
 
   @ApiProperty({
-    description: `user's email`,
+    description: `response http code`,
+    example: 201,
   })
-  user_email: string;
-
-  @ApiProperty({
-    description: `user's profile-image`,
-  })
-  user_profile_image: any;
+  httpstatus: number;
 }
