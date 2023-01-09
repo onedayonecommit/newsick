@@ -17,7 +17,7 @@ export class ProfileUploadsController {
     return 'hi';
   }
   @Post()
-  @UseInterceptors(FileInterceptor('profile_test')) // docs에서는 쓰라는데 왜 써야되는지 찾는중
+  @UseInterceptors(FileInterceptor('user_profile_image')) // docs에서는 쓰라는데 왜 써야되는지 찾는중
   uploadFile(@UploadedFile() file: Express.Multer.File) {
     return this.profileUploadService.uploadFile(file);
   }
