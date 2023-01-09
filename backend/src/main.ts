@@ -1,7 +1,8 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { setupSwagger } from './utils/swagger.config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -12,17 +13,10 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
-  /** swager 옵션 */
-  const config = new DocumentBuilder()
-    .setTitle('Swagger Example')
-    .setDescription('Swagger study API description')
-    .setVersion('1.0.0')
-    .addTag('swagger')
-    .build();
-
-  const document = SwaggerModule.createDocument(app, config);
+  /** 두번째 파라미터 config == ./utils에 들어있음 */
+  setupSwagger(app);
   /** 첫번째 파라미터는 경로 localhost:${port}/api 로 들어가면 swagger 문서 볼수 있음 */
-  SwaggerModule.setup('api', app, document);
+
   await app.listen(3000, () => {
     console.log('3000 server on');
   });
