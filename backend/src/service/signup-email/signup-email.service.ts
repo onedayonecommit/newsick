@@ -24,13 +24,15 @@ export class SignupEmailService {
     });
   }
 
+  /** 메일 인증 함수 */
   async confirmEamil(user_email: string): Promise<object> {
     try {
       await this.prismaService.users.update({
         data: { signup_status: true },
         where: { user_email },
       });
-      return { msg: 'success' };
+      // return { HttpStatus: HttpStatus.NO_CONTENT };
+      return { signUpConfirmStatus: true };
     } catch (error) {
       throw new HttpException(
         '가입 승인 실패',

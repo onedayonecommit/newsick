@@ -1,7 +1,5 @@
 import {
-  Body,
   Controller,
-  Get,
   HttpException,
   HttpStatus,
   Post,
@@ -25,8 +23,7 @@ export class SignupEmailController {
     console.log(user_email);
     const result = await this.redisService.getRedis(user_email);
     if (result == tokenvalue) {
-      await this.emailService.confirmEamil(user_email);
-      return;
+      return await this.emailService.confirmEamil(user_email);
     } else {
       throw new HttpException('잘못 요청함', HttpStatus.BAD_REQUEST);
     }
