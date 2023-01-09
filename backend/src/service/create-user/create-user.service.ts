@@ -11,12 +11,14 @@ export class CreateUserService {
     private readonly emailService: SignupEmailService,
   ) {}
   /** 유저 가입 함수 */
-  async createUser(data: CreateUserDto): Promise<users | null> {
+  async createUser(data: CreateUserDto): Promise<object> {
     await this.checkUser(data.user_email);
     await this.checkWallet(data.user_wallet_address);
     await this.checkName(data.user_name);
     await this.emailService.sendSignUpAuthMail(data.user_email);
-    return await this.prismaService.users.create({ data });
+    return await this.prismaService.users.create({ data }).then((e) => {
+      return { signUpStatus: true, httpstatus: 201 };
+    });
   }
 
   /** 유저 아이디 중복 검사 함수 */
