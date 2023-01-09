@@ -1,5 +1,4 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { users } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
 import { CreateUserDto } from '../../dto/create-user/create-user.dto';
 import { SignupEmailService } from '../signup-email/signup-email.service';
@@ -16,7 +15,7 @@ export class CreateUserService {
     await this.checkWallet(data.user_wallet_address);
     await this.checkName(data.user_name);
     await this.emailService.sendSignUpAuthMail(data.user_email);
-    return await this.prismaService.users.create({ data }).then((e) => {
+    return await this.prismaService.users.create({ data }).then(() => {
       return { signUpStatus: true, httpstatus: 201 };
     });
   }
