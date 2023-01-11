@@ -14,9 +14,9 @@ export class CreateUserService {
     await this.checkUser(data.user_email);
     await this.checkWallet(data.user_wallet_address);
     await this.checkName(data.user_name);
-    await this.emailService.sendSignUpAuthMail(data.user_email);
+    this.emailService.sendSignUpAuthMail(data.user_email);
     return await this.prismaService.users.create({ data }).then(() => {
-      return { signUpStatus: true, httpstatus: 201 };
+      return { signUpStatus: true, httpStatus: 200 };
     });
   }
 
