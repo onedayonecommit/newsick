@@ -1,7 +1,7 @@
 import { Body, Controller, Patch } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOperation } from '@nestjs/swagger';
-import { updateUserResponseDto } from 'src/dto/swagger/swagger-update-response.dto.ts/update-user-response';
-import { updateUserDto } from 'src/dto/update-user/update-user.dto';
+import { updateUserResponseDto } from 'src/dto/swagger/response/swagger-update-response.dto/update-user-response';
+import { updateUserDto } from 'src/dto/update-user/update-user-dto';
 import { UpdateUserService } from 'src/service/update-user/update-user.service';
 
 @Controller('update/user')
