@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class updateUserResponseDto {
+export class updateUserRequestDto {
   @ApiProperty({
     description: 'Requirements',
     example: 'f12',

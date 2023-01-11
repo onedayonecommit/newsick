@@ -5,12 +5,13 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
-import { ApiCreatedResponse, ApiOperation } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { emailVerifyResponseDto } from 'src/dto/swagger/response/swagger-email-verify-response.dto/email-verify-rsponse.dto';
 import { RedisService } from 'src/service/redis/redis.service';
 import { SignupEmailService } from 'src/service/signup-email/signup-email.service';
 
 @Controller('users')
+@ApiTags('EMAIL AUTH FOR CONFIRM SIGNUP API')
 export class SignupEmailController {
   constructor(
     private readonly emailService: SignupEmailService,

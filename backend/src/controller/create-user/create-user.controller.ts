@@ -3,7 +3,6 @@ import {
   ApiBody,
   ApiCreatedResponse,
   ApiOperation,
-  ApiParam,
   ApiTags,
 } from '@nestjs/swagger';
 import { CreateUserDto } from 'src/dto/create-user/create-user.dto';
@@ -12,7 +11,7 @@ import { signUpResponseDto } from 'src/dto/swagger/response/swagger-signup-respo
 import { CreateUserService } from 'src/service/create-user/create-user.service';
 
 @Controller('signup/user')
-@ApiTags('SIGNUP-UP API')
+@ApiTags('USER SIGN-UP API')
 export class CreateUserController {
   constructor(private readonly createUserService: CreateUserService) {}
   @Post('create')

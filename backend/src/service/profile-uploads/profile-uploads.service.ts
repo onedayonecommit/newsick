@@ -2,11 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as AWS from 'aws-sdk';
 import { extname } from 'path';
+import { PrismaService } from 'src/prisma.service';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class ProfileUploadsService {
-  constructor(private readonly configService: ConfigService) {}
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly prismaService: PrismaService,
+  ) {}
   s3 = new AWS.S3({
     region: this.configService.get<string>('AWS_REGION'),
     credentials: {
@@ -26,7 +30,7 @@ export class ProfileUploadsService {
     try {
       const response = await this.s3.upload(params).promise();
       console.log(response);
-      return response;
+      return { uploadStatus: true, httpStatus: 201 };
     } catch (e) {
       console.log(e);
       throw new Error('Failed to upload file.');
