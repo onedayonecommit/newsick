@@ -19,8 +19,6 @@ export class SignupEmailController {
     @Query('signupVerifyToken') tokenvalue: string,
     @Query('user_email') user_email: string,
   ) {
-    console.log(tokenvalue);
-    console.log(user_email);
     const result = await this.redisService.getRedis(user_email);
     if (result == tokenvalue) {
       return await this.emailService.confirmEamil(user_email);
