@@ -12,7 +12,7 @@ import { ApiProperty } from '@nestjs/swagger';
 //   profile_image: string;
 // };
 
-export class swaggerSignupDto {
+export class signUpResponseDto {
   @ApiProperty({
     description: `sign_up_status`,
     example: true,
@@ -21,7 +21,7 @@ export class swaggerSignupDto {
 
   @ApiProperty({
     description: `response http code`,
-    example: 201,
+    example: 200,
   })
-  httpstatus: number;
+  httpStatus: number;
 }
