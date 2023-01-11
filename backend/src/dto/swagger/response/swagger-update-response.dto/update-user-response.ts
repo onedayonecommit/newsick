@@ -10,7 +10,7 @@ export class updateUserResponseDto {
 
   @ApiProperty({
     description: `http status`,
-    example: 200,
+    example: 201,
   })
   httpStatus: number;
 }

@@ -1,14 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class signUpResponseDto {
+export class emailVerifyResponseDto {
   @ApiProperty({
-    description: `sign_up_status`,
+    description: 'signUp Confirm Status',
     example: true,
   })
-  signUpStatus: boolean;
+  signUpConfirmStatus: boolean;
 
   @ApiProperty({
-    description: `response http code`,
+    description: 'httpStatus',
     example: 201,
   })
   httpStatus: number;

@@ -32,7 +32,7 @@ export class SignupEmailService {
         where: { user_email },
       });
       // return { HttpStatus: HttpStatus.NO_CONTENT };
-      return { signUpConfirmStatus: true };
+      return { signUpConfirmStatus: true, httpStatus: 201 };
     } catch (error) {
       throw new HttpException(
         '가입 승인 실패',
