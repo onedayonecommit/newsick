@@ -68,7 +68,7 @@ model musics{
 
 model funding{
   id Int @default(autoincrement()) @id
-  creator_wallet_address String
+  creator_wallet_address String @unique
   category String?
   music_maker_info_url String? @db.VarChar(300) // sns or info
   lyrics_maker_info_url String? @db.VarChar(300)// sns or info
@@ -111,7 +111,7 @@ model funding_singer{
   name String?
   sex String?
   age Int?
-  about_me String @db.VarChar(3000)
+  about_me String? @db.VarChar(3000)
 }
 
 model favorites{

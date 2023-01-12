@@ -30,7 +30,7 @@ export class ProfileUploadsController {
   async uploadFile(
     @UploadedFile() file: Express.Multer.File,
     @Query('user_wallet_address') user_wallet_address: string,
-  ) {
+  ): Promise<object> {
     return await this.FileUploadsService.profileImageUpload(
       file,
       user_wallet_address,

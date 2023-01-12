@@ -9,4 +9,6 @@ export class fundingOfficialsDto {
   age?: number;
   @IsString()
   about_me?: string;
+  @IsNumber()
+  funding_id: number;
 }

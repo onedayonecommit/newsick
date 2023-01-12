@@ -4,7 +4,6 @@ export class fundingTableDto {
   @IsString()
   @IsNotEmpty()
   creator_wallet_address: string;
-
   @IsString()
   category?: string;
   @IsString()
@@ -14,9 +13,9 @@ export class fundingTableDto {
   @IsString()
   singer_info_url?: string;
   @IsNumber()
-  music_feel?: number;
+  music_feel: number;
   @IsString()
-  funding_info?: string;
+  funding_info: string;
   @IsDate()
   start_date: Date;
   @IsDate()

@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as AWS from 'aws-sdk';
 import { extname } from 'path';
+import { userProfileImageUpdateResponseDto } from 'src/dto/swagger/response/swagger-profileimg-response.dto/profile-image-update.dto';
 import { PrismaService } from 'src/prisma.service';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -19,17 +20,7 @@ export class FileUploadsService {
     },
   });
 
-  async profileImageUpload(
-    file: Express.Multer.File,
-    user_wallet_address: string,
-  ) {
-    const user_profile_image = await this.uploadFile(file);
-    await this.prismaService.users.update({
-      data: { user_profile_image },
-      where: { user_wallet_address },
-    });
-  }
-
+  /** 재 사용될 이미지 업로드 함수 */
   async uploadFile(file: Express.Multer.File) {
     const filebasename = `${uuidv4()}${extname(file.originalname)}`;
 
@@ -49,5 +40,30 @@ export class FileUploadsService {
       console.log(e);
       throw new Error('Failed to upload file.');
     }
+  }
+
+  /** 개인 유저 프로필 사진 업데이트 함수 */
+  async profileImageUpload(
+    file: Express.Multer.File,
+    user_wallet_address: string,
+  ): Promise<userProfileImageUpdateResponseDto> {
+    const user_profile_image = await this.uploadFile(file);
+    await this.prismaService.users.update({
+      data: { user_profile_image },
+      where: { user_wallet_address },
+    });
+    return { uploadStatus: true, httpStatus: 201 };
+  }
+
+  async fundingCoverImageUpload(
+    file: Express.Multer.File,
+    creator_wallet_address: string,
+  ) {
+    const funding_cover_image = await this.uploadFile(file);
+    await this.prismaService.funding.update({
+      data: { funding_cover_image },
+      where: { creator_wallet_address },
+    });
+    return { uploadStatus: true, httpStatus: 201 };
   }
 }
