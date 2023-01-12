@@ -9,10 +9,12 @@ import { RedisService } from './service/redis/redis.service';
 import { SignupEmailService } from './service/signup-email/signup-email.service';
 import { UpdateUserController } from './controller/update-user/update-user.controller';
 import { UpdateUserService } from './service/update-user/update-user.service';
-import { ProfileUploadsService } from './service/profile-uploads/profile-uploads.service';
+import { FileUploadsService } from './service/file-uploads/file-uploads.service';
 import { ProfileUploadsController } from './controller/profile-uploads/profile-uploads.controller';
 import { ImagedownloadController } from './controller/test/imagedownload.controller';
 import { ImagedownloadService } from './service/test/imagedownload.service';
+import { CreateFundingService } from './service/create-funding/create-funding.service';
+import { CreateFundingController } from './controller/create-funding/create-funding.controller';
 @Module({
   imports: [
     EnvModule,
@@ -24,6 +26,7 @@ import { ImagedownloadService } from './service/test/imagedownload.service';
     UpdateUserController,
     ProfileUploadsController,
     ImagedownloadController,
+    CreateFundingController,
   ],
   providers: [
     CreateUserService,
@@ -31,8 +34,9 @@ import { ImagedownloadService } from './service/test/imagedownload.service';
     SignupEmailService,
     RedisService,
     UpdateUserService,
-    ProfileUploadsService,
+    FileUploadsService,
     ImagedownloadService,
+    CreateFundingService,
   ],
 })
 export class AppModule {}
