@@ -29,7 +29,7 @@ export class SignupEmailController {
   async verifyEmail(
     @Query('signupVerifyToken') tokenvalue: string,
     @Query('user_email') user_email: string,
-  ) {
+  ): Promise<object> {
     const result = await this.redisService.getRedis(user_email);
     if (result == tokenvalue) {
       return await this.emailService.confirmEamil(user_email);

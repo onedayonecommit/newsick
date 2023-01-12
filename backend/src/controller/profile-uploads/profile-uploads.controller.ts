@@ -1,16 +1,12 @@
 import {
+  Body,
   Controller,
   Post,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import {
-  ApiBody,
-  ApiCreatedResponse,
-  ApiOperation,
-  ApiTags,
-} from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { userProfileImageUpdateResponseDto } from 'src/dto/swagger/response/swagger-profileimg-response.dto/profile-image-update.dto';
 import { ProfileUploadsService } from 'src/service/profile-uploads/profile-uploads.service';
 
@@ -28,7 +24,14 @@ export class ProfileUploadsController {
     type: userProfileImageUpdateResponseDto,
   })
   @UseInterceptors(FileInterceptor('user_profile_image')) // docs에서는 쓰라는데 왜 써야되는지 찾는중
-  uploadFile(@UploadedFile() file: Express.Multer.File) {
-    return this.profileUploadService.uploadFile(file);
+  async uploadFile(
+    @UploadedFile() file: Express.Multer.File,
+    @Body() user_wallet_address: string,
+  ): Promise<object> {
+    console.log(file);
+    return await this.profileUploadService.uploadFile(
+      file,
+      user_wallet_address,
+    );
   }
 }

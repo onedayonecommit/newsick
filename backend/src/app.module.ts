@@ -11,6 +11,8 @@ import { UpdateUserController } from './controller/update-user/update-user.contr
 import { UpdateUserService } from './service/update-user/update-user.service';
 import { ProfileUploadsService } from './service/profile-uploads/profile-uploads.service';
 import { ProfileUploadsController } from './controller/profile-uploads/profile-uploads.controller';
+import { ImagedownloadController } from './controller/test/imagedownload.controller';
+import { ImagedownloadService } from './service/test/imagedownload.service';
 @Module({
   imports: [
     EnvModule,
@@ -21,6 +23,7 @@ import { ProfileUploadsController } from './controller/profile-uploads/profile-u
     SignupEmailController,
     UpdateUserController,
     ProfileUploadsController,
+    ImagedownloadController,
   ],
   providers: [
     CreateUserService,
@@ -29,6 +32,7 @@ import { ProfileUploadsController } from './controller/profile-uploads/profile-u
     RedisService,
     UpdateUserService,
     ProfileUploadsService,
+    ImagedownloadService,
   ],
 })
 export class AppModule {}
