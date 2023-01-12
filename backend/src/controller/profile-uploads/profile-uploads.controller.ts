@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Post,
+  Query,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
@@ -26,7 +27,7 @@ export class ProfileUploadsController {
   @UseInterceptors(FileInterceptor('user_profile_image')) // docs에서는 쓰라는데 왜 써야되는지 찾는중
   async uploadFile(
     @UploadedFile() file: Express.Multer.File,
-    @Body() user_wallet_address: string,
+    @Query('user_wallet_address') user_wallet_address: string,
   ): Promise<object> {
     console.log(file);
     return await this.profileUploadService.uploadFile(

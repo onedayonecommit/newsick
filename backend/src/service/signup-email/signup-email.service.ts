@@ -44,9 +44,8 @@ export class SignupEmailService {
   /** 인증 메일 발송 */
   async sendSignUpAuthMail(emailAddress: string) {
     /** 가입 후 인증번호 발송 구조 아래 url 세팅 및 uuid 발급 */
-    const baseUrl = 'http://localhost:3000'; // TODO: config
+    const baseUrl = 'http://localhost:8080'; // TODO: config
     const signupVerifyToken = uuidv4();
-    console.log(signupVerifyToken);
     const url = `${baseUrl}/users/email-verify?signupVerifyToken=${signupVerifyToken}&user_email=${emailAddress}`;
 
     /** 메일 옵션 구성한 곳 */
