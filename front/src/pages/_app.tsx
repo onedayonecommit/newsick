@@ -15,4 +15,6 @@ const App = ({ Component, ...pageProps }: AppProps) => {
     </>
   );
 };
-export default wrapper.withRedux(App);
+// 아래와 같이 쓰는건 옛날 문법! 위에서 wrapper.useWrappedStore를 사용했으면 그냥 내보내주면됨
+// export default wrapper.withRedux(App);
+export default App;
