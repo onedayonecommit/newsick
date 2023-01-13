@@ -15,6 +15,8 @@ import { ImagedownloadController } from './controller/test/imagedownload.control
 import { ImagedownloadService } from './service/test/imagedownload.service';
 import { CreateFundingService } from './service/create-funding/create-funding.service';
 import { CreateFundingController } from './controller/create-funding/create-funding.controller';
+import { QueryService } from './service/test/query.service';
+import { QueryController } from './controller/test/query.controller';
 @Module({
   imports: [
     EnvModule,
@@ -27,6 +29,7 @@ import { CreateFundingController } from './controller/create-funding/create-fund
     ProfileUploadsController,
     ImagedownloadController,
     CreateFundingController,
+    QueryController,
   ],
   providers: [
     CreateUserService,
@@ -37,6 +40,7 @@ import { CreateFundingController } from './controller/create-funding/create-fund
     FileUploadsService,
     ImagedownloadService,
     CreateFundingService,
+    QueryService,
   ],
 })
 export class AppModule {}

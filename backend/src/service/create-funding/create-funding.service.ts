@@ -1,6 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { funding } from '@prisma/client';
-import { IsOptional } from 'class-validator';
 import { createFundingDto } from 'src/dto/create-funding/create-funding.dto';
 import { fundingOfficialsDto } from 'src/dto/create-funding/funding-officials.dto';
 import { PrismaService } from 'src/prisma.service';
@@ -10,6 +9,7 @@ export class CreateFundingService {
   constructor(private readonly prismaService: PrismaService) {}
 
   async fundingLylicsMakerCreate(lylics_dto: fundingOfficialsDto, id: number) {
+    lylics_dto.funding_id = id;
     try {
       await this.prismaService.funding_lyrics_maker.create({
         data: lylics_dto,
@@ -22,6 +22,7 @@ export class CreateFundingService {
     }
   }
   async fundingMusicMakerCreate(music_dto: fundingOfficialsDto, id: number) {
+    music_dto.funding_id = id;
     try {
       await this.prismaService.funding_music_maker.create({
         data: music_dto,
@@ -34,6 +35,7 @@ export class CreateFundingService {
     }
   }
   async fundingSingerCreate(singer_dto: fundingOfficialsDto, id: number) {
+    singer_dto.funding_id = id;
     try {
       await this.prismaService.funding_singer.create({
         data: singer_dto,
@@ -46,8 +48,8 @@ export class CreateFundingService {
     }
   }
 
-  async fundingInfoCreate(fundingDto: createFundingDto): Promise<object> {
-    console.log(fundingDto.funding);
+  async fundingInfoCreate(fundingDto: createFundingDto): Promise<funding> {
+    console.log(fundingDto);
     try {
       // const result2 = await this.prismaService.funding
       const result = await this.prismaService.funding.create({
@@ -64,7 +66,7 @@ export class CreateFundingService {
       );
       await this.fundingSingerCreate(fundingDto.funding_singer, result.id);
 
-      return { createStatus: true, httpStatus: 201 };
+      return result;
     } catch (error) {
       console.log(error);
       throw new HttpException(

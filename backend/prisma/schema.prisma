@@ -25,6 +25,7 @@ model users{
   creator_list creator[]
   favoliste favorites[]
   playlist playlist[]
+  fundinglist funding[]
 }
 
 model creator{
@@ -68,6 +69,8 @@ model musics{
 
 model funding{
   id Int @default(autoincrement()) @id
+  creators_id users @relation(fields: [creator_id],references: [id])
+  creator_id Int 
   creator_wallet_address String @unique
   category String?
   music_maker_info_url String? @db.VarChar(300) // sns or info

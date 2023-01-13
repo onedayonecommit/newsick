@@ -55,14 +55,11 @@ export class FileUploadsService {
     return { uploadStatus: true, httpStatus: 201 };
   }
 
-  async fundingCoverImageUpload(
-    file: Express.Multer.File,
-    creator_wallet_address: string,
-  ) {
+  async fundingCoverImageUpload(file: Express.Multer.File, id: number) {
     const funding_cover_image = await this.uploadFile(file);
     await this.prismaService.funding.update({
       data: { funding_cover_image },
-      where: { creator_wallet_address },
+      where: { id },
     });
     return { uploadStatus: true, httpStatus: 201 };
   }
