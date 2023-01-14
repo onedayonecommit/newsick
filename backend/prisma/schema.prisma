@@ -69,9 +69,9 @@ model musics{
 
 model funding{
   id Int @default(autoincrement()) @id
-  creators_id users @relation(fields: [creator_id],references: [id])
+  creator_idss users @relation(fields: [creator_id],references: [id])
   creator_id Int 
-  creator_wallet_address String @unique
+  creator_wallet_address String
   category String?
   music_maker_info_url String? @db.VarChar(300) // sns or info
   lyrics_maker_info_url String? @db.VarChar(300)// sns or info
