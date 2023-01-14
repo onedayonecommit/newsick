@@ -20,4 +20,6 @@ export class fundingTableDto {
   start_date: Date;
   @IsDate()
   sale_date: Date;
+  @IsNumber()
+  creator_id: number;
 }

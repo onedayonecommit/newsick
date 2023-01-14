@@ -48,24 +48,27 @@ export class CreateFundingService {
     }
   }
 
-  async fundingInfoCreate(fundingDto: createFundingDto): Promise<funding> {
+  async fundingInfoCreate(fundingDto: createFundingDto): Promise<object> {
     console.log(fundingDto);
+    const {
+      funding,
+      funding_lyrics_maker,
+      funding_music_maker,
+      funding_singer,
+    } = fundingDto;
+    const creator_id = await this.prismaService.users.findUnique({
+      where: { user_wallet_address: funding.creator_wallet_address },
+    });
+    console.log(creator_id.id);
+    funding.creator_id = creator_id.id;
+    console.log(funding);
     try {
-      // const result2 = await this.prismaService.funding
       const result = await this.prismaService.funding.create({
-        data: fundingDto.funding,
+        data: funding,
       });
-
-      await this.fundingLylicsMakerCreate(
-        fundingDto.funding_lyrics_maker,
-        result.id,
-      );
-      await this.fundingMusicMakerCreate(
-        fundingDto.funding_music_maker,
-        result.id,
-      );
-      await this.fundingSingerCreate(fundingDto.funding_singer, result.id);
-
+      await this.fundingLylicsMakerCreate(funding_lyrics_maker, result.id);
+      await this.fundingMusicMakerCreate(funding_music_maker, result.id);
+      await this.fundingSingerCreate(funding_singer, result.id);
       return result;
     } catch (error) {
       console.log(error);

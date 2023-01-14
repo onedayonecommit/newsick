@@ -24,7 +24,7 @@ export class CreateFundingController {
     @UploadedFile() file: Express.Multer.File,
   ) {
     await this.createFundingService.fundingInfoCreate(fundingDto).then((e) => {
-      this.fileUploadService.fundingCoverImageUpload(file, e.id);
+      // this.fileUploadService.fundingCoverImageUpload(file, e.id);
     });
   }
 }
