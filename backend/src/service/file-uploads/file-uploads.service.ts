@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as AWS from 'aws-sdk';
 import { extname } from 'path';
@@ -19,15 +19,14 @@ export class FileUploadsService {
       secretAccessKey: this.configService.get<string>('AWS_SECRET_KEY'),
     },
   });
+  AWS_S3_BUCKET = this.configService.get<string>('AWS_BUCKET_NAME');
 
   /** 재 사용될 이미지 업로드 함수 */
   async uploadFile(file: Express.Multer.File) {
     const filebasename = `${uuidv4()}${extname(file.originalname)}`;
 
-    const AWS_S3_BUCKET = this.configService.get<string>('AWS_BUCKET_NAME');
-
     const params = {
-      Bucket: AWS_S3_BUCKET,
+      Bucket: this.AWS_S3_BUCKET,
       Key: String(filebasename),
       Body: file.buffer,
     };
@@ -47,6 +46,25 @@ export class FileUploadsService {
     file: Express.Multer.File,
     user_wallet_address: string,
   ): Promise<userProfileImageUpdateResponseDto> {
+    const result = await this.prismaService.users.findUnique({
+      where: { user_wallet_address },
+    });
+    if (result.user_profile_image !== 'default_profile_image.png') {
+      console.log('hi');
+      try {
+        this.s3
+          .deleteObject({
+            Bucket: this.AWS_S3_BUCKET,
+            Key: result.user_profile_image,
+          })
+          .promise();
+      } catch (error) {
+        throw new HttpException(
+          '파일 삭제 안됌',
+          HttpStatus.INTERNAL_SERVER_ERROR,
+        );
+      }
+    }
     const user_profile_image = await this.uploadFile(file);
     await this.prismaService.users.update({
       data: { user_profile_image },
