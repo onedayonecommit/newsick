@@ -5,7 +5,7 @@ export class userProfileImageUpdateResponseDto {
     description: 'user profile image upload to aws s3 success',
     example: true,
   })
-  uploadStatus: boolean;
+  status: boolean;
 
   @ApiProperty({
     description: 'this api response http status',

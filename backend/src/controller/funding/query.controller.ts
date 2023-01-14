@@ -1,8 +1,8 @@
 import { Body, Controller, Get } from '@nestjs/common';
-import { QueryService } from 'src/service/test/query.service';
-import { testDto } from 'src/service/test/test.dto';
+import { QueryService } from 'src/service/funding/query.service';
+import { testDto } from 'src/service/funding/test.dto';
 
-@Controller('query')
+@Controller('funding/information')
 export class QueryController {
   constructor(private readonly queryService: QueryService) {}
   @Get()

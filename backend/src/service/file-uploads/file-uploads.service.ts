@@ -21,6 +21,26 @@ export class FileUploadsService {
   });
   AWS_S3_BUCKET = this.configService.get<string>('AWS_BUCKET_NAME');
 
+  /** 이미지 업로드시 이전 이미지 S3에서 삭제 */
+  async deleteFile(result: string) {
+    if (result !== 'default_profile_image.png') {
+      console.log('hi');
+      try {
+        this.s3
+          .deleteObject({
+            Bucket: this.AWS_S3_BUCKET,
+            Key: result,
+          })
+          .promise();
+      } catch (error) {
+        throw new HttpException(
+          '파일 삭제 안됌',
+          HttpStatus.INTERNAL_SERVER_ERROR,
+        );
+      }
+    }
+  }
+
   /** 재 사용될 이미지 업로드 함수 */
   async uploadFile(file: Express.Multer.File) {
     const filebasename = `${uuidv4()}${extname(file.originalname)}`;
@@ -49,36 +69,26 @@ export class FileUploadsService {
     const result = await this.prismaService.users.findUnique({
       where: { user_wallet_address },
     });
-    if (result.user_profile_image !== 'default_profile_image.png') {
-      console.log('hi');
-      try {
-        this.s3
-          .deleteObject({
-            Bucket: this.AWS_S3_BUCKET,
-            Key: result.user_profile_image,
-          })
-          .promise();
-      } catch (error) {
-        throw new HttpException(
-          '파일 삭제 안됌',
-          HttpStatus.INTERNAL_SERVER_ERROR,
-        );
-      }
-    }
+    this.deleteFile(result.user_profile_image);
     const user_profile_image = await this.uploadFile(file);
     await this.prismaService.users.update({
       data: { user_profile_image },
       where: { user_wallet_address },
     });
-    return { uploadStatus: true, httpStatus: 201 };
+    return { status: true, httpStatus: 201 };
   }
 
+  /** funding CoverImage */
   async fundingCoverImageUpload(file: Express.Multer.File, id: number) {
+    const result = await this.prismaService.funding.findUnique({
+      where: { id },
+    });
+    this.deleteFile(result.funding_cover_image);
     const funding_cover_image = await this.uploadFile(file);
     await this.prismaService.funding.update({
       data: { funding_cover_image },
       where: { id },
     });
-    return { uploadStatus: true, httpStatus: 201 };
+    return { status: true, httpStatus: 201 };
   }
 }

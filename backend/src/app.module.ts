@@ -11,12 +11,14 @@ import { UpdateUserController } from './controller/update-user/update-user.contr
 import { UpdateUserService } from './service/update-user/update-user.service';
 import { FileUploadsService } from './service/file-uploads/file-uploads.service';
 import { ProfileUploadsController } from './controller/profile-uploads/profile-uploads.controller';
-import { ImagedownloadController } from './controller/test/imagedownload.controller';
-import { ImagedownloadService } from './service/test/imagedownload.service';
+import { ImagedownloadController } from './controller/funding/imagedownload.controller';
+import { ImagedownloadService } from './service/funding/imagedownload.service';
 import { CreateFundingService } from './service/create-funding/create-funding.service';
 import { CreateFundingController } from './controller/create-funding/create-funding.controller';
-import { QueryService } from './service/test/query.service';
-import { QueryController } from './controller/test/query.controller';
+import { QueryService } from './service/funding/query.service';
+import { QueryController } from './controller/funding/query.controller';
+import { FundinglistController } from './controller/funding/fundinglist.controller';
+import { FundinglistService } from './service/funding/fundinglist.service';
 @Module({
   imports: [
     EnvModule,
@@ -30,6 +32,7 @@ import { QueryController } from './controller/test/query.controller';
     ImagedownloadController,
     CreateFundingController,
     QueryController,
+    FundinglistController,
   ],
   providers: [
     CreateUserService,
@@ -41,6 +44,7 @@ import { QueryController } from './controller/test/query.controller';
     ImagedownloadService,
     CreateFundingService,
     QueryService,
+    FundinglistService,
   ],
 })
 export class AppModule {}

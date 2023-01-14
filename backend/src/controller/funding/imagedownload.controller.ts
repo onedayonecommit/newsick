@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { ImagedownloadService } from 'src/service/test/imagedownload.service';
+import { ImagedownloadService } from 'src/service/funding/imagedownload.service';
 
 @Controller('imagedownload')
 export class ImagedownloadController {

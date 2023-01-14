@@ -1,4 +1,4 @@
-import { Injectable, Res } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
 import { testDto } from './test.dto';
 
@@ -12,7 +12,6 @@ export class QueryService {
       where: { id: dto.test_id },
       include: { lyrics_maker: true, music_maker: true, singer: true },
     });
-    console.log(Result);
     return Result;
   }
 }
