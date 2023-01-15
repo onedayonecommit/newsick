@@ -21,7 +21,6 @@ export class FundinglistService {
         singer: true,
       },
     });
-    // console.log(result.singer[0].funding_id);
     return result;
   }
 }
