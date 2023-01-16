@@ -3,6 +3,7 @@
   "abi": [
     {
       "inputs": [],
+<<<<<<< HEAD
       "stateMutability": "nonpayable",
       "type": "constructor"
     },
@@ -320,6 +321,8 @@
     },
     {
       "inputs": [],
+=======
+>>>>>>> main
       "name": "HI",
       "outputs": [
         {
@@ -328,6 +331,7 @@
           "type": "string"
         }
       ],
+<<<<<<< HEAD
       "stateMutability": "nonpayable",
       "type": "function"
     }
@@ -667,15 +671,32 @@
       "name": "#utility.yul"
     }
   ],
+=======
+      "stateMutability": "pure",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"HI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/test.sol\":\"Test\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/test.sol\":{\"keccak256\":\"0xb7c53349a3509b1fd1c6e772b838e2dc11204d60f83ee757b2fe90dd94206e26\",\"urls\":[\"bzz-raw://a9efd55ab9cf467538d2ef964eae99d4fbe78bd84be52d53cda4b4983ee94ece\",\"dweb:/ipfs/QmerYBq7HadJQrFPQD56MBT5xvWrsR6EhXe35oFVfwESrU\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600360005534801561001557600080fd5b5061017c806100256000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063f2e8dfdb14610030575b600080fd5b61003861004e565b6040516100459190610124565b60405180910390f35b60606040518060400160405280600281526020017f6869000000000000000000000000000000000000000000000000000000000000815250905090565b600081519050919050565b600082825260208201905092915050565b60005b838110156100c55780820151818401526020810190506100aa565b838111156100d4576000848401525b50505050565b6000601f19601f8301169050919050565b60006100f68261008b565b6101008185610096565b93506101108185602086016100a7565b610119816100da565b840191505092915050565b6000602082019050818103600083015261013e81846100eb565b90509291505056fea2646970667358221220b19ec15be32a2f40501d23987ba567ca83cbe53b3f971f03840a4739e901b81064736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063f2e8dfdb14610030575b600080fd5b61003861004e565b6040516100459190610124565b60405180910390f35b60606040518060400160405280600281526020017f6869000000000000000000000000000000000000000000000000000000000000815250905090565b600081519050919050565b600082825260208201905092915050565b60005b838110156100c55780820151818401526020810190506100aa565b838111156100d4576000848401525b50505050565b6000601f19601f8301169050919050565b60006100f68261008b565b6101008185610096565b93506101108185602086016100a7565b610119816100da565b840191505092915050565b6000602082019050818103600083015261013e81846100eb565b90509291505056fea2646970667358221220b19ec15be32a2f40501d23987ba567ca83cbe53b3f971f03840a4739e901b81064736f6c63430008090033",
+  "immutableReferences": {},
+  "generatedSources": [],
+>>>>>>> main
   "deployedGeneratedSources": [
     {
       "ast": {
         "nodeType": "YulBlock",
+<<<<<<< HEAD
         "src": "0:32589:12",
+=======
+        "src": "0:1394:1",
+>>>>>>> main
         "statements": [
           {
             "body": {
               "nodeType": "YulBlock",
+<<<<<<< HEAD
               "src": "47:35:12",
               "statements": [
                 {
@@ -689,11 +710,25 @@
                         "src": "73:2:12",
                         "type": "",
                         "value": "64"
+=======
+              "src": "66:40:1",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "77:22:1",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "93:5:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "mload",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "67:5:12"
                     },
                     "nodeType": "YulFunctionCall",
@@ -2579,12 +2614,22 @@
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "3628:12:12"
+=======
+                      "src": "87:5:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "87:12:1"
+>>>>>>> main
                   },
                   "variableNames": [
                     {
                       "name": "length",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "3618:6:12"
+=======
+                      "src": "77:6:1"
+>>>>>>> main
                     }
                   ]
                 }
@@ -2596,7 +2641,11 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3590:5:12",
+=======
+                "src": "49:5:1",
+>>>>>>> main
                 "type": ""
               }
             ],
@@ -2604,16 +2653,28 @@
               {
                 "name": "length",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3600:6:12",
                 "type": ""
               }
             ],
             "src": "3548:99:12"
+=======
+                "src": "59:6:1",
+                "type": ""
+              }
+            ],
+            "src": "7:99:1"
+>>>>>>> main
           },
           {
             "body": {
               "nodeType": "YulBlock",
+<<<<<<< HEAD
               "src": "3749:73:12",
+=======
+              "src": "208:73:1",
+>>>>>>> main
               "statements": [
                 {
                   "expression": {
@@ -2621,17 +2682,26 @@
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "3766:3:12"
+=======
+                        "src": "225:3:1"
+>>>>>>> main
                       },
                       {
                         "name": "length",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "3771:6:12"
+=======
+                        "src": "230:6:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "3759:6:12"
                     },
                     "nodeType": "YulFunctionCall",
@@ -2643,17 +2713,38 @@
                 {
                   "nodeType": "YulAssignment",
                   "src": "3787:29:12",
+=======
+                      "src": "218:6:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "218:19:1"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "218:19:1"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "246:29:1",
+>>>>>>> main
                   "value": {
                     "arguments": [
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "3806:3:12"
+=======
+                        "src": "265:3:1"
+>>>>>>> main
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
+<<<<<<< HEAD
                         "src": "3811:4:12",
+=======
+                        "src": "270:4:1",
+>>>>>>> main
                         "type": "",
                         "value": "0x20"
                       }
@@ -2661,16 +2752,27 @@
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "3802:3:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "3802:14:12"
+=======
+                      "src": "261:3:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "261:14:1"
+>>>>>>> main
                   },
                   "variableNames": [
                     {
                       "name": "updated_pos",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "3787:11:12"
+=======
+                      "src": "246:11:1"
+>>>>>>> main
                     }
                   ]
                 }
@@ -2682,13 +2784,21 @@
               {
                 "name": "pos",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3721:3:12",
+=======
+                "src": "180:3:1",
+>>>>>>> main
                 "type": ""
               },
               {
                 "name": "length",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3726:6:12",
+=======
+                "src": "185:6:1",
+>>>>>>> main
                 "type": ""
               }
             ],
@@ -2696,15 +2806,24 @@
               {
                 "name": "updated_pos",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3737:11:12",
                 "type": ""
               }
             ],
             "src": "3653:169:12"
+=======
+                "src": "196:11:1",
+                "type": ""
+              }
+            ],
+            "src": "112:169:1"
+>>>>>>> main
           },
           {
             "body": {
               "nodeType": "YulBlock",
+<<<<<<< HEAD
               "src": "3877:258:12",
               "statements": [
                 {
@@ -2714,6 +2833,17 @@
                     "kind": "number",
                     "nodeType": "YulLiteral",
                     "src": "3896:1:12",
+=======
+              "src": "336:258:1",
+              "statements": [
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "346:10:1",
+                  "value": {
+                    "kind": "number",
+                    "nodeType": "YulLiteral",
+                    "src": "355:1:1",
+>>>>>>> main
                     "type": "",
                     "value": "0"
                   },
@@ -2721,7 +2851,11 @@
                     {
                       "name": "i",
                       "nodeType": "YulTypedName",
+<<<<<<< HEAD
                       "src": "3891:1:12",
+=======
+                      "src": "350:1:1",
+>>>>>>> main
                       "type": ""
                     }
                   ]
@@ -2729,7 +2863,11 @@
                 {
                   "body": {
                     "nodeType": "YulBlock",
+<<<<<<< HEAD
                     "src": "3956:63:12",
+=======
+                    "src": "415:63:1",
+>>>>>>> main
                     "statements": [
                       {
                         "expression": {
@@ -2739,21 +2877,36 @@
                                 {
                                   "name": "dst",
                                   "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                   "src": "3981:3:12"
+=======
+                                  "src": "440:3:1"
+>>>>>>> main
                                 },
                                 {
                                   "name": "i",
                                   "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                   "src": "3986:1:12"
+=======
+                                  "src": "445:1:1"
+>>>>>>> main
                                 }
                               ],
                               "functionName": {
                                 "name": "add",
                                 "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                 "src": "3977:3:12"
                               },
                               "nodeType": "YulFunctionCall",
                               "src": "3977:11:12"
+=======
+                                "src": "436:3:1"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "436:11:1"
+>>>>>>> main
                             },
                             {
                               "arguments": [
@@ -2762,35 +2915,58 @@
                                     {
                                       "name": "src",
                                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                       "src": "4000:3:12"
+=======
+                                      "src": "459:3:1"
+>>>>>>> main
                                     },
                                     {
                                       "name": "i",
                                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                       "src": "4005:1:12"
+=======
+                                      "src": "464:1:1"
+>>>>>>> main
                                     }
                                   ],
                                   "functionName": {
                                     "name": "add",
                                     "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                     "src": "3996:3:12"
                                   },
                                   "nodeType": "YulFunctionCall",
                                   "src": "3996:11:12"
+=======
+                                    "src": "455:3:1"
+                                  },
+                                  "nodeType": "YulFunctionCall",
+                                  "src": "455:11:1"
+>>>>>>> main
                                 }
                               ],
                               "functionName": {
                                 "name": "mload",
                                 "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                 "src": "3990:5:12"
                               },
                               "nodeType": "YulFunctionCall",
                               "src": "3990:18:12"
+=======
+                                "src": "449:5:1"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "449:18:1"
+>>>>>>> main
                             }
                           ],
                           "functionName": {
                             "name": "mstore",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "3970:6:12"
                           },
                           "nodeType": "YulFunctionCall",
@@ -2798,6 +2974,15 @@
                         },
                         "nodeType": "YulExpressionStatement",
                         "src": "3970:39:12"
+=======
+                            "src": "429:6:1"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "429:39:1"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "429:39:1"
+>>>>>>> main
                       }
                     ]
                   },
@@ -2806,41 +2991,72 @@
                       {
                         "name": "i",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "3917:1:12"
+=======
+                        "src": "376:1:1"
+>>>>>>> main
                       },
                       {
                         "name": "length",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "3920:6:12"
+=======
+                        "src": "379:6:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "lt",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "3914:2:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "3914:13:12"
+=======
+                      "src": "373:2:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "373:13:1"
+>>>>>>> main
                   },
                   "nodeType": "YulForLoop",
                   "post": {
                     "nodeType": "YulBlock",
+<<<<<<< HEAD
                     "src": "3928:19:12",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
                         "src": "3930:15:12",
+=======
+                    "src": "387:19:1",
+                    "statements": [
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "389:15:1",
+>>>>>>> main
                         "value": {
                           "arguments": [
                             {
                               "name": "i",
                               "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                               "src": "3939:1:12"
+=======
+                              "src": "398:1:1"
+>>>>>>> main
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
+<<<<<<< HEAD
                               "src": "3942:2:12",
+=======
+                              "src": "401:2:1",
+>>>>>>> main
                               "type": "",
                               "value": "32"
                             }
@@ -2848,16 +3064,27 @@
                           "functionName": {
                             "name": "add",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "3935:3:12"
                           },
                           "nodeType": "YulFunctionCall",
                           "src": "3935:10:12"
+=======
+                            "src": "394:3:1"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "394:10:1"
+>>>>>>> main
                         },
                         "variableNames": [
                           {
                             "name": "i",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "3930:1:12"
+=======
+                            "src": "389:1:1"
+>>>>>>> main
                           }
                         ]
                       }
@@ -2865,15 +3092,26 @@
                   },
                   "pre": {
                     "nodeType": "YulBlock",
+<<<<<<< HEAD
                     "src": "3910:3:12",
                     "statements": []
                   },
                   "src": "3906:113:12"
+=======
+                    "src": "369:3:1",
+                    "statements": []
+                  },
+                  "src": "365:113:1"
+>>>>>>> main
                 },
                 {
                   "body": {
                     "nodeType": "YulBlock",
+<<<<<<< HEAD
                     "src": "4053:76:12",
+=======
+                    "src": "512:76:1",
+>>>>>>> main
                     "statements": [
                       {
                         "expression": {
@@ -2883,26 +3121,45 @@
                                 {
                                   "name": "dst",
                                   "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                   "src": "4103:3:12"
+=======
+                                  "src": "562:3:1"
+>>>>>>> main
                                 },
                                 {
                                   "name": "length",
                                   "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                   "src": "4108:6:12"
+=======
+                                  "src": "567:6:1"
+>>>>>>> main
                                 }
                               ],
                               "functionName": {
                                 "name": "add",
                                 "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                                 "src": "4099:3:12"
                               },
                               "nodeType": "YulFunctionCall",
                               "src": "4099:16:12"
+=======
+                                "src": "558:3:1"
+                              },
+                              "nodeType": "YulFunctionCall",
+                              "src": "558:16:1"
+>>>>>>> main
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
+<<<<<<< HEAD
                               "src": "4117:1:12",
+=======
+                              "src": "576:1:1",
+>>>>>>> main
                               "type": "",
                               "value": "0"
                             }
@@ -2910,6 +3167,7 @@
                           "functionName": {
                             "name": "mstore",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "4092:6:12"
                           },
                           "nodeType": "YulFunctionCall",
@@ -2917,6 +3175,15 @@
                         },
                         "nodeType": "YulExpressionStatement",
                         "src": "4092:27:12"
+=======
+                            "src": "551:6:1"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "551:27:1"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "551:27:1"
+>>>>>>> main
                       }
                     ]
                   },
@@ -2925,17 +3192,26 @@
                       {
                         "name": "i",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4034:1:12"
+=======
+                        "src": "493:1:1"
+>>>>>>> main
                       },
                       {
                         "name": "length",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4037:6:12"
+=======
+                        "src": "496:6:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "gt",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4031:2:12"
                     },
                     "nodeType": "YulFunctionCall",
@@ -2943,6 +3219,15 @@
                   },
                   "nodeType": "YulIf",
                   "src": "4028:101:12"
+=======
+                      "src": "490:2:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "490:13:1"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "487:101:1"
+>>>>>>> main
                 }
               ]
             },
@@ -2952,32 +3237,56 @@
               {
                 "name": "src",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3859:3:12",
+=======
+                "src": "318:3:1",
+>>>>>>> main
                 "type": ""
               },
               {
                 "name": "dst",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3864:3:12",
+=======
+                "src": "323:3:1",
+>>>>>>> main
                 "type": ""
               },
               {
                 "name": "length",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "3869:6:12",
                 "type": ""
               }
             ],
             "src": "3828:307:12"
+=======
+                "src": "328:6:1",
+                "type": ""
+              }
+            ],
+            "src": "287:307:1"
+>>>>>>> main
           },
           {
             "body": {
               "nodeType": "YulBlock",
+<<<<<<< HEAD
               "src": "4189:54:12",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
                   "src": "4199:38:12",
+=======
+              "src": "648:54:1",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "658:38:1",
+>>>>>>> main
                   "value": {
                     "arguments": [
                       {
@@ -2985,12 +3294,20 @@
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "4217:5:12"
+=======
+                            "src": "676:5:1"
+>>>>>>> main
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
+<<<<<<< HEAD
                             "src": "4224:2:12",
+=======
+                            "src": "683:2:1",
+>>>>>>> main
                             "type": "",
                             "value": "31"
                           }
@@ -2998,17 +3315,28 @@
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                           "src": "4213:3:12"
                         },
                         "nodeType": "YulFunctionCall",
                         "src": "4213:14:12"
+=======
+                          "src": "672:3:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "672:14:1"
+>>>>>>> main
                       },
                       {
                         "arguments": [
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
+<<<<<<< HEAD
                             "src": "4233:2:12",
+=======
+                            "src": "692:2:1",
+>>>>>>> main
                             "type": "",
                             "value": "31"
                           }
@@ -3016,25 +3344,43 @@
                         "functionName": {
                           "name": "not",
                           "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                           "src": "4229:3:12"
                         },
                         "nodeType": "YulFunctionCall",
                         "src": "4229:7:12"
+=======
+                          "src": "688:3:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "688:7:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "and",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4209:3:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "4209:28:12"
+=======
+                      "src": "668:3:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "668:28:1"
+>>>>>>> main
                   },
                   "variableNames": [
                     {
                       "name": "result",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4199:6:12"
+=======
+                      "src": "658:6:1"
+>>>>>>> main
                     }
                   ]
                 }
@@ -3046,7 +3392,11 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4172:5:12",
+=======
+                "src": "631:5:1",
+>>>>>>> main
                 "type": ""
               }
             ],
@@ -3054,74 +3404,128 @@
               {
                 "name": "result",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4182:6:12",
                 "type": ""
               }
             ],
             "src": "4141:102:12"
+=======
+                "src": "641:6:1",
+                "type": ""
+              }
+            ],
+            "src": "600:102:1"
+>>>>>>> main
           },
           {
             "body": {
               "nodeType": "YulBlock",
+<<<<<<< HEAD
               "src": "4341:272:12",
               "statements": [
                 {
                   "nodeType": "YulVariableDeclaration",
                   "src": "4351:53:12",
+=======
+              "src": "800:272:1",
+              "statements": [
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "810:53:1",
+>>>>>>> main
                   "value": {
                     "arguments": [
                       {
                         "name": "value",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4398:5:12"
+=======
+                        "src": "857:5:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "array_length_t_string_memory_ptr",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4365:32:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "4365:39:12"
+=======
+                      "src": "824:32:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "824:39:1"
+>>>>>>> main
                   },
                   "variables": [
                     {
                       "name": "length",
                       "nodeType": "YulTypedName",
+<<<<<<< HEAD
                       "src": "4355:6:12",
+=======
+                      "src": "814:6:1",
+>>>>>>> main
                       "type": ""
                     }
                   ]
                 },
                 {
                   "nodeType": "YulAssignment",
+<<<<<<< HEAD
                   "src": "4413:78:12",
+=======
+                  "src": "872:78:1",
+>>>>>>> main
                   "value": {
                     "arguments": [
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4479:3:12"
+=======
+                        "src": "938:3:1"
+>>>>>>> main
                       },
                       {
                         "name": "length",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4484:6:12"
+=======
+                        "src": "943:6:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "array_storeLengthForEncoding_t_string_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4420:58:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "4420:71:12"
+=======
+                      "src": "879:58:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "879:71:1"
+>>>>>>> main
                   },
                   "variableNames": [
                     {
                       "name": "pos",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4413:3:12"
+=======
+                      "src": "872:3:1"
+>>>>>>> main
                     }
                   ]
                 },
@@ -3133,12 +3537,20 @@
                           {
                             "name": "value",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "4526:5:12"
+=======
+                            "src": "985:5:1"
+>>>>>>> main
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
+<<<<<<< HEAD
                             "src": "4533:4:12",
+=======
+                            "src": "992:4:1",
+>>>>>>> main
                             "type": "",
                             "value": "0x20"
                           }
@@ -3146,25 +3558,41 @@
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                           "src": "4522:3:12"
                         },
                         "nodeType": "YulFunctionCall",
                         "src": "4522:16:12"
+=======
+                          "src": "981:3:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "981:16:1"
+>>>>>>> main
                       },
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4540:3:12"
+=======
+                        "src": "999:3:1"
+>>>>>>> main
                       },
                       {
                         "name": "length",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4545:6:12"
+=======
+                        "src": "1004:6:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "copy_memory_to_memory",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4500:21:12"
                     },
                     "nodeType": "YulFunctionCall",
@@ -3176,43 +3604,82 @@
                 {
                   "nodeType": "YulAssignment",
                   "src": "4561:46:12",
+=======
+                      "src": "959:21:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "959:52:1"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "959:52:1"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1020:46:1",
+>>>>>>> main
                   "value": {
                     "arguments": [
                       {
                         "name": "pos",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4572:3:12"
+=======
+                        "src": "1031:3:1"
+>>>>>>> main
                       },
                       {
                         "arguments": [
                           {
                             "name": "length",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "4599:6:12"
+=======
+                            "src": "1058:6:1"
+>>>>>>> main
                           }
                         ],
                         "functionName": {
                           "name": "round_up_to_mul_of_32",
                           "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                           "src": "4577:21:12"
                         },
                         "nodeType": "YulFunctionCall",
                         "src": "4577:29:12"
+=======
+                          "src": "1036:21:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1036:29:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4568:3:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "4568:39:12"
+=======
+                      "src": "1027:3:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1027:39:1"
+>>>>>>> main
                   },
                   "variableNames": [
                     {
                       "name": "end",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4561:3:12"
+=======
+                      "src": "1020:3:1"
+>>>>>>> main
                     }
                   ]
                 }
@@ -3224,13 +3691,21 @@
               {
                 "name": "value",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4322:5:12",
+=======
+                "src": "781:5:1",
+>>>>>>> main
                 "type": ""
               },
               {
                 "name": "pos",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4329:3:12",
+=======
+                "src": "788:3:1",
+>>>>>>> main
                 "type": ""
               }
             ],
@@ -3238,31 +3713,55 @@
               {
                 "name": "end",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4337:3:12",
                 "type": ""
               }
             ],
             "src": "4249:364:12"
+=======
+                "src": "796:3:1",
+                "type": ""
+              }
+            ],
+            "src": "708:364:1"
+>>>>>>> main
           },
           {
             "body": {
               "nodeType": "YulBlock",
+<<<<<<< HEAD
               "src": "4737:195:12",
               "statements": [
                 {
                   "nodeType": "YulAssignment",
                   "src": "4747:26:12",
+=======
+              "src": "1196:195:1",
+              "statements": [
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1206:26:1",
+>>>>>>> main
                   "value": {
                     "arguments": [
                       {
                         "name": "headStart",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4759:9:12"
+=======
+                        "src": "1218:9:1"
+>>>>>>> main
                       },
                       {
                         "kind": "number",
                         "nodeType": "YulLiteral",
+<<<<<<< HEAD
                         "src": "4770:2:12",
+=======
+                        "src": "1229:2:1",
+>>>>>>> main
                         "type": "",
                         "value": "32"
                       }
@@ -3270,16 +3769,27 @@
                     "functionName": {
                       "name": "add",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4755:3:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "4755:18:12"
+=======
+                      "src": "1214:3:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1214:18:1"
+>>>>>>> main
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4747:4:12"
+=======
+                      "src": "1206:4:1"
+>>>>>>> main
                     }
                   ]
                 },
@@ -3291,12 +3801,20 @@
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "4794:9:12"
+=======
+                            "src": "1253:9:1"
+>>>>>>> main
                           },
                           {
                             "kind": "number",
                             "nodeType": "YulLiteral",
+<<<<<<< HEAD
                             "src": "4805:1:12",
+=======
+                            "src": "1264:1:1",
+>>>>>>> main
                             "type": "",
                             "value": "0"
                           }
@@ -3304,36 +3822,59 @@
                         "functionName": {
                           "name": "add",
                           "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                           "src": "4790:3:12"
                         },
                         "nodeType": "YulFunctionCall",
                         "src": "4790:17:12"
+=======
+                          "src": "1249:3:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1249:17:1"
+>>>>>>> main
                       },
                       {
                         "arguments": [
                           {
                             "name": "tail",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "4813:4:12"
+=======
+                            "src": "1272:4:1"
+>>>>>>> main
                           },
                           {
                             "name": "headStart",
                             "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                             "src": "4819:9:12"
+=======
+                            "src": "1278:9:1"
+>>>>>>> main
                           }
                         ],
                         "functionName": {
                           "name": "sub",
                           "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                           "src": "4809:3:12"
                         },
                         "nodeType": "YulFunctionCall",
                         "src": "4809:20:12"
+=======
+                          "src": "1268:3:1"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "1268:20:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "mstore",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4783:6:12"
                     },
                     "nodeType": "YulFunctionCall",
@@ -3345,32 +3886,64 @@
                 {
                   "nodeType": "YulAssignment",
                   "src": "4839:86:12",
+=======
+                      "src": "1242:6:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1242:47:1"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "1242:47:1"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "1298:86:1",
+>>>>>>> main
                   "value": {
                     "arguments": [
                       {
                         "name": "value0",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4911:6:12"
+=======
+                        "src": "1370:6:1"
+>>>>>>> main
                       },
                       {
                         "name": "tail",
                         "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                         "src": "4920:4:12"
+=======
+                        "src": "1379:4:1"
+>>>>>>> main
                       }
                     ],
                     "functionName": {
                       "name": "abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_fromStack",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4847:63:12"
                     },
                     "nodeType": "YulFunctionCall",
                     "src": "4847:78:12"
+=======
+                      "src": "1306:63:1"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "1306:78:1"
+>>>>>>> main
                   },
                   "variableNames": [
                     {
                       "name": "tail",
                       "nodeType": "YulIdentifier",
+<<<<<<< HEAD
                       "src": "4839:4:12"
+=======
+                      "src": "1298:4:1"
+>>>>>>> main
                     }
                   ]
                 }
@@ -3382,13 +3955,21 @@
               {
                 "name": "headStart",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4709:9:12",
+=======
+                "src": "1168:9:1",
+>>>>>>> main
                 "type": ""
               },
               {
                 "name": "value0",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4721:6:12",
+=======
+                "src": "1180:6:1",
+>>>>>>> main
                 "type": ""
               }
             ],
@@ -3396,6 +3977,7 @@
               {
                 "name": "tail",
                 "nodeType": "YulTypedName",
+<<<<<<< HEAD
                 "src": "4732:4:12",
                 "type": ""
               }
@@ -16129,10 +16711,23 @@
       },
       "contents": "{\n\n    function allocate_unbounded() -> memPtr {\n        memPtr := mload(64)\n    }\n\n    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() {\n        revert(0, 0)\n    }\n\n    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() {\n        revert(0, 0)\n    }\n\n    function cleanup_t_uint160(value) -> cleaned {\n        cleaned := and(value, 0xffffffffffffffffffffffffffffffffffffffff)\n    }\n\n    function cleanup_t_address(value) -> cleaned {\n        cleaned := cleanup_t_uint160(value)\n    }\n\n    function validator_revert_t_address(value) {\n        if iszero(eq(value, cleanup_t_address(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_address(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_address(value)\n    }\n\n    function cleanup_t_uint256(value) -> cleaned {\n        cleaned := value\n    }\n\n    function validator_revert_t_uint256(value) {\n        if iszero(eq(value, cleanup_t_uint256(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_uint256(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_uint256(value)\n    }\n\n    function abi_decode_tuple_t_addresst_uint256(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_encode_t_uint256_to_t_uint256_fromStack(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function cleanup_t_bytes4(value) -> cleaned {\n        cleaned := and(value, 0xffffffff00000000000000000000000000000000000000000000000000000000)\n    }\n\n    function validator_revert_t_bytes4(value) {\n        if iszero(eq(value, cleanup_t_bytes4(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_bytes4(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_bytes4(value)\n    }\n\n    function abi_decode_tuple_t_bytes4(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_bytes4(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function cleanup_t_bool(value) -> cleaned {\n        cleaned := iszero(iszero(value))\n    }\n\n    function abi_encode_t_bool_to_t_bool_fromStack(value, pos) {\n        mstore(pos, cleanup_t_bool(value))\n    }\n\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        abi_encode_t_bool_to_t_bool_fromStack(value0,  add(headStart, 0))\n\n    }\n\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function array_length_t_string_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function copy_memory_to_memory(src, dst, length) {\n        let i := 0\n        for { } lt(i, length) { i := add(i, 32) }\n        {\n            mstore(add(dst, i), mload(add(src, i)))\n        }\n        if gt(i, length)\n        {\n            // clear end\n            mstore(add(dst, length), 0)\n        }\n    }\n\n    function round_up_to_mul_of_32(value) -> result {\n        result := and(add(value, 31), not(31))\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_fromStack(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, round_up_to_mul_of_32(length))\n    }\n\n    function abi_encode_tuple_t_string_memory_ptr__to_t_string_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() {\n        revert(0, 0)\n    }\n\n    function panic_error_0x41() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x41)\n        revert(0, 0x24)\n    }\n\n    function finalize_allocation(memPtr, size) {\n        let newFreePtr := add(memPtr, round_up_to_mul_of_32(size))\n        // protect against overflow\n        if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr)) { panic_error_0x41() }\n        mstore(64, newFreePtr)\n    }\n\n    function allocate_memory(size) -> memPtr {\n        memPtr := allocate_unbounded()\n        finalize_allocation(memPtr, size)\n    }\n\n    function array_allocation_size_t_array$_t_uint256_$dyn_memory_ptr(length) -> size {\n        // Make sure we can allocate memory without overflow\n        if gt(length, 0xffffffffffffffff) { panic_error_0x41() }\n\n        size := mul(length, 0x20)\n\n        // add length slot\n        size := add(size, 0x20)\n\n    }\n\n    function revert_error_81385d8c0b31fffe14be1da910c8bd3a80be4cfa248e04f42ec0faea3132a8ef() {\n        revert(0, 0)\n    }\n\n    // uint256[]\n    function abi_decode_available_length_t_array$_t_uint256_$dyn_memory_ptr(offset, length, end) -> array {\n        array := allocate_memory(array_allocation_size_t_array$_t_uint256_$dyn_memory_ptr(length))\n        let dst := array\n\n        mstore(array, length)\n        dst := add(array, 0x20)\n\n        let srcEnd := add(offset, mul(length, 0x20))\n        if gt(srcEnd, end) {\n            revert_error_81385d8c0b31fffe14be1da910c8bd3a80be4cfa248e04f42ec0faea3132a8ef()\n        }\n        for { let src := offset } lt(src, srcEnd) { src := add(src, 0x20) }\n        {\n\n            let elementPos := src\n\n            mstore(dst, abi_decode_t_uint256(elementPos, end))\n            dst := add(dst, 0x20)\n        }\n    }\n\n    // uint256[]\n    function abi_decode_t_array$_t_uint256_$dyn_memory_ptr(offset, end) -> array {\n        if iszero(slt(add(offset, 0x1f), end)) { revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() }\n        let length := calldataload(offset)\n        array := abi_decode_available_length_t_array$_t_uint256_$dyn_memory_ptr(add(offset, 0x20), length, end)\n    }\n\n    function revert_error_987264b3b1d58a9c7f8255e93e81c77d86d6299019c33110a076957a3e06e2ae() {\n        revert(0, 0)\n    }\n\n    function array_allocation_size_t_bytes_memory_ptr(length) -> size {\n        // Make sure we can allocate memory without overflow\n        if gt(length, 0xffffffffffffffff) { panic_error_0x41() }\n\n        size := round_up_to_mul_of_32(length)\n\n        // add length slot\n        size := add(size, 0x20)\n\n    }\n\n    function copy_calldata_to_memory(src, dst, length) {\n        calldatacopy(dst, src, length)\n        // clear end\n        mstore(add(dst, length), 0)\n    }\n\n    function abi_decode_available_length_t_bytes_memory_ptr(src, length, end) -> array {\n        array := allocate_memory(array_allocation_size_t_bytes_memory_ptr(length))\n        mstore(array, length)\n        let dst := add(array, 0x20)\n        if gt(add(src, length), end) { revert_error_987264b3b1d58a9c7f8255e93e81c77d86d6299019c33110a076957a3e06e2ae() }\n        copy_calldata_to_memory(src, dst, length)\n    }\n\n    // bytes\n    function abi_decode_t_bytes_memory_ptr(offset, end) -> array {\n        if iszero(slt(add(offset, 0x1f), end)) { revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() }\n        let length := calldataload(offset)\n        array := abi_decode_available_length_t_bytes_memory_ptr(add(offset, 0x20), length, end)\n    }\n\n    function abi_decode_tuple_t_addresst_addresst_array$_t_uint256_$dyn_memory_ptrt_array$_t_uint256_$dyn_memory_ptrt_bytes_memory_ptr(headStart, dataEnd) -> value0, value1, value2, value3, value4 {\n        if slt(sub(dataEnd, headStart), 160) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := calldataload(add(headStart, 64))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value2 := abi_decode_t_array$_t_uint256_$dyn_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := calldataload(add(headStart, 96))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value3 := abi_decode_t_array$_t_uint256_$dyn_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := calldataload(add(headStart, 128))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value4 := abi_decode_t_bytes_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function array_allocation_size_t_array$_t_address_$dyn_memory_ptr(length) -> size {\n        // Make sure we can allocate memory without overflow\n        if gt(length, 0xffffffffffffffff) { panic_error_0x41() }\n\n        size := mul(length, 0x20)\n\n        // add length slot\n        size := add(size, 0x20)\n\n    }\n\n    // address[]\n    function abi_decode_available_length_t_array$_t_address_$dyn_memory_ptr(offset, length, end) -> array {\n        array := allocate_memory(array_allocation_size_t_array$_t_address_$dyn_memory_ptr(length))\n        let dst := array\n\n        mstore(array, length)\n        dst := add(array, 0x20)\n\n        let srcEnd := add(offset, mul(length, 0x20))\n        if gt(srcEnd, end) {\n            revert_error_81385d8c0b31fffe14be1da910c8bd3a80be4cfa248e04f42ec0faea3132a8ef()\n        }\n        for { let src := offset } lt(src, srcEnd) { src := add(src, 0x20) }\n        {\n\n            let elementPos := src\n\n            mstore(dst, abi_decode_t_address(elementPos, end))\n            dst := add(dst, 0x20)\n        }\n    }\n\n    // address[]\n    function abi_decode_t_array$_t_address_$dyn_memory_ptr(offset, end) -> array {\n        if iszero(slt(add(offset, 0x1f), end)) { revert_error_1b9f4a0a5773e33b91aa01db23bf8c55fce1411167c872835e7fa00a4f17d46d() }\n        let length := calldataload(offset)\n        array := abi_decode_available_length_t_array$_t_address_$dyn_memory_ptr(add(offset, 0x20), length, end)\n    }\n\n    function abi_decode_tuple_t_array$_t_address_$dyn_memory_ptrt_array$_t_uint256_$dyn_memory_ptr(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := calldataload(add(headStart, 0))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value0 := abi_decode_t_array$_t_address_$dyn_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := calldataload(add(headStart, 32))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value1 := abi_decode_t_array$_t_uint256_$dyn_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function array_length_t_array$_t_uint256_$dyn_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_array$_t_uint256_$dyn_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function array_dataslot_t_array$_t_uint256_$dyn_memory_ptr(ptr) -> data {\n        data := ptr\n\n        data := add(ptr, 0x20)\n\n    }\n\n    function abi_encode_t_uint256_to_t_uint256(value, pos) {\n        mstore(pos, cleanup_t_uint256(value))\n    }\n\n    function abi_encodeUpdatedPos_t_uint256_to_t_uint256(value0, pos) -> updatedPos {\n        abi_encode_t_uint256_to_t_uint256(value0, pos)\n        updatedPos := add(pos, 0x20)\n    }\n\n    function array_nextElement_t_array$_t_uint256_$dyn_memory_ptr(ptr) -> next {\n        next := add(ptr, 0x20)\n    }\n\n    // uint256[] -> uint256[]\n    function abi_encode_t_array$_t_uint256_$dyn_memory_ptr_to_t_array$_t_uint256_$dyn_memory_ptr_fromStack(value, pos)  -> end  {\n        let length := array_length_t_array$_t_uint256_$dyn_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_array$_t_uint256_$dyn_memory_ptr_fromStack(pos, length)\n        let baseRef := array_dataslot_t_array$_t_uint256_$dyn_memory_ptr(value)\n        let srcPtr := baseRef\n        for { let i := 0 } lt(i, length) { i := add(i, 1) }\n        {\n            let elementValue0 := mload(srcPtr)\n            pos := abi_encodeUpdatedPos_t_uint256_to_t_uint256(elementValue0, pos)\n            srcPtr := array_nextElement_t_array$_t_uint256_$dyn_memory_ptr(srcPtr)\n        }\n        end := pos\n    }\n\n    function abi_encode_tuple_t_array$_t_uint256_$dyn_memory_ptr__to_t_array$_t_uint256_$dyn_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_array$_t_uint256_$dyn_memory_ptr_to_t_array$_t_uint256_$dyn_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n    function validator_revert_t_bool(value) {\n        if iszero(eq(value, cleanup_t_bool(value))) { revert(0, 0) }\n    }\n\n    function abi_decode_t_bool(offset, end) -> value {\n        value := calldataload(offset)\n        validator_revert_t_bool(value)\n    }\n\n    function abi_decode_tuple_t_addresst_bool(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_bool(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_decode_tuple_t_addresst_address(headStart, dataEnd) -> value0, value1 {\n        if slt(sub(dataEnd, headStart), 64) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function abi_decode_tuple_t_addresst_addresst_uint256t_uint256t_bytes_memory_ptr(headStart, dataEnd) -> value0, value1, value2, value3, value4 {\n        if slt(sub(dataEnd, headStart), 160) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 32\n\n            value1 := abi_decode_t_address(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 64\n\n            value2 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := 96\n\n            value3 := abi_decode_t_uint256(add(headStart, offset), dataEnd)\n        }\n\n        {\n\n            let offset := calldataload(add(headStart, 128))\n            if gt(offset, 0xffffffffffffffff) { revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db() }\n\n            value4 := abi_decode_t_bytes_memory_ptr(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function store_literal_in_memory_415a1b99e1fd4a18cf87c08995f5a9130182e8d76e9c17c497bfebaaef9265ad(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: address zero is not a v\")\n\n        mstore(add(memPtr, 32), \"alid owner\")\n\n    }\n\n    function abi_encode_t_stringliteral_415a1b99e1fd4a18cf87c08995f5a9130182e8d76e9c17c497bfebaaef9265ad_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 42)\n        store_literal_in_memory_415a1b99e1fd4a18cf87c08995f5a9130182e8d76e9c17c497bfebaaef9265ad(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_415a1b99e1fd4a18cf87c08995f5a9130182e8d76e9c17c497bfebaaef9265ad__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_415a1b99e1fd4a18cf87c08995f5a9130182e8d76e9c17c497bfebaaef9265ad_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function panic_error_0x22() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x22)\n        revert(0, 0x24)\n    }\n\n    function extract_byte_array_length(data) -> length {\n        length := div(data, 2)\n        let outOfPlaceEncoding := and(data, 1)\n        if iszero(outOfPlaceEncoding) {\n            length := and(length, 0x7f)\n        }\n\n        if eq(outOfPlaceEncoding, lt(length, 32)) {\n            panic_error_0x22()\n        }\n    }\n\n    function store_literal_in_memory_47c72b42072ed6c647dec3a0a5c88bec44d3e901c64659bff94ecce0a0323156(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: caller is not token own\")\n\n        mstore(add(memPtr, 32), \"er or approved\")\n\n    }\n\n    function abi_encode_t_stringliteral_47c72b42072ed6c647dec3a0a5c88bec44d3e901c64659bff94ecce0a0323156_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 46)\n        store_literal_in_memory_47c72b42072ed6c647dec3a0a5c88bec44d3e901c64659bff94ecce0a0323156(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_47c72b42072ed6c647dec3a0a5c88bec44d3e901c64659bff94ecce0a0323156__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_47c72b42072ed6c647dec3a0a5c88bec44d3e901c64659bff94ecce0a0323156_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_e155f5d69798c6205436a388a4f3a5fd42f54147b40f4d63a2c8071ff8a9fee5(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: accounts and ids length\")\n\n        mstore(add(memPtr, 32), \" mismatch\")\n\n    }\n\n    function abi_encode_t_stringliteral_e155f5d69798c6205436a388a4f3a5fd42f54147b40f4d63a2c8071ff8a9fee5_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 41)\n        store_literal_in_memory_e155f5d69798c6205436a388a4f3a5fd42f54147b40f4d63a2c8071ff8a9fee5(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_e155f5d69798c6205436a388a4f3a5fd42f54147b40f4d63a2c8071ff8a9fee5__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_e155f5d69798c6205436a388a4f3a5fd42f54147b40f4d63a2c8071ff8a9fee5_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function panic_error_0x32() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n\n    function panic_error_0x11() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n\n    function increment_t_uint256(value) -> ret {\n        value := cleanup_t_uint256(value)\n        if eq(value, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n\n    function store_literal_in_memory_e909e0c9a8f96b4f9af03b716811ece20beb070be416893ed1d50619b5930807(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: ids and amounts length \")\n\n        mstore(add(memPtr, 32), \"mismatch\")\n\n    }\n\n    function abi_encode_t_stringliteral_e909e0c9a8f96b4f9af03b716811ece20beb070be416893ed1d50619b5930807_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 40)\n        store_literal_in_memory_e909e0c9a8f96b4f9af03b716811ece20beb070be416893ed1d50619b5930807(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_e909e0c9a8f96b4f9af03b716811ece20beb070be416893ed1d50619b5930807__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_e909e0c9a8f96b4f9af03b716811ece20beb070be416893ed1d50619b5930807_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_6faf1c67f278b07c6771dcf4c315a89c21c0eaed11d9ab3d51774da1cfef545d(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: transfer to the zero ad\")\n\n        mstore(add(memPtr, 32), \"dress\")\n\n    }\n\n    function abi_encode_t_stringliteral_6faf1c67f278b07c6771dcf4c315a89c21c0eaed11d9ab3d51774da1cfef545d_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 37)\n        store_literal_in_memory_6faf1c67f278b07c6771dcf4c315a89c21c0eaed11d9ab3d51774da1cfef545d(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_6faf1c67f278b07c6771dcf4c315a89c21c0eaed11d9ab3d51774da1cfef545d__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_6faf1c67f278b07c6771dcf4c315a89c21c0eaed11d9ab3d51774da1cfef545d_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_8ac7e9556b567c1c94bb4daaa3c3a65be5ac686579615210cb910fb8cb8d65bf(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: insufficient balance fo\")\n\n        mstore(add(memPtr, 32), \"r transfer\")\n\n    }\n\n    function abi_encode_t_stringliteral_8ac7e9556b567c1c94bb4daaa3c3a65be5ac686579615210cb910fb8cb8d65bf_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 42)\n        store_literal_in_memory_8ac7e9556b567c1c94bb4daaa3c3a65be5ac686579615210cb910fb8cb8d65bf(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_8ac7e9556b567c1c94bb4daaa3c3a65be5ac686579615210cb910fb8cb8d65bf__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_8ac7e9556b567c1c94bb4daaa3c3a65be5ac686579615210cb910fb8cb8d65bf_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function checked_add_t_uint256(x, y) -> sum {\n        x := cleanup_t_uint256(x)\n        y := cleanup_t_uint256(y)\n\n        // overflow, if x > (maxValue - y)\n        if gt(x, sub(0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, y)) { panic_error_0x11() }\n\n        sum := add(x, y)\n    }\n\n    function abi_encode_tuple_t_array$_t_uint256_$dyn_memory_ptr_t_array$_t_uint256_$dyn_memory_ptr__to_t_array$_t_uint256_$dyn_memory_ptr_t_array$_t_uint256_$dyn_memory_ptr__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_array$_t_uint256_$dyn_memory_ptr_to_t_array$_t_uint256_$dyn_memory_ptr_fromStack(value0,  tail)\n\n        mstore(add(headStart, 32), sub(tail, headStart))\n        tail := abi_encode_t_array$_t_uint256_$dyn_memory_ptr_to_t_array$_t_uint256_$dyn_memory_ptr_fromStack(value1,  tail)\n\n    }\n\n    function store_literal_in_memory_df9806c6dc743de602e49918a67b580590d69ab768bdb59f977c0a884a91a7c2(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: setting approval status\")\n\n        mstore(add(memPtr, 32), \" for self\")\n\n    }\n\n    function abi_encode_t_stringliteral_df9806c6dc743de602e49918a67b580590d69ab768bdb59f977c0a884a91a7c2_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 41)\n        store_literal_in_memory_df9806c6dc743de602e49918a67b580590d69ab768bdb59f977c0a884a91a7c2(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_df9806c6dc743de602e49918a67b580590d69ab768bdb59f977c0a884a91a7c2__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_df9806c6dc743de602e49918a67b580590d69ab768bdb59f977c0a884a91a7c2_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_tuple_t_uint256_t_uint256__to_t_uint256_t_uint256__fromStack_reversed(headStart , value1, value0) -> tail {\n        tail := add(headStart, 64)\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value1,  add(headStart, 32))\n\n    }\n\n    function abi_encode_t_address_to_t_address_fromStack(value, pos) {\n        mstore(pos, cleanup_t_address(value))\n    }\n\n    function array_length_t_bytes_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_bytes_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function abi_encode_t_bytes_memory_ptr_to_t_bytes_memory_ptr_fromStack(value, pos) -> end {\n        let length := array_length_t_bytes_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_bytes_memory_ptr_fromStack(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, round_up_to_mul_of_32(length))\n    }\n\n    function abi_encode_tuple_t_address_t_address_t_array$_t_uint256_$dyn_memory_ptr_t_array$_t_uint256_$dyn_memory_ptr_t_bytes_memory_ptr__to_t_address_t_address_t_array$_t_uint256_$dyn_memory_ptr_t_array$_t_uint256_$dyn_memory_ptr_t_bytes_memory_ptr__fromStack_reversed(headStart , value4, value3, value2, value1, value0) -> tail {\n        tail := add(headStart, 160)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_address_to_t_address_fromStack(value1,  add(headStart, 32))\n\n        mstore(add(headStart, 64), sub(tail, headStart))\n        tail := abi_encode_t_array$_t_uint256_$dyn_memory_ptr_to_t_array$_t_uint256_$dyn_memory_ptr_fromStack(value2,  tail)\n\n        mstore(add(headStart, 96), sub(tail, headStart))\n        tail := abi_encode_t_array$_t_uint256_$dyn_memory_ptr_to_t_array$_t_uint256_$dyn_memory_ptr_fromStack(value3,  tail)\n\n        mstore(add(headStart, 128), sub(tail, headStart))\n        tail := abi_encode_t_bytes_memory_ptr_to_t_bytes_memory_ptr_fromStack(value4,  tail)\n\n    }\n\n    function abi_decode_t_bytes4_fromMemory(offset, end) -> value {\n        value := mload(offset)\n        validator_revert_t_bytes4(value)\n    }\n\n    function abi_decode_tuple_t_bytes4_fromMemory(headStart, dataEnd) -> value0 {\n        if slt(sub(dataEnd, headStart), 32) { revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b() }\n\n        {\n\n            let offset := 0\n\n            value0 := abi_decode_t_bytes4_fromMemory(add(headStart, offset), dataEnd)\n        }\n\n    }\n\n    function shift_right_224_unsigned(value) -> newValue {\n        newValue :=\n\n        shr(224, value)\n\n    }\n\n    function return_data_selector() -> sig {\n        if gt(returndatasize(), 3) {\n            returndatacopy(0, 0, 4)\n            sig := shift_right_224_unsigned(mload(0))\n        }\n    }\n\n    function try_decode_error_message() -> ret {\n        if lt(returndatasize(), 0x44) { leave }\n\n        let data := allocate_unbounded()\n        returndatacopy(data, 4, sub(returndatasize(), 4))\n\n        let offset := mload(data)\n        if or(\n            gt(offset, 0xffffffffffffffff),\n            gt(add(offset, 0x24), returndatasize())\n            ) {\n            leave\n        }\n\n        let msg := add(data, offset)\n        let length := mload(msg)\n        if gt(length, 0xffffffffffffffff) { leave }\n\n        let end := add(add(msg, 0x20), length)\n        if gt(end, add(data, sub(returndatasize(), 4))) { leave }\n\n        finalize_allocation(data, add(offset, add(0x20, length)))\n        ret := msg\n    }\n\n    function store_literal_in_memory_f591f7b75ffc499e05f8b34c3364b2eceff651378d9549db1d5d67c0d8255c5d(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: transfer to non-ERC1155\")\n\n        mstore(add(memPtr, 32), \"Receiver implementer\")\n\n    }\n\n    function abi_encode_t_stringliteral_f591f7b75ffc499e05f8b34c3364b2eceff651378d9549db1d5d67c0d8255c5d_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 52)\n        store_literal_in_memory_f591f7b75ffc499e05f8b34c3364b2eceff651378d9549db1d5d67c0d8255c5d(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_f591f7b75ffc499e05f8b34c3364b2eceff651378d9549db1d5d67c0d8255c5d__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_f591f7b75ffc499e05f8b34c3364b2eceff651378d9549db1d5d67c0d8255c5d_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function store_literal_in_memory_0587cccad73a80a7f013db13c596f4febc1968dc77e1d3589d5e7a509a3d6503(memPtr) {\n\n        mstore(add(memPtr, 0), \"ERC1155: ERC1155Receiver rejecte\")\n\n        mstore(add(memPtr, 32), \"d tokens\")\n\n    }\n\n    function abi_encode_t_stringliteral_0587cccad73a80a7f013db13c596f4febc1968dc77e1d3589d5e7a509a3d6503_to_t_string_memory_ptr_fromStack(pos) -> end {\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, 40)\n        store_literal_in_memory_0587cccad73a80a7f013db13c596f4febc1968dc77e1d3589d5e7a509a3d6503(pos)\n        end := add(pos, 64)\n    }\n\n    function abi_encode_tuple_t_stringliteral_0587cccad73a80a7f013db13c596f4febc1968dc77e1d3589d5e7a509a3d6503__to_t_string_memory_ptr__fromStack_reversed(headStart ) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_stringliteral_0587cccad73a80a7f013db13c596f4febc1968dc77e1d3589d5e7a509a3d6503_to_t_string_memory_ptr_fromStack( tail)\n\n    }\n\n    function abi_encode_tuple_t_address_t_address_t_uint256_t_uint256_t_bytes_memory_ptr__to_t_address_t_address_t_uint256_t_uint256_t_bytes_memory_ptr__fromStack_reversed(headStart , value4, value3, value2, value1, value0) -> tail {\n        tail := add(headStart, 160)\n\n        abi_encode_t_address_to_t_address_fromStack(value0,  add(headStart, 0))\n\n        abi_encode_t_address_to_t_address_fromStack(value1,  add(headStart, 32))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value2,  add(headStart, 64))\n\n        abi_encode_t_uint256_to_t_uint256_fromStack(value3,  add(headStart, 96))\n\n        mstore(add(headStart, 128), sub(tail, headStart))\n        tail := abi_encode_t_bytes_memory_ptr_to_t_bytes_memory_ptr_fromStack(value4,  tail)\n\n    }\n\n}\n",
       "id": 12,
+=======
+                "src": "1191:4:1",
+                "type": ""
+              }
+            ],
+            "src": "1078:313:1"
+          }
+        ]
+      },
+      "contents": "{\n\n    function array_length_t_string_memory_ptr(value) -> length {\n\n        length := mload(value)\n\n    }\n\n    function array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length) -> updated_pos {\n        mstore(pos, length)\n        updated_pos := add(pos, 0x20)\n    }\n\n    function copy_memory_to_memory(src, dst, length) {\n        let i := 0\n        for { } lt(i, length) { i := add(i, 32) }\n        {\n            mstore(add(dst, i), mload(add(src, i)))\n        }\n        if gt(i, length)\n        {\n            // clear end\n            mstore(add(dst, length), 0)\n        }\n    }\n\n    function round_up_to_mul_of_32(value) -> result {\n        result := and(add(value, 31), not(31))\n    }\n\n    function abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_fromStack(value, pos) -> end {\n        let length := array_length_t_string_memory_ptr(value)\n        pos := array_storeLengthForEncoding_t_string_memory_ptr_fromStack(pos, length)\n        copy_memory_to_memory(add(value, 0x20), pos, length)\n        end := add(pos, round_up_to_mul_of_32(length))\n    }\n\n    function abi_encode_tuple_t_string_memory_ptr__to_t_string_memory_ptr__fromStack_reversed(headStart , value0) -> tail {\n        tail := add(headStart, 32)\n\n        mstore(add(headStart, 0), sub(tail, headStart))\n        tail := abi_encode_t_string_memory_ptr_to_t_string_memory_ptr_fromStack(value0,  tail)\n\n    }\n\n}\n",
+      "id": 1,
+>>>>>>> main
       "language": "Yul",
       "name": "#utility.yul"
     }
   ],
+<<<<<<< HEAD
   "sourceMap": "175:408:10:-:0;;;462:35;;;;;;;;;;1107:62:1;;;;;;;;;;;;1149:13;1157:4;1149:7;;;:13;;:::i;:::-;1107:62;175:408:10;;8171:86:1;8244:6;8237:4;:13;;;;;;;;;;;;:::i;:::-;;8171:86;:::o;175:408:10:-;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;7:180:12:-;55:77;52:1;45:88;152:4;149:1;142:15;176:4;173:1;166:15;193:320;237:6;274:1;268:4;264:12;254:22;;321:1;315:4;311:12;342:18;332:81;;398:4;390:6;386:17;376:27;;332:81;460:2;452:6;449:14;429:18;426:38;423:84;;;479:18;;:::i;:::-;423:84;244:269;193:320;;;:::o;175:408:10:-;;;;;;;",
   "deployedSourceMap": "175:408:10:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2185:227:1;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1236:305;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1940:103;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;4064:426;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;2569:508;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;3145:153;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;3365:166;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;3598:394;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;505:75:10;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;2185:227:1;2271:7;2317:1;2298:21;;:7;:21;;;;2290:76;;;;;;;;;;;;:::i;:::-;;;;;;;;;2383:9;:13;2393:2;2383:13;;;;;;;;;;;:22;2397:7;2383:22;;;;;;;;;;;;;;;;2376:29;;2185:227;;;;:::o;1236:305::-;1338:4;1388:26;1373:41;;;:11;:41;;;;:109;;;;1445:37;1430:52;;;:11;:52;;;;1373:109;:161;;;;1498:36;1522:11;1498:23;:36::i;:::-;1373:161;1354:180;;1236:305;;;:::o;1940:103::-;2000:13;2032:4;2025:11;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1940:103;;;:::o;4064:426::-;4297:12;:10;:12::i;:::-;4289:20;;:4;:20;;;:60;;;;4313:36;4330:4;4336:12;:10;:12::i;:::-;4313:16;:36::i;:::-;4289:60;4268:153;;;;;;;;;;;;:::i;:::-;;;;;;;;;4431:52;4454:4;4460:2;4464:3;4469:7;4478:4;4431:22;:52::i;:::-;4064:426;;;;;:::o;2569:508::-;2720:16;2779:3;:10;2760:8;:15;:29;2752:83;;;;;;;;;;;;:::i;:::-;;;;;;;;;2846:30;2893:8;:15;2879:30;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2846:63;;2925:9;2920:120;2944:8;:15;2940:1;:19;2920:120;;;2999:30;3009:8;3018:1;3009:11;;;;;;;;:::i;:::-;;;;;;;;3022:3;3026:1;3022:6;;;;;;;;:::i;:::-;;;;;;;;2999:9;:30::i;:::-;2980:13;2994:1;2980:16;;;;;;;;:::i;:::-;;;;;;;:49;;;;;2961:3;;;;:::i;:::-;;;2920:120;;;;3057:13;3050:20;;;2569:508;;;;:::o;3145:153::-;3239:52;3258:12;:10;:12::i;:::-;3272:8;3282;3239:18;:52::i;:::-;3145:153;;:::o;3365:166::-;3464:4;3487:18;:27;3506:7;3487:27;;;;;;;;;;;;;;;:37;3515:8;3487:37;;;;;;;;;;;;;;;;;;;;;;;;;3480:44;;3365:166;;;;:::o;3598:394::-;3806:12;:10;:12::i;:::-;3798:20;;:4;:20;;;:60;;;;3822:36;3839:4;3845:12;:10;:12::i;:::-;3822:16;:36::i;:::-;3798:60;3777:153;;;;;;;;;;;;:::i;:::-;;;;;;;;;3940:45;3958:4;3964:2;3968;3972:6;3980:4;3940:17;:45::i;:::-;3598:394;;;;;:::o;505:75:10:-;535:13;561:11;;;;;;;;;;;;;;;;;;;505:75;:::o;829:155:7:-;914:4;952:25;937:40;;;:11;:40;;;;930:47;;829:155;;;:::o;640:96:6:-;693:7;719:10;712:17;;640:96;:::o;6233:1115:1:-;6453:7;:14;6439:3;:10;:28;6431:81;;;;;;;;;;;;:::i;:::-;;;;;;;;;6544:1;6530:16;;:2;:16;;;;6522:66;;;;;;;;;;;;:::i;:::-;;;;;;;;;6599:16;6618:12;:10;:12::i;:::-;6599:31;;6641:60;6662:8;6672:4;6678:2;6682:3;6687:7;6696:4;6641:20;:60::i;:::-;6717:9;6712:411;6736:3;:10;6732:1;:14;6712:411;;;6767:10;6780:3;6784:1;6780:6;;;;;;;;:::i;:::-;;;;;;;;6767:19;;6800:14;6817:7;6825:1;6817:10;;;;;;;;:::i;:::-;;;;;;;;6800:27;;6842:19;6864:9;:13;6874:2;6864:13;;;;;;;;;;;:19;6878:4;6864:19;;;;;;;;;;;;;;;;6842:41;;6920:6;6905:11;:21;;6897:76;;;;;;;;;;;;:::i;:::-;;;;;;;;;7051:6;7037:11;:20;7015:9;:13;7025:2;7015:13;;;;;;;;;;;:19;7029:4;7015:19;;;;;;;;;;;;;;;:42;;;;7106:6;7085:9;:13;7095:2;7085:13;;;;;;;;;;;:17;7099:2;7085:17;;;;;;;;;;;;;;;;:27;;;;;;;:::i;:::-;;;;;;;;6753:370;;;6748:3;;;;:::i;:::-;;;6712:411;;;;7168:2;7138:47;;7162:4;7138:47;;7152:8;7138:47;;;7172:3;7177:7;7138:47;;;;;;;:::i;:::-;;;;;;;;7196:59;7216:8;7226:4;7232:2;7236:3;7241:7;7250:4;7196:19;:59::i;:::-;7266:75;7302:8;7312:4;7318:2;7322:3;7327:7;7336:4;7266:35;:75::i;:::-;6421:927;6233:1115;;;;;:::o;12910:323::-;13060:8;13051:17;;:5;:17;;;;13043:71;;;;;;;;;;;;:::i;:::-;;;;;;;;;13162:8;13124:18;:25;13143:5;13124:25;;;;;;;;;;;;;;;:35;13150:8;13124:35;;;;;;;;;;;;;;;;:46;;;;;;;;;;;;;;;;;;13207:8;13185:41;;13200:5;13185:41;;;13217:8;13185:41;;;;;;:::i;:::-;;;;;;;;12910:323;;;:::o;4940:947::-;5135:1;5121:16;;:2;:16;;;;5113:66;;;;;;;;;;;;:::i;:::-;;;;;;;;;5190:16;5209:12;:10;:12::i;:::-;5190:31;;5231:20;5254:21;5272:2;5254:17;:21::i;:::-;5231:44;;5285:24;5312:25;5330:6;5312:17;:25::i;:::-;5285:52;;5348:60;5369:8;5379:4;5385:2;5389:3;5394:7;5403:4;5348:20;:60::i;:::-;5419:19;5441:9;:13;5451:2;5441:13;;;;;;;;;;;:19;5455:4;5441:19;;;;;;;;;;;;;;;;5419:41;;5493:6;5478:11;:21;;5470:76;;;;;;;;;;;;:::i;:::-;;;;;;;;;5616:6;5602:11;:20;5580:9;:13;5590:2;5580:13;;;;;;;;;;;:19;5594:4;5580:19;;;;;;;;;;;;;;;:42;;;;5663:6;5642:9;:13;5652:2;5642:13;;;;;;;;;;;:17;5656:2;5642:17;;;;;;;;;;;;;;;;:27;;;;;;;:::i;:::-;;;;;;;;5716:2;5685:46;;5710:4;5685:46;;5700:8;5685:46;;;5720:2;5724:6;5685:46;;;;;;;:::i;:::-;;;;;;;;5742:59;5762:8;5772:4;5778:2;5782:3;5787:7;5796:4;5742:19;:59::i;:::-;5812:68;5843:8;5853:4;5859:2;5863;5867:6;5875:4;5812:30;:68::i;:::-;5103:784;;;;4940:947;;;;;:::o;14169:214::-;;;;;;;:::o;15316:213::-;;;;;;;:::o;16266:792::-;16498:15;:2;:13;;;:15::i;:::-;16494:558;;;16550:2;16533:43;;;16577:8;16587:4;16593:3;16598:7;16607:4;16533:79;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;16529:513;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;16918:6;16911:14;;;;;;;;;;;:::i;:::-;;;;;;;;16529:513;;;16965:62;;;;;;;;;;:::i;:::-;;;;;;;;16529:513;16703:48;;;16691:60;;;:8;:60;;;;16687:157;;16775:50;;;;;;;;;;:::i;:::-;;;;;;;;16687:157;16613:245;16494:558;16266:792;;;;;;:::o;17064:193::-;17130:16;17158:22;17197:1;17183:16;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;17158:41;;17220:7;17209:5;17215:1;17209:8;;;;;;;;:::i;:::-;;;;;;;:18;;;;;17245:5;17238:12;;;17064:193;;;:::o;15535:725::-;15742:15;:2;:13;;;:15::i;:::-;15738:516;;;15794:2;15777:38;;;15816:8;15826:4;15832:2;15836:6;15844:4;15777:72;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;15773:471;;;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;16120:6;16113:14;;;;;;;;;;;:::i;:::-;;;;;;;;15773:471;;;16167:62;;;;;;;;;;:::i;:::-;;;;;;;;15773:471;15910:43;;;15898:55;;;:8;:55;;;;15894:152;;15977:50;;;;;;;;;;:::i;:::-;;;;;;;;15894:152;15850:210;15738:516;15535:725;;;;;;:::o;1175:320:5:-;1235:4;1487:1;1465:7;:19;;;:23;1458:30;;1175:320;;;:::o;7:75:12:-;40:6;73:2;67:9;57:19;;7:75;:::o;88:117::-;197:1;194;187:12;211:117;320:1;317;310:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:139::-;742:5;780:6;767:20;758:29;;796:33;823:5;796:33;:::i;:::-;696:139;;;;:::o;841:77::-;878:7;907:5;896:16;;841:77;;;:::o;924:122::-;997:24;1015:5;997:24;:::i;:::-;990:5;987:35;977:63;;1036:1;1033;1026:12;977:63;924:122;:::o;1052:139::-;1098:5;1136:6;1123:20;1114:29;;1152:33;1179:5;1152:33;:::i;:::-;1052:139;;;;:::o;1197:474::-;1265:6;1273;1322:2;1310:9;1301:7;1297:23;1293:32;1290:119;;;1328:79;;:::i;:::-;1290:119;1448:1;1473:53;1518:7;1509:6;1498:9;1494:22;1473:53;:::i;:::-;1463:63;;1419:117;1575:2;1601:53;1646:7;1637:6;1626:9;1622:22;1601:53;:::i;:::-;1591:63;;1546:118;1197:474;;;;;:::o;1677:118::-;1764:24;1782:5;1764:24;:::i;:::-;1759:3;1752:37;1677:118;;:::o;1801:222::-;1894:4;1932:2;1921:9;1917:18;1909:26;;1945:71;2013:1;2002:9;1998:17;1989:6;1945:71;:::i;:::-;1801:222;;;;:::o;2029:149::-;2065:7;2105:66;2098:5;2094:78;2083:89;;2029:149;;;:::o;2184:120::-;2256:23;2273:5;2256:23;:::i;:::-;2249:5;2246:34;2236:62;;2294:1;2291;2284:12;2236:62;2184:120;:::o;2310:137::-;2355:5;2393:6;2380:20;2371:29;;2409:32;2435:5;2409:32;:::i;:::-;2310:137;;;;:::o;2453:327::-;2511:6;2560:2;2548:9;2539:7;2535:23;2531:32;2528:119;;;2566:79;;:::i;:::-;2528:119;2686:1;2711:52;2755:7;2746:6;2735:9;2731:22;2711:52;:::i;:::-;2701:62;;2657:116;2453:327;;;;:::o;2786:90::-;2820:7;2863:5;2856:13;2849:21;2838:32;;2786:90;;;:::o;2882:109::-;2963:21;2978:5;2963:21;:::i;:::-;2958:3;2951:34;2882:109;;:::o;2997:210::-;3084:4;3122:2;3111:9;3107:18;3099:26;;3135:65;3197:1;3186:9;3182:17;3173:6;3135:65;:::i;:::-;2997:210;;;;:::o;3213:329::-;3272:6;3321:2;3309:9;3300:7;3296:23;3292:32;3289:119;;;3327:79;;:::i;:::-;3289:119;3447:1;3472:53;3517:7;3508:6;3497:9;3493:22;3472:53;:::i;:::-;3462:63;;3418:117;3213:329;;;;:::o;3548:99::-;3600:6;3634:5;3628:12;3618:22;;3548:99;;;:::o;3653:169::-;3737:11;3771:6;3766:3;3759:19;3811:4;3806:3;3802:14;3787:29;;3653:169;;;;:::o;3828:307::-;3896:1;3906:113;3920:6;3917:1;3914:13;3906:113;;;4005:1;4000:3;3996:11;3990:18;3986:1;3981:3;3977:11;3970:39;3942:2;3939:1;3935:10;3930:15;;3906:113;;;4037:6;4034:1;4031:13;4028:101;;;4117:1;4108:6;4103:3;4099:16;4092:27;4028:101;3877:258;3828:307;;;:::o;4141:102::-;4182:6;4233:2;4229:7;4224:2;4217:5;4213:14;4209:28;4199:38;;4141:102;;;:::o;4249:364::-;4337:3;4365:39;4398:5;4365:39;:::i;:::-;4420:71;4484:6;4479:3;4420:71;:::i;:::-;4413:78;;4500:52;4545:6;4540:3;4533:4;4526:5;4522:16;4500:52;:::i;:::-;4577:29;4599:6;4577:29;:::i;:::-;4572:3;4568:39;4561:46;;4341:272;4249:364;;;;:::o;4619:313::-;4732:4;4770:2;4759:9;4755:18;4747:26;;4819:9;4813:4;4809:20;4805:1;4794:9;4790:17;4783:47;4847:78;4920:4;4911:6;4847:78;:::i;:::-;4839:86;;4619:313;;;;:::o;4938:117::-;5047:1;5044;5037:12;5061:180;5109:77;5106:1;5099:88;5206:4;5203:1;5196:15;5230:4;5227:1;5220:15;5247:281;5330:27;5352:4;5330:27;:::i;:::-;5322:6;5318:40;5460:6;5448:10;5445:22;5424:18;5412:10;5409:34;5406:62;5403:88;;;5471:18;;:::i;:::-;5403:88;5511:10;5507:2;5500:22;5290:238;5247:281;;:::o;5534:129::-;5568:6;5595:20;;:::i;:::-;5585:30;;5624:33;5652:4;5644:6;5624:33;:::i;:::-;5534:129;;;:::o;5669:311::-;5746:4;5836:18;5828:6;5825:30;5822:56;;;5858:18;;:::i;:::-;5822:56;5908:4;5900:6;5896:17;5888:25;;5968:4;5962;5958:15;5950:23;;5669:311;;;:::o;5986:117::-;6095:1;6092;6085:12;6126:710;6222:5;6247:81;6263:64;6320:6;6263:64;:::i;:::-;6247:81;:::i;:::-;6238:90;;6348:5;6377:6;6370:5;6363:21;6411:4;6404:5;6400:16;6393:23;;6464:4;6456:6;6452:17;6444:6;6440:30;6493:3;6485:6;6482:15;6479:122;;;6512:79;;:::i;:::-;6479:122;6627:6;6610:220;6644:6;6639:3;6636:15;6610:220;;;6719:3;6748:37;6781:3;6769:10;6748:37;:::i;:::-;6743:3;6736:50;6815:4;6810:3;6806:14;6799:21;;6686:144;6670:4;6665:3;6661:14;6654:21;;6610:220;;;6614:21;6228:608;;6126:710;;;;;:::o;6859:370::-;6930:5;6979:3;6972:4;6964:6;6960:17;6956:27;6946:122;;6987:79;;:::i;:::-;6946:122;7104:6;7091:20;7129:94;7219:3;7211:6;7204:4;7196:6;7192:17;7129:94;:::i;:::-;7120:103;;6936:293;6859:370;;;;:::o;7235:117::-;7344:1;7341;7334:12;7358:307;7419:4;7509:18;7501:6;7498:30;7495:56;;;7531:18;;:::i;:::-;7495:56;7569:29;7591:6;7569:29;:::i;:::-;7561:37;;7653:4;7647;7643:15;7635:23;;7358:307;;;:::o;7671:154::-;7755:6;7750:3;7745;7732:30;7817:1;7808:6;7803:3;7799:16;7792:27;7671:154;;;:::o;7831:410::-;7908:5;7933:65;7949:48;7990:6;7949:48;:::i;:::-;7933:65;:::i;:::-;7924:74;;8021:6;8014:5;8007:21;8059:4;8052:5;8048:16;8097:3;8088:6;8083:3;8079:16;8076:25;8073:112;;;8104:79;;:::i;:::-;8073:112;8194:41;8228:6;8223:3;8218;8194:41;:::i;:::-;7914:327;7831:410;;;;;:::o;8260:338::-;8315:5;8364:3;8357:4;8349:6;8345:17;8341:27;8331:122;;8372:79;;:::i;:::-;8331:122;8489:6;8476:20;8514:78;8588:3;8580:6;8573:4;8565:6;8561:17;8514:78;:::i;:::-;8505:87;;8321:277;8260:338;;;;:::o;8604:1509::-;8758:6;8766;8774;8782;8790;8839:3;8827:9;8818:7;8814:23;8810:33;8807:120;;;8846:79;;:::i;:::-;8807:120;8966:1;8991:53;9036:7;9027:6;9016:9;9012:22;8991:53;:::i;:::-;8981:63;;8937:117;9093:2;9119:53;9164:7;9155:6;9144:9;9140:22;9119:53;:::i;:::-;9109:63;;9064:118;9249:2;9238:9;9234:18;9221:32;9280:18;9272:6;9269:30;9266:117;;;9302:79;;:::i;:::-;9266:117;9407:78;9477:7;9468:6;9457:9;9453:22;9407:78;:::i;:::-;9397:88;;9192:303;9562:2;9551:9;9547:18;9534:32;9593:18;9585:6;9582:30;9579:117;;;9615:79;;:::i;:::-;9579:117;9720:78;9790:7;9781:6;9770:9;9766:22;9720:78;:::i;:::-;9710:88;;9505:303;9875:3;9864:9;9860:19;9847:33;9907:18;9899:6;9896:30;9893:117;;;9929:79;;:::i;:::-;9893:117;10034:62;10088:7;10079:6;10068:9;10064:22;10034:62;:::i;:::-;10024:72;;9818:288;8604:1509;;;;;;;;:::o;10119:311::-;10196:4;10286:18;10278:6;10275:30;10272:56;;;10308:18;;:::i;:::-;10272:56;10358:4;10350:6;10346:17;10338:25;;10418:4;10412;10408:15;10400:23;;10119:311;;;:::o;10453:710::-;10549:5;10574:81;10590:64;10647:6;10590:64;:::i;:::-;10574:81;:::i;:::-;10565:90;;10675:5;10704:6;10697:5;10690:21;10738:4;10731:5;10727:16;10720:23;;10791:4;10783:6;10779:17;10771:6;10767:30;10820:3;10812:6;10809:15;10806:122;;;10839:79;;:::i;:::-;10806:122;10954:6;10937:220;10971:6;10966:3;10963:15;10937:220;;;11046:3;11075:37;11108:3;11096:10;11075:37;:::i;:::-;11070:3;11063:50;11142:4;11137:3;11133:14;11126:21;;11013:144;10997:4;10992:3;10988:14;10981:21;;10937:220;;;10941:21;10555:608;;10453:710;;;;;:::o;11186:370::-;11257:5;11306:3;11299:4;11291:6;11287:17;11283:27;11273:122;;11314:79;;:::i;:::-;11273:122;11431:6;11418:20;11456:94;11546:3;11538:6;11531:4;11523:6;11519:17;11456:94;:::i;:::-;11447:103;;11263:293;11186:370;;;;:::o;11562:894::-;11680:6;11688;11737:2;11725:9;11716:7;11712:23;11708:32;11705:119;;;11743:79;;:::i;:::-;11705:119;11891:1;11880:9;11876:17;11863:31;11921:18;11913:6;11910:30;11907:117;;;11943:79;;:::i;:::-;11907:117;12048:78;12118:7;12109:6;12098:9;12094:22;12048:78;:::i;:::-;12038:88;;11834:302;12203:2;12192:9;12188:18;12175:32;12234:18;12226:6;12223:30;12220:117;;;12256:79;;:::i;:::-;12220:117;12361:78;12431:7;12422:6;12411:9;12407:22;12361:78;:::i;:::-;12351:88;;12146:303;11562:894;;;;;:::o;12462:114::-;12529:6;12563:5;12557:12;12547:22;;12462:114;;;:::o;12582:184::-;12681:11;12715:6;12710:3;12703:19;12755:4;12750:3;12746:14;12731:29;;12582:184;;;;:::o;12772:132::-;12839:4;12862:3;12854:11;;12892:4;12887:3;12883:14;12875:22;;12772:132;;;:::o;12910:108::-;12987:24;13005:5;12987:24;:::i;:::-;12982:3;12975:37;12910:108;;:::o;13024:179::-;13093:10;13114:46;13156:3;13148:6;13114:46;:::i;:::-;13192:4;13187:3;13183:14;13169:28;;13024:179;;;;:::o;13209:113::-;13279:4;13311;13306:3;13302:14;13294:22;;13209:113;;;:::o;13358:732::-;13477:3;13506:54;13554:5;13506:54;:::i;:::-;13576:86;13655:6;13650:3;13576:86;:::i;:::-;13569:93;;13686:56;13736:5;13686:56;:::i;:::-;13765:7;13796:1;13781:284;13806:6;13803:1;13800:13;13781:284;;;13882:6;13876:13;13909:63;13968:3;13953:13;13909:63;:::i;:::-;13902:70;;13995:60;14048:6;13995:60;:::i;:::-;13985:70;;13841:224;13828:1;13825;13821:9;13816:14;;13781:284;;;13785:14;14081:3;14074:10;;13482:608;;;13358:732;;;;:::o;14096:373::-;14239:4;14277:2;14266:9;14262:18;14254:26;;14326:9;14320:4;14316:20;14312:1;14301:9;14297:17;14290:47;14354:108;14457:4;14448:6;14354:108;:::i;:::-;14346:116;;14096:373;;;;:::o;14475:116::-;14545:21;14560:5;14545:21;:::i;:::-;14538:5;14535:32;14525:60;;14581:1;14578;14571:12;14525:60;14475:116;:::o;14597:133::-;14640:5;14678:6;14665:20;14656:29;;14694:30;14718:5;14694:30;:::i;:::-;14597:133;;;;:::o;14736:468::-;14801:6;14809;14858:2;14846:9;14837:7;14833:23;14829:32;14826:119;;;14864:79;;:::i;:::-;14826:119;14984:1;15009:53;15054:7;15045:6;15034:9;15030:22;15009:53;:::i;:::-;14999:63;;14955:117;15111:2;15137:50;15179:7;15170:6;15159:9;15155:22;15137:50;:::i;:::-;15127:60;;15082:115;14736:468;;;;;:::o;15210:474::-;15278:6;15286;15335:2;15323:9;15314:7;15310:23;15306:32;15303:119;;;15341:79;;:::i;:::-;15303:119;15461:1;15486:53;15531:7;15522:6;15511:9;15507:22;15486:53;:::i;:::-;15476:63;;15432:117;15588:2;15614:53;15659:7;15650:6;15639:9;15635:22;15614:53;:::i;:::-;15604:63;;15559:118;15210:474;;;;;:::o;15690:1089::-;15794:6;15802;15810;15818;15826;15875:3;15863:9;15854:7;15850:23;15846:33;15843:120;;;15882:79;;:::i;:::-;15843:120;16002:1;16027:53;16072:7;16063:6;16052:9;16048:22;16027:53;:::i;:::-;16017:63;;15973:117;16129:2;16155:53;16200:7;16191:6;16180:9;16176:22;16155:53;:::i;:::-;16145:63;;16100:118;16257:2;16283:53;16328:7;16319:6;16308:9;16304:22;16283:53;:::i;:::-;16273:63;;16228:118;16385:2;16411:53;16456:7;16447:6;16436:9;16432:22;16411:53;:::i;:::-;16401:63;;16356:118;16541:3;16530:9;16526:19;16513:33;16573:18;16565:6;16562:30;16559:117;;;16595:79;;:::i;:::-;16559:117;16700:62;16754:7;16745:6;16734:9;16730:22;16700:62;:::i;:::-;16690:72;;16484:288;15690:1089;;;;;;;;:::o;16785:229::-;16925:34;16921:1;16913:6;16909:14;16902:58;16994:12;16989:2;16981:6;16977:15;16970:37;16785:229;:::o;17020:366::-;17162:3;17183:67;17247:2;17242:3;17183:67;:::i;:::-;17176:74;;17259:93;17348:3;17259:93;:::i;:::-;17377:2;17372:3;17368:12;17361:19;;17020:366;;;:::o;17392:419::-;17558:4;17596:2;17585:9;17581:18;17573:26;;17645:9;17639:4;17635:20;17631:1;17620:9;17616:17;17609:47;17673:131;17799:4;17673:131;:::i;:::-;17665:139;;17392:419;;;:::o;17817:180::-;17865:77;17862:1;17855:88;17962:4;17959:1;17952:15;17986:4;17983:1;17976:15;18003:320;18047:6;18084:1;18078:4;18074:12;18064:22;;18131:1;18125:4;18121:12;18152:18;18142:81;;18208:4;18200:6;18196:17;18186:27;;18142:81;18270:2;18262:6;18259:14;18239:18;18236:38;18233:84;;;18289:18;;:::i;:::-;18233:84;18054:269;18003:320;;;:::o;18329:233::-;18469:34;18465:1;18457:6;18453:14;18446:58;18538:16;18533:2;18525:6;18521:15;18514:41;18329:233;:::o;18568:366::-;18710:3;18731:67;18795:2;18790:3;18731:67;:::i;:::-;18724:74;;18807:93;18896:3;18807:93;:::i;:::-;18925:2;18920:3;18916:12;18909:19;;18568:366;;;:::o;18940:419::-;19106:4;19144:2;19133:9;19129:18;19121:26;;19193:9;19187:4;19183:20;19179:1;19168:9;19164:17;19157:47;19221:131;19347:4;19221:131;:::i;:::-;19213:139;;18940:419;;;:::o;19365:228::-;19505:34;19501:1;19493:6;19489:14;19482:58;19574:11;19569:2;19561:6;19557:15;19550:36;19365:228;:::o;19599:366::-;19741:3;19762:67;19826:2;19821:3;19762:67;:::i;:::-;19755:74;;19838:93;19927:3;19838:93;:::i;:::-;19956:2;19951:3;19947:12;19940:19;;19599:366;;;:::o;19971:419::-;20137:4;20175:2;20164:9;20160:18;20152:26;;20224:9;20218:4;20214:20;20210:1;20199:9;20195:17;20188:47;20252:131;20378:4;20252:131;:::i;:::-;20244:139;;19971:419;;;:::o;20396:180::-;20444:77;20441:1;20434:88;20541:4;20538:1;20531:15;20565:4;20562:1;20555:15;20582:180;20630:77;20627:1;20620:88;20727:4;20724:1;20717:15;20751:4;20748:1;20741:15;20768:233;20807:3;20830:24;20848:5;20830:24;:::i;:::-;20821:33;;20876:66;20869:5;20866:77;20863:103;;;20946:18;;:::i;:::-;20863:103;20993:1;20986:5;20982:13;20975:20;;20768:233;;;:::o;21007:227::-;21147:34;21143:1;21135:6;21131:14;21124:58;21216:10;21211:2;21203:6;21199:15;21192:35;21007:227;:::o;21240:366::-;21382:3;21403:67;21467:2;21462:3;21403:67;:::i;:::-;21396:74;;21479:93;21568:3;21479:93;:::i;:::-;21597:2;21592:3;21588:12;21581:19;;21240:366;;;:::o;21612:419::-;21778:4;21816:2;21805:9;21801:18;21793:26;;21865:9;21859:4;21855:20;21851:1;21840:9;21836:17;21829:47;21893:131;22019:4;21893:131;:::i;:::-;21885:139;;21612:419;;;:::o;22037:224::-;22177:34;22173:1;22165:6;22161:14;22154:58;22246:7;22241:2;22233:6;22229:15;22222:32;22037:224;:::o;22267:366::-;22409:3;22430:67;22494:2;22489:3;22430:67;:::i;:::-;22423:74;;22506:93;22595:3;22506:93;:::i;:::-;22624:2;22619:3;22615:12;22608:19;;22267:366;;;:::o;22639:419::-;22805:4;22843:2;22832:9;22828:18;22820:26;;22892:9;22886:4;22882:20;22878:1;22867:9;22863:17;22856:47;22920:131;23046:4;22920:131;:::i;:::-;22912:139;;22639:419;;;:::o;23064:229::-;23204:34;23200:1;23192:6;23188:14;23181:58;23273:12;23268:2;23260:6;23256:15;23249:37;23064:229;:::o;23299:366::-;23441:3;23462:67;23526:2;23521:3;23462:67;:::i;:::-;23455:74;;23538:93;23627:3;23538:93;:::i;:::-;23656:2;23651:3;23647:12;23640:19;;23299:366;;;:::o;23671:419::-;23837:4;23875:2;23864:9;23860:18;23852:26;;23924:9;23918:4;23914:20;23910:1;23899:9;23895:17;23888:47;23952:131;24078:4;23952:131;:::i;:::-;23944:139;;23671:419;;;:::o;24096:305::-;24136:3;24155:20;24173:1;24155:20;:::i;:::-;24150:25;;24189:20;24207:1;24189:20;:::i;:::-;24184:25;;24343:1;24275:66;24271:74;24268:1;24265:81;24262:107;;;24349:18;;:::i;:::-;24262:107;24393:1;24390;24386:9;24379:16;;24096:305;;;;:::o;24407:634::-;24628:4;24666:2;24655:9;24651:18;24643:26;;24715:9;24709:4;24705:20;24701:1;24690:9;24686:17;24679:47;24743:108;24846:4;24837:6;24743:108;:::i;:::-;24735:116;;24898:9;24892:4;24888:20;24883:2;24872:9;24868:18;24861:48;24926:108;25029:4;25020:6;24926:108;:::i;:::-;24918:116;;24407:634;;;;;:::o;25047:228::-;25187:34;25183:1;25175:6;25171:14;25164:58;25256:11;25251:2;25243:6;25239:15;25232:36;25047:228;:::o;25281:366::-;25423:3;25444:67;25508:2;25503:3;25444:67;:::i;:::-;25437:74;;25520:93;25609:3;25520:93;:::i;:::-;25638:2;25633:3;25629:12;25622:19;;25281:366;;;:::o;25653:419::-;25819:4;25857:2;25846:9;25842:18;25834:26;;25906:9;25900:4;25896:20;25892:1;25881:9;25877:17;25870:47;25934:131;26060:4;25934:131;:::i;:::-;25926:139;;25653:419;;;:::o;26078:332::-;26199:4;26237:2;26226:9;26222:18;26214:26;;26250:71;26318:1;26307:9;26303:17;26294:6;26250:71;:::i;:::-;26331:72;26399:2;26388:9;26384:18;26375:6;26331:72;:::i;:::-;26078:332;;;;;:::o;26416:118::-;26503:24;26521:5;26503:24;:::i;:::-;26498:3;26491:37;26416:118;;:::o;26540:98::-;26591:6;26625:5;26619:12;26609:22;;26540:98;;;:::o;26644:168::-;26727:11;26761:6;26756:3;26749:19;26801:4;26796:3;26792:14;26777:29;;26644:168;;;;:::o;26818:360::-;26904:3;26932:38;26964:5;26932:38;:::i;:::-;26986:70;27049:6;27044:3;26986:70;:::i;:::-;26979:77;;27065:52;27110:6;27105:3;27098:4;27091:5;27087:16;27065:52;:::i;:::-;27142:29;27164:6;27142:29;:::i;:::-;27137:3;27133:39;27126:46;;26908:270;26818:360;;;;:::o;27184:1053::-;27507:4;27545:3;27534:9;27530:19;27522:27;;27559:71;27627:1;27616:9;27612:17;27603:6;27559:71;:::i;:::-;27640:72;27708:2;27697:9;27693:18;27684:6;27640:72;:::i;:::-;27759:9;27753:4;27749:20;27744:2;27733:9;27729:18;27722:48;27787:108;27890:4;27881:6;27787:108;:::i;:::-;27779:116;;27942:9;27936:4;27932:20;27927:2;27916:9;27912:18;27905:48;27970:108;28073:4;28064:6;27970:108;:::i;:::-;27962:116;;28126:9;28120:4;28116:20;28110:3;28099:9;28095:19;28088:49;28154:76;28225:4;28216:6;28154:76;:::i;:::-;28146:84;;27184:1053;;;;;;;;:::o;28243:141::-;28299:5;28330:6;28324:13;28315:22;;28346:32;28372:5;28346:32;:::i;:::-;28243:141;;;;:::o;28390:349::-;28459:6;28508:2;28496:9;28487:7;28483:23;28479:32;28476:119;;;28514:79;;:::i;:::-;28476:119;28634:1;28659:63;28714:7;28705:6;28694:9;28690:22;28659:63;:::i;:::-;28649:73;;28605:127;28390:349;;;;:::o;28745:106::-;28789:8;28838:5;28833:3;28829:15;28808:36;;28745:106;;;:::o;28857:183::-;28892:3;28930:1;28912:16;28909:23;28906:128;;;28968:1;28965;28962;28947:23;28990:34;29021:1;29015:8;28990:34;:::i;:::-;28983:41;;28906:128;28857:183;:::o;29046:711::-;29085:3;29123:4;29105:16;29102:26;29099:39;;;29131:5;;29099:39;29160:20;;:::i;:::-;29235:1;29217:16;29213:24;29210:1;29204:4;29189:49;29268:4;29262:11;29367:16;29360:4;29352:6;29348:17;29345:39;29312:18;29304:6;29301:30;29285:113;29282:146;;;29413:5;;;;29282:146;29459:6;29453:4;29449:17;29495:3;29489:10;29522:18;29514:6;29511:30;29508:43;;;29544:5;;;;;;29508:43;29592:6;29585:4;29580:3;29576:14;29572:27;29651:1;29633:16;29629:24;29623:4;29619:35;29614:3;29611:44;29608:57;;;29658:5;;;;;;;29608:57;29675;29723:6;29717:4;29713:17;29705:6;29701:30;29695:4;29675:57;:::i;:::-;29748:3;29741:10;;29089:668;;;;;29046:711;;:::o;29763:239::-;29903:34;29899:1;29891:6;29887:14;29880:58;29972:22;29967:2;29959:6;29955:15;29948:47;29763:239;:::o;30008:366::-;30150:3;30171:67;30235:2;30230:3;30171:67;:::i;:::-;30164:74;;30247:93;30336:3;30247:93;:::i;:::-;30365:2;30360:3;30356:12;30349:19;;30008:366;;;:::o;30380:419::-;30546:4;30584:2;30573:9;30569:18;30561:26;;30633:9;30627:4;30623:20;30619:1;30608:9;30604:17;30597:47;30661:131;30787:4;30661:131;:::i;:::-;30653:139;;30380:419;;;:::o;30805:227::-;30945:34;30941:1;30933:6;30929:14;30922:58;31014:10;31009:2;31001:6;30997:15;30990:35;30805:227;:::o;31038:366::-;31180:3;31201:67;31265:2;31260:3;31201:67;:::i;:::-;31194:74;;31277:93;31366:3;31277:93;:::i;:::-;31395:2;31390:3;31386:12;31379:19;;31038:366;;;:::o;31410:419::-;31576:4;31614:2;31603:9;31599:18;31591:26;;31663:9;31657:4;31653:20;31649:1;31638:9;31634:17;31627:47;31691:131;31817:4;31691:131;:::i;:::-;31683:139;;31410:419;;;:::o;31835:751::-;32058:4;32096:3;32085:9;32081:19;32073:27;;32110:71;32178:1;32167:9;32163:17;32154:6;32110:71;:::i;:::-;32191:72;32259:2;32248:9;32244:18;32235:6;32191:72;:::i;:::-;32273;32341:2;32330:9;32326:18;32317:6;32273:72;:::i;:::-;32355;32423:2;32412:9;32408:18;32399:6;32355:72;:::i;:::-;32475:9;32469:4;32465:20;32459:3;32448:9;32444:19;32437:49;32503:76;32574:4;32565:6;32503:76;:::i;:::-;32495:84;;31835:751;;;;;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.9;\r\nimport \"@openzeppelin/contracts/token/ERC1155/ERC1155.sol\";\r\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\r\n\r\ncontract Test is ERC1155 {\r\n    // uint public constant Gold = 2;\r\n    // uint hi = 3;\r\n    // constructor()\r\n    //     public\r\n    //     ERC1155(\r\n    //         \"https://gateway.pinata.cloud/ipfs/QmUDGgUf8jmD1Ckqqh6Pe9K1P68NjMbVCM7dgoKqURt7LJ{id}.json\"\r\n    //     )\r\n    // {}\r\n    constructor() public ERC1155(\"\") {}\r\n\r\n    function HI() public returns (string memory) {\r\n        return \"hi\";\r\n    }\r\n}\r\n",
@@ -16177,6 +16772,24 @@
     "nodes": [
       {
         "id": 1936,
+=======
+  "sourceMap": "118:114:0:-:0;;;147:1;137:11;;118:114;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "118:114:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;154:76;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;;188:13;212:11;;;;;;;;;;;;;;;;;;;154:76;:::o;7:99:1:-;59:6;93:5;87:12;77:22;;7:99;;;:::o;112:169::-;196:11;230:6;225:3;218:19;270:4;265:3;261:14;246:29;;112:169;;;;:::o;287:307::-;355:1;365:113;379:6;376:1;373:13;365:113;;;464:1;459:3;455:11;449:18;445:1;440:3;436:11;429:39;401:2;398:1;394:10;389:15;;365:113;;;496:6;493:1;490:13;487:101;;;576:1;567:6;562:3;558:16;551:27;487:101;336:258;287:307;;;:::o;600:102::-;641:6;692:2;688:7;683:2;676:5;672:14;668:28;658:38;;600:102;;;:::o;708:364::-;796:3;824:39;857:5;824:39;:::i;:::-;879:71;943:6;938:3;879:71;:::i;:::-;872:78;;959:52;1004:6;999:3;992:4;985:5;981:16;959:52;:::i;:::-;1036:29;1058:6;1036:29;:::i;:::-;1031:3;1027:39;1020:46;;800:272;708:364;;;;:::o;1078:313::-;1191:4;1229:2;1218:9;1214:18;1206:26;;1278:9;1272:4;1268:20;1264:1;1253:9;1249:17;1242:47;1306:78;1379:4;1370:6;1306:78;:::i;:::-;1298:86;;1078:313;;;;:::o",
+  "source": "// SPDX_License-Identifier: MIT\npragma solidity ^0.8.9;\n// import \"@openzeppelin/contracts/token/ERC721/ERC721.sol\";\n\ncontract Test{\n    uint hi = 3;\n    function HI() public pure returns(string memory){\n        return \"hi\";\n    }\n}",
+  "sourcePath": "/Users/gyeonghwan/2023newsick/contracts/test.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/test.sol",
+    "exportedSymbols": {
+      "Test": [
+        13
+      ]
+    },
+    "id": 14,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+>>>>>>> main
         "literals": [
           "solidity",
           "^",
@@ -16184,6 +16797,7 @@
           ".9"
         ],
         "nodeType": "PragmaDirective",
+<<<<<<< HEAD
         "src": "33:23:10"
       },
       {
@@ -16226,10 +16840,18 @@
             "src": "192:7:10"
           }
         ],
+=======
+        "src": "32:23:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+>>>>>>> main
         "canonicalName": "Test",
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
+<<<<<<< HEAD
         "id": 1956,
         "linearizedBaseContracts": [
           1956,
@@ -16313,37 +16935,115 @@
               "id": 1954,
               "nodeType": "Block",
               "src": "550:30:10",
+=======
+        "id": 13,
+        "linearizedBaseContracts": [
+          13
+        ],
+        "name": "Test",
+        "nameLocation": "127:4:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "mutability": "mutable",
+            "name": "hi",
+            "nameLocation": "142:2:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 13,
+            "src": "137:11:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "137:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "33",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "147:1:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3_by_1",
+                "typeString": "int_const 3"
+              },
+              "value": "3"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 11,
+              "nodeType": "Block",
+              "src": "202:28:0",
+>>>>>>> main
               "statements": [
                 {
                   "expression": {
                     "hexValue": "6869",
+<<<<<<< HEAD
                     "id": 1952,
+=======
+                    "id": 9,
+>>>>>>> main
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "string",
                     "lValueRequested": false,
                     "nodeType": "Literal",
+<<<<<<< HEAD
                     "src": "568:4:10",
+=======
+                    "src": "219:4:0",
+>>>>>>> main
                     "typeDescriptions": {
                       "typeIdentifier": "t_stringliteral_7624778dedc75f8b322b9fa1632a610d40b85e106c7d9bf0e743a9ce291b9c6f",
                       "typeString": "literal_string \"hi\""
                     },
                     "value": "hi"
                   },
+<<<<<<< HEAD
                   "functionReturnParameters": 1951,
                   "id": 1953,
                   "nodeType": "Return",
                   "src": "561:11:10"
+=======
+                  "functionReturnParameters": 8,
+                  "id": 10,
+                  "nodeType": "Return",
+                  "src": "212:11:0"
+>>>>>>> main
                 }
               ]
             },
             "functionSelector": "f2e8dfdb",
+<<<<<<< HEAD
             "id": 1955,
+=======
+            "id": 12,
+>>>>>>> main
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "HI",
+<<<<<<< HEAD
             "nameLocation": "514:2:10",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -16354,17 +17054,38 @@
             },
             "returnParameters": {
               "id": 1951,
+=======
+            "nameLocation": "163:2:0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "165:2:0"
+            },
+            "returnParameters": {
+              "id": 8,
+>>>>>>> main
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
+<<<<<<< HEAD
                   "id": 1950,
+=======
+                  "id": 7,
+>>>>>>> main
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
+<<<<<<< HEAD
                   "scope": 1955,
                   "src": "535:13:10",
+=======
+                  "scope": 12,
+                  "src": "188:13:0",
+>>>>>>> main
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -16372,10 +17093,17 @@
                     "typeString": "string"
                   },
                   "typeName": {
+<<<<<<< HEAD
                     "id": 1949,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "535:6:10",
+=======
+                    "id": 6,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "188:6:0",
+>>>>>>> main
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -16384,21 +17112,38 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "534:15:10"
             },
             "scope": 1956,
             "src": "505:75:10",
             "stateMutability": "nonpayable",
+=======
+              "src": "187:15:0"
+            },
+            "scope": 13,
+            "src": "154:76:0",
+            "stateMutability": "pure",
+>>>>>>> main
             "virtual": false,
             "visibility": "public"
           }
         ],
+<<<<<<< HEAD
         "scope": 1957,
         "src": "175:408:10",
         "usedErrors": []
       }
     ],
     "src": "33:552:10"
+=======
+        "scope": 14,
+        "src": "118:114:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:200:0"
+>>>>>>> main
   },
   "compiler": {
     "name": "solc",
@@ -16413,6 +17158,7 @@
     }
   },
   "schemaVersion": "3.4.11",
+<<<<<<< HEAD
   "updatedAt": "2023-01-06T07:14:10.652Z",
   "devdoc": {
     "kind": "dev",
@@ -16442,6 +17188,13 @@
         "details": "See {IERC1155MetadataURI-uri}. This implementation returns the same URI for *all* token types. It relies on the token type ID substitution mechanism https://eips.ethereum.org/EIPS/eip-1155#metadata[defined in the EIP]. Clients calling this function must replace the `\\{id\\}` substring with the actual token type ID."
       }
     },
+=======
+  "updatedAt": "2023-01-05T06:21:18.324Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+>>>>>>> main
     "version": 1
   },
   "userdoc": {
