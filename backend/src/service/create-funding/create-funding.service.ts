@@ -1,5 +1,4 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { funding } from '@prisma/client';
 import { createFundingDto } from 'src/dto/create-funding/create-funding.dto';
 import { fundingOfficialsDto } from 'src/dto/create-funding/funding-officials.dto';
 import { PrismaService } from 'src/prisma.service';
@@ -34,6 +33,7 @@ export class CreateFundingService {
       );
     }
   }
+
   async fundingSingerCreate(singer_dto: fundingOfficialsDto, id: number) {
     singer_dto.funding_id = id;
     try {
