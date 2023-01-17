@@ -73,9 +73,6 @@ model funding{
   creator_id Int 
   creator_wallet_address String
   category String?
-  music_maker_info_url String? @db.VarChar(300) // sns or info
-  lyrics_maker_info_url String? @db.VarChar(300)// sns or info
-  singer_info_url String? @db.VarChar(300)
   music_feel Int @default(0)
   funding_cover_image String @default("default_profile_image.png")
   funding_info String @db.VarChar(10000)
@@ -95,6 +92,7 @@ model funding_music_maker{
   sex String?
   age Int?
   about_me String? @db.VarChar(3000)
+  music_maker_info_url String? @db.VarChar(300) // sns or info
 }
 
 model funding_lyrics_maker{
@@ -105,6 +103,7 @@ model funding_lyrics_maker{
   sex String?
   age Int?
   about_me String? @db.VarChar(3000)
+  lyrics_maker_info_url String? @db.VarChar(300)// sns or info
 }
 
 model funding_singer{
@@ -115,6 +114,7 @@ model funding_singer{
   sex String?
   age Int?
   about_me String? @db.VarChar(3000)
+  singer_info_url String? @db.VarChar(300)
 }
 
 model favorites{
