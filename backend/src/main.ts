@@ -12,6 +12,7 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
+
   /** 두번째 파라미터 config == ./utils에 들어있음 */
   setupSwagger(app);
   /** 첫번째 파라미터는 경로 localhost:${port}/api 로 들어가면 swagger 문서 볼수 있음 */

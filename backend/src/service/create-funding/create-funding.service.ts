@@ -29,8 +29,11 @@ export class CreateFundingService {
       funding_singer,
     } = fundingDto;
     const creator_id = await this.findCreatorId(funding.creator_wallet_address);
+    let fileurl = 'default_profile_image.png';
+    if (file !== undefined) {
+      fileurl = await this.uploadService.uploadFile(file);
+    }
     try {
-      const fileurl = await this.uploadService.uploadFile(file);
       const result = await this.prismaService.funding.create({
         data: {
           creator_id: creator_id,

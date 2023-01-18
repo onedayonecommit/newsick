@@ -19,6 +19,8 @@ import { QueryService } from './service/funding/query.service';
 import { QueryController } from './controller/funding/query.controller';
 import { FundinglistController } from './controller/funding/fundinglist.controller';
 import { FundinglistService } from './service/funding/fundinglist.service';
+import { CreatorApplicationService } from './service/creator-application/creator-application.service';
+import { CreatorApplicationController } from './controller/creator-application/creator-application.controller';
 @Module({
   imports: [
     EnvModule,
@@ -33,6 +35,7 @@ import { FundinglistService } from './service/funding/fundinglist.service';
     CreateFundingController,
     QueryController,
     FundinglistController,
+    CreatorApplicationController,
   ],
   providers: [
     CreateUserService,
@@ -45,6 +48,7 @@ import { FundinglistService } from './service/funding/fundinglist.service';
     CreateFundingService,
     QueryService,
     FundinglistService,
+    CreatorApplicationService,
   ],
 })
 export class AppModule {}
