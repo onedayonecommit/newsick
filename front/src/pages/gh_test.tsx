@@ -11,14 +11,12 @@ const GhTest = () => {
 
       const formData = new FormData();
       formData.append("images", imgData);
-
+      formData.append("key", "sdjfkflfl");
       await axios({
         method: "post",
-        url: "",
-        data: {
-          image: formData,
-          msg: "rudghksahdchddl",
-        },
+
+        url: "http://192.168.0.188:3000/test/hi",
+        data: formData,
         headers: {
           "Content-Type": "multipart/form-data",
         },
