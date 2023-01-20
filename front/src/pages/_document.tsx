@@ -43,7 +43,6 @@ export default class NewsicDoc extends Document {
           <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
         </Head>
         <body>
-          이건 최상위
           <Main />
           <NextScript />
         </body>

@@ -20,11 +20,12 @@ model users{
   updated_at DateTime @default(now()) @updatedAt
   ticket Boolean @default(false)
   signup_status Boolean @default(false)
-  user_profile_image String @default("")
+  user_profile_image String @default("default_profile_image.png")
   ticket_list tickets[]
   creator_list creator[]
   favoliste favorites[]
   playlist playlist[]
+  fundinglist funding[]
 }
 
 model creator{
@@ -68,13 +69,52 @@ model musics{
 
 model funding{
   id Int @default(autoincrement()) @id
-  category String
-  music_maker_info String? // sns or info
-  lyrics_maker_info String? // sns or info
-  singer_info String
-  music_feel String
-  funding_info String
-  sale_date Int
+  creator_idss users @relation(fields: [creator_id],references: [id])
+  creator_id Int 
+  creator_wallet_address String
+  category String?
+  music_maker_info_url String? @db.VarChar(300) // sns or info
+  lyrics_maker_info_url String? @db.VarChar(300)// sns or info
+  singer_info_url String? @db.VarChar(300)
+  music_feel Int @default(0)
+  funding_cover_image String @default("default_profile_image.png")
+  funding_info String @db.VarChar(10000)
+  created_at DateTime @default(now())
+  start_date DateTime
+  sale_date DateTime
+  music_maker funding_music_maker[]
+  lyrics_maker funding_lyrics_maker[]
+  singer funding_singer[]
+}
+
+model funding_music_maker{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  name String?
+  sex String?
+  age Int?
+  about_me String? @db.VarChar(3000)
+}
+
+model funding_lyrics_maker{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  name String?
+  sex String?
+  age Int?
+  about_me String? @db.VarChar(3000)
+}
+
+model funding_singer{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  name String?
+  sex String?
+  age Int?
+  about_me String? @db.VarChar(3000)
 }
 
 model favorites{
@@ -92,5 +132,7 @@ model playlist{
   musics_id musics @relation(fields: [music_id],references: [id])
   music_id Int
 }
+
+
 // 펀딩 == 민팅 펀딩할 때 nft 민팅해주기 // 원하는 모금액 50프로
 // 가스비 제외 환불 모금액 100프로 이상 됐어요 그래도 nft 가지고 투표도 하는거고 

@@ -11,7 +11,7 @@ export class UpdateUserService {
         data: updateDto,
         where: { user_wallet_address: updateDto.user_wallet_address },
       });
-      return { userUpdateStatus: true, httpStatus: 201 };
+      return { status: true, httpStatus: 201 };
     } catch (error) {
       console.log(error);
       throw new HttpException(

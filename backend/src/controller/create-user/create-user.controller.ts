@@ -24,7 +24,7 @@ export class CreateUserController {
     type: signUpUserRequestDto,
   })
   @ApiCreatedResponse({ type: signUpResponseDto })
-  async createUser(@Body() createUserDto: CreateUserDto) {
+  async createUser(@Body() createUserDto: CreateUserDto): Promise<object> {
     return this.createUserService.createUser(createUserDto);
   }
 }
