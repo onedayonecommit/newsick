@@ -10,6 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// [] 처리 된건 관계형 만든거라 안봐도댐
 model users{
   id Int @default(autoincrement()) @id
   user_email String @unique

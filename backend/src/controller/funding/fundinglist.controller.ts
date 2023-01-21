@@ -1,4 +1,4 @@
-import { Controller, Post, Query } from '@nestjs/common';
+import { Controller, Param, Post, Query } from '@nestjs/common';
 import { funding } from '@prisma/client';
 import { FundinglistService } from 'src/service/funding/fundinglist.service';
 
@@ -11,10 +11,8 @@ export class FundinglistController {
     return await this.fundingService.getFundingList();
   }
 
-  @Post('item')
-  async getFundingItem(
-    @Query('fundingid') funding_id: number,
-  ): Promise<funding> {
+  @Post('item/:id')
+  async getFundingItem(@Query('fundingid') funding_id: number) {
     return await this.fundingService.getFundingItem(funding_id);
   }
 }
