@@ -20,11 +20,12 @@ const SignUp = () => {
       backgroundColorControls2.start({ backgroundColor: "rgba(255, 255, 255, 0.1)", color: "rgba(255, 255, 255, 0.2)", border: "none" });
     }
   }, [isChoice, backgroundColorControls2]);
+
   return (
     <div className="signUpPageBackGround">
       <div className="signUpFrame">
         <div className="signUpSection">
-          <div className="signUpTitle">LOGIN</div>
+          <div className="signUpTitle">SIGN UP</div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
