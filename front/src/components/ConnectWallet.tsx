@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Web3 from "web3";
-import { useWeb3 } from "../hooks/useWeb3";
 
-export default function Login() {
+const ConnectWallet = () => {
   const [account, setAccount] = useState<string>();
   const [web3, setWeb3] = useState<Web3 | undefined>(undefined);
   const [isLogin, setIsLogin] = useState(false);
@@ -17,19 +16,10 @@ export default function Login() {
     return accounts[0];
   };
 
-  // const loginHandler = () => {
-  //   async () => {
-  //     const account = await getRequestAccount();
-  //     console.log(account);
-  //     setAccount(account);
-  //   };
-  // };
-
   useEffect(() => {
     (async () => {
       try {
         const web3 = new Web3(window.ethereum);
-
         setWeb3(web3);
 
         // 계정이 변경되면 감지
@@ -39,11 +29,7 @@ export default function Login() {
       }
     })();
 
-    if (account === undefined) {
-      setIsLogin(false);
-    } else {
-      setIsLogin(true);
-    }
+    setIsLogin(!(account === undefined));
   }, [account]);
 
   const handleAccountsChanged = (accounts: string) => {
@@ -56,5 +42,6 @@ export default function Login() {
     }
   };
 
-  return <>{!isLogin ? <button onClick={() => getRequestAccount()}>로그인</button> : <div>{account}님 로그인 완료</div>}</>;
-}
+  return <>{!isLogin ? <button onClick={() => getRequestAccount()}>ConnectWallet</button> : <div>{account}님 로그인 완료</div>}</>;
+};
+export default ConnectWallet;

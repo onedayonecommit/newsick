@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import Link from "next/link";
+import ConnectWallet from "../components/ConnectWallet";
 
 const Home = () => {
   return (
     <>
-      <div>main</div>
+      <ConnectWallet />
+      <Link href="/signup">sign up</Link>
     </>
   );
 };

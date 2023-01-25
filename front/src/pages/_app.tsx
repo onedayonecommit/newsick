@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { wrapper } from "../redux/store";
 import Layout from "../components/Layout";
+import "../../styles/globals.min.css";
 
 const App = ({ Component, ...pageProps }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(pageProps);
