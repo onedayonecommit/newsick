@@ -39,9 +39,7 @@ export default class NewsicDoc extends Document {
   render() {
     return (
       <Html lang="ko">
-        <Head>
-          <link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet" />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />

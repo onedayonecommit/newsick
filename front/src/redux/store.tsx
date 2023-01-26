@@ -1,21 +1,37 @@
 import { combineReducers, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { HYDRATE, createWrapper } from "next-redux-wrapper";
-import { ReducerState } from "react";
 import { Action, AnyAction, CombinedState } from "redux";
 import thunk from "redux-thunk";
+import { persistReducer } from "redux-persist";
+import sessionStorage from "redux-persist/es/storage/session";
+
+export interface ReducerState {
+  // slice에서 가져온 타입 넣어주기
+}
+
+// redux-persist 사용
+const persistConfig = {
+  key: "root",
+  sessionStorage,
+  whiteList: [],
+};
 
 const rootReducer = (state: ReducerState, action: AnyAction): CombinedState<ReducerState> => {
-  if (action.type) {
-    if (action.type == HYDRATE) return { ...state, ...action.payload };
+  switch (action.type) {
+    case HYDRATE:
+      return { ...state, ...action.payload };
 
-    const combineReducer = combineReducers({});
-    return combineReducer(state, action);
+    default:
+      const combineReducer = combineReducers({});
+      return combineReducer(state, action);
   }
 };
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const makeStore = () =>
   configureStore({
-    reducer: rootReducer,
+    reducer: persistedReducer,
     devTools: true,
     middleware: [thunk],
   });

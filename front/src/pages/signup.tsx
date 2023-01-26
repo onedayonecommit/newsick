@@ -1,6 +1,6 @@
 import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const SignUp = () => {
   const [isChoice, setIsChoice] = useState("User");
@@ -21,22 +21,27 @@ const SignUp = () => {
     }
   }, [isChoice, backgroundColorControls2]);
 
+  const userNameInput = useRef<HTMLInputElement>(null);
+  const userEmailInput = useRef<HTMLInputElement>(null);
+
+  const signUpHandler = () => {};
+
   return (
     <div className="signUpPageBackGround">
       <div className="signUpFrame">
         <div className="signUpSection">
-          <div className="signUpTitle">SIGN UP</div>
+          <div className="signUpTitle">LOGIN</div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
               <div className="nameInput">
-                <input />
+                <input ref={userNameInput} type="text" name="user_name" />
               </div>
             </div>
             <div className="userEmailSection">
               <div className="emailText">USER E-MAIL</div>
               <div className="emailInput">
-                <input />
+                <input ref={userEmailInput} type="text" name="user_email" />
               </div>
             </div>
           </div>
