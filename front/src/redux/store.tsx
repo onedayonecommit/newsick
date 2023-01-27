@@ -1,44 +1,54 @@
-import { combineReducers, configureStore, ThunkAction } from "@reduxjs/toolkit";
+import { combineReducers, configureStore, ThunkAction, Reducer } from "@reduxjs/toolkit";
 import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import { Action, AnyAction, CombinedState } from "redux";
 import thunk from "redux-thunk";
 import { persistReducer } from "redux-persist";
-import sessionStorage from "redux-persist/es/storage/session";
+import storageSession from "redux-persist/lib/storage/session";
+// slice 에서 export한 것 들!
+import userSlice, { userState } from "./userSlice";
 
-export interface ReducerState {
+export interface ReducerStates {
   // slice에서 가져온 타입 넣어주기
+  userInfo: userState;
 }
 
 // redux-persist 사용
-const persistConfig = {
-  key: "root",
-  sessionStorage,
-  whiteList: [],
-};
+// const persistConfig = {
+//   key: "root",
+//   storageSession,
+//   whiteList: [],
+// };
 
-const rootReducer = (state: ReducerState, action: AnyAction): CombinedState<ReducerState> => {
+const rootReducer = (state: ReducerStates, action: AnyAction): CombinedState<ReducerStates> => {
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload };
 
     default:
-      const combineReducer = combineReducers({});
+      const combineReducer = combineReducers({
+        userInfo: userSlice.reducer,
+      });
       return combineReducer(state, action);
   }
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+// const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const makeStore = () =>
   configureStore({
-    reducer: persistedReducer,
+    // reducer: persistedReducer,
+    //
+    reducer: rootReducer as Reducer<ReducerStates, AnyAction>,
     devTools: true,
     middleware: [thunk],
   });
 
 // ReturnType : return의 타입을 지정해 준 것
+// type T4 = ReturnType<typeof f1>;  // { a: number, b: string }
 export type AppStore = ReturnType<typeof makeStore>; // store 타입
 export type RootState = ReturnType<AppStore["getState"]>; // RootState 타입
+// export type RootState = ReturnType<typeof rootReducer>; // 위와 동일한 RootState 타입
+export type AppDispatch = AppStore["dispatch"]; // dispatch 타입
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action>; // thunk를 위한 타입
 
 export const wrapper = createWrapper<AppStore>(makeStore);

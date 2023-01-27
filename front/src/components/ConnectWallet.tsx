@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useAppDispatch } from "../hooks/useFetch";
 import Web3 from "web3";
+import { userAction } from "../redux/userSlice";
 
 const ConnectWallet = () => {
-  const [account, setAccount] = useState<string>();
+  const [account, setAccount] = useState<string>("");
   const [web3, setWeb3] = useState<Web3 | undefined>(undefined);
   const [isLogin, setIsLogin] = useState(false);
+  const dispatch = useAppDispatch();
 
   const getRequestAccount = async () => {
     const accounts = await window.ethereum.request({
@@ -12,7 +15,7 @@ const ConnectWallet = () => {
     });
     setAccount(accounts[0]);
     console.log(accounts[0]);
-    console.log(accounts);
+    console.log(accounts); // 배열로 반환해줌
     return accounts[0];
   };
 
@@ -22,6 +25,8 @@ const ConnectWallet = () => {
         const web3 = new Web3(window.ethereum);
         setWeb3(web3);
 
+        dispatch(userAction.addressUpdate(account));
+
         // 계정이 변경되면 감지
         window.ethereum.on("accountsChanged", handleAccountsChanged);
       } catch (err) {
@@ -29,8 +34,8 @@ const ConnectWallet = () => {
       }
     })();
 
-    setIsLogin(!(account === undefined));
-  }, [account]);
+    setIsLogin(!(account === ""));
+  }, [account, dispatch]);
 
   const handleAccountsChanged = (accounts: string) => {
     if (accounts.length === 0) {

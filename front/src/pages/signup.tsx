@@ -1,30 +1,42 @@
 import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
+import { userInfo } from "os";
 import React, { useEffect, useRef, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../hooks/useFetch";
 
 const SignUp = () => {
-  const [isChoice, setIsChoice] = useState("User");
+  const [isCreator, setIsCreator] = useState<boolean>(false);
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
   useEffect(() => {
-    if (isChoice === "User") {
+    if (isCreator === false) {
       backgroundColorControls.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "rgba(255, 255, 255, 1)", border: "1px solid rgba(255, 255, 255, 0.1)" });
     } else {
       backgroundColorControls.start({ backgroundColor: "rgba(255, 255, 255, 0.1)", color: "rgba(255, 255, 255, 0.2)", border: "none" });
     }
-  }, [isChoice, backgroundColorControls]);
+  }, [isCreator, backgroundColorControls]);
   useEffect(() => {
-    if (isChoice === "Creator") {
+    if (isCreator === true) {
       backgroundColorControls2.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "rgba(255, 255, 255, 1)", border: "1px solid rgba(255, 255, 255, 0.1)" });
     } else {
       backgroundColorControls2.start({ backgroundColor: "rgba(255, 255, 255, 0.1)", color: "rgba(255, 255, 255, 0.2)", border: "none" });
     }
-  }, [isChoice, backgroundColorControls2]);
+  }, [isCreator, backgroundColorControls2]);
 
-  const userNameInput = useRef<HTMLInputElement>(null);
+  const userNameRef = useRef<HTMLInputElement>(null);
   const userEmailInput = useRef<HTMLInputElement>(null);
 
-  const signUpHandler = () => {};
+  const dispatch = useAppDispatch();
+  const userAdress = useAppSelector((state) => state.userInfo.address);
+  const signUpUser = useAppSelector((state) => state.userInfo);
+
+  const signUpHandler = () => {
+    const userName = userNameRef.current!.value;
+    const userEmail = userEmailInput.current!.value;
+    console.log(userName);
+    console.log(userEmail);
+    // dispatch(fetchUser({userName, userEmail, userAdress, isCreator}))
+  };
 
   return (
     <div className="signUpPageBackGround">
@@ -35,7 +47,7 @@ const SignUp = () => {
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
               <div className="nameInput">
-                <input ref={userNameInput} type="text" name="user_name" />
+                <input ref={userNameRef} type="text" name="user_name" />
               </div>
             </div>
             <div className="userEmailSection">
@@ -48,16 +60,18 @@ const SignUp = () => {
           <div className="signUpChoiceSection">
             <div className="signUpinfoText">what is your purpose?</div>
             <div className="signUpButtonSection">
-              <motion.div className="userButton" animate={backgroundColorControls} onTap={() => setIsChoice("User")}>
+              <motion.div className="userButton" animate={backgroundColorControls} onTap={() => setIsCreator(false)}>
                 USER
               </motion.div>
-              <motion.div className="createrButton" animate={backgroundColorControls2} onTap={() => setIsChoice("Creator")}>
+              <motion.div className="createrButton" animate={backgroundColorControls2} onTap={() => setIsCreator(true)}>
                 CREATER
               </motion.div>
             </div>
           </div>
           <div className="signUpButtonFrame">
-            <div className="signUpButton">SIGN UP</div>
+            <div onClick={() => signUpHandler()} className="signUpButton">
+              SIGN UP
+            </div>
           </div>
         </div>
         <div className="imgSection" />
