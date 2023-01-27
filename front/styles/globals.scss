@@ -2,9 +2,8 @@ body {
   margin: 0;
   padding: 0;
 }
-
-// mainFrameCSS====================start
-.mainPageBackGround {
+// =======================================================***
+.TopTestFrame{
   box-sizing: border-box;
   width: 1920px;
   height: 1080px;
@@ -23,7 +22,35 @@ body {
   background-position: center;
   position: absolute;
   border-radius: 0px 0px 0px 0px;
-  .mainPageFrame {
+  .childrenFrame{
+     flex-shrink: 0;
+        width: auto;
+        height: auto;
+        display: block;
+        background-color: #2b2f5f;
+        overflow: scroll;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+  }
+  .Test2Frame{
+    height: min-content;
+    width: min-content;
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 0px 0px 0px 0px;
+  }
+  .TestFrame{
     box-sizing: border-box;
     flex-shrink: 0;
     width: 1840px;
@@ -32,8 +59,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
-      0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     position: relative;
     padding: 0px 0px 0px 0px;
@@ -41,6 +67,231 @@ body {
     flex-wrap: nowrap;
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    .infoSection {
+      flex-shrink: 0;
+      width: 234px;
+      height: 1000px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      box-shadow: inset 1px 0px 0px 0px rgba(255, 255, 255, 0.1);
+      background-color: #2c2f48;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 0px 0px 0px 0px;
+      .optionSection {
+        flex-shrink: 0;
+        width: 234px;
+        height: 50px;
+        display: block;
+        box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0);
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+      }
+      .userInfoSection {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 234px;
+        height: 265px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0px 30px 0px;
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        .userImage {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 150px;
+          height: 150px;
+          display: block;
+          background-color: rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          position: relative;
+          border-radius: 150px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .userProfile {
+          flex-shrink: 0;
+          width: min-content; /* 112px */
+          height: min-content; /* 46px */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          .userName {
+            flex-shrink: 0;
+            width: min-content; /* 80px */
+            height: min-content; /* 19px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            white-space: pre;
+            position: relative;
+            font-family: "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+            text-align: center;
+          }
+          .userEmail {
+            flex-shrink: 0;
+            width: min-content; /* 112px */
+            height: min-content; /* 17px */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            white-space: pre;
+            position: relative;
+            font-family: "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+      }
+      .stateInfoSection {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 234px;
+        height: 550px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        border-color: rgba(255, 255, 255, 0.1);
+        border-style: solid;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+      }
+      .anotherInfoSection {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 234px;
+        height: 135px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+      }
+    }
+    .searchBarSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 1359px;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: #2c2f48;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 0px 0px 0px 0px;
+      border-color: rgba(255, 255, 255, 0.1);
+      border-style: solid;
+      border-top-width: 0px;
+      border-bottom-width: 1px;
+      border-left-width: 0px;
+      border-right-width: 0px;
+      .searchBarFrame {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 585px;
+        height: 32px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px 30px 0px 30px;
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        .searchBar {
+          flex-shrink: 0;
+          width: 525px;
+          height: 32px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          &:nth-child(1) {
+            color: rgb(255, 255, 255);
+            width: 5%;
+            height: 85%;
+            // **
+          }
+        }
+      }
+      .searchInput {
+        width: 95%;
+        height: 85%;
+        // **
+        position: relative;
+        font-family: "Arvo";
+        color: white;
+        background-color: transparent;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
     .sideBarSection {
       flex-shrink: 0;
       width: 247px;
@@ -259,6 +510,50 @@ body {
         }
       }
     }
+  }
+
+}
+
+// =======================================================***
+
+// mainFrameCSS====================start
+.mainPageBackGround {
+  box-sizing: border-box;
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px 40px 40px;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0px;
+  background-image: url("../public/image/BackGround.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+  .mainPageFrame {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1840px;
+    height: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+      0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     .contentSection {
       flex-shrink: 0;
       width: 1359px;
@@ -826,11 +1121,20 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
-  background-image: url("../public/image/BackGround.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 0px 0px 0px 0px;
+  background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e, #7758D1);
+	background-size: 180% 180%;
+	animation: gradient-animation 6s ease infinite;
+    @keyframes gradient-animation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
   .signUpFrame {
     box-sizing: border-box;
     flex-shrink: 0;
@@ -2871,7 +3175,7 @@ body {
           display: block;
           overflow: hidden;
           z-index: 1;
-          background-image: url(Funding.jpg);
+          background-image: url("../public/image/Funding.jpg");
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;

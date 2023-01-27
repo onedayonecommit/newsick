@@ -1,6 +1,7 @@
 import axios from "axios";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import Layout from "../components/Layout";
 
 const SignUp = () => {
   const [isChoice, setIsChoice] = useState("User");
@@ -57,6 +58,7 @@ const SignUp = () => {
         <div className="imgSection" />
       </div>
     </div>
+  
   );
 };
 
