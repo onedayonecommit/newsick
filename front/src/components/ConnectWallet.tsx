@@ -25,6 +25,7 @@ const ConnectWallet = () => {
         const web3 = new Web3(window.ethereum);
         setWeb3(web3);
 
+        // 메타마스크 연동할 때 계정도 회원가입할 때 보내주기 위해서 state에 dispatch
         dispatch(userAction.addressUpdate(account));
 
         // 계정이 변경되면 감지
