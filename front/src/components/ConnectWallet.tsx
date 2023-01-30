@@ -3,7 +3,9 @@ import { useAppDispatch, useAppSelector } from "../hooks/useFetch";
 import Web3 from "web3";
 import { userAction } from "../redux/userSlice";
 import { fetchUserCheck } from "../middleware/fetchUser";
+import { motion } from "framer-motion";
 import SignUp from "../pages/signup";
+import { useRouter } from "next/router";
 
 const ConnectWallet = () => {
   const [account, setAccount] = useState<string>("");
@@ -12,6 +14,7 @@ const ConnectWallet = () => {
   const createStatus = useAppSelector((state) => state.userInfo.createStatus);
 
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const getRequestAccount = async () => {
     const accounts = await window.ethereum.request({
@@ -20,6 +23,7 @@ const ConnectWallet = () => {
     setAccount(accounts[0]);
     // console.log(accounts[0]);
     // console.log(accounts); // 배열로 반환해줌
+    createStatus == false ? router.push("/signup") : router.push("/");
     return accounts[0];
   };
 
@@ -41,7 +45,9 @@ const ConnectWallet = () => {
       }
     })();
 
-    setIsLogin(!(account === ""));
+    // setIsLogin(!(account === ""));
+    if (account == "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183") setIsLogin(true);
+    else setIsLogin(false);
   }, [account, dispatch]);
 
   const handleAccountsChanged = (accounts: string) => {
@@ -57,7 +63,28 @@ const ConnectWallet = () => {
   return (
     // 지갑주소가 있으면 로그인, 없으면 회원가입으로 이동
     // 회원가입 후 로그인되면 메인으로 이동
-    <>{!isLogin ? <button onClick={() => getRequestAccount()}>ConnectWallet</button> : <div>{account}님 로그인 완료</div>}</>
+    <>
+      {/* {!isLogin ? <div onClick={() => getRequestAccount()}>MetaMask Connect</div> : <div>{account}님 로그인 완료</div>} */}
+      {/* <div onClick={() => getRequestAccount()}>MetaMask Connect</div> */}
+      {!isLogin ? (
+        <motion.div
+          onClick={() => getRequestAccount()}
+          className="metaConnectButton"
+          whileHover={{
+            scale: [1, 1.1],
+            color: "rgba(255, 255, 255, 1)",
+          }}
+          whileTap={{ scale: 0.9 }}
+        >
+          MetaMask Connect
+        </motion.div>
+      ) : (
+        <div className="userProfile">
+          <div className="userName">{account}</div>
+          <div className="userEmail">User@Email.com</div>
+        </div>
+      )}
+    </>
   );
 };
 export default ConnectWallet;

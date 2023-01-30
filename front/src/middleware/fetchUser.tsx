@@ -7,7 +7,7 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
   try {
     const UserCreated = await axios.post("signup/user", createUser);
     console.log(UserCreated.data);
-
+    // 아마.. 회원가입이 되면 true를 반환해줄듯..?
     return UserCreated.data;
   } catch (error) {
     // return thunkAPI.rejectWithValue({ errorMessage: "알 수 없는 에러가 발생했습니다." });

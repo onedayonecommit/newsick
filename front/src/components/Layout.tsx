@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { useState } from "react";
-
 import { SideBar, SearchBar, UserBar } from "./index";
 
 type Props = {

@@ -11,7 +11,7 @@ export interface userState {
 }
 
 const initialState: userState = {
-  address: "",
+  address: "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183",
   userName: "",
   userEmail: "",
   isCreator: false,

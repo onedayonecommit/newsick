@@ -31,9 +31,16 @@ const SignUp = () => {
   const userAdress = useAppSelector((state) => state.userInfo.address);
   // const signUpUser = useAppSelector((state) => state.userInfo);
 
+  // 이메일 정규식 체크
+  const emailRegExp = (userEmail: string) => {
+    const regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력");
+  };
+
   const signUpHandler = () => {
     const userName = userNameRef.current!.value;
     const userEmail = userEmailInput.current!.value;
+    emailRegExp(userEmail);
     console.log(userName);
     console.log(userEmail);
     dispatch(fetchUserCreated({ userName, userEmail, userAdress, isCreator }));
@@ -43,7 +50,7 @@ const SignUp = () => {
     <div className="signUpPageBackGround">
       <div className="signUpFrame">
         <div className="signUpSection">
-          <div className="signUpTitle">LOGIN</div>
+          <div className="signUpTitle">SIGN UP</div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
