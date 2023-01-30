@@ -1,5 +1,5 @@
-import MenuBar from "./MenuBar";
+import SideBar from "./SideBar";
 import SearchBar from "./SearchBar";
 import UserBar from "./UserBar";
 
-export { MenuBar, SearchBar, UserBar };
+export { SideBar, SearchBar, UserBar };

@@ -1,7 +1,8 @@
 import { combineReducers, configureStore, ThunkAction, Reducer } from "@reduxjs/toolkit";
 import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import { Action, AnyAction, CombinedState } from "redux";
-import thunk from "redux-thunk";
+import logger from "redux-logger";
+
 import { persistReducer } from "redux-persist";
 import storageSession from "redux-persist/lib/storage/session";
 // slice 에서 export한 것 들!
@@ -39,15 +40,16 @@ const makeStore = () =>
     // reducer: persistedReducer,
     //
     reducer: rootReducer as Reducer<ReducerStates, AnyAction>,
-    devTools: true,
-    middleware: [thunk],
+    // devTools: true,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    // middleware: [thunk],
   });
 
 // ReturnType : return의 타입을 지정해 준 것
 // type T4 = ReturnType<typeof f1>;  // { a: number, b: string }
 export type AppStore = ReturnType<typeof makeStore>; // store 타입
-export type RootState = ReturnType<AppStore["getState"]>; // RootState 타입
-// export type RootState = ReturnType<typeof rootReducer>; // 위와 동일한 RootState 타입
+// export type RootState = ReturnType<AppStore["getState"]>; // RootState 타입 현재 상태 트리를 반환하는 getState를 RootState에 반환
+export type RootState = ReturnType<typeof rootReducer>; // 위와 동일한 RootState 타입
 export type AppDispatch = AppStore["dispatch"]; // dispatch 타입
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action>; // thunk를 위한 타입
 

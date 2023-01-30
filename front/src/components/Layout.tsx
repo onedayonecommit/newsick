@@ -1,6 +1,7 @@
 import Head from "next/head";
+import { useState } from "react";
 
-import { MenuBar, SearchBar, UserBar } from "./index";
+import { SideBar, SearchBar, UserBar } from "./index";
 
 type Props = {
   children: React.ReactNode;
@@ -12,12 +13,12 @@ const Layout = (props: Props) => {
       <Head>
         <title>Newsic | 음원 NFT</title>
       </Head>
-      <div className="TopTestFrame">
-        <div className="TestFrame">
-          <MenuBar />
-          <div className="Test2Frame">
+      <div className="layoutFrame">
+        <div className="layoutBox">
+          <SideBar />
+          <div className="contentSection">
             <SearchBar />
-            <div className="childrenFrame">{props.children}</div>
+            <div className="content">{props.children}</div>
           </div>
           <UserBar />
         </div>

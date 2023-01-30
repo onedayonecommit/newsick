@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { userInfo } from "os";
 import React, { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../hooks/useFetch";
+import { fetchUserCreated } from "../middleware/fetchUser";
 
 const SignUp = () => {
   const [isCreator, setIsCreator] = useState<boolean>(false);
@@ -28,14 +29,14 @@ const SignUp = () => {
 
   const dispatch = useAppDispatch();
   const userAdress = useAppSelector((state) => state.userInfo.address);
-  const signUpUser = useAppSelector((state) => state.userInfo);
+  // const signUpUser = useAppSelector((state) => state.userInfo);
 
   const signUpHandler = () => {
     const userName = userNameRef.current!.value;
     const userEmail = userEmailInput.current!.value;
     console.log(userName);
     console.log(userEmail);
-    // dispatch(fetchUser({userName, userEmail, userAdress, isCreator}))
+    dispatch(fetchUserCreated({ userName, userEmail, userAdress, isCreator }));
   };
 
   return (
