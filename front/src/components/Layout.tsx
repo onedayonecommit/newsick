@@ -1,11 +1,25 @@
 import Head from "next/head";
 import { SideBar, SearchBar, UserBar } from "./index";
+import { useState } from "react";
+import MyPageLayOut from "../pages/mypage";
 
 type Props = {
   children: React.ReactNode;
 };
 
+type a = {
+  handleClick: React.Prop;
+};
+
 const Layout = (props: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = (): any => {
+    setIsOpen(true);
+  };
+  const handleClose = (): any => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <Head>
@@ -18,8 +32,9 @@ const Layout = (props: Props) => {
             <SearchBar />
             <div className="content">{props.children}</div>
           </div>
-          <UserBar />
+          <UserBar handleClick={handleClick} />
         </div>
+        <MyPageLayOut isOpen={isOpen} handleClose={handleClose} />
       </div>
     </>
   );

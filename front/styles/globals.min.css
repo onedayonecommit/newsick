@@ -27,7 +27,135 @@ body {
   cursor: pointer;
 }
 
-.layoutFrame {
+.switchToggle {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 983px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.switchToggle .selected {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 260px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(100% 105.5% at -7.4% 20%, rgba(211, 66, 255, 0.6) 0%, rgba(86, 0, 112, 0.4) 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.switchToggle .option {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 260px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 60px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.MyPageUserBarFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1543px;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: inset 1px 0px 0px 0px rgba(255, 255, 255, 0.1);
+  background-color: #2c2f48;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageUserBarFrame .basicUserBar {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 234px;
+  height: 1000px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 1px;
+}
+.MyPageUserBarFrame .contentSection {
+  flex-shrink: 0;
+  width: 1309px;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.layoutFrame,
+.myPageLayOutFrame {
   box-sizing: border-box;
   width: 1920px;
   height: 1080px;
@@ -47,7 +175,10 @@ body {
   position: absolute;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox {
+.layoutFrame .layoutBox,
+.layoutFrame .myPageLayoutBox,
+.myPageLayOutFrame .layoutBox,
+.myPageLayOutFrame .myPageLayoutBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1840px;
@@ -65,7 +196,49 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.layoutFrame .layoutBox .sideBarSection {
+.layoutFrame .layoutBox.myPageLayoutBox,
+.layoutFrame .myPageLayoutBox.myPageLayoutBox,
+.myPageLayOutFrame .layoutBox.myPageLayoutBox,
+.myPageLayOutFrame .myPageLayoutBox.myPageLayoutBox {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.layoutFrame .layoutBox.myPageLayoutBox .myPageContentFrame,
+.layoutFrame .myPageLayoutBox.myPageLayoutBox .myPageContentFrame,
+.myPageLayOutFrame .layoutBox.myPageLayoutBox .myPageContentFrame,
+.myPageLayOutFrame .myPageLayoutBox.myPageLayoutBox .myPageContentFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1309px; /* 1309px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 2099px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 0px 50px 0px;
+  background: linear-gradient(226deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
+  border-radius: 0px 0px 0px 0px;
+  overflow: scroll;
+}
+.layoutFrame .layoutBox.myPageLayoutBox .myPageContentFrame::-webkit-scrollbar,
+.layoutFrame .myPageLayoutBox.myPageLayoutBox .myPageContentFrame::-webkit-scrollbar,
+.myPageLayOutFrame .layoutBox.myPageLayoutBox .myPageContentFrame::-webkit-scrollbar,
+.myPageLayOutFrame .myPageLayoutBox.myPageLayoutBox .myPageContentFrame::-webkit-scrollbar {
+  display: none;
+}
+.layoutFrame .layoutBox .sideBarSection,
+.layoutFrame .myPageLayoutBox .sideBarSection,
+.myPageLayOutFrame .layoutBox .sideBarSection,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection {
   flex-shrink: 0;
   width: 247px;
   height: 1000px;
@@ -81,7 +254,10 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .iconBar {
+.layoutFrame .layoutBox .sideBarSection .iconBar,
+.layoutFrame .myPageLayoutBox .sideBarSection .iconBar,
+.myPageLayOutFrame .layoutBox .sideBarSection .iconBar,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .iconBar {
   flex-shrink: 0;
   width: 57px;
   height: 1000px;
@@ -100,7 +276,10 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .iconBar .buttonList {
+.layoutFrame .layoutBox .sideBarSection .iconBar .buttonList,
+.layoutFrame .myPageLayoutBox .sideBarSection .iconBar .buttonList,
+.myPageLayOutFrame .layoutBox .sideBarSection .iconBar .buttonList,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .iconBar .buttonList {
   flex-shrink: 0;
   width: 57px;
   height: 550px;
@@ -117,7 +296,10 @@ body {
   gap: 10px;
   border-radius: 25px 0px 0px 70px;
 }
-.layoutFrame .layoutBox .sideBarSection .iconBar .iconButton {
+.layoutFrame .layoutBox .sideBarSection .iconBar .iconButton,
+.layoutFrame .myPageLayoutBox .sideBarSection .iconBar .iconButton,
+.myPageLayOutFrame .layoutBox .sideBarSection .iconBar .iconButton,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .iconBar .iconButton {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -138,7 +320,10 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .iconBar .iconButton :nth-child(-n+5) {
+.layoutFrame .layoutBox .sideBarSection .iconBar .iconButton :nth-child(-n+5),
+.layoutFrame .myPageLayoutBox .sideBarSection .iconBar .iconButton :nth-child(-n+5),
+.myPageLayOutFrame .layoutBox .sideBarSection .iconBar .iconButton :nth-child(-n+5),
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .iconBar .iconButton :nth-child(-n+5) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 40px;
@@ -150,7 +335,10 @@ body {
   border-radius: 40px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.layoutFrame .layoutBox .sideBarSection .categories {
+.layoutFrame .layoutBox .sideBarSection .categories,
+.layoutFrame .myPageLayoutBox .sideBarSection .categories,
+.myPageLayOutFrame .layoutBox .sideBarSection .categories,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .categories {
   flex-shrink: 0;
   width: 190px;
   height: 1000px;
@@ -167,7 +355,10 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .categories .headerSection {
+.layoutFrame .layoutBox .sideBarSection .categories .headerSection,
+.layoutFrame .myPageLayoutBox .sideBarSection .categories .headerSection,
+.myPageLayOutFrame .layoutBox .sideBarSection .categories .headerSection,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .categories .headerSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 190px;
@@ -197,7 +388,10 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .sideBarSection .categories .menuSection {
+.layoutFrame .layoutBox .sideBarSection .categories .menuSection,
+.layoutFrame .myPageLayoutBox .sideBarSection .categories .menuSection,
+.myPageLayOutFrame .layoutBox .sideBarSection .categories .menuSection,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .categories .menuSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 190px;
@@ -214,7 +408,10 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .categories .menuSection .menuItem {
+.layoutFrame .layoutBox .sideBarSection .categories .menuSection .menuItem,
+.layoutFrame .myPageLayoutBox .sideBarSection .categories .menuSection .menuItem,
+.myPageLayOutFrame .layoutBox .sideBarSection .categories .menuSection .menuItem,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .categories .menuSection .menuItem {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -239,7 +436,10 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .sideBarSection .musicBar {
+.layoutFrame .layoutBox .sideBarSection .musicBar,
+.layoutFrame .myPageLayoutBox .sideBarSection .musicBar,
+.myPageLayOutFrame .layoutBox .sideBarSection .musicBar,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .musicBar {
   flex-shrink: 0;
   width: 247px;
   height: 144px;
@@ -258,7 +458,10 @@ body {
   bottom: 0px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .musicBar .playBar {
+.layoutFrame .layoutBox .sideBarSection .musicBar .playBar,
+.layoutFrame .myPageLayoutBox .sideBarSection .musicBar .playBar,
+.myPageLayOutFrame .layoutBox .sideBarSection .musicBar .playBar,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .musicBar .playBar {
   flex-shrink: 0;
   width: 247px;
   height: 72px;
@@ -276,7 +479,10 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .musicBar .playInfo {
+.layoutFrame .layoutBox .sideBarSection .musicBar .playInfo,
+.layoutFrame .myPageLayoutBox .sideBarSection .musicBar .playInfo,
+.myPageLayOutFrame .layoutBox .sideBarSection .musicBar .playInfo,
+.myPageLayOutFrame .myPageLayoutBox .sideBarSection .musicBar .playInfo {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 247px;
@@ -289,7 +495,10 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.layoutFrame .layoutBox .contentSection {
+.layoutFrame .layoutBox .contentSection,
+.layoutFrame .myPageLayoutBox .contentSection,
+.myPageLayOutFrame .layoutBox .contentSection,
+.myPageLayOutFrame .myPageLayoutBox .contentSection {
   flex-shrink: 0;
   width: 1359px;
   height: 1000px;
@@ -305,7 +514,10 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .contentSection .content {
+.layoutFrame .layoutBox .contentSection .content,
+.layoutFrame .myPageLayoutBox .contentSection .content,
+.myPageLayOutFrame .layoutBox .contentSection .content,
+.myPageLayOutFrame .myPageLayoutBox .contentSection .content {
   flex-shrink: 0;
   width: 1359px;
   height: 950px;
@@ -315,10 +527,16 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .contentSection .content::-webkit-scrollbar {
+.layoutFrame .layoutBox .contentSection .content::-webkit-scrollbar,
+.layoutFrame .myPageLayoutBox .contentSection .content::-webkit-scrollbar,
+.myPageLayOutFrame .layoutBox .contentSection .content::-webkit-scrollbar,
+.myPageLayOutFrame .myPageLayoutBox .contentSection .content::-webkit-scrollbar {
   display: none;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection {
+.layoutFrame .layoutBox .contentSection .searchBarSection,
+.layoutFrame .myPageLayoutBox .contentSection .searchBarSection,
+.myPageLayOutFrame .layoutBox .contentSection .searchBarSection,
+.myPageLayOutFrame .myPageLayoutBox .contentSection .searchBarSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1359px;
@@ -342,7 +560,10 @@ body {
   border-left-width: 0px;
   border-right-width: 0px;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame {
+.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame,
+.layoutFrame .myPageLayoutBox .contentSection .searchBarSection .searchBarFrame,
+.myPageLayOutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame,
+.myPageLayOutFrame .myPageLayoutBox .contentSection .searchBarSection .searchBarFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 585px;
@@ -361,7 +582,10 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar {
+.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar,
+.layoutFrame .myPageLayoutBox .contentSection .searchBarSection .searchBarFrame .searchBar,
+.myPageLayOutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar,
+.myPageLayOutFrame .myPageLayoutBox .contentSection .searchBarSection .searchBarFrame .searchBar {
   flex-shrink: 0;
   width: 525px;
   height: 32px;
@@ -377,12 +601,18 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1) {
+.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1),
+.layoutFrame .myPageLayoutBox .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1),
+.myPageLayOutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1),
+.myPageLayOutFrame .myPageLayoutBox .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1) {
   color: rgb(255, 255, 255);
   width: 5%;
   height: 85%;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchInput {
+.layoutFrame .layoutBox .contentSection .searchBarSection .searchInput,
+.layoutFrame .myPageLayoutBox .contentSection .searchBarSection .searchInput,
+.myPageLayOutFrame .layoutBox .contentSection .searchBarSection .searchInput,
+.myPageLayOutFrame .myPageLayoutBox .contentSection .searchBarSection .searchInput {
   width: 95%;
   height: 85%;
   position: relative;
@@ -391,10 +621,16 @@ body {
   background-color: transparent;
   border: none;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchInput:focus {
+.layoutFrame .layoutBox .contentSection .searchBarSection .searchInput:focus,
+.layoutFrame .myPageLayoutBox .contentSection .searchBarSection .searchInput:focus,
+.myPageLayOutFrame .layoutBox .contentSection .searchBarSection .searchInput:focus,
+.myPageLayOutFrame .myPageLayoutBox .contentSection .searchBarSection .searchInput:focus {
   outline: none;
 }
-.layoutFrame .layoutBox .infoSection {
+.layoutFrame .layoutBox .infoSection,
+.layoutFrame .myPageLayoutBox .infoSection,
+.myPageLayOutFrame .layoutBox .infoSection,
+.myPageLayOutFrame .myPageLayoutBox .infoSection {
   flex-shrink: 0;
   width: 234px;
   height: 1000px;
@@ -412,7 +648,10 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .infoSection .optionSection {
+.layoutFrame .layoutBox .infoSection .optionSection,
+.layoutFrame .myPageLayoutBox .infoSection .optionSection,
+.myPageLayOutFrame .layoutBox .infoSection .optionSection,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .optionSection {
   flex-shrink: 0;
   width: 234px;
   height: 50px;
@@ -423,7 +662,10 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .infoSection .userInfoSection {
+.layoutFrame .layoutBox .infoSection .userInfoSection,
+.layoutFrame .myPageLayoutBox .infoSection .userInfoSection,
+.myPageLayOutFrame .layoutBox .infoSection .userInfoSection,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .userInfoSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 234px;
@@ -440,7 +682,10 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .infoSection .userInfoSection .metaConnectButton {
+.layoutFrame .layoutBox .infoSection .userInfoSection .metaConnectButton,
+.layoutFrame .myPageLayoutBox .infoSection .userInfoSection .metaConnectButton,
+.myPageLayOutFrame .layoutBox .infoSection .userInfoSection .metaConnectButton,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .userInfoSection .metaConnectButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -467,7 +712,10 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .infoSection .userInfoSection .userImage {
+.layoutFrame .layoutBox .infoSection .userInfoSection .userImage,
+.layoutFrame .myPageLayoutBox .infoSection .userInfoSection .userImage,
+.myPageLayOutFrame .layoutBox .infoSection .userInfoSection .userImage,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .userInfoSection .userImage {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -480,7 +728,10 @@ body {
   border-radius: 150px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.layoutFrame .layoutBox .infoSection .userInfoSection .userProfile {
+.layoutFrame .layoutBox .infoSection .userInfoSection .userProfile,
+.layoutFrame .myPageLayoutBox .infoSection .userInfoSection .userProfile,
+.myPageLayOutFrame .layoutBox .infoSection .userInfoSection .userProfile,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .userInfoSection .userProfile {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -500,7 +751,10 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .infoSection .userInfoSection .userProfile .userName {
+.layoutFrame .layoutBox .infoSection .userInfoSection .userProfile .userName,
+.layoutFrame .myPageLayoutBox .infoSection .userInfoSection .userProfile .userName,
+.myPageLayOutFrame .layoutBox .infoSection .userInfoSection .userProfile .userName,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .userInfoSection .userProfile .userName {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -528,7 +782,10 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.layoutFrame .layoutBox .infoSection .userInfoSection .userProfile .userEmail {
+.layoutFrame .layoutBox .infoSection .userInfoSection .userProfile .userEmail,
+.layoutFrame .myPageLayoutBox .infoSection .userInfoSection .userProfile .userEmail,
+.myPageLayOutFrame .layoutBox .infoSection .userInfoSection .userProfile .userEmail,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .userInfoSection .userProfile .userEmail {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -555,7 +812,10 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .infoSection .stateInfoSection {
+.layoutFrame .layoutBox .infoSection .stateInfoSection,
+.layoutFrame .myPageLayoutBox .infoSection .stateInfoSection,
+.myPageLayOutFrame .layoutBox .infoSection .stateInfoSection,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .stateInfoSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 234px;
@@ -571,7 +831,10 @@ body {
   border-left-width: 0px;
   border-right-width: 0px;
 }
-.layoutFrame .layoutBox .infoSection .anotherInfoSection {
+.layoutFrame .layoutBox .infoSection .anotherInfoSection,
+.layoutFrame .myPageLayoutBox .infoSection .anotherInfoSection,
+.myPageLayOutFrame .layoutBox .infoSection .anotherInfoSection,
+.myPageLayOutFrame .myPageLayoutBox .infoSection .anotherInfoSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 234px;
@@ -5756,4 +6019,715 @@ body {
   cursor: pointer;
   width: 266px;
   height: 40px;
+}
+
+.myPageFirstContainerFrame {
+  flex-shrink: 0;
+  width: 1229px;
+  height: 820px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageFirstContainerFrame .leftSection {
+  flex-shrink: 0;
+  width: 615px;
+  height: 780px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 100px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageFirstContainerFrame .leftSection .textSection {
+  flex-shrink: 0;
+  width: 472px;
+  height: 354px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 32px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageFirstContainerFrame .leftSection .textSection :nth-child(1) {
+  flex-shrink: 0;
+  width: 472px;
+  height: 48px;
+  display: block;
+  overflow: hidden;
+  font-weight: bold;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageFirstContainerFrame .leftSection .textSection :nth-child(2) {
+  flex-shrink: 0;
+  width: 392px;
+  height: 180px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageFirstContainerFrame .leftSection .textSection :nth-child(3) {
+  flex-shrink: 0;
+  width: 178px;
+  height: 50px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  font-size: 42px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  background: linear-gradient(to right, #ff3db8, #db29ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.myPageFirstContainerFrame .leftSection .buttonFrame {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 450px;
+  height: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid #ffffff;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageFirstContainerFrame .rightSection {
+  flex-shrink: 0;
+  width: 614px;
+  height: 780px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageFirstContainerFrame .rightSection > div {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../public/image/Quin Album Art (3D Render + Lettering).png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.myPageSecondContainerFrame {
+  flex-shrink: 0;
+  width: 1229px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 1543px */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 17px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 398px;
+  height: 503px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(223deg, rgba(255, 255, 255, 0.2) 0%, rgba(171, 171, 171, 0.1) 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 398px;
+  height: 268px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .nftImage {
+  flex-shrink: 0;
+  width: 398px;
+  height: 268px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .wishButton {
+  top: 10px;
+  right: 10px;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 100px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .wishButton :nth-child(1) {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .infoStateFrame {
+  bottom: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 358px;
+  height: 92px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px 60px 20px 60px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .infoStateFrame .price {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 93px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .infoStateFrame .price :nth-child(1) {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 40px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .infoStateFrame .price :nth-child(2) {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 40px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .infoStateFrame .state {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 71px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .topSection .infoStateFrame .state :nth-child(1) {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 71px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageSecondContainerFrame .nftWishItemBox .middleSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 398px;
+  height: 138px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 40px 20px 40px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .middleSection .nftNameTag {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 101px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageSecondContainerFrame .nftWishItemBox .middleSection .creatorNameTag {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 161px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 25px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .middleSection .creatorNameTag :nth-child(1) {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+  border: 1px solid #ffffff;
+}
+.myPageSecondContainerFrame .nftWishItemBox .middleSection .creatorNameTag :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 126px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageSecondContainerFrame .nftWishItemBox .bottomSection {
+  flex-shrink: 0;
+  width: 398px;
+  height: 97px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.myPageSecondContainerFrame .nftWishItemBox .bottomSection .detailButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 160px;
+  height: 65px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(66deg, rgba(209, 56, 255, 0.4) 0%, rgba(109, 0, 143, 0.3) 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.myPageSecondContainerFrame .nftWishItemBox .bottomSection .buyNowButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 160px;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.MyPageThirdContainerFrame {
+  flex-shrink: 0;
+  width: 1309px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 1889px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageThirdContainerFrame .ownedNftBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 401px;
+  height: 623px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 25px 25px 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 351px;
+  height: 573px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame .ownNftImg {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 291px;
+  height: 250px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame .nftTitleSection {
+  flex-shrink: 0;
+  width: 291px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
+  flex-shrink: 0;
+  width: 127px;
+  height: 30px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2),
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content; /* 50px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame .middleLine {
+  flex-shrink: 0;
+  width: 291px;
+  height: 1px;
+  display: block;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageThirdContainerFrame .ownedNftBox .ownedNftFrame .infoSection {
+  flex-shrink: 0;
+  width: 291px;
+  height: 77px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
 }

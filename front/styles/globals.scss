@@ -22,9 +22,135 @@ body {
     cursor: pointer;
   }
 }
+.switchToggle {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 983px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  .selected {
+    cursor: pointer;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 260px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(100% 105.5% at -7.3999999999999995% 20%, rgba(211, 66, 255, 0.6) 0%, rgba(86, 0, 112, 0.4) 100%);
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    white-space: pre;
+    font-weight: 700;
+    font-family: "Inter-Bold", "Inter", sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .option {
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 260px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 60px;
+    flex-shrink: 0;
+    white-space: pre;
+    font-weight: 700;
+    font-family: "Inter-Bold", "Inter", sans-serif;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
 // ==================================COMPONENT CSS DONE
 //===================================LayouyComponent CSS Start
-.layoutFrame {
+.MyPageUserBarFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1543px;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: inset 1px 0px 0px 0px rgba(255, 255, 255, 0.1);
+  background-color: #2c2f48;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  .basicUserBar {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 234px;
+    height: 1000px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0px 0px 0px 0px;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 1px;
+  }
+  .contentSection {
+    flex-shrink: 0;
+    width: 1309px;
+    height: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    border-radius: 0px 0px 0px 0px;
+  }
+}
+.layoutFrame,
+.myPageLayOutFrame {
   box-sizing: border-box;
   width: 1920px;
   height: 1080px;
@@ -43,7 +169,8 @@ body {
   background-position: center;
   position: absolute;
   border-radius: 0px 0px 0px 0px;
-  .layoutBox {
+  .layoutBox,
+  .myPageLayoutBox {
     box-sizing: border-box;
     flex-shrink: 0;
     width: 1840px;
@@ -61,6 +188,34 @@ body {
     flex-wrap: nowrap;
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    &.myPageLayoutBox {
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .myPageContentFrame {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1309px; /* 1309px */
+        height: min-content; /* 2099px */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 50px 0px 50px 0px;
+        background: linear-gradient(226deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%);
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 50px;
+        border-radius: 0px 0px 0px 0px;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
     .sideBarSection {
       flex-shrink: 0;
       width: 247px;
@@ -5395,3 +5550,681 @@ body {
   }
 }
 // FundingCreateContainer CSS ==========done
+// MyPageContainer CSS ==============start
+
+.myPageFirstContainerFrame {
+  flex-shrink: 0;
+  width: 1229px;
+  height: 820px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  .leftSection {
+    flex-shrink: 0;
+    width: 615px;
+    height: 780px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 100px;
+    border-radius: 0px 0px 0px 0px;
+    .textSection {
+      flex-shrink: 0;
+      width: 472px;
+      height: 354px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 32px;
+      border-radius: 0px 0px 0px 0px;
+      :nth-child(1) {
+        flex-shrink: 0;
+        width: 472px;
+        height: 48px;
+        display: block;
+        overflow: hidden;
+        font-weight: bold;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        white-space: pre;
+        font-family: "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 40px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+      :nth-child(2) {
+        flex-shrink: 0;
+        width: 392px;
+        height: 180px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-word;
+        font-family: "Inter", sans-serif;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 25px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+      :nth-child(3) {
+        flex-shrink: 0;
+        width: 178px;
+        height: 50px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        white-space: pre;
+        font-weight: 700;
+        font-family: "Inter-Bold", "Inter", sans-serif;
+        // color: linear-gradient(to right, #fbcac9, #8ca6ce);
+        font-size: 42px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+        background: linear-gradient(to right, #ff3db8, #db29ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    .buttonFrame {
+      cursor: pointer;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 450px;
+      height: 74px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 25px;
+      border: 1px solid #ffffff;
+      flex-shrink: 0;
+      white-space: pre;
+      font-weight: 700;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: #ffffff;
+      font-size: 35px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+    }
+  }
+  .rightSection {
+    flex-shrink: 0;
+    width: 614px;
+    height: 780px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 0px 0px 0px 0px;
+    > div {
+      cursor: pointer;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 500px;
+      height: 500px;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      background-image: url("../public/image/Quin\ Album\ Art\ \(3D\ Render\ +\ Lettering\).png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.myPageSecondContainerFrame {
+  flex-shrink: 0;
+  width: 1229px;
+  height: min-content; /* 1543px */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 17px;
+  border-radius: 0px 0px 0px 0px;
+  .nftWishItemBox {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 398px;
+    height: 503px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: linear-gradient(223deg, rgba(255, 255, 255, 0.2) 0%, rgba(171, 171, 171, 0.1) 100%);
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    .topSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 398px;
+      height: 268px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 0px 0px 0px 0px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .nftImage {
+        flex-shrink: 0;
+        width: 398px;
+        height: 268px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 0px 0px 0px 0px;
+      }
+      .wishButton {
+        top: 10px;
+        right: 10px;
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        z-index: 1;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        position: absolute;
+        border-radius: 100px;
+        :nth-child(1) {
+          position: relative;
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .infoStateFrame {
+        bottom: 20px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 358px;
+        height: 92px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 20px 60px 20px 60px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        z-index: 1;
+        align-content: flex-end;
+        flex-wrap: nowrap;
+        position: absolute;
+        border-radius: 0px 0px 0px 0px;
+        .price {
+          flex-shrink: 0;
+          width: min-content; /* 93px */
+          height: min-content; /* 24px */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          :nth-child(1) {
+            flex-shrink: 0;
+            width: min-content; /* 40px */
+            height: min-content; /* 24px */
+            display: block;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          :nth-child(2) {
+            flex-shrink: 0;
+            width: min-content; /* 40px */
+            height: min-content; /* 24px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            flex-shrink: 0;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+        .state {
+          flex-shrink: 0;
+          width: min-content; /* 71px */
+          height: min-content; /* 24px */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          :nth-child(1) {
+            flex-shrink: 0;
+            width: min-content; /* 71px */
+            height: min-content; /* 24px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            flex-shrink: 0;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+    .middleSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 398px;
+      height: 138px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px 40px 20px 40px;
+      overflow: hidden;
+      position: relative;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 10px;
+      border-radius: 0px 0px 0px 0px;
+      .nftNameTag {
+        flex-shrink: 0;
+        width: min-content; /* 101px */
+        height: min-content; /* 24px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 0px 0px 0px 0px;
+        flex-shrink: 0;
+        white-space: pre;
+        font-family: "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 20px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+      .creatorNameTag {
+        flex-shrink: 0;
+        width: min-content; /* 161px */
+        height: min-content; /* 25px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(1) {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 25px;
+          height: 25px;
+          display: block;
+          overflow: hidden;
+          position: relative;
+          border-radius: 25px;
+          border: 1px solid #ffffff;
+        }
+        :nth-child(2) {
+          flex-shrink: 0;
+          width: auto; /* 126px */
+          height: auto; /* 24px */
+          white-space: pre;
+          position: relative;
+          font-family: "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 20px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+      }
+    }
+    .bottomSection {
+      flex-shrink: 0;
+      width: 398px;
+      height: 97px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      border-radius: 0px 0px 0px 0px;
+      .detailButton {
+        cursor: pointer;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 160px;
+        height: 65px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(66deg, rgba(209, 56, 255, 0.4) 0%, rgba(109, 0, 143, 0.3) 100%);
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        flex-shrink: 0;
+        white-space: pre;
+        font-family: "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 20px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+      .buyNowButton {
+        cursor: pointer;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 160px;
+        height: 65px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        flex-shrink: 0;
+        white-space: pre;
+        font-family: "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 20px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+.MyPageThirdContainerFrame {
+  flex-shrink: 0;
+  width: 1309px;
+  height: min-content; /* 1889px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  .ownedNftBox {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 401px;
+    height: 623px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 25px 25px 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    border-radius: 0px 0px 0px 0px;
+    .ownedNftFrame {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 351px;
+      height: 573px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 30px 30px 30px 30px;
+      background-color: rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 25px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .ownNftImg {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 291px;
+        height: 250px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .nftTitleSection {
+        flex-shrink: 0;
+        width: 291px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 15px;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(1) {
+          flex-shrink: 0;
+          width: 127px;
+          height: 30px;
+          display: block;
+          overflow: hidden;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
+          white-space: pre;
+          font-weight: 700;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.3);
+          font-size: 25px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        :nth-child(2),
+        :nth-child(3) {
+          flex-shrink: 0;
+          width: min-content; /* 50px */
+          height: min-content; /* 24px */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10;
+          border-radius: 0px 0px 0px 0px;
+          white-space: pre;
+          font-weight: 700;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.3);
+          font-size: 20px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+          text-align: center;
+        }
+      }
+      .middleLine {
+        flex-shrink: 0;
+        width: 291px;
+        height: 1px;
+        display: block;
+        background-color: #ffffff;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+      }
+      .infoSection {
+        flex-shrink: 0;
+        width: 291px;
+        height: 77px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        flex-shrink: 0;
+        white-space: pre;
+        font-weight: 700;
+        font-family: "Inter-Bold", "Inter", sans-serif;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 25px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+// MyPageContainer CSS ==============done

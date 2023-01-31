@@ -8,7 +8,7 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
     const UserCreated = await axios.post("signup/user", createUser);
     console.log(UserCreated.data);
     // 아마.. 회원가입이 되면 true를 반환해줄듯..?
-    return UserCreated.data;
+    return UserCreated.data.Status;
   } catch (error) {
     // return thunkAPI.rejectWithValue({ errorMessage: "알 수 없는 에러가 발생했습니다." });
     console.log(error);
@@ -17,7 +17,7 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
 
 // 지갑주소가 DB에 있나 확인
 export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (account: string) => {
-  console.log(account);
+  console.log("DB에 넘겨주는 계정", account);
   try {
     const accountCheck = await axios.post("login/user", account);
     console.log("회원 여부 확인 : ", accountCheck.data);

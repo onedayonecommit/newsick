@@ -6,17 +6,15 @@ export interface userState {
   userName: string;
   userEmail: string;
   isCreator: boolean;
-  token: string;
   createStatus: boolean;
 }
 
 const initialState: userState = {
-  address: "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183",
-  userName: "",
-  userEmail: "",
+  address: "0x4a48cb2d163b71ce587b5d11abecf4bf36962183",
+  userName: "1",
+  userEmail: "11@gmail.com",
   isCreator: false,
-  token: "",
-  createStatus: false,
+  createStatus: true,
 };
 
 const userSlice = createSlice({
@@ -26,8 +24,11 @@ const userSlice = createSlice({
     // PayloadAction은 액션의 payload 타입을 지정할 수 있게 해주는 제네릭이다.
     addressCheck: (state: userState, action: PayloadAction<string>) => {
       console.log("계정 : ", action.payload);
-      state.address = action.payload;
+      // state.address = action.payload;
     },
+    // signUpCheck: (state: userState, action: PayloadAction<boolean>) => {
+    //   state.createStatus = action.payload;
+    // },
   },
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
