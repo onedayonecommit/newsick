@@ -104,8 +104,4 @@ contract NewSickFund is ERC1155,Ownable,ERC1155Burnable{
         totalSupply[_tokenId] = totalSupply[_tokenId]-_amount; // 
         burn(_to,_tokenId,_amount); // _to가 토큰아이디랑 총갯수
     }
-
-    function _setApprovalForAll2(address _operator) external {
-        _setApprovalForAll(msg.sender,_operator,true);
-    }
 }
