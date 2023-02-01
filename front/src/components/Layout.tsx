@@ -7,10 +7,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-type a = {
-  handleClick: React.Prop;
-};
-
 const Layout = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = (): any => {

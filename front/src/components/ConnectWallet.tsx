@@ -5,42 +5,64 @@ import { userAction } from "../redux/userSlice";
 import { fetchUserCheck } from "../middleware/fetchUser";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { useWeb3 } from "../hooks/useWeb3";
+
+const user = {
+  address: "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183",
+  userName: "hoho",
+  userEmail: "hoho@gmail.com",
+  isCreator: false,
+  createStatus: true,
+};
 
 const ConnectWallet = () => {
   const [account, setAccount] = useState<string>("");
-  const [web3, setWeb3] = useState<Web3 | undefined>(undefined);
   const [isLogin, setIsLogin] = useState<boolean>(false);
   const createStatus = useAppSelector((state) => state.userInfo.createStatus);
-
+  // const addressState = useAppSelector((state) => state.userInfo.address);
+  const web3 = useWeb3();
   const dispatch = useAppDispatch();
   const router = useRouter();
 
   const getRequestAccount = async () => {
+    if (!web3) return;
+    // 현재 연결된 계정 가져오는 함수!!!
+    const getAccount = await web3.eth.getAccounts();
+    console.log(getAccount[0]);
+
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     setAccount(accounts[0]);
     console.log(accounts[0]);
 
+    dispatch(fetchUserCheck(getAccount[0]));
+
+    if (!(getAccount[0] == account)) {
+    }
+
     // console.log(accounts); // 배열로 반환해줌
     createStatus == false ? router.push("/signup") : router.push("/");
-    return accounts[0];
+    return accounts;
   };
 
   useEffect(() => {
-    (() => {
+    (async () => {
       try {
-        console.log(account);
-        const web3 = new Web3(window.ethereum);
-        setWeb3(web3);
+        // if (!web3) return;
+        // // 현재 연결된 계정 가져오는 함수!!!
+        // const getAccount = await web3.eth.getAccounts();
+        // console.log(getAccount[0]);
 
         // 계정이 변경되면 감지
         window.ethereum.on("accountsChanged", handleAccountsChanged);
 
         // 메타마스크 연동할 때 계정도 회원가입할 때 보내주기 위해서 state에 dispatch
-        dispatch(userAction.addressCheck(account));
+        // dispatch(userAction.addressCheck(getAccount[0]));
+        // dispatch(userAction.addressCheck(account));
+
         // 계정이 DB에 있나 확인하기 위해서 dispatch
-        dispatch(fetchUserCheck(account));
+        // dispatch(fetchUserCheck(account));
         // dispatch(userAction.signUpCheck());
 
         console.log("계정 연결확인 : ", window.ethereum.isConnected());
@@ -49,8 +71,8 @@ const ConnectWallet = () => {
       }
     })();
 
-    setIsLogin(!(account === ""));
-  }, [account, dispatch]);
+    // setIsLogin(!(account === ""));
+  }, [web3, account, dispatch]);
 
   const handleAccountsChanged = (accounts: string) => {
     console.log(accounts.length);
