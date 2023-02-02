@@ -41,7 +41,7 @@ const SignUp = () => {
     emailRegExp(userEmail);
     console.log(userName);
     console.log(userEmail);
-    dispatch(fetchUserCreated({ userName, userEmail, userAdress, isCreator }));
+    dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, userAdress, is_creator: isCreator }));
   };
 
   return (
