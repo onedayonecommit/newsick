@@ -1,4 +1,4 @@
-import { Provider } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import Layout from "@/components/Layout";
 import "@/styles/globals.min.css";
 import SignUp from "./sign_up";

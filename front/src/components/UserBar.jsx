@@ -1,12 +1,12 @@
 import ConnectWallet from "./ConnectWallet";
 
 // 컴포넌트
-const UserBar = (handleClick) => {
+const UserBar = () => {
   return (
     <div className="infoSection">
       <div className="optionSection"></div>
       <div className="userInfoSection">
-        <div className="userImage" onClick={handleClick}></div>
+        <div className="userImage"></div>
         <ConnectWallet />
       </div>
       <div className="stateInfoSection"></div>

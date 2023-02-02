@@ -5,6 +5,8 @@ import storage from "redux-persist/lib/storage";
 // slice 에서 export한 것 들!
 import userSlice from "./userSlice";
 
+// const logger = createLogger();
+
 // redux-persist 사용
 // const persistConfig = {
 //   key: "root",

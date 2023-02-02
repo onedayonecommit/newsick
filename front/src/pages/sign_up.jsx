@@ -2,11 +2,13 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated } from "../middleware/fetchUser";
+import { useWeb3 } from "../hooks/useWeb3";
 
 const SignUp = () => {
   const [isCreator, setIsCreator] = useState(false);
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
+
   useEffect(() => {
     if (isCreator === false) {
       backgroundColorControls.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "rgba(255, 255, 255, 1)", border: "1px solid rgba(255, 255, 255, 0.1)" });
@@ -22,12 +24,12 @@ const SignUp = () => {
     }
   }, [isCreator, backgroundColorControls2]);
 
+  const web3 = useWeb3();
   const userNameRef = useRef();
   const userEmailInput = useRef();
 
   const dispatch = useDispatch();
-  const userAdress = useSelector((state) => state.userInfo.address);
-  // const signUpUser = useAppSelector((state) => state.userInfo);
+  // const userAddress = useSelector((state) => state.userInfo.address);
 
   // 이메일 정규식 체크
   const emailRegExp = (userEmail) => {
@@ -35,13 +37,14 @@ const SignUp = () => {
     if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력");
   };
 
-  const signUpHandler = () => {
+  const signUpHandler = async () => {
+    const getAccount = await web3.eth.getAccounts();
     const userName = userNameRef.current.value;
     const userEmail = userEmailInput.current.value;
     emailRegExp(userEmail);
     console.log(userName);
     console.log(userEmail);
-    dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, userAdress, is_creator: isCreator }));
+    console.log(dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: getAccount, is_creator: isCreator })));
   };
 
   return (
