@@ -24,6 +24,6 @@ export class CreateFundingController {
     @Body() fundingDto: createFundingDto,
     @UploadedFile() file: Express.Multer.File,
   ) {
-      return await this.createFundingService.fundingInfoCreate(fundingDto, file);
+    return await this.createFundingService.fundingInfoCreate(fundingDto, file);
   }
 }
