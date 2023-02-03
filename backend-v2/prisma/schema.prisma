@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -20,6 +20,9 @@ model user{
   updated_at DateTime @default(now()) @updatedAt
   creator creator[]
   ticket ticket[]
+  heart_music heart_music[]
+  heart_funding heart_funding[]
+  playlist playlist[]
 }
 
 model creator{
@@ -43,11 +46,14 @@ model funding{
   creator_ids creator @relation(fields: [creator_id],references: [creator_id])
   creator_id Int
   category String?
-  funding_info String @db.VarChar(5000)
+  funding_info String @default("소개 내용 없음") @db.VarChar(5000)
+  funding_nft_image String @default("default_nft_image")
   funding_start_date Int
   funding_finish_date Int
+  funding_production_date Int
   created_at DateTime @default(now())
   funding_music funding_music[]
+  heart_funding heart_funding[]
   music_maker music_maker[]
   lyrics_maker lyrics_maker[]
   singer singer[]
@@ -83,7 +89,25 @@ model singer{
 model funding_music{
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int @id
-  
+  music_name String // 곡 제목 필수
+  music_lyrics String? // 가사
+  music_genre1 String // 장르1 필수
+  music_genre2 String? // 장르2
+  music_genre3 String? // 장르3
+  music_maker String // 작곡가 필수
+  lyrics_maker String? // 작사가 
+  singer String? // 가수
+  created_at DateTime @default(now())
+  funding_music_player funding_music_player[]
+  heart_music heart_music[]
+  playlist playlist[]
+}
+
+model funding_music_player{
+  music_ids funding_music @relation(fields: [music_id],references: [funding_id])
+  music_id Int @id
+  player_count Int @default(0)
+  heart Int @default(0)
 }
 
 model normal_music{
@@ -96,9 +120,10 @@ model normal_music{
   music_maker String // 작곡가 필수
   lyrics_maker String? // 작사가 
   singer String? // 가수
-  play_number Int // 재생횟수
   created_at DateTime @default(now()) // 우리 플랫폼 음원 등록된 시점
   normal_music_player normal_music_player[] //
+  heart_music heart_music[]
+  playlist playlist[]
 }
 
 model normal_music_player{
@@ -106,4 +131,31 @@ model normal_music_player{
   music_id Int @id
   player_count Int @default(0)
   heart Int @default(0)
+}
+
+model heart_music{
+  id Int @default(autoincrement()) @id
+  user_ids user @relation(fields: [user_id],references: [id])
+  user_id Int
+  normal_music_ids normal_music @relation(fields: [normal_music_id],references: [id])
+  normal_music_id Int
+  funding_music_ids funding_music @relation(fields: [funding_music_id],references: [funding_id])
+  funding_music_id Int
+}
+
+model playlist{
+  id Int @default(autoincrement()) @id
+  user_ids user @relation(fields: [user_id],references: [id])
+  user_id Int
+  normal_music_ids normal_music @relation(fields: [normal_music_id],references: [id])
+  normal_music_id Int
+  funding_music_ids funding_music @relation(fields: [funding_music_id],references: [funding_id])
+  funding_music_id Int
+}
+
+model heart_funding{
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int @id
+  user_ids user @relation(fields: [user_id],references: [id])
+  user_id Int
 }
