@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useWeb3 } from "../hooks/useWeb3";
 import { userAction } from "@/redux/userSlice";
 
+// 더미 데이터
 const user = {
   address: "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183",
   userName: "hoho",
@@ -14,6 +15,7 @@ const user = {
   createStatus: true,
 };
 
+/**계정 전환했을 때 reset 시켜줄 초기 값 */
 const userStateReset = {
   address: "",
   userName: "",
@@ -26,11 +28,10 @@ const userStateReset = {
 const ConnectWallet = () => {
   const [account, setAccount] = useState("");
   const [isLogin, setIsLogin] = useState(false);
-  const web3 = useWeb3();
+  const { web3 } = useWeb3();
   const dispatch = useDispatch();
   const router = useRouter();
   const createStatus = useSelector((state) => state.userInfo.createStatus);
-  const addressState = useSelector((state) => state.userInfo.address);
 
   const getRequestAccount = async () => {
     if (!web3) return;

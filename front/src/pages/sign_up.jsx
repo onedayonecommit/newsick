@@ -3,8 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated } from "../middleware/fetchUser";
 import { useWeb3 } from "../hooks/useWeb3";
+import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const { web3, NEWSIC_FUND } = useWeb3();
+  console.log(web3, NEWSIC_FUND);
   const [isCreator, setIsCreator] = useState(false);
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
@@ -24,12 +27,14 @@ const SignUp = () => {
     }
   }, [isCreator, backgroundColorControls2]);
 
-  const web3 = useWeb3();
+  const router = useRouter();
   const userNameRef = useRef();
   const userEmailInput = useRef();
-
   const dispatch = useDispatch();
-  // const userAddress = useSelector((state) => state.userInfo.address);
+  const [linkedAccount, setLinkedAccount] = useState();
+  const [isLogin, setIsLogin] = useState(false);
+
+  const createStatus = useSelector((state) => state.userInfo.createStatus);
 
   // 이메일 정규식 체크
   const emailRegExp = (userEmail) => {
@@ -37,14 +42,39 @@ const SignUp = () => {
     if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력");
   };
 
+  console.log(isCreator);
+  /**회원가입 버튼을 눌렀을 때 */
   const signUpHandler = async () => {
+    if (!web3) return;
     const getAccount = await web3.eth.getAccounts();
+    setLinkedAccount(getAccount[0]);
+    console.log(linkedAccount);
     const userName = userNameRef.current.value;
     const userEmail = userEmailInput.current.value;
+    const creatorPrice = web3.utils.toWei("0.1", "ether");
     emailRegExp(userEmail);
     console.log(userName);
     console.log(userEmail);
-    console.log(dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: getAccount, is_creator: isCreator })));
+    console.log(creatorPrice);
+
+    // 크리에이터로 회원가입할 경우!
+    if (isCreator == true) {
+      const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: linkedAccount, value: creatorPrice });
+      // NEWSIC_FUND.events.creatorApplicant()
+      console.log("컨트랙트 실행 결과", creatorPay);
+      dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator }));
+      // isLogin을 true로 바꿔주고
+      // 로그인이 된 상태로 메인페이지로 돌아감!
+      // if (createStatus == true) {
+      //   alert("회원가입 추카추~");
+      //   router.push("/");
+      // }
+      setIsLogin(true);
+      alert("회원가입 추카추");
+      router.push("/");
+    } else {
+      console.log(dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator })));
+    }
   };
 
   return (
