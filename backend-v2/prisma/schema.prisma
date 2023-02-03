@@ -1,0 +1,109 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user{
+  id Int @default(autoincrement()) @id
+  user_email String @unique
+  user_wallet_address String @unique
+  user_name String @unique
+  user_profile_image String @default("default_profile_image.png")
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+  creator creator[]
+  ticket ticket[]
+}
+
+model creator{
+  creators_id user @relation(fields : [creator_id],references: [id])
+  creator_id Int @id
+  is_creator Boolean @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+  funding funding[]
+}
+
+model ticket{
+  ids user @relation(fields: [id],references: [id])
+  id Int @id
+  ticket_type Int @default(0)
+  expired DateTime @default(now())
+}
+
+model funding{
+  id Int @id // tokenId
+  creator_ids creator @relation(fields: [creator_id],references: [creator_id])
+  creator_id Int
+  category String?
+  funding_info String @db.VarChar(5000)
+  funding_start_date Int
+  funding_finish_date Int
+  created_at DateTime @default(now())
+  funding_music funding_music[]
+  music_maker music_maker[]
+  lyrics_maker lyrics_maker[]
+  singer singer[]
+}
+
+model music_maker{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  name String? @default("정보 없음")
+  sex Int? @default(0)
+  info String? @default("정보 없음") @db.VarChar(5000)
+}
+
+model lyrics_maker{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  name String? @default("정보 없음")
+  sex Int? @default(0)
+  info String? @default("정보 없음") @db.VarChar(5000)
+}
+
+model singer{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  name String? @default("정보 없음")
+  sex Int? @default(0)
+  info String? @default("정보 없음") @db.VarChar(5000)
+}
+
+model funding_music{
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int @id
+  
+}
+
+model normal_music{
+  id Int @default(autoincrement()) @id
+  music_name String // 곡 제목 필수
+  music_lyrics String? // 가사
+  music_genre1 String // 장르1 필수
+  music_genre2 String? // 장르2
+  music_genre3 String? // 장르3
+  music_maker String // 작곡가 필수
+  lyrics_maker String? // 작사가 
+  singer String? // 가수
+  play_number Int // 재생횟수
+  created_at DateTime @default(now()) // 우리 플랫폼 음원 등록된 시점
+  normal_music_player normal_music_player[] //
+}
+
+model normal_music_player{
+  music_ids normal_music @relation(fields: [music_id],references: [id])
+  music_id Int @id
+  player_count Int @default(0)
+  heart Int @default(0)
+}
