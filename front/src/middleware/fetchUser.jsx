@@ -18,7 +18,6 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
     // return thunkAPI.rejectWithValue({ errorMessage: "알 수 없는 에러가 발생했습니다." });
     console.log(error);
   }
-  // dispatch()
 });
 
 // 지갑주소가 DB에 있나 확인
