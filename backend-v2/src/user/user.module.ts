@@ -11,6 +11,8 @@ import { BuyTicketService } from './buy-ticket/buy-ticket.service';
 import { BuyTicketController } from './buy-ticket/buy-ticket.controller';
 import { LikeMusicFundService } from './like-music-fund/like-music-fund.service';
 import { LikeMusicFundController } from './like-music-fund/like-music-fund.controller';
+import { DuplicateCheckService } from './duplicate-check/duplicate-check.service';
+import { PrismaService } from 'src/prisma.service';
 
 @Module({
   controllers: [
@@ -28,6 +30,8 @@ import { LikeMusicFundController } from './like-music-fund/like-music-fund.contr
     ApplicationCreatorService,
     BuyTicketService,
     LikeMusicFundService,
+    DuplicateCheckService,
+    PrismaService,
   ],
 })
 export class UserModule {}
