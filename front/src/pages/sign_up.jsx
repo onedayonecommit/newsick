@@ -32,6 +32,7 @@ const SignUp = () => {
   const userEmailInput = useRef();
   const dispatch = useDispatch();
   const [linkedAccount, setLinkedAccount] = useState();
+  // 테스트용 로그인 상태 값
   const [isLogin, setIsLogin] = useState(false);
 
   const createStatus = useSelector((state) => state.userInfo.createStatus);
@@ -71,7 +72,7 @@ const SignUp = () => {
       // }
       setIsLogin(true);
       alert("회원가입 추카추");
-      router.push("/");
+      router.replace("/");
     } else {
       console.log(dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator })));
     }
