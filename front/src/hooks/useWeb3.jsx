@@ -34,6 +34,6 @@ export const useWeb3 = () => {
   //   window.location.reload();
   // };
 
-  console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
+  // console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
   return { web3, NEWSIC_FUND, NEWSIC_MARKET };
 };
