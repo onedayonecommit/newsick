@@ -13,6 +13,8 @@ import { LikeMusicFundService } from './like-music-fund/like-music-fund.service'
 import { LikeMusicFundController } from './like-music-fund/like-music-fund.controller';
 import { DuplicateCheckService } from './duplicate-check/duplicate-check.service';
 import { PrismaService } from 'src/prisma.service';
+import { ImageUploadService } from 'src/s3/image-upload/image-upload.service';
+import { FileUploadService } from 'src/s3/file-upload/file-upload.service';
 
 @Module({
   controllers: [
@@ -32,6 +34,8 @@ import { PrismaService } from 'src/prisma.service';
     LikeMusicFundService,
     DuplicateCheckService,
     PrismaService,
+    ImageUploadService,
+    FileUploadService,
   ],
 })
 export class UserModule {}

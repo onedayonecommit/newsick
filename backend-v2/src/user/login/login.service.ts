@@ -8,7 +8,9 @@ export class LoginService {
 
   async userConnect(@Body() user_wallet_address: string): Promise<user | null> {
     try {
-      return await this.db.user.findUnique({ where: { user_wallet_address } });
+      return await this.db.user.findUnique({
+        where: { user_wallet_address },
+      });
     } catch (error) {
       throw new HttpException(
         'login server error',

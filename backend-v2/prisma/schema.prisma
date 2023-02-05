@@ -25,6 +25,11 @@ model user{
   playlist playlist[]
 }
 
+model admin{
+  admin_id String @id
+  admin_password String
+}
+
 model creator{
   creators_id user @relation(fields : [creator_id],references: [id])
   creator_id Int @id
@@ -47,11 +52,12 @@ model funding{
   creator_id Int
   category String?
   funding_info String @default("소개 내용 없음") @db.VarChar(5000)
-  funding_nft_image String @default("default_nft_image")
-  funding_start_date Int
-  funding_finish_date Int
-  funding_production_date Int
-  created_at DateTime @default(now())
+  funding_nft_image String
+  funding_metadata String
+  funding_start_date DateTime @db.Timestamp(3)
+  funding_finish_date DateTime @db.Timestamp(3)
+  funding_production_date DateTime @db.Timestamp(3)
+  created_at DateTime @default(now()) @db.Timestamp(3)
   funding_music funding_music[]
   heart_funding heart_funding[]
   music_maker music_maker[]
@@ -63,27 +69,27 @@ model music_maker{
   id Int @default(autoincrement()) @id
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int
-  name String? @default("정보 없음")
-  sex Int? @default(0)
-  info String? @default("정보 없음") @db.VarChar(5000)
+  music_name String? @default("정보 없음")
+  music_sex Int? @default(0)
+  music_info String? @default("정보 없음") @db.VarChar(5000)
 }
 
 model lyrics_maker{
   id Int @default(autoincrement()) @id
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int
-  name String? @default("정보 없음")
-  sex Int? @default(0)
-  info String? @default("정보 없음") @db.VarChar(5000)
+  lyrics_name String? @default("정보 없음")
+  lyrics_sex Int? @default(0)
+  lyrics_info String? @default("정보 없음") @db.VarChar(5000)
 }
 
 model singer{
   id Int @default(autoincrement()) @id
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int
-  name String? @default("정보 없음")
-  sex Int? @default(0)
-  info String? @default("정보 없음") @db.VarChar(5000)
+  singer_name String? @default("정보 없음")
+  singer_sex Int? @default(0)
+  singer_info String? @default("정보 없음") @db.VarChar(5000)
 }
 
 model funding_music{
@@ -92,11 +98,13 @@ model funding_music{
   music_name String // 곡 제목 필수
   music_lyrics String? // 가사
   music_genre1 String // 장르1 필수
-  music_genre2 String? // 장르2
-  music_genre3 String? // 장르3
   music_maker String // 작곡가 필수
   lyrics_maker String? // 작사가 
   singer String? // 가수
+  music_cover_image String @default("default_music_image.png")
+  album_name String
+  title Boolean @default(false)
+  music_path String
   created_at DateTime @default(now())
   funding_music_player funding_music_player[]
   heart_music heart_music[]
@@ -113,13 +121,15 @@ model funding_music_player{
 model normal_music{
   id Int @default(autoincrement()) @id
   music_name String // 곡 제목 필수
-  music_lyrics String? // 가사
-  music_genre1 String // 장르1 필수
-  music_genre2 String? // 장르2
-  music_genre3 String? // 장르3
-  music_maker String // 작곡가 필수
-  lyrics_maker String? // 작사가 
   singer String? // 가수
+  music_lyrics String? // 가사
+  lyrics_maker String? // 작사가 
+  music_maker String // 작곡가 필수
+  music_genre1 String // 장르1 필수
+  music_cover_image String @default("default_music_image.png")
+  album_name String
+  title Boolean @default(false)
+  music_path String
   created_at DateTime @default(now()) // 우리 플랫폼 음원 등록된 시점
   normal_music_player normal_music_player[] //
   heart_music heart_music[]

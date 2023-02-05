@@ -1,10 +1,11 @@
 import { bool } from 'aws-sdk/clients/signer';
-import { IsBoolean, IsEmail, IsString } from 'class-validator';
+import { IsBoolean, IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
 export class joinDto {
   @IsEmail()
   user_email: string;
   @IsString()
+  @IsNotEmpty()
   user_wallet_address: string;
   @IsString()
   user_name: string;
