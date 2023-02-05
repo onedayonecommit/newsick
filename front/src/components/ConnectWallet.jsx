@@ -77,6 +77,7 @@ const ConnectWallet = () => {
         const linkedAccount = await web3.eth.getAccounts();
         console.log("현재 연결된 계정 _app : ", linkedAccount);
         setAccount(linkedAccount[0]);
+        // 여기에 비동기 함수 테스트 위해서 콘솔 찍어보기 아무거나!
 
         // 테스트 유저용!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (account == user.address) {
@@ -116,8 +117,10 @@ const ConnectWallet = () => {
       console.log("바뀐 state 계정", account);
       console.log(isLogin);
       // if (createStatus == true) {
+      //  setAccount(accounts[0]);
       //   setIsLogin(true);
       // } else {
+      // setAccount("");
       //   dispatch(userAction.reset(userStateReset));
       //   setIsLogin(false);
       // }

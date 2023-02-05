@@ -31,9 +31,9 @@ const SignUp = () => {
   const userNameRef = useRef();
   const userEmailInput = useRef();
   const dispatch = useDispatch();
-  const [linkedAccount, setLinkedAccount] = useState();
+  const [linkedAccount, setLinkedAccount] = useState("");
   // 테스트용 로그인 상태 값
-  const [isLogin, setIsLogin] = useState(false);
+  // const [isLogin, setIsLogin] = useState(false);
 
   const createStatus = useSelector((state) => state.userInfo.createStatus);
 
@@ -44,12 +44,25 @@ const SignUp = () => {
   };
 
   console.log(isCreator);
+
+  useEffect(() => {
+    (async () => {
+      if (!web3) return;
+      const getAccount = await web3.eth.getAccounts();
+      console.log("회원가입계정[0]", getAccount[0]);
+      setLinkedAccount(getAccount[0]);
+      console.log("회원가입창에서 연결된 계정", linkedAccount);
+    })();
+  }, [web3, linkedAccount]);
+
   /**회원가입 버튼을 눌렀을 때 */
   const signUpHandler = async () => {
-    if (!web3) return;
-    const getAccount = await web3.eth.getAccounts();
-    setLinkedAccount(getAccount[0]);
-    console.log(linkedAccount);
+    // if (!web3) return;
+    // const getAccount = await web3.eth.getAccounts();
+    // console.log("회원가입계정[0]", getAccount[0]);
+    // setLinkedAccount(getAccount[0]);
+    // console.log("회원가입창에서 연결된 계정", linkedAccount);
+    console.log("회원가입창에서 연결된 계정", linkedAccount);
     const userName = userNameRef.current.value;
     const userEmail = userEmailInput.current.value;
     const creatorPrice = web3.utils.toWei("0.1", "ether");
