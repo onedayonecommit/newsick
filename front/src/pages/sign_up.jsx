@@ -2,16 +2,40 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated } from "../middleware/fetchUser";
-import { useWeb3 } from "../hooks/useWeb3";
+import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
 
 const SignUp = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
   console.log(web3, NEWSIC_FUND);
   const [isCreator, setIsCreator] = useState(false);
+
+  const router = useRouter();
+  const userNameRef = useRef();
+  const userEmailInput = useRef();
+  const dispatch = useDispatch();
+  const [linkedAccount, setLinkedAccount] = useState("");
+  // 테스트용 로그인 상태 값
+  // const [isLogin, setIsLogin] = useState(false);
+
+  const createStatus = useSelector((state) => state.userInfo.createStatus);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        if (!web3) return;
+        const getAccount = await web3.eth.getAccounts();
+        console.log("회원가입계정[0]", getAccount[0]);
+        setLinkedAccount(getAccount[0]);
+        console.log("회원가입창에서 연결된 계정", linkedAccount);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [web3, linkedAccount]);
+
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
-
   useEffect(() => {
     if (isCreator === false) {
       backgroundColorControls.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "rgba(255, 255, 255, 1)", border: "1px solid rgba(255, 255, 255, 0.1)" });
@@ -27,33 +51,11 @@ const SignUp = () => {
     }
   }, [isCreator, backgroundColorControls2]);
 
-  const router = useRouter();
-  const userNameRef = useRef();
-  const userEmailInput = useRef();
-  const dispatch = useDispatch();
-  const [linkedAccount, setLinkedAccount] = useState("");
-  // 테스트용 로그인 상태 값
-  // const [isLogin, setIsLogin] = useState(false);
-
-  const createStatus = useSelector((state) => state.userInfo.createStatus);
-
   // 이메일 정규식 체크
   const emailRegExp = (userEmail) => {
     const regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력");
   };
-
-  console.log(isCreator);
-
-  useEffect(() => {
-    (async () => {
-      if (!web3) return;
-      const getAccount = await web3.eth.getAccounts();
-      console.log("회원가입계정[0]", getAccount[0]);
-      setLinkedAccount(getAccount[0]);
-      console.log("회원가입창에서 연결된 계정", linkedAccount);
-    })();
-  }, [web3, linkedAccount]);
 
   /**회원가입 버튼을 눌렀을 때 */
   const signUpHandler = async () => {
@@ -65,17 +67,21 @@ const SignUp = () => {
     console.log("회원가입창에서 연결된 계정", linkedAccount);
     const userName = userNameRef.current.value;
     const userEmail = userEmailInput.current.value;
-    const creatorPrice = web3.utils.toWei("0.1", "ether");
+    const creatorPrice = await web3.utils.toWei("0.1", "ether");
     emailRegExp(userEmail);
-    console.log(userName);
-    console.log(userEmail);
-    console.log(creatorPrice);
+    console.log("유저 닉네임", userName);
+    console.log("유저 이메일", userEmail);
+    console.log("전송할 이더", creatorPrice);
+    console.log(isCreator);
 
     // 크리에이터로 회원가입할 경우!
     if (isCreator == true) {
       const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: linkedAccount, value: creatorPrice });
       // NEWSIC_FUND.events.creatorApplicant()
       console.log("컨트랙트 실행 결과", creatorPay);
+      // 일단 테스트 하려고 올림 원래는 dispatch 아래에 있어야함
+      alert("크리에이터 가입 추카추");
+      router.replace("/");
       dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator }));
       // isLogin을 true로 바꿔주고
       // 로그인이 된 상태로 메인페이지로 돌아감!
@@ -83,11 +89,10 @@ const SignUp = () => {
       //   alert("회원가입 추카추~");
       //   router.push("/");
       // }
-      setIsLogin(true);
+    } else {
+      dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator }));
       alert("회원가입 추카추");
       router.replace("/");
-    } else {
-      console.log(dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator })));
     }
   };
 

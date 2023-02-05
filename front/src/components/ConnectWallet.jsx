@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUserCheck } from "../middleware/fetchUser";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { useWeb3 } from "../hooks/useWeb3";
+import useWeb3 from "../hooks/useWeb3";
 import { userAction } from "@/redux/userSlice";
 
 // 더미 데이터
@@ -23,13 +23,13 @@ const userStateReset = {
   isCreator: false,
   createStatus: false,
 };
-console.log("@@@", userStateReset.address);
 
 // 계정을 바꾸면 다시 버튼이 생겨야함! 자동으로 로그아웃!
 const ConnectWallet = () => {
   const [account, setAccount] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const { web3 } = useWeb3();
+  console.log("웹3", web3);
   const dispatch = useDispatch();
   const router = useRouter();
   const createStatus = useSelector((state) => state.userInfo.createStatus);
@@ -77,8 +77,6 @@ const ConnectWallet = () => {
         const linkedAccount = await web3.eth.getAccounts();
         console.log("현재 연결된 계정 _app : ", linkedAccount);
         setAccount(linkedAccount[0]);
-        // 여기에 비동기 함수 테스트 위해서 콘솔 찍어보기 아무거나!
-
         // 테스트 유저용!!!!!!!!!!!!!!!!!!!!!!!!!!
         if (account == user.address) {
           setIsLogin(true);
@@ -99,7 +97,7 @@ const ConnectWallet = () => {
         console.log(err);
       }
     })();
-  }, [web3, account, isLogin]);
+  }, [web3, account]);
 
   const handleAccountsChanged = (accounts) => {
     console.log(accounts.length);
@@ -115,7 +113,7 @@ const ConnectWallet = () => {
       setIsLogin(false);
       console.log("[0]", accounts[0]);
       console.log("바뀐 state 계정", account);
-      console.log(isLogin);
+      // console.log(isLogin);
       // if (createStatus == true) {
       //  setAccount(accounts[0]);
       //   setIsLogin(true);
