@@ -9,12 +9,17 @@ import { ApplicationCreatorService } from './application-creator/application-cre
 import { ApplicationCreatorController } from './application-creator/application-creator.controller';
 import { BuyTicketService } from './buy-ticket/buy-ticket.service';
 import { BuyTicketController } from './buy-ticket/buy-ticket.controller';
-import { LikeMusicFundService } from './like-music-fund/like-music-fund.service';
-import { LikeMusicFundController } from './like-music-fund/like-music-fund.controller';
 import { DuplicateCheckService } from './duplicate-check/duplicate-check.service';
 import { PrismaService } from 'src/prisma.service';
 import { ImageUploadService } from 'src/s3/image-upload/image-upload.service';
 import { FileUploadService } from 'src/s3/file-upload/file-upload.service';
+import { EmailSendService } from 'src/email/email-send/email-send.service';
+import { LikeMusicController } from './like-music/like-music.controller';
+import { LikeMusicService } from './like-music/like-music.service';
+import { LikeFundService } from './like-fund/like-fund.service';
+import { LikeFundController } from './like-fund/like-fund.controller';
+import { PlaylistController } from './playlist/playlist.controller';
+import { PlaylistService } from './playlist/playlist.service';
 
 @Module({
   controllers: [
@@ -23,7 +28,9 @@ import { FileUploadService } from 'src/s3/file-upload/file-upload.service';
     ChangeInfoController,
     ApplicationCreatorController,
     BuyTicketController,
-    LikeMusicFundController,
+    LikeMusicController,
+    LikeFundController,
+    PlaylistController,
   ],
   providers: [
     JoinService,
@@ -31,11 +38,14 @@ import { FileUploadService } from 'src/s3/file-upload/file-upload.service';
     ChangeInfoService,
     ApplicationCreatorService,
     BuyTicketService,
-    LikeMusicFundService,
     DuplicateCheckService,
     PrismaService,
     ImageUploadService,
     FileUploadService,
+    EmailSendService,
+    LikeMusicService,
+    LikeFundService,
+    PlaylistService,
   ],
 })
 export class UserModule {}

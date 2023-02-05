@@ -9,8 +9,8 @@ import {
 export class createFundDto {
   @IsNumber()
   id: number;
-  @IsNumber()
-  creator_id: number;
+  @IsString()
+  creator_id: string;
   @IsString()
   category?: string;
   @IsString()

@@ -31,8 +31,8 @@ model admin{
 }
 
 model creator{
-  creators_id user @relation(fields : [creator_id],references: [id])
-  creator_id Int @id
+  creators_id user @relation(fields : [creator_id],references: [user_wallet_address])
+  creator_id String @id
   is_creator Boolean @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
@@ -40,16 +40,16 @@ model creator{
 }
 
 model ticket{
-  ids user @relation(fields: [id],references: [id])
-  id Int @id
+  ids user @relation(fields: [id],references: [user_wallet_address])
+  id String @id
   ticket_type Int @default(0)
-  expired DateTime @default(now())
+  expired DateTime @default(now()) @db.Timestamp(3)
 }
 
 model funding{
   id Int @id // tokenId
   creator_ids creator @relation(fields: [creator_id],references: [creator_id])
-  creator_id Int
+  creator_id String
   category String?
   funding_info String @default("소개 내용 없음") @db.VarChar(5000)
   funding_nft_image String
@@ -59,7 +59,6 @@ model funding{
   funding_production_date DateTime @db.Timestamp(3)
   created_at DateTime @default(now()) @db.Timestamp(3)
   funding_music funding_music[]
-  heart_funding heart_funding[]
   music_maker music_maker[]
   lyrics_maker lyrics_maker[]
   singer singer[]
@@ -107,8 +106,6 @@ model funding_music{
   music_path String
   created_at DateTime @default(now())
   funding_music_player funding_music_player[]
-  heart_music heart_music[]
-  playlist playlist[]
 }
 
 model funding_music_player{
@@ -132,8 +129,6 @@ model normal_music{
   music_path String
   created_at DateTime @default(now()) // 우리 플랫폼 음원 등록된 시점
   normal_music_player normal_music_player[] //
-  heart_music heart_music[]
-  playlist playlist[]
 }
 
 model normal_music_player{
@@ -145,27 +140,23 @@ model normal_music_player{
 
 model heart_music{
   id Int @default(autoincrement()) @id
-  user_ids user @relation(fields: [user_id],references: [id])
-  user_id Int
-  normal_music_ids normal_music @relation(fields: [normal_music_id],references: [id])
-  normal_music_id Int
-  funding_music_ids funding_music @relation(fields: [funding_music_id],references: [funding_id])
-  funding_music_id Int
+  user_ids user @relation(fields: [user_id],references: [user_wallet_address])
+  user_id String
+  normal_music_id Int?
+  funding_music_id Int?
 }
 
 model playlist{
   id Int @default(autoincrement()) @id
-  user_ids user @relation(fields: [user_id],references: [id])
-  user_id Int
-  normal_music_ids normal_music @relation(fields: [normal_music_id],references: [id])
-  normal_music_id Int
-  funding_music_ids funding_music @relation(fields: [funding_music_id],references: [funding_id])
-  funding_music_id Int
+  user_ids user @relation(fields: [user_id],references: [user_wallet_address])
+  user_id String
+  normal_music_id Int?
+  funding_music_id Int?
 }
 
 model heart_funding{
-  funding_ids funding @relation(fields: [funding_id],references: [id])
-  funding_id Int @id
-  user_ids user @relation(fields: [user_id],references: [id])
-  user_id Int
+  id Int @default(autoincrement()) @id
+  user_ids user @relation(fields: [user_id],references: [user_wallet_address])
+  user_id String 
+  funding_id Int
 }
