@@ -7,7 +7,7 @@ export class LikeFundController {
   constructor(private readonly likeFundService: LikeFundService) {}
 
   @Post('add')
-  async LikeFund(@Body() dto: likeFundDto) {
+  async likeFund(@Body() dto: likeFundDto) {
     return await this.likeFundService.likeFund(dto);
   }
 }
