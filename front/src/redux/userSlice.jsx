@@ -5,6 +5,7 @@ const initialState = {
   address: "",
   userName: "",
   userEmail: "",
+  userImage: "",
   isCreator: false,
   createStatus: false,
 };
@@ -13,10 +14,6 @@ const userSlice = createSlice({
   name: "userInfo",
   initialState,
   reducers: {
-    addressCheck: (state, action) => {
-      state.address = action.payload;
-      console.log("계정 : ", state.address);
-    },
     reset: (state, action) => {
       state = action.payload;
       console.log("초기화된 state : ", action.payload);
@@ -29,8 +26,13 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        state.createStatus = action.payload;
-        console.log("회원가입 status : ", action.payload);
+        state.address = action.payload.user_wallet_address;
+        state.userName = action.payload.user_name;
+        state.userEmail = action.payload.user_email;
+        state.userImage = action.payload.user_profile_image;
+        state.isCreator = action.payload.is_creator;
+        state.createStatus = action.payload.createStatus;
+        console.log("넘어온 유저정보 : ", action.payload);
       })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
@@ -39,8 +41,14 @@ const userSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchUserCreated.fulfilled, (state, action) => {
-        state = action.payload;
-        console.log("유저정보 : ", action.payload);
+        state.address = action.payload.user_wallet_address;
+        state.userName = action.payload.user_name;
+        state.userEmail = action.payload.user_email;
+        state.userImage = action.payload.user_profile_image;
+        state.isCreator = action.payload.is_creator;
+        state.createStatus = action.payload.createStatus;
+        console.log("넘어온 유저정보 : ", action.payload);
+        console.log("업데이트 시킨 state : ", state);
       })
       .addCase(fetchUserCreated.rejected, (state) => {
         state = initialState;

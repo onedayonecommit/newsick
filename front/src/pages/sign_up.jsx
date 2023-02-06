@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserCreated } from "../middleware/fetchUser";
+import { fetchUserCreated, fetchUserCheck } from "../middleware/fetchUser";
 import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
 
@@ -15,27 +15,7 @@ const SignUp = () => {
   const userEmailInput = useRef();
   const dispatch = useDispatch();
   const [linkedAccount, setLinkedAccount] = useState("");
-  // 테스트용 로그인 상태 값
-  // const [isLogin, setIsLogin] = useState(false);
-
   const createStatus = useSelector((state) => state.userInfo.createStatus);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        if (!web3) return;
-        const getAccount = await web3.eth.getAccounts();
-        console.log("회원가입계정[0]", getAccount[0]);
-        setLinkedAccount(getAccount[0]);
-        console.log("회원가입창에서 연결된 계정", linkedAccount);
-
-        // 계정 변경 감지
-        window.ethereum.on("accountsChanged", handleAccountsChanged);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, [web3, linkedAccount]);
 
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
@@ -56,7 +36,9 @@ const SignUp = () => {
 
   /**회원가입 버튼을 눌렀을 때 */
   const signUpHandler = async () => {
-    console.log("회원가입창에서 연결된 계정", linkedAccount);
+    if (!web3) return;
+    const getAccount = await web3.eth.getAccounts();
+    setLinkedAccount(getAccount[0]);
     const userName = userNameRef.current.value;
     const userEmail = userEmailInput.current.value;
     const creatorPrice = await web3.utils.toWei("0.1", "ether");
@@ -67,7 +49,6 @@ const SignUp = () => {
     console.log(isCreator);
 
     // 이메일 정규식 체크
-
     const regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력");
     else {
@@ -76,23 +57,48 @@ const SignUp = () => {
         const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: linkedAccount, value: creatorPrice });
         // NEWSIC_FUND.events.creatorApplicant()
         console.log("컨트랙트 실행 결과", creatorPay);
-        // 일단 테스트 하려고 올림 원래는 dispatch 아래에 있어야함
-        alert("크리에이터 가입 추카추");
-        router.replace("/");
-        dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: creatorPay.events.returnValues._status }));
-        // isLogin을 true로 바꿔주고
-        // 로그인이 된 상태로 메인페이지로 돌아감!
-        if (createStatus == true) {
-          alert("회원가입 추카추~");
-          router.push("/");
-        }
+        console.log("이벤트", creatorPay.events);
+        console.log("크리에이터앱", creatorPay.events.creatorApplicant);
+        console.log("리턴", creatorPay.events.creatorApplicant.returnValues);
+        console.log("컨트랙트 이벤트", creatorPay.events.creatorApplicant.returnValues[1]);
+
+        dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: creatorPay.events.creatorApplicant.returnValues._status }));
       } else {
-        console.log(dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator })));
+        dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator }));
         alert("회원가입 추카추");
         router.replace("/");
       }
     }
   };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        if (!web3) return;
+        const getAccount = await web3.eth.getAccounts();
+        setLinkedAccount(getAccount[0]);
+        console.log("회원가입창 들어오면 연결된 계정", getAccount[0]);
+        dispatch(fetchUserCheck({ user_wallet_address: getAccount[0] }));
+      } catch (error) {
+        console.log(error);
+      }
+      window.ethereum.on("accountsChanged", handleAccountsChanged);
+    })();
+  }, [web3, linkedAccount]);
+
+  useEffect(() => {
+    (async () => {
+      if (isCreator == true) {
+        if (createStatus == true) {
+          alert("크리에이터 가입 추카추");
+          router.replace("/");
+        }
+      } else if (createStatus == true) {
+        alert("이미 가입된 회원입니다");
+        router.replace("/");
+      }
+    })();
+  }, [createStatus]);
 
   const handleAccountsChanged = (accounts) => {
     console.log(accounts.length);
@@ -105,17 +111,6 @@ const SignUp = () => {
       console.log("Please connect to MetaMask.");
     } else if (accounts[0] !== linkedAccount) {
       setLinkedAccount(accounts[0]);
-      console.log("[0]", accounts[0]);
-      console.log("바뀐 state 계정", linkedAccount);
-      // console.log(isLogin);
-      // if (createStatus == true) {
-      //  setAccount(accounts[0]);
-      //   setIsLogin(true);
-      // } else {
-      // setAccount("");
-      //   dispatch(userAction.reset(userStateReset));
-      //   setIsLogin(false);
-      // }
     }
   };
 

@@ -7,13 +7,13 @@ import useWeb3 from "../hooks/useWeb3";
 import { userAction } from "@/redux/userSlice";
 
 // 더미 데이터
-const user = {
-  address: "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183",
-  userName: "hoho",
-  userEmail: "hoho@gmail.com",
-  isCreator: false,
-  createStatus: true,
-};
+// const user = {
+//   address: "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183",
+//   userName: "hoho",
+//   userEmail: "hoho@gmail.com",
+//   isCreator: false,
+//   createStatus: true,
+// };
 
 /**계정 전환했을 때 reset 시켜줄 초기 값 */
 const userStateReset = {
@@ -27,11 +27,12 @@ const userStateReset = {
 // 계정을 바꾸면 다시 버튼이 생겨야함! 자동으로 로그아웃!
 const ConnectWallet = () => {
   const [account, setAccount] = useState("");
-  const [isLogin, setIsLogin] = useState(false);
   const { web3 } = useWeb3();
-  console.log("웹3", web3);
+  // console.log("웹3", web3);
   const dispatch = useDispatch();
   const router = useRouter();
+  const userName = useSelector((state) => state.userInfo.userName);
+  const userEmail = useSelector((state) => state.userInfo.userEmail);
   const createStatus = useSelector((state) => state.userInfo.createStatus);
 
   const getRequestAccount = async () => {
@@ -44,26 +45,24 @@ const ConnectWallet = () => {
       method: "eth_requestAccounts",
     });
     console.log("계정 스테이트", account);
-    console.log(user.address);
 
-    // if (createStatus == false) {
+    if (createStatus == false) {
+      alert("회원가입을 해주세요!");
+      router.push("/sign_up");
+    } else {
+      alert("로그인 완료!");
+      router.push("/");
+    }
+
+    // 회원가입 더미데이터 테스트
+    // if (account !== user.address) {
     //   alert("회원가입을 해주세요!");
     //   router.push("/sign_up");
-    // } else {
+    // } else if (account == user.address) {
     //   alert("로그인 완료!");
     //   router.push("/");
     //   setIsLogin(true);
     // }
-
-    // 회원가입 더미데이터 테스트
-    if (account !== user.address) {
-      alert("회원가입을 해주세요!");
-      router.push("/sign_up");
-    } else if (account == user.address) {
-      alert("로그인 완료!");
-      router.push("/");
-      setIsLogin(true);
-    }
 
     // console.log(accounts); // 배열로 반환해줌
     return accounts;
@@ -76,28 +75,27 @@ const ConnectWallet = () => {
         if (!web3) return;
         const linkedAccount = await web3.eth.getAccounts();
         console.log("현재 연결된 계정 _app : ", linkedAccount);
-        setAccount(linkedAccount[0]);
-        // 테스트 유저용!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // if (account == user.address) {
-        //   setIsLogin(true);
-        // }
-        if (createStatus == true) {
-          setIsLogin(true);
-        }
 
         // 여기서 회원이면 유저 정보 전체 받아오고
         // 비회원이면 createStatus : false 받아옴
-        dispatch(fetchUserCheck(linkedAccount[0]));
-
-        window.ethereum.on("accountsChanged", handleAccountsChanged);
-
-        // 계정 변경 감지
-        console.log("계정 연결확인 : ", window.ethereum.isConnected());
+        dispatch(fetchUserCheck({ user_wallet_address: linkedAccount[0] }));
       } catch (err) {
         console.log(err);
       }
+      // 계정 변경 감지
+      window.ethereum.on("accountsChanged", handleAccountsChanged);
     })();
   }, [web3, account]);
+
+  useEffect(() => {
+    (async () => {
+      if (!web3) return;
+      const linkedAccount = await web3.eth.getAccounts();
+      if (createStatus == true) {
+        setAccount(linkedAccount[0]);
+      }
+    })();
+  }, [createStatus]);
 
   const handleAccountsChanged = (accounts) => {
     console.log(accounts.length);
@@ -109,14 +107,7 @@ const ConnectWallet = () => {
       // 메타마스크 연결하세요!
       console.log("Please connect to MetaMask.");
     } else if (accounts[0] !== account) {
-      // setAccount(accounts[0]);
-      // setIsLogin(false);
-      // console.log("[0]", accounts[0]);
-      // console.log("바뀐 state 계정", account);
-      // console.log(isLogin);
       setAccount(accounts[0]);
-      dispatch(userAction.reset(userStateReset));
-      setIsLogin(false);
     }
   };
 
@@ -125,10 +116,10 @@ const ConnectWallet = () => {
     // 회원이고 지갑이 연결이 되어있으면 페이지에 들어가자마자 로그인되게!
     // 회원가입 후 로그인되면 메인으로 이동
     <>
-      {isLogin ? (
+      {createStatus ? (
         <div className="userProfile">
-          <div className="userName">{user.userName}</div>
-          <div className="userEmail">{user.userEmail}</div>
+          <div className="userName">{userName}</div>
+          <div className="userEmail">{userEmail}</div>
         </div>
       ) : (
         <motion.div
