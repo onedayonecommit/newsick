@@ -1,22 +1,7 @@
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faHeart } from "@fortawesome/free-solid-svg-icons";
-
-const variantPlay = {
-  animate: {
-    x: ["calc(0px)", "calc(247px)"],
-    transition: {
-      x: {
-        ease: "linear",
-        duration: 15,
-        repeat: Infinity,
-        repeatType: "loop",
-      },
-    },
-  },
-};
+import { faCaretLeft, faCaretRight, faList, faPause, faRepeat, faShuffle, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 const playBarState = {
   animate: {
     width: ["calc(0%)", "calc(100%)"],
@@ -30,40 +15,23 @@ const playBarState = {
     },
   },
 };
-
-const openPlayBar = {
-  initial: {
-    y: 0,
-    opacity: 1,
-  },
+const variantPlay = {
   animate: {
-    y: "-100vw",
-    opacity: 0,
+    x: ["calc(0px)", "calc(504px)"],
+    transition: {
+      x: {
+        ease: "linear",
+        duration: 15,
+        repeat: Infinity,
+        repeatType: "loop",
+      },
+    },
   },
 };
-
-const PlayBar = ({ soundClick, playerClick, isPlayerClick }) => {
+const MusicPlayerPlayBar = ({ FilippedChoice }) => {
   const [isPlay, setIsPlay] = useState();
-  const [selected, setSelected] = useState();
-
-  const shackIcon = () => {
-    return {
-      transform: ["scale3d(1,1,1)", "scale3d(1.4,0.55,1)", "scale3d(0.75,1.25,1)", "scale3d(1.25,0.85,1)", "scale3d(0.9,1.05,1)", "scale3d(1,1,1)"],
-    };
-  };
-
   return (
-    <motion.div
-      className="musicBar"
-      variants={openPlayBar}
-      initial={isPlayerClick ? "animate" : "initial"}
-      animate={!isPlayerClick ? "initial" : "animate"}
-      transition={{
-        type: "spring",
-        duration: 0.75,
-        bounce: 0.5,
-      }}
-    >
+    <div className="playBarSection">
       <div className="playBar">
         <div className="playBarFrame" onClick={() => setIsPlay(!isPlay)}>
           <motion.div className="nowPlayState" animate={isPlay ? "animate" : ""} variants={playBarState} />
@@ -112,31 +80,33 @@ const PlayBar = ({ soundClick, playerClick, isPlayerClick }) => {
           </svg>
         </div>
       </div>
-      <div className="playInfo">
-        <motion.span>
-          <Image className="singerPhoto" src="https://i.pinimg.com/236x/55/17/28/551728771d95781f1b89395dd0949732.jpg" alt="YOUNHA.jpg" onClick={playerClick} width={50} height={50} />
+      <motion.div className="controlBar">
+        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>
+          <FontAwesomeIcon className="sideIcon" icon={faVolumeHigh} />
         </motion.span>
-        <div className="palyInfoBox">
-          <div className="playInfoFrame">
-            <div className="songInfoSection">
-              <div className="songInfoFrame">
-                <div>SongName</div>
-                <div>SingerName</div>
-              </div>
-            </div>
-            <motion.div className="playOptionSection">
-              <motion.div whileHover={() => shackIcon()} whileTap={{ scale: 0.8 }} onClick={() => setSelected(!selected)}>
-                <FontAwesomeIcon icon={faHeart} className="iconHeart" type="button" style={{ color: selected ? "#ffffff" : "transparent" }} />
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.8 }}>
-                <FontAwesomeIcon icon={faBell} className="iconBell" onClick={soundClick} />
-              </motion.div>
-            </motion.div>
-          </div>
+        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>
+          <FontAwesomeIcon className="sideIcon" icon={faShuffle} />
+        </motion.span>
+        <div className="playOrStop">
+          <motion.span>
+            <FontAwesomeIcon icon={faCaretLeft} className="leftMusic" whileHover={{ x: 5 }} />
+          </motion.span>
+          <motion.span>
+            <FontAwesomeIcon icon={faPause} className="stopOrPlayButton" />
+          </motion.span>
+          <motion.span>
+            <FontAwesomeIcon icon={faCaretRight} className="rightMusic" />
+          </motion.span>
         </div>
-      </div>
-    </motion.div>
+        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>
+          <FontAwesomeIcon className="sideIcon" icon={faRepeat} />
+        </motion.span>
+        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }} onClick={FilippedChoice}>
+          <FontAwesomeIcon className="sideIcon" icon={faList} />
+        </motion.span>
+      </motion.div>
+    </div>
   );
 };
 
-export default PlayBar;
+export default MusicPlayerPlayBar;

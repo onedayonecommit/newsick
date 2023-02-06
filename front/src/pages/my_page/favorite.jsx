@@ -1,7 +1,9 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import PageNationFrame from "../../components/PageNationFrame";
 const nftItem = [
   {
     id: "a",
@@ -121,40 +123,48 @@ const MyPageSecondContainer = () => {
   return (
     <div className="secondMyPage">
       <div className="myPageSecondContainerFrame">
-        {nftItem.map((item) => (
-          <div className="nftWishItemBox" key={item.id}>
-            <div className="topSection">
-              <img className="nftImage" src={item.imgUrl} alt="ironImage" />
-              <motion.div key={item.id} style={{ color: isFilled && selectedItem === item.id ? "rgb(255, 255, 255)" : "rgba(0, 0, 0, 0.14)" }} transition={{ duration: 0.3 }} onClick={() => setIsFilled(!isFilled)} onClickCapture={() => handleClick(item)} className="wishButton">
-                <FontAwesomeIcon icon={faHeart} />
-              </motion.div>
-              <div className="infoStateFrame">
-                <div className="price">
-                  <div>{item.price}</div>
-                  <div>ETH</div>
+        <div className="topInfoSection">
+          <div>마감 임박한 펀딩</div>
+          <div className="slideSection">info</div>
+        </div>
+        <div className=""></div>
+        <div className="nftItemList">
+          {nftItem.map((item) => (
+            <div className="nftWishItemBox" key={item.id}>
+              <div className="topSection">
+                <img className="nftImage" src={item.imgUrl} alt="ironImage" />
+                <motion.div key={item.id} style={{ color: isFilled && selectedItem === item.id ? "rgb(255, 255, 255)" : "rgba(0, 0, 0, 0.14)" }} transition={{ duration: 0.3 }} onClick={() => setIsFilled(!isFilled)} onClickCapture={() => handleClick(item)} className="wishButton">
+                  <FontAwesomeIcon icon={faHeart} />
+                </motion.div>
+                <div className="infoStateFrame">
+                  <div className="price">
+                    <div>{item.price}</div>
+                    <div>ETH</div>
+                  </div>
+                  <div className="state">
+                    <div>{item.state}</div>
+                  </div>
                 </div>
-                <div className="state">
-                  <div>{item.state}</div>
+              </div>
+              <div className="middleSection">
+                <div className="nftNameTag">{item.nftName}</div>
+                <div className="creatorNameTag">
+                  <img src={item.creatorImgUrl} alt="creatorImage" />
+                  <div>{item.creatorName}</div>
+                </div>
+              </div>
+              <div className="bottomSection">
+                <div className="detailButton" typeof="button">
+                  Detail
+                </div>
+                <div className="buyNowButton" typeof="button">
+                  Buy Now
                 </div>
               </div>
             </div>
-            <div className="middleSection">
-              <div className="nftNameTag">{item.nftName}</div>
-              <div className="creatorNameTag">
-                <img src={item.creatorImgUrl} alt="creatorImage" />
-                <div>{item.creatorName}</div>
-              </div>
-            </div>
-            <div className="bottomSection">
-              <div className="detailButton" typeof="button">
-                Detail
-              </div>
-              <div className="buyNowButton" typeof="button">
-                Buy Now
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <PageNationFrame />
       </div>
     </div>
   );

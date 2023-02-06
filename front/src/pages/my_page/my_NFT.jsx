@@ -1,3 +1,6 @@
+import Image from "next/image";
+import PageNationFrame from "../../components/PageNationFrame";
+
 const ownNftDate = [
   {
     id: "a",
@@ -77,20 +80,32 @@ const MyPageThirdContainer = () => {
   return (
     <div className="thirdMyPage">
       <div className="MyPageThirdContainerFrame">
-        {ownNftDate.map((item) => (
-          <div className="ownedNftBox" key={item.id}>
-            <div className="ownedNftFrame">
-              <img className="ownNftImg" src={item.ownNftImgUrl} alt="3dRender" />
-              <div className="nftTitleSection">
-                <div>{item.ownNftName}</div>
-                <div>{item.ownNftPrice} ETH</div>
-                <div>{item.state}</div>
-              </div>
-              <div className="middleLine" />
-              <div className="infoSection">{item.info}</div>
-            </div>
+        <div className="infoSection">
+          <div className="infoFrame">
+            <div>소유한 NFT 총 갯수</div>
+            <div>24</div>
           </div>
-        ))}
+          <div className="underLine" />
+        </div>
+        <div className="fundingItemList">
+          {ownNftDate.map((item) => (
+            <div className="ownedNftBox" key={item.id}>
+              <div className="ownedNftFrame">
+                <Image className="ownNftImg" src={item.ownNftImgUrl} alt="3dRender" width={210} height={189} />
+                <div className="nftTitleSection">
+                  <div>{item.ownNftName}</div>
+                  <div>{item.ownNftPrice} ETH</div>
+                  <div>{item.state}</div>
+                </div>
+                <div className="middleLine" />
+                <div className="infoSection">{item.info}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="pageNationFrame">
+        <PageNationFrame />
       </div>
     </div>
   );

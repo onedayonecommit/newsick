@@ -4,49 +4,101 @@
   font-weight: normal;
   font-style: normal;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
-.ToggleSwitch {
-  box-sizing: border-box;
-  width: 983px;
-  height: 60px;
+.testContentFrame {
+  width: 1359px;
+  height: 950px;
+  display: block;
+  background-color: #2b2f5f;
+  overflow: visible;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+// ==================================COMPONENT CSS START
+.playBarSection {
+  flex-shrink: 0;
+  width: 610px;
+  height: 204px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
   overflow: hidden;
   z-index: 1;
+  position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: center;
+  align-content: flex-start;
   flex-wrap: nowrap;
-  border-radius: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  .FocusBox {
-    position: absolute;
-    width: 260px;
-    height: 60px;
+  gap: 5px;
+  border-radius: 0px 0px 0px 0px;
+  .controlBar {
+    flex-shrink: 0;
+    width: 610px;
+    height: 105px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(100% 105.5% at -7.3999999999999995% 20%, rgba(211, 66, 255, 0.6) 0%, rgba(86, 0, 112, 0.4) 100%);
+    overflow: visible;
+    position: relative;
+    padding: 0px 0px 0px 0px;
     align-content: center;
     flex-wrap: nowrap;
-    border-radius: 60px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 40px;
+    border-radius: 0px 0px 0px 0px;
+    .sideIcon {
+      cursor: pointer;
+      width: 40px;
+      height: 34px;
+      color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+    .playOrStop {
+      cursor: pointer;
+      flex-shrink: 0;
+      width: 220px;
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 25px;
+      border-radius: 0px 0px 0px 0px;
+      .leftMusic,
+      .rightMusic {
+        color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        width: 53px;
+        height: 40px;
+        &:hover {
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+      .stopOrPlayButton {
+        color: rgba(255, 255, 255);
+        cursor: pointer;
+        width: 64px;
+        height: 48px;
+      }
+    }
   }
-  .div1,
-  .div2,
-  .div3 {
-    cursor: pointer;
+  .playBar {
     flex-shrink: 0;
-    width: 260px;
-    height: 60px;
+    width: 610px;
+    height: 94px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -54,20 +106,591 @@ body {
     padding: 0px 0px 0px 0px;
     align-content: center;
     flex-wrap: nowrap;
-    gap: 10px;
-    border-radius: 60px;
-    flex-shrink: 0;
-    white-space: pre;
-    font-weight: 700;
-    font-family: "Inter-Bold", "Inter", sans-serif;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 16px;
-    letter-spacing: 0px;
-    line-height: 1.2;
-    text-align: center;
+    gap: 0;
+    border-radius: 0px 0px 0px 0px;
+    .playBarFrame {
+      flex-shrink: 0;
+      width: 504px;
+      height: 38px;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      border-radius: 0px 0px 0px 0px;
+      .nowPlayState {
+        position: absolute;
+        height: 72px;
+        left: 0px;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      .playMotionWave {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        .playWave1 {
+          pointer-events: none;
+          position: relative;
+          width: 100px;
+          height: 36px;
+        }
+        .playWave2 {
+          pointer-events: none;
+          position: relative;
+          width: 100px;
+          height: 36px;
+        }
+      }
+      .playBackGround {
+        position: absolute;
+        top: 12px;
+        bottom: 12px;
+        left: 0px;
+        right: 0px;
+        width: 247px;
+        height: 48px;
+      }
+    }
   }
 }
-// ==================================COMPONENT CSS START
+.MusicPlayFrame {
+  box-sizing: border-box;
+  width: 610px;
+  height: 908px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  right: 200px;
+  padding: 20px 0px 20px 0px;
+  box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+    0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(14, 13, 81, 0.6);
+  overflow: visible;
+  z-index: 99;
+  align-content: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  .songDetailSection {
+    flex-shrink: 0;
+    width: 610px;
+    height: 868px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    border-radius: 0px 0px 0px 0px;
+    .slideSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 610px;
+      height: 405px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0px 0px 20px 0px;
+      overflow: hidden;
+      position: relative;
+      align-content: flex-end;
+      flex-wrap: nowrap;
+      // gap: 128px;
+      border-radius: 0px 0px 0px 0px;
+      .slideBackground {
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+      .slideList {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+          position: relative;
+        }
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 610px;
+        height: 405px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 0px 0px 20px 0px;
+        overflow: hidden;
+        position: relative;
+        align-content: flex-end;
+        flex-wrap: nowrap;
+        gap: 128px;
+        border-radius: 0px 0px 0px 0px;
+        .slides {
+          display: grid;
+          > .slide {
+            grid-area: 1 / -1;
+          }
+
+          > button {
+            cursor: pointer;
+            appearance: none;
+            background: transparent;
+            border: none;
+            color: white;
+            position: absolute;
+            font-size: 70px;
+            width: 100px;
+            top: 100px;
+            transition: opacity 0.3s;
+            opacity: 0.7;
+            z-index: 5;
+
+            &:hover {
+              opacity: 1;
+            }
+
+            &:focus {
+              outline: none;
+            }
+
+            &:first-child {
+              left: -50%;
+            }
+            &:last-child {
+              right: -50%;
+            }
+          }
+        }
+
+        .slideContent {
+          opacity: 0.5;
+          width: 230px;
+          height: 310px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          transition: transform 0.5s ease-in-out;
+          box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+            0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+          border-radius: 50px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 0px 0px 20px 0px;
+          display: grid;
+          align-content: flex-end;
+          // ================ 카드가 가로로 슬라이드 되는 부분
+          transform-style: preserve-3d;
+          transform: perspective(1000px) translateX(calc(110% * var(--offset))) rotateY(calc(-50deg * var(--dir)));
+          //=================
+        }
+
+        .slideContentInner {
+          transform-style: preserve-3d;
+          transform: translateZ(60px);
+          transition: opacity 0.3s linear;
+          font-family: "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 20px;
+          opacity: 0;
+
+          .slideTitle {
+            flex-shrink: 0;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 22px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .slideSubtitle,
+          .slideDescription {
+            flex-shrink: 0;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+
+          .slideSubtitle::before {
+            content: "— ";
+          }
+        }
+
+        // .slideBackground {
+        //   position: absolute;
+        //   top: 0;
+        //   left: -10%;
+        //   right: -10%;
+        //   bottom: 0;
+        //   background-size: cover;
+        //   background-position: center center;
+        //   z-index: -1;
+        //   opacity: 0;
+        //   transition: opacity 0.3s linear, transform 0.3s ease-in-out;
+        //   pointer-events: none;
+        //   transform: translateX(calc(10% * var(--dir)));
+        // }
+
+        .slide[data-active] {
+          z-index: 2;
+          pointer-events: auto;
+
+          // .slideBackground {
+          //   opacity: 0.2;
+          //   transform: none;
+          // }
+
+          .slideContentInner {
+            opacity: 1;
+          }
+
+          // 호버하면 얼마나 기울어 지느냐에 대한 부분인듯
+          .slideContent {
+            --x: calc(var(--px) - 0.5);
+            --y: calc(var(--py) - 0.5);
+            opacity: 1;
+
+            transform: perspective(1000px);
+
+            &:hover {
+              transition: none;
+              transform: perspective(1000px) rotateY(calc(var(--x) * 45deg)) rotateX(calc(var(--y) * -45deg));
+            }
+          }
+        }
+      }
+      .backToMain {
+        color: white;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 0px;
+        left: 15px;
+        cursor: pointer;
+        z-index: 2;
+      }
+    }
+    .lyricsSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 610px;
+      height: 259px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 25px 25px 25px;
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 0px 0px 0px 0px;
+      .lyricsFrame {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 560px;
+        height: 209px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        border-color: rgba(255, 255, 255, 0.1);
+        border-style: solid;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        flex-shrink: 0;
+        font-weight: bold;
+        white-space: pre;
+        font-family: "Inter", sans-serif;
+        color: rgba(255, 255, 255, 1);
+        font-size: 20px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+    }
+  }
+  .songListSection {
+    top: 20px;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+    flex-shrink: 0;
+    width: 610px;
+    height: 868px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    overflow: hidden;
+    position: absolute;
+    padding: 0px 0px 0px 0px;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 5px;
+    border-radius: 0px 0px 0px 0px;
+    .listTopBar {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 610px;
+      height: 76px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px 20px 20px;
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      border-radius: 0px 0px 0px 0px;
+      :nth-child(1) {
+        color: rgba(255, 255, 255, 0.8);
+        position: relative;
+        width: 40px;
+        height: 40px;
+      }
+      .playListText {
+        flex-shrink: 0;
+        width: 238px;
+        height: 54px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        flex-shrink: 0;
+        white-space: pre;
+        font-weight: 700;
+        font-style: normal;
+        font-family: "Inter-Bold", "Inter", sans-serif;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 26px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+    }
+    .listSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 610px;
+      height: 578px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 10px 10px 10px;
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 10px;
+      border-radius: 0px 0px 0px 0px;
+      .listControlBar {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 576px;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px 0px 30px;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        border-radius: 0px 0px 0px 0px;
+        border-color: rgba(255, 255, 255, 0.1);
+        border-style: solid;
+        border-top-width: 0px;
+        border-bottom-width: 1px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+      }
+      .listFrame {
+        flex-shrink: 0;
+        width: 576px;
+        height: 529px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+      }
+    }
+  }
+}
+
+.toggleFrame {
+  width: min-content;
+  height: min-content;
+  position: absolute;
+  top: 40px;
+  .toggle {
+    box-sizing: border-box;
+    width: 983px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    z-index: 1;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    position: relative;
+    border-radius: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    .selected {
+      cursor: pointer;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 255px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 10px;
+      border-radius: 60px;
+      flex-shrink: 0;
+      white-space: pre;
+      font-weight: 700;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: #ffffff;
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .option {
+      cursor: pointer;
+      flex-shrink: 0;
+      width: 255px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 10px;
+      border-radius: 60px;
+      flex-shrink: 0;
+      white-space: pre;
+      font-weight: 700;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 16px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .togglePoint {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 255px;
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(158.7% 642.9% at 33.5% 174.2%, rgba(108, 99, 255, 0.4) 0%, rgba(248, 164, 216, 0.6) 100%);
+      overflow: hidden;
+      position: absolute;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .applicationCreator,
+    .listInterests,
+    .listOwn {
+      cursor: pointer;
+      flex-shrink: 0;
+      width: 260px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 10px;
+      border-radius: 60px;
+      flex-shrink: 0;
+      white-space: pre;
+      position: relative;
+      font-weight: 700;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 16px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+      text-align: center;
+    }
+  }
+}
 .volumeBox {
   bottom: 60px;
   left: 275px;
@@ -576,8 +1199,8 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        // -webkit-backdrop-filter: blur(10px);
-        // backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         background-color: rgba(29, 32, 62, 0.3);
         overflow: hidden;
         position: relative;
@@ -619,18 +1242,6 @@ body {
           flex-wrap: nowrap;
           gap: 40px;
           border-radius: 0px 0px 0px 0px;
-          :nth-child(-n + 5) {
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            display: block;
-            background-color: rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            border-radius: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-          }
         }
       }
       .categories {
@@ -835,7 +1446,7 @@ body {
         }
       }
     }
-    .infoSection {
+    .userBarSection {
       flex-shrink: 0;
       width: 234px;
       height: 1000px;
@@ -1016,6 +1627,7 @@ body {
 
 // coverPageCSS===================start
 .coverPageBackGround {
+  position: fixed;
   width: 1920px;
   height: 1080px;
   display: flex;
@@ -1048,8 +1660,8 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // -webkit-backdrop-filter: blur(0px);
-      // backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      backdrop-filter: blur(0px);
       overflow: hidden;
       position: relative;
       padding: 0px 0px 0px 0px;
@@ -1347,8 +1959,12 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    // -webkit-backdrop-filter: blur(10px);
-    // backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+
     box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
       0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
     background-color: rgba(29, 32, 62, 0.3);
@@ -1526,6 +2142,7 @@ body {
           border-radius: 0px 0px 0px 0px;
           .userButton,
           .createrButton {
+            cursor: pointer;
             box-sizing: border-box;
             flex-shrink: 0;
             width: 146px;
@@ -1581,19 +2198,20 @@ body {
           background-color: #ffffff;
           overflow: hidden;
           position: relative;
-          padding: 0px 0px 0px 0px;
           align-content: center;
           flex-wrap: nowrap;
-          gap: 0;
           border-radius: 25px;
           border: 1px solid rgba(0, 0, 0, 0.1);
           white-space: pre;
-          font-weight: 500;
+          font-weight: bold;
           font-family: "Inter-Medium", "Inter", sans-serif;
-          color: #000000;
+          color: rgba(0, 0, 0, 0.5);
           font-size: 20px;
           letter-spacing: 0px;
           line-height: 1.2;
+          &:hover {
+            color: rgba(0, 0, 0, 1);
+          }
         }
       }
     }
@@ -1656,9 +2274,12 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       // -webkit-backdrop-filter: blur(10px);
       // backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.1);
+      // -o-backdrop-filter: blur(10px);
+      // -moz-backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.3);
       overflow: hidden;
       padding: 0px 0px 0px 0px;
       align-content: center;
@@ -1699,8 +2320,6 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      // -webkit-backdrop-filter: blur(0px);
-      // backdrop-filter: blur(0px);
       overflow: visible;
       position: relative;
       padding: 0px 0px 0px 0px;
@@ -1742,8 +2361,6 @@ body {
         justify-content: center;
         align-items: center;
         padding: 40px 40px 40px 40px;
-        // -webkit-backdrop-filter: blur(0px);
-        // backdrop-filter: blur(0px);
         background-color: rgba(0, 0, 0, 0.1);
         overflow: visible;
         position: relative;
@@ -1990,7 +2607,7 @@ body {
         align-content: center;
         flex-wrap: nowrap;
         gap: 10px;
-        border-radius: 20px;
+        border-radius: 25px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         .contentCreater {
           box-sizing: border-box;
@@ -2096,9 +2713,14 @@ body {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          // -webkit-backdrop-filter: blur(10px);
-          // backdrop-filter: blur(10px);
+
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          -o-backdrop-filter: blur(10px);
+          -moz-backdrop-filter: blur(10px);
+
           background-color: rgba(255, 255, 255, 0.1);
+
           overflow: hidden;
           z-index: 1;
           padding: 0px 0px 0px 0px;
@@ -2106,12 +2728,12 @@ body {
           flex-wrap: nowrap;
           gap: 10px;
           position: absolute;
-          border-radius: 0px 0px 0px 0px;
+          border-radius: 0px 0px 25px 25px;
           white-space: pre;
           font-weight: 600;
           font-family: "Inter-SemiBold", "Inter", sans-serif;
-          color: #ffffff;
-          font-size: 23px;
+          color: white;
+          font-size: 30px;
           letter-spacing: 0px;
           line-height: 1.2;
         }
@@ -3071,10 +3693,14 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+
           // -webkit-backdrop-filter: blur(10px);
           // backdrop-filter: blur(10px);
+          // -o-backdrop-filter: blur(10px);
+          // -moz-backdrop-filter: blur(10px);
+
           box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
-          background-color: rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 0.3);
           overflow: hidden;
           z-index: 1;
           padding: 0px 0px 0px 0px;
@@ -3398,9 +4024,13 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 20px 0px 20px 0px;
+
     // -webkit-backdrop-filter: blur(10px);
-    // //backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.2);
+    // backdrop-filter: blur(10px);
+    // -o-backdrop-filter: blur(10px);
+    // -moz-backdrop-filter: blur(10px);
+
+    background-color: rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
     align-content: center;
@@ -3625,8 +4255,12 @@ body {
     justify-content: flex-start;
     align-items: flex-end;
     padding: 0px 40px 80px 40px;
-    // -webkit-backdrop-filter: blur(10px);
-    // backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+
     background-color: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     z-index: 1;
@@ -3728,8 +4362,12 @@ body {
     justify-content: flex-start;
     align-items: flex-end;
     padding: 80px 40px 80px 40px;
-    // -webkit-backdrop-filter: blur(10px);
-    // backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+
     background-color: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     z-index: 1;
@@ -3971,11 +4609,10 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // -webkit-backdrop-filter: blur(20px);
-        // backdrop-filter: blur(20px);
+
         box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
           0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.3);
         overflow: hidden;
         z-index: 1;
         padding: 0px 0px 0px 0px;
@@ -3999,11 +4636,10 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // -webkit-backdrop-filter: blur(10px);
-      // backdrop-filter: blur(10px);
+
       box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
         0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.3);
       overflow: hidden;
       z-index: 2;
       padding: 0px 0px 0px 0px;
@@ -4294,8 +4930,12 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+
           // -webkit-backdrop-filter: blur(10px);
           // backdrop-filter: blur(10px);
+          // -o-backdrop-filter: blur(10px);
+          // -moz-backdrop-filter: blur(10px);
+
           background: linear-gradient(235deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 100%);
           overflow: hidden;
           position: relative;
@@ -4440,8 +5080,12 @@ body {
       justify-content: center;
       align-items: center;
       padding: 20px 20px 20px 20px;
-      // -webkit-backdrop-filter: blur(10px);
-      // backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      -o-backdrop-filter: blur(10px);
+      -moz-backdrop-filter: blur(10px);
+
       background-color: rgba(0, 0, 0, 0.1);
       overflow: hidden;
       position: relative;
@@ -4656,8 +5300,6 @@ body {
       justify-content: center;
       align-items: center;
       padding: 10px 10px 10px 10px;
-      // -webkit-backdrop-filter: blur(0px);
-      // backdrop-filter: blur(0px);
       background-color: rgba(255, 255, 255, 0.1);
       overflow: hidden;
       position: relative;
@@ -4793,8 +5435,6 @@ body {
       justify-content: flex-start;
       align-items: flex-start;
       padding: 10px 10px 10px 10px;
-      // -webkit-backdrop-filter: blur(0px);
-      // backdrop-filter: blur(0px);
       background-color: rgba(255, 255, 255, 0.1);
       overflow: hidden;
       position: relative;
@@ -4966,8 +5606,8 @@ body {
               border-radius: 0px 0px 0px 0px;
               .text {
                 flex-shrink: 0;
-                width: 64px;
-                height: 19px;
+                width: min-content;
+                height: min-content;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -5288,8 +5928,12 @@ body {
     justify-content: center;
     align-items: center;
     padding: 140px 40px 40px 40px;
-    // -webkit-backdrop-filter: blur(10px);
-    // backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+
     box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
       0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
     background: radial-gradient(113.39999999999999% 91.4% at -22% 33.5%, rgba(255, 255, 255, 0.1) 0%, rgba(171, 171, 171, 0.1) 100%);
@@ -5384,8 +6028,12 @@ body {
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      // -webkit-backdrop-filter: blur(10px);
-      // backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      -o-backdrop-filter: blur(10px);
+      -moz-backdrop-filter: blur(10px);
+
       background-color: rgba(0, 0, 0, 0.4);
       overflow: hidden;
       position: relative;
@@ -5851,7 +6499,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: radial-gradient(93.30000000000001% 66.9% at 103.69999999999999% 37%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(132deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -5887,7 +6535,7 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     padding: 0px 0px 0px 0px;
     align-content: flex-start;
@@ -5968,7 +6616,6 @@ body {
           white-space: pre;
           font-weight: 700;
           font-family: "Inter-Bold", "Inter", sans-serif;
-          // color: linear-gradient(to right, #fbcac9, #8ca6ce);
           font-size: 42px;
           letter-spacing: 0px;
           line-height: 1.2;
@@ -6014,14 +6661,37 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      overflow: visible;
       position: relative;
       padding: 0px 0px 0px 0px;
       align-content: center;
       flex-wrap: nowrap;
       gap: 10px;
       border-radius: 0px 0px 0px 0px;
-      > div {
+      .lineUp {
+        top: 60px;
+        left: -30px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 500px;
+        height: 500px;
+        display: block;
+
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        -o-backdrop-filter: blur(5px);
+        -moz-backdrop-filter: blur(5px);
+
+        box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+          0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+        background-color: rgba(255, 255, 255, 0.4);
+        overflow: hidden;
+        z-index: 1;
+        position: absolute;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .lineDown {
         cursor: pointer;
         box-sizing: border-box;
         flex-shrink: 0;
@@ -6042,61 +6712,89 @@ body {
 }
 .secondMyPage {
   box-sizing: border-box;
+  flex-shrink: 0;
   width: 1359px;
-  height: min-content; /* 1907px */
+  height: 2400px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-  padding: 170px 20px 80px 20px;
+  padding: 80px 20px 80px 20px;
   overflow: hidden;
+  position: relative;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  position: absolute;
   border-radius: 0px 0px 0px 0px;
-  .myPageSecondContainerFrame {
+  .pageNationFrame {
     flex-shrink: 0;
-    width: 1070px;
-    height: min-content; /* 1657px */
+    width: min-content;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-end;
     overflow: hidden;
     position: relative;
     padding: 0px 0px 0px 0px;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    gap: 71px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 40px;
     border-radius: 0px 0px 0px 0px;
-    .nftWishItemBox {
+  }
+  .myPageSecondContainerFrame {
+    flex-shrink: 0;
+    width: 1060px;
+    height: 2100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    border-radius: 0px 0px 0px 0px;
+    .topInfoSection {
       box-sizing: border-box;
       flex-shrink: 0;
-      width: 286px;
-      height: 361px;
+      width: 1060px;
+      height: 200px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
-      // -webkit-backdrop-filter: blur(10px);
-      // backdrop-filter: blur(10px);
-      background: linear-gradient(223deg, rgba(255, 255, 255, 0.2) 0%, rgba(171, 171, 171, 0.1) 100%);
+      align-items: flex-start;
+      padding: 10px 20px 10px 20px;
       overflow: hidden;
       position: relative;
-      padding: 0px 0px 0px 0px;
-      align-content: center;
+      align-content: flex-start;
       flex-wrap: nowrap;
-      gap: 0;
-      border-radius: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      .topSection {
+      gap: 15px;
+      border-radius: 0px 0px 0px 0px;
+      :nth-child(1) {
+        flex-shrink: 0;
+        width: auto; /* 192px */
+        height: auto; /* 30px */
+        white-space: pre;
+        position: relative;
+        font-weight: 700;
+        font-family: "Inter-Bold", "Inter", sans-serif;
+        font-size: 25px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+        background: linear-gradient(to right, #ff00c3, #2b6fe3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .slideSection {
         box-sizing: border-box;
         flex-shrink: 0;
-        width: 286px;
-        height: 192px;
+        width: 1020px;
+        height: 120px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         overflow: hidden;
@@ -6104,146 +6802,203 @@ body {
         padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
-        gap: 0;
+        gap: 10px;
         border-radius: 0px 0px 0px 0px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        .nftImage {
+        flex-shrink: 0;
+        white-space: pre;
+        font-family: "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 27px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+    }
+    .nftItemList {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 1060px;
+      height: min-content; /* 1754px */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 80px 0px 80px 0px;
+      overflow: hidden;
+      position: relative;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      gap: 50px;
+      border-radius: 0px 0px 0px 0px;
+      .nftWishItemBox {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 286px;
+        height: 361px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        // -webkit-backdrop-filter: blur(10px);
+        // backdrop-filter: blur(10px);
+        // -o-backdrop-filter: blur(10px);
+        // -moz-backdrop-filter: blur(10px);
+
+        background: linear-gradient(223deg, rgba(255, 255, 255, 0.2) 0%, rgba(171, 171, 171, 0.1) 100%);
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        .topSection {
+          box-sizing: border-box;
           flex-shrink: 0;
           width: 286px;
           height: 192px;
-          display: block;
-          overflow: hidden;
-          position: relative;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 0px 0px 0px 0px;
-        }
-        .wishButton {
-          top: 10px;
-          right: 10px;
-          flex-shrink: 0;
-          width: 44px;
-          height: 43px;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
-          background-color: rgba(0, 0, 0, 0.2);
           overflow: hidden;
-          z-index: 1;
+          position: relative;
           padding: 0px 0px 0px 0px;
           align-content: center;
           flex-wrap: nowrap;
-          gap: 10px;
-          position: absolute;
-          border-radius: 100px;
-          :nth-child(1) {
-            position: relative;
-            width: 22px;
-            height: 21px;
-          }
-        }
-        .infoStateFrame {
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 257px;
-          height: 66px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-end;
-          padding: 20px 40px 20px 40px;
-          // -webkit-backdrop-filter: blur(10px);
-          // backdrop-filter: blur(10px);
-          background-color: rgba(255, 255, 255, 0.1);
-          overflow: hidden;
-          z-index: 1;
-          align-content: flex-end;
-          flex-wrap: nowrap;
-          position: absolute;
-          bottom: 20px;
+          gap: 0;
           border-radius: 0px 0px 0px 0px;
-          .price {
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          .nftImage {
             flex-shrink: 0;
-            width: min-content; /* 65px */
-            height: min-content; /* 19px */
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+            width: 286px;
+            height: 192px;
+            display: block;
             overflow: hidden;
             position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 5px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             border-radius: 0px 0px 0px 0px;
-            :nth-child(1) {
-              flex-shrink: 0;
-              width: min-content; /* 34px */
-              height: min-content; /* 19px */
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              flex-shrink: 0;
-              width: auto; /* 34px */
-              height: auto; /* 19px */
-              white-space: pre;
-              font-family: "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 16px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-            }
-            :nth-child(2) {
-              flex-shrink: 0;
-              width: min-content; /* 31px */
-              height: min-content; /* 19px */
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              flex-shrink: 0;
-              white-space: pre;
-              font-family: "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 16px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-            }
           }
-          .state {
+          .wishButton {
+            top: 10px;
+            right: 10px;
             flex-shrink: 0;
-            width: min-content; /* 57px */
-            height: min-content; /* 19px */
+            width: 44px;
+            height: 43px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            background-color: rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            position: relative;
+            z-index: 1;
             padding: 0px 0px 0px 0px;
             align-content: center;
             flex-wrap: nowrap;
             gap: 10px;
-            border-radius: 0px 0px 0px 0px;
+            position: absolute;
+            border-radius: 100px;
             :nth-child(1) {
+              position: relative;
+              width: 22px;
+              height: 21px;
+            }
+          }
+          .infoStateFrame {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 257px;
+            height: 66px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 20px 30px 20px 30px;
+
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            -o-backdrop-filter: blur(10px);
+            -moz-backdrop-filter: blur(10px);
+
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(168, 168, 168, 0.1);
+            box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+              0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            z-index: 1;
+            align-content: flex-end;
+            flex-wrap: nowrap;
+            position: absolute;
+            bottom: 20px;
+            .price {
+              flex-shrink: 0;
+              width: min-content; /* 65px */
+              height: min-content; /* 19px */
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 5px;
+              border-radius: 0px 0px 0px 0px;
+              :nth-child(1) {
+                flex-shrink: 0;
+                width: min-content; /* 34px */
+                height: min-content; /* 19px */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                flex-shrink: 0;
+                width: auto; /* 34px */
+                height: auto; /* 19px */
+                white-space: pre;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 24px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
+              :nth-child(2) {
+                flex-shrink: 0;
+                width: min-content; /* 31px */
+                height: min-content; /* 19px */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                flex-shrink: 0;
+                white-space: pre;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 23px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
+            }
+            .state {
               flex-shrink: 0;
               width: min-content; /* 57px */
               height: min-content; /* 19px */
@@ -6258,268 +7013,55 @@ body {
               flex-wrap: nowrap;
               gap: 10px;
               border-radius: 0px 0px 0px 0px;
-              flex-shrink: 0;
-              white-space: pre;
-              font-family: "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 16px;
-              letter-spacing: 0px;
-              line-height: 1.2;
+              :nth-child(1) {
+                flex-shrink: 0;
+                width: min-content; /* 57px */
+                height: min-content; /* 19px */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                font-weight: bold;
+                border-radius: 0px 0px 0px 0px;
+                flex-shrink: 0;
+                white-space: pre;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 24px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
             }
           }
         }
-      }
-      .middleSection {
-        box-sizing: border-box;
-        flex-shrink: 0;
-        width: 286px;
-        height: 99px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 20px 40px 20px 40px;
-        overflow: hidden;
-        position: relative;
-        align-content: flex-start;
-        flex-wrap: nowrap;
-        gap: 10px;
-        border-radius: 0px 0px 0px 0px;
-        .nftNameTag {
+        .middleSection {
+          box-sizing: border-box;
           flex-shrink: 0;
-          width: min-content; /* 100px */
-          height: min-content; /* 24px */
+          width: 286px;
+          height: 99px;
           display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 20px 40px 20px 40px;
           overflow: hidden;
           position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 0;
-          border-radius: 0px 0px 0px 0px;
-          flex-shrink: 0;
-          white-space: pre;
-          font-family: "Inter", sans-serif;
-          color: #ffffff;
-          font-size: 20px;
-          letter-spacing: 0px;
-          line-height: 1.2;
-        }
-        .creatorNameTag {
-          flex-shrink: 0;
-          width: min-content; /* 161px */
-          height: min-content; /* 25px */
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
+          align-content: flex-start;
           flex-wrap: nowrap;
           gap: 10px;
           border-radius: 0px 0px 0px 0px;
-          :nth-child(1) {
-            box-sizing: border-box;
+          .nftNameTag {
             flex-shrink: 0;
-            width: 25px;
-            height: 25px;
-            display: block;
-            overflow: hidden;
-            position: relative;
-            border-radius: 25px;
-            border: 1px solid #ffffff;
-          }
-          :nth-child(2) {
-            flex-shrink: 0;
-            width: auto; /* 126px */
-            height: auto; /* 24px */
-            white-space: pre;
-            position: relative;
-            font-family: "Inter", sans-serif;
-            color: #ffffff;
-            font-size: 20px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-        }
-      }
-      .bottomSection {
-        flex-shrink: 0;
-        width: 286px;
-        height: 70px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-        padding: 0px 0px 0px 0px;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 15px;
-        border-radius: 0px 0px 0px 0px;
-        .detailButton {
-          cursor: pointer;
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 115px;
-          height: 46px;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          background: linear-gradient(66deg, rgba(209, 56, 255, 0.4) 0%, rgba(109, 0, 143, 0.3) 100%);
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 0;
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          flex-shrink: 0;
-          white-space: pre;
-          font-family: "Inter", sans-serif;
-          color: #ffffff;
-          font-size: 16px;
-          letter-spacing: 0px;
-          line-height: 1.2;
-        }
-        .buyNowButton {
-          cursor: pointer;
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 114px;
-          height: 46px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background-color: rgba(0, 0, 0, 0.1);
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 0;
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          flex-shrink: 0;
-          white-space: pre;
-          font-family: "Inter", sans-serif;
-          color: #ffffff;
-          font-size: 16px;
-          letter-spacing: 0px;
-          line-height: 1.2;
-        }
-      }
-    }
-  }
-}
-
-.thirdMyPage {
-  box-sizing: border-box;
-  width: 1359px;
-  height: min-content; /* 1793px */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 40px;
-  position: absolute;
-  border-radius: 0px 0px 0px 0px;
-  .MyPageThirdContainerFrame {
-    box-sizing: border-box;
-    width: 1359px;
-    height: min-content; /* 2388px */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 170px 20px 80px 20px;
-    overflow: hidden;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    gap: 50px;
-    border-radius: 0px 0px 0px 0px;
-    .ownedNftBox {
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 320px;
-      height: 497px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 25px 25px 25px 25px;
-      background-color: rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-      position: relative;
-      align-content: center;
-      flex-wrap: nowrap;
-      gap: 0;
-      border-radius: 0px 0px 0px 0px;
-      .ownedNftFrame {
-        box-sizing: border-box;
-        flex-shrink: 0;
-        width: 270px;
-        height: 447px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 30px 30px 30px 30px;
-        background-color: rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        position: relative;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 25px;
-        border-radius: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        .ownNftImg {
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 210px;
-          height: 189px;
-          display: block;
-          overflow: hidden;
-          position: relative;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 25px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nftTitleSection {
-          flex-shrink: 0;
-          width: 210px;
-          height: 64px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 5px;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(1) {
-            flex-shrink: 0;
-            width: min-content; /* 95px */
-            height: min-content; /* 19px */
+            width: min-content; /* 100px */
+            height: min-content; /* 24px */
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
             overflow: hidden;
@@ -6531,18 +7073,16 @@ body {
             border-radius: 0px 0px 0px 0px;
             flex-shrink: 0;
             white-space: pre;
-            font-weight: 700;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 19px;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 20px;
             letter-spacing: 0px;
-            line-height: 1;
+            line-height: 1.2;
           }
-          :nth-child(2),
-          :nth-child(3) {
+          .creatorNameTag {
             flex-shrink: 0;
-            width: min-content; /* 40px */
-            height: min-content; /* 16px */
+            width: min-content; /* 161px */
+            height: min-content; /* 25px */
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -6554,50 +7094,391 @@ body {
             flex-wrap: nowrap;
             gap: 10px;
             border-radius: 0px 0px 0px 0px;
+            :nth-child(1) {
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 25px;
+              height: 25px;
+              display: block;
+              overflow: hidden;
+              position: relative;
+              border-radius: 25px;
+              border: 1px solid #ffffff;
+            }
+            :nth-child(2) {
+              flex-shrink: 0;
+              width: auto; /* 126px */
+              height: auto; /* 24px */
+              white-space: pre;
+              position: relative;
+              font-family: "Inter", sans-serif;
+              color: #ffffff;
+              font-size: 20px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+          }
+        }
+        .bottomSection {
+          flex-shrink: 0;
+          width: 286px;
+          height: 70px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 15px;
+          border-radius: 0px 0px 0px 0px;
+          .detailButton {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 115px;
+            height: 46px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(66deg, rgba(209, 56, 255, 0.4) 0%, rgba(109, 0, 143, 0.3) 100%);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 16px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .buyNowButton {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 114px;
+            height: 46px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 16px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.thirdMyPage {
+  box-sizing: border-box;
+  width: 1359px;
+  height: 2320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 80px 20px 80px 20px;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+  .pageNationFrame {
+    flex-shrink: 0;
+    width: 1319px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 40px;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .MyPageThirdContainerFrame {
+    flex-shrink: 0;
+    width: 1124px;
+    height: 1936px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 50px;
+    border-radius: 0px 0px 0px 0px;
+    .infoSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 1060px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px 10px 20px;
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 30px;
+      border-radius: 0px 0px 0px 0px;
+      .infoFrame {
+        flex-shrink: 0;
+        width: 1020px;
+        height: 130px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(1) {
+          flex-shrink: 0;
+          width: auto; /* 139px */
+          height: auto; /* 19px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 16px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        :nth-child(2) {
+          flex-shrink: 0;
+          width: auto; /* 32px */
+          height: auto; /* 30px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          background: linear-gradient(to right, #2b6fe3, #ff00c3);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 25px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+      }
+      .underLine {
+        flex-shrink: 0;
+        width: 789px;
+        height: 5px;
+        display: block;
+        background: linear-gradient(250deg, rgba(211, 66, 255, 0.6) 0%, rgba(86, 0, 112, 0.9) 100%);
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+      }
+    }
+    .fundingItemList {
+      flex-shrink: 0;
+      width: 1124px;
+      height: 1686px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      border-radius: 0px 0px 0px 0px;
+      .ownedNftBox {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 320px;
+        height: 497px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 25px 25px 25px;
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        .ownedNftFrame {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 270px;
+          height: 447px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 30px 30px 30px 30px;
+          background-color: rgba(0, 0, 0, 0.2);
+          overflow: hidden;
+          position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 25px;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0px 1.6733156776526186px 1.6733156776526186px -0.125px rgba(0, 0, 0, 0.05), 0px 3.984206390969505px 3.984206390969505px -0.25px rgba(0, 0, 0, 0.05598), 0px 7.259321882820145px 7.259321882820145px -0.375px rgba(0, 0, 0, 0.06089), 0px 12.068385491961365px 12.068385491961365px -0.5px rgba(0, 0, 0, 0.0681),
+            0px 19.50049274209897px 19.50049274209897px -0.625px rgba(0, 0, 0, 0.07925), 0px 31.901418213351462px 31.901418213351462px -0.75px rgba(0, 0, 0, 0.09785), 0px 54.96035212570371px 54.96035212570371px -0.875px rgba(0, 0, 0, 0.13244), 0px 100px 100px -1px rgba(0, 0, 0, 0.2);
+          .ownNftImg {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 210px;
+            height: 189px;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+          }
+          .nftTitleSection {
+            flex-shrink: 0;
+            width: 210px;
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 5px;
+            border-radius: 0px 0px 0px 0px;
+            :nth-child(1) {
+              flex-shrink: 0;
+              width: min-content; /* 95px */
+              height: min-content; /* 19px */
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 0;
+              border-radius: 0px 0px 0px 0px;
+              flex-shrink: 0;
+              white-space: pre;
+              font-weight: 700;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.3);
+              font-size: 19px;
+              letter-spacing: 0px;
+              line-height: 1;
+            }
+            :nth-child(2),
+            :nth-child(3) {
+              flex-shrink: 0;
+              width: min-content; /* 40px */
+              height: min-content; /* 16px */
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 10px;
+              border-radius: 0px 0px 0px 0px;
+              flex-shrink: 0;
+              white-space: pre;
+              font-weight: 700;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.3);
+              font-size: 16px;
+              letter-spacing: 0px;
+              line-height: 1;
+              text-align: center;
+            }
+          }
+          .middleLine {
+            flex-shrink: 0;
+            width: 210px;
+            height: 1px;
+            display: block;
+            background-color: #ffffff;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+          }
+          .infoSection {
+            flex-shrink: 0;
+            width: 210px;
+            height: 58px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
             flex-shrink: 0;
             white-space: pre;
             font-weight: 700;
             font-family: "Inter-Bold", "Inter", sans-serif;
             color: rgba(255, 255, 255, 0.3);
-            font-size: 16px;
+            font-size: 20px;
             letter-spacing: 0px;
-            line-height: 1;
-            text-align: center;
+            line-height: 1.2;
           }
-        }
-        .middleLine {
-          flex-shrink: 0;
-          width: 210px;
-          height: 1px;
-          display: block;
-          background-color: #ffffff;
-          overflow: hidden;
-          position: relative;
-          border-radius: 0px 0px 0px 0px;
-        }
-        .infoSection {
-          flex-shrink: 0;
-          width: 210px;
-          height: 58px;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: flex-start;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          flex-shrink: 0;
-          white-space: pre;
-          font-weight: 700;
-          font-family: "Inter-Bold", "Inter", sans-serif;
-          color: rgba(255, 255, 255, 0.3);
-          font-size: 20px;
-          letter-spacing: 0px;
-          line-height: 1.2;
         }
       }
     }

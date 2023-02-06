@@ -1,18 +1,15 @@
-// NFT 마켓 메인페이지
-/*
-- 성공된 펀딩 목록들을 다 띄워줌
- - 상세로 들어가면 판매하고 있는 NFT가 없을 수도 있고 있을 수도 있음
-
-*/
 import { useState } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, wrap, motion } from "framer-motion";
 import image1 from "../../../public/image/IRON.jpg";
-import { PageNationFrame } from "@/components";
+import image2 from "../../../public/image/dddepth-343.jpg";
+import PageNationFrame from "../../components/PageNationFrame";
+import Image from "next/image";
 
 // nft 메인페이지
-const images = ["https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png", "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"];
+const images = [image2, "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png", "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"];
 
 const variants = {
   enter: (direction) => {
@@ -113,7 +110,7 @@ const NftMarketContainer = () => {
                   </div>
                 </div>
                 <div className="bottomImageFrame">
-                  <img className="bottomImage" src={item.bottomImage} alt={""} />
+                  <Image className="bottomImage" src={item.bottomImage} alt={""} width={119} height={119} />
                   <div className="likeIconFrame">
                     <FontAwesomeIcon icon={faHeart} className={`likeIcon ${active[index] ? "active" : ""}`} onClick={() => setActive({ ...active, [index]: !active[index] })} />
                   </div>

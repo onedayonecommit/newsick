@@ -1,4 +1,6 @@
+import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import PlayBar from "./PlayBar";
 
 // 컴포넌트
 const SideBar = () => {
@@ -6,13 +8,7 @@ const SideBar = () => {
     <div className="sideBarSection">
       <div className="iconBar">
         <div className="buttonList">
-          <div className="iconButton">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <div className="iconButton"></div>
         </div>
       </div>
       <div className="categories">

@@ -1,8 +1,8 @@
 // 배포한 CA랑 abi 적어주기
 
-// import Web3 from "web3";
+import Web3 from "web3";
 
-// const web3 = new Web3(window.ethereum);
+const web3 = new Web3(window.ethereum);
 
 const NEWSIC_FUND_CA = "0xB553Fa0bCaAd2Ccf9Aa92A589d90286Dd3485050";
 const NEWSIC_FUND_ABI = [
@@ -1557,4 +1557,7 @@ const NEWSIC_MARKET_ABI = [
   },
 ];
 
-export { NEWSIC_FUND_CA, NEWSIC_FUND_ABI, NEWSIC_MARKET_CA, NEWSIC_MARKET_ABI };
+const NEWSIC_FUND = new web3.eth.Contract(NEWSIC_FUND_ABI, NEWSIC_FUND_CA);
+const NEWSIC_MARKET = new web3.eth.Contract(NEWSIC_MARKET_ABI, NEWSIC_MARKET_CA);
+
+export { NEWSIC_FUND, NEWSIC_MARKET };

@@ -6,8 +6,6 @@ import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
 
 const SignUp = () => {
-  const { web3, NEWSIC_FUND } = useWeb3();
-  console.log(web3, NEWSIC_FUND);
   const [isCreator, setIsCreator] = useState(false);
 
   const router = useRouter();

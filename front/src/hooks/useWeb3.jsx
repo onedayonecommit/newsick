@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import Web3 from "web3";
-import { NEWSIC_FUND_CA, NEWSIC_FUND_ABI, NEWSIC_MARKET_CA, NEWSIC_MARKET_ABI } from "@/web3.config";
 
 const useWeb3 = () => {
   const [web3, setWeb3] = useState();
-  const [NEWSIC_FUND, setNEWSIC_FUND] = useState();
-  const [NEWSIC_MARKET, setNEWSIC_MARKET] = useState();
 
   const getWeb3 = () => {
     try {
@@ -33,15 +30,13 @@ const useWeb3 = () => {
   };
 
   useEffect(() => {
-    (() => {
-      if (!web3) {
-        getWeb3();
-        console.log("몇번!!");
-      } else {
-        getFundContract();
-        getMarketContract();
-      }
-    })();
+    if (!web3) {
+      getWeb3();
+      console.log("몇번!!");
+    } else {
+      getFundContract();
+      getMarketContract();
+    }
   }, [web3]);
 
   console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
