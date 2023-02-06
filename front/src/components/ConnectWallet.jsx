@@ -78,12 +78,12 @@ const ConnectWallet = () => {
         console.log("현재 연결된 계정 _app : ", linkedAccount);
         setAccount(linkedAccount[0]);
         // 테스트 유저용!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if (account == user.address) {
-          setIsLogin(true);
-        }
-        // if (createStatus == true) {
+        // if (account == user.address) {
         //   setIsLogin(true);
         // }
+        if (createStatus == true) {
+          setIsLogin(true);
+        }
 
         // 여기서 회원이면 유저 정보 전체 받아오고
         // 비회원이면 createStatus : false 받아옴
@@ -109,19 +109,14 @@ const ConnectWallet = () => {
       // 메타마스크 연결하세요!
       console.log("Please connect to MetaMask.");
     } else if (accounts[0] !== account) {
-      setAccount(accounts[0]);
-      setIsLogin(false);
-      console.log("[0]", accounts[0]);
-      console.log("바뀐 state 계정", account);
+      // setAccount(accounts[0]);
+      // setIsLogin(false);
+      // console.log("[0]", accounts[0]);
+      // console.log("바뀐 state 계정", account);
       // console.log(isLogin);
-      // if (createStatus == true) {
-      //  setAccount(accounts[0]);
-      //   setIsLogin(true);
-      // } else {
-      // setAccount("");
-      //   dispatch(userAction.reset(userStateReset));
-      //   setIsLogin(false);
-      // }
+      setAccount(accounts[0]);
+      dispatch(userAction.reset(userStateReset));
+      setIsLogin(false);
     }
   };
 

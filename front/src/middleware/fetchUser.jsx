@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (createUser, thunkAPI) => {
   console.log(createUser);
   try {
-    const UserCreated = await axios.post("signup/user", createUser);
+    const UserCreated = await axios.post("192.168.0.169:8080/user/join", createUser);
     console.log(UserCreated.data);
     // 유저가 되면 유저의 정보를 응답
     return UserCreated.data;
@@ -24,7 +24,7 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
 export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (account) => {
   console.log("DB에 넘겨주는 계정", account);
   try {
-    const accountCheck = await axios.post("login/user", account);
+    const accountCheck = await axios.post("192.168.0.169:8080/user/login", account);
     // 아마.. 회원가입이 되면 true를 반환해줄듯..?
     console.log("회원 여부 확인 : ", accountCheck.data);
     // 여기서 데이터 응답 타입 보고 state에 dispatch 해줄지 결정하기
