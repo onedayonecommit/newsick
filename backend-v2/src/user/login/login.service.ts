@@ -8,9 +8,17 @@ export class LoginService {
 
   async userConnect(@Body() user_wallet_address: string): Promise<user | null> {
     try {
-      return await this.db.user.findUnique({
+      const result = await this.db.user.findUnique({
         where: { user_wallet_address },
+        include: { creator: { where: { creator_id: user_wallet_address } } },
       });
+      const resDto = { ...result, createStatus: false };
+      if (result) {
+        resDto.createStatus = true;
+        return resDto;
+      } else {
+        return resDto;
+      }
     } catch (error) {
       throw new HttpException(
         'login server error',

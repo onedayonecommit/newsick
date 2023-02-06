@@ -3,12 +3,13 @@ import { user } from '@prisma/client';
 import { joinDto } from './join.dto';
 import { JoinService } from './join.service';
 
-@Controller('join')
+@Controller('user')
 export class JoinController {
   constructor(private readonly joinService: JoinService) {}
 
-  @Post()
+  @Post('join')
   async userJoin(@Body() joinDto: joinDto): Promise<user> {
+    console.log('가입 신청');
     return await this.joinService.userJoin(joinDto);
   }
 }

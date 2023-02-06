@@ -9,6 +9,7 @@ export class LoginController {
 
   @Post('login')
   async userConnect(@Body() loginDto: loginDto): Promise<user | null> {
+    console.log('데이터 들어옴');
     return await this.loginService.userConnect(loginDto.user_wallet_address);
   }
 }

@@ -30,9 +30,10 @@ export class JoinService {
           },
         },
       });
+      const resDto = { ...result, createStatus: true };
       if (result) {
         this.mailService.signUpMail(user_email);
-        return result;
+        return resDto;
       }
     } catch (error) {
       throw new HttpException(
