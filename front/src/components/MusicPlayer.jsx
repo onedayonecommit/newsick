@@ -105,10 +105,12 @@ const variantPlay = {
       initial:{
         y:"-100vw",
         opacity:0,
+        zIndex:-1,
       },
       animate:{
         y:0,
         opacity:1,
+        zIndex:999,
       },
   }
 
