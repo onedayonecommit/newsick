@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import MyPageFirstContainer from './apply_creator'
-import MyPageSecondContainer from './favorite'
-import MyPageThirdContainer from './my_NFT'
+import MyPageFirstContainer from '../../components/apply_creator'
+import MyPageSecondContainer from '../../components/favorite'
+import MyPageThirdContainer from '../../components/my_NFT'
 import {AnimatePresence, motion} from "framer-motion"
 const MyPage = () => {
     const [selectedOption, setSelectedOption] = useState(0);

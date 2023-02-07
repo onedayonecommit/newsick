@@ -1,5 +1,5 @@
 import Image from "next/image";
-import PageNationFrame from "../../components/PageNationFrame";
+import PageNationFrame from "./PageNationFrame";
 
 const ownNftDate = [
   {
