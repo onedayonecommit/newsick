@@ -20,7 +20,6 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
       .addCase(fetchUserCheck.pending, (state) => {
         state.createStatus = false;

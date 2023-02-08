@@ -1,7 +1,7 @@
-import { fetchNftList } from "@/middleware/fetchNFT";
-import { createSlice } from "@reduxjs/toolkit";
+// import { fetchNftList } from "@/middleware/fetchNFT";
+// import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  list: [],
-  genre: "",
-};
+// const initialState = {
+//   list: [],
+//   genre: "",
+// };

@@ -6,6 +6,8 @@ import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const { web3, NEWSIC_FUND } = useWeb3();
+  console.log(web3, NEWSIC_FUND);
   const [isCreator, setIsCreator] = useState(false);
 
   const router = useRouter();
@@ -55,10 +57,10 @@ const SignUp = () => {
         const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: linkedAccount, value: creatorPrice });
         // NEWSIC_FUND.events.creatorApplicant()
         console.log("컨트랙트 실행 결과", creatorPay);
-        console.log("이벤트", creatorPay.events);
-        console.log("크리에이터앱", creatorPay.events.creatorApplicant);
-        console.log("리턴", creatorPay.events.creatorApplicant.returnValues);
-        console.log("컨트랙트 이벤트", creatorPay.events.creatorApplicant.returnValues[1]);
+        // console.log("이벤트", creatorPay.events);
+        // console.log("크리에이터앱", creatorPay.events.creatorApplicant);
+        // console.log("리턴", creatorPay.events.creatorApplicant.returnValues);
+        // console.log("컨트랙트 이벤트", creatorPay.events.creatorApplicant.returnValues[1]);
 
         dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: creatorPay.events.creatorApplicant.returnValues._status }));
       } else {
@@ -83,6 +85,10 @@ const SignUp = () => {
       window.ethereum.on("accountsChanged", handleAccountsChanged);
     })();
   }, [web3, linkedAccount]);
+
+  // useEffect(() => {
+  //   console.log("set계정", linkedAccount);
+  // }, [linkedAccount]);
 
   useEffect(() => {
     (async () => {
