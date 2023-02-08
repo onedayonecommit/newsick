@@ -6,6 +6,7 @@ import { MusicModule } from './music/music.module';
 import { EnvModule } from './env/env.module';
 import { S3Module } from './s3/s3.module';
 import { NftStorageModule } from './nft-storage/nft-storage.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { NftStorageModule } from './nft-storage/nft-storage.module';
     EnvModule,
     S3Module,
     NftStorageModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],

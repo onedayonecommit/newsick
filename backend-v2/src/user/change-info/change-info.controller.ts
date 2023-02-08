@@ -16,10 +16,10 @@ export class ChangeInfoController {
   constructor(private readonly changeService: ChangeInfoService) {}
 
   @Post('profile/image')
-  @UseInterceptors(FileInterceptor('user_profile_image'))
+  @UseInterceptors(FileInterceptor('image'))
   async changeProfileImage(
     @UploadedFile() file: Express.Multer.File,
-    @Query('user_wallet_address') user_wallet_address: string,
+    @Body('address') user_wallet_address: string,
   ) {
     return await this.changeService.changeProfileImage(
       file,

@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { user } from '@prisma/client';
+import { bool } from 'aws-sdk/clients/signer';
 import { EmailSendService } from 'src/email/email-send/email-send.service';
 import { PrismaService } from 'src/prisma.service';
 import { DuplicateCheckService } from '../duplicate-check/duplicate-check.service';
@@ -14,12 +15,17 @@ export class JoinService {
   ) {}
 
   /** 회원가입 함수 첫번째 파라미터 == joinDto */
-  async userJoin(joinDto: joinDto): Promise<user> {
+  async userJoin(joinDto: joinDto): Promise<user | string> {
     const { user_email, user_name, user_wallet_address, is_creator } = joinDto;
     try {
-      await this.duplicateService.userEmailCheck(user_email);
-      await this.duplicateService.userNameCheck(user_name);
-      await this.duplicateService.userWalletCheck(user_wallet_address);
+      const mailCheck = await this.duplicateService.userEmailCheck(user_email);
+      const nameCheck = await this.duplicateService.userNameCheck(user_name);
+      const walletCheck = await this.duplicateService.userWalletCheck(
+        user_wallet_address,
+      );
+      if (!mailCheck) return 'already in use this mail';
+      if (!nameCheck) return 'already in use this name';
+      if (!walletCheck) return 'already in use this wallet';
       const result = await this.db.user.create({
         data: {
           user_email,
@@ -27,6 +33,9 @@ export class JoinService {
           user_wallet_address,
           creator: {
             create: [{ is_creator: is_creator }],
+          },
+          ticket: {
+            create: [{ ticket_type: 0 }],
           },
         },
       });
