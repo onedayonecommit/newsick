@@ -64,9 +64,11 @@ const SignUp = () => {
 
         dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: creatorPay.events.creatorApplicant.returnValues._status }));
       } else {
-        dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator }));
-        alert("회원가입 추카추");
-        router.replace("/");
+        dispatch(fetchUserCreated({ user_name: userName, user_email: userEmail, user_wallet_address: linkedAccount, is_creator: isCreator })).then((e) => {
+          if (!typeof e.payload == "string") {
+            router.replace("/");
+          }
+        });
       }
     }
   };
@@ -94,11 +96,9 @@ const SignUp = () => {
     (async () => {
       if (isCreator == true) {
         if (createStatus == true) {
-          alert("크리에이터 가입 추카추");
           router.replace("/");
         }
       } else if (createStatus == true) {
-        alert("이미 가입된 회원입니다");
         router.replace("/");
       }
     })();

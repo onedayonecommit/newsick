@@ -56,7 +56,7 @@ const useWeb3 = () => {
   //   }
   // };
 
-  // console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
+  console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
   return { web3, NEWSIC_FUND, NEWSIC_MARKET };
 };
 

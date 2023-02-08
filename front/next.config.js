@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   images: {
-    domains: ["i.pinimg.com"],
+    domains: ["i.pinimg.com", "newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com"],
   },
 };
 

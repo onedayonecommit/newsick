@@ -20,6 +20,7 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
       .addCase(fetchUserCheck.pending, (state) => {
         state.createStatus = false;
@@ -40,14 +41,21 @@ const userSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchUserCreated.fulfilled, (state, action) => {
-        state.address = action.payload.user_wallet_address;
-        state.userName = action.payload.user_name;
-        state.userEmail = action.payload.user_email;
-        state.userImage = action.payload.user_profile_image;
-        state.isCreator = action.payload.is_creator;
-        state.createStatus = action.payload.createStatus;
-        console.log("넘어온 유저정보 : ", action.payload);
-        console.log("업데이트 시킨 state : ", state);
+        // console.log(typeof action.payload);
+        // console.log(typeof action.payload == "string");
+        if (typeof action.payload == "string") alert(action.payload);
+        else {
+          state.address = action.payload.user_wallet_address;
+          state.userName = action.payload.user_name;
+          state.userEmail = action.payload.user_email;
+          state.userImage = action.payload.user_profile_image;
+          state.isCreator = action.payload.is_creator;
+          state.createStatus = action.payload.createStatus;
+          alert("회원가입 추카추");
+
+          console.log("넘어온 유저정보 : ", action.payload);
+          console.log("업데이트 시킨 state : ", state);
+        }
       })
       .addCase(fetchUserCreated.rejected, (state) => {
         state = initialState;
