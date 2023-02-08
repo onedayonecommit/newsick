@@ -1,16 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useDispatch } from "react-redux";
 
 // axios로 보낼 때 key를 back이랑 동일하게 써서 보내주어야함!!
-
-// const dispatch = useDispatch();
 
 // 회원가입
 export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (createUser, thunkAPI) => {
   console.log(createUser);
   try {
-    const UserCreated = await axios.post("http://192.168.0.169:8080/user/join", createUser);
+    const UserCreated = await axios.post("http://192.168.0.176:8080/user/join", createUser);
     console.log(UserCreated.data);
     // 유저가 되면 유저의 정보를 응답
     return UserCreated.data;
@@ -19,12 +16,13 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
     console.log(error);
   }
 });
+// http://192.168.0.169:8080/user/join
 
 // 지갑주소가 DB에 있나 확인
 export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (account) => {
   console.log("DB에 넘겨주는 계정", account);
   try {
-    const accountCheck = await axios.post("http://192.168.0.169:8080/user/login", account);
+    const accountCheck = await axios.post("http://192.168.0.176:8080/user/login", account);
     // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
     console.log("회원 여부 확인 : ", accountCheck.data);
     return accountCheck.data;
@@ -32,3 +30,4 @@ export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (acc
     console.log(error);
   }
 });
+// http://192.168.0.169:8080/user/login

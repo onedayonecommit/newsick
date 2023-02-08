@@ -6,15 +6,7 @@ import { useRouter } from "next/router";
 import useWeb3 from "../hooks/useWeb3";
 import { userAction } from "@/redux/userSlice";
 
-// 더미 데이터
-// const user = {
-//   address: "0x4A48Cb2d163b71CE587b5D11abECF4bf36962183",
-//   userName: "hoho",
-//   userEmail: "hoho@gmail.com",
-//   isCreator: false,
-//   createStatus: true,
-// };
-
+/**계정 전환했을 때 reset 시켜줄 초기 값 */
 const userStateReset = {
   address: "",
   userName: "",
@@ -26,20 +18,16 @@ const userStateReset = {
 // 계정을 바꾸면 다시 버튼이 생겨야함! 자동으로 로그아웃!
 const ConnectWallet = () => {
   const [account, setAccount] = useState("");
-  const web3 = useWeb3();
+  const { web3 } = useWeb3();
   // console.log("웹3", web3);
   const dispatch = useDispatch();
   const router = useRouter();
   const userName = useSelector((state) => state.userInfo.userName);
   const userEmail = useSelector((state) => state.userInfo.userEmail);
   const createStatus = useSelector((state) => state.userInfo.createStatus);
-  const addressState = useSelector((state) => state.userInfo.address);
 
   const getRequestAccount = async () => {
     if (!web3) return;
-    // 현재 연결된 계정 가져오는 함수!!!
-    const getAccount = await web3.eth.getAccounts();
-    console.log(getAccount[0]);
 
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
@@ -87,9 +75,11 @@ const ConnectWallet = () => {
     })();
   }, [createStatus]);
 
-  /**계정 변경되었을 때 동작하는 함수 */
   const handleAccountsChanged = (accounts) => {
     console.log(accounts.length);
+    console.log("계정 바꿀때마다", accounts[0]);
+    console.log("state 계정", account);
+
     if (accounts.length === 0) {
       // 메타마스크 연결하세요!
       console.log("Please connect to MetaMask.");
@@ -100,6 +90,7 @@ const ConnectWallet = () => {
 
   return (
     // 지갑주소가 있으면 로그인, 없으면 회원가입으로 이동
+    // 회원이고 지갑이 연결이 되어있으면 페이지에 들어가자마자 로그인되게!
     // 회원가입 후 로그인되면 메인으로 이동
     <>
       {createStatus ? (
