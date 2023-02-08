@@ -26,10 +26,8 @@ body {
 }
 .mainSlider .pageNav {
   position: absolute;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -78,10 +76,8 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 465px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 636px */
   display: flex;
@@ -98,10 +94,8 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 193px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 154px */
   display: flex;
@@ -174,19 +168,35 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  padding: 80px 0px 80px 0px;
+  align-items: flex-end;
+  padding: 80px 50px 80px 50px;
   background-color: #2b2f5f;
   overflow: hidden;
-  align-content: center;
+  align-content: flex-end;
   flex-wrap: nowrap;
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainSecondFrame .hotTopicText {
+.mainSlider .mainSecondFrame .sideFrame {
   flex-shrink: 0;
-  width: 708px;
-  height: 100px;
+  width: 713px;
+  height: 790px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainSecondFrame .sideFrame .hotTopicText {
+  flex-shrink: 0;
+  width: 713px;
+  height: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,63 +209,36 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainSecondFrame .hotTopicText :nth-child(1) {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+.mainSlider .mainSecondFrame .sideFrame .hotTopicText :nth-child(1) {
   white-space: pre;
-  position: relative;
-  font-family: "Inter", sans-serif;
   color: rgb(255, 255, 255);
-  font-weight: bold;
   font-size: 40px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.mainSlider .mainSecondFrame .hotTopicText :nth-child(2) {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
+.mainSlider .mainSecondFrame .sideFrame .hotTopicText :nth-child(2) {
   white-space: pre;
-  position: relative;
-  font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.7);
   font-size: 35px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
 .mainSlider .mainSecondFrame .slideHotTopicList {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  height: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -650px;
+  width: 1000px;
+  height: 950px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 40px;
-  border-radius: 0px 0px 0px 0px;
+  transition: 1s;
 }
 .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
+  position: absolute;
+  transition: 1s;
 }
 .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContent {
   display: flex;
@@ -275,10 +258,44 @@ body {
   transform-style: preserve-3d;
   transform: translateZ(50px);
   transition: opacity 0.3s linear;
+  opacity: 1;
+  right: -55px;
+  bottom: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 188px;
+  height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0px 20px 0px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 1;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .singerName, .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .songName, .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .fundingPrice {
+  flex-shrink: 0;
+  width: auto; /* 64px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
   font-family: "Inter", sans-serif;
   color: #ffffff;
-  font-size: 20px;
-  opacity: 1;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
 }
 .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .hotTopicSlideTitle {
   flex-shrink: 0;
@@ -297,6 +314,132 @@ body {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.mainSlider .mainThirdFrame {
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2f5f;
+  overflow: visible;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainThirdFrame .leftSlideContent {
+  flex-shrink: 0;
+  width: 818px;
+  height: 950px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 60px 0px 60px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 270px;
+  height: 2550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .closeItem {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 210px;
+  height: 255px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 270px;
+  height: 2550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList .closeItem {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 210px;
+  height: 255px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mainSlider .mainThirdFrame .rightContent {
+  flex-shrink: 0;
+  width: 541px;
+  height: 950px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
 }
 
 .playBarSection {
@@ -809,10 +952,8 @@ body {
 }
 
 .toggleFrame {
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   position: absolute;
@@ -1239,10 +1380,8 @@ body {
 
 .pageNationFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
@@ -1482,10 +1621,8 @@ body {
 }
 .layoutFrame .layoutBox .sideBarSection .iconBar .iconButton {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 40px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 356px */
   display: flex;
@@ -1788,10 +1925,8 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 112px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 46px */
   display: flex;
@@ -1808,10 +1943,8 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 80px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -1836,10 +1969,8 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userEmail {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 112px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
@@ -1952,10 +2083,8 @@ body {
 }
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 396px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 395px */
   display: flex;
@@ -1988,10 +2117,8 @@ body {
 }
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList .infoTextSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 396px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 215px */
   display: flex;
@@ -2207,19 +2334,7 @@ body {
   gap: 10px;
   background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e, #7758D1);
   background-size: 180% 180%;
-  -webkit-animation: gradient-animation 6s ease infinite;
-          animation: gradient-animation 6s ease infinite;
-}
-@-webkit-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  animation: gradient-animation 6s ease infinite;
 }
 @keyframes gradient-animation {
   0% {
@@ -2274,7 +2389,6 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpTitle {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 54px;
@@ -2368,10 +2482,8 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 317px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 95px */
   display: flex;
@@ -2388,10 +2500,8 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpinfoText {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 173px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 20px */
   display: flex;
@@ -2416,10 +2526,8 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 317px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 65px */
   display: flex;
@@ -2524,7 +2632,6 @@ body {
 .mainContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -2585,7 +2692,6 @@ body {
 .mainContainerFrame .rankingBoardSection {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 275px */
   display: flex;
@@ -2603,7 +2709,6 @@ body {
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 275px */
   display: flex;
@@ -2621,7 +2726,6 @@ body {
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame .rankingText {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 35px */
   display: flex;
@@ -2665,10 +2769,8 @@ body {
 }
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame .rankingList .rankingItem {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 867px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 40px */
   display: flex;
@@ -2686,7 +2788,6 @@ body {
 .mainContainerFrame .hotTopicSection {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 595px */
   display: flex;
@@ -2704,7 +2805,6 @@ body {
 .mainContainerFrame .hotTopicSection .hotTopicText {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 35px */
   display: flex;
@@ -2731,7 +2831,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 538px */
   display: flex;
@@ -3040,7 +3139,6 @@ body {
 
 .musiccontainerFrame {
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1698px */
   display: flex;
@@ -3203,10 +3301,8 @@ body {
 }
 .musiccontainerFrame .topSection .subTitleMusicinfoFram .subTitleText {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 115px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
@@ -3277,10 +3373,8 @@ body {
 }
 .musiccontainerFrame .topSection .subTitleMusicinfoFram .subInfoBoxList .musicBox .musicInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 107px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 41px */
   display: flex;
@@ -3396,10 +3490,8 @@ body {
 }
 .musiccontainerFrame .bottomSection .leftSection .topChartList .topChartItemBox .musicFrontSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 330px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 120px */
   display: flex;
@@ -3430,10 +3522,8 @@ body {
 }
 .musiccontainerFrame .bottomSection .leftSection .topChartList .topChartItemBox .musicFrontSection .musicInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 180px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 66px */
   display: flex;
@@ -3593,10 +3683,8 @@ body {
 }
 .musiccontainerFrame .bottomSection .rightSection .genreSection .genreInfoSection .genreShowAll {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 90px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 20px */
   display: flex;
@@ -3723,7 +3811,6 @@ body {
 .musiccontainerFrame .bottomSection .rightSection .newAlbumSection .newAlbumText {
   flex-shrink: 0;
   width: 629px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 36px */
   display: flex;
@@ -3781,10 +3868,8 @@ body {
 }
 .musiccontainerFrame .bottomSection .rightSection .newAlbumSection .newAlbumList .newAlbumItemBox .musicFrontSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 330px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 120px */
   display: flex;
@@ -3815,10 +3900,8 @@ body {
 }
 .musiccontainerFrame .bottomSection .rightSection .newAlbumSection .newAlbumList .newAlbumItemBox .musicFrontSection .musicInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 180px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 66px */
   display: flex;
@@ -3919,7 +4002,6 @@ body {
 .FundingContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1561px */
   display: flex;
@@ -4035,10 +4117,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 93px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 33px */
   display: flex;
@@ -4055,10 +4135,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .createrName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 93px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 16px */
   display: flex;
@@ -4083,10 +4161,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .fundingInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 59px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 12px */
   display: flex;
@@ -4197,10 +4273,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 265px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 249px */
   display: flex;
@@ -4234,10 +4308,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 264px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 46px */
   display: flex;
@@ -4262,10 +4334,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotCreaterName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 194px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 36px */
   display: flex;
@@ -4291,10 +4361,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 172px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 36px */
   display: flex;
@@ -4707,10 +4775,8 @@ body {
 }
 .detailContainerFrame .detailInfoSection .profileSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 120px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 28px */
   display: flex;
@@ -4746,10 +4812,8 @@ body {
 }
 .detailContainerFrame .detailInfoSection .topInfoSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 303px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 189px */
   display: flex;
@@ -4782,10 +4846,8 @@ body {
 }
 .detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 295px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 126px */
   display: flex;
@@ -4848,7 +4910,6 @@ body {
 .nftMarketContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1439px */
   display: flex;
@@ -5008,7 +5069,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 912px */
   display: flex;
@@ -5057,10 +5117,8 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 345px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 34px */
   display: flex;
@@ -5090,10 +5148,8 @@ body {
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 152px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 34px */
   display: flex;
@@ -5329,10 +5385,8 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .bottomFrame .bottomSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
@@ -5497,7 +5551,6 @@ body {
 .nftDetailContainerFrame .topSection .infoSwiperSection {
   left: 572px;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 334px;
@@ -5516,7 +5569,6 @@ body {
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 334px;
@@ -5553,10 +5605,8 @@ body {
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox .infoName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 51px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 14px */
   display: flex;
@@ -5945,10 +5995,8 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .canOrderPriceSection .leftSection .text,
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderPriceSection .leftSection .text {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -6018,10 +6066,8 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .canOrderPriceSection .RightSection .inputSection :nth-child(2),
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderPriceSection .RightSection .inputSection :nth-child(2) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 35px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -6082,10 +6128,8 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .buyPriceSection .leftSection .text,
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderQuantitySection .leftSection .text {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 68px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 20px */
   display: flex;
@@ -6199,7 +6243,6 @@ body {
 .fundingCreateContainerFrame, .fundingCreateSecondContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1653px */
   display: flex;
@@ -6240,10 +6283,8 @@ body {
 }
 .fundingCreateContainerFrame .infoBox .infoFrame, .fundingCreateSecondContainerFrame .infoBox .infoFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 356px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 40px */
   display: flex;
@@ -6279,7 +6320,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1279px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -6336,10 +6376,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 106px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
@@ -6413,7 +6451,6 @@ body {
 .fundingCreateContainerFrame .mainContentSection .contentSection, .fundingCreateSecondContainerFrame .mainContentSection .contentSection {
   flex-shrink: 0;
   width: 1199px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1121px */
   display: flex;
@@ -6521,10 +6558,8 @@ body {
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnit,
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minimumNumber, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriod, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProduction, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnit, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minimumNumber {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: block;
@@ -6785,10 +6820,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 330px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 215px */
   display: flex;
@@ -6805,10 +6838,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 152px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
@@ -7126,7 +7157,6 @@ body {
 }
 .secondMyPage .pageNationFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 100px;
@@ -7219,7 +7249,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1060px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1754px */
   display: flex;
@@ -7334,10 +7363,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 65px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7354,10 +7381,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 34px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7383,10 +7408,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(2) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 31px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7410,10 +7433,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 57px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7430,10 +7451,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 57px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7475,10 +7494,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .nftNameTag {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 100px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
@@ -7502,10 +7519,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 25px */
   display: flex;
@@ -7821,10 +7836,8 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 95px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7849,10 +7862,8 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2), .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 40px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 16px */
   display: flex;
@@ -8073,10 +8084,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 153px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
@@ -8114,10 +8123,8 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
@@ -8200,10 +8207,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 123px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 27px */
   display: flex;
@@ -8261,10 +8266,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 129px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
@@ -8302,10 +8305,8 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
@@ -8416,10 +8417,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 129px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
@@ -8457,10 +8456,8 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;

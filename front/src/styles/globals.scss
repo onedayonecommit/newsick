@@ -19,264 +19,444 @@ body{
   border-radius: 0px 0px 0px 0px;
 }
 
+// ========================================Main CSS Start
 .mainSlider{
-  display: flex;
-  flex-direction: column;
-  .pageNav{
-      position: absolute;
-      width: min-content;
-      height: min-content;
-      display: flex;
-      flex-direction: column;
-      right: 20px;
-      top: 50%;
-      transform: (translate(0,-50%));
-      gap: 30px;
-      .pageNavItem{
-          width: 50px;
-          height: 20px;
-          background-color: white;
-      }
-  }
-  .mainFirstFrame{
-      box-sizing: border-box;
-      width: 1359px;
-      height: 950px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 80px 50px 80px 50px;
-      background-color: #2b2f5f;
-      overflow: visible;
-      align-content: center;
-      flex-wrap: nowrap;
-      position: relative;
-      border-radius: 0px 0px 0px 0px;
-      .rankingInfoSection{
-          flex-shrink: 0;
-          width: 465px;
-          height: 636px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 0;
-          border-radius: 0px 0px 0px 0px;
-          .infoFrame{
-              flex-shrink: 0;
-              width: min-content; /* 465px */
-              height: min-content; /* 636px */
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: flex-start;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: flex-start;
-              flex-wrap: nowrap;
-              gap: 50px;
-              border-radius: 0px 0px 0px 0px;
-              .titleSection{
+    display: flex;
+    flex-direction: column;
+    .pageNav{
+        position: absolute;
+        width: min-content;
+        height: min-content;
+        display: flex;
+        flex-direction: column;
+        right: 20px;
+        top: 50%;
+        transform: (translate(0,-50%));
+        gap: 30px;
+        .pageNavItem{
+            width: 50px;
+            height: 20px;
+            background-color: white;
+        }
+    }
+    .mainFirstFrame{
+        box-sizing: border-box;
+        width: 1359px;
+        height: 950px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 80px 50px 80px 50px;
+        background-color: #2b2f5f;
+        overflow: visible;
+        align-content: center;
+        flex-wrap: nowrap;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        .rankingInfoSection{
+            flex-shrink: 0;
+            width: 465px;
+            height: 636px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            .infoFrame{
+                flex-shrink: 0;
+                width: min-content; /* 465px */
+                height: min-content; /* 636px */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: flex-start;
+                flex-wrap: nowrap;
+                gap: 50px;
+                border-radius: 0px 0px 0px 0px;
+                .titleSection{
+                    flex-shrink: 0;
+                    width: min-content; /* 193px */
+                    height: min-content; /* 154px */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: flex-start;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    border-radius: 0px 0px 0px 0px;
+                    .title{
+                        flex-shrink: 0;
+                        width: auto; /* 145px */
+                        height: auto; /* 84px */
+                        white-space: pre;
+                        position: relative;
+                        font-family: "Inter", sans-serif;
+                        color: #ffffff;
+                        font-size: 70px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                        font-weight: bold;
+                    }
+                    .subTitle{
+                        flex-shrink: 0;
+                        width: auto; /* 193px */
+                        height: auto; /* 60px */
+                        white-space: pre;
+                        position: relative;
+                        font-family: "Inter", sans-serif;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 50px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                }
+                .textSection{
+                    flex-shrink: 0;
+                    width: 465px;
+                    height: 432px;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    word-break: break-word;
+                    position: relative;
+                    font-family: "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 40px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+            }
+        }
+        .rankingCard{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 420px;
+            height: 550px;
+            display: block;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+    .mainSecondFrame{
+        box-sizing: border-box;
+        width: 1359px;
+        height: 950px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        padding: 80px 50px 80px 50px;
+        background-color: #2b2f5f;
+        overflow: hidden;
+        align-content: flex-end;
+        flex-wrap: nowrap;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        .sideFrame{
+            flex-shrink: 0;
+            width: 713px;
+            height: 790px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            .hotTopicText{
+                flex-shrink: 0;
+                width: 713px;
+                height: 90px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 0;
+                border-radius: 0px 0px 0px 0px;
+                :nth-child(1){
+                    white-space: pre;
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 40px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                :nth-child(2){
+                    white-space: pre;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 35px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+            }
+        }
+        .slideHotTopicList{
+            // flex-shrink: 0;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: -650px;
+            width:1000px;
+            height: 950px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            // // overflow: visible;
+            // position: relative;
+            // padding: 0px 0px 0px 0px;
+            // align-content: center;
+            // // flex-wrap: wrap;
+            // gap: 40px;
+            // border-radius: 0px 0px 0px 0px;
+            .hotTopSlides {
+                position: absolute;
+                transition: 1s;
+                .hotTopicSlide{
+
+                }
+                .hotTopicSlideContent {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-end;
+                  width: 230px;
+                  height: 310px;
+                  background-size: cover;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  transition: transform 0.5s ease-in-out;
+                  box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+                  border-radius: 50px;
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                
+                .hotTopicSlideContentInner {
+                  transform-style: preserve-3d;
+                  transform: translateZ(50px);
+                  transition: opacity 0.3s linear;
+                //   font-family: "Inter", sans-serif;
+                //   color: #ffffff;
+                //   font-size: 20px;
+                  opacity: 1;
+                  right: -55px;
+                  bottom:10px;
+                  box-sizing: border-box;
                   flex-shrink: 0;
-                  width: min-content; /* 193px */
-                  height: min-content; /* 154px */
+                  width: 188px;
+                  height: 98px;
                   display: flex;
                   flex-direction: column;
                   justify-content: center;
-                  align-items: flex-start;
+                  align-items: flex-end;
+                  padding: 0px 20px 0px 20px;
+                  background-color: rgba(0, 0, 0, 0.4);
+                  -webkit-backdrop-filter: blur(10px);
+                  -o-backdrop-filter: blur(10px);
+                  -moz-backdrop-filter: blur(10px);
+                  backdrop-filter: blur(10px);
+                  font-weight: bold;
                   overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: flex-start;
+                  z-index: 1;
+                  align-content: center;
                   flex-wrap: nowrap;
                   gap: 10px;
-                  border-radius: 0px 0px 0px 0px;
-                  .title{
-                      flex-shrink: 0;
-                      width: auto; /* 145px */
-                      height: auto; /* 84px */
-                      white-space: pre;
-                      position: relative;
-                      font-family: "Inter", sans-serif;
-                      color: #ffffff;
-                      font-size: 70px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                      font-weight: bold;
+                  position: absolute;
+                  border-radius: 25px;
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+
+                  .singerName,.songName,.fundingPrice{
+                    flex-shrink: 0;
+                    width: auto; /* 64px */
+                    height: auto; /* 19px */
+                    white-space: pre;
+                    position: relative;
+                    font-family: "Inter", sans-serif;
+                    color: #ffffff;
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
                   }
-                  .subTitle{
-                      flex-shrink: 0;
-                      width: auto; /* 193px */
-                      height: auto; /* 60px */
-                      white-space: pre;
-                      position: relative;
-                      font-family: "Inter", sans-serif;
-                      color: rgba(255, 255, 255, 0.7);
-                      font-size: 50px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
+                
+                  .hotTopicSlideTitle {
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-family: "Inter", sans-serif;
+                    color: #ffffff;
+                    font-size: 22px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                  }
+                  .hotTopicSlideSubtitle{
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-family: "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    line-height: 1.2
                   }
               }
-              .textSection{
-                  flex-shrink: 0;
-                  width: 465px;
-                  height: 432px;
-                  white-space: pre-wrap;
-                  word-wrap: break-word;
-                  word-break: break-word;
-                  position: relative;
-                  font-family: "Inter", sans-serif;
-                  color: rgba(255, 255, 255, 0.7);
-                  font-size: 40px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
               }
-          }
-      }
-      .rankingCard{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 420px;
-          height: 550px;
-          display: block;
-          background-color: rgba(255, 255, 255, 0.1);
-          overflow: hidden;
-          position: relative;
-          border-radius: 25px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-  }
-  .mainSecondFrame{
-      box-sizing: border-box;
-      width: 1359px;
-      height: 950px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 80px 0px 80px 0px;
-      background-color: #2b2f5f;
-      overflow: hidden;
-      align-content: center;
-      flex-wrap: nowrap;
-      position: relative;
-      border-radius: 0px 0px 0px 0px;
-      .hotTopicText{
-          flex-shrink: 0;
-          width: 708px;
-          height: 100px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 0;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(1){
-              flex-shrink: 0;
-              width: min-content;
-              height:min-content;
-              white-space: pre;
-              position: relative;
-              font-family: "Inter", sans-serif;
-              color: rgba(255, 255, 255, 1);
-              font-weight: bold;
-              font-size: 40px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-          }
-          :nth-child(2){
-              flex-shrink: 0;
-              width: min-content;
-              height: min-content;
-              white-space: pre;
-              position: relative;
-              font-family: "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.7);
-              font-size: 35px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-          }
-      }
-      .slideHotTopicList{
-          flex-shrink: 0;
-          width: min-content;
-          height: 100%;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 40px;
-          border-radius: 0px 0px 0px 0px;
-          .hotTopSlides {
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: center;
-              gap: 50px;  
-              .hotTopicSlideContent {
+        }
+    }
+    .mainThirdFrame{
+        width: 1359px;
+        height: 950px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #2b2f5f;
+        overflow: visible;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        .leftSlideContent{
+            flex-shrink: 0;
+            width: 818px;
+            height: 950px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 60px 0px 60px;
+            align-content: center;
+            flex-wrap: nowrap;
+            border-radius: 0px 0px 0px 0px;
+            .slideListDownFrame{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 270px;
+                height:calc(255px*10);
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-end;
-                width: 230px;
-                height: 310px;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                transition: transform 0.5s ease-in-out;
-                box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-                border-radius: 50px;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-              }
-              
-              .hotTopicSlideContentInner {
-                transform-style: preserve-3d;
-                transform: translateZ(50px);
-                transition: opacity 0.3s linear;
-                font-family: "Inter", sans-serif;
-                color: #ffffff;
-                font-size: 20px;
-                opacity: 1;
-              
-                .hotTopicSlideTitle {
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-family: "Inter", sans-serif;
-                  color: #ffffff;
-                  font-size: 22px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-                }
-                .hotTopicSlideSubtitle{
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-family: "Inter", sans-serif;
-                  color: rgba(255, 255, 255, 0.8);
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  line-height: 1.2
+                justify-content: center;
+                align-items: center;
+                padding: 0px 30px 0px 30px;
+                overflow: hidden;
+                position: relative;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 40px;
+                border-radius: 0px 0px 0px 0px;
+                .closeFundingList{
+                    flex-shrink: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 40px;
+                    border-radius: 0px 0px 0px 0px; 
+                    .closeItem{
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 210px;
+                        height: 255px;
+                        display: block;
+                        background-color: rgba(255, 255, 255, 0.1);
+
+                        overflow: hidden;
+                        position: relative;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                    }
                 }
             }
+            .slideListUpFrame{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 270px;
+                height:calc(255px*10);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0px 30px 0px 30px;
+                overflow: hidden;
+                position: relative;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 40px;
+                border-radius: 0px 0px 0px 0px;
+                .closeFundingList{
+                    flex-shrink: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 40px;
+                    border-radius: 0px 0px 0px 0px; 
+                    .closeItem{
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 210px;
+                        height: 255px;
+                        display: block;
+                        background-color: rgba(255, 255, 255, 0.1);
+
+         
+                        overflow: hidden;
+                        position: relative;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+                }
             }
-      }
-  }
+        }
+        .rightContent{
+            flex-shrink: 0;
+            width: 541px;
+            height: 950px;
+            display: block;
+            // background-color: #ffffff;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+        }
+    }
 }
+// ========================================Main CSS Done
 // ==================================COMPONENT CSS START
 .playBarSection{
   flex-shrink: 0;
