@@ -138,16 +138,16 @@ const FundingContainer = () => {
           </div>
           <div className="StateSection">
             <motion.div style={{ color: selectedDiv === "div1" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div1")}>
-              제작 완료
-            </motion.div>
-            <motion.div style={{ color: selectedDiv === "div2" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div2")}>
-              종료 펀딩
-            </motion.div>
-            <motion.div style={{ color: selectedDiv === "div3" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div3")}>
               진행중인 펀딩
             </motion.div>
-            <motion.div style={{ color: selectedDiv === "div4" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div4")}>
+            <motion.div style={{ color: selectedDiv === "div2" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div2")}>
               진행 예정 펀딩
+            </motion.div>
+            <motion.div style={{ color: selectedDiv === "div3" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div3")}>
+              제작중(버튼)
+            </motion.div>
+            <motion.div style={{ color: selectedDiv === "div4" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div4")}>
+              종료 펀딩
             </motion.div>
           </div>
         </div>

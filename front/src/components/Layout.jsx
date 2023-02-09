@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar } from "../components";
+import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar, VolumeBox } from "../components";
 import {motion} from "framer-motion"
 const Layout = (props) => {
   const [isSoundClick,setIsSoundClick] = useState(false);

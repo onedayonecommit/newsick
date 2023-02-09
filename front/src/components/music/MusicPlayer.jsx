@@ -2,11 +2,11 @@ import React, { useReducer, useState } from 'react'
 import {motion} from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faCaretLeft, faCaretRight, faList, faList12, faListAlt, faListCheck, faListDots, faListNumeric, faListSquares, faPause, faRepeat, faShuffle, faVolumeHigh, faVolumeXmark } from '@fortawesome/free-solid-svg-icons'
-import ironImage from "../../public/image/IRON2.jpg"
-import leeImage from "../../public/image/lee.jpg"
-import ParkImage from "../../public/image/park.jpg"
-import YounImage from "../../public/image/YOUNHA.jpg"
-import ChangImage from "../../public/image/chang.jpg"
+import ironImage from "../../../public/image/IRON2.jpg"
+import leeImage from "../../../public/image/lee.jpg"
+import ParkImage from "../../../public/image/park.jpg"
+import YounImage from "../../../public/image/YOUNHA.jpg"
+import ChangImage from "../../../public/image/chang.jpg"
 import MusicSlideForm from "./MusicSlideForm";
 import MusicPlayerPlayBar from './MusicPlayerPlayBar'
 const slides = [
