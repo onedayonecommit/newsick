@@ -6,7 +6,6 @@
 - 장르별
 */
 import Image from "next/image";
-import park from './image/'
 import ParkImage from "../../../public/image/park.jpg";
 import IronImage from "../../../public/image/IRON.jpg";
 import LeeImage from "../../../public/image/lee.jpg";

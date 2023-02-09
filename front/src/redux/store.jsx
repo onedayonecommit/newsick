@@ -8,21 +8,22 @@ import userSlice from "./userSlice";
 // const logger = createLogger();
 
 // redux-persist 사용
-// const persistConfig = {
-//   key: "root",
-//   storage,
-//   whiteList: ["userInfo"],
-// };
+const persistConfig = {
+  key: "root",
+  storage,
+  whiteList: ["userSlice"],
+};
 
 const rootReducer = combineReducers({
   userInfo: userSlice.reducer,
 });
 
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: rootReducer,
+  // reducer: rootReducer,
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);

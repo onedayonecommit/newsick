@@ -61,7 +61,7 @@ const ConnectWallet = () => {
         console.log(err);
       }
       // 계정 변경 감지
-      // window.ethereum.on("accountsChanged", handleAccountsChanged);
+      window.ethereum.on("accountsChanged", handleAccountsChanged);
     })();
   }, [web3, account]);
 

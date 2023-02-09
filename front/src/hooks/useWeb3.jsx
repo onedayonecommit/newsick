@@ -34,19 +34,27 @@ const useWeb3 = () => {
   };
 
   useEffect(() => {
-    (async () => {
-      try {
-        if (!web3) {
-          getWeb3();
-        } else {
-          getFundContract();
-          getMarketContract();
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+  //   (async () => {
+  //     try {
+  //       if (!web3) {
+  //         getWeb3();
+  //       } else {
+  //         getFundContract();
+  //         getMarketContract();
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   })();
+  // }, []);
+    if (!web3) {
+      getWeb3();
+    } else {
+      getFundContract();
+      getMarketContract();
+    }
+    // window.ethereum.on("accountsChanged", handleAccountsChanged);
+  }, [web3]);
 
   // const handleAccountsChanged = (accounts) => {
   //   console.log(accounts.length);
