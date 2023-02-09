@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import MyPageFirstContainer from '../../components/apply_creator'
-import MyPageSecondContainer from '../../components/favorite'
-import MyPageThirdContainer from '../../components/my_NFT'
 import {AnimatePresence, motion} from "framer-motion"
 import { MyPageFirstContainer, MyPageSecondContainer, MyPageThirdContainer } from '@/components/mypage';
 const MyPage = () => {
