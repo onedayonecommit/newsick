@@ -45,7 +45,7 @@ const ConnectWallet = () => {
     // console.log(accounts); // 배열로 반환해줌
     return accounts;
   };
-
+ 
   useEffect(() => {
     (async () => {
       try {
@@ -61,7 +61,7 @@ const ConnectWallet = () => {
         console.log(err);
       }
       // 계정 변경 감지
-      window.ethereum.on("accountsChanged", handleAccountsChanged);
+      // window.ethereum.on("accountsChanged", handleAccountsChanged);
     })();
   }, [web3, account]);
 

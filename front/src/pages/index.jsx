@@ -1,15 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useMotionValue, useTransform } from "framer-motion"
 import { MainFirstPage, MainSecondPage, MainThirdPage } from '@/components/main';
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(0);
   const [result, setResult] = useState(0);
   // const [isSliding, setIsSliding] = useState(false);
   const y = useMotionValue(0);
   const opacity = useTransform(y, [-100, 0, 100], [0, 1, 0]);
+
+  const rendergood = () => {
+    
+    if(Math.abs(result) > 200 && result > 0) {
+      setCurrentPage((currentPage + 1) % 3);
+    }else if (Math.abs(result) > 200 && result < 0){
+      setCurrentPage((currentPage - 1) % 3);
+    }else {
+      
+    }
+  }
+  
+  useEffect(()=>{
+    rendergood();
+  },[result])
 
   return (
     <motion.div className="mainSlider">
@@ -17,24 +31,27 @@ const Home = () => {
       <motion.div 
         className="page" 
         style={{ opacity,y }}
-        // drag="y"
+        drag="y"
         dragConstraints={{ top: 0, bottom: 0 }}
         onDragStart={(e)=>{
           setStart(e.clientY);
           console.log(e.clientY)
         }}
         
-        onDragEnd={async (e) => {
-              setEnd(e.clientY);
-              await setResult(start-end);
-              console.log(result);
-                if(Math.abs(result) > 100 && result > 0) {
-                  return setCurrentPage((currentPage + 1) % 3);
-                }else if (Math.abs(result) > 100 && result < 0){
-                  return setCurrentPage((currentPage - 1) % 3);
-                }else {
-                  return;
-                }
+        onDragEnd={ (e) => {
+          setResult(start-e.clientY);
+          
+          console.log(e.clientY);
+              // setEnd(e.clientY);
+              // setResult(start-end);
+              // console.log(result);
+              //   if(Math.abs(result) > 100 && result > 0) {
+              //     return setCurrentPage((currentPage + 1) % 3);
+              //   }else if (Math.abs(result) > 100 && result < 0){
+              //     return setCurrentPage((currentPage - 1) % 3);
+              //   }else {
+              //     return;
+              //   }
         }}
        >
         {

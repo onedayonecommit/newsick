@@ -34,14 +34,19 @@ const useWeb3 = () => {
   };
 
   useEffect(() => {
-    if (!web3) {
-      getWeb3();
-    } else {
-      getFundContract();
-      getMarketContract();
-    }
-    // window.ethereum.on("accountsChanged", handleAccountsChanged);
-  }, [web3]);
+    (async () => {
+      try {
+        if (!web3) {
+          getWeb3();
+        } else {
+          getFundContract();
+          getMarketContract();
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   // const handleAccountsChanged = (accounts) => {
   //   console.log(accounts.length);
@@ -56,7 +61,7 @@ const useWeb3 = () => {
   //   }
   // };
 
-  // console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
+  console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
   return { web3, NEWSIC_FUND, NEWSIC_MARKET };
 };
 

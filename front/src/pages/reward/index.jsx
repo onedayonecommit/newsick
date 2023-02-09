@@ -122,7 +122,7 @@ const FundingContainer = () => {
                 </div>
                 <div className="detailButton">DETAIL</div>
               </div>
-              <img className="swiperImage" src={item.image} alt={item.fundingName} />
+              <img className="swiperImage" src={item.image.src} alt={item.fundingName} />
             </motion.div>
           ))}
         </motion.div>

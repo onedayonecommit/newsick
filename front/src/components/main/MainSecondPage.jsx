@@ -102,8 +102,9 @@ const MainSecondPage = () => {
   //   }
   // }
 
+
   return (
-    <div className='mainSecondFrame'>
+    <div className='mainSecondFrame' style={{backgroundImage : `url('${slides[position].image.src}')`, backgroundSize:"cover"}}>
       <div className='sideFrame'>
         <div className='hotTopicText'>
           <div>Hot Topic</div>
@@ -112,9 +113,10 @@ const MainSecondPage = () => {
         <div></div>
       </div>
         <button onClick={() => {setPosition((position + 1)) }} style={{position:"absolute" ,right:0,top:0}}>right</button>
-      <motion.div className='slideHotTopicList' style={{rotateZ:Rotate * position}}>
+        <motion.div className='slideHotTopicList' style={{rotateZ:Rotate * position}}>
             {
               slides.map((slide, index) => {
+                // setControll(index);
                 const angle = (360 / slidesNum) * ((index) % slidesNum);
                 const xPos = RADIUS * Math.cos((angle * Math.PI) / 180);
                 const yPos = RADIUS * Math.sin((angle * Math.PI) / 180);
@@ -126,7 +128,7 @@ const MainSecondPage = () => {
                     y: yPos * 5,
                     rotateZ: -(Rotate * position),
                   }}
-                >
+                  >
                   <motion.div
                     className="hotTopicSlide"
                     key={index}
@@ -147,25 +149,25 @@ const MainSecondPage = () => {
                       scale: index === (slidesNum - 1) - (position  % slidesNum) + 1 ||  (position  % slidesNum === 0 && index === 0) ? 1: 0.8,
                     }}
                     // transition={{
-                    //   type:"spring",
-                    //   stiffness:260,
-                    //   damping:20,
-                    // }}
-                    >
+                      //   type:"spring",
+                      //   stiffness:260,
+                      //   damping:20,
+                      // }}
+                      >
                     <motion.div
                       className="hotTopicSlideContent"
                       style={{
-                        backgroundImage: `url('${slide.image}')`
+                        backgroundImage: `url('${slide.image.src}')`
                       }}
                       whileTap={{ cursor: "grabbing" }}
-                    >   
+                      >   
                       {
                         index === (slidesNum - 1) - (position  % slidesNum) + 1 || (position  % slidesNum === 0 && index === 0) ?
                         <motion.div
-                          className="hotTopicSlideContentInner"
+                        className="hotTopicSlideContentInner"
                           style={{ x, y, rotateX, rotateY, z: 50 }}
                           >
-                            <div className='singerName'>{slide.singerName}</div>
+                            <div className='singerName'>{slide.singerName}{position}</div>
                             <div className='songName'>{slide.songName}</div>
                             <div className='fundingPrice'>{slide.fundingPrice}</div>
                         </motion.div> : null

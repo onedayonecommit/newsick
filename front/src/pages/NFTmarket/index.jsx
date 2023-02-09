@@ -9,7 +9,7 @@ import PageNationFrame from "../../components/PageNationFrame";
 import Image from "next/image";
 
 // nft 메인페이지
-const images = [image2, "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png", "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"];
+const images = ["https://i.pinimg.com/564x/26/2c/d9/262cd9e6cdf5ba0f922d36aeb8a3f3fa.jpg", "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png", "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"];
 
 const variants = {
   enter: (direction) => {

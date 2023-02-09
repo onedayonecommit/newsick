@@ -10,129 +10,153 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users{
+model user{
   id Int @default(autoincrement()) @id
   user_email String @unique
   user_wallet_address String @unique
   user_name String @unique
-  is_creator Boolean @default(false)
+  user_profile_image String @default("default_profile_image.png")
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
-  ticket Boolean @default(false)
-  signup_status Boolean @default(false)
-  user_profile_image String @default("default_profile_image.png")
-  ticket_list tickets[]
-  creator_list creator[]
-  favoliste favorites[]
+  creator creator[]
+  ticket ticket[]
+  heart_music heart_music[]
+  heart_funding heart_funding[]
   playlist playlist[]
-  fundinglist funding[]
+}
+
+model admin{
+  admin_id String @id
+  admin_password String
 }
 
 model creator{
-  id Int @default(autoincrement()) @id
-  creators_id users @relation(fields: [creator_id],references: [id])
-  creator_id Int 
-  creator_CA String?
-  creator_abi String?
-}
-
-model tickets{
-  id Int @default(autoincrement()) @id
-  ticket_name String 
-  ticket_period Int // 달 아니고 일로 받음
-  users_id users @relation(fields: [user_id],references: [id])
-  user_id Int 
+  creators_id user @relation(fields : [creator_id],references: [user_wallet_address])
+  creator_id String @id
+  is_creator Boolean @default(false)
   created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+  funding funding[]
 }
 
-model albums{
-  id Int @default(autoincrement()) @id
-  album_name String
-  singer String
-  music_list musics[]
-}
-
-model musics{
-  id Int @default(autoincrement()) @id
-  music_name String
-  music_lyrics String?
-  music_genre String
-  music_maker String
-  lyrics_maker String?
-  singer String
-  play_number Int @default(0)
-  albums albums @relation(fields: [album_id], references: [id])
-  album_id Int
-  favorite favorites[]
-  playlist playlist[]
+model ticket{
+  ids user @relation(fields: [id],references: [user_wallet_address])
+  id String @id
+  ticket_type Int @default(0)
+  expired DateTime @default(now()) @db.Timestamp(3)
 }
 
 model funding{
-  id Int @default(autoincrement()) @id
-  creator_idss users @relation(fields: [creator_id],references: [id])
-  creator_id Int 
-  creator_wallet_address String
+  id Int @id // tokenId
+  creator_ids creator @relation(fields: [creator_id],references: [creator_id])
+  creator_id String
   category String?
-  music_maker_info_url String? @db.VarChar(300) // sns or info
-  lyrics_maker_info_url String? @db.VarChar(300)// sns or info
-  singer_info_url String? @db.VarChar(300)
-  music_feel Int @default(0)
-  funding_cover_image String @default("default_profile_image.png")
-  funding_info String @db.VarChar(10000)
+  funding_info String @default("소개 내용 없음") @db.VarChar(5000)
+  funding_nft_image String
+  funding_metadata String
+  funding_start_date DateTime @db.Timestamp(3)
+  funding_finish_date DateTime @db.Timestamp(3)
+  funding_production_date DateTime @db.Timestamp(3)
+  created_at DateTime @default(now()) @db.Timestamp(3)
+  funding_music funding_music[]
+  music_maker music_maker[]
+  lyrics_maker lyrics_maker[]
+  singer singer[]
+}
+
+model music_maker{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  music_name String? @default("정보 없음")
+  music_sex Int? @default(0)
+  music_info String? @default("정보 없음") @db.VarChar(5000)
+}
+
+model lyrics_maker{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  lyrics_name String? @default("정보 없음")
+  lyrics_sex Int? @default(0)
+  lyrics_info String? @default("정보 없음") @db.VarChar(5000)
+}
+
+model singer{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  singer_name String? @default("정보 없음")
+  singer_sex Int? @default(0)
+  singer_info String? @default("정보 없음") @db.VarChar(5000)
+}
+
+model funding_music{
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int @id
+  music_name String // 곡 제목 필수
+  music_lyrics String? // 가사
+  music_genre1 String // 장르1 필수
+  music_maker String // 작곡가 필수
+  lyrics_maker String? // 작사가 
+  singer String? // 가수
+  music_cover_image String @default("default_music_image.png")
+  album_name String
+  title Boolean @default(false)
+  music_path String
   created_at DateTime @default(now())
-  start_date DateTime
-  sale_date DateTime
-  music_maker funding_music_maker[]
-  lyrics_maker funding_lyrics_maker[]
-  singer funding_singer[]
+  funding_music_player funding_music_player[]
 }
 
-model funding_music_maker{
-  id Int @default(autoincrement()) @id
-  funding_ids funding @relation(fields: [funding_id],references: [id])
-  funding_id Int
-  name String?
-  sex String?
-  age Int?
-  about_me String? @db.VarChar(3000)
+model funding_music_player{
+  music_ids funding_music @relation(fields: [music_id],references: [funding_id])
+  music_id Int @id
+  player_count Int @default(0)
+  heart Int @default(0)
 }
 
-model funding_lyrics_maker{
+model normal_music{
   id Int @default(autoincrement()) @id
-  funding_ids funding @relation(fields: [funding_id],references: [id])
-  funding_id Int
-  name String?
-  sex String?
-  age Int?
-  about_me String? @db.VarChar(3000)
+  music_name String // 곡 제목 필수
+  singer String? // 가수
+  music_lyrics String? // 가사
+  lyrics_maker String? // 작사가 
+  music_maker String // 작곡가 필수
+  music_genre1 String // 장르1 필수
+  music_cover_image String @default("default_music_image.png")
+  album_name String
+  title Boolean @default(false)
+  music_path String
+  created_at DateTime @default(now()) // 우리 플랫폼 음원 등록된 시점
+  normal_music_player normal_music_player[] //
 }
 
-model funding_singer{
-  id Int @default(autoincrement()) @id
-  funding_ids funding @relation(fields: [funding_id],references: [id])
-  funding_id Int
-  name String?
-  sex String?
-  age Int?
-  about_me String? @db.VarChar(3000)
+model normal_music_player{
+  music_ids normal_music @relation(fields: [music_id],references: [id])
+  music_id Int @id
+  player_count Int @default(0)
+  heart Int @default(0)
 }
 
-model favorites{
+model heart_music{
   id Int @default(autoincrement()) @id
-  users_id users @relation(fields: [user_id],references: [id])
-  user_id Int
-  musics_id musics @relation(fields: [music_id],references: [id])
-  music_id Int
+  user_ids user @relation(fields: [user_id],references: [user_wallet_address])
+  user_id String
+  normal_music_id Int?
+  funding_music_id Int?
 }
 
 model playlist{
   id Int @default(autoincrement()) @id
-  users_id users @relation(fields: [user_id],references: [id])
-  user_id Int
-  musics_id musics @relation(fields: [music_id],references: [id])
-  music_id Int
+  user_ids user @relation(fields: [user_id],references: [user_wallet_address])
+  user_id String
+  normal_music_id Int?
+  funding_music_id Int?
 }
 
-
-// 펀딩 == 민팅 펀딩할 때 nft 민팅해주기 // 원하는 모금액 50프로
-// 가스비 제외 환불 모금액 100프로 이상 됐어요 그래도 nft 가지고 투표도 하는거고 
+model heart_funding{
+  id Int @default(autoincrement()) @id
+  user_ids user @relation(fields: [user_id],references: [user_wallet_address])
+  user_id String 
+  funding_id Int
+}
