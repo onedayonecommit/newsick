@@ -26,13 +26,15 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        state.address = action.payload.user_wallet_address;
-        state.userName = action.payload.user_name;
-        state.userEmail = action.payload.user_email;
-        state.userImage = action.payload.user_profile_image;
-        state.isCreator = action.payload.is_creator;
-        state.createStatus = action.payload.createStatus;
-        console.log("넘어온 유저정보 : ", action.payload);
+        if (action.payload) {
+          state.address = action.payload.user_wallet_address;
+          state.userName = action.payload.user_name;
+          state.userEmail = action.payload.user_email;
+          state.userImage = action.payload.user_profile_image;
+          state.isCreator = action.payload.is_creator;
+          state.createStatus = action.payload.createStatus;
+          console.log("넘어온 유저정보 : ", action.payload);
+        }
       })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
@@ -43,18 +45,20 @@ const userSlice = createSlice({
       .addCase(fetchUserCreated.fulfilled, (state, action) => {
         // console.log(typeof action.payload);
         // console.log(typeof action.payload == "string");
-        if (typeof action.payload == "string") alert(action.payload);
-        else {
-          state.address = action.payload.user_wallet_address;
-          state.userName = action.payload.user_name;
-          state.userEmail = action.payload.user_email;
-          state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.is_creator;
-          state.createStatus = action.payload.createStatus;
-          alert("회원가입 추카추");
+        if (action.payload) {
+          if (typeof action.payload == "string") alert(action.payload);
+          else {
+            state.address = action.payload.user_wallet_address;
+            state.userName = action.payload.user_name;
+            state.userEmail = action.payload.user_email;
+            state.userImage = action.payload.user_profile_image;
+            state.isCreator = action.payload.is_creator;
+            state.createStatus = action.payload.createStatus;
+            alert("회원가입 추카추");
 
-          console.log("넘어온 유저정보 : ", action.payload);
-          console.log("업데이트 시킨 state : ", state);
+            console.log("넘어온 유저정보 : ", action.payload);
+            console.log("업데이트 시킨 state : ", state);
+          }
         }
       })
       .addCase(fetchUserCreated.rejected, (state) => {
