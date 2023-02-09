@@ -24,3 +24,5 @@ export class fundingMusicDto {
   @IsBoolean()
   title: boolean;
 }
+
+// 회원가입을 해

@@ -1,9 +1,10 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { user } from '@prisma/client';
+import { bool } from 'aws-sdk/clients/signer';
 import { EmailSendService } from 'src/email/email-send/email-send.service';
 import { PrismaService } from 'src/prisma.service';
 import { DuplicateCheckService } from '../duplicate-check/duplicate-check.service';
-import { joinDto, RemoveDto } from './join.dto';
+import { joinDto } from './join.dto';
 
 @Injectable()
 export class JoinService {
@@ -14,12 +15,17 @@ export class JoinService {
   ) {}
 
   /** 회원가입 함수 첫번째 파라미터 == joinDto */
-  async userJoin(joinDto: joinDto): Promise<user> {
+  async userJoin(joinDto: joinDto): Promise<user | string> {
     const { user_email, user_name, user_wallet_address, is_creator } = joinDto;
     try {
-      await this.duplicateService.userEmailCheck(user_email);
-      await this.duplicateService.userNameCheck(user_name);
-      await this.duplicateService.userWalletCheck(user_wallet_address);
+      const mailCheck = await this.duplicateService.userEmailCheck(user_email);
+      const nameCheck = await this.duplicateService.userNameCheck(user_name);
+      const walletCheck = await this.duplicateService.userWalletCheck(
+        user_wallet_address,
+      );
+      if (!mailCheck) return 'already in use this mail';
+      if (!nameCheck) return 'already in use this name';
+      if (!walletCheck) return 'already in use this wallet';
       const result = await this.db.user.create({
         data: {
           user_email,
@@ -28,11 +34,15 @@ export class JoinService {
           creator: {
             create: [{ is_creator: is_creator }],
           },
+          ticket: {
+            create: [{ ticket_type: 0 }],
+          },
         },
       });
+      const resDto = { ...result, createStatus: true };
       if (result) {
         this.mailService.signUpMail(user_email);
-        return result;
+        return resDto;
       }
     } catch (error) {
       throw new HttpException(
@@ -41,22 +51,4 @@ export class JoinService {
       );
     }
   }
-
-  // async userRemove(userAdd: RemoveDto) {
-  //   console.log(userAdd);
-  //   // const { _address } = userAdd;
-  //   // try {
-  //   //   return await this.db.user.delete({
-  //   //     where: {
-  //   //       user_wallet_address: _address,
-  //   //     },
-  //   //   });
-  //   // } catch (error) {
-  //   //   throw new HttpException(
-  //   //     'remove user faled',
-  //   //     HttpStatus.INTERNAL_SERVER_ERROR,
-  //   //   );
-  //   // }
-  //   return true;
-  // }
 }

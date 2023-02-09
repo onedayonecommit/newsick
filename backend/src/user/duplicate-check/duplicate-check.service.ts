@@ -11,9 +11,8 @@ export class DuplicateCheckService {
       const result = await this.db.user.findUnique({
         where: { user_email },
       });
-      if (result) {
-        throw new HttpException('already in use this id', HttpStatus.OK);
-      }
+      if (result) return false;
+      else return true;
     } catch (error) {
       throw new HttpException(
         'duplicate check service error',
@@ -28,9 +27,12 @@ export class DuplicateCheckService {
       const result = await this.db.user.findUnique({
         where: { user_name },
       });
-      if (result) {
-        throw new HttpException('already in use this name', HttpStatus.OK);
-      }
+      if (result) return false;
+      else return true;
+      // throw new HttpException(
+      //   'already in use this name',
+      //   HttpStatus.BAD_REQUEST,
+      // );
     } catch (error) {
       throw new HttpException(
         'duplicate check service error',
@@ -45,12 +47,12 @@ export class DuplicateCheckService {
       const result = await this.db.user.findUnique({
         where: { user_wallet_address },
       });
-      if (result) {
-        throw new HttpException(
-          'already in use this wallet_address',
-          HttpStatus.OK,
-        );
-      }
+      if (result) return false;
+      // throw new HttpException(
+      //   'already in use this wallet_address',
+      //   HttpStatus.OK,
+      // );
+      else return true;
     } catch (error) {
       throw new HttpException(
         'duplicate check service error',

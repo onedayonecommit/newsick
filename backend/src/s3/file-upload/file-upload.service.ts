@@ -34,6 +34,7 @@ export class FileUploadService {
 
   /** 새로운 파일 업로드 */
   async uploadFile(file: Express.Multer.File) {
+    console.log(file);
     const filebasename = `${uuidv4()}${extname(file.originalname)}`;
 
     const params = {

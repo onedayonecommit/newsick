@@ -6,8 +6,7 @@ import { MusicModule } from './music/music.module';
 import { EnvModule } from './env/env.module';
 import { S3Module } from './s3/s3.module';
 import { NftStorageModule } from './nft-storage/nft-storage.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,8 +17,9 @@ import { AppService } from './app.service';
     EnvModule,
     S3Module,
     NftStorageModule,
+    AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
