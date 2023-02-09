@@ -19,6 +19,10 @@ import { QueryService } from './service/funding/query.service';
 import { QueryController } from './controller/funding/query.controller';
 import { FundinglistController } from './controller/funding/fundinglist.controller';
 import { FundinglistService } from './service/funding/fundinglist.service';
+import { CreatorApplicationService } from './service/creator-application/creator-application.service';
+import { CreatorApplicationController } from './controller/creator-application/creator-application.controller';
+import { WalletConnectController } from './controller/wallet-connect/wallet-connect.controller';
+import { WalletConnectService } from './service/wallet-connect/wallet-connect.service';
 @Module({
   imports: [
     EnvModule,
@@ -33,6 +37,8 @@ import { FundinglistService } from './service/funding/fundinglist.service';
     CreateFundingController,
     QueryController,
     FundinglistController,
+    CreatorApplicationController,
+    WalletConnectController,
   ],
   providers: [
     CreateUserService,
@@ -45,6 +51,8 @@ import { FundinglistService } from './service/funding/fundinglist.service';
     CreateFundingService,
     QueryService,
     FundinglistService,
+    CreatorApplicationService,
+    WalletConnectService,
   ],
 })
 export class AppModule {}

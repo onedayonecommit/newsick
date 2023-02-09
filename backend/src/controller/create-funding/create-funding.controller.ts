@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Get,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -17,14 +18,12 @@ export class CreateFundingController {
     private readonly fileUploadService: FileUploadsService,
   ) {}
 
-  @Post()
+  @Post('hello')
   @UseInterceptors(FileInterceptor('cover_image'))
   async createFunding(
     @Body() fundingDto: createFundingDto,
     @UploadedFile() file: Express.Multer.File,
   ) {
-    await this.createFundingService.fundingInfoCreate(fundingDto).then((e) => {
-      // this.fileUploadService.fundingCoverImageUpload(file, e.id);
-    });
+    return await this.createFundingService.fundingInfoCreate(fundingDto, file);
   }
 }
