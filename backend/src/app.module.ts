@@ -1,5 +1,8 @@
-import { CacheModule, Module } from '@nestjs/common';
-import { PrismaService } from './prisma.service';
+import { Module } from '@nestjs/common';
+import { UserModule } from './user/user.module';
+import { EmailModule } from './email/email.module';
+import { FundModule } from './fund/fund.module';
+import { MusicModule } from './music/music.module';
 import { EnvModule } from './env/env.module';
 import * as redisStore from 'cache-manager-ioredis';
 import { SignupEmailController } from './controller/signup-email/signup-email.controller';
@@ -25,6 +28,10 @@ import { WalletConnectController } from './controller/wallet-connect/wallet-conn
 import { WalletConnectService } from './service/wallet-connect/wallet-connect.service';
 @Module({
   imports: [
+    UserModule,
+    EmailModule,
+    FundModule,
+    MusicModule,
     EnvModule,
     CacheModule.register({ store: redisStore, host: 'localhost', port: 6379 }),
   ],
@@ -54,5 +61,7 @@ import { WalletConnectService } from './service/wallet-connect/wallet-connect.se
     CreatorApplicationService,
     WalletConnectService,
   ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
