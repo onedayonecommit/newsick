@@ -38,9 +38,49 @@ body {
   gap: 30px;
 }
 .mainSlider .pageNav .pageNavItem {
-  width: 50px;
-  height: 20px;
-  background-color: white;
+  scale: 0.9;
+  opacity: 0.5;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content; /* 24px */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 7px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .pageNav .pageNavItem :nth-child(1) {
+  flex-shrink: 0;
+  width: 15px;
+  height: 4.8px;
+  display: block;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .pageNav .pageNavItem :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 92px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
 }
 .mainSlider .mainFirstFrame {
   box-sizing: border-box;
@@ -169,34 +209,78 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-end;
-  padding: 80px 50px 80px 50px;
-  background-color: #2b2f5f;
+  padding: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
   overflow: hidden;
   align-content: flex-end;
   flex-wrap: nowrap;
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainSecondFrame .sideFrame {
+.mainSlider .mainSecondFrame .backGroundCover {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 484px;
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 713px;
-  height: 790px;
+  width: 875px;
+  height: 950px;
+  display: block;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+  overflow: hidden;
+  z-index: 0;
+  position: absolute;
+  border-radius: 0px 540px 540px 0px;
+  border: 1px solid #222;
+}
+.mainSlider .mainSecondFrame .backGroundBlur {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  -o-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.mainSlider .mainSecondFrame .switchHotList {
+  cursor: pointer;
+  position: absolute;
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+  color: white;
+  left: 42%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.mainSlider .mainSecondFrame .sideFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 800px;
+  height: 950px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 40px 0px 0px 0px;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
+  gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainSecondFrame .sideFrame .hotTopicText {
   flex-shrink: 0;
-  width: 713px;
-  height: 90px;
+  width: 800px;
+  height: -moz-min-content;
+  height: min-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,6 +294,10 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainSecondFrame .sideFrame .hotTopicText :nth-child(1) {
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
   white-space: pre;
   color: rgb(255, 255, 255);
   font-size: 40px;
@@ -217,11 +305,39 @@ body {
   line-height: 1.2;
 }
 .mainSlider .mainSecondFrame .sideFrame .hotTopicText :nth-child(2) {
+  display: flex;
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
   white-space: pre;
   color: rgba(255, 255, 255, 0.7);
   font-size: 35px;
   letter-spacing: 0px;
-  line-height: 1.2;
+  line-height: 1.5;
+}
+.mainSlider .mainSecondFrame .sideFrame .sideContentBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 560px;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .mainSlider .mainSecondFrame .slideHotTopicList {
   position: absolute;
@@ -320,7 +436,7 @@ body {
   height: 950px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-color: #2b2f5f;
   overflow: visible;
@@ -333,15 +449,15 @@ body {
 }
 .mainSlider .mainThirdFrame .leftSlideContent {
   flex-shrink: 0;
-  width: 818px;
+  width: 595px;
   height: 950px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: left;
   align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 0px 60px 0px 60px;
+  padding: 0px 0px 0px 60px;
   align-content: center;
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
@@ -434,9 +550,10 @@ body {
 }
 .mainSlider .mainThirdFrame .rightContent {
   flex-shrink: 0;
-  width: 541px;
+  width: 560px;
   height: 950px;
   display: block;
+  background-color: rgba(0, 0, 0, 0.4);
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
@@ -1723,6 +1840,14 @@ body {
   font-size: 15px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.layoutFrame .layoutBox .sideBarSection .categories .menuSection .menuItem:hover {
+  animation-duration: 0.3s;
+  transition: 0.5s;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .layoutFrame .layoutBox .contentSection {
   flex-shrink: 0;
