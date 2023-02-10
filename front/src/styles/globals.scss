@@ -3183,855 +3183,541 @@ animation: gradient-animation 6s ease infinite;
 }
 // MainContainerCSS==============done
 // MusicContainerCSS=============start
-.musiccontainerFrame{
-  width: 1359px;
-  height: min-content; /* 1698px */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color: #2b2f5f;
-  overflow: visible;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 0;
-  position: absolute;
-  border-radius: 0px 0px 0px 0px;  
-  .topSection{
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 1359px;
-      height: 500px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 25px 25px 25px 25px;
-      overflow: hidden;
-      position: relative;
-      align-content: flex-start;
-      flex-wrap: nowrap;
-      gap: 10px;
-      background-image: url("../../public/image/musicBack.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      border-radius: 0px 0px 0px 0px;
-      .titleMusicInfoFrame{
-          flex-shrink: 0;
-          width: 1309px;
-          height: 201px;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: flex-start;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 15px;
-          border-radius: 0px 0px 0px 0px;
-          .musicInfoSection{
-              flex-shrink: 0;
-              width: 777px;
-              height: 201px;
-              display: block;
-              overflow: hidden;
-              position: relative;
-              border-radius: 0px 0px 0px 0px;
-              .musicName{
-                  width: 301px;
-                  height: 60px;
-                  display: block;
-                  overflow: hidden;
-                  border-radius: 0px 0px 0px 0px;
-                  white-space: pre;
-                  font-weight: 700;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: #ffffff;
-                  font-size: 50px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              }
-              .musicText{
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  overflow: hidden;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 0px 0px 0px 0px;
-                  flex-shrink: 0;
-                  width: 777px;
-                  height: auto; /* 126px */
-                  white-space: pre-wrap;
-                  word-wrap: break-word;
-                  word-break: break-word;
-                  font-weight: 700;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: rgba(255, 255, 255, 0.7);
-                  font-size: 35px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              }
-          }
-          .musicSellButtonSection{
-              flex-shrink: 0;
-              width: 517px;
-              height: 201px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 15px;
-              border-radius: 0px 0px 0px 0px;
-              .buyButton,
-              .playButton{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 250px;
-                  height: 59px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  background-color: rgba(255, 255, 255, 0.7);
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 0;
-                  border-radius: 20px;
-                  border: 1px solid rgba(0, 0, 0, 0.1);
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-weight: 700;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: #000000;
-                  font-size: 20px;
-                  letter-spacing: 0px;
-                  line-height: 1.2
-              }
-          }
-      }
-      .subTitleMusicinfoFram{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 1309px;
-          height: 239px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-          padding: 10px 10px 10px 10px;
-          overflow: hidden;
-          position: relative;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          .subTitleText{
-              flex-shrink: 0;
-              width: min-content; /* 115px */
-              height: min-content; /* 24px */
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              flex-shrink: 0;
-              white-space: pre;
-              font-weight: 700;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 20px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-          }
-          .subInfoBoxList{
-              flex-shrink: 0;
-              width: 1289px;
-              height: 185px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              .musicBox{
-                  flex-shrink: 0;
-                  width: 150px;
-                  height: 170px;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 0;
-                  border-radius: 0px 0px 0px 0px;
-                  .musicImg{
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 130px;
-                      height: 120px;
-                      display: block;
-                      overflow: hidden;
-                      position: relative;
-                      // background-image: url(/* park.jpg */);
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      background-position: center;
-                      border-radius: 0px 0px 0px 0px;
-                      border: 1px solid rgba(255, 255, 255, 0.1);
-                  }
-                  .musicInfo{
-                      flex-shrink: 0;
-                      width: min-content; /* 107px */
-                      height: min-content; /* 41px */
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 0;
-                      border-radius: 0px 0px 0px 0px;
-                      .songName{
-                          white-space: pre;
-                          font-weight: 700;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: #ffffff;
-                          font-size: 20px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                      .singerName{
-                          white-space: pre;
-                          font-weight: 700;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.7);
-                          font-size: 14px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                  }
-                  
-              }
-          }
-      }
-  }
-  .bottomSection{
-      flex-shrink: 0;
-      width: 1359px;
-      height: 1198px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-      padding: 0px 0px 0px 0px;
-      align-content: center;
-      flex-wrap: nowrap;
-      gap: 0;
-      border-radius: 0px 0px 0px 0px;
-      .leftSection{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 680px;
-          height: 1198px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-          padding: 25px 25px 25px 25px;
-          overflow: hidden;
-          position: relative;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          .topChartText{
-              flex-shrink: 0;
-              width: 162px;
-              height: 36px;
-              display: block;
-              overflow: hidden;
-              position: relative;
-              border-radius: 0px 0px 0px 0px;
-              white-space: pre;
-              font-weight: 700;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 30px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-          }
-          .topChartList{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 630px;
-              height: 1102px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 10px 10px 10px 10px;
-              overflow: hidden;
-              position: relative;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              .topChartItemBox{
-                  flex-shrink: 0;
-                  width: 635px;
-                  height: 172px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  border-radius: 0px 0px 0px 0px;
-                  .musicFrontSection{
-                      flex-shrink: 0;
-                      width: min-content; /* 330px */
-                      height: min-content; /* 120px */
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 25px;
-                      border-radius: 0px 0px 0px 0px;
-                      .musicImg{
-                          box-sizing: border-box;
-                          flex-shrink: 0;
-                          width: 125px;
-                          height: 120px;
-                          display: block;
-                          overflow: hidden;
-                          position: relative;
-                          // background-image: url(/* IRON.jpg */);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          background-position: center;
-                          border-radius: 25px;
-                          border: 1px solid rgba(255, 255, 255, 0.1);
-                      }
-                      .musicInfo{
-                          flex-shrink: 0;
-                          width: min-content; /* 180px */
-                          height: min-content; /* 66px */
-                          display: flex;
-                          flex-direction: column;
-                          justify-content: center;
-                          align-items: flex-start;
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: flex-start;
-                          flex-wrap: nowrap;
-                          gap: 0;
-                          border-radius: 0px 0px 0px 0px;
-                          .musicName{
-                              flex-shrink: 0;
-                              width: auto; /* 180px */
-                              height: auto; /* 36px */
-                              white-space: pre;
-                              position: relative;
-                              font-weight: 700;
-                              font-family: "Inter-Bold", "Inter", sans-serif;
-                              color: #ffffff;
-                              font-size: 30px;
-                              letter-spacing: 0px;
-                              line-height: 1.2
-                          }
-                          .singerName{
-                              flex-shrink: 0;
-                              width: auto; /* 77px */
-                              height: auto; /* 30px */
-                              white-space: pre;
-                              position: relative;
-                              font-weight: 700;
-                              font-family: "Inter-Bold", "Inter", sans-serif;
-                              color: rgba(255, 255, 255, 0.8);
-                              font-size: 25px;
-                              letter-spacing: 0px;
-                              line-height: 1.2;
-                          }
-                      }
-                  }
-                  .musicInfoSection{
-                      flex-shrink: 0;
-                      width: 212px;
-                      height: 120px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: space-between;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      border-radius: 0px 0px 0px 0px;
-                      .musicRapTime{
-                          flex-shrink: 0;
-                          width: auto; /* 57px */
-                          height: auto; /* 30px */
-                          white-space: pre;
-                          position: relative;
-                          font-weight: 700;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.8);
-                          font-size: 25px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                      .iconSection{
-                          flex-shrink: 0;
-                          width: 83px;
-                          height: 33px;
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: center;
-                          align-items: center;
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          gap: 10px;
-                          border-radius: 0px 0px 0px 0px;
-                          :nth-child(-n+2){
-                              box-sizing: border-box;
-                              flex-shrink: 0;
-                              width: 36px;
-                              height: 33px;
-                              display: block;
-                              background-color: rgba(0, 0, 0, 0.4);
-                              overflow: hidden;
-                              position: relative;
-                              border-radius: 0px 0px 0px 0px;
-                              border: 1px solid rgba(255, 255, 255, 0.1);
-                          }
-                      }
-                  }
-              }
-          }
-      }
-      .rightSection{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 679px;
-          height: 1198px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-          padding: 25px 25px 25px 25px;
-          overflow: hidden;
-          position: relative;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 20px;
-          border-radius: 0px 0px 0px 0px;
-          .genreSection{
-              flex-shrink: 0;
-              width: 629px;
-              height: 556px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: flex-start;
-              overflow: visible;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: flex-start;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              .genreInfoSection{
-                  flex-shrink: 0;
-                  width: 629px;
-                  height: 36px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  border-radius: 0px 0px 0px 0px;
-                  .genreText{
-                      flex-shrink: 0;
-                      width: auto; /* 149px */
-                      height: auto; /* 36px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 700;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: #ffffff;
-                      font-size: 30px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-                  .genreShowAll{
-                      flex-shrink: 0;
-                      width: min-content; /* 90px */
-                      height: min-content; /* 20px */
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 10px;
-                      border-radius: 0px 0px 0px 0px;
-                      flex-shrink: 0;
-                      width: auto; /* 90px */
-                      height: auto; /* 20px */
-                      white-space: pre;
-                      font-weight: 700;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: rgba(255, 255, 255, 0.8);
-                      font-size: 16px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-              }
-              .genreButtonSection{
-                  flex-shrink: 0;
-                  width: 629px;
-                  height: 510px;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: flex-start;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 0;
-                  border-radius: 0px 0px 0px 0px;
-                  .genreButtonList{
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 630px;
-                      height: 510px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      padding: 10px 10px 10px 10px;
-                      overflow: visible;
-                      position: relative;
-                      align-content: flex-start;
-                      flex-wrap: wrap;
-                      gap: 10px;
-                      border-radius: 0px 0px 0px 0px;
-                      .genreItemBox{
-                          box-sizing: border-box;
-                          flex-shrink: 0;
-                          width: 300px;
-                          height: 150px;
-                          display: block;
-                          overflow: hidden;
-                          position: relative;
-                          // background-image: url(/* GENRE.jpg */);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          background-position: center;
-                          border-radius: 20px;
-                          border: 1px solid rgba(255, 255, 255, 0.1);
-                          .genreInfoSection{
-                              right: 20px;
-                              bottom: 20px;
-                              width: 115px;
-                              height: 23px;
-                              display: flex;
-                              flex-direction: column;
-                              justify-content: center;
-                              align-items: flex-end;
-                              overflow: hidden;
-                              padding: 0px 0px 0px 0px;
-                              align-content: flex-end;
-                              flex-wrap: nowrap;
-                              gap: 0;
-                              position: absolute;
-                              border-radius: 0px 0px 0px 0px;
-                              .genreText{
-                                  width: auto; /* 106px */
-                                  height: auto; /* 19px */
-                                  white-space: pre;
-                                  font-weight: 700;
-                                  font-family: "Inter-Bold", "Inter", sans-serif;
-                                  color: #ffffff;
-                                  font-size: 16px;
-                                  letter-spacing: 0px;
-                                  line-height: 1.2;
-                              }
-                              .genreLine{
-                                  width: 115px;
-                                  height: 1px;
-                                  display: block;
-                                  background-color: rgba(255, 255, 255, 0.7);
-                                  overflow: hidden;
-                                  border-radius: 0px 0px 0px 0px;
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-          .newAlbumSection{
-              flex-shrink: 0;
-              width: 629px;
-              height: 572px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 15px;
-              border-radius: 0px 0px 0px 0px;
-              .newAlbumText{
-                  flex-shrink: 0;
-                  width: 629px;
-                  height: min-content; /* 36px */
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: flex-start;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: flex-start;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 0px 0px 0px 0px;
-                  flex-shrink: 0;
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 700;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: rgba(255, 255, 255, 0.8);
-                  font-size: 30px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              }
-              .newAlbumList{
-                  flex-shrink: 0;
-                  width: 629px;
-                  height: 516px;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 15px;
-                  border-radius: 0px 0px 0px 0px;
-                  .newAlbumItemBox{
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 629px;
-                      height: 118px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: space-between;
-                      align-items: center;
-                      padding: 15px 15px 15px 15px;
-                      overflow: hidden;
-                      position: relative;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      border-radius: 0px 0px 0px 0px;
-                      .musicFrontSection{
-                          flex-shrink: 0;
-                          width: min-content; /* 330px */
-                          height: min-content; /* 120px */
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: center;
-                          align-items: center;
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          gap: 25px;
-                          border-radius: 0px 0px 0px 0px;
-                          .musicImg{
-                              box-sizing: border-box;
-                              flex-shrink: 0;
-                              width: 125px;
-                              height: 120px;
-                              display: block;
-                              overflow: hidden;
-                              position: relative;
-                              // background-image: url(/* IRON.jpg */);
-                              background-size: cover;
-                              background-repeat: no-repeat;
-                              background-position: center;
-                              border-radius: 25px;
-                              border: 1px solid rgba(255, 255, 255, 0.1);
-                          }
-                          .musicInfo{
-                              flex-shrink: 0;
-                              width: min-content; /* 180px */
-                              height: min-content; /* 66px */
-                              display: flex;
-                              flex-direction: column;
-                              justify-content: center;
-                              align-items: flex-start;
-                              overflow: hidden;
-                              position: relative;
-                              padding: 0px 0px 0px 0px;
-                              align-content: flex-start;
-                              flex-wrap: nowrap;
-                              gap: 0;
-                              border-radius: 0px 0px 0px 0px;
-                              .musicName{
-                                  flex-shrink: 0;
-                                  width: auto; /* 180px */
-                                  height: auto; /* 36px */
-                                  white-space: pre;
-                                  position: relative;
-                                  font-weight: 700;
-                                  font-family: "Inter-Bold", "Inter", sans-serif;
-                                  color: #ffffff;
-                                  font-size: 16px;
-                                  letter-spacing: 0px;
-                                  line-height: 1.2
-                              }
-                              .singerName{
-                                  flex-shrink: 0;
-                                  width: auto; /* 77px */
-                                  height: auto; /* 30px */
-                                  white-space: pre;
-                                  position: relative;
-                                  font-weight: 700;
-                                  font-family: "Inter-Bold", "Inter", sans-serif;
-                                  color: rgba(255, 255, 255, 0.8);
-                                  font-size: 16px;
-                                  letter-spacing: 0px;
-                                  line-height: 1.2;
-                              }
-                          }
-                      }
-                      .musicInfoSection{
-                          flex-shrink: 0;
-                          width: 212px;
-                          height: 120px;
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: space-between;
-                          align-items: center;
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          border-radius: 0px 0px 0px 0px;
-                          .musicRapTime{
-                              flex-shrink: 0;
-                              width: auto; /* 57px */
-                              height: auto; /* 30px */
-                              white-space: pre;
-                              position: relative;
-                              font-weight: 700;
-                              font-family: "Inter-Bold", "Inter", sans-serif;
-                              color: rgba(255, 255, 255, 0.8);
-                              font-size: 25px;
-                              letter-spacing: 0px;
-                              line-height: 1.2;
-                          }
-                          .iconSection{
-                              flex-shrink: 0;
-                              width: 83px;
-                              height: 33px;
-                              display: flex;
-                              flex-direction: row;
-                              justify-content: center;
-                              align-items: center;
-                              overflow: hidden;
-                              position: relative;
-                              padding: 0px 0px 0px 0px;
-                              align-content: center;
-                              flex-wrap: nowrap;
-                              gap: 10px;
-                              border-radius: 0px 0px 0px 0px;
-                              :nth-child(-n+2){
-                                  box-sizing: border-box;
-                                  flex-shrink: 0;
-                                  width: 36px;
-                                  height: 33px;
-                                  display: block;
-                                  background-color: rgba(0, 0, 0, 0.4);
-                                  overflow: hidden;
-                                  position: relative;
-                                  border-radius: 0px 0px 0px 0px;
-                                  border: 1px solid rgba(255, 255, 255, 0.1);
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-      }
-  }
+.MusicContainerFrame{
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1359px;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 30px 30px 30px;
+    background: radial-gradient(68.30000000000001% 100% at 36.4% 106.3%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+    overflow: visible;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+    border-radius: 0px 0px 0px 0px;
+    .newSongSection{
+        flex-shrink: 0;
+        width: 1279px;
+        height: 277px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 30px;
+        border-radius: 0px 0px 0px 0px;
+        .text{
+            flex-shrink: 0;
+            width: 1279px;
+            height: min-content; /* 31px */
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 26px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+        }
+        .newSongList{
+            flex-shrink: 0;
+            width: 1279px;
+            height: 216px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 30px;
+            border-radius: 0px 0px 0px 0px;
+            .newSongCard{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 160px;
+                height: 216px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 20px 20px 20px 20px;
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.01);
+                overflow: hidden;
+                position: relative;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                .newSongImg{
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 120px;
+                    height: 120px;
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    background-size: fill;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 20px;
+                    border: 1px solid rgba(171, 171, 171, 0.4);
+                }
+                .newSongTagFrame{
+                    flex-shrink: 0;
+                    width: min-content; /* 120px */
+                    height: min-content; /* 43px */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: flex-start;
+                    flex-wrap: nowrap;
+                    gap: 0;
+                    border-radius: 0px 0px 0px 0px;
+                    :nth-child(1){
+                        flex-shrink: 0;
+                        width: min-content;
+                        height: min-content;
+                        white-space: pre;
+                        position: relative;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: #ffffff;
+                        font-size: 20px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                    :nth-child(2){
+                        flex-shrink: 0;
+                        width: min-content;
+                        height: min-content;
+                        white-space: pre;
+                        position: relative;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 16px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+    }
+    .bottomFrame{
+        flex-shrink: 0;
+        width: 1299px;
+        height: 583px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 30px;
+        border-radius: 0px 0px 0px 0px;
+        .topChartSection{
+            flex-shrink: 0;
+            width: 635px;
+            height: 583px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 30px;
+            border-radius: 0px 0px 0px 0px;
+            .topChartTextFrame{
+                backdrop-filter: blur(10px);
+                z-index: 5;
+                flex-shrink: 0;
+                width: 635px;
+                height: min-content; /* 31px */
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: flex-end;
+                flex-wrap: nowrap;
+                border-radius: 0px 0px 0px 0px;
+                .leftSide{
+                    flex-shrink: 0;
+                    width: min-content; /* 306px */
+                    height: min-content; /* 31px */
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 30px;
+                    border-radius: 0px 0px 0px 0px;
+                    .text{
+                        flex-shrink: 0;
+                        width: auto; /* 126px */
+                        height: auto; /* 31px */
+                        white-space: pre;
+                        position: relative;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: #ffffff;
+                        font-size: 26px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                    .topRankToggle{
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 150px;
+                        height: 30px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding: 0px 3px 0px 3px;
+                        overflow: hidden;
+                        position: relative;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 0;
+                        border-radius: 25px;
+                        border: 1px solid #ffffff;
+                        .togglePoint{
+                            cursor: pointer;
+                            flex-shrink: 0;
+                            width:min-content;
+                            height: min-content;
+                            display: block;
+                            background-color: #ffffff;
+                            overflow: hidden;
+                            position: relative;
+                            border-radius: 25px;
+                            border: 1px solid rgba(166, 166, 166, 0.1);
+                            >div{
+                                width: 70px;
+                                height: 22px;
+                                display: flex;
+                                color: rgba(0,0,0,0.8);
+                                font-weight: bold;
+                                text-align: center;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+                .rightSide{
+                    flex-shrink: 0;
+                    width: auto; /* 63px */
+                    height: auto; /* 19px */
+                    white-space: pre;
+                    position: relative;
+                    font-family: "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+            }
+            .topChartList{
+                flex-shrink: 0;
+                width: 635px;
+                height: 532px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 20px;
+                border-radius: 0px 0px 0px 0px;
+                .musicTopItemBox{
+                    flex-shrink: 0;
+                    width: 635px;
+                    height: 85px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    border-radius: 0px 0px 0px 0px;
+                    .leftSection{
+                        flex-shrink: 0;
+                        width: min-content; /* 245px */
+                        height: 85px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 40px;
+                        border-radius: 0px 0px 0px 0px;
+                        .musicTopItemImg{
+                            box-sizing: border-box;
+                            flex-shrink: 0;
+                            width: 85px;
+                            height: 85px;
+                            display: block;
+                            overflow: hidden;
+                            position: relative;
+                            background-image: url(/* IRON.jpg */);
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            border-radius: 25px;
+                            border: 1px solid rgba(194, 194, 194, 0.4);
+                        }
+                        .musicInfoFrame{
+                            flex-shrink: 0;
+                            width: min-content; /* 120px */
+                            height: min-content; /* 43px */
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            overflow: hidden;
+                            position: relative;
+                            padding: 0px 0px 0px 0px;
+                            align-content: flex-start;
+                            flex-wrap: nowrap;
+                            gap: 0;
+                            border-radius: 0px 0px 0px 0px;
+                            .musicName{
+                                flex-shrink: 0;
+                                width: auto; /* 120px */
+                                height: auto; /* 24px */
+                                white-space: pre;
+                                position: relative;
+                                font-weight: 700;
+                                font-style: normal;
+                                font-family: "Inter-Bold", "Inter", sans-serif;
+                                color: #ffffff;
+                                font-size: 20px;
+                                letter-spacing: 0px;
+                                line-height: 1.2;
+                            }
+                            .singerName{
+                                flex-shrink: 0;
+                                width: auto; /* 100px */
+                                height: auto; /* 19px */
+                                white-space: pre;
+                                position: relative;
+                                font-weight: 700;
+                                font-style: normal;
+                                font-family: "Inter-Bold", "Inter", sans-serif;
+                                color: rgba(255, 255, 255, 0.7);
+                                font-size: 16px;
+                                letter-spacing: 0px;
+                                line-height: 1.2;
+                            }
+                        }
+                    }
+                    .rightSection{
+                        flex-shrink: 0;
+                        width: min-content; /* 156px */
+                        height: 85px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 30px;
+                        border-radius: 0px 0px 0px 0px;
+                        .lapTime{
+                            flex-shrink: 0;
+                            width: auto; /* 36px */
+                            height: auto; /* 19px */
+                            white-space: pre;
+                            position: relative;
+                            font-weight: 700;
+                            font-style: normal;
+                            font-family: "Inter-Bold", "Inter", sans-serif;
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 16px;
+                            letter-spacing: 2px;
+                            line-height: 1.2;
+                        }
+                        .likeButton{
+                            flex-shrink: 0;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: #ffffff;
+                            overflow: hidden;
+                            position: relative;
+                            padding: 0px 0px 0px 0px;
+                            align-content: center;
+                            flex-wrap: nowrap;
+                            gap: 0;
+                            border-radius: 30px;
+                            &:nth-child(1){
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                        .takeListButton{
+                            flex-shrink: 0;
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: #ffffff;
+                            overflow: hidden;
+                            position: relative;
+                            padding: 0px 0px 0px 0px;
+                            align-content: center;
+                            flex-wrap: nowrap;
+                            gap: 0;
+                            border-radius: 30px;
+                            &:nth-child(1){
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .genreListSection{
+            flex-shrink: 0;
+            width: 634px;
+            height: 583px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 30px;
+            border-radius: 0px 0px 0px 0px;
+            .genreText{
+                flex-shrink: 0;
+                width: 634px;
+                height: 31px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 0;
+                border-radius: 0px 0px 0px 0px;
+                flex-shrink: 0;
+                white-space: pre;
+                font-weight: 700;
+                font-style: normal;
+                font-family: "Inter-Bold", "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 26px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+            }
+            .genreList{
+                flex-shrink: 0;
+                width: 634px;
+                height: 522px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 5px;
+                border-radius: 0px 0px 0px 0px;
+                :nth-child(-n+4){
+                    box-sizing: border-box;
+                    padding-top: 15px;
+                    text-align: center;
+                    flex-shrink: 0;
+                    width: 147px;
+                    color: rgba(255,255,255,0.8);
+                    height: 522px;
+                    display: block;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 0px 0px 0px 0px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+    }
 }
 // MusicContainerCSS=============done
 //FundingContianerCss===========start
