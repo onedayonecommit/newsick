@@ -26,10 +26,8 @@ body {
 }
 .mainSlider .pageNav {
   position: absolute;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -78,10 +76,8 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 465px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 636px */
   display: flex;
@@ -98,10 +94,8 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 193px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 154px */
   display: flex;
@@ -958,10 +952,8 @@ body {
 }
 
 .toggleFrame {
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   position: absolute;
@@ -1388,10 +1380,8 @@ body {
 
 .pageNationFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
@@ -1631,10 +1621,8 @@ body {
 }
 .layoutFrame .layoutBox .sideBarSection .iconBar .iconButton {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 40px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 356px */
   display: flex;
@@ -1937,10 +1925,8 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 112px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 46px */
   display: flex;
@@ -1957,10 +1943,8 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 80px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -1985,10 +1969,8 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userEmail {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 112px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
@@ -2101,10 +2083,8 @@ body {
 }
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 396px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 395px */
   display: flex;
@@ -2137,10 +2117,8 @@ body {
 }
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList .infoTextSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 396px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 215px */
   display: flex;
@@ -2356,19 +2334,7 @@ body {
   gap: 10px;
   background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e, #7758D1);
   background-size: 180% 180%;
-  -webkit-animation: gradient-animation 6s ease infinite;
-          animation: gradient-animation 6s ease infinite;
-}
-@-webkit-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  animation: gradient-animation 6s ease infinite;
 }
 @keyframes gradient-animation {
   0% {
@@ -2423,7 +2389,6 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpTitle {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 54px;
@@ -2517,10 +2482,8 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 317px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 95px */
   display: flex;
@@ -2537,10 +2500,8 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpinfoText {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 173px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 20px */
   display: flex;
@@ -2565,10 +2526,8 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 317px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 65px */
   display: flex;
@@ -2673,7 +2632,6 @@ body {
 .mainContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -2734,7 +2692,6 @@ body {
 .mainContainerFrame .rankingBoardSection {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 275px */
   display: flex;
@@ -2752,7 +2709,6 @@ body {
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 275px */
   display: flex;
@@ -2770,7 +2726,6 @@ body {
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame .rankingText {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 35px */
   display: flex;
@@ -2814,10 +2769,8 @@ body {
 }
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame .rankingList .rankingItem {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 867px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 40px */
   display: flex;
@@ -2835,7 +2788,6 @@ body {
 .mainContainerFrame .hotTopicSection {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 595px */
   display: flex;
@@ -2853,7 +2805,6 @@ body {
 .mainContainerFrame .hotTopicSection .hotTopicText {
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 35px */
   display: flex;
@@ -2880,7 +2831,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 538px */
   display: flex;
@@ -3224,7 +3174,6 @@ body {
 .MusicContainerFrame .newSongSection .text {
   flex-shrink: 0;
   width: 1279px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 31px */
   display: flex;
@@ -3301,10 +3250,8 @@ body {
 }
 .MusicContainerFrame .newSongSection .newSongList .newSongCard .newSongTagFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 120px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 43px */
   display: flex;
@@ -3321,10 +3268,8 @@ body {
 }
 .MusicContainerFrame .newSongSection .newSongList .newSongCard .newSongTagFrame :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   white-space: pre;
@@ -3339,10 +3284,8 @@ body {
 }
 .MusicContainerFrame .newSongSection .newSongList .newSongCard .newSongTagFrame :nth-child(2) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   white-space: pre;
@@ -3393,7 +3336,6 @@ body {
   z-index: 5;
   flex-shrink: 0;
   width: 635px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 31px */
   display: flex;
@@ -3409,10 +3351,8 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 306px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 31px */
   display: flex;
@@ -3462,10 +3402,8 @@ body {
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide .topRankToggle .togglePoint {
   cursor: pointer;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: block;
@@ -3531,7 +3469,6 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 245px */
   height: 85px;
@@ -3564,10 +3501,8 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 120px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 43px */
   display: flex;
@@ -3612,7 +3547,6 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .rightSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 156px */
   height: 85px;
@@ -3760,7 +3694,6 @@ body {
 .FundingContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1561px */
   display: flex;
@@ -3876,10 +3809,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 93px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 33px */
   display: flex;
@@ -3896,10 +3827,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .createrName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 93px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 16px */
   display: flex;
@@ -3924,10 +3853,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .fundingInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 59px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 12px */
   display: flex;
@@ -4038,10 +3965,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 265px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 249px */
   display: flex;
@@ -4075,10 +4000,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 264px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 46px */
   display: flex;
@@ -4103,10 +4026,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotCreaterName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 194px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 36px */
   display: flex;
@@ -4132,10 +4053,8 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingInfo {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 172px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 36px */
   display: flex;
@@ -4548,10 +4467,8 @@ body {
 }
 .detailContainerFrame .detailInfoSection .profileSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 120px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 28px */
   display: flex;
@@ -4587,10 +4504,8 @@ body {
 }
 .detailContainerFrame .detailInfoSection .topInfoSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 303px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 189px */
   display: flex;
@@ -4623,10 +4538,8 @@ body {
 }
 .detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 295px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 126px */
   display: flex;
@@ -4689,7 +4602,6 @@ body {
 .nftMarketContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1439px */
   display: flex;
@@ -4849,7 +4761,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 912px */
   display: flex;
@@ -4898,10 +4809,8 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 345px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 34px */
   display: flex;
@@ -4931,10 +4840,8 @@ body {
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 152px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 34px */
   display: flex;
@@ -5170,10 +5077,8 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .bottomFrame .bottomSection {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
@@ -5338,7 +5243,6 @@ body {
 .nftDetailContainerFrame .topSection .infoSwiperSection {
   left: 572px;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 334px;
@@ -5357,7 +5261,6 @@ body {
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 334px;
@@ -5394,10 +5297,8 @@ body {
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox .infoName {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 51px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 14px */
   display: flex;
@@ -5786,10 +5687,8 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .canOrderPriceSection .leftSection .text,
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderPriceSection .leftSection .text {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -5859,10 +5758,8 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .canOrderPriceSection .RightSection .inputSection :nth-child(2),
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderPriceSection .RightSection .inputSection :nth-child(2) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 35px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -5923,10 +5820,8 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .buyPriceSection .leftSection .text,
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderQuantitySection .leftSection .text {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 68px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 20px */
   display: flex;
@@ -6040,7 +5935,6 @@ body {
 .fundingCreateContainerFrame, .fundingCreateSecondContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1653px */
   display: flex;
@@ -6081,10 +5975,8 @@ body {
 }
 .fundingCreateContainerFrame .infoBox .infoFrame, .fundingCreateSecondContainerFrame .infoBox .infoFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 356px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 40px */
   display: flex;
@@ -6120,7 +6012,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1279px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -6141,7 +6032,6 @@ body {
 .fundingCreateContainerFrame .mainContentSection .secondContentSection, .fundingCreateSecondContainerFrame .mainContentSection .secondContentSection {
   flex-shrink: 0;
   width: 1199px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: flex;
@@ -6175,10 +6065,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 106px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
@@ -6338,10 +6226,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame, .fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 897px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 50px */
   display: flex;
@@ -6372,10 +6258,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content, .fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 606px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 50px */
   display: flex;
@@ -6470,7 +6354,6 @@ body {
 .fundingCreateContainerFrame .mainContentSection .contentSection, .fundingCreateSecondContainerFrame .mainContentSection .contentSection {
   flex-shrink: 0;
   width: 1199px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1121px */
   display: flex;
@@ -6569,10 +6452,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .genreSection > div .genreText, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection > div .genreText {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: block;
@@ -6707,10 +6588,8 @@ body {
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnit,
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minimumNumber, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriod, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProduction, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnit, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minimumNumber {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
   display: block;
@@ -6971,10 +6850,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 330px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 215px */
   display: flex;
@@ -6991,10 +6868,8 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 152px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
@@ -7384,7 +7259,6 @@ body {
 }
 .secondMyPage .pageNationFrame {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
   height: 100px;
@@ -7477,7 +7351,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1060px;
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 1754px */
   display: flex;
@@ -7592,10 +7465,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 65px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7612,10 +7483,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 34px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7641,10 +7510,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(2) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 31px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7668,10 +7535,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 57px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7688,10 +7553,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 57px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -7733,10 +7596,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .nftNameTag {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 100px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
@@ -7760,10 +7621,8 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 25px */
   display: flex;
@@ -8079,10 +7938,8 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 95px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
@@ -8107,10 +7964,8 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2), .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 40px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 16px */
   display: flex;
@@ -8331,10 +8186,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 153px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
@@ -8372,10 +8225,8 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
@@ -8458,10 +8309,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 123px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 27px */
   display: flex;
@@ -8519,10 +8368,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 129px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
@@ -8560,10 +8407,8 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
@@ -8674,10 +8519,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 129px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
@@ -8715,10 +8558,8 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList {
   flex-shrink: 0;
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
@@ -8774,4 +8615,462 @@ body {
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+}
+
+.MyPageCreaterFrame {
+  box-sizing: border-box;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 140px 20px 20px 20px;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .topSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1319px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 0px 15px 0px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .topSection .totalMoneySection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 341px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .topSection .totalMoneySection .infoText {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 216px */
+  height: -moz-min-content;
+  height: min-content; /* 30px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 187px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(2) {
+  flex-shrink: 0;
+  width: 216px;
+  height: 1px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 220px */
+  height: -moz-min-content;
+  height: min-content; /* 36px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 61px */
+  height: auto; /* 36px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber :nth-child(2) {
+  flex-shrink: 0;
+  width: 149px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  background: linear-gradient(to right, #9d00ff, #f700ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .topSection .historyGrapSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 958px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 30px 20px 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .topSection .historyGrapSection .historyText {
+  flex-shrink: 0;
+  width: 868px;
+  height: auto; /* 19px */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: left;
+}
+.MyPageCreaterFrame .topSection .historyGrapSection .historyGrapFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 868px;
+  height: 96px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border-color: rgba(255, 255, 255, 0.5);
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-radius: 0px 0px 0px 5px;
+}
+.MyPageCreaterFrame .bottomSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1319px;
+  height: 550px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 20px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1279px;
+  height: 510px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px 15px 0px 15px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1249px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px 0px 15px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar .text {
+  flex-shrink: 0;
+  width: auto; /* 237px */
+  height: auto; /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar .button {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 157px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 20px 20px 20px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1260px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 20px 10px 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList::-webkit-scrollbar {
+  width: 20px;
+  height: 56px;
+  background-color: transparent;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1219px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .infoSection {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 816px */
+  height: -moz-min-content;
+  height: min-content; /* 22px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .infoSection .funddingTitle {
+  cursor: pointer;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .infoSection :nth-child(-n+5) {
+  flex-shrink: 0;
+  width: auto; /* 127px */
+  height: auto; /* 22px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .musicInputButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 128px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .musicInputButton .buttonLine {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 121px;
+  height: 34px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .funddingTerminationButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 128px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
 }
