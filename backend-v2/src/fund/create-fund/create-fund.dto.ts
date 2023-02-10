@@ -26,31 +26,37 @@ export class createFundDto {
   funding_nft_image: string;
   @IsString()
   funding_metadata: string;
+  @IsString()
+  discord_address: string;
+  @IsString()
+  funding_title: string;
+  @IsString()
+  nft_name: string;
 }
 
 export class createFundLyricsDto {
   @IsString()
   lyrics_name: string;
   @IsString()
+  lyrics_sns_address: string;
+  @IsString()
   lyrics_info: string;
-  @IsNumber()
-  lyrics_sex: number;
 }
 export class createFundMusicDto {
   @IsString()
   music_name: string;
   @IsString()
+  music_sns_address: string;
+  @IsString()
   music_info: string;
-  @IsNumber()
-  music_sex: number;
 }
 export class createFundSingerDto {
   @IsString()
   singer_name: string;
   @IsString()
+  singer_sns_address: string;
+  @IsString()
   singer_info: string;
-  @IsNumber()
-  singer_sex: number;
 }
 
 export class createFundMainDto {

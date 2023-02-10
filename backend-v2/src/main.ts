@@ -14,9 +14,9 @@ async function bootstrap() {
   );
   await app.listen(8080);
 
-  setInterval(() => {
-    if (Math.floor(new Date().getTime() / 1000) % 86400 == 0) {
-    }
-  }, 1000);
+  // setInterval(() => {
+  //   if (Math.floor(new Date().getTime() / 1000) % 86400 == 0) {
+  //   }
+  // }, 1000);
 }
 bootstrap();
