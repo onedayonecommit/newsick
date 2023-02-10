@@ -2,6 +2,17 @@ import { faMemory,faFileLines } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {motion,} from "framer-motion"
 import React, { useState } from 'react'
+const ProfileItem =[
+    {
+        profileName:"가수",
+    },
+    {
+        profileName:"작곡가",
+    },
+    {
+        profileName:"작사가",
+    },
+]
 const slideVerticalAnimation = {
     open: {
       rotateY: 0,
@@ -140,19 +151,40 @@ const FundingCreateContainer = () => {
                     </div>
                 </div>
                 <div className='secondContentSection'>
-                    <div>
-                        <div>가수 프로필</div>
-                        <textarea wrap='on'/>
+                {
+                    ProfileItem.map((item)=>(
+                        <div className='ProfileSection'>
+                            <div>{item.profileName} 프로필</div>
+                            <div className='name'>
+                                <div className='.singerName'>{item.profileName}명</div>
+                                <input className='nameInput'/>
+                            </div>
+                            <div className='sex'>
+                            <label>성별</label>
+                             <select>
+                               <option value={0}>남</option>
+                               <option value={1}>여</option>
+                             </select>
+                            </div>
+                            <div className='info'>
+                                <div className='infoText'>{item.profileName} 소개</div>
+                                <input></input>
+                            </div>
+                        </div>
+                    ))
+                }
+                <div className='shareSection'>
+                    <div className='shareFrame'>
+                        <div className='info'>*  음원 수익 배분</div>
+                        <div className='content'>
+                            <div>제작자 : 보유자 =</div>
+                            <input></input>
+                            <div>:</div>
+                            <input></input>
+                        </div>
                     </div>
-                    <div>
-                        <div>작사가 프로필</div>
-                        <textarea/>
-                    </div>
-                    <div>
-                        <div>작곡가 프로필</div>
-                        <textarea wrap='on'/>
-                    </div>
-                    </div>
+                </div>
+                </div>
                     <div className='submissionButton' typeof='button'>제출</div>
                         </div>
                     </div>
