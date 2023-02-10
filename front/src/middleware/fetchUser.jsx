@@ -31,3 +31,22 @@ export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (acc
   }
 });
 // http://192.168.0.169:8080/user/login
+
+// 하영오빠가 작성한 미들웨어
+// export const fetchBuyTicket = createAsyncThunk(
+//   "user/fetchBuyTicket",
+//   async (_data) => {
+//     console.log("DB에 넘겨주는 계정", _data);
+//     try {
+//       const _recieveData = await axios.post(
+//         "http://127.0.0.1:4000/buy-ticket",   // 여기 사용하는 back 주소
+//         _data
+//       );
+//       // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
+//       console.log("티켓구매 확인 : ", _recieveData.data);
+//       return _recieveData.data;
+//     } catch (error) {
+//       console.log("티켓구매 에러");
+//     }
+//   }
+// );

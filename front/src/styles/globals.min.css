@@ -6327,10 +6327,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 140px 40px 40px 40px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
   background: radial-gradient(113.4% 91.4% at -22% 33.5%, rgba(255, 255, 255, 0.1) 0%, rgba(171, 171, 171, 0.1) 100%);
   overflow: hidden;
@@ -6344,7 +6340,8 @@ body {
 .fundingCreateContainerFrame .mainContentSection .secondContentSection, .fundingCreateSecondContainerFrame .mainContentSection .secondContentSection {
   flex-shrink: 0;
   width: 1199px;
-  height: 1121px;
+  height: -moz-min-content;
+  height: min-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6427,10 +6424,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.4);
   overflow: hidden;
   position: relative;
@@ -6463,6 +6456,137 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection .dropDownBox, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection .dropDownBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 110px;
+  height: 221px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 15px 25px 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  -o-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
+  z-index: 1;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 25px;
+  position: absolute;
+  border-radius: 30px 5px 30px 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  top: 19px;
+  right: 105px;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection .dropDownBox .dropOption, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection .dropDownBox .dropOption {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 25px;
+  white-space: pre;
+  position: relative;
+  font-weight: bold;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection .dropDownBox .dropOption:hover, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection .dropDownBox .dropOption:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection > div, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection > div {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection > div .genreText, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection > div .genreText {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection > div .genreDropDown, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection > div .genreDropDown {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  border: 5px solid rgba(255, 255, 255, 0.7);
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .genreSection > div .genreDropDown .line, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .genreSection > div .genreDropDown .line {
+  width: 30px;
+  height: 2px;
+  display: block;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
   border-radius: 0px 0px 0px 0px;
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection,
@@ -6786,7 +6910,7 @@ body {
   height: 521px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -6884,15 +7008,60 @@ body {
   height: 521px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
   align-content: flex-end;
   flex-wrap: nowrap;
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .submissionFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .submissionFrame {
+  flex-shrink: 0;
+  width: 579px;
+  height: 103px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .submissionFrame .submissionButton, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .submissionFrame .submissionButton {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 129px;
+  height: 43px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0.5976309586px 0.5976309586px 0px rgba(0, 0, 0, 0.01), 0px 1.8102578238px 1.8102578238px 0px rgba(0, 0, 0, 0.03017), 0px 4.785212732px 4.785212732px 0px rgba(0, 0, 0, 0.07975), 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame {
   box-sizing: border-box;
@@ -6914,10 +7083,37 @@ body {
   color: #FFFFFF;
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame .imgInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame .imgInput {
-  font-size: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 144px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  width: 266px;
-  height: 40px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: bold;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame .imgInput:hover, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame .imgInput:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  color: rgb(255, 255, 255);
 }
 
 .myPageFrame {

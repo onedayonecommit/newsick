@@ -3,21 +3,21 @@ import Layout from "@/components/Layout";
 import "@/styles/globals.min.css";
 import SignUp from "./sign_up";
 import { store, persistor } from "@/redux/store";
-// import { PersistGate } from "redux-persist/lib/integration/react";
+import { PersistGate } from "redux-persist/lib/integration/react";
 
 const App = ({ Component, ...pageProps }) => {
   return (
     <>
       <Provider store={store}>
-        {/* <PersistGate persistor={persistor}> */}
-        {Component !== SignUp ? (
-          <Layout>
+        <PersistGate persistor={persistor} loading={null}>
+          {Component !== SignUp ? (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          ) : (
             <Component {...pageProps} />
-          </Layout>
-        ) : (
-          <Component {...pageProps} />
-        )}
-        {/* </PersistGate> */}
+          )}
+        </PersistGate>
       </Provider>
     </>
   );

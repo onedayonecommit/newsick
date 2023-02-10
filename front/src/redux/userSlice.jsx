@@ -8,6 +8,7 @@ const initialState = {
   userImage: "",
   isCreator: false,
   createStatus: false,
+  // 구독권 state 만들기
 };
 
 const userSlice = createSlice({
@@ -31,7 +32,7 @@ const userSlice = createSlice({
           state.userName = action.payload.user_name;
           state.userEmail = action.payload.user_email;
           state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.is_creator;
+          state.isCreator = action.payload.is_creator[0];
           state.createStatus = action.payload.createStatus;
           console.log("넘어온 유저정보 : ", action.payload);
         }
@@ -52,7 +53,7 @@ const userSlice = createSlice({
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;
             state.userImage = action.payload.user_profile_image;
-            state.isCreator = action.payload.is_creator;
+            state.isCreator = action.payload.is_creator[0];
             state.createStatus = action.payload.createStatus;
             alert("회원가입 추카추");
 
