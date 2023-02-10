@@ -2,8 +2,13 @@ import { useSelector } from "react-redux";
 import ConnectWallet from "./ConnectWallet";
 import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/router";
 // 컴포넌트
 const UserBar = () => {
+  const router = useRouter();
+  function movePage(page){
+    page == "my_page"? router.replace('/') : router.push(`/${page}`);
+  }
   const imgUrl = "";
   const userAddress = useSelector((state) => state.userInfo.address);
   console.log("유저~~~~~", userAddress);
@@ -36,9 +41,9 @@ const UserBar = () => {
       <div className="infoSection">
         <div className="optionSection"></div>
         <div className="userInfoSection">
-          <div className="userImage">
-            <Image src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/976aa28a-93af-4b17-a268-7cd18a734a84.jpeg" alt="프로필 이미지" width={100} height={100} />
-          </div>
+            <Image className="userImage" src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/976aa28a-93af-4b17-a268-7cd18a734a84.jpeg" alt="프로필 이미지" width={150} height={150} onClick={()=>{
+          movePage("my_page")
+        }}/>
           <input type="file" name="file" accept="image/*" style={{ opacity: 0, height: "100px" }} onChange={profileImageHandler} />
           <ConnectWallet />
         </div>

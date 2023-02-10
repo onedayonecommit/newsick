@@ -1810,6 +1810,7 @@ body{
               gap: 0;
               border-radius: 0px 0px 0px 0px;
               .headerSection{
+                  cursor: pointer;
                   font-family: 'YdestreetB';
                   box-sizing: border-box;
                   flex-shrink: 0;
@@ -2047,6 +2048,21 @@ body{
               flex-wrap: nowrap;
               gap: 10px;
               border-radius: 0px 0px 0px 0px;
+              .userImage{
+                cursor: pointer;
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 150px;
+                height: 150px;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 150px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              }
               .metaConnectButton{
                   cursor: pointer;
                   box-sizing: border-box;
@@ -2073,19 +2089,6 @@ body{
                   font-size: 10px;
                   letter-spacing: 0px;
                   line-height: 1.2;
-              }
-              .userImage{
-                  cursor: pointer;
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 150px;
-                  height: 150px;
-                  display: block;
-                  background-color: rgba(0, 0, 0, 0.1);
-                  overflow: hidden;
-                  position: relative;
-                  border-radius: 150px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
               }
               .userProfile{
                   flex-shrink: 0;
