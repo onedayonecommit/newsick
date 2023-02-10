@@ -70,8 +70,14 @@ const CoverPage = ({ handleSwitch, switchState, coverScrollControll }) => {
               <div className="infoList">
                 <div className="infoIcon">NEWGIC</div>
                 <div className="infoTextSection">
-                  <div className="infoTitle">Meet new NFTs and music sources at NEWGIC !</div>
-                  <div className="infoSubTitle">Increase Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet your business performance and take it to the next level to achieve goals</div>
+                  <div className="infoTitle">
+                    Meet new NFTs and music sources at NEWGIC !
+                  </div>
+                  <div className="infoSubTitle">
+                    Increase Amet minim mollit non deserunt ullamco est sit
+                    aliqua dolor do amet your business performance and take it
+                    to the next level to achieve goals
+                  </div>
                 </div>
                 <div className="infoButton">BUTTON</div>
               </div>
@@ -80,48 +86,108 @@ const CoverPage = ({ handleSwitch, switchState, coverScrollControll }) => {
           <div className="animationSection">
             <div className="animationFrame">
               <div className="nftTrackUp">
-                <motion.div className="nftTrackUpList" animate="animate" variants={variantsUp}>
+                <motion.div
+                  className="nftTrackUpList"
+                  animate="animate"
+                  variants={variantsUp}
+                >
                   {Data.map((item) => (
-                    <motion.div className="nftItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                    <motion.div
+                      className="nftItem"
+                      key={item.id}
+                      whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
+                      onHoverStart={() => setIsHovered(true)}
+                      onHoverEnd={() => setIsHovered(false)}
+                    >
                       {item.name}
                     </motion.div>
                   ))}
                 </motion.div>
-                <motion.div className="nftTrackUpList" animate="animate" variants={variantsUp}>
+                <motion.div
+                  className="nftTrackUpList"
+                  animate="animate"
+                  variants={variantsUp}
+                >
                   {Data.map((item) => (
-                    <motion.div className="nftItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                    <motion.div
+                      className="nftItem"
+                      key={item.id}
+                      whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
+                      onHoverStart={() => setIsHovered(true)}
+                      onHoverEnd={() => setIsHovered(false)}
+                    >
                       {item.name}
                     </motion.div>
                   ))}
                 </motion.div>
               </div>
               <div className="nftTrackDown">
-                <motion.div className="nftTrackDownList" animate="animate" variants={variantsdown}>
+                <motion.div
+                  className="nftTrackDownList"
+                  animate="animate"
+                  variants={variantsdown}
+                >
                   {Data.map((item) => (
-                    <motion.div className="nftItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                    <motion.div
+                      className="nftItem"
+                      key={item.id}
+                      whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
+                      onHoverStart={() => setIsHovered(true)}
+                      onHoverEnd={() => setIsHovered(false)}
+                    >
                       {item.name}
                     </motion.div>
                   ))}
                 </motion.div>
-                <motion.div className="nftTrackDownList" animate="animate" variants={variantsdown}>
+                <motion.div
+                  className="nftTrackDownList"
+                  animate="animate"
+                  variants={variantsdown}
+                >
                   {Data.map((item) => (
-                    <motion.div className="nftItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                    <motion.div
+                      className="nftItem"
+                      key={item.id}
+                      whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
+                      onHoverStart={() => setIsHovered(true)}
+                      onHoverEnd={() => setIsHovered(false)}
+                    >
                       {item.name}
                     </motion.div>
                   ))}
                 </motion.div>
               </div>
               <div className="nftTrackUp">
-                <motion.div className="nftTrackUpList" animate="animate" variants={variantsUp}>
+                <motion.div
+                  className="nftTrackUpList"
+                  animate="animate"
+                  variants={variantsUp}
+                >
                   {Data.map((item) => (
-                    <motion.div className="nftItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                    <motion.div
+                      className="nftItem"
+                      key={item.id}
+                      whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
+                      onHoverStart={() => setIsHovered(true)}
+                      onHoverEnd={() => setIsHovered(false)}
+                    >
                       {item.name}
                     </motion.div>
                   ))}
                 </motion.div>
-                <motion.div className="nftTrackUpList" animate="animate" variants={variantsUp}>
+                <motion.div
+                  className="nftTrackUpList"
+                  animate="animate"
+                  variants={variantsUp}
+                >
                   {Data.map((item) => (
-                    <motion.div className="nftItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                    <motion.div
+                      className="nftItem"
+                      key={item.id}
+                      whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
+                      onHoverStart={() => setIsHovered(true)}
+                      onHoverEnd={() => setIsHovered(false)}
+                    >
                       {item.name}
                     </motion.div>
                   ))}

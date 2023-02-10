@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import Web3 from "web3";
-import { NEWSIC_FUND_CA, NEWSIC_FUND_ABI, NEWSIC_MARKET_CA, NEWSIC_MARKET_ABI } from "@/web3.config";
+import {
+  NEWSIC_FUND_CA,
+  NEWSIC_FUND_ABI,
+  NEWSIC_MARKET_CA,
+  NEWSIC_MARKET_ABI,
+} from "@/web3.config";
 import { useDispatch } from "react-redux";
 import { fetchUserCheck } from "@/middleware/fetchUser";
 
@@ -23,30 +28,36 @@ const useWeb3 = () => {
 
   const getFundContract = () => {
     if (!web3) return;
-    const NEWSIC_FUND_CONTRACT = new web3.eth.Contract(NEWSIC_FUND_ABI, NEWSIC_FUND_CA);
+    const NEWSIC_FUND_CONTRACT = new web3.eth.Contract(
+      NEWSIC_FUND_ABI,
+      NEWSIC_FUND_CA
+    );
     setNEWSIC_FUND(NEWSIC_FUND_CONTRACT);
   };
 
   const getMarketContract = () => {
     if (!web3) return;
-    const NEWSIC_MARKET_CONTRACT = new web3.eth.Contract(NEWSIC_MARKET_ABI, NEWSIC_MARKET_CA);
+    const NEWSIC_MARKET_CONTRACT = new web3.eth.Contract(
+      NEWSIC_MARKET_ABI,
+      NEWSIC_MARKET_CA
+    );
     setNEWSIC_MARKET(NEWSIC_MARKET_CONTRACT);
   };
 
   useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       if (!web3) {
-  //         getWeb3();
-  //       } else {
-  //         getFundContract();
-  //         getMarketContract();
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   })();
-  // }, []);
+    //   (async () => {
+    //     try {
+    //       if (!web3) {
+    //         getWeb3();
+    //       } else {
+    //         getFundContract();
+    //         getMarketContract();
+    //       }
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   })();
+    // }, []);
     if (!web3) {
       getWeb3();
     } else {
@@ -69,7 +80,7 @@ const useWeb3 = () => {
   //   }
   // };
 
-  console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
+  // console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
   return { web3, NEWSIC_FUND, NEWSIC_MARKET };
 };
 

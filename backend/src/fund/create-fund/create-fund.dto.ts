@@ -1,8 +1,8 @@
 import {
-  IsDate,
   IsDateString,
   IsNumber,
   IsObject,
+  IsOptional,
   IsString,
 } from 'class-validator';
 
@@ -12,6 +12,7 @@ export class createFundDto {
   @IsString()
   creator_id: string;
   @IsString()
+  @IsOptional()
   category?: string;
   @IsString()
   funding_info: string;

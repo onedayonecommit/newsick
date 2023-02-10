@@ -8,6 +8,6 @@ export class BuyTicketController {
 
   @Post()
   async buyTicket(@Body() dto: buyTicketDto) {
-    return await this.buyTicketService;
+    return await this.buyTicketService.buyTicket(dto);
   }
 }

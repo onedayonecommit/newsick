@@ -6,7 +6,7 @@ import { LikeMusicService } from './like-music.service';
 export class LikeMusicController {
   constructor(private readonly likeMusicService: LikeMusicService) {}
 
-  @Post()
+  @Post('add')
   async likeMusic(@Body() dto: likeMusicDto) {
     return await this.likeMusicService.likeMusic(dto);
   }

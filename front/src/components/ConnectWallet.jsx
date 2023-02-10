@@ -45,7 +45,7 @@ const ConnectWallet = () => {
     // console.log(accounts); // 배열로 반환해줌
     return accounts;
   };
- 
+
   useEffect(() => {
     (async () => {
       try {

@@ -9,6 +9,7 @@ export class ApplicationCreatorController {
 
   @Post()
   async applyCreator(@Body() dto: applicationCreatorDto): Promise<user> {
+    console.log(dto.user_wallet_address, "크리에이터 됨");
     return await this.applicationService.applyCreator(dto);
   }
 }

@@ -40,10 +40,30 @@ const GenreItems = [
   { id: 6, img: GenreImage, genreName: "genreName" },
 ];
 const NewAlbumItems = [
-  { id: 1, img: LeeImage, songName: "사랑한다는 말은 아끼지 말아요", singerName: "이예준" },
-  { id: 2, img: LeeImage, songName: "사랑한다는 말은 아끼지 말아요", singerName: "이예준" },
-  { id: 3, img: LeeImage, songName: "사랑한다는 말은 아끼지 말아요", singerName: "이예준" },
-  { id: 4, img: LeeImage, songName: "사랑한다는 말은 아끼지 말아요", singerName: "이예준" },
+  {
+    id: 1,
+    img: LeeImage,
+    songName: "사랑한다는 말은 아끼지 말아요",
+    singerName: "이예준",
+  },
+  {
+    id: 2,
+    img: LeeImage,
+    songName: "사랑한다는 말은 아끼지 말아요",
+    singerName: "이예준",
+  },
+  {
+    id: 3,
+    img: LeeImage,
+    songName: "사랑한다는 말은 아끼지 말아요",
+    singerName: "이예준",
+  },
+  {
+    id: 4,
+    img: LeeImage,
+    songName: "사랑한다는 말은 아끼지 말아요",
+    singerName: "이예준",
+  },
 ];
 
 const MusicContainer = () => {
@@ -53,7 +73,11 @@ const MusicContainer = () => {
         <div className="titleMusicInfoFrame">
           <div className="musicInfoSection">
             <div className="musicName">Music Name</div>
-            <div className="musicText">readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</div>
+            <div className="musicText">
+              readable content of a page when looking at its layout. The point
+              of using Lorem Ipsum is that it has a more-or-less normal
+              distribution
+            </div>
           </div>
           <div className="musicSellButtonSection">
             <div className="playButton" typeof="button">
@@ -69,7 +93,11 @@ const MusicContainer = () => {
           <div className="subInfoBoxList">
             {subMusicItems.map((item) => (
               <div className="musicBox">
-                <Image className="musicImg" src={item.img} alt={item.songName} />
+                <Image
+                  className="musicImg"
+                  src={item.img}
+                  alt={item.songName}
+                />
                 <div className="musicInfo">
                   <div className="songName">{item.songName}</div>
                   <div className="singerName">{item.singerName}</div>
@@ -86,7 +114,11 @@ const MusicContainer = () => {
             {topChartItems.map((item) => (
               <div className="topChartItemBox">
                 <div className="musicFrontSection">
-                  <Image className="musicImg" src={item.img} alt={item.singerName} />
+                  <Image
+                    className="musicImg"
+                    src={item.img}
+                    alt={item.singerName}
+                  />
                   <div className="musicInfo">
                     <div className="musicName">{item.songName}</div>
                     <div className="singerName">{item.singerName}</div>
@@ -112,7 +144,11 @@ const MusicContainer = () => {
             <div className="genreButtonSection">
               <div className="genreButtonList">
                 {GenreItems.map((item) => (
-                  <div className="genreItemBox" style={{ backgroundImage: `url(${item.img.src})` }} aria-label={item.genreName}>
+                  <div
+                    className="genreItemBox"
+                    style={{ backgroundImage: `url(${item.img.src})` }}
+                    aria-label={item.genreName}
+                  >
                     <div className="genreInfoSection">
                       <div className="genreText">{item.genreName}</div>
                       <div className="genreLine" />
@@ -128,7 +164,11 @@ const MusicContainer = () => {
               {NewAlbumItems.map((item) => (
                 <div className="newAlbumItemBox">
                   <div className="musicFrontSection">
-                    <Image className="musicImg" src={item.img} alt={item.singerName} />
+                    <Image
+                      className="musicImg"
+                      src={item.img}
+                      alt={item.singerName}
+                    />
                     <div className="musicInfo">
                       <div className="musicName">{item.songName}</div>
                       <div className="singerName">{item.singerName}</div>

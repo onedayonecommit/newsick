@@ -1,5 +1,3 @@
-const initialState = {
-    
-}
+const initialState = {};
 
-// const normalMusicSlice = 
+// const normalMusicSlice =

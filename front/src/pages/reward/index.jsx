@@ -9,10 +9,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import image1 from "../../../public/image/Funding.jpg";
 import image2 from "../../../public/image/lee.jpg";
-import {PageNationFrame} from "@/components";
+import { PageNationFrame } from "@/components";
 import useWeb3 from "@/hooks/useWeb3";
-
-
 
 // 펀딩 메인페이지
 const data = [
@@ -94,20 +92,17 @@ const fundingUItemData = [
 
 const FundingContainer = () => {
   const [selectedDiv, setSelectedDiv] = useState("div1");
-  const {web3, NEWSIC_FUND} = useWeb3();
+  const { web3, NEWSIC_FUND } = useWeb3();
 
-  console.log(web3)
-  console.log(NEWSIC_FUND)
-  const test = async()=>{
+  console.log(web3);
+  console.log(NEWSIC_FUND);
+  const test = async () => {
     console.log("dddd");
     const fundList = await NEWSIC_FUND.methods.viewAll().call();
-    console.log("펀딩 리스트 컨트랙트",fundList);
-  }
+    console.log("펀딩 리스트 컨트랙트", fundList);
+  };
 
   // useEffect(()=>{},)
-
-
-
 
   const handleClick = (id) => {
     setSelectedDiv(id);
@@ -124,7 +119,9 @@ const FundingContainer = () => {
                 <div className="createrName">CreaterName</div>
                 <div className="fundingInfo">FundingInfo</div>
               </div>
-              <button className="detailButton" onClick={test}>DETAIL</button>
+              <button className="detailButton" onClick={test}>
+                DETAIL
+              </button>
             </div>
             <div className="createrImg" />
           </div>
@@ -141,7 +138,11 @@ const FundingContainer = () => {
                 </div>
                 <div className="detailButton">DETAIL</div>
               </div>
-              <img className="swiperImage" src={item.image.src} alt={item.fundingName} />
+              <img
+                className="swiperImage"
+                src={item.image.src}
+                alt={item.fundingName}
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -152,20 +153,53 @@ const FundingContainer = () => {
             <div className="feedText">FEED</div>
             <select className="sequenceDropdown">
               <option value="popular">popular</option>
-              <option value="Close">Close</option>s<option value="Latest ">Latest </option>
+              <option value="Close">Close</option>s
+              <option value="Latest ">Latest </option>
             </select>
           </div>
           <div className="StateSection">
-            <motion.div style={{ color: selectedDiv === "div1" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div1")}>
+            <motion.div
+              style={{
+                color:
+                  selectedDiv === "div1"
+                    ? "#ffffff"
+                    : "rgba(255, 255, 255, 0.4)",
+              }}
+              onClick={() => handleClick("div1")}
+            >
               진행중인 펀딩
             </motion.div>
-            <motion.div style={{ color: selectedDiv === "div2" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div2")}>
+            <motion.div
+              style={{
+                color:
+                  selectedDiv === "div2"
+                    ? "#ffffff"
+                    : "rgba(255, 255, 255, 0.4)",
+              }}
+              onClick={() => handleClick("div2")}
+            >
               진행 예정 펀딩
             </motion.div>
-            <motion.div style={{ color: selectedDiv === "div3" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div3")}>
+            <motion.div
+              style={{
+                color:
+                  selectedDiv === "div3"
+                    ? "#ffffff"
+                    : "rgba(255, 255, 255, 0.4)",
+              }}
+              onClick={() => handleClick("div3")}
+            >
               제작중(버튼)
             </motion.div>
-            <motion.div style={{ color: selectedDiv === "div4" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div4")}>
+            <motion.div
+              style={{
+                color:
+                  selectedDiv === "div4"
+                    ? "#ffffff"
+                    : "rgba(255, 255, 255, 0.4)",
+              }}
+              onClick={() => handleClick("div4")}
+            >
               종료 펀딩
             </motion.div>
           </div>

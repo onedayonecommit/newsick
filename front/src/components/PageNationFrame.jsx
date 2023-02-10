@@ -11,7 +11,14 @@ const PageNationFrame = () => {
   return (
     <div className="pageNationFrame">
       {[1, 2, 3, 4, 5].map((page) => (
-        <motion.div key={page} animate={{ color: selectedPage === page ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => pageClick(page)}>
+        <motion.div
+          key={page}
+          animate={{
+            color:
+              selectedPage === page ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
+          }}
+          onClick={() => pageClick(page)}
+        >
           {page}
         </motion.div>
       ))}
