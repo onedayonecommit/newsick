@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUserCreated, fetchUserCheck, fetchUserImage } from "../middleware/fetchUser";
+import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
 
 const initialState = {
   address: "",
@@ -74,6 +74,12 @@ const userSlice = createSlice({
       })
       .addCase(fetchUserImage.rejected, (state) => {
         state.userImage;
+      })
+      .addCase(fetchApplyCreator.fulfilled, (state, action) => {
+        if (action.payload) {
+          console.log("creator apply", action.payload);
+          state.isCreator = action.payload.is_creator;
+        }
       });
   },
 });

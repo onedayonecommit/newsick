@@ -50,6 +50,13 @@ export const fetchUserImage = createAsyncThunk("user/fetchUserImage", async (for
   }
 });
 
+export const fetchApplyCreator = createAsyncThunk("user/fetchApplyCreator", async (account) => {
+  try {
+    const applyCreatorResult = await axios.post("http://localhost:8080/application-creator", account);
+    return applyCreatorResult.data;
+  } catch (error) {}
+});
+
 // 하영오빠가 작성한 미들웨어(구독권)
 // export const fetchBuyTicket = createAsyncThunk(
 //   "user/fetchBuyTicket",
