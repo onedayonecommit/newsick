@@ -6,7 +6,7 @@ export class TotalService {
   constructor(private readonly db: PrismaService) {}
 
   async search(searchWord: string) {
-    await this.db.$transaction([
+    return await this.db.$transaction([
       this.db.funding.findMany({
         where: { funding_title: { contains: searchWord } },
       }),
