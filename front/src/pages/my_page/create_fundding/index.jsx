@@ -1,7 +1,7 @@
 import { faMemory, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 const slideVerticalAnimation = {
   open: {
     rotateY: 0,
@@ -36,10 +36,17 @@ const FundingCreateContainer = () => {
   const clickSubmission = () => {
     setIsSubmissionButton(!isSubmissionButton);
   };
+
   const useDropDown = () => {
     setDropDown(!dropDown);
   };
-
+  // ipfs 등록 및 메타데이터 생성
+  const metadataMaker = ()=>{
+    
+  }
+  useEffect(()=>{
+    alert("이미지 등록을 먼저 진행해 주세요.")
+  },[])
   return (
     <div className="fundingCreateContainerFrame">
       <div className="infoBox">
