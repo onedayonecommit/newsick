@@ -9,10 +9,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import image1 from "../../../public/image/Funding.jpg";
 import image2 from "../../../public/image/lee.jpg";
-import {PageNationFrame} from "@/components";
+import { PageNationFrame } from "@/components";
 import useWeb3 from "@/hooks/useWeb3";
-
-
+import { useSelector } from "react-redux";
 
 // 펀딩 메인페이지
 const data = [
@@ -94,20 +93,25 @@ const fundingUItemData = [
 
 const FundingContainer = () => {
   const [selectedDiv, setSelectedDiv] = useState("div1");
-  const {web3, NEWSIC_FUND} = useWeb3();
+  const { web3, NEWSIC_FUND } = useWeb3();
+  const [ongoingList, setOngoingList] = useState();
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
 
-  console.log(web3)
-  console.log(NEWSIC_FUND)
-  const test = async()=>{
-    console.log("dddd");
-    const fundList = await NEWSIC_FUND.methods.viewAll().call();
-    console.log("펀딩 리스트 컨트랙트",fundList);
-  }
+  console.log("리워드 웹스리", web3);
+  console.log("리워드 컨트랙트", NEWSIC_FUND);
 
-  // useEffect(()=>{},)
+  const ongoingFundList = async () => {
+    // console.log("dddd");
+    if (NEWSIC_FUND) {
+      const ongoing = await NEWSIC_FUND.methods.viewAll().call();
+      setOngoingList(ongoing);
+      console.log("펀딩 리스트 컨트랙트", ongoing);
+    }
+  };
 
-
-
+  useEffect(() => {
+    ongoingFundList();
+  }, [NEWSIC_FUND]);
 
   const handleClick = (id) => {
     setSelectedDiv(id);
@@ -124,7 +128,7 @@ const FundingContainer = () => {
                 <div className="createrName">CreaterName</div>
                 <div className="fundingInfo">FundingInfo</div>
               </div>
-              <button className="detailButton" onClick={test}>DETAIL</button>
+              <button className="detailButton">DETAIL</button>
             </div>
             <div className="createrImg" />
           </div>
