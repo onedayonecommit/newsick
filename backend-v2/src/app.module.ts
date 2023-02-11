@@ -7,6 +7,8 @@ import { EnvModule } from './env/env.module';
 import { S3Module } from './s3/s3.module';
 import { NftStorageModule } from './nft-storage/nft-storage.module';
 import { AuthModule } from './auth/auth.module';
+import { MypageModule } from './mypage/mypage.module';
+import { SearchModule } from './search/search.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { AuthModule } from './auth/auth.module';
     S3Module,
     NftStorageModule,
     AuthModule,
+    MypageModule,
+    SearchModule,
   ],
   controllers: [],
   providers: [],

@@ -46,10 +46,11 @@ model ticket{
   expired DateTime @default(now()) @db.Timestamp(3)
 }
 
-model funding{
+model funding{ 
   id Int @id // tokenId
   creator_ids creator @relation(fields: [creator_id],references: [creator_id])
   creator_id String
+  funding_title String
   category String?
   funding_info String @default("소개 내용 없음") @db.VarChar(5000)
   funding_nft_image String
@@ -57,6 +58,8 @@ model funding{
   funding_start_date DateTime @db.Timestamp(3)
   funding_finish_date DateTime @db.Timestamp(3)
   funding_production_date DateTime @db.Timestamp(3)
+  discord_address String
+  nft_name String
   created_at DateTime @default(now()) @db.Timestamp(3)
   funding_music funding_music[]
   music_maker music_maker[]
@@ -69,8 +72,10 @@ model music_maker{
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int
   music_name String? @default("정보 없음")
-  music_sex Int? @default(0)
   music_info String? @default("정보 없음") @db.VarChar(5000)
+  music_sns_address String? @default("정보 없음")
+  
+  
 }
 
 model lyrics_maker{
@@ -78,8 +83,8 @@ model lyrics_maker{
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int
   lyrics_name String? @default("정보 없음")
-  lyrics_sex Int? @default(0)
   lyrics_info String? @default("정보 없음") @db.VarChar(5000)
+  lyrics_sns_address String? @default("정보 없음")
 }
 
 model singer{
@@ -87,8 +92,8 @@ model singer{
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int
   singer_name String? @default("정보 없음")
-  singer_sex Int? @default(0)
   singer_info String? @default("정보 없음") @db.VarChar(5000)
+  singer_sns_address String? @default("정보 없음")
 }
 
 model funding_music{

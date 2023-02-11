@@ -29,7 +29,7 @@ export class CreateFundController {
   @Post('create/fund')
   async createFund(@Body() fundDto: createFundMainDto) {
     console.log(fundDto.fund.funding_production_date);
-    // return await this.createFundService.createFund(fundDto);
+    return await this.createFundService.createFund(fundDto);
   }
   // @Post('create/fund')
 }

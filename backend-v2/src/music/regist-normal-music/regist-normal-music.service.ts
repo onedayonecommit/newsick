@@ -10,7 +10,7 @@ export class RegistNormalMusicService {
     private readonly s3Service: FileUploadService,
   ) {}
 
-  async normalMusicUpload(dto: normalMusicDto, files) {
+  async normalMusicUpload(files) {
     const {
       music_name,
       singer,

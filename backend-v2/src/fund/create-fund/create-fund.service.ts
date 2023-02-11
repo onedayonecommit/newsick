@@ -18,10 +18,13 @@ export class CreateFundService {
       funding_production_date,
       funding_nft_image,
       funding_metadata,
+      discord_address,
+      funding_title,
+      nft_name,
     } = dto.fund;
-    const { lyrics_name, lyrics_info, lyrics_sex } = dto.lyrics_maker;
-    const { music_name, music_info, music_sex } = dto.music_maker;
-    const { singer_name, singer_info, singer_sex } = dto.singer;
+    const { lyrics_name, lyrics_sns_address, lyrics_info } = dto.lyrics_maker;
+    const { music_name, music_sns_address, music_info } = dto.music_maker;
+    const { singer_name, singer_sns_address, singer_info } = dto.singer;
     return await this.db.funding.create({
       data: {
         id,
@@ -33,9 +36,33 @@ export class CreateFundService {
         funding_production_date,
         funding_nft_image,
         funding_metadata,
-        lyrics_maker: { create: [{ lyrics_name, lyrics_info, lyrics_sex }] },
-        music_maker: { create: [{ music_name, music_info, music_sex }] },
-        singer: { create: [{ singer_name, singer_info, singer_sex }] },
+        discord_address,
+        funding_title,
+        nft_name,
+        lyrics_maker: {
+          create: [{ lyrics_info, lyrics_name, lyrics_sns_address }],
+        },
+        music_maker: {
+          create: [{ music_info, music_name, music_sns_address }],
+        },
+        singer: { create: [{ singer_info, singer_name, singer_sns_address }] },
+        // id,
+        // creator_id,
+        // category,
+        // funding_info,
+        // funding_start_date,
+        // funding_finish_date,
+        // funding_production_date,
+        // funding_nft_image,
+        // funding_metadata,
+        // discord_address,
+        // lyrics_maker: {
+        //   create: [{ lyrics_name, lyrics_info, lyrics_sns_address }],
+        // },
+        // music_maker: {
+        //   create: [{ music_name, music_info, music_sns_address }],
+        // },
+        // singer: { create: [{ singer_name, singer_info, singer_sns_address }] },
       },
     });
   }
