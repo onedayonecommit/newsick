@@ -1,8 +1,18 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MyPageFirstContainer, MyPageSecondContainer, MyPageThirdContainer } from "@/components/mypage";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMyPage } from "@/middleware/fetchMypage";
 const MyPage = () => {
   const [selectedOption, setSelectedOption] = useState(0);
+  const dispatch = useDispatch();
+
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
+
+  useEffect(() => {
+    console.log("통신좀 해");
+    dispatch(fetchMyPage({ user_wallet_address }));
+  }, [user_wallet_address]);
 
   const handleClick = (index) => {
     setSelectedOption(index);

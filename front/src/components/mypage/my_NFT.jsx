@@ -1,4 +1,7 @@
+import useWeb3 from "@/hooks/useWeb3";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import PageNationFrame from "../../components/PageNationFrame";
 
 const ownNftDate = [
@@ -77,6 +80,24 @@ const ownNftDate = [
 ];
 
 const MyPageThirdContainer = () => {
+  const { web3, NEWSIC_FUND } = useWeb3();
+  const [myNftList, setMyNftList] = useState();
+  const [myNftImage, setMyNftImage] = useState();
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
+  useEffect(() => {
+    console.log(NEWSIC_FUND);
+  });
+  const myNftListView = async () => {
+    if (NEWSIC_FUND) {
+      const _myNftList = await NEWSIC_FUND.methods.totalUri().call({ from: user_wallet_address });
+      console.log("sisi", _myNftList);
+      setMyNftList(_myNftList);
+    }
+  };
+  useEffect(() => {
+    myNftListView();
+  }, [NEWSIC_FUND]);
+
   return (
     <div className="thirdMyPage">
       <div className="MyPageThirdContainerFrame">

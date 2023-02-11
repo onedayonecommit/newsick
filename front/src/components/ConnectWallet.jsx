@@ -18,7 +18,7 @@ const userStateReset = {
 // 계정을 바꾸면 다시 버튼이 생겨야함! 자동으로 로그아웃!
 const ConnectWallet = () => {
   const [account, setAccount] = useState("");
-  const { web3 } = useWeb3();
+  const { web3, changeAccount } = useWeb3();
   // console.log("웹3", web3);
   const dispatch = useDispatch();
   const router = useRouter();
@@ -45,7 +45,7 @@ const ConnectWallet = () => {
     // console.log(accounts); // 배열로 반환해줌
     return accounts;
   };
- 
+
   useEffect(() => {
     (async () => {
       try {
@@ -57,36 +57,26 @@ const ConnectWallet = () => {
         // 여기서 회원이면 유저 정보 전체 받아오고
         // 비회원이면 createStatus : false 받아옴
         dispatch(fetchUserCheck({ user_wallet_address: linkedAccount[0] }));
+
+        if (createStatus == true) {
+          setAccount(linkedAccount[0]);
+        }
       } catch (err) {
         console.log(err);
       }
-      // 계정 변경 감지
-      window.ethereum.on("accountsChanged", handleAccountsChanged);
     })();
-  }, [web3, account]);
+  }, [web3, createStatus]);
 
-  useEffect(() => {
-    (async () => {
-      if (!web3) return;
-      const linkedAccount = await web3.eth.getAccounts();
-      if (createStatus == true) {
-        setAccount(linkedAccount[0]);
-      }
-    })();
-  }, [createStatus]);
-
-  const handleAccountsChanged = (accounts) => {
-    console.log(accounts.length);
-    console.log("계정 바꿀때마다", accounts[0]);
-    console.log("state 계정", account);
-
-    if (accounts.length === 0) {
-      // 메타마스크 연결하세요!
-      console.log("Please connect to MetaMask.");
-    } else if (accounts[0] !== account) {
-      setAccount(accounts[0]);
-    }
-  };
+  // 아래의 getAccoun
+  // useEffect(() => {
+  //   (async () => {
+  //     if (!web3) return;
+  //     const linkedAccount = await web3.eth.getAccounts();
+  //     if (createStatus == true) {
+  //       setAccount(linkedAccount[0]);
+  //     }
+  //   })();
+  // }, [createStatus]);
 
   return (
     // 지갑주소가 있으면 로그인, 없으면 회원가입으로 이동

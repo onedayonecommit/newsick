@@ -1,6 +1,7 @@
 import useWeb3 from "@/hooks/useWeb3";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import MyPageCreater from "@/pages/mypage/creator";
 
 const MyPageFirstContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -45,7 +46,7 @@ const MyPageFirstContainer = () => {
     </>
   ) : (
     <>
-      <div>너 이미 크리에이터임 </div>
+      <MyPageCreater />
     </>
   );
 };

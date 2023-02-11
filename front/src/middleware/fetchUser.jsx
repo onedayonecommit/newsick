@@ -32,7 +32,32 @@ export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (acc
 });
 // http://192.168.0.169:8080/user/login
 
-// 하영오빠가 작성한 미들웨어
+/**유저 프로필 사진 등록 및 변경 */
+export const fetchUserImage = createAsyncThunk("user/fetchUserImage", async (formData, thunkAPI) => {
+  console.log("프로필 사진, 계정", formData);
+  try {
+    const userProfileImage = await axios({
+      method: "post",
+      url: "http://localhost:8080/change-info/profile/image",
+      data: formData,
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return userProfileImage.data;
+  } catch (error) {
+    return console.log(thunkAPI.rejectWithValue(err.userProfileImage.data));
+  }
+});
+
+export const fetchApplyCreator = createAsyncThunk("user/fetchApplyCreator", async (account) => {
+  try {
+    const applyCreatorResult = await axios.post("http://localhost:8080/application-creator", account);
+    return applyCreatorResult.data;
+  } catch (error) {}
+});
+
+// 하영오빠가 작성한 미들웨어(구독권)
 // export const fetchBuyTicket = createAsyncThunk(
 //   "user/fetchBuyTicket",
 //   async (_data) => {

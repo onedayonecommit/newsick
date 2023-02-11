@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUserCreated, fetchUserCheck } from "../middleware/fetchUser";
+import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
 
 const initialState = {
   address: "",
@@ -32,7 +32,7 @@ const userSlice = createSlice({
           state.userName = action.payload.user_name;
           state.userEmail = action.payload.user_email;
           state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.is_creator[0];
+          state.isCreator = action.payload.is_creator;
           state.createStatus = action.payload.createStatus;
           console.log("넘어온 유저정보 : ", action.payload);
         }
@@ -53,7 +53,7 @@ const userSlice = createSlice({
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;
             state.userImage = action.payload.user_profile_image;
-            state.isCreator = action.payload.is_creator[0];
+            state.isCreator = action.payload.creator[0].is_creator;
             state.createStatus = action.payload.createStatus;
             alert("회원가입 추카추");
 
@@ -62,8 +62,24 @@ const userSlice = createSlice({
           }
         }
       })
+      // 유저 프로필 사진 변경
       .addCase(fetchUserCreated.rejected, (state) => {
         state = initialState;
+      })
+      .addCase(fetchUserImage.pending, (state) => {
+        state.userImage;
+      })
+      .addCase(fetchUserImage.fulfilled, (state) => {
+        state.userImage = action.payload.file;
+      })
+      .addCase(fetchUserImage.rejected, (state) => {
+        state.userImage;
+      })
+      .addCase(fetchApplyCreator.fulfilled, (state, action) => {
+        if (action.payload) {
+          console.log("creator apply", action.payload);
+          state.isCreator = action.payload.is_creator;
+        }
       });
   },
 });

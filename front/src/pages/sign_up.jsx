@@ -84,7 +84,6 @@ const SignUp = () => {
       } catch (error) {
         console.log(error);
       }
-      window.ethereum.on("accountsChanged", handleAccountsChanged);
     })();
   }, [web3, linkedAccount]);
 
@@ -103,20 +102,6 @@ const SignUp = () => {
       }
     })();
   }, [createStatus]);
-
-  const handleAccountsChanged = (accounts) => {
-    console.log(accounts.length);
-    console.log("계정 바꿀때마다", accounts[0]);
-    console.log("state 계정", linkedAccount);
-    // console.log("유저유저", user.address);
-
-    if (accounts.length === 0) {
-      // 메타마스크 연결하세요!
-      console.log("Please connect to MetaMask.");
-    } else if (accounts[0] !== linkedAccount) {
-      setLinkedAccount(accounts[0]);
-    }
-  };
 
   return (
     <div className="signUpPageBackGround">
