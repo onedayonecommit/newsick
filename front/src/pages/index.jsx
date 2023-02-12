@@ -11,14 +11,29 @@ import {
   MainThirdPage,
 } from "@/components/main";
 
+const pageData = [
+  {
+    pageName: "RANK",
+    pageNum: 0,
+  },
+  {
+    pageName: "HOT",
+    pageNum: 1,
+  },
+  {
+    pageName: "CLOSE",
+    pageNum: 2,
+  },
+];
+
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [start, setStart] = useState(0);
   const [result, setResult] = useState(0);
+  const [setNav, isSetNav] = useState(false);
   // const [isSliding, setIsSliding] = useState(false);
   const y = useMotionValue(0);
   const opacity = useTransform(y, [-100, 0, 100], [0, 1, 0]);
-
   const rendergood = () => {
     if (Math.abs(result) > 200 && result > 0) {
       setCurrentPage((currentPage + 1) % 3);
@@ -27,7 +42,6 @@ const Home = () => {
     } else {
     }
   };
-
   useEffect(() => {
     rendergood();
   }, [result]);
@@ -69,12 +83,29 @@ const Home = () => {
           )}
         </motion.div>
         <div className="pageNav">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <div
-              className={`pageNavItem ${index === currentPage ? "active" : ""}`}
-              key={index}
-              onClick={() => setCurrentPage(index)}
-            />
+          {pageData.map((page) => (
+            <motion.div
+              className={`pageNavItem ${
+                page.pageNum === currentPage ? "active" : ""
+              }`}
+              key={page.pageNum}
+              onClick={() => {
+                setCurrentPage(page.pageNum);
+              }}
+              whileHover={{
+                scale: 1.5,
+                opacity: 1,
+              }}
+              whileTap={{
+                scale: 1,
+              }}
+              style={
+                currentPage === page.pageNum ? { scale: 1.4, opacity: 1 } : null
+              }
+            >
+              <div />
+              <div>{page.pageName}</div>
+            </motion.div>
           ))}
         </div>
       </AnimatePresence>

@@ -1,7 +1,22 @@
+import { fetchMakeIPFS } from "@/middleware/fetchFund";
 import { faMemory, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import useWeb3 from "@/hooks/useWeb3";
+
+const ProfileItem = [
+  {
+    profileName: "가수",
+  },
+  {
+    profileName: "작곡가",
+  },
+  {
+    profileName: "작사가",
+  },
+];
 const slideVerticalAnimation = {
   open: {
     rotateY: 0,
@@ -28,25 +43,32 @@ const slideVerticalAnimation = {
     },
   },
 };
-
 const FundingCreateContainer = () => {
   const [date, setDate] = useState();
+  const dispatch = useDispatch();
+  const { web3, NEWSIC_FUND } = useWeb3();
   const [isSubmissionButton, setIsSubmissionButton] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const clickSubmission = () => {
     setIsSubmissionButton(!isSubmissionButton);
   };
-
   const useDropDown = () => {
     setDropDown(!dropDown);
   };
-  // ipfs 등록 및 메타데이터 생성
-  const metadataMaker = ()=>{
-    
-  }
-  useEffect(()=>{
-    alert("이미지 등록을 먼저 진행해 주세요.")
-  },[])
+
+  const handleFile = async (event) => {
+    try {
+      const _file = event.target.files[0];
+      dispatch(fetchMakeIPFS({ fund_nft_image: _file }));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const makeFund = async (event) => {
+    // const _sendData_contract
+  };
+
   return (
     <div className="fundingCreateContainerFrame">
       <div className="infoBox">
@@ -57,6 +79,56 @@ const FundingCreateContainer = () => {
       </div>
       <div className="mainContentSection">
         <div className="contentSection">
+          <div className="representativeImageSection">
+            <div className="leftSection">
+              <div>
+                <div>음악 대표 이미지</div>
+                <div>
+                  권장 크기 : 1000 x 1000 (윈도대상 750 x 1000)대표이미지 기준
+                  1000x1000 이상 이미지를 등록하시면, 이미지 확대 기능이
+                  제공됩니다.
+                </div>
+              </div>
+            </div>
+            <div className="rightSection">
+              <div className="imgInputFrame">
+                <motion.label
+                  className="imgInput"
+                  for="inputFile"
+                  whileHover={{
+                    scale: 1.2,
+                  }}
+                >
+                  이미지 등록
+                </motion.label>
+                <input
+                  type="file"
+                  className="imgInput"
+                  id="inputFile"
+                  style={{ display: "none" }}
+                  onChange={handleFile}
+                />
+              </div>
+              <div className="submissionFrame">
+                <motion.div
+                  className="submissionButton"
+                  whileTap={{ y: 8 }}
+                  onClick={clickSubmission}
+                  style={
+                    isSubmissionButton
+                      ? {
+                          color: "rgba(255, 255, 255, 1)",
+                          boxShadow: "none",
+                          backgroundColor: "rgba(0,0, 0, 1)",
+                        }
+                      : ""
+                  }
+                >
+                  확정
+                </motion.div>
+              </div>
+            </div>
+          </div>
           <div className="fundingTitleSection">
             <div>
               <div className="fundingTitle">펀딩제목</div>
@@ -106,55 +178,6 @@ const FundingCreateContainer = () => {
               <div className="minNum">개</div>
             </div>
           </div>
-          <div className="representativeImageSection">
-            <div className="leftSection">
-              <div>
-                <div>음악 대표 이미지</div>
-                <div>
-                  권장 크기 : 1000 x 1000 (윈도대상 750 x 1000)대표이미지 기준
-                  1000x1000 이상 이미지를 등록하시면, 이미지 확대 기능이
-                  제공됩니다.
-                </div>
-              </div>
-            </div>
-            <div className="rightSection">
-              <div className="imgInputFrame">
-                <motion.label
-                  className="imgInput"
-                  for="inputFile"
-                  whileHover={{
-                    scale: 1.2,
-                  }}
-                >
-                  이미지 등록
-                </motion.label>
-                <input
-                  type="file"
-                  className="imgInput"
-                  id="inputFile"
-                  style={{ display: "none" }}
-                />
-              </div>
-              <div className="submissionFrame">
-                <motion.div
-                  className="submissionButton"
-                  whileTap={{ y: 8 }}
-                  onClick={clickSubmission}
-                  style={
-                    isSubmissionButton
-                      ? {
-                          color: "rgba(255, 255, 255, 1)",
-                          boxShadow: "none",
-                          backgroundColor: "rgba(0,0, 0, 1)",
-                        }
-                      : ""
-                  }
-                >
-                  확정
-                </motion.div>
-              </div>
-            </div>
-          </div>
           <div className="genreSection">
             <motion.div
               className="dropDownBox"
@@ -178,44 +201,36 @@ const FundingCreateContainer = () => {
             </div>
           </div>
           <div className="secondContentSection">
-            <div>
-              <div>가수 프로필</div>
-              <label>가수명</label>
-              <input type="text" placeholder="가수명" />
-              <label>성별</label>
-              <select>
-                <option value={0}>남</option>
-                <option value={1}>여</option>
-              </select>
-              <label>가수소개</label>
-              <input type="text" placeholder="가수소개" />
-              <textarea wrap="on" />
-            </div>
-            <div>
-              <div>작사가 프로필</div>
-              <label>작사가명</label>
-              <input type="text" placeholder="작사가명" />
-              <label>성별</label>
-              <select>
-                <option value={0}>남</option>
-                <option value={1}>여</option>
-              </select>
-              <label>작사소개</label>
-              <input type="text" placeholder="작사가 정보" />
-              <textarea />
-            </div>
-            <div>
-              <div>작곡가 프로필</div>
-              <label>작곡가명</label>
-              <input type="text" placeholder="작곡가명" />
-              <label>성별</label>
-              <select>
-                <option value={0}>남</option>
-                <option value={1}>여</option>
-              </select>
-              <label>작곡소개</label>
-              <input type="text" placeholder="작곡가 정보" />
-              <textarea wrap="on" />
+            {ProfileItem.map((item) => (
+              <div className="ProfileSection">
+                <div>{item.profileName} 프로필</div>
+                <div className="name">
+                  <div className=".singerName">{item.profileName}명</div>
+                  <input className="nameInput" />
+                </div>
+                <div className="sex">
+                  <label>성별</label>
+                  <select>
+                    <option value={0}>남</option>
+                    <option value={1}>여</option>
+                  </select>
+                </div>
+                <div className="info">
+                  <div className="infoText">{item.profileName} 소개</div>
+                  <input></input>
+                </div>
+              </div>
+            ))}
+            <div className="shareSection">
+              <div className="shareFrame">
+                <div className="info">* 음원 수익 배분</div>
+                <div className="content">
+                  <div>제작자 : 보유자 =</div>
+                  <input></input>
+                  <div>:</div>
+                  <input></input>
+                </div>
+              </div>
             </div>
           </div>
           <div className="submissionButton" typeof="button">

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // 펀딩 상세페이지
 const FundingDetailContainer = () => {
+  console.log("펀딩데이터");
   return (
     <div className="detailContainerFrame">
       <Swiper

@@ -27,7 +27,6 @@ const UserBar = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      ret;
     }
   };
 
