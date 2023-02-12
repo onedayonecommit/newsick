@@ -2597,7 +2597,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: flex-start;

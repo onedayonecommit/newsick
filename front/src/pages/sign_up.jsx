@@ -17,6 +17,14 @@ const SignUp = () => {
   const [linkedAccount, setLinkedAccount] = useState("");
   const createStatus = useSelector((state) => state.userInfo.createStatus);
 
+  //===========================20230212 추가된부분
+  const [isFalseText,setIsFalseText] =useState();
+  const falseText = () =>{
+    setIsFalseText(!isFalseText)
+  }
+  //===========================20230212 추가된부분
+
+
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
   useEffect(() => {
@@ -122,19 +130,29 @@ const SignUp = () => {
     <div className="signUpPageBackGround">
       <div className="signUpFrame">
         <div className="signUpSection">
-          <div className="signUpTitle">SIGN UP</div>
+          <div className="signUpTitle" onClick={falseText}>SIGN UP</div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
-              <div className="nameInput">
+              <motion.div className="nameInput"
+                initial={{ x: 0 }}
+                animate={isFalseText?{ x: [0, -15, 15, 0] }:{x:0}}
+                style={isFalseText?{border:"1px solid red"}:{border:"1px solid white"}}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              >
                 <input ref={userNameRef} type="text" name="user_name" />
-              </div>
+              </motion.div>
             </div>
             <div className="userEmailSection">
               <div className="emailText">USER E-MAIL</div>
-              <div className="emailInput">
+              <motion.div className="emailInput"
+                initial={{ x: 0 }}
+                animate={isFalseText?{ x: [0, -15, 15, 0] }:{x:0}}
+                style={isFalseText?{border:"1px solid red"}:{border:"1px solid white"}}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              >
                 <input ref={userEmailInput} type="text" name="user_email" />
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className="signUpChoiceSection">
