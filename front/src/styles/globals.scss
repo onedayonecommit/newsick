@@ -9163,5 +9163,343 @@ animation: gradient-animation 6s ease infinite;
             }
         }
     }
+    .backDrop{
+        z-index: 99;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255,0.1);
+        -webkit-backdrop-filter: blur(10px);
+        -o-backdrop-filter: blur(10px);
+        -moz-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal{
+        width: 883px;
+        height: 855px;
+        background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+        -webkit-backdrop-filter: blur(10px);
+        -o-backdrop-filter: blur(10px);
+        -moz-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        padding: 30px 40px 30px 40px;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0.796841278193901px 0.796841278193901px 0px rgba(0, 0, 0, 0.01), 0px 2.413677098392273px 2.413677098392273px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836426702925px 6.3802836426702925px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+        border: 1.5px solid rgba(255, 255, 255, 0.1);
+        .nftRegistrationFrame{
+            flex-shrink: 0;
+            width: 803px;
+            height: 795px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 50px;
+            border-radius: 0px 0px 0px 0px;
+            .topText{
+                flex-shrink: 0;
+                width: 803px;
+                height: min-content; /* 31px */
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 0px;
+                border-radius: 0px 0px 0px 0px;
+                flex-shrink: 0;
+                white-space: pre;
+                font-weight: 700;
+                font-style: normal;
+                font-family: "Inter-Bold", "Inter", sans-serif;
+                background: linear-gradient(to bottom, #D400FF, #FF00B7);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;;
+                font-size: 30px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+            }
+            .bottomFrame{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 803px;
+                height: 714px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 0px 40px 0px 40px;
+                overflow: hidden;
+                position: relative;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 20px;
+                border-radius: 0px 0px 0px 0px;
+                .bottomList{
+                    flex-shrink: 0;
+                    width: 723px;
+                    height: 39px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    border-radius: 0px 0px 0px 0px;
+                    :nth-child(1){
+                        flex-shrink: 0;
+                        width: auto; /* 78px */
+                        height: auto; /* 31px */
+                        white-space: pre;
+                        position: relative;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: #ffffff;
+                        font-size: 26px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                    :nth-child(2){
+                        flex-shrink: 0;
+                        width: 289px;
+                        height: 39px;
+                        border: transparent;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        background-color: transparent;
+                        text-align: right;
+                        align-items: center;
+                        overflow: hidden;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 10px;
+                        white-space: pre;
+                        position: relative;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255,255,255,0.5);
+                        font-size: 26px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                        &::placeholder{
+                            text-align: right;
+                        }
+                        &:focus {
+                            outline: none;
+                            &::-webkit-input-placeholder {
+                                transition: 0.3s;
+                                opacity: 0;
+                              }
+                          } 
+                        
+                    }
+                    .soundSource,.albumCover{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 308px;
+                        height: 39px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 10px;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        flex-shrink: 0;
+                        white-space: pre;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255, 255, 255, 0.5);
+                        font-size: 24px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                        text-align: center;
+                    }
+                    .switchBox{
+                        flex-shrink: 0;
+                        width: 240px;
+                        height: 39px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 10px;
+                        border-radius: 0px 0px 0px 0px;
+                        .notTitle{
+                            cursor: pointer;
+                            box-sizing: border-box;
+                            flex-shrink: 0;
+                            width: 115px;
+                            height: 39px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            overflow: hidden;
+                            position: relative;
+                            padding: 0px 0px 0px 0px;
+                            align-content: center;
+                            flex-wrap: nowrap;
+                            gap: 0;
+                            border-radius: 0px 0px 0px 0px;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            white-space: pre;
+                            font-weight: 700;
+                            font-style: normal;
+                            font-family: "Inter-Bold", "Inter", sans-serif;
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 20px;
+                            letter-spacing: 0px;
+                            line-height: 1.2;
+                        }
+                        .title{
+                            cursor: pointer;
+                            box-sizing: border-box;
+                            flex-shrink: 0;
+                            width: 115px;
+                            height: 39px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                            position: relative;
+                            padding: 0px 0px 0px 0px;
+                            align-content: center;
+                            flex-wrap: nowrap;
+                            gap: 0;
+                            border-radius: 0px 0px 0px 0px;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            white-space: pre;
+                            font-weight: 700;
+                            font-style: normal;
+                            font-family: "Inter-Bold", "Inter", sans-serif;
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 20px;
+                            letter-spacing: 0px;
+                            line-height: 1.2;
+                        }
+                    }
+                }
+                .bottomListButton{
+                    flex-shrink: 0;
+                    width: 723px;
+                    height: 183px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    border-radius: 0px 0px 0px 0px;
+                    .cancelButton{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 182px;
+                        height: 64px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.2);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 0;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        flex-shrink: 0;
+                        white-space: pre;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255,255,255,0.7);
+                        font-size: 20px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                    .registerButton{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 233px;
+                        height: 82px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.2);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 0;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        flex-shrink: 0;
+                        white-space: pre;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255,255,255,0.7);
+                        font-size: 26px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+    }
 }
 // MyPage=> ForCreaterPage===============done

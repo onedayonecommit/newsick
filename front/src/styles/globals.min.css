@@ -4242,7 +4242,6 @@ body {
   display: block;
   overflow: hidden;
   z-index: 1;
-  background-image: url();
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -9199,6 +9198,348 @@ body {
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .backDrop {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MyPageCreaterFrame .modal {
+  width: 883px;
+  height: 855px;
+  background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px 40px 30px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0.7968412782px 0.7968412782px 0px rgba(0, 0, 0, 0.01), 0px 2.4136770984px 2.4136770984px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836427px 6.3802836427px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame {
+  flex-shrink: 0;
+  width: 803px;
+  height: 795px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .topText {
+  flex-shrink: 0;
+  width: 803px;
+  height: -moz-min-content;
+  height: min-content; /* 31px */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0px;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  background: linear-gradient(to bottom, #D400FF, #FF00B7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 803px;
+  height: 714px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList {
+  flex-shrink: 0;
+  width: 723px;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 78px */
+  height: auto; /* 31px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 26px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
+  flex-shrink: 0;
+  width: 289px;
+  height: 39px;
+  border: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: transparent;
+  text-align: right;
+  align-items: center;
+  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 26px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::-moz-placeholder {
+  text-align: right;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
+  text-align: right;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
+  outline: none;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource, .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 308px;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
+  flex-shrink: 0;
+  width: 240px;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 115px;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 115px;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton {
+  flex-shrink: 0;
+  width: 723px;
+  height: 183px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 182px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 233px;
+  height: 82px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 26px;
   letter-spacing: 0px;
   line-height: 1.2;
 }

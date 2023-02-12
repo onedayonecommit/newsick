@@ -1,5 +1,8 @@
 import React from 'react'
 import Graph from './Graph'
+import {motion,AnimatePresence} from "framer-motion"
+import { useState } from 'react'
+import Modal from './Modal'
 
 const dateFunndingData=[
     [0,10],
@@ -73,8 +76,14 @@ const FunddingDateItem = [
     },
 ]
 const MyPageCreater = () => {
+    const [modalOpen,setModalOpen] = useState(false);
+    const close = () => setModalOpen(false);
+    const open = () => setModalOpen(true);
   return (
     <div className='MyPageCreaterFrame'>
+        <AnimatePresence>
+           {modalOpen && <Modal modalOpen={modalOpen} handleClose={close}/>}
+        </AnimatePresence>
         <div className='topSection'>
             <div className='totalMoneySection'>
                 <div className='infoText'>
@@ -110,9 +119,13 @@ const MyPageCreater = () => {
                                 <div className='quantityPercentage'>{item.quantity}</div>
                             </div>
                             <div className='musicInputButton'>
-                                <div className='buttonLine'>
+                                <motion.div className='buttonLine' 
+                                onClick={()=>(modalOpen ? close():open())} 
+                                whileHover={{scale:1.1}} 
+                                whileTap={{scale:0.9}}
+                                >
                                     음원등록
-                                </div>
+                                </motion.div>
                             </div>
                             <div className='funddingTerminationButton'>
                                 펀딩종료
