@@ -22,11 +22,40 @@ const dropIn ={
         opacity:0,
     },
 }
-
+const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      },
+      display: "flex"
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.3
+      },
+      transitionEnd: {
+        display: "none"
+      }
+    }
+  };
 const Modal = ({handleClose,text}) => {
     const [isChoice,setIsChoice]=useState("Sub");
     const backgroundColorControls = useAnimation()
     const backgroundColorControls2 = useAnimation()
+    const [isHover, toggleHover] = useState(false);
+    const [selectedOption, setSelectedOption] = useState("가요");
+    
+    const toggleHoverMenu = () => {
+      toggleHover(!isHover);
+    };
+
+    const handleOptionClick = option => {
+        setSelectedOption(option);
+        toggleHover(false);
+      };
     useEffect(() => {
         if (isChoice === "Sub") {
           backgroundColorControls.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color:"rgba(255, 255, 255, 1)",style:{border:"1px solid rgba(255, 255, 255, 0.1)"} })
@@ -74,9 +103,33 @@ const Modal = ({handleClose,text}) => {
                     <div>앨범명</div>
                     <input placeholder='앨범명'/>
                 </div>
-                <div className='bottomList'>
-                    <div>장르</div>
-                    <input placeholder='장르'/>
+                <div className='genreList'>
+                    <div className='genreText'>장르</div>
+                    <div className='chooseInput'>
+                        <motion.div className='list'
+                            initial="exit"
+                            animate={isHover ? "enter" : "exit"}
+                            variants={subMenuAnimate}
+                        >
+                            <div className='option'
+                             onClick={() => handleOptionClick("가요")}
+                            >가요</div>
+                            <div className='option'
+                             onClick={() => handleOptionClick("팝")}
+                            >팝</div>
+                            <div className='option'
+                             onClick={() => handleOptionClick("트로트")}
+                            >트로트</div>
+                            <div className='option'
+                             onClick={() => handleOptionClick("클래식")}
+                            >클래식</div>
+                        </motion.div>
+                        <motion.div className='defalt'
+                            onClick={toggleHoverMenu}
+                        >
+                        {selectedOption}
+                        </motion.div>
+                    </div>
                 </div>
                 <div className='bottomList'>
                     <div>음원 파일</div>

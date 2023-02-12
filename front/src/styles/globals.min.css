@@ -3639,7 +3639,6 @@ body {
   display: block;
   overflow: hidden;
   position: relative;
-  background-image: url();
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -9317,6 +9316,119 @@ body {
   flex-wrap: nowrap;
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList {
+  flex-shrink: 0;
+  width: 723px;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
+  flex-shrink: 0;
+  width: auto; /* 52px */
+  height: auto; /* 31px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 26px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 488px;
+  height: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 70px */
+  height: -moz-min-content;
+  height: min-content; /* 34px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px 5px 15px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+}
+.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 52px */
+  height: 31px;
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 26px;
+  letter-spacing: 0px;
+  line-height: 1.2;
 }
 .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList {
   flex-shrink: 0;
