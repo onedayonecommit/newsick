@@ -9674,3 +9674,119 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
+
+.EventFrame {
+  box-sizing: border-box;
+  width: 1359px;
+  height: -moz-min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2b2f5f;
+  overflow: visible;
+  align-content: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+}
+
+.signUpBackDrop {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoSuccessfulLog {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 738px;
+  height: 226px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 45px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+
+.loadingFrame {
+  width: 1920px;
+  height: 1080px;
+  background: radial-gradient(141.9% 200% at 50% 110.8%, #292929 0%, rgb(0, 0, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(141.9% 200% at 50% 110.8%, #292929 0%, rgb(0, 0, 0) 100%);
+  overflow: visible;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.loadingFrame .loadingCenter {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 452px */
+  height: -moz-min-content;
+  height: min-content; /* 121px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.loadingFrame .progressBar {
+  width: 450px;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  border-radius: 60px;
+  background-color: #494b52;
+  box-shadow: 0px 0px 20px #111;
+}
+.loadingFrame .progressBar .bar {
+  width: 0%;
+  background-color: rgb(255, 174, 105);
+  background: linear-gradient(180deg, rgb(255, 174, 105) 0% rgb(255, 173, 102) 32% rgb(255, 132, 25) 100%);
+}

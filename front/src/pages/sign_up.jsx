@@ -1,9 +1,10 @@
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion,useAnimation } from 'framer-motion';
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated, fetchUserCheck } from "../middleware/fetchUser";
 import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
+import SuccessLog from '@/components/eventComponent/SuccessLog';
 
 const SignUp = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -22,6 +23,9 @@ const SignUp = () => {
   const falseText = () =>{
     setIsFalseText(!isFalseText)
   }
+  const [modalOpen,setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
   //===========================20230212 추가된부분
 
 
@@ -128,6 +132,9 @@ const SignUp = () => {
 
   return (
     <div className="signUpPageBackGround">
+        <AnimatePresence>
+           {modalOpen && <SuccessLog modalOpen={modalOpen} handleClose={close}/>}
+        </AnimatePresence>
       <div className="signUpFrame">
         <div className="signUpSection">
           <div className="signUpTitle" onClick={falseText}>SIGN UP</div>
@@ -172,7 +179,7 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-        <div className="imgSection" />
+        <div className='imgSection' onClick={()=>(modalOpen ? close():open())} />
       </div>
     </div>
   );
