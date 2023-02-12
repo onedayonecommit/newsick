@@ -1,5 +1,5 @@
-import React from 'react'
-import {motion} from "framer-motion"
+import React, { useEffect, useState } from 'react'
+import {motion, useAnimation} from "framer-motion"
 import Backdrop from '../Backdrop'
 
 const dropIn ={
@@ -24,6 +24,23 @@ const dropIn ={
 }
 
 const Modal = ({handleClose,text}) => {
+    const [isChoice,setIsChoice]=useState("Sub");
+    const backgroundColorControls = useAnimation()
+    const backgroundColorControls2 = useAnimation()
+    useEffect(() => {
+        if (isChoice === "Sub") {
+          backgroundColorControls.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color:"rgba(255, 255, 255, 1)",style:{border:"1px solid rgba(255, 255, 255, 0.1)"} })
+        } else {
+          backgroundColorControls.start({ backgroundColor: "rgba(255, 255, 255, 0.1)",color:"rgba(255, 255, 255, 0.2)" ,style:{border:"none"}})
+        }
+      }, [isChoice, backgroundColorControls])
+      useEffect(() => {
+        if (isChoice === "Title") {
+          backgroundColorControls2.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color:"rgba(255, 255, 255, 1)",style:{border:"1px solid rgba(255, 255, 255, 0.1)"} })
+        } else {
+          backgroundColorControls2.start({ backgroundColor: "rgba(255, 255, 255, 0.1)",color:"rgba(255, 255, 255, 0.2)",style:{border:"none"} })
+        }
+      }, [isChoice, backgroundColorControls2])
   return (
     <Backdrop onClick={handleClose}>
         <motion.div
@@ -88,8 +105,14 @@ const Modal = ({handleClose,text}) => {
                 <div className='bottomList'>
                     <div>타이틀 여부</div>
                     <div className='switchBox'>
-                        <div className='notTitle'>서브</div>
-                        <div className='title'>타이틀</div>
+                        <motion.div className='notTitle'
+                            animate={backgroundColorControls}
+                            onTap={() => setIsChoice("Sub")}
+                        >SUB</motion.div>
+                        <motion.div className='title'
+                            animate={backgroundColorControls2}
+                            onTap={() => setIsChoice("Title")}
+                        >TITLE</motion.div>
                     </div>
                 </div>
                
