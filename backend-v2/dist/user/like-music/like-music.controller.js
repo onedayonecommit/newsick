@@ -25,7 +25,7 @@ let LikeMusicController = class LikeMusicController {
     }
 };
 __decorate([
-    (0, common_1.Post)(),
+    (0, common_1.Post)('add'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [like_music_dto_1.likeMusicDto]),

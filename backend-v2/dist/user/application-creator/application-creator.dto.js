@@ -8,10 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.applicationCreatorDto = void 0;
-const signer_1 = require("aws-sdk/clients/signer");
 const class_validator_1 = require("class-validator");
 class applicationCreatorDto {
 }
@@ -21,7 +19,7 @@ __decorate([
 ], applicationCreatorDto.prototype, "user_wallet_address", void 0);
 __decorate([
     (0, class_validator_1.IsBoolean)(),
-    __metadata("design:type", typeof (_a = typeof signer_1.bool !== "undefined" && signer_1.bool) === "function" ? _a : Object)
+    __metadata("design:type", Boolean)
 ], applicationCreatorDto.prototype, "is_creator", void 0);
 exports.applicationCreatorDto = applicationCreatorDto;
 //# sourceMappingURL=application-creator.dto.js.map

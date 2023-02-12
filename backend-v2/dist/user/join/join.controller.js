@@ -14,7 +14,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JoinController = void 0;
 const common_1 = require("@nestjs/common");
-const join_dto_1 = require("./join.dto");
 const join_service_1 = require("./join.service");
 let JoinController = class JoinController {
     constructor(joinService) {
@@ -29,7 +28,7 @@ __decorate([
     (0, common_1.Post)('join'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [join_dto_1.joinDto]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], JoinController.prototype, "userJoin", null);
 JoinController = __decorate([

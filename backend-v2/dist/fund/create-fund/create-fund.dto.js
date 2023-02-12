@@ -23,6 +23,7 @@ __decorate([
 ], createFundDto.prototype, "creator_id", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], createFundDto.prototype, "category", void 0);
 __decorate([
@@ -49,6 +50,18 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], createFundDto.prototype, "funding_metadata", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], createFundDto.prototype, "discord_address", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], createFundDto.prototype, "funding_title", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], createFundDto.prototype, "nft_name", void 0);
 exports.createFundDto = createFundDto;
 class createFundLyricsDto {
 }
@@ -59,11 +72,11 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], createFundLyricsDto.prototype, "lyrics_info", void 0);
+], createFundLyricsDto.prototype, "lyrics_sns_address", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
-    __metadata("design:type", Number)
-], createFundLyricsDto.prototype, "lyrics_sex", void 0);
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], createFundLyricsDto.prototype, "lyrics_info", void 0);
 exports.createFundLyricsDto = createFundLyricsDto;
 class createFundMusicDto {
 }
@@ -74,11 +87,11 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], createFundMusicDto.prototype, "music_info", void 0);
+], createFundMusicDto.prototype, "music_sns_address", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
-    __metadata("design:type", Number)
-], createFundMusicDto.prototype, "music_sex", void 0);
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], createFundMusicDto.prototype, "music_info", void 0);
 exports.createFundMusicDto = createFundMusicDto;
 class createFundSingerDto {
 }
@@ -89,11 +102,11 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], createFundSingerDto.prototype, "singer_info", void 0);
+], createFundSingerDto.prototype, "singer_sns_address", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
-    __metadata("design:type", Number)
-], createFundSingerDto.prototype, "singer_sex", void 0);
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], createFundSingerDto.prototype, "singer_info", void 0);
 exports.createFundSingerDto = createFundSingerDto;
 class createFundMainDto {
 }

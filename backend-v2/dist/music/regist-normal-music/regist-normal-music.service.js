@@ -18,7 +18,7 @@ let RegistNormalMusicService = class RegistNormalMusicService {
         this.db = db;
         this.s3Service = s3Service;
     }
-    async normalMusicUpload(dto, files) {
+    async normalMusicUpload(files) {
         const { music_name, singer, music_lyrics, lyrics_maker, music_maker, music_genre, album_name, title, } = JSON.parse(files.data[0].buffer);
         console.log(music_name);
         const imgUrl = await this.s3Service.uploadFile(files.cover_image[0]);

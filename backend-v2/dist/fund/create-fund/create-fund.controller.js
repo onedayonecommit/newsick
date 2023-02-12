@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateFundController = void 0;
 const common_1 = require("@nestjs/common");
@@ -29,6 +28,7 @@ let CreateFundController = class CreateFundController {
     }
     async createFund(fundDto) {
         console.log(fundDto.fund.funding_production_date);
+        return await this.createFundService.createFund(fundDto);
     }
 };
 __decorate([
@@ -36,7 +36,7 @@ __decorate([
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('fund_nft_image')),
     __param(0, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_b = typeof Express !== "undefined" && (_a = Express.Multer) !== void 0 && _a.File) === "function" ? _b : Object]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], CreateFundController.prototype, "createMetadata", null);
 __decorate([
