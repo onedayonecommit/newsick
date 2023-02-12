@@ -23,9 +23,9 @@ export class JoinService {
       const walletCheck = await this.duplicateService.userWalletCheck(
         user_wallet_address,
       );
-      if (!mailCheck) return 'already in use this mail';
-      if (!nameCheck) return 'already in use this name';
-      if (!walletCheck) return 'already in use this wallet';
+      if (!mailCheck) return '이메일';
+      if (!nameCheck) return '닉네임';
+      if (!walletCheck) return '지갑 주소';
       const result = await this.db.user.create({
         data: {
           user_email,

@@ -59,6 +59,14 @@ export class createFundSingerDto {
   singer_info: string;
 }
 
+export class metadataDto {
+  @IsString()
+  nft_name: string;
+  @IsString()
+  producer: string;
+  @IsString()
+  description: string;
+}
 // 펀딩 신청할 때 객체 안에 객체 던지는거 이렇게 작성해주세요
 /**
   {

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { funding, user } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
-import { heartMusicDto, playlistInfoDto } from './mypage.dto';
+import { heartMusicDto, heartNftDto, playlistInfoDto } from './mypage.dto';
 
 @Injectable()
 export class MypageService {
@@ -117,5 +117,16 @@ export class MypageService {
       }
     }
     return resultDto;
+  }
+
+  async myPageList(dto: heartNftDto) {
+    console.log(dto);
+    const nftResult = await this.db.heart_nft.findMany({
+      where: { user_id: dto.user_wallet_address },
+    });
+    const fundingResult = await this.db.heart_funding.findMany({
+      where: { user_id: dto.user_wallet_address },
+    });
+    return { nftList: { ...nftResult }, fundingList: { ...fundingResult } };
   }
 }

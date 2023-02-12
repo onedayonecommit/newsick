@@ -3,7 +3,7 @@ import { user } from '@prisma/client';
 import { applicationCreatorDto } from './application-creator.dto';
 import { ApplicationCreatorService } from './application-creator.service';
 
-@Controller('application-creator')
+@Controller('application-creator') //
 export class ApplicationCreatorController {
   constructor(private readonly applicationService: ApplicationCreatorService) {}
 
