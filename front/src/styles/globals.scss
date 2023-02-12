@@ -2048,6 +2048,25 @@ body{
               flex-wrap: nowrap;
               gap: 10px;
               border-radius: 0px 0px 0px 0px;
+              .createrTicket{
+                flex-shrink: 0;
+                width: 42px;
+                height: 63px;
+                display: block;
+                overflow: hidden;
+                transform: rotate(10deg);
+                z-index: 1;
+                top: 97px;
+                left: 163px;
+                right: 29px;
+                bottom:105px;
+                background-image: url("../../public/image/createrTicket.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                border-radius: 0px 0px 0px 0px;
+            }
               .userImage{
                 cursor: pointer;
                 box-sizing: border-box;
