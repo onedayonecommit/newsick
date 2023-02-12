@@ -1,5 +1,8 @@
 프론트에서 보낼때 데이터 타입, 형식은 @Body() 부분 타입 dto 를 확인해 보면 알 수 있음
 
+모든 날짜 형식의 데이터를 주고 받을 땐 ISO8601 표준형식으로 주고 받아야 됌
+
+
 예를 들어 joinDto 를 보면 
 export class joinDto {
   @IsEmail()
