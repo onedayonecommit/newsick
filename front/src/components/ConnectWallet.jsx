@@ -57,26 +57,22 @@ const ConnectWallet = () => {
         // 여기서 회원이면 유저 정보 전체 받아오고
         // 비회원이면 createStatus : false 받아옴
         dispatch(fetchUserCheck({ user_wallet_address: linkedAccount[0] }));
-
-        if (createStatus == true) {
-          setAccount(linkedAccount[0]);
-        }
       } catch (err) {
         console.log(err);
       }
     })();
-  }, [web3, createStatus]);
+  }, [web3, account]);
 
   // 아래의 getAccoun
-  // useEffect(() => {
-  //   (async () => {
-  //     if (!web3) return;
-  //     const linkedAccount = await web3.eth.getAccounts();
-  //     if (createStatus == true) {
-  //       setAccount(linkedAccount[0]);
-  //     }
-  //   })();
-  // }, [createStatus]);
+  useEffect(() => {
+    (async () => {
+      if (!web3) return;
+      const linkedAccount = await web3.eth.getAccounts();
+      if (createStatus == true) {
+        setAccount(linkedAccount[0]);
+      }
+    })();
+  }, [createStatus]);
 
   return (
     // 지갑주소가 있으면 로그인, 없으면 회원가입으로 이동

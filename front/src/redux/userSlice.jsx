@@ -5,7 +5,7 @@ const initialState = {
   address: "",
   userName: "",
   userEmail: "",
-  userImage: "",
+  userImage: "default_profile_image.png",
   isCreator: false,
   createStatus: false,
   // 구독권 state 만들기
@@ -27,7 +27,7 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        if (action.payload) {
+        if (action.payload.createStatus != false) {
           state.address = action.payload.user_wallet_address;
           state.userName = action.payload.user_name;
           state.userEmail = action.payload.user_email;
