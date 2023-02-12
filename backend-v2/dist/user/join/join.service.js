@@ -48,6 +48,7 @@ let JoinService = class JoinService {
             const resDto = Object.assign(Object.assign({}, result), { createStatus: true });
             if (result) {
                 this.mailService.signUpMail(user_email);
+                console.log(resDto);
                 return resDto;
             }
         }

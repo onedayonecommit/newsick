@@ -3,5 +3,5 @@ import { BuyTicketService } from './buy-ticket.service';
 export declare class BuyTicketController {
     private readonly buyTicketService;
     constructor(buyTicketService: BuyTicketService);
-    buyTicket(dto: buyTicketDto): Promise<BuyTicketService>;
+    buyTicket(dto: buyTicketDto): Promise<import(".prisma/client").user>;
 }

@@ -11,14 +11,14 @@ datasource db {
 }
 
 model user{
-  id Int @default(autoincrement()) @id
-  user_email String @unique
-  user_wallet_address String @unique
-  user_name String @unique
-  user_profile_image String @default("default_profile_image.png")
-  created_at DateTime @default(now())
-  updated_at DateTime @default(now()) @updatedAt
-  creator creator[]
+  id Int @default(autoincrement()) @id // 프라이머리 키 의미 없음
+  user_email String @unique // 유저 이메일 중복 X
+  user_wallet_address String @unique // 유저 지갑주소 중복 X
+  user_name String @unique // 유저가 사용할 닉네임 중복 X
+  user_profile_image String @default("default_profile_image.png") // 유저 프로필 사진 S3파일 키값
+  created_at DateTime @default(now()) // 생성 시점
+  updated_at DateTime @default(now()) @updatedAt // 유저 정보 변경 시점
+  creator creator[] 
   ticket ticket[]
   heart_music heart_music[]
   heart_funding heart_funding[]
@@ -26,13 +26,13 @@ model user{
 }
 
 model admin{
-  admin_id String @id
-  admin_password String
+  admin_id String @id 
+  admin_password String 
 }
 
 model creator{
-  creators_id user @relation(fields : [creator_id],references: [user_wallet_address])
-  creator_id String @id
+  creators_id user @relation(fields : [creator_id],references: [user_wallet_address]) // user테이블에서 id fk로 받은거
+  creator_id String @id // 위에
   is_creator Boolean @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt

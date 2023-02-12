@@ -15,15 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegistNormalMusicController = void 0;
 const common_1 = require("@nestjs/common");
 const platform_express_1 = require("@nestjs/platform-express");
-const normal_music_dto_1 = require("./normal-music.dto");
 const regist_normal_music_service_1 = require("./regist-normal-music.service");
 let RegistNormalMusicController = class RegistNormalMusicController {
     constructor(registNormalMusic) {
         this.registNormalMusic = registNormalMusic;
     }
-    async approveNormalMusic(dto, files) {
-        console.log(JSON.parse(files.data[0].buffer));
-        return await this.registNormalMusic.normalMusicUpload(dto, files);
+    async approveNormalMusic(files) {
+        return await this.registNormalMusic.normalMusicUpload(files);
     }
 };
 __decorate([
@@ -33,10 +31,9 @@ __decorate([
         { name: 'mp3_file', maxCount: 1 },
         { name: 'data' },
     ])),
-    __param(0, (0, common_1.Body)('data')),
-    __param(1, (0, common_1.UploadedFiles)()),
+    __param(0, (0, common_1.UploadedFiles)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [normal_music_dto_1.normalMusicDto, Object]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], RegistNormalMusicController.prototype, "approveNormalMusic", null);
 RegistNormalMusicController = __decorate([

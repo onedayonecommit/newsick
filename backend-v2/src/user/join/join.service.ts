@@ -42,6 +42,7 @@ export class JoinService {
       const resDto = { ...result, createStatus: true };
       if (result) {
         this.mailService.signUpMail(user_email);
+        console.log(resDto);
         return resDto;
       }
     } catch (error) {
