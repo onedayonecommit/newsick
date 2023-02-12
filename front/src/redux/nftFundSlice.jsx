@@ -1,14 +1,35 @@
 //
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchMakeIPFS } from "@/middleware/fetchFund";
+import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
 
 const initialState = {
-  fileUrl: "",
-  metadataUrl: "",
+  funding_nft_image: "", // 파일url
+  funding_metadata: "", // metadata url
   // 펀딩 정보 받는거 데이터넣을곳
-  // userEmail: "",
-  // userImage: "",
-  // isCreator: false,
+  creator_id: "", // 크리에이터 지갑주소
+  funding_info: "", // 펀딩제목
+  category: "", // 장르 (1:가요, 2:팝, 3:트로트, 4:클래식)
+  funding_start_date: "", // 펀딩시작기간
+  funding_finish_date: "", // 펀딩종료기간
+  funding_production_date: "", // 음원제작기간
+  funding_price: 0, // NFT 개당 가격
+  funding_min: 0, // NFT 최소 판매개수
+  funding_holdershare: 0, // 홀더가 가져갈 퍼센트 몫
+  lyrics_maker: {
+    lyrics_name: "", // 작사가명
+    lyrics_info: "", // 작사가 소개
+    lyrics_sex: 0, // 작사가 성별
+  },
+  music_maker: {
+    music_name: "", // 작곡가 명
+    music_info: "", // 작곡가 소개
+    music_sex: 0, // 작곡가 성별
+  },
+  singer: {
+    singer_name: "", // 가수명
+    singer_info: "", // 가수소개
+    singer_sex: 0, // 가수성별
+  },
   createStatus: false,
 };
 
@@ -18,7 +39,6 @@ const nftFundSlice = createSlice({
   reducers: {
     reset: (state, action) => {
       state = action.payload;
-      console.log("초기화된 state : ", action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -29,36 +49,33 @@ const nftFundSlice = createSlice({
       })
       .addCase(fetchMakeIPFS.fulfilled, (state, action) => {
         state.createStatus = true;
-
-        // state.fileUrl = action.payload.fileUrl;
-        // state.metadataUrl = action.payload.metadataUrl;
-        console.log("넘어온 ipfs정보 : ", action);
-        console.log("넘어온 ipfs정보 : ", state);
+        state.fileUrl = action.payload.fileUrl;
+        state.metadataUrl = action.payload.metadataUrl;
       })
       .addCase(fetchMakeIPFS.rejected, (state) => {
         state.createStatus = false;
-      });
-    //   .addCase(fetchUserCreated.pending, (state) => {
-    //     state = initialState;
-    //   })
-    //   .addCase(fetchUserCreated.fulfilled, (state, action) => {
-    //     if (typeof action.payload == "string") alert(action.payload);
-    //     else {
-    //       state.address = action.payload.user_wallet_address;
-    //       state.userName = action.payload.user_name;
-    //       state.userEmail = action.payload.user_email;
-    //       state.userImage = action.payload.user_profile_image;
-    //       state.isCreator = action.payload.is_creator;
-    //       state.createStatus = action.payload.createStatus;
-    //       alert("회원가입 추카추");
+      })
+      .addCase(fetchCreateFund.pending, (state) => {
+        state = initialState;
+      })
+      .addCase(fetchCreateFund.fulfilled, (state, action) => {
+        if (typeof action.payload == "string") alert(action.payload);
+        else {
+          state.address = action.payload.user_wallet_address;
+          state.userName = action.payload.user_name;
+          state.userEmail = action.payload.user_email;
+          state.userImage = action.payload.user_profile_image;
+          state.isCreator = action.payload.is_creator;
+          state.createStatus = action.payload.createStatus;
+          alert("회원가입 추카추");
 
-    //       console.log("넘어온 유저정보 : ", action.payload);
-    //       console.log("업데이트 시킨 state : ", state);
-    //     }
-    //   })
-    //   .addCase(fetchUserCreated.rejected, (state) => {
-    //     state = initialState;
-    //   });
+          console.log("넘어온 유저정보 : ", action.payload);
+          console.log("업데이트 시킨 state : ", state);
+        }
+      })
+      .addCase(fetchCreateFund.rejected, (state) => {
+        state = initialState;
+      });
   },
 });
 
