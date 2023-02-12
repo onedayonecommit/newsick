@@ -1,6 +1,6 @@
 import useWeb3 from "@/hooks/useWeb3";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import MyPageCreater from "@/pages/mypage/creator";
 
 const MyPageFirstContainer = () => {

@@ -48,9 +48,16 @@ const SignUp = () => {
     console.log("전송할 이더", creatorPrice);
     console.log(isCreator);
 
+    const regBlank = /[\s]/g;
+    const regSpecial = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
     // 이메일 정규식 체크
     const regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력");
+
+    if (!(userName.length > 0 && userName.length <= 10)) return alert("닉네임은 10자 이내로 입력해주세요");
+    if (regBlank.test(userName) == true) return alert("공백은 입력이 불가합니다.");
+    if (regSpecial.test(userName) == true) return alert("특수문자는 입력이 불가합니다.");
+    if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력해주세요.");
     else {
       // 크리에이터로 회원가입할 경우!
       if (isCreator == true) {

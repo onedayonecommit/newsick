@@ -32,7 +32,7 @@ const userSlice = createSlice({
           state.userName = action.payload.user_name;
           state.userEmail = action.payload.user_email;
           state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.is_creator;
+          state.isCreator = action.payload.creator[0].is_creator;
           state.createStatus = action.payload.createStatus;
           console.log("넘어온 유저정보 : ", action.payload);
         }
@@ -47,13 +47,12 @@ const userSlice = createSlice({
         // console.log(typeof action.payload);
         // console.log(typeof action.payload == "string");
         if (action.payload) {
-          if (typeof action.payload == "string") alert(action.payload);
+          if (typeof action.payload == "string") alert(`이미 사용중인 ${action.payload} 입니다.`);
           else {
             state.address = action.payload.user_wallet_address;
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;
             state.userImage = action.payload.user_profile_image;
-            state.isCreator = action.payload.creator[0].is_creator;
             state.createStatus = action.payload.createStatus;
             alert("회원가입 추카추");
 

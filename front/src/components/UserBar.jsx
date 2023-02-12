@@ -35,7 +35,7 @@ const UserBar = () => {
       <div className="infoSection">
         <div className="optionSection"></div>
         <div className="userInfoSection">
-          <Link href="/my_page">
+          <Link href="/mypage">
             <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
           </Link>
           {/* 이미지 프로필 동적으로 변경해두기! */}
