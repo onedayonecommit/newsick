@@ -11,7 +11,7 @@ const UserBar = () => {
   const imgUrl = "";
   const userAddress = useSelector((state) => state.userInfo.address);
 
-  useEffect(() => {}, [userImg]);
+  // useEffect(() => {}, [userImg]);
 
   const profileImageHandler = async (e) => {
     console.log("클릭이벤트", e);

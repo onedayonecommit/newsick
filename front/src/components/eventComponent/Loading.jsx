@@ -1,44 +1,42 @@
-import React from 'react'
-import {motion, useMotionValue, useTransform} from "framer-motion"
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const Loading = ({setIsLoading}) => {
+const Loading = ({ setIsLoading }) => {
   const progress = useMotionValue(0);
-  const [timeProgress,setTimeProgress] = useState(0);
+  const [timeProgress, setTimeProgress] = useState(0);
   const opacity = useTransform(progress, [0, 1], [0, 1]);
-  useEffect(()=>{
-    const id = setInterval(()=>{
-      setTimeProgress(Math.random()*100);
-    },9000)
-    return ()=> {
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTimeProgress(Math.random() * 100);
+    }, 9000);
+    return () => {
       clearInterval(id);
-    }
-  },[])
+    };
+  }, []);
   setTimeout(() => {
     setIsLoading(false);
-  }, 7000);
+  }, 1000);
   return (
-    <motion.div className='loadingFrame' >
-      <motion.div className='loadingCenter'
-          animate={{
-            opacity: [1,0,1]
-          }}
-          exit={{
-            opacity:0
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            repeatType: "loop",
-                  }}
-          style={{opacity}}
+    <motion.div className="loadingFrame">
+      <motion.div
+        className="loadingCenter"
+        animate={{
+          opacity: [1, 0, 1],
+        }}
+        exit={{
+          opacity: 0,
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+        style={{ opacity }}
       >
-          <motion.h1
-            style={{ opacity ,color:"rgba(255,255,255,1)"}} >
-            Loading...
-          </motion.h1>
-          {/* <motion.div className='progressBar'
+        <motion.h1 style={{ opacity, color: "rgba(255,255,255,1)" }}>Loading...</motion.h1>
+        {/* <motion.div className='progressBar'
           >
             <motion.div className='bar'
               animate={{
@@ -49,10 +47,9 @@ const Loading = ({setIsLoading}) => {
               }}
             />
           </motion.div> */}
-
       </motion.div>
-  </motion.div>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default Loading
+export default Loading;
