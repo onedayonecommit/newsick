@@ -23,6 +23,10 @@ body {
 .mainSlider {
   display: flex;
   flex-direction: column;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .mainSlider .pageNav {
   position: absolute;
@@ -90,12 +94,15 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 80px 50px 80px 50px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
   position: relative;
+  padding: 80px 50px 80px 50px;
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainFirstFrame .rankingInfoSection {
@@ -190,6 +197,7 @@ body {
   line-height: 1.2;
 }
 .mainSlider .mainFirstFrame .rankingCard {
+  cursor: grabbing;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 420px;
@@ -214,7 +222,7 @@ body {
   justify-content: space-evenly;
   align-items: flex-end;
   padding: 0px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
   align-content: flex-end;
   flex-wrap: nowrap;
@@ -440,12 +448,15 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background-color: #2b2f5f;
   overflow: visible;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
@@ -2059,7 +2070,9 @@ body {
   width: 150px;
   height: 150px;
   display: block;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
   position: relative;
   border-radius: 150px;
@@ -3844,6 +3857,7 @@ body {
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -4266,7 +4280,7 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: 1069px;
+  height: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -4383,25 +4397,27 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: 880px; /* 880px */
+  height: -moz-min-content;
+  height: min-content; /* 965px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 10px 0px 10px 0px;
-  overflow: visible;
+  padding: 10px 20px 10px 20px;
+  overflow: hidden;
   position: relative;
   align-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
 .FundingContainerFrame .fundingListSection .listFram .fundingItem {
   flex-shrink: 0;
-  width: 240px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
   display: block;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
   border-radius: 20px;
@@ -4751,6 +4767,7 @@ body {
   align-items: center;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -4794,7 +4811,7 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 20px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topSwiperSection {
   flex-shrink: 0;
@@ -4813,7 +4830,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 20px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topInfoSection {
   pointer-events: none;
@@ -7960,6 +7977,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;

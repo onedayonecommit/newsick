@@ -97,14 +97,14 @@ const MusicPlayerListBar = ({image,index,FilippedChoice}) => {
       </motion.span>
       <motion.span whileHover={{ scale:1.2 ,transition:{duration:0.2}}} whileTap={{scale:0.9}}>
         <Image className='nowMusicImg' src={image} alt="nowPlayMusicImage" onClick={FilippedChoice}
-        style={{
-          cursor: "pointer",
-          width: "50px",
-          height: "50px",
-          backgroundSize: "fill",
-          borderRadius: "50px",
-          border: "1px solid rgba(255,255,255,0.1)",
-        }}
+          style={{
+            cursor: "pointer",
+            width: "50px",
+            height: "50px",
+            backgroundSize: "fill",
+            borderRadius: "50px",
+            border: "1px solid rgba(255,255,255,0.1)",
+          }}
         />
       </motion.span>
     </motion.div>

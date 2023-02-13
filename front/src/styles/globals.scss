@@ -22,6 +22,10 @@ body{
 .mainSlider{
   display: flex;
   flex-direction: column;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   .pageNav{
       position: absolute;
       width: min-content;
@@ -84,12 +88,15 @@ body{
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
-      padding: 80px 50px 80px 50px;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-image: url("../../public/image/coverPageBack2.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       overflow: visible;
       align-content: center;
       flex-wrap: nowrap;
       position: relative;
+      padding: 80px 50px 80px 50px;
       border-radius: 0px 0px 0px 0px;
       .rankingInfoSection{
           flex-shrink: 0;
@@ -179,6 +186,7 @@ body{
           }
       }
       .rankingCard{
+          cursor: grabbing;
           box-sizing: border-box;
           flex-shrink: 0;
           width: 420px;
@@ -204,7 +212,7 @@ body{
       justify-content: space-evenly;
       align-items: flex-end;
       padding: 0px;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0,0,0,0.7);
       overflow: hidden;
       align-content: flex-end;
       flex-wrap: nowrap;
@@ -439,13 +447,16 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items:center;
-    background-color: #2b2f5f;
+    align-items: center;
     overflow: visible;
     padding: 0px 0px 0px 0px;
     align-content: center;
     flex-wrap: nowrap;
     gap: 0;
+    background-image: url("../../public/image/coverPageBack2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
     border-radius: 0px 0px 0px 0px;
     .leftSlideContent{
@@ -499,7 +510,6 @@ body{
                     height: 255px;
                     display: block;
                     background-color: rgba(255, 255, 255, 0.1);
-
                     overflow: hidden;
                     position: relative;
                     border-radius: 25px;
@@ -2091,7 +2101,9 @@ body{
                   width: 150px;
                   height: 150px;
                   display: block;
-                  background-color: rgba(0, 0, 0, 0.1);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  background-position: center;
                   overflow: hidden;
                   position: relative;
                   border-radius: 150px;
@@ -3856,6 +3868,7 @@ animation: gradient-animation 6s ease infinite;
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -4266,29 +4279,25 @@ animation: gradient-animation 6s ease infinite;
       }
   }
   .fundingListSection{
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 1319px;
-      height: 1069px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 20px 0px 20px 0px;
-
-      // -webkit-backdrop-filter: blur(10px);
-      // backdrop-filter: blur(10px);
-      // -o-backdrop-filter: blur(10px);
-      // -moz-backdrop-filter: blur(10px);
-
-      background-color: rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      position: relative;
-      align-content: center;
-      flex-wrap: nowrap;
-      gap: 35px;
-      border-radius: 10px;
-      border: 1px solid rgba(235, 235, 235, 0.1);
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1319px;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(235, 235, 235, 0.1);
       .listTopBarFram{
           box-sizing: border-box;
           flex-shrink: 0;
@@ -4389,27 +4398,28 @@ animation: gradient-animation 6s ease infinite;
           }
       }
       .listFram{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 1319px;
-          height: 880px; /* 880px */
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: flex-start;
-          padding: 10px 0px 10px 0px;
-          overflow: visible;
-          position: relative;
-          align-content: flex-start;
-          flex-wrap: wrap;
-          gap: 20px;
-          border-radius: 0px 0px 0px 0px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1319px;
+        height: min-content; /* 965px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 10px 20px 10px 20px;
+        overflow: hidden;
+        position: relative;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+        border-radius: 0px 0px 0px 0px;
           .fundingItem{
               flex-shrink: 0;
-              width: 240px;
-              height: 200px;
+              width: 210px;
+              height: 210px;
               display: block;
-              background-color: rgba(0, 0, 0, 0.4);
+              background-color: rgba(255, 255, 255, 0.1);
+              border: rgba(255,255,255,0.1);
               overflow: visible;
               position: relative;
               border-radius: 20px;
@@ -4775,6 +4785,7 @@ animation: gradient-animation 6s ease infinite;
   align-items: center;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -4817,7 +4828,7 @@ animation: gradient-animation 6s ease infinite;
           align-content: center;
           flex-wrap: nowrap;
           gap: 0;
-          border-radius: 0px 0px 0px 0px;
+          border-radius: 20px;
           .topSwiperSection{
               flex-shrink: 0;
               width: 1319px;
@@ -4835,7 +4846,7 @@ animation: gradient-animation 6s ease infinite;
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
-              border-radius: 0px 0px 0px 0px;
+              border-radius: 20px;
           }
           .topInfoSection{
               pointer-events: none;
@@ -7923,6 +7934,7 @@ animation: gradient-animation 6s ease infinite;
   justify-content: center;
   align-items: center;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;

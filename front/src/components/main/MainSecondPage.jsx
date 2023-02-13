@@ -104,6 +104,7 @@ const MainSecondPage = () => {
       <motion.div
      onClick={() => {setPosition((position + 1)); setBackgroundCount(backgroundCount === 0 ? slides.length - 1 :  backgroundCount - 1) }} 
       className='switchHotList'
+      initial={{scale:1}}
       transition={{
         type: "spring",
         duration: 1.5
