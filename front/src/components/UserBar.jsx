@@ -41,7 +41,7 @@ const UserBar = () => {
       <div className="infoSection">
         <div className="optionSection"></div>
         <div className="userInfoSection">
-            <div className='createrTicket'/>
+            <div className='creatorTicket'/>
             <Image className="userImage" src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/976aa28a-93af-4b17-a268-7cd18a734a84.jpeg" alt="프로필 이미지" width={150} height={150} onClick={()=>{
           movePage("my_page")
         }}/>

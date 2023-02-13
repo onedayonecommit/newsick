@@ -2009,7 +2009,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .createrTicket {
+.layoutFrame .layoutBox .userBarSection .userInfoSection .creatorTicket {
   flex-shrink: 0;
   width: 42px;
   height: 63px;
@@ -2021,7 +2021,7 @@ body {
   left: 163px;
   right: 29px;
   bottom: 105px;
-  background-image: url("../../public/image/createrTicket.png");
+  background-image: url("../../public/image/creatorTicket.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
