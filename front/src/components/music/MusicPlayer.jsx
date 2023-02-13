@@ -9,6 +9,7 @@ import YounImage from "../../../public/image/YOUNHA.jpg"
 import ChangImage from "../../../public/image/chang.jpg"
 import MusicSlideForm from "./MusicSlideForm";
 import MusicPlayerPlayBar from './MusicPlayerPlayBar'
+import MusicPlayerListBar from './MusicPlayerListBar'
 const slides = [
   {
     songName: "Machu Picchu",
@@ -116,6 +117,7 @@ const variantPlay = {
 
 const MusicPlayer = ({layOutRef,isPlayerClick,playerClick}) => {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [listCount, setListCount] = useState(0);
     // 카드 뒤집기
     const FilippedChoice = ()=>{
       setIsFlipped(!isFlipped);
@@ -156,31 +158,33 @@ const MusicPlayer = ({layOutRef,isPlayerClick,playerClick}) => {
              variants={backVariant}
        >
                 <div className='listTopBar'>
-                  <FontAwesomeIcon icon={faArrowLeft}/>
+                <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} style={{cursor:"pointer"}}/>
                   <div className='playListText'>PlayList</div>
                 </div>
                 <div className='listSection'>
                   <div className='listControlBar'></div>
                   <div className='listFrame'></div>
                 </div>
-                <MusicPlayerPlayBar/>
+                <MusicPlayerListBar image={slides[listCount].image} FilippedChoice={FilippedChoice}/>
         </motion.div>  
+        {/* ===============================================================위에가 playList */}
       <motion.div className='songDetailSection'
             initial="visible"
             animate={isFlipped ? "hidden" : "visible"}
             variants={frontVariant}
+            style={isFlipped?{pointerEvents:"none"}:""}
       >
             <div className='slideSection'>
               <div className="slideBackground"/>
                 <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick}/>
                 <div className="slideList" >
                   <div className="slides">
-                    <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+                  <button onClick={() => {dispatch({ type: "PREV" }); setListCount(listCount === slides.length - 1 ? 0 :  listCount + 1) } }>‹</button>
                     {[...slides, ...slides, ...slides].map((slide, i) => {
                       let offset = slides.length + (state.slideIndex - i);
                       return <MusicSlideForm slide={slide} offset={offset} key={i} image={slide.image}/>;
                     })}
-                    <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+                     <button onClick={() => {dispatch({ type: "NEXT" }); setListCount(listCount === 0 ? slides.length - 1 : listCount - 1)}}>›</button>
                   </div>
                 </div>
             </div>

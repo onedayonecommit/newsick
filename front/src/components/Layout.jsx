@@ -22,7 +22,7 @@ const Layout = (props) => {
       {
       isLoading ?(
         <Loading setIsLoading={setIsLoading}/>
-      ):(
+      ):( 
         <motion.div>
           <motion.div className='layoutFrame' ref={layOutRef}>
             <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick}/> 
@@ -42,8 +42,8 @@ const Layout = (props) => {
             </div>
           </motion.div>
         </motion.div>
-    )
-    }
+     )
+    } 
   </>
     )
     

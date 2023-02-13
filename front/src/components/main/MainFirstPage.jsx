@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {motion, transform, useMotionValue} from "framer-motion"
 const itemData = [
      {
@@ -23,27 +23,68 @@ const itemData = [
          "Item 3 text. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
      }
    ];
-const MainFirstPage = () => {
-     const [count, setCount] = useState(0);
-     const [info, setInfo] = useState({offset: {x: 0}});
-     const [dragged, setDragged] = useState(false);
-     const initialPosition = useRef({
-      x: 0,
-      y: 0,
-      z: 0,
-      rotateX: 0,
-      rotateY: 0,
+   const cardVariant ={
+    initial:{
+      x:700,
+      y:-350,
+      z:-100,
+      rotateX:-30,
+      rotateY:30,
+      scale:0,
+      opacity:1.5,
+      transition:{
+        duration: 1 
+      }
+    },
+    animate:{
+      x:0,
+      y:0,
+      z:0,
+      rotateX:0,
+      rotateY:0,
       scale:1,
       opacity:1,
-    });
-   return (
+      transition:{
+        duration: 1 
+      }
+    },
+    exit:{
+      x:-700,
+      y:-150,
+      z:100,
+      rotateX:30,
+      rotateY:-30,
+      scale:2,
+      opacity:1.5
+    },
+
+   }
+const MainFirstPage = () => {
+  const [start, setStart] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [result, setResult] = useState(0);
+  const rendergood = () => {
+ 
+   if(Math.abs(result) > 200 && result > 0) {
+     setCurrentPage((currentPage + 1) % 3);
+   }else if (Math.abs(result) > 200 && result < 0){
+     setCurrentPage((currentPage - 1) % 3);
+   }else {
+     
+   }
+ }
+ useEffect(()=>{
+   rendergood();
+ },[result])
+
+ return (
      <motion.div className='mainFirstFrame'>
          {
              itemData.map((item,index)=>{
-                if(index === count){
+                if(index === currentPage){
                  return (
                      <>
-                     <motion.div className='rankingInfoSection' key={item.id}>
+                     <motion.div className='rankingInfoSection' >
                          <div className='infoFrame'>
                              <div className='titleSection'>
                                  <div className='title'>{item.title}</div>
@@ -56,29 +97,35 @@ const MainFirstPage = () => {
                      </motion.div>
                         <motion.div
                            className='rankingCard'
+                           variants={cardVariant}
+                           initial={currentPage?"initial":""}
                            drag='x'
-                           dragConstraints={{top:0,right:0,bottom:0}}
-                           whileHover={{ scale:1.05 ,y:-10}}
+                           dragConstraints={{right:0,left:200}}
                            animate={
-                              dragged
-                              ? {
-                                x: -700,
-                                y: -150,
-                                z: 100,
-                                rotateX: 30,
-                                rotateY: -30,
-                                scale:2,
-                                opacity:0,
-                                transition: { duration: 0.5 }
-                              }
+                            currentPage
+                              ? "animate"
                               : ""
                            }
-                           onDragEnd={(event, info) => {
-                               if (info.offset.x < 300) {
-                                   setCount((count + 1 + itemData.length) % itemData.length)
-                               }
-                               setDragged(true);
-                           }}
+                           exit="exit"
+                           onDragStart={(e)=>{
+                            setStart(e.clientX);
+                            console.log(e.clientX)
+                          }}
+                          onDragEnd={ (e) => {
+                            setResult(start-e.clientX);
+                            
+                            console.log(e.clientX);
+                                // setEnd(e.clientY);
+                                // setResult(start-end);
+                                // console.log(result);
+                                //   if(Math.abs(result) > 100 && result > 0) {
+                                //     return setCurrentPage((currentPage + 1) % 3);
+                                //   }else if (Math.abs(result) > 100 && result < 0){
+                                //     return setCurrentPage((currentPage - 1) % 3);
+                                //   }else {
+                                //     return;
+                                //   }
+                          }}
                         >
                         </motion.div>
                      </>

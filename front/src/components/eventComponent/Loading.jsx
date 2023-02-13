@@ -9,15 +9,15 @@ const Loading = ({ setIsLoading }) => {
   const opacity = useTransform(progress, [0, 1], [0, 1]);
   useEffect(() => {
     const id = setInterval(() => {
-      setTimeProgress(Math.random() * 100);
-    }, 9000);
+      setTimeProgress(100);
+    }, 2000);
     return () => {
       clearInterval(id);
     };
   }, []);
   setTimeout(() => {
     setIsLoading(false);
-  }, 1000);
+  }, 5000);
   return (
     <motion.div className="loadingFrame">
       <motion.div
@@ -36,17 +36,17 @@ const Loading = ({ setIsLoading }) => {
         style={{ opacity }}
       >
         <motion.h1 style={{ opacity, color: "rgba(255,255,255,1)" }}>Loading...</motion.h1>
-        {/* <motion.div className='progressBar'
-          >
-            <motion.div className='bar'
-              animate={{
-                width:`${timeProgress}%`
-              }}
-              transition={{
-                duration:2
-              }}
-            />
-          </motion.div> */}
+      </motion.div>
+      <motion.div className="progressBar">
+        <motion.div
+          className="bar"
+          animate={{
+            width: `${timeProgress}%`,
+          }}
+          transition={{
+            duration: 2,
+          }}
+        />
       </motion.div>
     </motion.div>
   );

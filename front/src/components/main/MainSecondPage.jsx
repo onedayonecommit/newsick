@@ -87,11 +87,12 @@ const MainSecondPage = () => {
   const rotateX = useTransform(y,[-100,100],[30,-30]);
   const rotateY = useTransform(x,[-100,100],[-30,30]); 
   const [position,setPosition] =useState(0);
+  const [backgroundCount, setBackgroundCount] = useState(0);
   const Rotate = 360 / slidesNum;
   const RADIUS = 100;
   return (
     <div className='mainSecondFrame'>
-      <div className='backGroundCover' style={{backgroundImage : `url('${slides[position].image.src}')`, backgroundSize:"cover"}}/>
+       <div className='backGroundCover' style={{backgroundImage : `url('${slides[backgroundCount]?.image.src}')`, backgroundSize:"cover"}}/>
       <div className='backGroundBlur'/>
       <div className='sideFrame' >
         <div className='hotTopicText'>
@@ -101,7 +102,7 @@ const MainSecondPage = () => {
         <div className='sideContentBox'></div>
       </div>
       <motion.div
-      onClick={() => {setPosition((position + 1)) }} 
+     onClick={() => {setPosition((position + 1)); setBackgroundCount(backgroundCount === 0 ? slides.length - 1 :  backgroundCount - 1) }} 
       className='switchHotList'
       transition={{
         type: "spring",
