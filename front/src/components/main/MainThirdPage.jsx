@@ -118,8 +118,37 @@ const MainThirdPage = () => {
                     }
                </motion.div>   
             </div>
+            <div className='slideListDownFrame'>
+                <motion.div className='closeFundingList'animate="animate" variants={variantsdown} >
+                    {
+                        Data.map((item) => (
+                            <motion.div
+                                className="closeItem"
+                                key={item.id}
+                                whileHover={{ scale: isHovered ? 1.2: 0.5,}}
+                                onHoverStart={() => setIsHovered(true)}
+                                onHoverEnd={() => setIsHovered(false)}>
+                                {item.name}
+                            </motion.div>
+                        ))
+                    }
+               </motion.div> 
+               <motion.div className='closeFundingList'animate="animate" variants={variantsdown}>
+                    {
+                        Data.map((item) => (
+                            <motion.div
+                                className="closeItem"
+                                key={item.id}
+                                whileHover={{ scale: isHovered ? 1.2: 0.5,}}
+                                onHoverStart={() => setIsHovered(true)}
+                                onHoverEnd={() => setIsHovered(false)}>
+                                {item.name}
+                            </motion.div>
+                        ))
+                    }
+               </motion.div>   
+            </div>
         </div>
-        <div className='rightContent'></div>
     </div>
     </AnimatePresence>
   )
