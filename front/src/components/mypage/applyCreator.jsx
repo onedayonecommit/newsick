@@ -1,9 +1,9 @@
 import useWeb3 from "@/hooks/useWeb3";
-import { useEffect, useState } from "react";
+import { fetchApplyCreator } from "@/middleware/fetchUser";
 import { useSelector, useDispatch } from "react-redux";
-import MyPageCreater from "@/pages/mypage/creator";
+import MyPageCreator from "@/components";
 
-const MyPageFirstContainer = () => {
+const ApplyCreator = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
   const dispatch = useDispatch();
   const isCreator = useSelector((state) => state.userInfo.isCreator);
@@ -46,9 +46,9 @@ const MyPageFirstContainer = () => {
     </>
   ) : (
     <>
-      <MyPageCreater />
+      <MyPageCreator />
     </>
   );
 };
 
-export default MyPageFirstContainer;
+export default ApplyCreator;

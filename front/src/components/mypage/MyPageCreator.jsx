@@ -1,5 +1,15 @@
 // 크리에이터 관리자 페이지
-import Graph from "@/components/mypage/Graph";
+// - 지금까지 펀딩된 금액 확인
+// - 내 펀딩 히스토리
+// - 진행하고 있는 내 펀딩 상세 페이지에서 펀딩 종료 가능
+// - 펀딩 상세 페이지에서 공지사항 게시판 핸들링 가능
+
+// - 제작된 음원 첨부파일로 등록할 수 있게
+import React from "react";
+import Graph from "./Graph";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { RegisterNftSong } from "@/components";
 
 const dateFunndingData = [
   [0, 10],
@@ -71,9 +81,13 @@ const FunddingDateItem = [
     quantity: "수량 완료 분수 ( 5/10 )",
   },
 ];
-const MyPageCreater = () => {
+const MyPageCreator = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
   return (
     <div className="MyPageCreaterFrame">
+      <AnimatePresence>{modalOpen && <RegisterNftSong modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
       <div className="topSection">
         <div className="totalMoneySection">
           <div className="infoText">
@@ -109,7 +123,9 @@ const MyPageCreater = () => {
                   <div className="quantityPercentage">{item.quantity}</div>
                 </div>
                 <div className="musicInputButton">
-                  <div className="buttonLine">음원등록</div>
+                  <motion.div className="buttonLine" onClick={() => (modalOpen ? close() : open())} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                    음원등록
+                  </motion.div>
                 </div>
                 <div className="funddingTerminationButton">펀딩종료</div>
               </div>
@@ -121,4 +137,4 @@ const MyPageCreater = () => {
   );
 };
 
-export default MyPageCreater;
+export default MyPageCreator;

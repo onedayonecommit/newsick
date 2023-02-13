@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import ConnectWallet from "./ConnectWallet";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { fetchUserImage } from "@/middleware/fetchUser";
 
 // 컴포넌트
@@ -35,7 +34,7 @@ const UserBar = () => {
         <div className="optionSection"></div>
         {isCreator ? (
           <div className="userInfoSection">
-            <div className="createrTicket" />
+            <div className="creatorTicket" />
             <Link href="/mypage">
               <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
             </Link>

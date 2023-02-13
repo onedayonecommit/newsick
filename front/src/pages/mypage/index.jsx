@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { MyPageFirstContainer, MyPageSecondContainer, MyPageThirdContainer } from "@/components/mypage";
+import { ApplyCreator, MyPageSecondContainer, MyPageThirdContainer } from "@/components";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMyPage } from "@/middleware/fetchMypage";
 const MyPage = () => {
@@ -37,7 +37,7 @@ const MyPage = () => {
           </motion.div>
         </div>
       </div>
-      {selectedOption === 0 ? <MyPageFirstContainer /> : null}
+      {selectedOption === 0 ? <ApplyCreator /> : null}
       {selectedOption === 1 ? <MyPageSecondContainer /> : null}
       {selectedOption === 2 ? <MyPageThirdContainer /> : null}
     </div>
