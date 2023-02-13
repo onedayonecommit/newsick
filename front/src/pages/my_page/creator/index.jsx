@@ -80,7 +80,7 @@ const MyPageCreater = () => {
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
   return (
-    <div className='MyPageCreaterFrame'>
+    <div className='MyPageCreatorFrame'>
         <AnimatePresence>
            {modalOpen && <Modal modalOpen={modalOpen} handleClose={close}/>}
         </AnimatePresence>
@@ -102,7 +102,7 @@ const MyPageCreater = () => {
             </div>
         </div>
         <div className='bottomSection'>
-            <div className='createrHandlerFrame'>
+            <div className='creatorHandlerFrame'>
                 <div className='handleNavBar'>
                     <div className='text'>진행중인 펀딩 핸들러</div>
                     <div className='button'>공지사항 확인하기</div>

@@ -4,7 +4,6 @@
   font-weight: normal;
   font-style: normal;
 }
-@import 'atropos/scss';
 
 body{
   margin: 0;
@@ -1702,7 +1701,7 @@ body{
   align-content: center;
   flex-wrap: nowrap;
   gap: 0px;
-  background-image: url("./image/BackGround.png");
+  background-image: url("../../public/image/BackGround.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -2051,7 +2050,7 @@ body{
                     left: 163px;
                     right: 29px;
                     bottom:105px;
-                    background-image: url("./image/creatorTicket.png");
+                    background-image: url("../../public/image/creatorTicket.png");
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
@@ -2206,7 +2205,7 @@ body{
     overflow: hidden;
     align-content: center;
     flex-wrap: nowrap;
-    background-image: url("./image/coverPageBack2.png");
+    background-image: url("../../public/image/coverPageBack2.png");
   .coverPageFrame{
       flex-shrink: 0;
       width: 1920px;
@@ -2708,7 +2707,7 @@ animation: gradient-animation 6s ease infinite;
                   flex-wrap: nowrap;
                   gap: 25px;
                   border-radius: 0px 0px 0px 0px;
-                  .userButton,.createrButton{
+                  .userButton,.creatorButton{
                       cursor: pointer;
                       box-sizing: border-box;
                       flex-shrink: 0;
@@ -2791,7 +2790,7 @@ animation: gradient-animation 6s ease infinite;
           display: block;
           overflow: hidden;
           position: relative;
-          background-image: url("./image/signUp.png");
+          background-image: url("../../public/image/signUp.png");
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -2826,7 +2825,7 @@ animation: gradient-animation 6s ease infinite;
       display: block;
       overflow: visible;
       position: relative;
-      background-image: url("./image/sousial.png");
+      background-image: url("../../public/image/sousial.png");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -3050,7 +3049,7 @@ animation: gradient-animation 6s ease infinite;
                   height: 100px;
                   display: block;
                   overflow: hidden;
-                  background-image: url("./image/SampleImge.jpg");
+                  background-image: url("../../public/image/SampleImge.jpg");
                   background-size: cover;
                   background-repeat: no-repeat;
                   background-position: center;
@@ -3176,7 +3175,7 @@ animation: gradient-animation 6s ease infinite;
               gap: 10px;
               border-radius: 25px;
               border: 1px solid rgba(255, 255, 255, 0.1);
-              .contentCreater{
+              .contentCreator{
                   box-sizing: border-box;
                   flex-shrink: 0;
                   width: 259px;
@@ -3878,7 +3877,7 @@ animation: gradient-animation 6s ease infinite;
       flex-wrap: nowrap;
       gap: 20px;
       border-radius: 0px 0px 0px 0px;
-      .todayCreaterSection{
+      .todayCreatorSection{
           box-sizing: border-box;
           flex-shrink: 0;
           width: 344px;
@@ -3917,7 +3916,7 @@ animation: gradient-animation 6s ease infinite;
               letter-spacing: 0px;
               line-height: 1.2;
           }
-          .createrInfoFrame{
+          .creatorInfoFrame{
               box-sizing: border-box;
               flex-shrink: 0;
               width: 344px;
@@ -3934,7 +3933,7 @@ animation: gradient-animation 6s ease infinite;
               gap: 10px;
               border-radius: 0px 0px 0px 0px;
               border: 1px solid rgba(255, 255, 255, 0.1);
-              .createrInfoBox{
+              .creatorInfoBox{
                   top: 0px;
                   bottom: 0px;
                   right: 0px;
@@ -3963,7 +3962,7 @@ animation: gradient-animation 6s ease infinite;
                   position: absolute;
                   border-radius: 0px 0px 0px 0px;
                   border: 1px solid rgba(255, 255, 255, 0.1);
-                  .createrInfo{
+                  .creatorInfo{
                       flex-shrink: 0;
                       width: min-content; /* 93px */
                       height: min-content; /* 33px */
@@ -3978,7 +3977,7 @@ animation: gradient-animation 6s ease infinite;
                       flex-wrap: nowrap;
                       gap: 5px;
                       border-radius: 0px 0px 0px 0px;
-                      .createrName{
+                      .creatorName{
                           flex-shrink: 0;
                           width: min-content; /* 93px */
                           height: min-content; /* 16px */
@@ -4057,7 +4056,7 @@ animation: gradient-animation 6s ease infinite;
                       text-align: center;
                   }
               }
-              .createrImg{
+              .creatorImg{
                   box-sizing: border-box;
                   flex-shrink: 0;
                   width: 344px;
@@ -4072,7 +4071,7 @@ animation: gradient-animation 6s ease infinite;
                   align-content: center;
                   flex-wrap: nowrap;
                   gap: 10px;
-                  background-image: url("./image/park.jpg");
+                  background-image: url("../../public/image/park.jpg");
                   background-size: cover;
                   background-repeat: no-repeat;
                   background-position: center;
@@ -4114,7 +4113,7 @@ animation: gradient-animation 6s ease infinite;
           flex-wrap: nowrap;
           gap: 10px;
           border-radius: 0px 0px 0px 0px;
-          .hotCreaterInfoFrame{
+          .hotCreatorInfoFrame{
               flex-shrink: 0;
               width: min-content; /* 265px */
               height: min-content; /* 249px */
@@ -4129,7 +4128,7 @@ animation: gradient-animation 6s ease infinite;
               flex-wrap: nowrap;
               gap: 71px;
               border-radius: 0px 0px 0px 0px;
-              .hotCreaterInfoBox{
+              .hotCreatorInfoBox{
                   flex-shrink: 0;
                   width: 265px;
                   height: 138px;
@@ -4169,7 +4168,7 @@ animation: gradient-animation 6s ease infinite;
                       letter-spacing: 0px;
                       line-height: 1.2;
                   }
-                  .hotCreaterName{
+                  .hotCreatorName{
                       flex-shrink: 0;
                       width: min-content; /* 194px */
                       height: min-content; /* 36px */
@@ -4493,7 +4492,7 @@ animation: gradient-animation 6s ease infinite;
       display: block;
       overflow: hidden;
       position: relative;
-      background-image: url("./image/Singer.jpg");
+      background-image: url("../../public/image/Singer.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -7131,7 +7130,7 @@ animation: gradient-animation 6s ease infinite;
               display: block;
               overflow: hidden;
               position: relative;
-              background-image: url("./image/Quin\ Album\ Art\ \(3D\ Render\ +\ Lettering\).png");
+              background-image: url("../../public/image/Quin\ Album\ Art\ \(3D\ Render\ +\ Lettering\).png");
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
@@ -8498,8 +8497,8 @@ animation: gradient-animation 6s ease infinite;
   }
 }
 // SubscriptionContainer CSS ===============done
-// MyPage=> ForCreaterPage===============start
-.MyPageCreaterFrame{
+// MyPage=> ForCreatorPage===============start
+.MyPageCreatorFrame{
   box-sizing: border-box;
   width: 1359px;
   height: 950px;
@@ -8717,7 +8716,7 @@ animation: gradient-animation 6s ease infinite;
       flex-wrap: nowrap;
       border-radius: 25px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      .createrHandlerFrame{
+      .creatorHandlerFrame{
           box-sizing: border-box;
           flex-shrink: 0;
           width: 1279px;
@@ -9398,7 +9397,7 @@ animation: gradient-animation 6s ease infinite;
       }
   }
 }
-// MyPage=> ForCreaterPage===============done
+// MyPage=> ForCreatorPage===============done
 // EventComponent CSS============start => 나중에 위치는 다 옮겨야함
 .EventFrame{
   box-sizing: border-box;

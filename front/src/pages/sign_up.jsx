@@ -153,8 +153,8 @@ const SignUp = () => {
               <motion.div className="userButton" animate={backgroundColorControls} onTap={() => setIsCreator(false)}>
                 USER
               </motion.div>
-              <motion.div className="createrButton" animate={backgroundColorControls2} onTap={() => setIsCreator(true)}>
-                CREATER
+              <motion.div className="creatorButton" animate={backgroundColorControls2} onTap={() => setIsCreator(true)}>
+                CREATOR
               </motion.div>
             </div>
           </div>
