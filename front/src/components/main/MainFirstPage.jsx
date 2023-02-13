@@ -43,7 +43,7 @@ const MainFirstPage = () => {
                 if(index === count){
                  return (
                      <>
-                     <motion.div className='rankingInfoSection' >
+                     <motion.div className='rankingInfoSection' key={item.id}>
                          <div className='infoFrame'>
                              <div className='titleSection'>
                                  <div className='title'>{item.title}</div>

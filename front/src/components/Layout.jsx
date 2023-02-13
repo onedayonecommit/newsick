@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar, VolumeBox } from "../components";
 import {motion} from "framer-motion"
+import Loading from "./eventComponent/Loading";
 const Layout = (props) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [isSoundClick,setIsSoundClick] = useState(false);
   const [isPlayerClick,setIsPlayerClick]=useState(false);
   const [switchState, setSwitchState] = useState(false)
@@ -16,26 +18,35 @@ const Layout = (props) => {
     setIsPlayerClick(!isPlayerClick)
   }
   return (
-    <motion.div>
-      <motion.div className='layoutFrame' ref={layOutRef}>
-        <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick}/> 
-          {
-            isSoundClick ? <VolumeBox/>:null
-          }
-        <div className='layoutBox'>
-          <SideBar/>
-            <PlayBar soundClick={soundClick} playerClick={playerClick} isPlayerClick={isPlayerClick}/>
-              <div className='contentSection'>
-                <SearchBar/>
-                <div className='content'>
-                {props.children}
-               </div>
-              </div>
-          <UserBar/>
-        </div>
-      </motion.div>
-    </motion.div>
+    <>
+      {
+      isLoading ?(
+        <Loading setIsLoading={setIsLoading}/>
+      ):(
+        <motion.div>
+          <motion.div className='layoutFrame' ref={layOutRef}>
+            <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick}/> 
+              {
+                isSoundClick ? <VolumeBox/>:null
+              }
+            <div className='layoutBox'>
+              <SideBar/>
+                <PlayBar soundClick={soundClick} playerClick={playerClick} isPlayerClick={isPlayerClick}/>
+                  <div className='contentSection'>
+                    <SearchBar/>
+                    <div className='content'>
+                    {props.children}
+                   </div>
+                  </div>
+              <UserBar/>
+            </div>
+          </motion.div>
+        </motion.div>
     )
+    }
+  </>
+    )
+    
 };
 
 export default Layout;

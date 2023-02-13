@@ -1,12 +1,14 @@
 import { useSelector } from "react-redux";
 import ConnectWallet from "./ConnectWallet";
 import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 // 컴포넌트
 const UserBar = () => {
-  // const defaultImgUrl = "default_profile_image.png";
-  const userImg = useSelector((state) => state.userInfo.userImage);
+  const router = useRouter();
+  function movePage(page) {
+    page == "my_page" ? router.replace("/") : router.push(`/${page}`);
+  }
+  const imgUrl = "";
   const userAddress = useSelector((state) => state.userInfo.address);
 
   useEffect(() => {}, [userImg]);
@@ -30,11 +32,17 @@ const UserBar = () => {
       <div className="infoSection">
         <div className="optionSection"></div>
         <div className="userInfoSection">
-          <Link href="/my_page">
-            <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
-            {/* <Image src={img} className="userImage" alt="프로필 이미지" width={150} height={150} /> */}
-          </Link>
-          {/* 이미지 프로필 동적으로 변경해두기! */}
+          <div className="createrTicket" />
+          <Image
+            className="userImage"
+            src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/976aa28a-93af-4b17-a268-7cd18a734a84.jpeg"
+            alt="프로필 이미지"
+            width={150}
+            height={150}
+            onClick={() => {
+              movePage("my_page");
+            }}
+          />
           <input type="file" name="file" accept="image/*" style={{ opacity: 0, height: "100px" }} onChange={profileImageHandler} />
           <ConnectWallet />
         </div>

@@ -269,33 +269,539 @@ body {
         height: min-content;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        right: 20px;
+        top: 50%;
+        transform: (translate(0, -50%));
+        gap: 30px;
+        .pageNavItem {
+          scale: 0.9;
+          opacity: 0.5;
+          cursor: pointer;
+          flex-shrink: 0;
+          width: min-content;
+          height: min-content; /* 24px */
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 7px;
+          border-radius: 0px 0px 0px 0px;
+          :nth-child(1) {
+            flex-shrink: 0;
+            width: 15px;
+            height: 4.8px;
+            display: block;
+            background-color: #ffffff;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+          }
+          :nth-child(2) {
+            flex-shrink: 0;
+            width: auto; /* 92px */
+            height: auto; /* 24px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+      }
+      .mainFirstFrame {
+        box-sizing: border-box;
+        width: 1359px;
+        height: 950px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         align-items: center;
-        overflow: hidden;
+        padding: 80px 50px 80px 50px;
+        background-color: #2b2f5f;
+        overflow: visible;
+        align-content: center;
+        flex-wrap: nowrap;
         position: relative;
+        border-radius: 0px 0px 0px 0px;
+        .rankingInfoSection {
+          flex-shrink: 0;
+          width: 465px;
+          height: 636px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 0px 0px 0px 0px;
+          .infoFrame {
+            flex-shrink: 0;
+            width: min-content; /* 465px */
+            height: min-content; /* 636px */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 50px;
+            border-radius: 0px 0px 0px 0px;
+            .titleSection {
+              flex-shrink: 0;
+              width: min-content; /* 193px */
+              height: min-content; /* 154px */
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: flex-start;
+              flex-wrap: nowrap;
+              gap: 10px;
+              border-radius: 0px 0px 0px 0px;
+              .title {
+                flex-shrink: 0;
+                width: auto; /* 145px */
+                height: auto; /* 84px */
+                white-space: pre;
+                position: relative;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 70px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+                font-weight: bold;
+              }
+              .subTitle {
+                flex-shrink: 0;
+                width: auto; /* 193px */
+                height: auto; /* 60px */
+                white-space: pre;
+                position: relative;
+                font-family: "Inter", sans-serif;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 50px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
+            }
+            .textSection {
+              flex-shrink: 0;
+              width: 465px;
+              height: 432px;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              word-break: break-word;
+              position: relative;
+              font-family: "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 40px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+          }
+        }
+        .rankingCard {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 420px;
+          height: 550px;
+          display: block;
+          background-color: rgba(255, 255, 255, 0.1);
+          overflow: hidden;
+          position: relative;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+      }
+      .mainSecondFrame {
+        box-sizing: border-box;
+        width: 1359px;
+        height: 950px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        padding: 0px;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow: hidden;
+        align-content: flex-end;
+        flex-wrap: nowrap;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        .backGroundCover {
+          top: 0px;
+          left: 0px;
+          bottom: 0px;
+          right: 484px;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 875px;
+          height: 950px;
+          display: block;
+          -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+          overflow: hidden;
+          z-index: 0;
+          position: absolute;
+          border-radius: 0px 540px 540px 0px;
+          border: 1px solid #222;
+        }
+        .backGroundBlur {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          bottom: 0px;
+          right: 0px;
+          background-color: rgba(0, 0, 0, 0.2);
+          -webkit-backdrop-filter: blur(20px);
+          -o-backdrop-filter: blur(20px);
+          -moz-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+        }
+        .switchHotList {
+          cursor: pointer;
+          position: absolute;
+          width: min-content;
+          height: min-content;
+          color: white;
+          left: 42%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .sideFrame {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 800px;
+          height: 950px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 40px 0px 0px 0px;
+          overflow: hidden;
+          position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 30px;
+          border-radius: 0px 0px 0px 0px;
+          .hotTopicText {
+            flex-shrink: 0;
+            width: 800px;
+            height: min-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            :nth-child(1) {
+              width: min-content;
+              height: min-content;
+              white-space: pre;
+              color: rgba(255, 255, 255, 1);
+              font-size: 40px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+            :nth-child(2) {
+              display: flex;
+              width: min-content;
+              height: min-content;
+              white-space: pre;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 35px;
+              letter-spacing: 0px;
+              line-height: 1.5;
+            }
+          }
+          .sideContentBox {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 560px;
+            height: 680px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+              0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+          }
+        }
+        .slideHotTopicList {
+          // flex-shrink: 0;
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: -650px;
+          width: 1000px;
+          height: 950px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: 1s;
+          // // overflow: visible;
+          // position: relative;
+          // padding: 0px 0px 0px 0px;
+          // align-content: center;
+          // // flex-wrap: wrap;
+          // gap: 40px;
+          // border-radius: 0px 0px 0px 0px;
+          .hotTopSlides {
+            position: absolute;
+            transition: 1s;
+            .hotTopicSlide {
+            }
+            .hotTopicSlideContent {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              width: 230px;
+              height: 310px;
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              transition: transform 0.5s ease-in-out;
+              box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+                0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+              border-radius: 50px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .hotTopicSlideContentInner {
+              transform-style: preserve-3d;
+              transform: translateZ(50px);
+              transition: opacity 0.3s linear;
+              //   font-family: "Inter", sans-serif;
+              //   color: #ffffff;
+              //   font-size: 20px;
+              opacity: 1;
+              right: -55px;
+              bottom: 10px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 188px;
+              height: 98px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-end;
+              padding: 0px 20px 0px 20px;
+              background-color: rgba(0, 0, 0, 0.4);
+              -webkit-backdrop-filter: blur(10px);
+              -o-backdrop-filter: blur(10px);
+              -moz-backdrop-filter: blur(10px);
+              backdrop-filter: blur(10px);
+              font-weight: bold;
+              overflow: hidden;
+              z-index: 1;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 10px;
+              position: absolute;
+              border-radius: 25px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+
+              .singerName,
+              .songName,
+              .fundingPrice {
+                flex-shrink: 0;
+                width: auto; /* 64px */
+                height: auto; /* 19px */
+                white-space: pre;
+                position: relative;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 16px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
+
+              .hotTopicSlideTitle {
+                flex-shrink: 0;
+                white-space: pre;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 22px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
+              .hotTopicSlideSubtitle {
+                flex-shrink: 0;
+                white-space: pre;
+                font-family: "Inter", sans-serif;
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 16px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
+            }
+          }
+        }
+      }
+      .mainThirdFrame {
+        width: 1359px;
+        height: 950px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #2b2f5f;
+        overflow: visible;
         padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
         gap: 0;
         border-radius: 0px 0px 0px 0px;
-        :nth-child(1) {
-          width: min-content;
-          height: min-content;
-          white-space: pre;
-          color: rgba(255, 255, 255, 1);
-          font-size: 40px;
-          letter-spacing: 0px;
-          line-height: 1.2;
-        }
-        :nth-child(2) {
+        .leftSlideContent {
+          flex-shrink: 0;
+          width: 595px;
+          height: 950px;
           display: flex;
-          width: min-content;
-          height: min-content;
-          white-space: pre;
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 35px;
-          letter-spacing: 0px;
-          line-height: 1.5;
+          flex-direction: row;
+          justify-content: left;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 60px;
+          align-content: center;
+          flex-wrap: nowrap;
+          border-radius: 0px 0px 0px 0px;
+          .slideListDownFrame {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 270px;
+            height: calc(255px * 10);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 30px 0px 30px;
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 40px;
+            border-radius: 0px 0px 0px 0px;
+            .closeFundingList {
+              flex-shrink: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 40px;
+              border-radius: 0px 0px 0px 0px;
+              .closeItem {
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 210px;
+                height: 255px;
+                display: block;
+                background-color: rgba(255, 255, 255, 0.1);
+
+                overflow: hidden;
+                position: relative;
+                border-radius: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              }
+            }
+          }
+          .slideListUpFrame {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 270px;
+            height: calc(255px * 10);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 30px 0px 30px;
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 40px;
+            border-radius: 0px 0px 0px 0px;
+            .closeFundingList {
+              flex-shrink: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 40px;
+              border-radius: 0px 0px 0px 0px;
+              .closeItem {
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 210px;
+                height: 255px;
+                display: block;
+                background-color: rgba(255, 255, 255, 0.1);
+
+                overflow: hidden;
+                position: relative;
+                border-radius: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              }
+            }
+          }
+        }
+        .rightContent {
+          flex-shrink: 0;
+          width: 560px;
+          height: 950px;
+          display: block;
+          // background-color: #ffffff;
+          background-color: rgba(0, 0, 0, 0.4);
+          overflow: hidden;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
         }
       }
       .sideContentBox {
@@ -1731,7 +2237,517 @@ body {
       height: 1000px;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+        0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .sideBarSection {
+        flex-shrink: 0;
+        width: 247px;
+        height: 1000px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 0px 0px 0px 0px;
+        .iconBar {
+          flex-shrink: 0;
+          width: 57px;
+          height: 1000px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          background-color: rgba(29, 32, 62, 0.3);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 0px 0px 0px 0px;
+          .buttonList {
+            flex-shrink: 0;
+            width: 57px;
+            height: 550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(29, 32, 62, 0.2);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 25px 0px 0px 70px;
+          }
+          .iconButton {
+            flex-shrink: 0;
+            width: min-content; /* 40px */
+            height: min-content; /* 356px */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 40px;
+            border-radius: 0px 0px 0px 0px;
+          }
+        }
+        .categories {
+          flex-shrink: 0;
+          width: 190px;
+          height: 1000px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(44, 47, 72, 0.5);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 0px 0px 0px 0px;
+          .headerSection {
+            cursor: pointer;
+            font-family: "YdestreetB";
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 190px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            border-color: rgba(255, 255, 255, 0.1);
+            border-style: solid;
+            border-top-width: 0px;
+            border-bottom-width: 1px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            white-space: pre;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .menuSection {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 190px;
+            height: 950px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 40px 0px 40px 0px;
+            overflow: hidden;
+            position: relative;
+            align-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 50px;
+            border-radius: 0px 0px 0px 0px;
+            .menuItem {
+              cursor: pointer;
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 190px;
+              height: 50px;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
+              padding: 0px 30px 0px 30px;
+              overflow: hidden;
+              position: relative;
+              align-content: center;
+              flex-wrap: nowrap;
+              font-weight: bold;
+              gap: 0;
+              border-radius: 0px 0px 0px 0px;
+              color: #ffffff;
+              font-size: 15px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+              &:hover {
+                animation-duration: 0.3s;
+                transition: 0.5s;
+                box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+                  0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+                background-color: rgba(0, 0, 0, 0.2);
+                border-radius: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              }
+            }
+          }
+        }
+      }
+      .contentSection {
+        flex-shrink: 0;
+        width: 1359px;
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 0px 0px 0px 0px;
+        .content {
+          flex-shrink: 0;
+          width: 1359px;
+          height: 950px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          background-color: #2b2f5f;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: flex-start;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 0px 0px 0px 0px;
+          overflow: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+        .searchBarSection {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 1359px;
+          height: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: #2c2f48;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 0px 0px 0px 0px;
+          border-color: rgba(255, 255, 255, 0.1);
+          border-style: solid;
+          border-top-width: 0px;
+          border-bottom-width: 1px;
+          border-left-width: 0px;
+          border-right-width: 0px;
+          .searchBarFrame {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 585px;
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px 30px 0px 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            .searchBar {
+              flex-shrink: 0;
+              width: 525px;
+              height: 32px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 10px;
+              border-radius: 0px 0px 0px 0px;
+              &:nth-child(1) {
+                color: rgb(255, 255, 255);
+                width: 5%;
+                height: 85%;
+                // **
+              }
+            }
+          }
+          .searchInput {
+            width: 95%;
+            height: 85%;
+            // **
+            position: relative;
+            font-family: "Arvo";
+            color: white;
+            background-color: transparent;
+            border: none;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+      .userBarSection {
+        flex-shrink: 0;
+        width: 234px;
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: inset 1px 0px 0px 0px rgba(255, 255, 255, 0.1);
+        background-color: #2c2f48;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 0px 0px 0px 0px;
+        .optionSection {
+          flex-shrink: 0;
+          width: 234px;
+          height: 50px;
+          display: block;
+          box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 0);
+          overflow: hidden;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
+        }
+        .userInfoSection {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 234px;
+          height: 265px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 30px 0px 30px 0px;
+          overflow: hidden;
+          position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          .createrTicket {
+            flex-shrink: 0;
+            width: 42px;
+            height: 63px;
+            display: block;
+            overflow: hidden;
+            transform: rotate(10deg);
+            z-index: 1;
+            top: 97px;
+            left: 163px;
+            right: 29px;
+            bottom: 105px;
+            background-image: url("../../public/image/createrTicket.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            border-radius: 0px 0px 0px 0px;
+          }
+          .userImage {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 150px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+          }
+          .metaConnectButton {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 120px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(114.5% 375.5% at 23.400000000000002% 294%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            white-space: pre;
+            font-family: "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 10px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .userProfile {
+            flex-shrink: 0;
+            width: min-content; /* 112px */
+            height: min-content; /* 46px */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            .userName {
+              flex-shrink: 0;
+              width: min-content; /* 80px */
+              height: min-content; /* 19px */
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 10px;
+              border-radius: 0px 0px 0px 0px;
+              white-space: pre;
+              position: relative;
+              font-family: "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 16px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+              text-align: center;
+            }
+            .userEmail {
+              flex-shrink: 0;
+              width: min-content; /* 112px */
+              height: min-content; /* 17px */
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 10px;
+              border-radius: 0px 0px 0px 0px;
+              white-space: pre;
+              position: relative;
+              font-family: "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+          }
+        }
+        .stateInfoSection {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 234px;
+          height: 550px;
+          display: block;
+          overflow: hidden;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
+          border-color: rgba(255, 255, 255, 0.1);
+          border-style: solid;
+          border-top-width: 1px;
+          border-bottom-width: 1px;
+          border-left-width: 0px;
+          border-right-width: 0px;
+        }
+        .anotherInfoSection {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 234px;
+          height: 135px;
+          display: block;
+          overflow: hidden;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
+        }
+      }
+    }
+  }
+  //=================================LayouyComponent CSS Done
+
+  // coverPageCSS===================start
+  .coverPageBackGround {
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    align-content: center;
+    flex-wrap: nowrap;
+    background-image: url("../../public/image/coverPageBack2.png");
+    .coverPageFrame {
+      flex-shrink: 0;
+      width: 1920px;
+      height: 1080px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
       overflow: hidden;
       position: relative;
@@ -2675,18 +3691,234 @@ body {
           padding: 0px 0px 0px 0px;
           align-content: center;
           flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          white-space: pre;
-          position: relative;
-          font-weight: 700;
-          font-family: "Inter-Bold", "Inter", sans-serif;
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 16px;
-          letter-spacing: 0px;
-          line-height: 1.2;
+          gap: 0;
+          border-radius: 10px;
+          .signUpTitle {
+            flex-shrink: 0;
+            width: min-content;
+            height: 54px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 45px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+            text-align: center;
+          }
+          .signUpInputSection {
+            flex-shrink: 0;
+            width: 818px;
+            height: 247px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            .nameText,
+            .emailText {
+              flex-shrink: 0;
+              width: auto; /* 127px */
+              height: auto; /* 24px */
+              white-space: pre;
+              position: relative;
+              font-weight: 500;
+              font-family: "Inter-Medium", "Inter", sans-serif;
+              color: #ffffff;
+              font-size: 20px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+            .userNameSection,
+            .userEmailSection {
+              flex-shrink: 0;
+              width: 400px;
+              height: 69px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              overflow: visible;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: flex-start;
+              flex-wrap: nowrap;
+              gap: 5px;
+              border-radius: 0px 0px 0px 0px;
+              .nameInput,
+              .emailInput {
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 400px;
+                height: 40px;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                border-radius: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.68);
+                > input {
+                  width: 100%;
+                  height: 100%;
+                  border: none;
+                  background: none;
+                  padding: 0px 15px 0px 15px;
+                  color: white;
+                  &:focus {
+                    outline: none;
+                  }
+                }
+              }
+            }
+          }
+          .signUpChoiceSection {
+            flex-shrink: 0;
+            width: min-content; /* 317px */
+            height: min-content; /* 95px */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            .signUpinfoText {
+              flex-shrink: 0;
+              width: min-content; /* 173px */
+              height: min-content; /* 20px */
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 10px;
+              border-radius: 0px 0px 0px 0px;
+              white-space: pre;
+              position: relative;
+              font-weight: 700;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 16px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+            .signUpButtonSection {
+              flex-shrink: 0;
+              width: min-content; /* 317px */
+              height: min-content; /* 65px */
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 25px;
+              border-radius: 0px 0px 0px 0px;
+              .userButton,
+              .createrButton {
+                cursor: pointer;
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 146px;
+                height: 65px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.4);
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 5px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                white-space: pre;
+                font-weight: 500;
+                font-family: "Inter-Medium", "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 20px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+              }
+            }
+          }
+          .signUpButtonFrame {
+            flex-shrink: 0;
+            width: 818px;
+            height: 192px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            .signUpButton {
+              cursor: pointer;
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 400px;
+              height: 40px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              background-color: #ffffff;
+              overflow: hidden;
+              position: relative;
+              align-content: center;
+              flex-wrap: nowrap;
+              border-radius: 25px;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              white-space: pre;
+              font-weight: bold;
+              font-family: "Inter-Medium", "Inter", sans-serif;
+              color: rgba(0, 0, 0, 0.5);
+              font-size: 20px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+              &:hover {
+                color: rgba(0, 0, 0, 1);
+              }
+            }
+          }
         }
-        .signUpButtonSection {
+        .imgSection {
+          box-sizing: border-box;
           flex-shrink: 0;
           width: min-content; /* 317px */
           height: min-content; /* 65px */
@@ -3639,7 +4871,6 @@ body {
               display: block;
               overflow: hidden;
               position: relative;
-              background-image: url("../../public/image/IRON.jpg");
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
@@ -4205,13 +5436,16 @@ body {
               gap: 10px;
               border-radius: 0px 0px 0px 0px;
               flex-shrink: 0;
-              white-space: pre;
-              font-weight: 600;
-              font-family: "Inter-SemiBold", "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 30px;
-              letter-spacing: 0px;
-              line-height: 1.2;
+              width: 100%;
+              height: 100%;
+              display: block;
+              overflow: hidden;
+              z-index: 1;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+              position: absolute;
+              border-radius: 0px 0px 0px 0px;
             }
           }
           .detailButton {
@@ -4759,18 +5993,6 @@ body {
     }
   }
 }
-//DetailContainerCSS============done
-// .myAtropos {
-//     @import 'atropos/scss';
-//     width: 500px;
-//     height: 500px;
-//     .iron{
-//         width: 100%;
-//         height: 100%;
-//         background-image: url("./Img/IRON.jpg");
-//     }
-//   }
-// NftMarketContainerCSS===========start
 .nftMarketContainerFrame {
   box-sizing: border-box;
   width: 1359px;
@@ -9177,4 +10399,1018 @@ body {
     }
   }
 }
+// SubscriptionContainer CSS ===============done
+// MyPage=> ForCreaterPage===============start
+.MyPageCreaterFrame {
+  box-sizing: border-box;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 140px 20px 20px 20px;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  .topSection {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1319px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 0px 15px 0px;
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    border-radius: 0px 0px 0px 0px;
+    .totalMoneySection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 341px;
+      height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px 20px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .infoText {
+        flex-shrink: 0;
+        width: min-content; /* 216px */
+        height: min-content; /* 30px */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(1) {
+          flex-shrink: 0;
+          width: auto; /* 187px */
+          height: auto; /* 19px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 16px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        :nth-child(2) {
+          flex-shrink: 0;
+          width: 216px;
+          height: 1px;
+          display: block;
+          background-color: rgba(255, 255, 255, 0.8);
+          overflow: hidden;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
+        }
+      }
+      .infoNumber {
+        flex-shrink: 0;
+        width: min-content; /* 220px */
+        height: min-content; /* 36px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(1) {
+          flex-shrink: 0;
+          width: auto; /* 61px */
+          height: auto; /* 36px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 30px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        :nth-child(2) {
+          flex-shrink: 0;
+          width: 149px;
+          height: 30px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          background: linear-gradient(to right, #9d00ff, #f700ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 30px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+      }
+    }
+    .historyGrapSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 958px;
+      height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 30px 20px 30px;
+      background-color: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 15px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .historyText {
+        flex-shrink: 0;
+        width: 868px;
+        height: auto; /* 19px */
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-word;
+        position: relative;
+        font-weight: 700;
+        font-style: normal;
+        font-family: "Inter-Bold", "Inter", sans-serif;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 16px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+        text-align: left;
+      }
+      .historyGrapFrame {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 868px;
+        height: 96px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+        border-color: rgba(255, 255, 255, 0.5);
+        border-style: solid;
+        border-top-width: 0px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 0px;
+        border-radius: 0px 0px 0px 5px;
+      }
+    }
+  }
+  .bottomSection {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1319px;
+    height: 550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 20px 20px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    .createrHandlerFrame {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 1279px;
+      height: 510px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0px 15px 0px 15px;
+      overflow: hidden;
+      position: relative;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 10px;
+      border-radius: 0px 0px 0px 0px;
+      .handleNavBar {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1249px;
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 15px 0px 15px;
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        border-radius: 0px 0px 0px 0px;
+        .text {
+          flex-shrink: 0;
+          width: auto; /* 237px */
+          height: auto; /* 30px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 25px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        .button {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 157px;
+          height: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.1);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 20px 20px 20px 0px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          cursor: pointer;
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 14px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+      }
+      .funddingList {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1260px;
+        height: 490px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px 20px 10px 10px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 15px;
+        border-radius: 0px 0px 0px 0px;
+        &::-webkit-scrollbar {
+          width: 20px;
+          height: 56px;
+          background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.4);
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .funddingItemBox {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 1219px;
+          height: 60px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 30px 0px 30px;
+          background-color: rgba(255, 255, 255, 0.1);
+          overflow: hidden;
+          position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
+          border-radius: 40px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          .infoSection {
+            flex-shrink: 0;
+            width: min-content; /* 816px */
+            height: min-content; /* 22px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 40px;
+            border-radius: 0px 0px 0px 0px;
+            .funddingTitle {
+              cursor: pointer;
+            }
+            :nth-child(-n + 5) {
+              flex-shrink: 0;
+              width: auto; /* 127px */
+              height: auto; /* 22px */
+              white-space: pre;
+              position: relative;
+              font-weight: 700;
+              font-style: normal;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 18px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+          }
+          .musicInputButton {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 128px;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            .buttonLine {
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 121px;
+              height: 34px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 0;
+              border-radius: 25px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              flex-shrink: 0;
+              white-space: pre;
+              font-weight: 700;
+              font-style: normal;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 18px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+          }
+          .funddingTerminationButton {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 128px;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+  .backDrop {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal {
+    width: 883px;
+    height: 855px;
+    background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+    -webkit-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px 30px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0.796841278193901px 0.796841278193901px 0px rgba(0, 0, 0, 0.01), 0px 2.413677098392273px 2.413677098392273px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836426702925px 6.3802836426702925px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    .nftRegistrationFrame {
+      flex-shrink: 0;
+      width: 803px;
+      height: 795px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 50px;
+      border-radius: 0px 0px 0px 0px;
+      .topText {
+        flex-shrink: 0;
+        width: 803px;
+        height: min-content; /* 31px */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0px;
+        border-radius: 0px 0px 0px 0px;
+        flex-shrink: 0;
+        white-space: pre;
+        font-weight: 700;
+        font-style: normal;
+        font-family: "Inter-Bold", "Inter", sans-serif;
+        background: linear-gradient(to bottom, #d400ff, #ff00b7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 30px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+      .bottomFrame {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 803px;
+        height: 714px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px 40px 0px 40px;
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+        border-radius: 0px 0px 0px 0px;
+        .genreList {
+          flex-shrink: 0;
+          width: 723px;
+          height: 39px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          border-radius: 0px 0px 0px 0px;
+          .genreText {
+            flex-shrink: 0;
+            width: auto; /* 52px */
+            height: auto; /* 31px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 26px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .chooseInput {
+            flex-shrink: 0;
+            width: min-content;
+            height: 39px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 30px;
+            border-radius: 0px 0px 0px 0px;
+            .list {
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 488px;
+              height: 39px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              background-color: rgba(255, 255, 255, 0.1);
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 40px;
+              border-radius: 25px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              .option {
+                cursor: pointer;
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: min-content; /* 70px */
+                height: min-content; /* 34px */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 5px 15px 5px 15px;
+                overflow: hidden;
+                position: relative;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 0;
+                border-radius: 0px 0px 0px 0px;
+                flex-shrink: 0;
+                white-space: pre;
+                font-weight: 700;
+                font-style: normal;
+                font-family: "Inter-Bold", "Inter", sans-serif;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 20px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+                &:hover {
+                  background-color: rgba(255, 255, 255, 0.1);
+                  border-radius: 25px;
+                }
+              }
+            }
+            .defalt {
+              cursor: pointer;
+              flex-shrink: 0;
+              width: auto; /* 52px */
+              height: 31px;
+              white-space: pre;
+              position: relative;
+              font-weight: 700;
+              font-style: normal;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.5);
+              font-size: 26px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+          }
+        }
+        .bottomList {
+          flex-shrink: 0;
+          width: 723px;
+          height: 39px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          border-radius: 0px 0px 0px 0px;
+          :nth-child(1) {
+            flex-shrink: 0;
+            width: auto; /* 78px */
+            height: auto; /* 31px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 26px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          :nth-child(2) {
+            flex-shrink: 0;
+            width: 289px;
+            height: 39px;
+            border: transparent;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            background-color: transparent;
+            text-align: right;
+            align-items: center;
+            overflow: hidden;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 26px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+            &::placeholder {
+              text-align: right;
+            }
+            &:focus {
+              outline: none;
+              &::-webkit-input-placeholder {
+                transition: 0.3s;
+                opacity: 0;
+              }
+            }
+          }
+          .soundSource,
+          .albumCover {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 308px;
+            height: 39px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+            text-align: center;
+          }
+          .switchBox {
+            flex-shrink: 0;
+            width: 240px;
+            height: 39px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            .notTitle {
+              cursor: pointer;
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 115px;
+              height: 39px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              background-color: rgba(255, 255, 255, 0.1);
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 0;
+              border-radius: 0px 0px 0px 0px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              white-space: pre;
+              font-weight: 700;
+              font-style: normal;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 20px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+            .title {
+              cursor: pointer;
+              box-sizing: border-box;
+              flex-shrink: 0;
+              width: 115px;
+              height: 39px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              background-color: rgba(0, 0, 0, 0.1);
+              overflow: hidden;
+              position: relative;
+              padding: 0px 0px 0px 0px;
+              align-content: center;
+              flex-wrap: nowrap;
+              gap: 0;
+              border-radius: 0px 0px 0px 0px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              white-space: pre;
+              font-weight: 700;
+              font-style: normal;
+              font-family: "Inter-Bold", "Inter", sans-serif;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 20px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
+          }
+        }
+        .bottomListButton {
+          flex-shrink: 0;
+          width: 723px;
+          height: 183px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          border-radius: 0px 0px 0px 0px;
+          .cancelButton {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 182px;
+            height: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .registerButton {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 233px;
+            height: 82px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 26px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+}
 // MyPage=> ForCreaterPage===============done
+// EventComponent CSS============start => 나중에 위치는 다 옮겨야함
+.EventFrame {
+  box-sizing: border-box;
+  width: 1359px;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2b2f5f;
+  overflow: visible;
+  align-content: center;
+  flex-wrap: nowrap;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+}
+.signUpBackDrop {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infoSuccessfulLog {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 738px;
+  height: 226px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 45px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.eventButton {
+}
+.loadingFrame {
+  width: 1920px;
+  height: 1080px;
+  background: radial-gradient(141.9% 200% at 50% 110.80000000000001%, #292929 0%, rgb(0, 0, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(141.9% 200% at 50% 110.80000000000001%, #292929 0%, rgb(0, 0, 0) 100%);
+  overflow: visible;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  .loadingCenter {
+    flex-shrink: 0;
+    width: min-content; /* 452px */
+    height: min-content; /* 121px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .progressBar {
+    width: 450px;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: stretch;
+    border-radius: 60px;
+    background-color: #494b52;
+    box-shadow: 0px 0px 20px #111;
+    .bar {
+      width: 0%;
+      background-color: rgb(255, 174, 105);
+      background: linear-gradient(180deg, rgba(255, 174, 105, 1) 0% rgba(255, 173, 102, 1) 32% rgba(255, 132, 25, 1) 100%);
+    }
+  }
+}
+// EventComponent CSS============done => 나중에 위치는 다 옮겨야함
