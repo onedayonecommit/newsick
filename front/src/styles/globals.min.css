@@ -26,9 +26,7 @@ body {
 }
 .mainSlider .pageNav {
   position: absolute;
-  width: -moz-min-content;
   width: min-content;
-  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: column;
@@ -116,9 +114,7 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 465px */
-  height: -moz-min-content;
   height: min-content; /* 636px */
   display: flex;
   flex-direction: column;
@@ -134,9 +130,7 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 193px */
-  height: -moz-min-content;
   height: min-content; /* 154px */
   display: flex;
   flex-direction: column;
@@ -401,7 +395,9 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .singerName, .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .songName, .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .fundingPrice {
+.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .singerName,
+.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .songName,
+.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .fundingPrice {
   flex-shrink: 0;
   width: auto; /* 64px */
   height: auto; /* 19px */
@@ -618,13 +614,15 @@ body {
   gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
-.playBarSection .controlBar .playOrStop .leftMusic, .playBarSection .controlBar .playOrStop .rightMusic {
+.playBarSection .controlBar .playOrStop .leftMusic,
+.playBarSection .controlBar .playOrStop .rightMusic {
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   width: 53px;
   height: 40px;
 }
-.playBarSection .controlBar .playOrStop .leftMusic:hover, .playBarSection .controlBar .playOrStop .rightMusic:hover {
+.playBarSection .controlBar .playOrStop .leftMusic:hover,
+.playBarSection .controlBar .playOrStop .rightMusic:hover {
   color: rgb(255, 255, 255);
 }
 .playBarSection .controlBar .playOrStop .stopOrPlayButton {
@@ -795,9 +793,7 @@ body {
 }
 .MusicPlayFrame .songDetailSection .slideSection .slideList .slides > button {
   cursor: pointer;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background: transparent;
   border: none;
   color: white;
@@ -856,7 +852,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MusicPlayFrame .songDetailSection .slideSection .slideList .slideContentInner .slideSubtitle, .MusicPlayFrame .songDetailSection .slideSection .slideList .slideContentInner .slideDescription {
+.MusicPlayFrame .songDetailSection .slideSection .slideList .slideContentInner .slideSubtitle,
+.MusicPlayFrame .songDetailSection .slideSection .slideList .slideContentInner .slideDescription {
   flex-shrink: 0;
   white-space: pre;
   font-family: "Inter", sans-serif;
@@ -1069,9 +1066,7 @@ body {
 }
 
 .toggleFrame {
-  width: -moz-min-content;
   width: min-content;
-  height: -moz-min-content;
   height: min-content;
   position: absolute;
   top: 40px;
@@ -1165,7 +1160,9 @@ body {
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.toggleFrame .toggle .applicationCreator, .toggleFrame .toggle .listInterests, .toggleFrame .toggle .listOwn {
+.toggleFrame .toggle .applicationCreator,
+.toggleFrame .toggle .listInterests,
+.toggleFrame .toggle .listOwn {
   cursor: pointer;
   flex-shrink: 0;
   width: 260px;
@@ -1497,9 +1494,7 @@ body {
 
 .pageNationFrame {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
   flex-direction: row;
@@ -1738,9 +1733,7 @@ body {
 }
 .layoutFrame .layoutBox .sideBarSection .iconBar .iconButton {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 40px */
-  height: -moz-min-content;
   height: min-content; /* 356px */
   display: flex;
   flex-direction: column;
@@ -2072,9 +2065,7 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 112px */
-  height: -moz-min-content;
   height: min-content; /* 46px */
   display: flex;
   flex-direction: column;
@@ -2090,9 +2081,7 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userName {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 80px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: row;
@@ -2116,9 +2105,7 @@ body {
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userEmail {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 112px */
-  height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
   flex-direction: column;
@@ -2230,9 +2217,7 @@ body {
 }
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 396px */
-  height: -moz-min-content;
   height: min-content; /* 395px */
   display: flex;
   flex-direction: column;
@@ -2264,9 +2249,7 @@ body {
 }
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList .infoTextSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 396px */
-  height: -moz-min-content;
   height: min-content; /* 215px */
   display: flex;
   flex-direction: column;
@@ -2345,7 +2328,7 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10PX;
+  gap: 10px;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
@@ -2479,7 +2462,7 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
-  background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e, #7758D1);
+  background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e, #7758d1);
   background-size: 180% 180%;
   animation: gradient-animation 6s ease infinite;
 }
@@ -2536,7 +2519,6 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpTitle {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content;
   height: 54px;
   display: flex;
@@ -2576,7 +2558,8 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .nameText, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .emailText {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .nameText,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .emailText {
   flex-shrink: 0;
   width: auto; /* 127px */
   height: auto; /* 24px */
@@ -2589,7 +2572,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection {
   flex-shrink: 0;
   width: 400px;
   height: 69px;
@@ -2605,7 +2589,10 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 400px;
@@ -2616,7 +2603,10 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.68);
 }
-.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput > input, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput > input,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input {
   width: 100%;
   height: 100%;
   border: none;
@@ -2624,14 +2614,15 @@ body {
   padding: 0px 15px 0px 15px;
   color: white;
 }
-.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input:focus, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input:focus, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput > input:focus, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input:focus {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input:focus,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input:focus,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput > input:focus,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input:focus {
   outline: none;
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 317px */
-  height: -moz-min-content;
   height: min-content; /* 95px */
   display: flex;
   flex-direction: column;
@@ -2647,9 +2638,7 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpinfoText {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 173px */
-  height: -moz-min-content;
   height: min-content; /* 20px */
   display: flex;
   flex-direction: column;
@@ -2673,9 +2662,7 @@ body {
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 317px */
-  height: -moz-min-content;
   height: min-content; /* 65px */
   display: flex;
   flex-direction: row;
@@ -2689,7 +2676,8 @@ body {
   gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
-.signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .userButton, .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .createrButton {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .userButton,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .createrButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -2779,7 +2767,6 @@ body {
 .mainContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: column;
@@ -2839,7 +2826,6 @@ body {
 .mainContainerFrame .rankingBoardSection {
   flex-shrink: 0;
   width: 1319px;
-  height: -moz-min-content;
   height: min-content; /* 275px */
   display: flex;
   flex-direction: row;
@@ -2856,7 +2842,6 @@ body {
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame {
   flex-shrink: 0;
   width: 1319px;
-  height: -moz-min-content;
   height: min-content; /* 275px */
   display: flex;
   flex-direction: column;
@@ -2873,7 +2858,6 @@ body {
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame .rankingText {
   flex-shrink: 0;
   width: 1319px;
-  height: -moz-min-content;
   height: min-content; /* 35px */
   display: flex;
   flex-direction: row;
@@ -2916,9 +2900,7 @@ body {
 }
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame .rankingList .rankingItem {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 867px */
-  height: -moz-min-content;
   height: min-content; /* 40px */
   display: flex;
   flex-direction: row;
@@ -2935,7 +2917,6 @@ body {
 .mainContainerFrame .hotTopicSection {
   flex-shrink: 0;
   width: 1319px;
-  height: -moz-min-content;
   height: min-content; /* 595px */
   display: flex;
   flex-direction: column;
@@ -2952,7 +2933,6 @@ body {
 .mainContainerFrame .hotTopicSection .hotTopicText {
   flex-shrink: 0;
   width: 1319px;
-  height: -moz-min-content;
   height: min-content; /* 35px */
   display: flex;
   flex-direction: row;
@@ -2978,7 +2958,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: -moz-min-content;
   height: min-content; /* 538px */
   display: flex;
   flex-direction: row;
@@ -3109,7 +3088,7 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10PX;
+  gap: 10px;
   border-radius: 0px 0px 0px 0px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -3639,6 +3618,7 @@ body {
   display: block;
   overflow: hidden;
   position: relative;
+  background-image: url("../../public/image/IRON.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -3840,7 +3820,6 @@ body {
 .FundingContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -moz-min-content;
   height: min-content; /* 1561px */
   display: flex;
   flex-direction: column;
@@ -3955,9 +3934,7 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 93px */
-  height: -moz-min-content;
   height: min-content; /* 33px */
   display: flex;
   flex-direction: column;
@@ -3973,9 +3950,7 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .createrName {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 93px */
-  height: -moz-min-content;
   height: min-content; /* 16px */
   display: flex;
   flex-direction: row;
@@ -3999,9 +3974,7 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .fundingInfo {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 59px */
-  height: -moz-min-content;
   height: min-content; /* 12px */
   display: flex;
   flex-direction: row;
@@ -4111,9 +4084,7 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 265px */
-  height: -moz-min-content;
   height: min-content; /* 249px */
   display: flex;
   flex-direction: column;
@@ -4146,9 +4117,7 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingName {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 264px */
-  height: -moz-min-content;
   height: min-content; /* 46px */
   display: flex;
   flex-direction: row;
@@ -4172,9 +4141,7 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotCreaterName {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 194px */
-  height: -moz-min-content;
   height: min-content; /* 36px */
   display: flex;
   flex-direction: row;
@@ -4199,9 +4166,7 @@ body {
 }
 .FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingInfo {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 172px */
-  height: -moz-min-content;
   height: min-content; /* 36px */
   display: flex;
   flex-direction: row;
@@ -4461,7 +4426,13 @@ body {
 .detailContainerFrame .swiper-slide {
   /* Center slide text vertically */
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
   align-items: center;
 }
 .detailContainerFrame .detailContainerBack {
@@ -4612,9 +4583,7 @@ body {
 }
 .detailContainerFrame .detailInfoSection .profileSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 120px */
-  height: -moz-min-content;
   height: min-content; /* 28px */
   display: flex;
   flex-direction: row;
@@ -4649,9 +4618,7 @@ body {
 }
 .detailContainerFrame .detailInfoSection .topInfoSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 303px */
-  height: -moz-min-content;
   height: min-content; /* 189px */
   display: flex;
   flex-direction: column;
@@ -4683,9 +4650,7 @@ body {
 }
 .detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 295px */
-  height: -moz-min-content;
   height: min-content; /* 126px */
   display: flex;
   flex-direction: column;
@@ -4747,7 +4712,6 @@ body {
 .nftMarketContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -moz-min-content;
   height: min-content; /* 1439px */
   display: flex;
   flex-direction: column;
@@ -4906,7 +4870,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: -moz-min-content;
   height: min-content; /* 912px */
   display: flex;
   flex-direction: column;
@@ -4954,9 +4917,7 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 345px */
-  height: -moz-min-content;
   height: min-content; /* 34px */
   display: flex;
   flex-direction: row;
@@ -4985,9 +4946,7 @@ body {
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 152px */
-  height: -moz-min-content;
   height: min-content; /* 34px */
   display: flex;
   flex-direction: row;
@@ -5222,9 +5181,7 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .bottomFrame .bottomSection {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -moz-min-content;
   height: min-content; /* 17px */
   display: flex;
   flex-direction: row;
@@ -5388,7 +5345,6 @@ body {
 .nftDetailContainerFrame .topSection .infoSwiperSection {
   left: 572px;
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content;
   height: 334px;
   display: flex;
@@ -5406,7 +5362,6 @@ body {
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content;
   height: 334px;
   display: flex;
@@ -5442,9 +5397,7 @@ body {
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox .infoName {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 51px */
-  height: -moz-min-content;
   height: min-content; /* 14px */
   display: flex;
   flex-direction: column;
@@ -5702,7 +5655,7 @@ body {
   flex-wrap: nowrap;
   gap: 0;
   border-radius: 0px 0px 0px 0px;
-  border-color: #FFFFFF;
+  border-color: #ffffff;
   border-style: solid;
   border-top-width: 0px;
   border-bottom-width: 1px;
@@ -5832,9 +5785,7 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .canOrderPriceSection .leftSection .text,
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderPriceSection .leftSection .text {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content;
-  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: row;
@@ -5903,9 +5854,7 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .canOrderPriceSection .RightSection .inputSection :nth-child(2),
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderPriceSection .RightSection .inputSection :nth-child(2) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 35px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: row;
@@ -5965,9 +5914,7 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .buyPriceSection .leftSection .text,
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderQuantitySection .leftSection .text {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 68px */
-  height: -moz-min-content;
   height: min-content; /* 20px */
   display: flex;
   flex-direction: row;
@@ -6077,10 +6024,10 @@ body {
   line-height: 1.2;
 }
 
-.fundingCreateContainerFrame, .fundingCreateSecondContainerFrame {
+.fundingCreateContainerFrame,
+.fundingCreateSecondContainerFrame {
   box-sizing: border-box;
   width: 1359px;
-  height: -moz-min-content;
   height: min-content; /* 1653px */
   display: flex;
   flex-direction: column;
@@ -6095,7 +6042,8 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .infoBox, .fundingCreateSecondContainerFrame .infoBox {
+.fundingCreateContainerFrame .infoBox,
+.fundingCreateSecondContainerFrame .infoBox {
   top: 30px;
   left: 100px;
   box-sizing: border-box;
@@ -6118,11 +6066,10 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.fundingCreateContainerFrame .infoBox .infoFrame, .fundingCreateSecondContainerFrame .infoBox .infoFrame {
+.fundingCreateContainerFrame .infoBox .infoFrame,
+.fundingCreateSecondContainerFrame .infoBox .infoFrame {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 356px */
-  height: -moz-min-content;
   height: min-content; /* 40px */
   display: flex;
   flex-direction: row;
@@ -6136,12 +6083,14 @@ body {
   gap: 19px;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .infoBox .infoFrame :nth-child(1), .fundingCreateSecondContainerFrame .infoBox .infoFrame :nth-child(1) {
+.fundingCreateContainerFrame .infoBox .infoFrame :nth-child(1),
+.fundingCreateSecondContainerFrame .infoBox .infoFrame :nth-child(1) {
   color: white;
   width: 40px;
   height: 40px;
 }
-.fundingCreateContainerFrame .infoBox .infoFrame :nth-child(2), .fundingCreateSecondContainerFrame .infoBox .infoFrame :nth-child(2) {
+.fundingCreateContainerFrame .infoBox .infoFrame :nth-child(2),
+.fundingCreateSecondContainerFrame .infoBox .infoFrame :nth-child(2) {
   flex-shrink: 0;
   width: auto; /* 297px */
   height: auto; /* 36px */
@@ -6153,11 +6102,11 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection, .fundingCreateSecondContainerFrame .mainContentSection {
+.fundingCreateContainerFrame .mainContentSection,
+.fundingCreateSecondContainerFrame .mainContentSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1279px;
-  height: -moz-min-content;
   height: min-content;
   display: flex;
   flex-direction: column;
@@ -6174,7 +6123,8 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection, .fundingCreateSecondContainerFrame .mainContentSection .secondContentSection {
+.fundingCreateContainerFrame .mainContentSection .secondContentSection,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection {
   flex-shrink: 0;
   width: 1199px;
   height: -moz-min-content;
@@ -6210,9 +6160,7 @@ body {
 }
 .fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 106px */
-  height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
   flex-direction: row;
@@ -6469,7 +6417,111 @@ body {
   border-radius: 0px 0px 0px 0px;
   border-color: 1px solid rgba(255, 255, 255, 0.1);
 }
-.fundingCreateContainerFrame .mainContentSection .submissionButton, .fundingCreateSecondContainerFrame .mainContentSection .submissionButton {
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame {
+  flex-shrink: 0;
+  width: min-content; /* 897px */
+  height: min-content; /* 50px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .info,
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .info {
+  flex-shrink: 0;
+  width: auto; /* 271px */
+  height: auto; /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content,
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content {
+  flex-shrink: 0;
+  width: min-content; /* 606px */
+  height: min-content; /* 50px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 291px */
+  height: auto; /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(2),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(2) {
+  flex-shrink: 0;
+  width: 125px;
+  height: 50px;
+  display: block;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border-color: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(3),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(3) {
+  flex-shrink: 0;
+  width: auto; /* 10px */
+  height: auto; /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(4),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(4) {
+  flex-shrink: 0;
+  width: 125px;
+  height: 50px;
+  display: block;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border-color: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingCreateContainerFrame .mainContentSection .submissionButton,
+.fundingCreateSecondContainerFrame .mainContentSection .submissionButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -6496,10 +6548,10 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection, .fundingCreateSecondContainerFrame .mainContentSection .contentSection {
+.fundingCreateContainerFrame .mainContentSection .contentSection,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection {
   flex-shrink: 0;
   width: 1199px;
-  height: -moz-min-content;
   height: min-content; /* 1121px */
   display: flex;
   flex-direction: column;
@@ -6665,9 +6717,16 @@ body {
   border-left-width: 0px;
   border-right-width: 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1), .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1), .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1),
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1), .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1),
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1),
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1),
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1),
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1),
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1199px;
@@ -6683,9 +6742,16 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitle, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitle, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitle,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitle, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitle, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitle, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitle, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitle,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitle, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitle {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitle,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitle,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitle,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitle,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitle,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitle,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitle,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitle,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitle,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitle {
   flex-shrink: 0;
   width: 123px;
   height: 24px;
@@ -6700,9 +6766,16 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput {
   background-color: transparent;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -6718,24 +6791,60 @@ body {
   font-size: 20px;
   padding-inline: 15px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput:focus,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput:focus,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput:focus {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingTitleInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingTitleInput:focus {
   outline: none;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriod, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProduction, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnit, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minimumNumber, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriod, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProduction, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnit, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minimumNumber, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriod, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProduction, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnit, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minimumNumber,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriod,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProduction,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnit,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minimumNumber,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriod,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProduction,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnit,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minimumNumber,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriod,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProduction,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnit,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minimumNumber,
 .fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriod,
 .fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProduction,
 .fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnit,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minimumNumber, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriod, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProduction, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnit, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minimumNumber, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriod, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProduction, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnit, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minimumNumber, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriod, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProduction, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnit, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minimumNumber, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriod, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProduction, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnit, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minimumNumber,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minimumNumber,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriod,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProduction,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnit,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minimumNumber,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriod,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProduction,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnit,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minimumNumber,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriod,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProduction,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnit,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minimumNumber,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriod,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProduction,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnit,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minimumNumber,
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriod,
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProduction,
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnit,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minimumNumber, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriod, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProduction, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnit, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minimumNumber {
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minimumNumber,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriod,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProduction,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnit,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minimumNumber {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content;
-  height: -moz-min-content;
   height: min-content;
   display: block;
   overflow: hidden;
@@ -6748,9 +6857,16 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame {
   flex-shrink: 0;
   width: 832px;
   height: 100%;
@@ -6767,9 +6883,16 @@ body {
   border-radius: 0px 0px 0px 0px;
   color: white;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame > input, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame > input, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame > input,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame > input, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame > input,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame > input {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .fundingPeriodFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .fundingPeriodFrame > input {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 389px;
@@ -6791,9 +6914,16 @@ body {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame {
   flex-shrink: 0;
   width: 832px;
   height: 100px;
@@ -6809,9 +6939,16 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > div, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > div, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > div,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > div, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > div, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > div, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > div, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > div,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > div, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > div {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > div,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > div {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 390px;
@@ -6837,9 +6974,16 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > input, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > input, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > input,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > input, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > input,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > input, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > input {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .songProductionFrame > input,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .songProductionFrame > input {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 389px;
@@ -6861,9 +7005,16 @@ body {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 389px;
@@ -6885,14 +7036,28 @@ body {
   text-align: end;
   color: #ffffff;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput:focus,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput:focus,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput:focus {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .nftPriceUnitInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .nftPriceUnitInput:focus {
   outline: none;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame {
   flex-shrink: 0;
   width: 832px;
   height: 100px;
@@ -6908,9 +7073,16 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 299px;
@@ -6932,14 +7104,28 @@ body {
   text-align: end;
   color: #ffffff;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput:focus, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput:focus, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput:focus {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .inputFrame .minimumNumberInput:focus,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .inputFrame .minimumNumberInput:focus {
   outline: none;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minNum, .fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minNum, .fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minNum,
-.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minNum, .fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minNum, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minNum, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minNum, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minNum,
-.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minNum, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minNum {
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minNum,
+.fundingCreateContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minNum,
+.fundingCreateContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minNum,
+.fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minNum,
+.fundingCreateContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minNum,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingTitleSection :nth-child(1) .minNum,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .fundingPeriodSection :nth-child(1) .minNum,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .songProductionSection :nth-child(1) .minNum,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection :nth-child(1) .minNum,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .minimumNumberSection :nth-child(1) .minNum {
   flex-shrink: 0;
   display: block;
   overflow: hidden;
@@ -6954,7 +7140,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection {
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1199px;
@@ -6976,7 +7163,8 @@ body {
   border-left-width: 0px;
   border-right-width: 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection {
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 410px;
@@ -6993,11 +7181,10 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) {
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 330px */
-  height: -moz-min-content;
   height: min-content; /* 215px */
   display: flex;
   flex-direction: column;
@@ -7011,11 +7198,10 @@ body {
   gap: 71px;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1) {
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 152px */
-  height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
   flex-direction: column;
@@ -7036,7 +7222,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(2), .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(2) {
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(2),
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(2) {
   flex-shrink: 0;
   width: 330px;
   height: 120px;
@@ -7053,7 +7240,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection {
+.fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection,
+.fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection {
   flex-shrink: 0;
   width: 764px;
   height: 521px;
@@ -7131,7 +7319,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
   border: 1px dotted #ffffff;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .fundingCreateContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame .imgInput, .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .imgInputFrame .imgInput {
   box-sizing: border-box;
@@ -7300,7 +7488,7 @@ body {
   font-size: 42px;
   letter-spacing: 0px;
   line-height: 1.2;
-  background: linear-gradient(to right, #FF3DB8, #DB29FF);
+  background: linear-gradient(to right, #ff3db8, #db29ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -7404,7 +7592,6 @@ body {
 }
 .secondMyPage .pageNationFrame {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content;
   height: 100px;
   display: flex;
@@ -7463,7 +7650,7 @@ body {
   font-size: 25px;
   letter-spacing: 0px;
   line-height: 1.2;
-  background: linear-gradient(to right, #FF00C3, #2B6FE3);
+  background: linear-gradient(to right, #ff00c3, #2b6fe3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -7496,7 +7683,6 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1060px;
-  height: -moz-min-content;
   height: min-content; /* 1754px */
   display: flex;
   flex-direction: row;
@@ -7610,9 +7796,7 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 65px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: row;
@@ -7628,9 +7812,7 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(1) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 34px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: row;
@@ -7655,9 +7837,7 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(2) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 31px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: row;
@@ -7680,9 +7860,7 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 57px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: row;
@@ -7698,9 +7876,7 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state :nth-child(1) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 57px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: row;
@@ -7741,9 +7917,7 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .nftNameTag {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 100px */
-  height: -moz-min-content;
   height: min-content; /* 24px */
   display: flex;
   flex-direction: row;
@@ -7766,9 +7940,7 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 161px */
-  height: -moz-min-content;
   height: min-content; /* 25px */
   display: flex;
   flex-direction: row;
@@ -7978,7 +8150,7 @@ body {
   position: relative;
   font-weight: 700;
   font-family: "Inter-Bold", "Inter", sans-serif;
-  background: linear-gradient(to right, #2B6FE3, #FF00C3);
+  background: linear-gradient(to right, #2b6fe3, #ff00c3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 25px;
@@ -8083,9 +8255,7 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 95px */
-  height: -moz-min-content;
   height: min-content; /* 19px */
   display: flex;
   flex-direction: column;
@@ -8107,11 +8277,10 @@ body {
   letter-spacing: 0px;
   line-height: 1;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2), .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2),
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 40px */
-  height: -moz-min-content;
   height: min-content; /* 16px */
   display: flex;
   flex-direction: row;
@@ -8331,9 +8500,7 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 153px */
-  height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
@@ -8370,9 +8537,7 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
   flex-direction: column;
@@ -8454,9 +8619,7 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 123px */
-  height: -moz-min-content;
   height: min-content; /* 27px */
   display: flex;
   flex-direction: row;
@@ -8513,9 +8676,7 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 129px */
-  height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
@@ -8552,9 +8713,7 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
   flex-direction: column;
@@ -8664,9 +8823,7 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 129px */
-  height: -moz-min-content;
   height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
@@ -8703,9 +8860,7 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList {
   flex-shrink: 0;
-  width: -moz-min-content;
   width: min-content; /* 165px */
-  height: -moz-min-content;
   height: min-content; /* 160px */
   display: flex;
   flex-direction: column;

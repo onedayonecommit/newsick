@@ -1,4 +1,4 @@
-const NEWSIC_FUND_CA = "0xB553Fa0bCaAd2Ccf9Aa92A589d90286Dd3485050";
+const NEWSIC_FUND_CA = "0xa080858003De35CE56F57D90B2A5Cbb5457D736c";
 const NEWSIC_FUND_ABI = [
   {
     inputs: [],
@@ -185,11 +185,6 @@ const NEWSIC_FUND_ABI = [
           },
           {
             internalType: "uint256",
-            name: "min",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
             name: "max",
             type: "uint256",
           },
@@ -349,29 +344,6 @@ const NEWSIC_FUND_ABI = [
         type: "address",
       },
       {
-        internalType: "uint256",
-        name: "id",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "value",
-        type: "uint256",
-      },
-    ],
-    name: "burn",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "account",
-        type: "address",
-      },
-      {
         internalType: "uint256[]",
         name: "ids",
         type: "uint256[]",
@@ -383,6 +355,13 @@ const NEWSIC_FUND_ABI = [
       },
     ],
     name: "burnBatch",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "creatorDelete",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -588,39 +567,6 @@ const NEWSIC_FUND_ABI = [
         type: "address",
       },
       {
-        internalType: "uint256[]",
-        name: "ids",
-        type: "uint256[]",
-      },
-      {
-        internalType: "uint256[]",
-        name: "amounts",
-        type: "uint256[]",
-      },
-      {
-        internalType: "bytes",
-        name: "data",
-        type: "bytes",
-      },
-    ],
-    name: "safeBatchTransferFrom",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "from",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
         internalType: "uint256",
         name: "id",
         type: "uint256",
@@ -667,24 +613,6 @@ const NEWSIC_FUND_ABI = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "address",
-        name: "_associator",
-        type: "address",
-      },
-    ],
-    name: "setAssociate",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
         components: [
           {
             internalType: "address",
@@ -714,11 +642,6 @@ const NEWSIC_FUND_ABI = [
           {
             internalType: "uint256",
             name: "price",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "min",
             type: "uint256",
           },
           {
@@ -882,11 +805,6 @@ const NEWSIC_FUND_ABI = [
       },
       {
         internalType: "uint256",
-        name: "min",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
         name: "max",
         type: "uint256",
       },
@@ -932,6 +850,19 @@ const NEWSIC_FUND_ABI = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "totalTokenId",
+    outputs: [
+      {
+        internalType: "uint256[]",
+        name: "",
+        type: "uint256[]",
       },
     ],
     stateMutability: "view",
@@ -997,7 +928,7 @@ const NEWSIC_FUND_ABI = [
   },
 ];
 
-const NEWSIC_MARKET_CA = "0xDD827769241E9778182144f0e69a2A9401bFb6AB";
+const NEWSIC_MARKET_CA = "0x3dbE9B5c67bF0A80A8494a16B900c70ecd5B9A7B";
 const NEWSIC_MARKET_ABI = [
   {
     inputs: [
