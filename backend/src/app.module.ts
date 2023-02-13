@@ -8,6 +8,7 @@ import { S3Module } from './s3/s3.module';
 import { NftStorageModule } from './nft-storage/nft-storage.module';
 import { AuthModule } from './auth/auth.module';
 import { MypageModule } from './mypage/mypage.module';
+import { AppController } from './app.controller';
 // import { AppController } from './app.controller';
 
 @Module({
@@ -22,7 +23,7 @@ import { MypageModule } from './mypage/mypage.module';
     AuthModule,
     MypageModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}

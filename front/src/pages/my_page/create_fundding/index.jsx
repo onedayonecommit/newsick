@@ -46,10 +46,9 @@ const slideVerticalAnimation = {
 const FundingCreateContainer = () => {
   const convertToISO8601 = (e) => {
     const _date = new Date(e);
-    return setDate(_date.toISOString());
+    // console.log(_date.getTime());
+    return _date.getTime();
   };
-  const dated = new Date();
-  const isodate = dated.toISOString();
   const [date, setDate] = useState();
   const [data, setData] = useState({
     creator_id: "", // 크리에이터 지갑주소
@@ -107,11 +106,23 @@ const FundingCreateContainer = () => {
       startdate: data.funding_start_date, // 시작일
       finishdate: data.funding_finish_date, // 종료일
       makedate: data.funding_production_date, // 음원제작 기간
-      price: data.funding_price, // 개당 가격
+      price: data.funding_price * 10 ** 18, // 개당 가격
       min: data.funding_min, // 최소
       max: data.funding_min, //  최대
     };
     let _holdershare = data.funding_holdershare;
+    // {
+    //   "creator": "0xC58738e2f023d76267C96720deCB4956740e044C",
+    //   "uri": "bafkreihekh5q6ibjytapafgiwjj456ukvzyk5fpdcr7jylpfrsyvrvwlxy",
+    //   "startdate":"2023-02-07T00:00:00Z",
+    //   "finishdate":"2023-02-16T15:00:00.000Z",
+    //   "makedate":"2023-03-01T15:00:00.000Z",
+    //   "price": 0.002,
+    //   "min": 2000,
+    //   "max": 4000
+    // },
+    // 30
+
     console.log(_fundingStruct);
     console.log(_holdershare);
     // console.log(fundInfo);

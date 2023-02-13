@@ -49,6 +49,7 @@ export const fetchBuyTicket = createAsyncThunk(
   async (_data) => {
     console.log("DB에 넘겨주는 계정", _data);
     try {
+      console.log("백으로 시도");
       const _recieveData = await axios.post(
         "http://127.0.0.1:4000/buy-ticket", // 여기 사용하는 back 주소
         _data

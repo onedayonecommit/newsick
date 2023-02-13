@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { env } from "next.config";
 
 const variantPlay = {
   animate: {
