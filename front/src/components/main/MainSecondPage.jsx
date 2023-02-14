@@ -106,14 +106,25 @@ const MainSecondPage = () => {
         </div>
         <div className="sideContentBox"></div>
       </div>
-      <button
+      <motion.div
         onClick={() => {
           setPosition(position + 1);
+          setBackgroundCount(
+            backgroundCount === 0 ? slides.length - 1 : backgroundCount - 1
+          );
         }}
-        style={{ position: "absolute", right: 0, top: 0 }}
+        className="switchHotList"
+        initial={{ scale: 1 }}
+        transition={{
+          type: "spring",
+          duration: 1.5,
+        }}
+        whileHover={{
+          scale: 1.5,
+        }}
       >
         right
-      </button>
+      </motion.div>
       <motion.div
         className="slideHotTopicList"
         style={{ rotateZ: Rotate * position }}

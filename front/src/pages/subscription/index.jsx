@@ -3,7 +3,21 @@ import { useEffect, useState } from "react";
 import { store } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBuyTicket } from "@/middleware/fetchUser";
-
+import { motion } from "framer-motion";
+const svgVariants = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 0.7,
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+    },
+  },
+};
 const SubscriptionContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
   const user = useSelector((state) => state.userInfo);
@@ -63,39 +77,23 @@ const SubscriptionContainer = () => {
           <div />
         </div>
         <div className="SubscriptionListFrame">
-          <div className="optionBox1">
-            <div className="optionTitle">Free plan</div>
-            <div className="optionPrice">$15/mo</div>
-            <div className="benefitsSummary">
-              <div>Up to 3 projects</div>
-              <div />
-            </div>
-            <div className="optionBenefitList">
-              <div>Custom domain</div>
-              <div>Password protect</div>
-              <div>10GB bandwidth</div>
-              <div>1,000 CMS items</div>
-              <div>10,000 visitors</div>
-            </div>
-            <div className="option1BuyButton">Try for free</div>
-          </div>
-          <div className="optionBox2">
+          <div className="optionBox">
             <div className="recommendedMark">Popular</div>
+            <div className="middleLine" />
+            <div className="middleMark" />
             <div className="optionTitle">Basic plan</div>
-            <div className="optionPrice">$30/mo</div>
+            <div className="optionPrice">0.005 ETH</div>
             <div className="benefitsSummary">
-              <div>Billed yearly</div>
-              <div />
+              <div>한달 (30일)</div>
             </div>
             <div className="optionBenefitList">
-              <div>Custom domain</div>
-              <div>Password protect</div>
-              <div>10GB bandwidth</div>
-              <div>1,000 CMS items</div>
-              <div>10,000 visitors</div>
+              <div>
+                <div>새로운 들을거리 !</div>
+                <div>30일 오디오 컨텐츠</div>
+              </div>
             </div>
             <div
-              className="option1BuyButton"
+              className="optionBuyButton"
               onClick={() => {
                 buyTicket();
               }}
@@ -103,21 +101,27 @@ const SubscriptionContainer = () => {
               Subscribe
             </div>
           </div>
-          <div className="optionBox3">
-            <div className="optionTitle">Pro plan</div>
-            <div className="optionPrice">$45/mo</div>
-            <div className="benefitsSummary">
-              <div>Billed yearly</div>
-              <div />
-            </div>
-            <div className="optionBenefitList">
-              <div>Custom domain</div>
-              <div>Password protect</div>
-              <div>10GB bandwidth</div>
-              <div>1,000 CMS items</div>
-              <div>10,000 visitors</div>
-            </div>
-            <div className="option1BuyButton">Subscribe</div>
+          <div className="subscriptionProgressSection">
+            <motion.svg
+              viewBox="0 0 100 100"
+              width="450"
+              height="450"
+              variants={svgVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.circle
+                cx="50"
+                cy="50"
+                r="45"
+                fill="none"
+                stroke="rgba(255,255,255,0.8)"
+                strokeWidth="4"
+                strokeDasharray="283"
+                variants={svgVariants}
+                animate={{ pathLength: "70%" }}
+              />
+            </motion.svg>
           </div>
         </div>
       </div>
