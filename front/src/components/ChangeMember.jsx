@@ -1,9 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
 import testUserImg from "../../public/image/park.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
-import MypageBackDrop from "@/components";
+import { MypageBackDrop } from "@/components";
 const dropIn = {
   hidden: {
     x: "100vh",

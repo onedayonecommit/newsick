@@ -14,7 +14,7 @@ import In_production from "./reward/In_production";
 import ongoing from "./reward/ongoing";
 
 // mypage
-import RegisterNftSong from "./mypage/RegisterNftSong";
+import Modal from "./mypage/RegisterNftSong";
 import MyPageCreator from "./mypage/MyPageCreator";
 import ApplyFundMusic from "./mypage/RegisterNftSong";
 import Graph from "./mypage/Graph";
@@ -28,6 +28,7 @@ import MusicPlayerPlayBar from "./music/MusicPlayerPlayBar";
 import MusicSlideForm from "./music/MusicSlideForm";
 import NftTop100 from "./music/NftTop100";
 import SongTop100 from "./music/SongTop100";
+import MusicPlayerListBar from "./music/MusicPlayerListBar";
 
 // main
 import MainFirstPage from "./main/MainFirstPage";
@@ -54,7 +55,7 @@ export {
   end,
   In_production,
   ongoing,
-  RegisterNftSong,
+  Modal,
   MyPageCreator,
   ApplyFundMusic,
   Graph,
@@ -74,4 +75,5 @@ export {
   MypageBackDrop,
   SignUpBackDrop,
   SuccessLog,
+  MusicPlayerListBar,
 };

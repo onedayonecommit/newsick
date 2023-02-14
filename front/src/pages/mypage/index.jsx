@@ -8,6 +8,7 @@ const MyPage = () => {
   const dispatch = useDispatch();
 
   const user_wallet_address = useSelector((state) => state.userInfo.address);
+  const isCreator = useSelector((state) => state.userInfo.isCreator);
 
   useEffect(() => {
     console.log("통신좀 해");
@@ -26,9 +27,16 @@ const MyPage = () => {
             {selectedOption === 1 && <motion.div className="togglePoint" initial={{ x: 356.5 }} animate={{ x: 356.5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
             {selectedOption === 2 && <motion.div className="togglePoint" initial={{ x: 718 }} animate={{ x: 718 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
           </AnimatePresence>
-          <motion.div className={` ${selectedOption === 0 ? "selected" : "option"}`} onClick={() => handleClick(0)}>
-            크리에이터 신청
-          </motion.div>
+          {isCreator ? (
+            <motion.div className={` ${selectedOption === 0 ? "selected" : "option"}`} onClick={() => handleClick(0)}>
+              크리에이터
+            </motion.div>
+          ) : (
+            <motion.div className={` ${selectedOption === 0 ? "selected" : "option"}`} onClick={() => handleClick(0)}>
+              크리에이터 신청
+            </motion.div>
+          )}
+
           <motion.div className={` ${selectedOption === 1 ? "selected" : "option"}`} onClick={() => handleClick(1)}>
             관심 (펀딩 & NFT)
           </motion.div>

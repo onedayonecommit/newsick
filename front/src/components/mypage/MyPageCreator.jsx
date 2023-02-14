@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Modal } from "@/components";
+import Link from "next/link";
 
 const FunddingDateItem = [
   {
@@ -102,7 +103,9 @@ const MyPageCreator = () => {
         <div className="creatorHandlerFrame">
           <div className="handleNavBar">
             <div className="text">진행중인 펀딩 핸들러</div>
-            <div className="button">펀 딩 등 록</div>
+            <Link href="mypage/creator/createfund">
+              <div className="button">펀 딩 등 록</div>
+            </Link>
           </div>
           <div className="funddingList">
             {FunddingDateItem.map((item) => (

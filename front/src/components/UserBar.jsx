@@ -3,9 +3,10 @@ import ConnectWallet from "./ConnectWallet";
 import Image from "next/image";
 import Link from "next/link";
 import { fetchUserImage } from "@/middleware/fetchUser";
+import { motion } from "framer-motion";
 
 // 컴포넌트
-const UserBar = () => {
+const UserBar = ({ handleOpen }) => {
   const dispatch = useDispatch();
   const userImg = useSelector((state) => state.userInfo.userImage);
   console.log("유저 기본 이미지", userImg);
@@ -31,14 +32,17 @@ const UserBar = () => {
   return (
     <div className="userBarSection">
       <div className="infoSection">
-        <div className="optionSection"></div>
+        <div className="optionSection">
+          <motion.div className="changeMemberInfo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }} onClick={handleOpen}>
+            회원정보 변경
+          </motion.div>
+        </div>
         {isCreator ? (
           <div className="userInfoSection">
             <div className="creatorTicket" />
             <Link href="/mypage">
               <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
             </Link>
-            <input type="file" name="file" accept="image/*" style={{ opacity: 0, height: "100px" }} onChange={profileImageHandler} />
             <ConnectWallet />
           </div>
         ) : (
