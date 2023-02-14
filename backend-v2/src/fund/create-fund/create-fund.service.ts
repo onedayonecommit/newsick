@@ -46,6 +46,7 @@ export class CreateFundService {
           create: [{ music_info, music_name, music_sns_address }],
         },
         singer: { create: [{ singer_info, singer_name, singer_sns_address }] },
+        funding_music: { create: [{ funding_music_player: { create: [{}] } }] },
         // id,
         // creator_id,
         // category,
