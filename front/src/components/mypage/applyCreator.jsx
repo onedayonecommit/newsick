@@ -12,9 +12,16 @@ const ApplyCreator = () => {
   const creatorApply = async () => {
     const creatorPrice = await web3.utils.toWei("0.1", "ether");
 
-    const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: user_wallet_address, value: creatorPrice });
+    const creatorPay = await NEWSIC_FUND.methods
+      .creatorJoinPay()
+      .send({ from: user_wallet_address, value: creatorPrice });
     console.log(creatorPay);
-    dispatch(fetchApplyCreator({ user_wallet_address, is_creator: creatorPay.events.creatorApplicant.returnValues._status }));
+    dispatch(
+      fetchApplyCreator({
+        user_wallet_address,
+        is_creator: creatorPay.events.creatorApplicant.returnValues._status,
+      })
+    );
   };
   return !isCreator ? (
     <>
@@ -23,10 +30,13 @@ const ApplyCreator = () => {
           <div className="leftSection">
             <div className="textSection">
               <div>Anyone can be a creator!</div>
-              <div>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</div>
+              <div>
+                is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley
+              </div>
               <div>0.1 ETH</div>
             </div>
-
             <div
               className="buttonFrame"
               onClick={() => {

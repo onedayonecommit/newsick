@@ -1,6 +1,6 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import PageNationFrame from "../PageNationFrame";
@@ -141,9 +141,17 @@ const nftItem = [
 const MyPageSecondContainer = () => {
   const [isFilled, setIsFilled] = useState();
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const [] = useState();
+  const dispatch = useDispatch();
   const handleClick = (item) => {
     setSelectedItem(item.id);
   };
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
+  console.log("123123", user_wallet_address);
+  useEffect(() => {
+    if (user_wallet_address) dispatch(fetchMyNftList({ user_wallet_address }));
+  }, [user_wallet_address]);
   return (
     <div className="secondMyPage">
       <div className="myPageSecondContainerFrame">

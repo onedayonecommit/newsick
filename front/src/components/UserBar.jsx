@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import ConnectWallet from "./ConnectWallet";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { fetchUserImage } from "@/middleware/fetchUser";

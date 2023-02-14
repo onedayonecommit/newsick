@@ -1,9 +1,10 @@
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated, fetchUserCheck } from "../middleware/fetchUser";
 import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
+import SuccessLog from "@/components/eventComponent/SuccessLog";
 
 const SignUp = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -17,6 +18,7 @@ const SignUp = () => {
   const [linkedAccount, setLinkedAccount] = useState("");
   const createStatus = useSelector((state) => state.userInfo.createStatus);
 
+  //===========================20230212 추가된부분
   const [isFalseText, setIsFalseText] = useState();
   const falseText = () => {
     setIsFalseText(!isFalseText);
@@ -24,6 +26,7 @@ const SignUp = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
+  //===========================20230212 추가된부분
 
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
@@ -164,7 +167,9 @@ const SignUp = () => {
       </AnimatePresence>
       <div className="signUpFrame">
         <div className="signUpSection">
-          <div className="signUpTitle">SIGN UP</div>
+          <div className="signUpTitle" onClick={falseText}>
+            SIGN UP
+          </div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
@@ -210,11 +215,11 @@ const SignUp = () => {
                 USER
               </motion.div>
               <motion.div
-                className="createrButton"
+                className="creatorButton"
                 animate={backgroundColorControls2}
                 onTap={() => setIsCreator(true)}
               >
-                CREATER
+                CREATOR
               </motion.div>
             </div>
           </div>

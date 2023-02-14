@@ -67,7 +67,6 @@ const slides = [
     image: ChangImage,
   },
 ];
-
 const MainSecondPage = () => {
   const slidesNum = 5 * 2;
   const x = useMotionValue(0);
@@ -105,7 +104,7 @@ const MainSecondPage = () => {
           <div>Hot Topic</div>
           <div>Funding</div>
         </div>
-        <div></div>
+        <div className="sideContentBox"></div>
       </div>
       <button
         onClick={() => {

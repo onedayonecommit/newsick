@@ -1,5 +1,8 @@
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import PlayBar from "./PlayBar";
 import { useRouter } from "next/router";
 import useWeb3 from "@/hooks/useWeb3";
 import { useSelector } from "react-redux";
@@ -26,6 +29,7 @@ const SideBar = () => {
     });
     console.log("크리에이터 초기화", reset);
   };
+  const [isHover, setIsHover] = useState(false);
   return (
     <div className="sideBarSection">
       <div className="iconBar">

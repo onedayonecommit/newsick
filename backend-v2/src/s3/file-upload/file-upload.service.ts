@@ -15,7 +15,7 @@ export class FileUploadService {
 
   /** 이전 파일 삭제 */
   async deleteFile(result: string) {
-    if (result !== 'default_profile_image.png') {
+    if (result !== 'default_profile_image.jpeg') {
       try {
         this.s3
           .deleteObject({

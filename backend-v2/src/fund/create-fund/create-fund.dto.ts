@@ -53,6 +53,37 @@ export class createFundSingerDto {
   singer_sex: number;
 }
 
+export class metadataDto {
+  @IsString()
+  nft_name: string;
+  @IsString()
+  producer: string;
+  @IsString()
+  description: string;
+}
+// 펀딩 신청할 때 객체 안에 객체 던지는거 이렇게 작성해주세요
+/**
+  {
+    fund:{
+        id:number,
+    },
+    lyrics_maker:{
+        lyrics_name:string,
+        lyrics_info:string,
+        lyrics_sns_address:string
+    },
+    music_maker:{
+        music_name: string;
+        music_sns_address: string;
+        music_info: string;
+    },
+    singer:{
+        singer_name: string;
+        singer_sns_address: string;
+        singer_info: string;
+    }
+}
+ */
 export class createFundMainDto {
   @IsObject()
   fund: createFundDto;

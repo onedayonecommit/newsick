@@ -11,6 +11,7 @@ const MyPage = () => {
 
   useEffect(() => {
     console.log("통신좀 해");
+    console.log(user_wallet_address);
     dispatch(fetchMyPage({ user_wallet_address }));
   }, [user_wallet_address]);
 

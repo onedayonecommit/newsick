@@ -4,7 +4,7 @@ CREATE TABLE `user` (
     `user_email` VARCHAR(191) NOT NULL,
     `user_wallet_address` VARCHAR(191) NOT NULL,
     `user_name` VARCHAR(191) NOT NULL,
-    `user_profile_image` VARCHAR(191) NOT NULL DEFAULT 'default_profile_image.png',
+    `user_profile_image` VARCHAR(191) NOT NULL DEFAULT 'default_profile_image.jpeg',
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updated_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
@@ -45,6 +45,7 @@ CREATE TABLE `ticket` (
 CREATE TABLE `funding` (
     `id` INTEGER NOT NULL,
     `creator_id` VARCHAR(191) NOT NULL,
+    `funding_title` VARCHAR(191) NOT NULL,
     `category` VARCHAR(191) NULL,
     `funding_info` VARCHAR(5000) NOT NULL DEFAULT '소개 내용 없음',
     `funding_nft_image` VARCHAR(191) NOT NULL,
@@ -52,6 +53,8 @@ CREATE TABLE `funding` (
     `funding_start_date` TIMESTAMP(3) NOT NULL,
     `funding_finish_date` TIMESTAMP(3) NOT NULL,
     `funding_production_date` TIMESTAMP(3) NOT NULL,
+    `discord_address` VARCHAR(191) NOT NULL,
+    `nft_name` VARCHAR(191) NOT NULL,
     `created_at` TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     PRIMARY KEY (`id`)
@@ -62,8 +65,8 @@ CREATE TABLE `music_maker` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `funding_id` INTEGER NOT NULL,
     `music_name` VARCHAR(191) NULL DEFAULT '정보 없음',
-    `music_sex` INTEGER NULL DEFAULT 0,
     `music_info` VARCHAR(5000) NULL DEFAULT '정보 없음',
+    `music_sns_address` VARCHAR(191) NULL DEFAULT '정보 없음',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -73,8 +76,8 @@ CREATE TABLE `lyrics_maker` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `funding_id` INTEGER NOT NULL,
     `lyrics_name` VARCHAR(191) NULL DEFAULT '정보 없음',
-    `lyrics_sex` INTEGER NULL DEFAULT 0,
     `lyrics_info` VARCHAR(5000) NULL DEFAULT '정보 없음',
+    `lyrics_sns_address` VARCHAR(191) NULL DEFAULT '정보 없음',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -84,8 +87,8 @@ CREATE TABLE `singer` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `funding_id` INTEGER NOT NULL,
     `singer_name` VARCHAR(191) NULL DEFAULT '정보 없음',
-    `singer_sex` INTEGER NULL DEFAULT 0,
     `singer_info` VARCHAR(5000) NULL DEFAULT '정보 없음',
+    `singer_sns_address` VARCHAR(191) NULL DEFAULT '정보 없음',
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -94,7 +97,7 @@ CREATE TABLE `singer` (
 CREATE TABLE `funding_music` (
     `funding_id` INTEGER NOT NULL,
     `music_name` VARCHAR(191) NOT NULL,
-    `music_lyrics` VARCHAR(191) NULL,
+    `music_lyrics` VARCHAR(5000) NULL,
     `music_genre` VARCHAR(191) NOT NULL,
     `music_maker` VARCHAR(191) NOT NULL,
     `lyrics_maker` VARCHAR(191) NULL,
@@ -103,7 +106,9 @@ CREATE TABLE `funding_music` (
     `album_name` VARCHAR(191) NOT NULL,
     `title` BOOLEAN NOT NULL DEFAULT false,
     `music_path` VARCHAR(191) NOT NULL,
+    `pending_status` BOOLEAN NOT NULL DEFAULT false,
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updated_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     PRIMARY KEY (`funding_id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -173,6 +178,15 @@ CREATE TABLE `heart_funding` (
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+-- CreateTable
+CREATE TABLE `heart_nft` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `user_id` VARCHAR(191) NOT NULL,
+    `funding_id` INTEGER NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 -- AddForeignKey
 ALTER TABLE `creator` ADD CONSTRAINT `creator_creator_id_fkey` FOREIGN KEY (`creator_id`) REFERENCES `user`(`user_wallet_address`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
@@ -208,3 +222,6 @@ ALTER TABLE `playlist` ADD CONSTRAINT `playlist_user_id_fkey` FOREIGN KEY (`user
 
 -- AddForeignKey
 ALTER TABLE `heart_funding` ADD CONSTRAINT `heart_funding_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_wallet_address`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `heart_nft` ADD CONSTRAINT `heart_nft_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_wallet_address`) ON DELETE RESTRICT ON UPDATE CASCADE;

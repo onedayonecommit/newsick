@@ -2,7 +2,7 @@ import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class fundingMusicDto {
   @IsNumber()
-  funding_id: number;
+  funding_id: number; // 토큰아이디 == 펀딩 신청 할 때 온체인에 setUri 하고 이벤트 결과값으로 받은 토큰아이디임
   @IsString()
   music_name: string;
   @IsString()
