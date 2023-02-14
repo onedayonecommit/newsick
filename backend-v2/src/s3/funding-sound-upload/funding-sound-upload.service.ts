@@ -9,6 +9,5 @@ export class FundingSoundUploadService {
     private readonly uploadService: FileUploadService,
   ) {}
 
-  async fundingSoundUpload(mp3: Express.Multer.File, funding_id: number) {
-  }
+  async fundingSoundUpload(mp3: Express.Multer.File, funding_id: number) {}
 }

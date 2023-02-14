@@ -14,13 +14,13 @@ import In_production from "./reward/In_production";
 import ongoing from "./reward/ongoing";
 
 // mypage
-import RegisterNftSong from "./mypage/RegisterNftSong";
-import MyPageCreator from "./mypage/MyPageCreator";
-import ApplyFundMusic from "./mypage/RegisterNftSong";
-import Graph from "./mypage/Graph";
-import ApplyCreator from "./mypage/ApplyCreator";
-import MyPageSecondContainer from "./mypage/Favorite";
-import MyPageThirdContainer from "./mypage/my_NFT";
+import RegisterNftSong from "./my_page/RegisterNftSong";
+import MyPageCreator from "./my_page/MyPageCreator";
+import ApplyFundMusic from "./my_page/RegisterNftSong";
+import Graph from "./my_page/Graph";
+import ApplyCreator from "./my_page/ApplyCreator";
+import MyPageSecondContainer from "./my_page/Favorite";
+import MyPageThirdContainer from "./my_page/my_NFT";
 
 // music
 import MusicPlayer from "./music/MusicPlayer";

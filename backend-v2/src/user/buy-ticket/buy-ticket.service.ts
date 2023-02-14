@@ -8,6 +8,7 @@ export class BuyTicketService {
 
   /** 스트리밍 티켓 구매 함수 */
   async buyTicket(dto: buyTicketDto) {
+    // console.log('티켓정보 받음');
     const { user_wallet_address, ticket_type, expired } = dto;
     return await this.db.user.update({
       where: { user_wallet_address: user_wallet_address },

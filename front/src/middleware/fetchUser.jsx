@@ -82,7 +82,7 @@ export const fetchApplyCreator = createAsyncThunk(
 export const fetchBuyTicket = createAsyncThunk(
   "user/fetchBuyTicket",
   async (_data) => {
-    console.log("DB에 넘겨주는 계정", _data);
+    console.log("받은거", _data);
     try {
       const _recieveData = await axios.post(
         "http://127.0.0.1:4000/buy-ticket", // 여기 사용하는 back 주소

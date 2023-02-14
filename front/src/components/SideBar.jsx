@@ -1,5 +1,4 @@
 import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import PlayBar from "./PlayBar";

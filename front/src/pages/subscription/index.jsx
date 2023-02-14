@@ -7,41 +7,43 @@ import { fetchBuyTicket } from "@/middleware/fetchUser";
 const SubscriptionContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
   const user = useSelector((state) => state.userInfo);
+  const [ticket, setTicket] = useState({});
   const dispatch = useDispatch();
-  // let d = new Date();
-  // let set_date = 30;
-  // d.setDate(d.getDate() + set_date);
 
-  // let year = d.getFullYear();
-  // let month = ("0" + (d.getMonth() + 1)).slice(-2);
-  // let day = ("0" + d.getDate()).slice(-2);
-  // let dt = year + "-" + month + "-" + day;
+  // 티켓구매 컨트랙트로
+  const tempFunc = async () => {
+    // 가격 설정
+    const _price = await web3.utils.toWei("0.005", "ether");
+    // 티켓구매
+    const _buy_ticket = await NEWSIC_FUND.methods
+      .subscriptionPay()
+      .send({ from: user.address, value: _price });
+    console.log("dddddd");
+    setTicket(_buy_ticket);
+    return _buy_ticket;
+  };
 
   // 구독권 구매
   const buyTicket = async () => {
     const _date = new Date();
     const set_date = 30;
     _date.setDate(_date.getDate() + set_date);
-
-    // 가격 설정
-    const _price = await web3.utils.toWei("0.005", "ether");
-
-    console.log(NEWSIC_FUND);
     if (NEWSIC_FUND) {
-      // 컨트랙트로 티켓 구매
-      const _buy_ticket = await NEWSIC_FUND.methods
-        .subscriptionPay()
-        .send({ from: user.address, value: _price });
-      // 구매 후 백으로 데이터 전달(UserSlice에 있음)
-      // console.log(typeof _buy_ticket.from);
-      // console.log(d);
-      dispatch(
-        fetchBuyTicket({
-          user_wallet_address: _buy_ticket.from,
-          ticket_type: 1, // 기본타입(n)
-          expired: _date.toISOString(),
+      // backend 저장
+      tempFunc()
+        .then((_ticket) => {
+          console.log(_ticket);
+          dispatch(
+            fetchBuyTicket({
+              user_wallet_address: _ticket.from,
+              ticket_type: 3, // 1 : 기본타입(1)
+              expired: _date.toISOString(),
+            })
+          );
         })
-      );
+        .catch((e) => {
+          console.log(e);
+        });
     } else {
       console.log("컨트랙트 안읽혀짐");
     }
@@ -100,37 +102,6 @@ const SubscriptionContainer = () => {
             >
               Subscribe
             </div>
-            <div className="optionBenefitList">
-              <div>Custom domain</div>
-              <div>Password protect</div>
-              <div>10GB bandwidth</div>
-              <div>1,000 CMS items</div>
-              <div>10,000 visitors</div>
-            </div>
-            <div
-              className="option1BuyButton"
-              onClick={() => {
-                buyTicket();
-              }}
-            >
-              Subscribe
-            </div>
-          </div>
-          <div className="optionBox3">
-            <div className="optionTitle">Pro plan</div>
-            <div className="optionPrice">$45/mo</div>
-            <div className="benefitsSummary">
-              <div>Billed yearly</div>
-              <div />
-            </div>
-            <div className="optionBenefitList">
-              <div>Custom domain</div>
-              <div>Password protect</div>
-              <div>10GB bandwidth</div>
-              <div>1,000 CMS items</div>
-              <div>10,000 visitors</div>
-            </div>
-            <div className="option1BuyButton">Subscribe</div>
           </div>
           <div className="optionBox3">
             <div className="optionTitle">Pro plan</div>

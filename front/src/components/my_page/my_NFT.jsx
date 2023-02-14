@@ -2,7 +2,7 @@ import useWeb3 from "@/hooks/useWeb3";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import PageNationFrame from "../../components/PageNationFrame";
+import PageNationFrame from "../PageNationFrame";
 
 const ownNftDate = [
   {
@@ -98,7 +98,9 @@ const MyPageThirdContainer = () => {
   });
   const myNftListView = async () => {
     if (NEWSIC_FUND) {
-      const _myNftList = await NEWSIC_FUND.methods.totalUri().call({ from: user_wallet_address });
+      const _myNftList = await NEWSIC_FUND.methods
+        .totalUri()
+        .call({ from: user_wallet_address });
       console.log("sisi", _myNftList);
       setMyNftList(_myNftList);
     }

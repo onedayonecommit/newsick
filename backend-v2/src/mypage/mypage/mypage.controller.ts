@@ -9,6 +9,7 @@ export class MypageController {
 
   @Post('second')
   async myPage(@Body() dto: myPageDto): Promise<user> {
+    console.log('hi');
     return await this.myPageService.myPage(dto.user_wallet_address);
   }
 
