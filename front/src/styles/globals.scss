@@ -18,11 +18,14 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-
 // ========================================Main CSS Start
 .mainSlider {
   display: flex;
   flex-direction: column;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   .pageNav {
     position: absolute;
     width: min-content;
@@ -85,12 +88,15 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 80px 50px 80px 50px;
-    background-color: #2b2f5f;
+    background-image: url("../../public/image/coverPageBack2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     overflow: visible;
     align-content: center;
     flex-wrap: nowrap;
     position: relative;
+    padding: 80px 50px 80px 50px;
     border-radius: 0px 0px 0px 0px;
     .rankingInfoSection {
       flex-shrink: 0;
@@ -180,6 +186,7 @@ body {
       }
     }
     .rankingCard {
+      cursor: grabbing;
       box-sizing: border-box;
       flex-shrink: 0;
       width: 420px;
@@ -190,6 +197,10 @@ body {
       position: relative;
       border-radius: 25px;
       border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: 0.5s;
+      &:hover {
+        scale: 1.1;
+      }
     }
   }
   .mainSecondFrame {
@@ -201,7 +212,7 @@ body {
     justify-content: space-evenly;
     align-items: flex-end;
     padding: 0px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
     align-content: flex-end;
     flex-wrap: nowrap;
@@ -217,8 +228,6 @@ body {
       width: 875px;
       height: 950px;
       display: block;
-      -webkit-backdrop-filter: blur(0px);
-      backdrop-filter: blur(0px);
       overflow: hidden;
       z-index: 0;
       position: absolute;
@@ -442,40 +451,44 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color: #2b2f5f;
     overflow: visible;
     padding: 0px 0px 0px 0px;
     align-content: center;
     flex-wrap: nowrap;
     gap: 0;
+    background-image: url("../../public/image/coverPageBack2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
     border-radius: 0px 0px 0px 0px;
     .leftSlideContent {
+      box-sizing: border-box;
       flex-shrink: 0;
-      width: 595px;
-      height: 950px;
+      width: min-content; /* 790px */
+      height: min-content; /* 950px */
       display: flex;
       flex-direction: row;
-      justify-content: left;
+      justify-content: center;
       align-items: center;
-      overflow: hidden;
+      padding: 0px 50px 0px 50px;
+      overflow: visible;
       position: relative;
-      padding: 0px 0px 0px 60px;
       align-content: center;
       flex-wrap: nowrap;
+      gap: 50px;
       border-radius: 0px 0px 0px 0px;
       .slideListDownFrame {
-        box-sizing: border-box;
         flex-shrink: 0;
-        width: 270px;
+        width: min-content; /* 210px */
         height: calc(255px * 10);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0px 30px 0px 30px;
-        overflow: hidden;
+        overflow: visible;
         position: relative;
+        padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
         gap: 40px;
@@ -486,7 +499,7 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          overflow: hidden;
+          overflow: visible;
           position: relative;
           padding: 0px 0px 0px 0px;
           align-content: center;
@@ -500,7 +513,6 @@ body {
             height: 255px;
             display: block;
             background-color: rgba(255, 255, 255, 0.1);
-
             overflow: hidden;
             position: relative;
             border-radius: 25px;
@@ -509,17 +521,16 @@ body {
         }
       }
       .slideListUpFrame {
-        box-sizing: border-box;
         flex-shrink: 0;
-        width: 270px;
+        width: min-content; /* 210px */
         height: calc(255px * 10);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0px 30px 0px 30px;
-        overflow: hidden;
+        overflow: visible;
         position: relative;
+        padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
         gap: 40px;
@@ -530,7 +541,7 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          overflow: hidden;
+          overflow: visible;
           position: relative;
           padding: 0px 0px 0px 0px;
           align-content: center;
@@ -544,7 +555,6 @@ body {
             height: 255px;
             display: block;
             background-color: rgba(255, 255, 255, 0.1);
-
             overflow: hidden;
             position: relative;
             border-radius: 25px;
@@ -568,6 +578,199 @@ body {
 }
 // ========================================Main CSS Done
 // ==================================COMPONENT CSS START
+.changeUserInfoFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 700px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 80px 40px 80px 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  // -webkit-backdrop-filter: blur(10px);
+  // -o-backdrop-filter: blur(10px);
+  // -moz-backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  .changeNavBar {
+    flex-shrink: 0;
+    width: 620px;
+    height: min-content; /* 42px */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    border-radius: 0px 0px 0px 0px;
+    .successBtn {
+      cursor: pointer;
+      flex-shrink: 0;
+      width: auto; /* 56px */
+      height: auto; /* 34px */
+      white-space: pre;
+      position: relative;
+      font-weight: 700;
+      font-style: normal;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 28px;
+      letter-spacing: -0.1px;
+      line-height: 1.2;
+      transition: 0.3s;
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+    .infoText {
+      flex-shrink: 0;
+      width: auto; /* 217px */
+      height: auto; /* 42px */
+      white-space: pre;
+      position: relative;
+      font-weight: 700;
+      font-style: normal;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 32px;
+      letter-spacing: -0.1px;
+      line-height: 1.2;
+    }
+  }
+  .middleLine {
+    flex-shrink: 0;
+    width: 330px;
+    height: 2px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    border-radius: 0px 0px 0px 0px;
+  }
+  .changeMainSection {
+    flex-shrink: 0;
+    width: 620px;
+    height: 607px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    border-radius: 0px 0px 0px 0px;
+    .imgChange {
+      cursor: pointer;
+      left: 370px;
+      top: 281px;
+      bottom: 246px;
+      right: 170px;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      z-index: 1;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 10px;
+      position: absolute;
+      border-radius: 80px;
+      border: 1px solid #ffffff;
+      .faCamera {
+        color: transparent;
+        width: 45px;
+        height: 45px;
+        stroke-width: 50px;
+        stroke: rgba(255, 255, 255, 0.5);
+        transition: 0.3s;
+        &:hover {
+          stroke: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+    .userImg {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      background-size: fill;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 400px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .userNickName {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 300px;
+      height: min-content; /* 74px */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 20px 20px 20px;
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 0px 0px 0px 0px;
+      border-color: #ffffff;
+      border-style: solid;
+      border-top-width: 0px;
+      border-bottom-width: 1px;
+      border-left-width: 0px;
+      border-right-width: 0px;
+      background-color: transparent;
+      flex-shrink: 0;
+      white-space: pre;
+      font-weight: 700;
+      font-style: normal;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: #ffffff;
+      font-size: 28px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+      text-align: center;
+      &::placeholder {
+        text-align: center;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
 .playBarSection {
   flex-shrink: 0;
   width: 610px;
@@ -1810,7 +2013,6 @@ body {
         gap: 0;
         border-radius: 0px 0px 0px 0px;
         .headerSection {
-          cursor: pointer;
           font-family: "YdestreetB";
           box-sizing: border-box;
           flex-shrink: 0;
@@ -1877,15 +2079,6 @@ body {
             font-size: 15px;
             letter-spacing: 0px;
             line-height: 1.2;
-            &:hover {
-              animation-duration: 0.3s;
-              transition: 0.5s;
-              box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
-                0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-              background-color: rgba(0, 0, 0, 0.2);
-              border-radius: 25px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-            }
           }
         }
       }
@@ -2026,12 +2219,54 @@ body {
         flex-shrink: 0;
         width: 234px;
         height: 50px;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
         background-color: rgba(255, 255, 255, 0);
         overflow: hidden;
         position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
         border-radius: 0px 0px 0px 0px;
+        .changeMemberInfo {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 120px;
+          height: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 12px;
+          letter-spacing: -0.1px;
+          line-height: 1.2;
+          text-align: center;
+          cursor: pointer;
+          transition: 0.3s;
+          &:hover {
+            box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+              0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+          }
+        }
       }
       .userInfoSection {
         box-sizing: border-box;
@@ -2068,21 +2303,6 @@ body {
           position: absolute;
           border-radius: 0px 0px 0px 0px;
         }
-        .userImage {
-          cursor: pointer;
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 150px;
-          height: 150px;
-          display: block;
-          overflow: hidden;
-          position: relative;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 150px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
         .metaConnectButton {
           cursor: pointer;
           box-sizing: border-box;
@@ -2109,6 +2329,21 @@ body {
           font-size: 10px;
           letter-spacing: 0px;
           line-height: 1.2;
+        }
+        .userImage {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 150px;
+          height: 150px;
+          display: block;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          overflow: hidden;
+          position: relative;
+          border-radius: 150px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .userProfile {
           flex-shrink: 0;
@@ -2628,7 +2863,7 @@ body {
         .userNameSection,
         .userEmailSection {
           flex-shrink: 0;
-          width: 400px;
+          width: min-content;
           height: 69px;
           display: flex;
           flex-direction: column;
@@ -2721,7 +2956,7 @@ body {
           gap: 25px;
           border-radius: 0px 0px 0px 0px;
           .userButton,
-          .createrButton {
+          .creatorButton {
             cursor: pointer;
             box-sizing: border-box;
             flex-shrink: 0;
@@ -3189,7 +3424,7 @@ body {
         gap: 10px;
         border-radius: 25px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        .contentCreater {
+        .contentCreator {
           box-sizing: border-box;
           flex-shrink: 0;
           width: 259px;
@@ -3554,7 +3789,7 @@ body {
           .topRankToggle {
             box-sizing: border-box;
             flex-shrink: 0;
-            width: 152px;
+            width: 153px;
             height: 30px;
             display: flex;
             flex-direction: row;
@@ -3870,6 +4105,7 @@ body {
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -3891,7 +4127,7 @@ body {
     flex-wrap: nowrap;
     gap: 20px;
     border-radius: 0px 0px 0px 0px;
-    .todayCreaterSection {
+    .todayCreatorSection {
       box-sizing: border-box;
       flex-shrink: 0;
       width: 344px;
@@ -3930,7 +4166,7 @@ body {
         letter-spacing: 0px;
         line-height: 1.2;
       }
-      .createrInfoFrame {
+      .creatorInfoFrame {
         box-sizing: border-box;
         flex-shrink: 0;
         width: 344px;
@@ -3947,7 +4183,7 @@ body {
         gap: 10px;
         border-radius: 0px 0px 0px 0px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        .createrInfoBox {
+        .creatorInfoBox {
           top: 0px;
           bottom: 0px;
           right: 0px;
@@ -3976,7 +4212,7 @@ body {
           position: absolute;
           border-radius: 0px 0px 0px 0px;
           border: 1px solid rgba(255, 255, 255, 0.1);
-          .createrInfo {
+          .creatorInfo {
             flex-shrink: 0;
             width: min-content; /* 93px */
             height: min-content; /* 33px */
@@ -3991,7 +4227,7 @@ body {
             flex-wrap: nowrap;
             gap: 5px;
             border-radius: 0px 0px 0px 0px;
-            .createrName {
+            .creatorName {
               flex-shrink: 0;
               width: min-content; /* 93px */
               height: min-content; /* 16px */
@@ -4070,7 +4306,7 @@ body {
             text-align: center;
           }
         }
-        .createrImg {
+        .creatorImg {
           box-sizing: border-box;
           flex-shrink: 0;
           width: 344px;
@@ -4127,7 +4363,7 @@ body {
         flex-wrap: nowrap;
         gap: 10px;
         border-radius: 0px 0px 0px 0px;
-        .hotCreaterInfoFrame {
+        .hotCreatorInfoFrame {
           flex-shrink: 0;
           width: min-content; /* 265px */
           height: min-content; /* 249px */
@@ -4142,7 +4378,7 @@ body {
           flex-wrap: nowrap;
           gap: 71px;
           border-radius: 0px 0px 0px 0px;
-          .hotCreaterInfoBox {
+          .hotCreatorInfoBox {
             flex-shrink: 0;
             width: 265px;
             height: 138px;
@@ -4182,7 +4418,7 @@ body {
               letter-spacing: 0px;
               line-height: 1.2;
             }
-            .hotCreaterName {
+            .hotCreatorName {
               flex-shrink: 0;
               width: min-content; /* 194px */
               height: min-content; /* 36px */
@@ -4283,18 +4519,14 @@ body {
     box-sizing: border-box;
     flex-shrink: 0;
     width: 1319px;
-    height: 1069px;
+    height: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 20px 0px 20px 0px;
-
     // -webkit-backdrop-filter: blur(10px);
     // backdrop-filter: blur(10px);
-    // -o-backdrop-filter: blur(10px);
-    // -moz-backdrop-filter: blur(10px);
-
     background-color: rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
@@ -4405,24 +4637,25 @@ body {
       box-sizing: border-box;
       flex-shrink: 0;
       width: 1319px;
-      height: 880px; /* 880px */
+      height: min-content; /* 965px */
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
-      padding: 10px 0px 10px 0px;
-      overflow: visible;
+      padding: 10px 20px 10px 20px;
+      overflow: hidden;
       position: relative;
       align-content: flex-start;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 40px;
       border-radius: 0px 0px 0px 0px;
       .fundingItem {
         flex-shrink: 0;
-        width: 240px;
-        height: 200px;
+        width: 210px;
+        height: 210px;
         display: block;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(255, 255, 255, 0.1);
+        border: rgba(255, 255, 255, 0.1);
         overflow: visible;
         position: relative;
         border-radius: 20px;
@@ -4776,6 +5009,7 @@ body {
     }
   }
 }
+
 .nftMarketContainerFrame {
   box-sizing: border-box;
   width: 1359px;
@@ -4786,6 +5020,7 @@ body {
   align-items: center;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -4828,7 +5063,7 @@ body {
       align-content: center;
       flex-wrap: nowrap;
       gap: 0;
-      border-radius: 0px 0px 0px 0px;
+      border-radius: 20px;
       .topSwiperSection {
         flex-shrink: 0;
         width: 1319px;
@@ -4846,7 +5081,7 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        border-radius: 0px 0px 0px 0px;
+        border-radius: 20px;
       }
       .topInfoSection {
         pointer-events: none;
@@ -6207,11 +6442,11 @@ body {
       flex-wrap: nowrap;
       gap: 0;
       border-radius: 0px 0px 0px 0px;
-      .ProfileSection {
+      :nth-child(-n + 3) {
         box-sizing: border-box;
         flex-shrink: 0;
         width: 1199px;
-        height: 663px;
+        height: 373px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -6246,237 +6481,22 @@ body {
           letter-spacing: 0px;
           line-height: 1.2;
         }
-        .name,
-        .sex {
+        :nth-child(2) {
           box-sizing: border-box;
           flex-shrink: 0;
           width: 1159px;
-          height: 83px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0px 40px 0px 40px;
+          height: 289px;
+          display: block;
           overflow: hidden;
           position: relative;
-          align-content: center;
-          flex-wrap: nowrap;
           border-radius: 0px 0px 0px 0px;
-          select {
-            flex-shrink: 0;
-            width: 105px;
-            height: 45px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            border-radius: 0px 0px 0px 0px;
-            font-size: 18px;
-            font-weight: bold;
-            background-color: transparent;
-            color: rgba(255, 255, 255, 0.8);
-          }
-          .singerName {
-            flex-shrink: 0;
-            width: auto; /* 60px */
-            height: auto; /* 24px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 20px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          .nameInput {
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 325px;
-            height: 45px;
-            display: block;
-            overflow: hidden;
-            position: relative;
-            border-radius: 0px 0px 0px 0px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            background-color: transparent;
-          }
-        }
-        .info {
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 1179px;
-          height: 373px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-          padding: 20px 40px 20px 40px;
-          overflow: hidden;
-          position: relative;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 20px;
-          border-radius: 0px 0px 0px 0px;
-          .infoText {
-            flex-shrink: 0;
-            width: auto; /* 86px */
-            height: auto; /* 24px */
-            white-space: pre;
-            position: relative;
-            font-family: "Inter", sans-serif;
-            color: #ffffff;
-            font-size: 20px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          > input {
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 1099px;
-            height: 289px;
-            display: block;
-            overflow: hidden;
-            position: relative;
-            border-radius: 0px 0px 0px 0px;
-            border-color: rgba(255, 255, 255, 0.1);
-            border-style: solid;
-            border-top-width: 1px;
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-            border-right-width: 1px;
-            background-color: transparent;
-            color: white;
-            font-size: 16px;
-            display: flex;
-            padding: 20px;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
-          }
-        }
-      }
-    }
-    .shareSection {
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 1199px;
-      height: 163px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      background-color: rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      position: relative;
-      padding: 0px 0px 0px 0px;
-      align-content: center;
-      flex-wrap: nowrap;
-      gap: 0;
-      border-radius: 0px 0px 0px 0px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      .shareFrame {
-        flex-shrink: 0;
-        width: min-content; /* 897px */
-        height: min-content; /* 50px */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-        padding: 0px 0px 0px 0px;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 20px;
-        border-radius: 0px 0px 0px 0px;
-        .info {
-          flex-shrink: 0;
-          width: auto; /* 271px */
-          height: auto; /* 42px */
-          white-space: pre;
-          position: relative;
-          font-weight: 700;
-          font-style: normal;
-          font-family: "Inter-Bold", "Inter", sans-serif;
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 35px;
-          letter-spacing: 0px;
-          line-height: 1.2;
-        }
-        .content {
-          flex-shrink: 0;
-          width: min-content; /* 606px */
-          height: min-content; /* 50px */
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(1) {
-            flex-shrink: 0;
-            width: auto; /* 291px */
-            height: auto; /* 42px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 35px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          :nth-child(2) {
-            flex-shrink: 0;
-            width: 125px;
-            height: 50px;
-            display: block;
-            background-color: transparent;
-            overflow: hidden;
-            position: relative;
-            border-radius: 0px 0px 0px 0px;
-            border-color: 1px solid rgba(255, 255, 255, 0.1);
-          }
-          :nth-child(3) {
-            flex-shrink: 0;
-            width: auto; /* 10px */
-            height: auto; /* 42px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 35px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          :nth-child(4) {
-            flex-shrink: 0;
-            width: 125px;
-            height: 50px;
-            display: block;
-            background-color: transparent;
-            overflow: hidden;
-            position: relative;
-            border-radius: 0px 0px 0px 0px;
-            border-color: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: transparent;
+          color: white;
+          font-size: 20px;
+          resize: none;
+          &:focus {
+            outline: none;
           }
         }
       }
@@ -6557,6 +6577,11 @@ body {
           align-items: center;
           padding: 25px 15px 25px 15px;
           background-color: rgba(0, 0, 0, 0.2);
+
+          -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+          -o-backdrop-filter: blur(5px);
+          -moz-backdrop-filter: blur(5px);
           z-index: 1;
           align-content: center;
           flex-wrap: nowrap;
@@ -7424,7 +7449,7 @@ body {
       justify-content: flex-start;
       align-items: flex-start;
       padding: 10px 20px 10px 20px;
-      overflow: hidden;
+      overflow: visible;
       position: relative;
       align-content: flex-start;
       flex-wrap: nowrap;
@@ -7452,23 +7477,69 @@ body {
         height: 120px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        overflow: hidden;
+        padding: 0px 40px 0px 0px;
+        overflow: visible;
         position: relative;
-        padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
-        gap: 10px;
         border-radius: 0px 0px 0px 0px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        flex-shrink: 0;
-        white-space: pre;
-        font-family: "Inter", sans-serif;
-        color: #ffffff;
-        font-size: 27px;
-        letter-spacing: 0px;
-        line-height: 1.2;
+        .infoSection {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 505px;
+          height: 120px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .switchButton {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 170px;
+          height: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.2);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 25px;
+          border: 1px solid rgba(171, 171, 171, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 16px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+          transition: 0.5s;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            scale: 1.2;
+            box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+              0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 1);
+          }
+        }
       }
     }
     .nftItemList {
@@ -7568,12 +7639,12 @@ body {
           .infoStateFrame {
             box-sizing: border-box;
             flex-shrink: 0;
-            width: 257px;
-            height: 66px;
+            width: 180px;
+            height: 40px;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-end;
+            justify-content: flex-end;
+            align-items: center;
             padding: 20px 30px 20px 30px;
 
             -webkit-backdrop-filter: blur(10px);
@@ -7581,6 +7652,7 @@ body {
             -o-backdrop-filter: blur(10px);
             -moz-backdrop-filter: blur(10px);
 
+            border-radius: 50px;
             background-color: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(168, 168, 168, 0.1);
             box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
@@ -7590,7 +7662,8 @@ body {
             align-content: flex-end;
             flex-wrap: nowrap;
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
+            right: 8px;
             .price {
               flex-shrink: 0;
               width: min-content; /* 65px */
@@ -7983,7 +8056,8 @@ body {
       flex-wrap: wrap;
       gap: 50px;
       border-radius: 0px 0px 0px 0px;
-      .ownedNftBox {
+      .ownedNftBox,
+      .atropos-banner {
         box-sizing: border-box;
         flex-shrink: 0;
         width: 320px;
@@ -7993,7 +8067,7 @@ body {
         justify-content: center;
         align-items: center;
         padding: 25px 25px 25px 25px;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(0, 0, 0, 0.1);
         overflow: hidden;
         position: relative;
         align-content: center;
@@ -8001,6 +8075,9 @@ body {
         gap: 0;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.1);
+        .atropos-inner {
+          border-radius: 25px;
+        }
         .ownedNftFrame {
           box-sizing: border-box;
           flex-shrink: 0;
@@ -8011,7 +8088,7 @@ body {
           justify-content: flex-start;
           align-items: center;
           padding: 30px 30px 30px 30px;
-          background-color: rgba(0, 0, 0, 0.2);
+          background-color: rgba(0, 0, 0, 0.8);
           overflow: hidden;
           position: relative;
           align-content: center;
@@ -8053,8 +8130,8 @@ body {
             border-radius: 0px 0px 0px 0px;
             :nth-child(1) {
               flex-shrink: 0;
-              width: min-content; /* 95px */
-              height: min-content; /* 19px */
+              width: min-content; /* 136px */
+              height: min-content; /* 27px */
               display: flex;
               flex-direction: column;
               justify-content: center;
@@ -8069,37 +8146,12 @@ body {
               flex-shrink: 0;
               white-space: pre;
               font-weight: 700;
+              font-style: normal;
               font-family: "Inter-Bold", "Inter", sans-serif;
               color: rgba(255, 255, 255, 0.3);
-              font-size: 19px;
+              font-size: 27px;
               letter-spacing: 0px;
               line-height: 1;
-            }
-            :nth-child(2),
-            :nth-child(3) {
-              flex-shrink: 0;
-              width: min-content; /* 40px */
-              height: min-content; /* 16px */
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              flex-shrink: 0;
-              white-space: pre;
-              font-weight: 700;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.3);
-              font-size: 16px;
-              letter-spacing: 0px;
-              line-height: 1;
-              text-align: center;
             }
           }
           .middleLine {
@@ -8112,29 +8164,39 @@ body {
             position: relative;
             border-radius: 0px 0px 0px 0px;
           }
-          .infoSection {
+          .sellButton {
+            cursor: pointer;
+            box-sizing: border-box;
             flex-shrink: 0;
-            width: 210px;
-            height: 58px;
+            width: 170px;
+            height: 48px;
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
             padding: 0px 0px 0px 0px;
-            align-content: flex-start;
+            align-content: center;
             flex-wrap: nowrap;
             gap: 10px;
-            border-radius: 0px 0px 0px 0px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             flex-shrink: 0;
             white-space: pre;
             font-weight: 700;
+            font-style: normal;
             font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
             letter-spacing: 0px;
             line-height: 1.2;
+            &:hover {
+              background-color: rgba(255, 255, 255, 1);
+              color: rgba(0, 0, 0, 1);
+              border: 1px solid rgba(0, 0, 0, 1);
+            }
           }
         }
       }
@@ -8142,7 +8204,6 @@ body {
   }
 }
 // MyPageContainer CSS ==============done
-
 // SubscriptionContainer CSS ===============start
 .SubscriptionContainer {
   flex-shrink: 0;
@@ -8153,6 +8214,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -8236,11 +8298,11 @@ body {
     }
     .SubscriptionListFrame {
       flex-shrink: 0;
-      width: 1200px;
+      width: 995px;
       height: 558px;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       max-width: 1200px;
       overflow: visible;
@@ -8250,162 +8312,14 @@ body {
       flex-wrap: nowrap;
       gap: 30px;
       border-radius: 0px 0px 0px 0px;
-      .optionBox1 {
-        box-sizing: border-box;
-        flex-shrink: 0;
-        width: 380px;
-        height: 462px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 20px 20px 20px 20px;
-        -webkit-backdrop-filter: blur(40px);
-        backdrop-filter: blur(40px);
-        box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
-          0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-        background-color: rgba(255, 255, 255, 0.6);
-        overflow: visible;
-        position: relative;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 15px;
-        border-radius: 25px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        .optionTitle {
-          flex-shrink: 0;
-          width: auto; /* 81px */
-          height: auto; /* 19px */
-          white-space: pre;
-          position: relative;
-          font-weight: 600;
-          font-style: normal;
-          color: #000000;
-          font-size: 16px;
-          letter-spacing: 0px;
-          text-transform: uppercase;
-          line-height: 1.2;
-          text-align: center;
-        }
-        .optionPrice {
-          flex-shrink: 0;
-          width: auto; /* 177px */
-          height: auto; /* 70px */
-          white-space: pre;
-          position: relative;
-          font-weight: 800;
-          font-style: normal;
-          color: #000000;
-          font-size: 50px;
-          letter-spacing: -0.8px;
-          line-height: 1.4;
-        }
-        .benefitsSummary {
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: min-content; /* 153px */
-          height: min-content; /* 29px */
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          padding: 4px 16px 4px 8px;
-          background-color: rgba(0, 0, 0, 0.1);
-          overflow: visible;
-          position: relative;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 15px;
-          border-radius: 20px;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          :nth-child(1) {
-            flex-shrink: 0;
-            width: auto; /* 103px */
-            height: auto; /* 21px */
-            white-space: pre;
-            position: relative;
-            font-weight: 500;
-            font-style: normal;
-            color: #000000;
-            font-size: 14px;
-            letter-spacing: 0px;
-            line-height: 150%;
-          }
-          :nth-child(2) {
-            width: 16px;
-            height: 16px;
-            border-radius: 16px;
-            background-color: white;
-          }
-        }
-        .optionBenefitList {
-          flex-shrink: 0;
-          width: min-content; /* 165px */
-          height: min-content; /* 160px */
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          overflow: visible;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(-n + 5) {
-            flex-shrink: 0;
-            width: auto; /* 109px */
-            height: auto; /* 24px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            color: #000000;
-            font-size: 20px;
-            letter-spacing: -1px;
-          }
-        }
-        .option1BuyButton {
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 240px;
-          height: 50px;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          padding: 10px 10px 10px 10px;
-          -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
-          background-color: #000000;
-          max-width: 240px;
-          overflow: visible;
-          position: relative;
-          align-content: center;
-          flex-wrap: wrap;
-          gap: 16px;
-          border-radius: 24px 24px 0px 24px;
-          flex-shrink: 0;
-          white-space: pre;
-          font-weight: 600;
-          font-style: normal;
-          color: #ffffff;
-          font-size: 16px;
-          letter-spacing: 0px;
-          text-transform: uppercase;
-          line-height: 1.2;
-          text-align: center;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-      }
-      .optionBox2 {
+      .optionBox {
         box-sizing: border-box;
         flex-shrink: 0;
         width: 380px;
         height: 558px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         padding: 20px 20px 68px 20px;
         -webkit-backdrop-filter: blur(40px);
@@ -8423,13 +8337,13 @@ body {
         .recommendedMark {
           box-sizing: border-box;
           flex-shrink: 0;
-          width: min-content; /* 123px */
-          height: min-content; /* 27px */
+          width: min-content; /* 92px */
+          height: min-content; /* 29px */
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          padding: 4px 16px 4px 8px;
+          padding: 5px 10px 5px 10px;
           background-color: rgba(255, 255, 255, 0.1);
           overflow: visible;
           position: relative;
@@ -8440,6 +8354,7 @@ body {
           border: 1px solid rgba(255, 255, 255, 0.1);
           flex-shrink: 0;
           white-space: pre;
+          position: relative;
           font-weight: 600;
           font-style: normal;
           color: #ffffff;
@@ -8449,9 +8364,26 @@ body {
           line-height: 1.2;
           text-align: center;
         }
+        .middleLine {
+          flex-shrink: 0;
+          width: 170px;
+          height: 1px;
+          display: block;
+          background-color: rgba(255, 255, 255, 0.1);
+          overflow: visible;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
+        }
+        .middleMark {
+          width: 32px;
+          height: 32px;
+          border: 1px solid white;
+          background-color: rgba(0, 0, 0, 0.1);
+          border-radius: 32px;
+        }
         .optionTitle {
           flex-shrink: 0;
-          width: auto; /* 89px */
+          width: auto; /* 90px */
           height: auto; /* 19px */
           white-space: pre;
           position: relative;
@@ -8466,7 +8398,7 @@ body {
         }
         .optionPrice {
           flex-shrink: 0;
-          width: auto; /* 189px */
+          width: auto; /* 246px */
           height: auto; /* 70px */
           white-space: pre;
           position: relative;
@@ -8480,24 +8412,24 @@ body {
         .benefitsSummary {
           box-sizing: border-box;
           flex-shrink: 0;
-          width: min-content; /* 129px */
-          height: min-content; /* 29px */
+          width: min-content; /* 110px */
+          height: min-content; /* 31px */
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          padding: 4px 16px 4px 8px;
+          padding: 5px 16px 5px 16px;
           background-color: rgba(255, 255, 255, 0.1);
           overflow: visible;
           position: relative;
           align-content: center;
           flex-wrap: nowrap;
-          gap: 10px;
+          gap: 0;
           border-radius: 20px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           :nth-child(1) {
             flex-shrink: 0;
-            width: auto; /* 79px */
+            width: auto; /* 78px */
             height: auto; /* 21px */
             white-space: pre;
             position: relative;
@@ -8517,34 +8449,50 @@ body {
         }
         .optionBenefitList {
           flex-shrink: 0;
-          width: min-content; /* 165px */
-          height: min-content; /* 160px */
+          width: 340px;
+          height: 133px;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: flex-start;
-          overflow: visible;
+          align-items: center;
+          overflow: hidden;
           position: relative;
           padding: 0px 0px 0px 0px;
-          align-content: flex-start;
+          align-content: center;
           flex-wrap: nowrap;
-          gap: 10px;
+          gap: 25px;
           border-radius: 0px 0px 0px 0px;
-          :nth-child(-n + 5) {
+          :nth-child(1) {
             flex-shrink: 0;
-            width: auto; /* 118px */
-            height: auto; /* 24px */
-            white-space: pre;
+            width: min-content; /* 142px */
+            height: min-content; /* 68px */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
             position: relative;
-            font-weight: 700;
-            font-style: normal;
-            color: #ffffff;
-            font-size: 24px;
-            letter-spacing: 0px;
-            line-height: 150%;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 30px;
+            border-radius: 0px 0px 0px 0px;
+            :nth-child(-n + 2) {
+              flex-shrink: 0;
+              width: auto; /* 126px */
+              height: auto; /* 19px */
+              white-space: pre;
+              position: relative;
+              font-family: "Inter", sans-serif;
+              color: #ffffff;
+              font-size: 16px;
+              letter-spacing: 0px;
+              line-height: 1.2;
+            }
           }
         }
-        .option1BuyButton {
+        .optionBuyButton {
+          cursor: pointer;
           box-sizing: border-box;
           flex-shrink: 0;
           width: 240px;
@@ -8554,21 +8502,17 @@ body {
           justify-content: center;
           align-items: center;
           padding: 10px 10px 10px 10px;
-          -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
           background-color: #ffffff;
-          max-width: 240px;
           overflow: visible;
           position: relative;
           align-content: center;
           flex-wrap: wrap;
-          gap: 16px;
+          gap: 18px;
           border-radius: 24px 24px 0px 24px;
           flex-shrink: 0;
           white-space: pre;
-          font-weight: 600;
-          font-style: normal;
-          color: #000000;
+          font-weight: bold;
+          color: rgba(0, 0, 0, 0.6);
           font-size: 16px;
           letter-spacing: 0px;
           text-transform: uppercase;
@@ -8576,162 +8520,39 @@ body {
           text-align: center;
         }
       }
-      .optionBox3 {
-        box-sizing: border-box;
+      .subscriptionProgressSection {
         flex-shrink: 0;
-        width: 380px;
-        height: 462px;
+        width: 585px;
+        height: 558px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
-        padding: 20px 20px 20px 20px;
-        -webkit-backdrop-filter: blur(40px);
-        backdrop-filter: blur(40px);
-        box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
-          0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-        background-color: rgba(0, 0, 0, 0.9);
-        overflow: visible;
+        overflow: hidden;
         position: relative;
+        padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
-        gap: 15px;
-        border-radius: 25px;
-        .optionTitle {
-          flex-shrink: 0;
-          width: auto; /* 75px */
-          height: auto; /* 19px */
-          white-space: pre;
-          position: relative;
-          font-weight: 600;
-          font-style: normal;
-
-          color: #ffffff;
-          font-size: 16px;
-          letter-spacing: 0px;
-          text-transform: uppercase;
-          line-height: 1.2;
-          text-align: center;
-        }
-        .optionPrice {
-          flex-shrink: 0;
-          width: auto; /* 185px */
-          height: auto; /* 70px */
-          white-space: pre;
-          position: relative;
-          font-weight: 800;
-          font-style: normal;
-
-          color: #ffffff;
-          font-size: 50px;
-          letter-spacing: -0.8px;
-          line-height: 1.4;
-        }
-        .benefitsSummary {
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        .subscriptionProgress {
           box-sizing: border-box;
           flex-shrink: 0;
-          width: min-content; /* 129px */
-          height: min-content; /* 29px */
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          padding: 4px 16px 4px 8px;
-          background-color: rgba(255, 255, 255, 0.1);
-          overflow: visible;
+          width: 450px;
+          height: 450px;
+          display: block;
+          overflow: hidden;
           position: relative;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          :nth-child(1) {
-            flex-shrink: 0;
-            width: auto; /* 79px */
-            height: auto; /* 21px */
-            white-space: pre;
-            position: relative;
-            font-weight: 500;
-            font-style: normal;
-
-            color: #ffffff;
-            font-size: 14px;
-            letter-spacing: 0px;
-            line-height: 150%;
-          }
-          :nth-child(2) {
-            width: 16px;
-            height: 16px;
-            border-radius: 16px;
-            background-color: white;
-          }
-        }
-        .optionBenefitList {
-          flex-shrink: 0;
-          width: min-content; /* 165px */
-          height: min-content; /* 160px */
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          overflow: visible;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(-n + 5) {
-            flex-shrink: 0;
-            width: auto; /* 109px */
-            height: auto; /* 24px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-
-            color: #ffffff;
-            font-size: 20px;
-            letter-spacing: -1px;
-          }
-        }
-        .option1BuyButton {
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 240px;
-          height: 50px;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          padding: 10px 10px 10px 10px;
-          -webkit-backdrop-filter: blur(30px);
-          backdrop-filter: blur(30px);
-          background-color: #ffffff;
-          max-width: 240px;
-          overflow: visible;
-          position: relative;
-          align-content: center;
-          flex-wrap: wrap;
-          gap: 16px;
-          border-radius: 24px 24px 0px 24px;
-          flex-shrink: 0;
-          white-space: pre;
-          font-weight: 600;
-          font-style: normal;
-          color: #000000;
-          font-size: 16px;
-          letter-spacing: 0px;
-          text-transform: uppercase;
-          line-height: 1.2;
-          text-align: center;
+          border-radius: 450px;
+          border: 10px solid #ffffff;
         }
       }
     }
   }
 }
 // SubscriptionContainer CSS ===============done
-// MyPage=> ForCreaterPage===============start
-.MyPageCreaterFrame {
+// MyPage=> ForCreatorPage===============start
+.MyPageCreatorFrame {
   box-sizing: border-box;
   width: 1359px;
   height: 950px;
@@ -8878,7 +8699,7 @@ body {
         }
       }
     }
-    .historyGrapSection {
+    .creatorNoticeSection {
       box-sizing: border-box;
       flex-shrink: 0;
       width: 958px;
@@ -8896,39 +8717,165 @@ body {
       gap: 15px;
       border-radius: 25px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      .historyText {
+
+      .noticeNav {
         flex-shrink: 0;
         width: 868px;
-        height: auto; /* 19px */
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        word-break: break-word;
-        position: relative;
-        font-weight: 700;
-        font-style: normal;
-        font-family: "Inter-Bold", "Inter", sans-serif;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 16px;
-        letter-spacing: 0px;
-        line-height: 1.2;
-        text-align: left;
-      }
-      .historyGrapFrame {
-        box-sizing: border-box;
-        flex-shrink: 0;
-        width: 868px;
-        height: 96px;
-        display: block;
+        height: 19px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         overflow: hidden;
         position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
         border-radius: 0px 0px 0px 0px;
-        border-color: rgba(255, 255, 255, 0.5);
-        border-style: solid;
-        border-top-width: 0px;
-        border-bottom-width: 1px;
-        border-left-width: 1px;
-        border-right-width: 0px;
-        border-radius: 0px 0px 0px 5px;
+        .noticeText {
+          flex-shrink: 0;
+          width: auto; /* 135px */
+          height: auto; /* 19px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 16px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+          text-align: left;
+        }
+        .noticeShowAll {
+          flex-shrink: 0;
+          width: auto; /* 60px */
+          height: auto; /* 17px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 14px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+          text-align: left;
+        }
+      }
+      .noticeList {
+        flex-shrink: 0;
+        width: 898px;
+        height: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 15px;
+        border-radius: 0px 0px 0px 0px;
+        &::-webkit-scrollbar {
+          width: 20px;
+          height: 56px;
+          background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.4);
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .noticeWrap {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 800px;
+          height: 46px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 40px 0px 40px;
+          overflow: hidden;
+          position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
+          border-radius: 25px;
+          transition: 0.5s;
+          &:hover {
+            box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+              0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+          }
+          .date {
+            flex-shrink: 0;
+            width: auto; /* 91px */
+            height: auto; /* 19px */
+            white-space: pre;
+            position: relative;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 16px;
+            letter-spacing: -0.1px;
+            line-height: 1.2;
+          }
+          .title {
+            flex-shrink: 0;
+            width: auto; /* 107px */
+            height: auto; /* 19px */
+            white-space: pre;
+            position: relative;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 16px;
+            letter-spacing: -0.1px;
+            line-height: 1.2;
+          }
+          .infoFrame {
+            flex-shrink: 0;
+            width: min-content; /* 166px */
+            height: min-content; /* 19px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 50px;
+            border-radius: 0px 0px 0px 0px;
+            :nth-child(1) {
+              flex-shrink: 0;
+              width: auto; /* 68px */
+              height: auto; /* 19px */
+              white-space: pre;
+              position: relative;
+              font-family: "Inter", sans-serif;
+              color: #ffffff;
+              font-size: 16px;
+              letter-spacing: -0.1px;
+              line-height: 1.2;
+            }
+            :nth-child(2) {
+              flex-shrink: 0;
+              width: auto; /* 48px */
+              height: auto; /* 19px */
+              white-space: pre;
+              position: relative;
+              font-family: "Inter", sans-serif;
+              color: #ffffff;
+              font-size: 16px;
+              letter-spacing: -0.1px;
+              line-height: 1.2;
+            }
+          }
+        }
       }
     }
   }
@@ -8949,7 +8896,7 @@ body {
     flex-wrap: nowrap;
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    .createrHandlerFrame {
+    .creatorHandlerFrame {
       box-sizing: border-box;
       flex-shrink: 0;
       width: 1279px;
@@ -9019,8 +8966,8 @@ body {
           font-style: normal;
           font-family: "Inter-Bold", "Inter", sans-serif;
           color: #ffffff;
-          font-size: 14px;
-          letter-spacing: 0px;
+          font-size: 15px;
+          letter-spacing: -1px;
           line-height: 1.2;
         }
       }
@@ -9181,48 +9128,64 @@ body {
       }
     }
   }
-  .backDrop {
-    z-index: 99;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(10px);
-    -o-backdrop-filter: blur(10px);
-    -moz-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+}
+.backDrop {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  width: 883px;
+  height: 910px;
+  background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px 40px 30px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0.796841278193901px 0.796841278193901px 0px rgba(0, 0, 0, 0.01), 0px 2.413677098392273px 2.413677098392273px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836426702925px 6.3802836426702925px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  .nftRegistrationFrame {
+    flex-shrink: 0;
+    width: 803px;
+    height: 795px;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-  }
-  .modal {
-    width: 883px;
-    height: 855px;
-    background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
-    -webkit-backdrop-filter: blur(10px);
-    -o-backdrop-filter: blur(10px);
-    -moz-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    padding: 30px 40px 30px 40px;
-    box-sizing: border-box;
     overflow: hidden;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
+    position: relative;
+    padding: 0px 0px 0px 0px;
     align-content: center;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0.796841278193901px 0.796841278193901px 0px rgba(0, 0, 0, 0.01), 0px 2.413677098392273px 2.413677098392273px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836426702925px 6.3802836426702925px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
-    border: 1.5px solid rgba(255, 255, 255, 0.1);
-    .nftRegistrationFrame {
+    gap: 50px;
+    border-radius: 0px 0px 0px 0px;
+    .topText {
       flex-shrink: 0;
       width: 803px;
-      height: 795px;
+      height: min-content; /* 31px */
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
       overflow: hidden;
@@ -9230,205 +9193,134 @@ body {
       padding: 0px 0px 0px 0px;
       align-content: center;
       flex-wrap: nowrap;
-      gap: 50px;
+      gap: 0px;
       border-radius: 0px 0px 0px 0px;
-      .topText {
+      flex-shrink: 0;
+      white-space: pre;
+      font-weight: 700;
+      font-style: normal;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      background: linear-gradient(to bottom, #d400ff, #ff00b7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 30px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+    }
+    .bottomFrame {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 803px;
+      height: 714px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0px 40px 0px 40px;
+      overflow: hidden;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      border-radius: 0px 0px 0px 0px;
+      .genreList {
         flex-shrink: 0;
-        width: 803px;
-        height: min-content; /* 31px */
+        width: 723px;
+        height: 39px;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         overflow: hidden;
         position: relative;
         padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
-        gap: 0px;
         border-radius: 0px 0px 0px 0px;
-        flex-shrink: 0;
-        white-space: pre;
-        font-weight: 700;
-        font-style: normal;
-        font-family: "Inter-Bold", "Inter", sans-serif;
-        background: linear-gradient(to bottom, #d400ff, #ff00b7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 30px;
-        letter-spacing: 0px;
-        line-height: 1.2;
-      }
-      .bottomFrame {
-        box-sizing: border-box;
-        flex-shrink: 0;
-        width: 803px;
-        height: 714px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 0px 40px 0px 40px;
-        overflow: hidden;
-        position: relative;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 20px;
-        border-radius: 0px 0px 0px 0px;
-        .genreList {
+        .genreText {
           flex-shrink: 0;
-          width: 723px;
+          width: auto; /* 52px */
+          height: auto; /* 31px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 26px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        .chooseInput {
+          flex-shrink: 0;
+          width: min-content;
           height: 39px;
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          justify-content: flex-end;
           align-items: center;
           overflow: hidden;
           position: relative;
           padding: 0px 0px 0px 0px;
           align-content: center;
           flex-wrap: nowrap;
+          gap: 30px;
           border-radius: 0px 0px 0px 0px;
-          .genreText {
+          .list {
+            box-sizing: border-box;
             flex-shrink: 0;
-            width: auto; /* 52px */
-            height: auto; /* 31px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: #ffffff;
-            font-size: 26px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          .chooseInput {
-            flex-shrink: 0;
-            width: min-content;
+            width: 488px;
             height: 39px;
             display: flex;
             flex-direction: row;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
             overflow: hidden;
             position: relative;
             padding: 0px 0px 0px 0px;
             align-content: center;
             flex-wrap: nowrap;
-            gap: 30px;
-            border-radius: 0px 0px 0px 0px;
-            .list {
+            gap: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            .option {
+              cursor: pointer;
               box-sizing: border-box;
               flex-shrink: 0;
-              width: 488px;
-              height: 39px;
+              width: min-content; /* 70px */
+              height: min-content; /* 34px */
               display: flex;
               flex-direction: row;
               justify-content: center;
               align-items: center;
-              background-color: rgba(255, 255, 255, 0.1);
+              padding: 5px 15px 5px 15px;
               overflow: hidden;
               position: relative;
-              padding: 0px 0px 0px 0px;
               align-content: center;
               flex-wrap: nowrap;
-              gap: 40px;
-              border-radius: 25px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              .option {
-                cursor: pointer;
-                box-sizing: border-box;
-                flex-shrink: 0;
-                width: min-content; /* 70px */
-                height: min-content; /* 34px */
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 5px 15px 5px 15px;
-                overflow: hidden;
-                position: relative;
-                align-content: center;
-                flex-wrap: nowrap;
-                gap: 0;
-                border-radius: 0px 0px 0px 0px;
-                flex-shrink: 0;
-                white-space: pre;
-                font-weight: 700;
-                font-style: normal;
-                font-family: "Inter-Bold", "Inter", sans-serif;
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 20px;
-                letter-spacing: 0px;
-                line-height: 1.2;
-                &:hover {
-                  background-color: rgba(255, 255, 255, 0.1);
-                  border-radius: 25px;
-                }
-              }
-            }
-            .defalt {
-              cursor: pointer;
+              gap: 0;
+              border-radius: 0px 0px 0px 0px;
               flex-shrink: 0;
-              width: auto; /* 52px */
-              height: 31px;
               white-space: pre;
-              position: relative;
               font-weight: 700;
               font-style: normal;
               font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.5);
-              font-size: 26px;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 20px;
               letter-spacing: 0px;
               line-height: 1.2;
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 25px;
+              }
             }
           }
-        }
-        .bottomList {
-          flex-shrink: 0;
-          width: 723px;
-          height: 39px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(1) {
+          .defalt {
+            cursor: pointer;
             flex-shrink: 0;
-            width: auto; /* 78px */
-            height: auto; /* 31px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: #ffffff;
-            font-size: 26px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          :nth-child(2) {
-            flex-shrink: 0;
-            width: 289px;
-            height: 39px;
-            border: transparent;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            background-color: transparent;
-            text-align: right;
-            align-items: center;
-            overflow: hidden;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 10px;
+            width: auto; /* 52px */
+            height: 31px;
             white-space: pre;
             position: relative;
             font-weight: 700;
@@ -9438,23 +9330,153 @@ body {
             font-size: 26px;
             letter-spacing: 0px;
             line-height: 1.2;
-            &::placeholder {
-              text-align: right;
-            }
-            &:focus {
-              outline: none;
-              &::-webkit-input-placeholder {
-                transition: 0.3s;
-                opacity: 0;
-              }
+          }
+        }
+      }
+      .bottomList {
+        flex-shrink: 0;
+        width: 723px;
+        height: 39px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(1) {
+          flex-shrink: 0;
+          width: auto; /* 78px */
+          height: auto; /* 31px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 26px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        :nth-child(2) {
+          flex-shrink: 0;
+          width: 289px;
+          height: 39px;
+          border: transparent;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          background-color: transparent;
+          text-align: right;
+          align-items: center;
+          overflow: hidden;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 26px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+          &::placeholder {
+            text-align: right;
+          }
+          &:focus {
+            outline: none;
+            &::-webkit-input-placeholder {
+              transition: 0.3s;
+              opacity: 0;
             }
           }
-          .soundSource,
-          .albumCover {
+        }
+        .soundSource,
+        .albumCover,
+        .lyricsSource {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 308px;
+          height: 39px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 24px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+          text-align: center;
+        }
+        .switchBox {
+          flex-shrink: 0;
+          width: 240px;
+          height: 39px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          .notTitle {
             cursor: pointer;
             box-sizing: border-box;
             flex-shrink: 0;
-            width: 308px;
+            width: 115px;
+            height: 39px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .title {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 115px;
             height: 39px;
             display: flex;
             flex-direction: row;
@@ -9466,127 +9488,9 @@ body {
             padding: 0px 0px 0px 0px;
             align-content: center;
             flex-wrap: nowrap;
-            gap: 10px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
-            white-space: pre;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 24px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-            text-align: center;
-          }
-          .switchBox {
-            flex-shrink: 0;
-            width: 240px;
-            height: 39px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 10px;
-            border-radius: 0px 0px 0px 0px;
-            .notTitle {
-              cursor: pointer;
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 115px;
-              height: 39px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              background-color: rgba(255, 255, 255, 0.1);
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0;
-              border-radius: 0px 0px 0px 0px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              white-space: pre;
-              font-weight: 700;
-              font-style: normal;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.7);
-              font-size: 20px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-            }
-            .title {
-              cursor: pointer;
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 115px;
-              height: 39px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              background-color: rgba(0, 0, 0, 0.1);
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0;
-              border-radius: 0px 0px 0px 0px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              white-space: pre;
-              font-weight: 700;
-              font-style: normal;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.7);
-              font-size: 20px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-            }
-          }
-        }
-        .bottomListButton {
-          flex-shrink: 0;
-          width: 723px;
-          height: 183px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          border-radius: 0px 0px 0px 0px;
-          .cancelButton {
-            cursor: pointer;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 182px;
-            height: 64px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
             gap: 0;
-            border-radius: 25px;
+            border-radius: 0px 0px 0px 0px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
             white-space: pre;
             font-weight: 700;
             font-style: normal;
@@ -9596,41 +9500,85 @@ body {
             letter-spacing: 0px;
             line-height: 1.2;
           }
-          .registerButton {
-            cursor: pointer;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 233px;
-            height: 82px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 0;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
-            white-space: pre;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 26px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
+        }
+      }
+      .bottomListButton {
+        flex-shrink: 0;
+        width: 723px;
+        height: 124px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        border-radius: 0px 0px 0px 0px;
+        .cancelButton {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 182px;
+          height: 64px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.2);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 20px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        .registerButton {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 233px;
+          height: 82px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.2);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 0;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 26px;
+          letter-spacing: 0px;
+          line-height: 1.2;
         }
       }
     }
   }
 }
-// MyPage=> ForCreaterPage===============done
+// MyPage=> ForCreatorPage===============done
 // EventComponent CSS============start => 나중에 위치는 다 옮겨야함
 .EventFrame {
   box-sizing: border-box;
@@ -9647,6 +9595,7 @@ body {
   position: absolute;
   border-radius: 0px 0px 0px 0px;
 }
+// EventComponent CSS============done => 나중에 위치는 다 옮겨야함
 .signUpBackDrop {
   z-index: 99;
   position: absolute;
@@ -9698,7 +9647,6 @@ body {
 .loadingFrame {
   width: 1920px;
   height: 1080px;
-  background: radial-gradient(141.9% 200% at 50% 110.80000000000001%, #292929 0%, rgb(0, 0, 0) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9708,39 +9656,41 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
+  gap: 30px;
+  position: relative;
   border-radius: 0px 0px 0px 0px;
   .loadingCenter {
     flex-shrink: 0;
-    width: min-content; /* 452px */
-    height: min-content; /* 121px */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    width: auto; /* 186px */
+    height: auto; /* 54px */
+    white-space: pre;
     position: relative;
-    padding: 0px 0px 0px 0px;
-    align-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    border-radius: 0px 0px 0px 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Inter-Bold", "Inter", sans-serif;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 0px;
+    line-height: 1.2;
   }
   .progressBar {
     width: 450px;
-    height: 45px;
+    height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: stretch;
-    border-radius: 60px;
-    background-color: #494b52;
-    box-shadow: 0px 0px 20px #111;
+    background-color: transparent;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+    box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
+      0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
     .bar {
+      border-radius: 25px;
       width: 0%;
-      background-color: rgb(255, 174, 105);
-      background: linear-gradient(180deg, rgba(255, 174, 105, 1) 0% rgba(255, 173, 102, 1) 32% rgba(255, 132, 25, 1) 100%);
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0% rgba(255, 255, 255, 0.8) 32% rgba(255, 255, 255, 1) 100%);
     }
   }
 }
-// EventComponent CSS============done => 나중에 위치는 다 옮겨야함

@@ -23,6 +23,10 @@ body {
 .mainSlider {
   display: flex;
   flex-direction: column;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .mainSlider .pageNav {
   position: absolute;
@@ -86,12 +90,15 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 80px 50px 80px 50px;
-  background-color: #2b2f5f;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
   position: relative;
+  padding: 80px 50px 80px 50px;
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainFirstFrame .rankingInfoSection {
@@ -182,6 +189,7 @@ body {
   line-height: 1.2;
 }
 .mainSlider .mainFirstFrame .rankingCard {
+  cursor: grabbing;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 420px;
@@ -192,6 +200,10 @@ body {
   position: relative;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.5s;
+}
+.mainSlider .mainFirstFrame .rankingCard:hover {
+  scale: 1.1;
 }
 .mainSlider .mainSecondFrame {
   box-sizing: border-box;
@@ -202,7 +214,7 @@ body {
   justify-content: space-evenly;
   align-items: flex-end;
   padding: 0px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
   align-content: flex-end;
   flex-wrap: nowrap;
@@ -219,8 +231,6 @@ body {
   width: 875px;
   height: 950px;
   display: block;
-  -webkit-backdrop-filter: blur(0px);
-  backdrop-filter: blur(0px);
   overflow: hidden;
   z-index: 0;
   position: absolute;
@@ -425,42 +435,46 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background-color: #2b2f5f;
   overflow: visible;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent {
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 595px;
-  height: 950px;
+  width: min-content; /* 790px */
+  height: min-content; /* 950px */
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  padding: 0px 50px 0px 50px;
+  overflow: visible;
   position: relative;
-  padding: 0px 0px 0px 60px;
   align-content: center;
   flex-wrap: nowrap;
+  gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame {
-  box-sizing: border-box;
   flex-shrink: 0;
-  width: 270px;
+  width: min-content; /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 30px 0px 30px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 40px;
@@ -472,7 +486,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -493,17 +507,16 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame {
-  box-sizing: border-box;
   flex-shrink: 0;
-  width: 270px;
+  width: min-content; /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 30px 0px 30px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 40px;
@@ -515,7 +528,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -544,6 +557,196 @@ body {
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
+}
+
+.changeUserInfoFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 700px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 80px 40px 80px 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.changeUserInfoFrame .changeNavBar {
+  flex-shrink: 0;
+  width: 620px;
+  height: min-content; /* 42px */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeNavBar .successBtn {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 56px */
+  height: auto; /* 34px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 28px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  transition: 0.3s;
+}
+.changeUserInfoFrame .changeNavBar .successBtn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+.changeUserInfoFrame .changeNavBar .infoText {
+  flex-shrink: 0;
+  width: auto; /* 217px */
+  height: auto; /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 32px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.changeUserInfoFrame .middleLine {
+  flex-shrink: 0;
+  width: 330px;
+  height: 2px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeMainSection {
+  flex-shrink: 0;
+  width: 620px;
+  height: 607px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeMainSection .imgChange {
+  cursor: pointer;
+  left: 370px;
+  top: 281px;
+  bottom: 246px;
+  right: 170px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 1;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 80px;
+  border: 1px solid #ffffff;
+}
+.changeUserInfoFrame .changeMainSection .imgChange .faCamera {
+  color: transparent;
+  width: 45px;
+  height: 45px;
+  stroke-width: 50px;
+  stroke: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+.changeUserInfoFrame .changeMainSection .imgChange .faCamera:hover {
+  stroke: rgb(255, 255, 255);
+}
+.changeUserInfoFrame .changeMainSection .userImg {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.changeUserInfoFrame .changeMainSection .userNickName {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: min-content; /* 74px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border-color: #ffffff;
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  background-color: transparent;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 28px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName::placeholder {
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName:focus {
+  outline: none;
 }
 
 .playBarSection {
@@ -1757,7 +1960,6 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .layoutFrame .layoutBox .sideBarSection .categories .headerSection {
-  cursor: pointer;
   font-family: "YdestreetB";
   box-sizing: border-box;
   flex-shrink: 0;
@@ -1825,14 +2027,6 @@ body {
   font-size: 15px;
   letter-spacing: 0px;
   line-height: 1.2;
-}
-.layoutFrame .layoutBox .sideBarSection .categories .menuSection .menuItem:hover {
-  animation-duration: 0.3s;
-  transition: 0.5s;
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .layoutFrame .layoutBox .contentSection {
   flex-shrink: 0;
@@ -1969,12 +2163,53 @@ body {
   flex-shrink: 0;
   width: 234px;
   height: 50px;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
   position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
   border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 120px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection {
   box-sizing: border-box;
@@ -2012,21 +2247,6 @@ body {
   position: absolute;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .userImage {
-  cursor: pointer;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 150px;
-  height: 150px;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 150px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
 .layoutFrame .layoutBox .userBarSection .userInfoSection .metaConnectButton {
   cursor: pointer;
   box-sizing: border-box;
@@ -2053,6 +2273,21 @@ body {
   font-size: 10px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.layoutFrame .layoutBox .userBarSection .userInfoSection .userImage {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile {
   flex-shrink: 0;
@@ -2566,7 +2801,7 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection,
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection {
   flex-shrink: 0;
-  width: 400px;
+  width: min-content;
   height: 69px;
   display: flex;
   flex-direction: column;
@@ -2668,7 +2903,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .userButton,
-.signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .createrButton {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .creatorButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -3128,7 +3363,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.mainContainerFrame .almostOverSection .alomostOverList .alomostContentBox .contentCreater {
+.mainContainerFrame .almostOverSection .alomostOverList .alomostContentBox .contentCreator {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 259px;
@@ -3490,7 +3725,7 @@ body {
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide .topRankToggle {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 152px;
+  width: 153px;
   height: 30px;
   display: flex;
   flex-direction: row;
@@ -3800,6 +4035,7 @@ body {
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -3823,7 +4059,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -3840,7 +4076,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .sectionText {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .sectionText {
   flex-shrink: 0;
   width: 134px;
   height: 24px;
@@ -3863,7 +4099,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -3881,7 +4117,7 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox {
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -3905,7 +4141,7 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo {
   flex-shrink: 0;
   width: min-content; /* 93px */
   height: min-content; /* 33px */
@@ -3921,7 +4157,7 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .createrName {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo .creatorName {
   flex-shrink: 0;
   width: min-content; /* 93px */
   height: min-content; /* 16px */
@@ -3945,7 +4181,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .fundingInfo {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo .fundingInfo {
   flex-shrink: 0;
   width: min-content; /* 59px */
   height: min-content; /* 12px */
@@ -3970,7 +4206,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .detailButton {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .detailButton {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 67px;
@@ -3998,7 +4234,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrImg {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorImg {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -4055,7 +4291,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame {
   flex-shrink: 0;
   width: min-content; /* 265px */
   height: min-content; /* 249px */
@@ -4071,7 +4307,7 @@ body {
   gap: 71px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox {
   flex-shrink: 0;
   width: 265px;
   height: 138px;
@@ -4088,7 +4324,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingName {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingName {
   flex-shrink: 0;
   width: min-content; /* 264px */
   height: min-content; /* 46px */
@@ -4112,7 +4348,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotCreaterName {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotCreatorName {
   flex-shrink: 0;
   width: min-content; /* 194px */
   height: min-content; /* 36px */
@@ -4137,7 +4373,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingInfo {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingInfo {
   flex-shrink: 0;
   width: min-content; /* 172px */
   height: min-content; /* 36px */
@@ -4161,7 +4397,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .detailButton {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .detailButton {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 120px;
@@ -4208,7 +4444,7 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: 1069px;
+  height: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -4325,25 +4561,26 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: 880px; /* 880px */
+  height: min-content; /* 965px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 10px 0px 10px 0px;
-  overflow: visible;
+  padding: 10px 20px 10px 20px;
+  overflow: hidden;
   position: relative;
   align-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
 .FundingContainerFrame .fundingListSection .listFram .fundingItem {
   flex-shrink: 0;
-  width: 240px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
   display: block;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
   border-radius: 20px;
@@ -4692,6 +4929,7 @@ body {
   align-items: center;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -4735,7 +4973,7 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 20px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topSwiperSection {
   flex-shrink: 0;
@@ -4754,7 +4992,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 20px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topInfoSection {
   pointer-events: none;
@@ -6113,12 +6351,12 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection {
+.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3),
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1199px;
-  height: 663px;
+  height: 373px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6131,8 +6369,8 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1),
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1) {
+.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(1) {
   flex-shrink: 0;
   width: min-content; /* 106px */
   height: min-content; /* 24px */
@@ -6155,260 +6393,25 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name,
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex {
+.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2),
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1159px;
-  height: 83px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 40px 0px 40px;
-  overflow: hidden;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  border-radius: 0px 0px 0px 0px;
-}
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name select,
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex select,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name select,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex select {
-  flex-shrink: 0;
-  width: 105px;
-  height: 45px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  border-radius: 0px 0px 0px 0px;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.8);
-}
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .singerName,
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .singerName,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .singerName,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .singerName {
-  flex-shrink: 0;
-  width: auto; /* 60px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 20px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .nameInput,
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .nameInput,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .nameInput,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .nameInput {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 325px;
-  height: 45px;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background-color: transparent;
-}
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .info,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .info {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1179px;
-  height: 373px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 20px 40px 20px 40px;
-  overflow: hidden;
-  position: relative;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 20px;
-  border-radius: 0px 0px 0px 0px;
-}
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .info .infoText,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .info .infoText {
-  flex-shrink: 0;
-  width: auto; /* 86px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-family: "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .info > input,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .info > input {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1099px;
   height: 289px;
   display: block;
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background-color: transparent;
   color: white;
-  font-size: 16px;
-  display: flex;
-  padding: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
+  font-size: 20px;
+  resize: none;
 }
-.fundingCreateContainerFrame .mainContentSection .shareSection,
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1199px;
-  height: 163px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame,
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame {
-  flex-shrink: 0;
-  width: min-content; /* 897px */
-  height: min-content; /* 50px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 20px;
-  border-radius: 0px 0px 0px 0px;
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .info,
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .info {
-  flex-shrink: 0;
-  width: auto; /* 271px */
-  height: auto; /* 42px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 35px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content,
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content {
-  flex-shrink: 0;
-  width: min-content; /* 606px */
-  height: min-content; /* 50px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(1),
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 291px */
-  height: auto; /* 42px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 35px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(2),
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(2) {
-  flex-shrink: 0;
-  width: 125px;
-  height: 50px;
-  display: block;
-  background-color: transparent;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border-color: 1px solid rgba(255, 255, 255, 0.1);
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(3),
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(3) {
-  flex-shrink: 0;
-  width: auto; /* 10px */
-  height: auto; /* 42px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 35px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(4),
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(4) {
-  flex-shrink: 0;
-  width: 125px;
-  height: 50px;
-  display: block;
-  background-color: transparent;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border-color: 1px solid rgba(255, 255, 255, 0.1);
+.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2):focus,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2):focus {
+  outline: none;
 }
 .fundingCreateContainerFrame .mainContentSection .submissionButton,
 .fundingCreateSecondContainerFrame .mainContentSection .submissionButton {
@@ -6491,6 +6494,10 @@ body {
   align-items: center;
   padding: 25px 15px 25px 15px;
   background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  -o-backdrop-filter: blur(5px);
+  -moz-backdrop-filter: blur(5px);
   z-index: 1;
   align-content: center;
   flex-wrap: nowrap;
@@ -7540,7 +7547,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 10px 20px 10px 20px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -7569,6 +7576,22 @@ body {
   height: 120px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 0px;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 505px;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -7579,13 +7602,42 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 170px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(171, 171, 171, 0.1);
   flex-shrink: 0;
   white-space: pre;
-  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 27px;
+  font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.5s;
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  scale: 1.2;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgb(255, 255, 255);
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList {
   box-sizing: border-box;
@@ -7681,17 +7733,18 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 257px;
-  height: 66px;
+  width: 180px;
+  height: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
   padding: 20px 30px 20px 30px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
+  border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(168, 168, 168, 0.1);
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
@@ -7700,7 +7753,8 @@ body {
   align-content: flex-end;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
+  right: 8px;
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
   flex-shrink: 0;
@@ -8091,7 +8145,8 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 320px;
@@ -8101,7 +8156,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 25px 25px 25px 25px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -8110,7 +8165,12 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .atropos-inner,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .atropos-inner {
+  border-radius: 25px;
+}
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 270px;
@@ -8120,7 +8180,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 30px 30px 30px 30px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.8);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -8130,7 +8190,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0px 1.6733156777px 1.6733156777px -0.125px rgba(0, 0, 0, 0.05), 0px 3.984206391px 3.984206391px -0.25px rgba(0, 0, 0, 0.05598), 0px 7.2593218828px 7.2593218828px -0.375px rgba(0, 0, 0, 0.06089), 0px 12.068385492px 12.068385492px -0.5px rgba(0, 0, 0, 0.0681), 0px 19.5004927421px 19.5004927421px -0.625px rgba(0, 0, 0, 0.07925), 0px 31.9014182134px 31.9014182134px -0.75px rgba(0, 0, 0, 0.09785), 0px 54.9603521257px 54.9603521257px -0.875px rgba(0, 0, 0, 0.13244), 0px 100px 100px -1px rgba(0, 0, 0, 0.2);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .ownNftImg {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .ownNftImg,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .ownNftImg {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -8145,7 +8206,8 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border: 3px solid rgba(255, 255, 255, 0.5);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .nftTitleSection {
   flex-shrink: 0;
   width: 210px;
   height: 64px;
@@ -8161,10 +8223,11 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1),
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .nftTitleSection :nth-child(1) {
   flex-shrink: 0;
-  width: min-content; /* 95px */
-  height: min-content; /* 19px */
+  width: min-content; /* 136px */
+  height: min-content; /* 27px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8179,39 +8242,15 @@ body {
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.3);
-  font-size: 19px;
+  font-size: 27px;
   letter-spacing: 0px;
   line-height: 1;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2),
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
-  flex-shrink: 0;
-  width: min-content; /* 40px */
-  height: min-content; /* 16px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 1;
-  text-align: center;
-}
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .middleLine {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .middleLine,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .middleLine {
   flex-shrink: 0;
   width: 210px;
   height: 1px;
@@ -8221,29 +8260,41 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .infoSection {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .sellButton,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .sellButton {
+  cursor: pointer;
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 210px;
-  height: 58px;
+  width: 170px;
+  height: 48px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .sellButton:hover,
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .sellButton:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .SubscriptionContainer {
@@ -8255,6 +8306,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -8340,11 +8392,11 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame {
   flex-shrink: 0;
-  width: 1200px;
+  width: 995px;
   height: 558px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   max-width: 1200px;
   overflow: visible;
@@ -8355,161 +8407,14 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.6);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionTitle {
-  flex-shrink: 0;
-  width: auto; /* 81px */
-  height: auto; /* 19px */
-  white-space: pre;
-  position: relative;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 177px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #000000;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: min-content; /* 153px */
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(0, 0, 0, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 103px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #000000;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList {
-  flex-shrink: 0;
-  width: min-content; /* 165px */
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList :nth-child(-n+5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #000000;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 380px;
   height: 558px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 20px 20px 68px 20px;
   -webkit-backdrop-filter: blur(40px);
@@ -8524,16 +8429,16 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .recommendedMark {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: min-content; /* 123px */
-  height: min-content; /* 27px */
+  width: min-content; /* 92px */
+  height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 16px 4px 8px;
+  padding: 5px 10px 5px 10px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
@@ -8544,6 +8449,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
+  position: relative;
   font-weight: 600;
   font-style: normal;
   color: #ffffff;
@@ -8553,9 +8459,26 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionTitle {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleLine {
   flex-shrink: 0;
-  width: auto; /* 89px */
+  width: 170px;
+  height: 1px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleMark {
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionTitle {
+  flex-shrink: 0;
+  width: auto; /* 90px */
   height: auto; /* 19px */
   white-space: pre;
   position: relative;
@@ -8568,9 +8491,9 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionPrice {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionPrice {
   flex-shrink: 0;
-  width: auto; /* 189px */
+  width: auto; /* 246px */
   height: auto; /* 70px */
   white-space: pre;
   position: relative;
@@ -8581,28 +8504,28 @@ body {
   letter-spacing: -0.8px;
   line-height: 1.4;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: min-content; /* 129px */
-  height: min-content; /* 29px */
+  width: min-content; /* 110px */
+  height: min-content; /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 16px 4px 8px;
+  padding: 5px 16px 5px 16px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 0;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary :nth-child(1) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 79px */
+  width: auto; /* 78px */
   height: auto; /* 21px */
   white-space: pre;
   position: relative;
@@ -8613,187 +8536,58 @@ body {
   letter-spacing: 0px;
   line-height: 150%;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary :nth-child(2) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(2) {
   width: 16px;
   height: 16px;
   border-radius: 16px;
   background-color: white;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList {
   flex-shrink: 0;
-  width: min-content; /* 165px */
-  height: min-content; /* 160px */
+  width: 340px;
+  height: 133px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
+  align-items: center;
+  overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList :nth-child(-n+5) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 118px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 24px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #ffffff;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
+  width: min-content; /* 142px */
+  height: min-content; /* 68px */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
+  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionTitle {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) :nth-child(-n+2) {
   flex-shrink: 0;
-  width: auto; /* 75px */
+  width: auto; /* 126px */
   height: auto; /* 19px */
   white-space: pre;
   position: relative;
-  font-weight: 600;
-  font-style: normal;
+  font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: 16px;
   letter-spacing: 0px;
-  text-transform: uppercase;
   line-height: 1.2;
-  text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 185px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: min-content; /* 129px */
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 79px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList {
-  flex-shrink: 0;
-  width: min-content; /* 165px */
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList :nth-child(-n+5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .option1BuyButton {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBuyButton {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 240px;
@@ -8803,29 +8597,52 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
   background-color: #ffffff;
-  max-width: 240px;
   overflow: visible;
   position: relative;
   align-content: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
   border-radius: 24px 24px 0px 24px;
   flex-shrink: 0;
   white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   letter-spacing: 0px;
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection {
+  flex-shrink: 0;
+  width: 585px;
+  height: 558px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .subscriptionProgress {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 450px;
+  height: 450px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 450px;
+  border: 10px solid #ffffff;
 }
 
-.MyPageCreaterFrame {
+.MyPageCreatorFrame {
   box-sizing: border-box;
   width: 1359px;
   height: 950px;
@@ -8841,7 +8658,7 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection {
+.MyPageCreatorFrame .topSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
@@ -8858,7 +8675,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection {
+.MyPageCreatorFrame .topSection .totalMoneySection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 341px;
@@ -8877,7 +8694,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoText {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoText {
   flex-shrink: 0;
   width: min-content; /* 216px */
   height: min-content; /* 30px */
@@ -8893,7 +8710,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(1) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoText :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 187px */
   height: auto; /* 19px */
@@ -8907,7 +8724,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(2) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoText :nth-child(2) {
   flex-shrink: 0;
   width: 216px;
   height: 1px;
@@ -8917,7 +8734,7 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber {
   flex-shrink: 0;
   width: min-content; /* 220px */
   height: min-content; /* 36px */
@@ -8933,7 +8750,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber :nth-child(1) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 61px */
   height: auto; /* 36px */
@@ -8947,7 +8764,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber :nth-child(2) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber :nth-child(2) {
   flex-shrink: 0;
   width: 149px;
   height: 30px;
@@ -8974,7 +8791,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .topSection .historyGrapSection {
+.MyPageCreatorFrame .topSection .creatorNoticeSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 958px;
@@ -8993,13 +8810,26 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .topSection .historyGrapSection .historyText {
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav {
   flex-shrink: 0;
   width: 868px;
+  height: 19px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeText {
+  flex-shrink: 0;
+  width: auto; /* 135px */
   height: auto; /* 19px */
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-word;
+  white-space: pre;
   position: relative;
   font-weight: 700;
   font-style: normal;
@@ -9010,24 +8840,135 @@ body {
   line-height: 1.2;
   text-align: left;
 }
-.MyPageCreaterFrame .topSection .historyGrapSection .historyGrapFrame {
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeShowAll {
+  flex-shrink: 0;
+  width: auto; /* 60px */
+  height: auto; /* 17px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: left;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList {
+  flex-shrink: 0;
+  width: 898px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList::-webkit-scrollbar {
+  width: 20px;
+  height: 56px;
+  background-color: transparent;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 868px;
-  height: 96px;
-  display: block;
+  width: 800px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
   overflow: hidden;
   position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 0px;
-  border-radius: 0px 0px 0px 5px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  transition: 0.5s;
 }
-.MyPageCreaterFrame .bottomSection {
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .date {
+  flex-shrink: 0;
+  width: auto; /* 91px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .title {
+  flex-shrink: 0;
+  width: auto; /* 107px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame {
+  flex-shrink: 0;
+  width: min-content; /* 166px */
+  height: min-content; /* 19px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 68px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .bottomSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
@@ -9045,7 +8986,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1279px;
@@ -9062,7 +9003,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1249px;
@@ -9078,7 +9019,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar .text {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar .text {
   flex-shrink: 0;
   width: auto; /* 237px */
   height: auto; /* 30px */
@@ -9092,7 +9033,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar .button {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar .button {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 157px;
@@ -9117,11 +9058,11 @@ body {
   font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
+  font-size: 15px;
+  letter-spacing: -1px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1260px;
@@ -9139,17 +9080,17 @@ body {
   gap: 15px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList::-webkit-scrollbar {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList::-webkit-scrollbar {
   width: 20px;
   height: 56px;
   background-color: transparent;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList::-webkit-scrollbar-thumb {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1219px;
@@ -9167,7 +9108,7 @@ body {
   border-radius: 40px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .infoSection {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .infoSection {
   flex-shrink: 0;
   width: min-content; /* 816px */
   height: min-content; /* 22px */
@@ -9183,10 +9124,10 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .infoSection .funddingTitle {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .infoSection .funddingTitle {
   cursor: pointer;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .infoSection :nth-child(-n+5) {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .infoSection :nth-child(-n+5) {
   flex-shrink: 0;
   width: auto; /* 127px */
   height: auto; /* 22px */
@@ -9200,7 +9141,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .musicInputButton {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .musicInputButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9220,7 +9161,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .musicInputButton .buttonLine {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .musicInputButton .buttonLine {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 121px;
@@ -9247,7 +9188,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList .funddingItemBox .funddingTerminationButton {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .funddingTerminationButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9276,7 +9217,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .backDrop {
+
+.backDrop {
   z-index: 99;
   position: absolute;
   top: 0;
@@ -9292,9 +9234,10 @@ body {
   align-items: center;
   justify-content: center;
 }
-.MyPageCreaterFrame .modal {
+
+.modal {
   width: 883px;
-  height: 855px;
+  height: 910px;
   background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
   -webkit-backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
@@ -9313,7 +9256,7 @@ body {
   box-shadow: 0px 0.7968412782px 0.7968412782px 0px rgba(0, 0, 0, 0.01), 0px 2.4136770984px 2.4136770984px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836427px 6.3802836427px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
   border: 1.5px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame {
+.modal .nftRegistrationFrame {
   flex-shrink: 0;
   width: 803px;
   height: 795px;
@@ -9329,7 +9272,7 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .topText {
+.modal .nftRegistrationFrame .topText {
   flex-shrink: 0;
   width: 803px;
   height: min-content; /* 31px */
@@ -9356,7 +9299,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame {
+.modal .nftRegistrationFrame .bottomFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 803px;
@@ -9373,7 +9316,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList {
+.modal .nftRegistrationFrame .bottomFrame .genreList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9388,7 +9331,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
+.modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
   flex-shrink: 0;
   width: auto; /* 52px */
   height: auto; /* 31px */
@@ -9402,7 +9345,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
   flex-shrink: 0;
   width: min-content;
   height: 39px;
@@ -9418,7 +9361,7 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 488px;
@@ -9437,7 +9380,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9464,11 +9407,11 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 25px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
   cursor: pointer;
   flex-shrink: 0;
   width: auto; /* 52px */
@@ -9483,7 +9426,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList {
+.modal .nftRegistrationFrame .bottomFrame .bottomList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9498,7 +9441,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 78px */
   height: auto; /* 31px */
@@ -9512,7 +9455,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
   flex-shrink: 0;
   width: 289px;
   height: 39px;
@@ -9538,18 +9481,19 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
   text-align: right;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
   outline: none;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
   transition: 0.3s;
   opacity: 0;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource,
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource,
+.modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover,
+.modal .nftRegistrationFrame .bottomFrame .bottomList .lyricsSource {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9579,7 +9523,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
   flex-shrink: 0;
   width: 240px;
   height: 39px;
@@ -9595,7 +9539,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9623,7 +9567,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9651,10 +9595,10 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton {
   flex-shrink: 0;
   width: 723px;
-  height: 183px;
+  height: 124px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9666,7 +9610,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9695,7 +9639,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9792,7 +9736,6 @@ body {
 .loadingFrame {
   width: 1920px;
   height: 1080px;
-  background: radial-gradient(141.9% 200% at 50% 110.8%, #292929 0%, rgb(0, 0, 0) 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9802,38 +9745,40 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
+  gap: 30px;
+  position: relative;
   border-radius: 0px 0px 0px 0px;
 }
 .loadingFrame .loadingCenter {
   flex-shrink: 0;
-  width: min-content; /* 452px */
-  height: min-content; /* 121px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  width: auto; /* 186px */
+  height: auto; /* 54px */
+  white-space: pre;
   position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
 }
 .loadingFrame .progressBar {
   width: 450px;
-  height: 45px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: stretch;
-  border-radius: 60px;
-  background-color: #494b52;
-  box-shadow: 0px 0px 20px #111;
+  background-color: transparent;
+  border-radius: 25px;
+  border: 5px solid #ffffff;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 .loadingFrame .progressBar .bar {
+  border-radius: 25px;
   width: 0%;
-  background-color: rgb(255, 174, 105);
-  background: linear-gradient(180deg, rgb(255, 174, 105) 0% rgb(255, 173, 102) 32% rgb(255, 132, 25) 100%);
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0% rgba(255, 255, 255, 0.8) 32% rgb(255, 255, 255) 100%);
 }

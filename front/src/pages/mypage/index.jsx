@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ApplyCreator, MyPageSecondContainer, MyPageThirdContainer } from "@/components";
 import { useDispatch, useSelector } from "react-redux";

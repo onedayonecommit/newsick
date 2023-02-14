@@ -1,7 +1,7 @@
 import useWeb3 from "@/hooks/useWeb3";
 import { fetchApplyCreator } from "@/middleware/fetchUser";
 import { useSelector, useDispatch } from "react-redux";
-import MyPageCreator from "@/components";
+import { MyPageCreator } from "@/components";
 
 const ApplyCreator = () => {
   const { web3, NEWSIC_FUND } = useWeb3();

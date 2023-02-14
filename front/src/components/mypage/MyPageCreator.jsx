@@ -1,27 +1,6 @@
-// 크리에이터 관리자 페이지
-// - 지금까지 펀딩된 금액 확인
-// - 내 펀딩 히스토리
-// - 진행하고 있는 내 펀딩 상세 페이지에서 펀딩 종료 가능
-// - 펀딩 상세 페이지에서 공지사항 게시판 핸들링 가능
-
-// - 제작된 음원 첨부파일로 등록할 수 있게
-import React from "react";
-import Graph from "./Graph";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { RegisterNftSong } from "@/components";
-
-const dateFunndingData = [
-  [0, 10],
-  [5, 50],
-  [15, 75],
-  [55, 100],
-  [75, 10],
-  [100, 5],
-  [120, 50],
-  [140, 100],
-  [180, 50],
-];
+import { Modal } from "@/components";
 
 const FunddingDateItem = [
   {
@@ -85,9 +64,10 @@ const MyPageCreator = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
+  const block = Array.from({ length: 5 }, () => <div></div>);
   return (
-    <div className="MyPageCreaterFrame">
-      <AnimatePresence>{modalOpen && <RegisterNftSong modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
+    <div className="MyPageCreatorFrame">
+      <AnimatePresence>{modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
       <div className="topSection">
         <div className="totalMoneySection">
           <div className="infoText">
@@ -99,18 +79,30 @@ const MyPageCreator = () => {
             <div>2.255</div>
           </div>{" "}
         </div>
-        <div className="historyGrapSection">
-          <div className="historyText">Fundding History</div>
-          <div className="historyGrapFrame">
-            <Graph data={dateFunndingData} />
+        <div className="creatorNoticeSection">
+          <div className="noticeNav">
+            <div className="noticeText">공지사항 확인하기</div>
+            <div className="noticeShowAll">Show All</div>
+          </div>
+          <div className="noticeList">
+            {block.map(() => (
+              <motion.div className="noticeWrap" whileHover={{ scale: 1.01 }}>
+                <div className="date">2023-02-13</div>
+                <div className="title">Fundding Title</div>
+                <div className="infoFrame">
+                  <div>공지내용</div>
+                  <div>조회수</div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
       <div className="bottomSection">
-        <div className="createrHandlerFrame">
+        <div className="creatorHandlerFrame">
           <div className="handleNavBar">
             <div className="text">진행중인 펀딩 핸들러</div>
-            <div className="button">공지사항 확인하기</div>
+            <div className="button">펀 딩 등 록</div>
           </div>
           <div className="funddingList">
             {FunddingDateItem.map((item) => (

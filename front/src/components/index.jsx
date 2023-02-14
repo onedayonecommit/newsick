@@ -18,9 +18,9 @@ import RegisterNftSong from "./mypage/RegisterNftSong";
 import MyPageCreator from "./mypage/MyPageCreator";
 import ApplyFundMusic from "./mypage/RegisterNftSong";
 import Graph from "./mypage/Graph";
-import ApplyCreator from "./mypage/ApplyCreator";
 import MyPageSecondContainer from "./mypage/Favorite";
 import MyPageThirdContainer from "./mypage/my_NFT";
+import ApplyCreator from "./mypage/ApplyCreator";
 
 // music
 import MusicPlayer from "./music/MusicPlayer";
