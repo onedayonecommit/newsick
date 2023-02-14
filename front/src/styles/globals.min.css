@@ -576,6 +576,201 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 
+.changeUserInfoFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 700px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 80px 40px 80px 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.changeUserInfoFrame .changeNavBar {
+  flex-shrink: 0;
+  width: 620px;
+  height: -moz-min-content;
+  height: min-content; /* 42px */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeNavBar .successBtn {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 56px */
+  height: auto; /* 34px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 28px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  transition: 0.3s;
+}
+.changeUserInfoFrame .changeNavBar .successBtn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+.changeUserInfoFrame .changeNavBar .infoText {
+  flex-shrink: 0;
+  width: auto; /* 217px */
+  height: auto; /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 32px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.changeUserInfoFrame .middleLine {
+  flex-shrink: 0;
+  width: 330px;
+  height: 2px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeMainSection {
+  flex-shrink: 0;
+  width: 620px;
+  height: 607px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeMainSection .imgChange {
+  cursor: pointer;
+  left: 370px;
+  top: 281px;
+  bottom: 246px;
+  right: 170px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 1;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 80px;
+  border: 1px solid #ffffff;
+}
+.changeUserInfoFrame .changeMainSection .imgChange .faCamera {
+  color: transparent;
+  width: 45px;
+  height: 45px;
+  stroke-width: 50px;
+  stroke: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+.changeUserInfoFrame .changeMainSection .imgChange .faCamera:hover {
+  stroke: rgb(255, 255, 255);
+}
+.changeUserInfoFrame .changeMainSection .userImg {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.changeUserInfoFrame .changeMainSection .userNickName {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: -moz-min-content;
+  height: min-content; /* 74px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border-color: #ffffff;
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  background-color: transparent;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 28px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName::-moz-placeholder {
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName::placeholder {
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName:focus {
+  outline: none;
+}
+
 .playBarSection {
   flex-shrink: 0;
   width: 610px;
@@ -1993,12 +2188,53 @@ body {
   flex-shrink: 0;
   width: 234px;
   height: 50px;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
   position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
   border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 120px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection {
   box-sizing: border-box;
@@ -8063,11 +8299,11 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame {
   flex-shrink: 0;
-  width: 1200px;
+  width: 995px;
   height: 558px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   max-width: 1200px;
   overflow: visible;
@@ -8078,165 +8314,14 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.6);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionTitle {
-  flex-shrink: 0;
-  width: auto; /* 81px */
-  height: auto; /* 19px */
-  white-space: pre;
-  position: relative;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 177px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #000000;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 153px */
-  height: -moz-min-content;
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(0, 0, 0, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 103px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #000000;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList :nth-child(-n+5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #000000;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 380px;
   height: 558px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 20px 20px 68px 20px;
   -webkit-backdrop-filter: blur(40px);
@@ -8251,18 +8336,18 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .recommendedMark {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 123px */
+  width: min-content; /* 92px */
   height: -moz-min-content;
-  height: min-content; /* 27px */
+  height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 16px 4px 8px;
+  padding: 5px 10px 5px 10px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
@@ -8273,6 +8358,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
+  position: relative;
   font-weight: 600;
   font-style: normal;
   color: #ffffff;
@@ -8282,9 +8368,26 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionTitle {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleLine {
   flex-shrink: 0;
-  width: auto; /* 89px */
+  width: 170px;
+  height: 1px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleMark {
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionTitle {
+  flex-shrink: 0;
+  width: auto; /* 90px */
   height: auto; /* 19px */
   white-space: pre;
   position: relative;
@@ -8297,9 +8400,9 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionPrice {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionPrice {
   flex-shrink: 0;
-  width: auto; /* 189px */
+  width: auto; /* 246px */
   height: auto; /* 70px */
   white-space: pre;
   position: relative;
@@ -8310,30 +8413,30 @@ body {
   letter-spacing: -0.8px;
   line-height: 1.4;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 129px */
+  width: min-content; /* 110px */
   height: -moz-min-content;
-  height: min-content; /* 29px */
+  height: min-content; /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 16px 4px 8px;
+  padding: 5px 16px 5px 16px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 0;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary :nth-child(1) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 79px */
+  width: auto; /* 78px */
   height: auto; /* 21px */
   white-space: pre;
   position: relative;
@@ -8344,193 +8447,60 @@ body {
   letter-spacing: 0px;
   line-height: 150%;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary :nth-child(2) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(2) {
   width: 16px;
   height: 16px;
   border-radius: 16px;
   background-color: white;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
+  width: 340px;
+  height: 133px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
+  align-items: center;
+  overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList :nth-child(-n+5) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 118px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 24px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #ffffff;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
+  width: -moz-min-content;
+  width: min-content; /* 142px */
+  height: -moz-min-content;
+  height: min-content; /* 68px */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
+  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionTitle {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) :nth-child(-n+2) {
   flex-shrink: 0;
-  width: auto; /* 75px */
+  width: auto; /* 126px */
   height: auto; /* 19px */
   white-space: pre;
   position: relative;
-  font-weight: 600;
-  font-style: normal;
+  font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: 16px;
   letter-spacing: 0px;
-  text-transform: uppercase;
   line-height: 1.2;
-  text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 185px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 129px */
-  height: -moz-min-content;
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 79px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList :nth-child(-n+5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .option1BuyButton {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBuyButton {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 240px;
@@ -8540,26 +8510,49 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
   background-color: #ffffff;
-  max-width: 240px;
   overflow: visible;
   position: relative;
   align-content: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
   border-radius: 24px 24px 0px 24px;
   flex-shrink: 0;
   white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   letter-spacing: 0px;
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection {
+  flex-shrink: 0;
+  width: 585px;
+  height: 558px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .subscriptionProgress {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 450px;
+  height: 450px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 450px;
+  border: 10px solid #ffffff;
 }
 
 .MyPageCreatorFrame {
@@ -9019,7 +9012,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .backDrop {
+
+.backDrop {
   z-index: 99;
   position: absolute;
   top: 0;
@@ -9035,7 +9029,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.MyPageCreatorFrame .modal {
+
+.modal {
   width: 883px;
   height: 855px;
   background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
@@ -9056,7 +9051,7 @@ body {
   box-shadow: 0px 0.7968412782px 0.7968412782px 0px rgba(0, 0, 0, 0.01), 0px 2.4136770984px 2.4136770984px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836427px 6.3802836427px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
   border: 1.5px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame {
+.modal .nftRegistrationFrame {
   flex-shrink: 0;
   width: 803px;
   height: 795px;
@@ -9072,7 +9067,7 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .topText {
+.modal .nftRegistrationFrame .topText {
   flex-shrink: 0;
   width: 803px;
   height: -moz-min-content;
@@ -9100,7 +9095,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame {
+.modal .nftRegistrationFrame .bottomFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 803px;
@@ -9117,7 +9112,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList {
+.modal .nftRegistrationFrame .bottomFrame .genreList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9132,7 +9127,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
+.modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
   flex-shrink: 0;
   width: auto; /* 52px */
   height: auto; /* 31px */
@@ -9146,7 +9141,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content;
@@ -9163,7 +9158,7 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 488px;
@@ -9182,7 +9177,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9211,11 +9206,11 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 25px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
   cursor: pointer;
   flex-shrink: 0;
   width: auto; /* 52px */
@@ -9230,7 +9225,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList {
+.modal .nftRegistrationFrame .bottomFrame .bottomList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9245,7 +9240,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 78px */
   height: auto; /* 31px */
@@ -9259,7 +9254,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
   flex-shrink: 0;
   width: 289px;
   height: 39px;
@@ -9285,21 +9280,21 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::-moz-placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::-moz-placeholder {
   text-align: right;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
   text-align: right;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
   outline: none;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   opacity: 0;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource, .MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource, .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9329,7 +9324,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
   flex-shrink: 0;
   width: 240px;
   height: 39px;
@@ -9345,7 +9340,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9373,7 +9368,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9401,7 +9396,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton {
   flex-shrink: 0;
   width: 723px;
   height: 183px;
@@ -9416,7 +9411,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9445,7 +9440,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;

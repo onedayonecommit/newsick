@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar, VolumeBox } from "../components";
-import {motion} from "framer-motion"
+import {AnimatePresence, motion} from "framer-motion"
 import Loading from "./eventComponent/Loading";
+import ChangeMember from "./ChangeMember";
 const Layout = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isSoundClick,setIsSoundClick] = useState(false);
   const [isPlayerClick,setIsPlayerClick]=useState(false);
   const [switchState, setSwitchState] = useState(false)
-
+  const [modalOpen,setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
   const layOutRef = useRef(null)
 
 
@@ -29,6 +32,9 @@ const Layout = (props) => {
               {
                 isSoundClick ? <VolumeBox/>:null
               }
+          <AnimatePresence>
+           {modalOpen && <ChangeMember modalOpen={modalOpen} handleClose={close}/>}
+          </AnimatePresence>
             <div className='layoutBox'>
               <SideBar/>
                 <PlayBar soundClick={soundClick} playerClick={playerClick} isPlayerClick={isPlayerClick}/>
@@ -38,7 +44,7 @@ const Layout = (props) => {
                     {props.children}
                    </div>
                   </div>
-              <UserBar/>
+              <UserBar handleOpen={open}/>
             </div>
           </motion.div>
         </motion.div>

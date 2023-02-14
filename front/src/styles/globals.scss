@@ -575,6 +575,199 @@ body{
 }
 // ========================================Main CSS Done
 // ==================================COMPONENT CSS START
+.changeUserInfoFrame{
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 700px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 80px 40px 80px 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    // -webkit-backdrop-filter: blur(10px);
+    // -o-backdrop-filter: blur(10px);
+    // -moz-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    .changeNavBar{
+        flex-shrink: 0;
+        width: 620px;
+        height: min-content; /* 42px */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: flex-end;
+        flex-wrap: nowrap;
+        border-radius: 0px 0px 0px 0px;
+        .successBtn{
+            cursor: pointer;
+            flex-shrink: 0;
+            width: auto; /* 56px */
+            height: auto; /* 34px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 28px;
+            letter-spacing: -0.1px;
+            line-height: 1.2;
+            transition: 0.3s;
+            &:hover{
+                color: rgba(255, 255, 255, 0.8); 
+            }
+        }
+        .infoText{
+            flex-shrink: 0;
+            width: auto; /* 217px */
+            height: auto; /* 42px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 32px;
+            letter-spacing: -0.1px;
+            line-height: 1.2;  
+        }
+    }
+    .middleLine{
+        flex-shrink: 0;
+        width: 330px;
+        height: 2px;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+    }
+    .changeMainSection{
+        flex-shrink: 0;
+        width: 620px;
+        height: 607px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        border-radius: 0px 0px 0px 0px;
+        .imgChange{
+            cursor: pointer;
+            left: 370px;
+            top:281px;
+            bottom:246px;
+            right: 170px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            z-index: 1;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            position: absolute;
+            border-radius: 80px;
+            border: 1px solid #ffffff;
+            .faCamera{
+                color: transparent;
+                width: 45px;
+                height: 45px;
+                stroke-width: 50px;
+                stroke: rgba(255,255,255,0.5);
+                transition: 0.3s;
+                &:hover{
+                 stroke: rgba(255,255,255,1); 
+                }       
+            }
+        }
+        .userImg{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            background-size: fill;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .userNickName{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 300px;
+            height: min-content; /* 74px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px 20px 20px;
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            border-color: #ffffff;
+            border-style: solid;
+            border-top-width: 0px;
+            border-bottom-width: 1px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            background-color: transparent;
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 28px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+            text-align: center;
+            &::placeholder{
+                text-align: center;
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}
 .playBarSection{
   flex-shrink: 0;
   width: 610px;
@@ -2022,15 +2215,56 @@ body{
           gap: 0;
           border-radius: 0px 0px 0px 0px;
           .optionSection{
-              flex-shrink: 0;
-              width: 234px;
-              height: 50px;
-              display: block;
-              box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
-              background-color: rgba(255, 255, 255, 0);
-              overflow: hidden;
-              position: relative;
-              border-radius: 0px 0px 0px 0px;
+            flex-shrink: 0;
+            width: 234px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+              .changeMemberInfo{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 120px;
+                height: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                flex-shrink: 0;
+                white-space: pre;
+                font-weight: 700;
+                font-style: normal;
+                font-family: "Inter-Bold", "Inter", sans-serif;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 12px;
+                letter-spacing: -0.1px;
+                line-height: 1.2;
+                text-align: center;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover{
+                    box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+                }
+            }
           }
           .userInfoSection{
               box-sizing: border-box;
@@ -7923,590 +8157,351 @@ animation: gradient-animation 6s ease infinite;
   }
 }
 // MyPageContainer CSS ==============done
-
 // SubscriptionContainer CSS ===============start
 .SubscriptionContainer{
-  flex-shrink: 0;
-  width: 1359px;
-  height: 950px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
-  .SubscriptionFrame{
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 1288px;
-      height: 871px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-      position: relative;
-      padding: 0px 0px 0px 0px;
-      align-content: center;
-      flex-wrap: nowrap;
-      gap: 20px;
-      border-radius: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      .SubscriptionText{
-          flex-shrink: 0;
-          width: 500px;
-          height: 193px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 25px;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(1){
-              flex-shrink: 0;
-              width: auto; /* 362px */
-              height: auto; /* 70px */
-              white-space: pre;
-              position: relative;
-              font-weight: 800;
-              font-style: normal;
-              color: #ffffff;
-              font-size: 50px;
-              letter-spacing: -0.8px;
-              line-height: 1.4;
-          }
-          :nth-child(2){
-              flex-shrink: 0;
-              width: 500px;
-              height: auto; /* 61px */
-              white-space: pre-wrap;
-              word-wrap: break-word;
-              word-break: break-word;
-              max-width: 500px;
-              position: relative;
-              font-weight: 700;
-              font-style: normal;
-              color: #ffffff;
-              font-size: 22px;
-              letter-spacing: -0.2px;
-              line-height: 1.4;
-              text-align: center;
-          }
-          :nth-child(3){
-              flex-shrink: 0;
-              width: 285px;
-              height: 1px;
-              display: block;
-              background-color: rgba(255, 255, 255, 0.1);
-              overflow: visible;
-              position: relative;
-              border-radius: 0px 0px 0px 0px;
-          }
-      }
-      .SubscriptionListFrame{
-          flex-shrink: 0;
-          width: 1200px;
-          height: 558px;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          max-width: 1200px;
-          overflow: visible;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 30px;
-          border-radius: 0px 0px 0px 0px;
-          .optionBox1{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 380px;
-              height: 462px;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: center;
-              padding: 20px 20px 20px 20px;
-              -webkit-backdrop-filter: blur(40px);
-              backdrop-filter: blur(40px);
-              box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-              background-color: rgba(255, 255, 255, 0.6);
-              overflow: visible;
-              position: relative;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 15px;
-              border-radius: 25px;
-              border: 1px solid rgba(255, 255, 255, 0.5);
-              .optionTitle{
-                  flex-shrink: 0;
-                  width: auto; /* 81px */
-                  height: auto; /* 19px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 600;
-                  font-style: normal;
-                  color: #000000;
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  text-transform: uppercase;
-                  line-height: 1.2;
-                  text-align: center;
-              }
-              .optionPrice{
-                  flex-shrink: 0;
-                  width: auto; /* 177px */
-                  height: auto; /* 70px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 800;
-                  font-style: normal;
-                  color: #000000;
-                  font-size: 50px;
-                  letter-spacing: -0.8px;
-                  line-height: 1.4;
-              }
-              .benefitsSummary{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: min-content; /* 153px */
-                  height: min-content; /* 29px */
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 4px 16px 4px 8px;
-                  background-color: rgba(0, 0, 0, 0.1);
-                  overflow: visible;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 15px;
-                  border-radius: 20px;
-                  border: 1px solid rgba(0, 0, 0, 0.1);
-                  :nth-child(1){
-                      flex-shrink: 0;
-                      width: auto; /* 103px */
-                      height: auto; /* 21px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 500;
-                      font-style: normal;
-                      color: #000000;
-                      font-size: 14px;
-                      letter-spacing: 0px;
-                      line-height: 150%;
-                  }
-                  :nth-child(2){
-                      width: 16px;
-                      height: 16px;
-                      border-radius: 16px;
-                      background-color: white;
-                  }
-              }
-              .optionBenefitList{
-                  flex-shrink: 0;
-                  width: min-content; /* 165px */
-                  height: min-content; /* 160px */
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: flex-start;
-                  overflow: visible;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: flex-start;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 0px 0px 0px 0px;
-                  :nth-child(-n+5){
-                      flex-shrink: 0;
-                      width: auto; /* 109px */
-                      height: auto; /* 24px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 700;
-                      color: #000000;
-                      font-size: 20px;
-                      letter-spacing: -1px;
-                    
-                  }
-              }
-              .option1BuyButton{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 240px;
-                  height: 50px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 10px 10px 10px 10px;
-                  -webkit-backdrop-filter: blur(30px);
-                  backdrop-filter: blur(30px);
-                  background-color: #000000;
-                  max-width: 240px;
-                  overflow: visible;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: wrap;
-                  gap: 16px;
-                  border-radius: 24px 24px 0px 24px; 
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-weight: 600;
-                  font-style: normal;
-                  color: #ffffff;
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  text-transform: uppercase;
-                  line-height: 1.2;
-                  text-align: center;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-              }
-          }
-          .optionBox2{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 380px;
-              height: 558px;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: center;
-              padding: 20px 20px 68px 20px;
-              -webkit-backdrop-filter: blur(40px);
-              backdrop-filter: blur(40px);
-              box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-              background-color: rgba(0, 0, 0, 0.4);
-              overflow: visible;
-              position: relative;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 15px;
-              border-radius: 25px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              .recommendedMark{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: min-content; /* 123px */
-                  height: min-content; /* 27px */
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 4px 16px 4px 8px;
-                  background-color: rgba(255, 255, 255, 0.1);
-                  overflow: visible;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 20px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-weight: 600;
-                  font-style: normal;
-                  color: #ffffff;
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  text-transform: uppercase;
-                  line-height: 1.2;
-                  text-align: center;
-              }
-              .optionTitle{
-                  flex-shrink: 0;
-                  width: auto; /* 89px */
-                  height: auto; /* 19px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 600;
-                  font-style: normal;
-                  color: #ffffff;
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  text-transform: uppercase;
-                  line-height: 1.2;
-                  text-align: center;
-              }
-              .optionPrice{
-                  flex-shrink: 0;
-                  width: auto; /* 189px */
-                  height: auto; /* 70px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 800;
-                  font-style: normal;
-                  color: #ffffff;
-                  font-size: 50px;
-                  letter-spacing: -0.8px;
-                  line-height: 1.4;
-              }
-              .benefitsSummary{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: min-content; /* 129px */
-                  height: min-content; /* 29px */
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 4px 16px 4px 8px;
-                  background-color: rgba(255, 255, 255, 0.1);
-                  overflow: visible;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 20px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-                  :nth-child(1){
-                      flex-shrink: 0;
-                      width: auto; /* 79px */
-                      height: auto; /* 21px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 500;
-                      font-style: normal;
-                      color: #ffffff;
-                      font-size: 14px;
-                      letter-spacing: 0px;
-                      line-height: 150%;
-                  }
-                  :nth-child(2){
-                      width: 16px;
-                      height: 16px;
-                      border-radius: 16px;
-                      background-color: white;
-                  }
-              }
-              .optionBenefitList{
-                  flex-shrink: 0;
-                  width: min-content; /* 165px */
-                  height: min-content; /* 160px */
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: flex-start;
-                  overflow: visible;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: flex-start;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 0px 0px 0px 0px;
-                  :nth-child(-n+5){
-                      flex-shrink: 0;
-                      width: auto; /* 118px */
-                      height: auto; /* 24px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 700;
-                      font-style: normal;
-                      color: #ffffff;
-                      font-size: 24px;
-                      letter-spacing: 0px;
-                      line-height: 150%;
-                  }
-              }
-              .option1BuyButton{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 240px;
-                  height: 50px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 10px 10px 10px 10px;
-                  -webkit-backdrop-filter: blur(30px);
-                  backdrop-filter: blur(30px);
-                  background-color: #ffffff;
-                  max-width: 240px;
-                  overflow: visible;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: wrap;
-                  gap: 16px;
-                  border-radius: 24px 24px 0px 24px;
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-weight: 600;
-                  font-style: normal;
-                  color: #000000;
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  text-transform: uppercase;
-                  line-height: 1.2;
-                  text-align: center;
-              }
-          }
-          .optionBox3{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 380px;
-              height: 462px;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: center;
-              padding: 20px 20px 20px 20px;
-              -webkit-backdrop-filter: blur(40px);
-              backdrop-filter: blur(40px);
-              box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-              background-color: rgba(0, 0, 0, 0.9);
-              overflow: visible;
-              position: relative;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 15px;
-              border-radius: 25px;
-              .optionTitle{
-                  flex-shrink: 0;
-                  width: auto; /* 75px */
-                  height: auto; /* 19px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 600;
-                  font-style: normal;
-      
-                  color: #ffffff;
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  text-transform: uppercase;
-                  line-height: 1.2;
-                  text-align: center;
-              }
-              .optionPrice{
-                  flex-shrink: 0;
-                  width: auto; /* 185px */
-                  height: auto; /* 70px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 800;
-                  font-style: normal;
-      
-                  color: #ffffff;
-                  font-size: 50px;
-                  letter-spacing: -0.8px;
-                  line-height: 1.4;
-              }
-              .benefitsSummary{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: min-content; /* 129px */
-                  height: min-content; /* 29px */
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 4px 16px 4px 8px;
-                  background-color: rgba(255, 255, 255, 0.1);
-                  overflow: visible;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 20px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-                  :nth-child(1){
-                      flex-shrink: 0;
-                      width: auto; /* 79px */
-                      height: auto; /* 21px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 500;
-                      font-style: normal;
-          
-                      color: #ffffff;
-                      font-size: 14px;
-                      letter-spacing: 0px;
-                      line-height: 150%;
-                  }
-                  :nth-child(2){
-                      width: 16px;
-                      height: 16px;
-                      border-radius: 16px;
-                      background-color: white;
-                  }
-              }
-              .optionBenefitList{
-                  flex-shrink: 0;
-                  width: min-content; /* 165px */
-                  height: min-content; /* 160px */
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: flex-start;
-                  overflow: visible;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: flex-start;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 0px 0px 0px 0px;
-                  :nth-child(-n+5){
-                      flex-shrink: 0;
-                      width: auto; /* 109px */
-                      height: auto; /* 24px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 700;
-                      color: #ffffff;
-                      font-size: 20px;
-                      letter-spacing: -1px;
-                  }
-              }
-              .option1BuyButton{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 240px;
-                  height: 50px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 10px 10px 10px 10px;
-                  -webkit-backdrop-filter: blur(30px);
-                  backdrop-filter: blur(30px);
-                  background-color: #ffffff;
-                  max-width: 240px;
-                  overflow: visible;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: wrap;
-                  gap: 16px;
-                  border-radius: 24px 24px 0px 24px;
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-weight: 600;
-                  font-style: normal;
-                  color: #000000;
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  text-transform: uppercase;
-                  line-height: 1.2;
-                  text-align: center;
-              }
-          }
-      }
-  }
+    flex-shrink: 0;
+    width: 1359px;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b2f5f;
+    background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0, 0%, 0%) 100%);
+    overflow: visible;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    border-radius: 0px 0px 0px 0px;
+    .SubscriptionFrame{
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1288px;
+        height: 871px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        .SubscriptionText{
+            flex-shrink: 0;
+            width: 500px;
+            height: 193px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 25px;
+            border-radius: 0px 0px 0px 0px;
+            :nth-child(1){
+                flex-shrink: 0;
+                width: auto; /* 362px */
+                height: auto; /* 70px */
+                white-space: pre;
+                position: relative;
+                font-weight: 800;
+                font-style: normal;
+                color: #ffffff;
+                font-size: 50px;
+                letter-spacing: -0.8px;
+                line-height: 1.4;
+            }
+            :nth-child(2){
+                flex-shrink: 0;
+                width: 500px;
+                height: auto; /* 61px */
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                word-break: break-word;
+                max-width: 500px;
+                position: relative;
+                font-weight: 700;
+                font-style: normal;
+                color: #ffffff;
+                font-size: 22px;
+                letter-spacing: -0.2px;
+                line-height: 1.4;
+                text-align: center;
+            }
+            :nth-child(3){
+                flex-shrink: 0;
+                width: 285px;
+                height: 1px;
+                display: block;
+                background-color: rgba(255, 255, 255, 0.1);
+                overflow: visible;
+                position: relative;
+                border-radius: 0px 0px 0px 0px;
+            }
+        }
+        .SubscriptionListFrame{
+            flex-shrink: 0;
+            width: 995px;
+            height: 558px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 1200px;
+            overflow: visible;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 30px;
+            border-radius: 0px 0px 0px 0px;
+            .optionBox{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 380px;
+                height: 558px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 20px 68px 20px;
+                -webkit-backdrop-filter: blur(40px);
+                backdrop-filter: blur(40px);
+                box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+                background-color: rgba(0, 0, 0, 0.4);
+                overflow: visible;
+                position: relative;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 15px;
+                border-radius: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                .recommendedMark{
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: min-content; /* 92px */
+                    height: min-content; /* 29px */
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px 10px 5px 10px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    overflow: visible;
+                    position: relative;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    flex-shrink: 0;
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 600;
+                    font-style: normal;
+                    color: #ffffff;
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                    text-align: center;
+                }
+                .middleLine{
+                    flex-shrink: 0;
+                    width: 170px;
+                    height: 1px;
+                    display: block;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    overflow: visible;
+                    position: relative;
+                    border-radius: 0px 0px 0px 0px;
+                }
+                .middleMark{
+                    width: 32px;
+                    height: 32px;
+                    border: 1px solid white;
+                    background-color: rgba(0,0,0,0.1);
+                    border-radius: 32px;
+                }
+                .optionTitle{
+                    flex-shrink: 0;
+                    width: auto; /* 90px */
+                    height: auto; /* 19px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 600;
+                    font-style: normal;
+                    color: #ffffff;
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                    text-align: center;
+                }
+                .optionPrice{
+                    flex-shrink: 0;
+                    width: auto; /* 246px */
+                    height: auto; /* 70px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 800;
+                    font-style: normal;
+                    color: #ffffff;
+                    font-size: 50px;
+                    letter-spacing: -0.8px;
+                    line-height: 1.4;
+                }
+                .benefitsSummary{
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: min-content; /* 110px */
+                    height: min-content; /* 31px */
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px 16px 5px 16px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    overflow: visible;
+                    position: relative;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 0;
+                    border-radius: 20px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    :nth-child(1){
+                        flex-shrink: 0;
+                        width: auto; /* 78px */
+                        height: auto; /* 21px */
+                        white-space: pre;
+                        position: relative;
+                        font-weight: 500;
+                        font-style: normal;
+                        color: #ffffff;
+                        font-size: 14px;
+                        letter-spacing: 0px;
+                        line-height: 150%;
+                    }
+                    :nth-child(2){
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 16px;
+                        background-color: white;
+                    }
+                }
+                .optionBenefitList{
+                    flex-shrink: 0;
+                    width: 340px;
+                    height: 133px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 25px;
+                    border-radius: 0px 0px 0px 0px;
+                    :nth-child(1){
+                        flex-shrink: 0;
+                        width: min-content; /* 142px */
+                        height: min-content; /* 68px */
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 30px;
+                        border-radius: 0px 0px 0px 0px;
+                        :nth-child(-n+2){
+                            flex-shrink: 0;
+                            width: auto; /* 126px */
+                            height: auto; /* 19px */
+                            white-space: pre;
+                            position: relative;
+                            font-family: "Inter", sans-serif;
+                            color: #ffffff;
+                            font-size: 16px;
+                            letter-spacing: 0px;
+                            line-height: 1.2;
+                        }
+
+                    }
+                }
+                .optionBuyButton{
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 240px;
+                    height: 50px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px 10px 10px 10px;
+                    background-color: #ffffff;
+                    overflow: visible;
+                    position: relative;
+                    align-content: center;
+                    flex-wrap: wrap;
+                    gap: 18px;
+                    border-radius: 24px 24px 0px 24px;
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-weight: bold;
+                    color: rgba(0,0,0,0.6);
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                    text-align: center;
+                }
+            }
+            .subscriptionProgressSection{
+                flex-shrink: 0;
+                width: 585px;
+                height: 558px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                .subscriptionProgress{
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 450px;
+                    height: 450px;
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 450px;
+                    border: 10px solid #ffffff;
+                }
+            }
+        }
+    }
 }
 // SubscriptionContainer CSS ===============done
 // MyPage=> ForCreatorPage===============start
@@ -8960,454 +8955,454 @@ animation: gradient-animation 6s ease infinite;
           }
       }
   }
-  .backDrop{
-      z-index: 99;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(255, 255, 255,0.1);
-      -webkit-backdrop-filter: blur(10px);
-      -o-backdrop-filter: blur(10px);
-      -moz-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  .modal{
-      width: 883px;
-      height: 855px;
-      background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
-      -webkit-backdrop-filter: blur(10px);
-      -o-backdrop-filter: blur(10px);
-      -moz-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      padding: 30px 40px 30px 40px;
-      box-sizing: border-box;
-      overflow: hidden;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: row;
-      align-content: center;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0px 0.796841278193901px 0.796841278193901px 0px rgba(0, 0, 0, 0.01), 0px 2.413677098392273px 2.413677098392273px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836426702925px 6.3802836426702925px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
-      border: 1.5px solid rgba(255, 255, 255, 0.1);
-      .nftRegistrationFrame{
-          flex-shrink: 0;
-          width: 803px;
-          height: 795px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 50px;
-          border-radius: 0px 0px 0px 0px;
-          .topText{
-              flex-shrink: 0;
-              width: 803px;
-              height: min-content; /* 31px */
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0px;
-              border-radius: 0px 0px 0px 0px;
-              flex-shrink: 0;
-              white-space: pre;
-              font-weight: 700;
-              font-style: normal;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              background: linear-gradient(to bottom, #D400FF, #FF00B7);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;;
-              font-size: 30px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-          }
-          .bottomFrame{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 803px;
-              height: 714px;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: center;
-              padding: 0px 40px 0px 40px;
-              overflow: hidden;
-              position: relative;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 20px;
-              border-radius: 0px 0px 0px 0px;
-              .genreList{
-                  flex-shrink: 0;
-                  width: 723px;
-                  height: 39px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  border-radius: 0px 0px 0px 0px;
-                  .genreText{
-                      flex-shrink: 0;
-                      width: auto; /* 52px */
-                      height: auto; /* 31px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 700;
-                      font-style: normal;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: #ffffff;
-                      font-size: 26px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-                  .chooseInput{
-                      flex-shrink: 0;
-                      width: min-content;
-                      height: 39px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: flex-end;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 30px;
-                      border-radius: 0px 0px 0px 0px;
-                      .list{
-                          box-sizing: border-box;
-                          flex-shrink: 0;
-                          width: 488px;
-                          height: 39px;
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: center;
-                          align-items: center;
-                          background-color: rgba(255, 255, 255, 0.1);
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          gap: 40px;
-                          border-radius: 25px;
-                          border: 1px solid rgba(255, 255, 255, 0.1);
-                          .option{
-                              cursor: pointer;
-                              box-sizing: border-box;
-                              flex-shrink: 0;
-                              width: min-content; /* 70px */
-                              height: min-content; /* 34px */
-                              display: flex;
-                              flex-direction: row;
-                              justify-content: center;
-                              align-items: center;
-                              padding: 5px 15px 5px 15px;
-                              overflow: hidden;
-                              position: relative;
-                              align-content: center;
-                              flex-wrap: nowrap;
-                              gap: 0;
-                              border-radius: 0px 0px 0px 0px;
-                              flex-shrink: 0;
-                              white-space: pre;
-                              font-weight: 700;
-                              font-style: normal;
-                              font-family: "Inter-Bold", "Inter", sans-serif;
-                              color: rgba(255, 255, 255, 0.7);
-                              font-size: 20px;
-                              letter-spacing: 0px;
-                              line-height: 1.2;
-                              &:hover{
-                                  background-color: rgba(255,255,255,0.1);
-                                  border-radius: 25px;
-                              }
-                          }
-                      }
-                      .defalt{
-                          cursor: pointer;
-                          flex-shrink: 0;
-                          width: auto; /* 52px */
-                          height: 31px;
-                          white-space: pre;
-                          position: relative;
-                          font-weight: 700;
-                          font-style: normal;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.5);
-                          font-size: 26px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                  }
-              }
-              .bottomList{
-                  flex-shrink: 0;
-                  width: 723px;
-                  height: 39px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  border-radius: 0px 0px 0px 0px;
-                  :nth-child(1){
-                      flex-shrink: 0;
-                      width: auto; /* 78px */
-                      height: auto; /* 31px */
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 700;
-                      font-style: normal;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: #ffffff;
-                      font-size: 26px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-                  :nth-child(2){
-                      flex-shrink: 0;
-                      width: 289px;
-                      height: 39px;
-                      border: transparent;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: flex-end;
-                      background-color: transparent;
-                      text-align: right;
-                      align-items: center;
-                      overflow: hidden;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 10px;
-                      white-space: pre;
-                      position: relative;
-                      font-weight: 700;
-                      font-style: normal;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: rgba(255,255,255,0.5);
-                      font-size: 26px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                      &::placeholder{
-                          text-align: right;
-                      }
-                      &:focus {
-                          outline: none;
-                          &::-webkit-input-placeholder {
-                              transition: 0.3s;
-                              opacity: 0;
+}
+.backDrop{
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255,0.1);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal{
+    width: 883px;
+    height: 855px;
+    background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+    -webkit-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px 30px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0.796841278193901px 0.796841278193901px 0px rgba(0, 0, 0, 0.01), 0px 2.413677098392273px 2.413677098392273px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836426702925px 6.3802836426702925px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    .nftRegistrationFrame{
+        flex-shrink: 0;
+        width: 803px;
+        height: 795px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 50px;
+        border-radius: 0px 0px 0px 0px;
+        .topText{
+            flex-shrink: 0;
+            width: 803px;
+            height: min-content; /* 31px */
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0px;
+            border-radius: 0px 0px 0px 0px;
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            background: linear-gradient(to bottom, #D400FF, #FF00B7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;;
+            font-size: 30px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+        }
+        .bottomFrame{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 803px;
+            height: 714px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px 40px 0px 40px;
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            border-radius: 0px 0px 0px 0px;
+            .genreList{
+                flex-shrink: 0;
+                width: 723px;
+                height: 39px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                border-radius: 0px 0px 0px 0px;
+                .genreText{
+                    flex-shrink: 0;
+                    width: auto; /* 52px */
+                    height: auto; /* 31px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: #ffffff;
+                    font-size: 26px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                .chooseInput{
+                    flex-shrink: 0;
+                    width: min-content;
+                    height: 39px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 30px;
+                    border-radius: 0px 0px 0px 0px;
+                    .list{
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 488px;
+                        height: 39px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.1);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 40px;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        .option{
+                            cursor: pointer;
+                            box-sizing: border-box;
+                            flex-shrink: 0;
+                            width: min-content; /* 70px */
+                            height: min-content; /* 34px */
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 5px 15px 5px 15px;
+                            overflow: hidden;
+                            position: relative;
+                            align-content: center;
+                            flex-wrap: nowrap;
+                            gap: 0;
+                            border-radius: 0px 0px 0px 0px;
+                            flex-shrink: 0;
+                            white-space: pre;
+                            font-weight: 700;
+                            font-style: normal;
+                            font-family: "Inter-Bold", "Inter", sans-serif;
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 20px;
+                            letter-spacing: 0px;
+                            line-height: 1.2;
+                            &:hover{
+                                background-color: rgba(255,255,255,0.1);
+                                border-radius: 25px;
                             }
-                        } 
-                      
-                  }
-                  .soundSource,.albumCover{
-                      cursor: pointer;
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 308px;
-                      height: 39px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center;
-                      background-color: rgba(0, 0, 0, 0.1);
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 10px;
-                      border-radius: 25px;
-                      border: 1px solid rgba(255, 255, 255, 0.1);
-                      flex-shrink: 0;
-                      white-space: pre;
-                      font-weight: 700;
-                      font-style: normal;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: rgba(255, 255, 255, 0.5);
-                      font-size: 24px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                      text-align: center;
-                  }
-                  .switchBox{
-                      flex-shrink: 0;
-                      width: 240px;
-                      height: 39px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 10px;
-                      border-radius: 0px 0px 0px 0px;
-                      .notTitle{
-                          cursor: pointer;
-                          box-sizing: border-box;
-                          flex-shrink: 0;
-                          width: 115px;
-                          height: 39px;
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: center;
-                          align-items: center;
-                          background-color: rgba(255, 255, 255, 0.1);
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          gap: 0;
-                          border-radius: 0px 0px 0px 0px;
-                          border: 1px solid rgba(255, 255, 255, 0.1);
-                          white-space: pre;
-                          font-weight: 700;
-                          font-style: normal;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.7);
-                          font-size: 20px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                      .title{
-                          cursor: pointer;
-                          box-sizing: border-box;
-                          flex-shrink: 0;
-                          width: 115px;
-                          height: 39px;
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: center;
-                          align-items: center;
-                          background-color: rgba(0, 0, 0, 0.1);
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          gap: 0;
-                          border-radius: 0px 0px 0px 0px;
-                          border: 1px solid rgba(255, 255, 255, 0.1);
-                          white-space: pre;
-                          font-weight: 700;
-                          font-style: normal;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.7);
-                          font-size: 20px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                  }
-              }
-              .bottomListButton{
-                  flex-shrink: 0;
-                  width: 723px;
-                  height: 183px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  border-radius: 0px 0px 0px 0px;
-                  .cancelButton{
-                      cursor: pointer;
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 182px;
-                      height: 64px;
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      align-items: center;
-                      background-color: rgba(255, 255, 255, 0.2);
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 0;
-                      border-radius: 25px;
-                      border: 1px solid rgba(255, 255, 255, 0.1);
-                      flex-shrink: 0;
-                      white-space: pre;
-                      font-weight: 700;
-                      font-style: normal;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: rgba(255,255,255,0.7);
-                      font-size: 20px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-                  .registerButton{
-                      cursor: pointer;
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 233px;
-                      height: 82px;
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      align-items: center;
-                      background-color: rgba(255, 255, 255, 0.2);
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 0;
-                      border-radius: 25px;
-                      border: 1px solid rgba(255, 255, 255, 0.1);
-                      flex-shrink: 0;
-                      white-space: pre;
-                      font-weight: 700;
-                      font-style: normal;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: rgba(255,255,255,0.7);
-                      font-size: 26px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-              }
-          }
-      }
-  }
+                        }
+                    }
+                    .defalt{
+                        cursor: pointer;
+                        flex-shrink: 0;
+                        width: auto; /* 52px */
+                        height: 31px;
+                        white-space: pre;
+                        position: relative;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255, 255, 255, 0.5);
+                        font-size: 26px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                }
+            }
+            .bottomList{
+                flex-shrink: 0;
+                width: 723px;
+                height: 39px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                border-radius: 0px 0px 0px 0px;
+                :nth-child(1){
+                    flex-shrink: 0;
+                    width: auto; /* 78px */
+                    height: auto; /* 31px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: #ffffff;
+                    font-size: 26px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                :nth-child(2){
+                    flex-shrink: 0;
+                    width: 289px;
+                    height: 39px;
+                    border: transparent;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    background-color: transparent;
+                    text-align: right;
+                    align-items: center;
+                    overflow: hidden;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255,255,255,0.5);
+                    font-size: 26px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                    &::placeholder{
+                        text-align: right;
+                    }
+                    &:focus {
+                        outline: none;
+                        &::-webkit-input-placeholder {
+                            transition: 0.3s;
+                            opacity: 0;
+                          }
+                      } 
+                    
+                }
+                .soundSource,.albumCover{
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 308px;
+                    height: 39px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    border-radius: 25px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.5);
+                    font-size: 24px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                    text-align: center;
+                }
+                .switchBox{
+                    flex-shrink: 0;
+                    width: 240px;
+                    height: 39px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    border-radius: 0px 0px 0px 0px;
+                    .notTitle{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 115px;
+                        height: 39px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.1);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 0;
+                        border-radius: 0px 0px 0px 0px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        white-space: pre;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 20px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                    .title{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 115px;
+                        height: 39px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 0;
+                        border-radius: 0px 0px 0px 0px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        white-space: pre;
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 20px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                }
+            }
+            .bottomListButton{
+                flex-shrink: 0;
+                width: 723px;
+                height: 183px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                border-radius: 0px 0px 0px 0px;
+                .cancelButton{
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 182px;
+                    height: 64px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 0;
+                    border-radius: 25px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255,255,255,0.7);
+                    font-size: 20px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                .registerButton{
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 233px;
+                    height: 82px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 0;
+                    border-radius: 25px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255,255,255,0.7);
+                    font-size: 26px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
 }
 // MyPage=> ForCreatorPage===============done
 // EventComponent CSS============start => 나중에 위치는 다 옮겨야함
