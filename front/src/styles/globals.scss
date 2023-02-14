@@ -19,14 +19,11 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
+
 // ========================================Main CSS Start
 .mainSlider {
   display: flex;
   flex-direction: column;
-  background-image: url("../../public/image/coverPageBack2.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   .pageNav {
     position: absolute;
     width: min-content;
@@ -89,15 +86,12 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background-image: url("../../public/image/coverPageBack2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding: 80px 50px 80px 50px;
+    background-color: #2b2f5f;
     overflow: visible;
     align-content: center;
     flex-wrap: nowrap;
     position: relative;
-    padding: 80px 50px 80px 50px;
     border-radius: 0px 0px 0px 0px;
     .rankingInfoSection {
       flex-shrink: 0;
@@ -187,7 +181,6 @@ body {
       }
     }
     .rankingCard {
-      cursor: grabbing;
       box-sizing: border-box;
       flex-shrink: 0;
       width: 420px;
@@ -198,10 +191,6 @@ body {
       position: relative;
       border-radius: 25px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: 0.5s;
-      &:hover {
-        scale: 1.1;
-      }
     }
   }
   .mainSecondFrame {
@@ -213,7 +202,7 @@ body {
     justify-content: space-evenly;
     align-items: flex-end;
     padding: 0px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     overflow: hidden;
     align-content: flex-end;
     flex-wrap: nowrap;
@@ -229,6 +218,8 @@ body {
       width: 875px;
       height: 950px;
       display: block;
+      -webkit-backdrop-filter: blur(0px);
+      backdrop-filter: blur(0px);
       overflow: hidden;
       z-index: 0;
       position: absolute;
@@ -474,44 +465,40 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    background-color: #2b2f5f;
     overflow: visible;
     padding: 0px 0px 0px 0px;
     align-content: center;
     flex-wrap: nowrap;
     gap: 0;
-    background-image: url("../../public/image/coverPageBack2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     position: relative;
     border-radius: 0px 0px 0px 0px;
     .leftSlideContent {
-      box-sizing: border-box;
       flex-shrink: 0;
-      width: min-content; /* 790px */
-      height: min-content; /* 950px */
+      width: 595px;
+      height: 950px;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
-      padding: 0px 50px 0px 50px;
-      overflow: visible;
+      overflow: hidden;
       position: relative;
+      padding: 0px 0px 0px 60px;
       align-content: center;
       flex-wrap: nowrap;
-      gap: 50px;
       border-radius: 0px 0px 0px 0px;
       .slideListDownFrame {
+        box-sizing: border-box;
         flex-shrink: 0;
-        width: min-content; /* 210px */
+        width: 270px;
         height: calc(255px * 10);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow: visible;
+        padding: 0px 30px 0px 30px;
+        overflow: hidden;
         position: relative;
-        padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
         gap: 40px;
@@ -522,7 +509,7 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          overflow: visible;
+          overflow: hidden;
           position: relative;
           padding: 0px 0px 0px 0px;
           align-content: center;
@@ -536,6 +523,7 @@ body {
             height: 255px;
             display: block;
             background-color: rgba(255, 255, 255, 0.1);
+
             overflow: hidden;
             position: relative;
             border-radius: 25px;
@@ -544,16 +532,17 @@ body {
         }
       }
       .slideListUpFrame {
+        box-sizing: border-box;
         flex-shrink: 0;
-        width: min-content; /* 210px */
+        width: 270px;
         height: calc(255px * 10);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow: visible;
+        padding: 0px 30px 0px 30px;
+        overflow: hidden;
         position: relative;
-        padding: 0px 0px 0px 0px;
         align-content: center;
         flex-wrap: nowrap;
         gap: 40px;
@@ -564,7 +553,7 @@ body {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          overflow: visible;
+          overflow: hidden;
           position: relative;
           padding: 0px 0px 0px 0px;
           align-content: center;
@@ -578,6 +567,7 @@ body {
             height: 255px;
             display: block;
             background-color: rgba(255, 255, 255, 0.1);
+
             overflow: hidden;
             position: relative;
             border-radius: 25px;
@@ -1883,6 +1873,7 @@ body {
         gap: 0;
         border-radius: 0px 0px 0px 0px;
         .headerSection {
+          cursor: pointer;
           font-family: "YdestreetB";
           box-sizing: border-box;
           flex-shrink: 0;
@@ -1949,6 +1940,28 @@ body {
             font-size: 15px;
             letter-spacing: 0px;
             line-height: 1.2;
+            &:hover {
+              animation-duration: 0.3s;
+              transition: 0.5s;
+              box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px
+                  rgba(0, 0, 0, 0),
+                0px 3.984206390969505px 3.984206390969505px 0px
+                  rgba(0, 0, 0, 0.00996),
+                0px 7.259321882820145px 7.259321882820145px 0px
+                  rgba(0, 0, 0, 0.01815),
+                0px 12.068385491961365px 12.068385491961365px 0px
+                  rgba(0, 0, 0, 0.03017),
+                0px 19.50049274209897px 19.50049274209897px 0px
+                  rgba(0, 0, 0, 0.04875),
+                0px 31.901418213351462px 31.901418213351462px 0px
+                  rgba(0, 0, 0, 0.07975),
+                0px 54.96035212570371px 54.96035212570371px 0px
+                  rgba(0, 0, 0, 0.1374),
+                0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+              background-color: rgba(0, 0, 0, 0.2);
+              border-radius: 25px;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+            }
           }
         }
       }
@@ -2112,24 +2125,20 @@ body {
         flex-wrap: nowrap;
         gap: 10px;
         border-radius: 0px 0px 0px 0px;
-        .creatorTicket {
+        .userImage {
+          cursor: pointer;
+          box-sizing: border-box;
           flex-shrink: 0;
-          width: 42px;
-          height: 63px;
+          width: 150px;
+          height: 150px;
           display: block;
           overflow: hidden;
-          transform: rotate(10deg);
-          z-index: 1;
-          top: 97px;
-          left: 163px;
-          right: 29px;
-          bottom: 105px;
-          background-image: url("../../public/image/creatorTicket.png");
-          background-size: contain;
+          position: relative;
+          background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
-          position: absolute;
-          border-radius: 0px 0px 0px 0px;
+          border-radius: 150px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .metaConnectButton {
           cursor: pointer;
@@ -2161,21 +2170,6 @@ body {
           font-size: 10px;
           letter-spacing: 0px;
           line-height: 1.2;
-        }
-        .userImage {
-          cursor: pointer;
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 150px;
-          height: 150px;
-          display: block;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          overflow: hidden;
-          position: relative;
-          border-radius: 150px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .userProfile {
           flex-shrink: 0;
@@ -2705,13 +2699,13 @@ body {
         .userNameSection,
         .userEmailSection {
           flex-shrink: 0;
-          width: min-content;
+          width: 400px;
           height: 69px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
-          overflow: visible;
+          overflow: hidden;
           position: relative;
           padding: 0px 0px 0px 0px;
           align-content: flex-start;
@@ -2798,7 +2792,7 @@ body {
           gap: 25px;
           border-radius: 0px 0px 0px 0px;
           .userButton,
-          .creatorButton {
+          .createrButton {
             cursor: pointer;
             box-sizing: border-box;
             flex-shrink: 0;
@@ -3277,7 +3271,7 @@ body {
         gap: 10px;
         border-radius: 25px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        .contentCreator {
+        .contentCreater {
           box-sizing: border-box;
           flex-shrink: 0;
           width: 259px;
@@ -3646,7 +3640,7 @@ body {
           .topRankToggle {
             box-sizing: border-box;
             flex-shrink: 0;
-            width: 153px;
+            width: 152px;
             height: 30px;
             display: flex;
             flex-direction: row;
@@ -3750,6 +3744,7 @@ body {
               display: block;
               overflow: hidden;
               position: relative;
+              background-image: url(IRON.jpg);
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
@@ -3962,11 +3957,6 @@ body {
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
-  background: radial-gradient(
-    88.4% 113.9% at 35.9% 106.5%,
-    #212236 0%,
-    hsl(0, 0%, 0%) 100%
-  );
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -3988,7 +3978,7 @@ body {
     flex-wrap: nowrap;
     gap: 20px;
     border-radius: 0px 0px 0px 0px;
-    .todayCreatorSection {
+    .todayCreaterSection {
       box-sizing: border-box;
       flex-shrink: 0;
       width: 344px;
@@ -4027,7 +4017,7 @@ body {
         letter-spacing: 0px;
         line-height: 1.2;
       }
-      .creatorInfoFrame {
+      .createrInfoFrame {
         box-sizing: border-box;
         flex-shrink: 0;
         width: 344px;
@@ -4044,7 +4034,7 @@ body {
         gap: 10px;
         border-radius: 0px 0px 0px 0px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        .creatorInfoBox {
+        .createrInfoBox {
           top: 0px;
           bottom: 0px;
           right: 0px;
@@ -4073,7 +4063,7 @@ body {
           position: absolute;
           border-radius: 0px 0px 0px 0px;
           border: 1px solid rgba(255, 255, 255, 0.1);
-          .creatorInfo {
+          .createrInfo {
             flex-shrink: 0;
             width: min-content; /* 93px */
             height: min-content; /* 33px */
@@ -4088,7 +4078,7 @@ body {
             flex-wrap: nowrap;
             gap: 5px;
             border-radius: 0px 0px 0px 0px;
-            .creatorName {
+            .createrName {
               flex-shrink: 0;
               width: min-content; /* 93px */
               height: min-content; /* 16px */
@@ -4167,7 +4157,7 @@ body {
             text-align: center;
           }
         }
-        .creatorImg {
+        .createrImg {
           box-sizing: border-box;
           flex-shrink: 0;
           width: 344px;
@@ -4224,7 +4214,7 @@ body {
         flex-wrap: nowrap;
         gap: 10px;
         border-radius: 0px 0px 0px 0px;
-        .hotCreatorInfoFrame {
+        .hotCreaterInfoFrame {
           flex-shrink: 0;
           width: min-content; /* 265px */
           height: min-content; /* 249px */
@@ -4239,7 +4229,7 @@ body {
           flex-wrap: nowrap;
           gap: 71px;
           border-radius: 0px 0px 0px 0px;
-          .hotCreatorInfoBox {
+          .hotCreaterInfoBox {
             flex-shrink: 0;
             width: 265px;
             height: 138px;
@@ -4279,7 +4269,7 @@ body {
               letter-spacing: 0px;
               line-height: 1.2;
             }
-            .hotCreatorName {
+            .hotCreaterName {
               flex-shrink: 0;
               width: min-content; /* 194px */
               height: min-content; /* 36px */
@@ -4367,6 +4357,7 @@ body {
           display: block;
           overflow: hidden;
           z-index: 1;
+          background-image: url(Funding.jpg);
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
@@ -4380,14 +4371,18 @@ body {
     box-sizing: border-box;
     flex-shrink: 0;
     width: 1319px;
-    height: 1200px;
+    height: 1069px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 20px 0px 20px 0px;
+
     // -webkit-backdrop-filter: blur(10px);
     // backdrop-filter: blur(10px);
+    // -o-backdrop-filter: blur(10px);
+    // -moz-backdrop-filter: blur(10px);
+
     background-color: rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
@@ -4498,25 +4493,24 @@ body {
       box-sizing: border-box;
       flex-shrink: 0;
       width: 1319px;
-      height: min-content; /* 965px */
+      height: 880px; /* 880px */
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
-      padding: 10px 20px 10px 20px;
-      overflow: hidden;
+      padding: 10px 0px 10px 0px;
+      overflow: visible;
       position: relative;
       align-content: flex-start;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: 20px;
       border-radius: 0px 0px 0px 0px;
       .fundingItem {
         flex-shrink: 0;
-        width: 210px;
-        height: 210px;
+        width: 240px;
+        height: 200px;
         display: block;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: rgba(255, 255, 255, 0.1);
+        background-color: rgba(0, 0, 0, 0.4);
         overflow: visible;
         position: relative;
         border-radius: 20px;
@@ -4874,7 +4868,18 @@ body {
     }
   }
 }
-
+//DetailContainerCSS============done
+// .myAtropos {
+//     @import 'atropos/scss';
+//     width: 500px;
+//     height: 500px;
+//     .iron{
+//         width: 100%;
+//         height: 100%;
+//         background-image: url("./Img/IRON.jpg");
+//     }
+//   }
+// NftMarketContainerCSS===========start
 .nftMarketContainerFrame {
   box-sizing: border-box;
   width: 1359px;
@@ -4885,11 +4890,6 @@ body {
   align-items: center;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
-  background: radial-gradient(
-    88.4% 113.9% at 35.9% 106.5%,
-    #212236 0%,
-    hsl(0, 0%, 0%) 100%
-  );
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -4932,7 +4932,7 @@ body {
       align-content: center;
       flex-wrap: nowrap;
       gap: 0;
-      border-radius: 20px;
+      border-radius: 0px 0px 0px 0px;
       .topSwiperSection {
         flex-shrink: 0;
         width: 1319px;
@@ -4950,7 +4950,7 @@ body {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        border-radius: 20px;
+        border-radius: 0px 0px 0px 0px;
       }
       .topInfoSection {
         pointer-events: none;
@@ -6359,11 +6359,11 @@ body {
       flex-wrap: nowrap;
       gap: 0;
       border-radius: 0px 0px 0px 0px;
-      :nth-child(-n + 3) {
+      .ProfileSection {
         box-sizing: border-box;
         flex-shrink: 0;
         width: 1199px;
-        height: 373px;
+        height: 663px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -6398,22 +6398,237 @@ body {
           letter-spacing: 0px;
           line-height: 1.2;
         }
-        :nth-child(2) {
+        .name,
+        .sex {
           box-sizing: border-box;
           flex-shrink: 0;
           width: 1159px;
-          height: 289px;
-          display: block;
+          height: 83px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 40px 0px 40px;
           overflow: hidden;
           position: relative;
+          align-content: center;
+          flex-wrap: nowrap;
           border-radius: 0px 0px 0px 0px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background-color: transparent;
-          color: white;
-          font-size: 20px;
-          resize: none;
-          &:focus {
-            outline: none;
+          select {
+            flex-shrink: 0;
+            width: 105px;
+            height: 45px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            border-radius: 0px 0px 0px 0px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.8);
+          }
+          .singerName {
+            flex-shrink: 0;
+            width: auto; /* 60px */
+            height: auto; /* 24px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          .nameInput {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 325px;
+            height: 45px;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background-color: transparent;
+          }
+        }
+        .info {
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 1179px;
+          height: 373px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 20px 40px 20px 40px;
+          overflow: hidden;
+          position: relative;
+          align-content: flex-start;
+          flex-wrap: nowrap;
+          gap: 20px;
+          border-radius: 0px 0px 0px 0px;
+          .infoText {
+            flex-shrink: 0;
+            width: auto; /* 86px */
+            height: auto; /* 24px */
+            white-space: pre;
+            position: relative;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 20px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          > input {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 1099px;
+            height: 289px;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+            border-color: rgba(255, 255, 255, 0.1);
+            border-style: solid;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-right-width: 1px;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            padding: 20px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+    .shareSection {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 1199px;
+      height: 163px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 0;
+      border-radius: 0px 0px 0px 0px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .shareFrame {
+        flex-shrink: 0;
+        width: min-content; /* 897px */
+        height: min-content; /* 50px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+        border-radius: 0px 0px 0px 0px;
+        .info {
+          flex-shrink: 0;
+          width: auto; /* 271px */
+          height: auto; /* 42px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 35px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        .content {
+          flex-shrink: 0;
+          width: min-content; /* 606px */
+          height: min-content; /* 50px */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          :nth-child(1) {
+            flex-shrink: 0;
+            width: auto; /* 291px */
+            height: auto; /* 42px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 35px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          :nth-child(2) {
+            flex-shrink: 0;
+            width: 125px;
+            height: 50px;
+            display: block;
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+            border-color: 1px solid rgba(255, 255, 255, 0.1);
+          }
+          :nth-child(3) {
+            flex-shrink: 0;
+            width: auto; /* 10px */
+            height: auto; /* 42px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 35px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          :nth-child(4) {
+            flex-shrink: 0;
+            width: 125px;
+            height: 50px;
+            display: block;
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0px 0px 0px 0px;
+            border-color: 1px solid rgba(255, 255, 255, 0.1);
           }
         }
       }
@@ -6494,11 +6709,6 @@ body {
           align-items: center;
           padding: 25px 15px 25px 15px;
           background-color: rgba(0, 0, 0, 0.2);
-
-          -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-          -o-backdrop-filter: blur(5px);
-          -moz-backdrop-filter: blur(5px);
           z-index: 1;
           align-content: center;
           flex-wrap: nowrap;
@@ -8158,11 +8368,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #2b2f5f;
-  background: radial-gradient(
-    88.4% 113.9% at 35.9% 106.5%,
-    #212236 0%,
-    hsl(0, 0%, 0%) 100%
-  );
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -8725,6 +8930,7 @@ body {
             white-space: pre;
             position: relative;
             font-weight: 700;
+
             color: #ffffff;
             font-size: 20px;
             letter-spacing: -1px;
@@ -8766,8 +8972,8 @@ body {
   }
 }
 // SubscriptionContainer CSS ===============done
-// MyPage=> ForCreatorPage===============start
-.MyPageCreatorFrame {
+// MyPage=> ForCreaterPage===============start
+.MyPageCreaterFrame {
   box-sizing: border-box;
   width: 1359px;
   height: 950px;
@@ -8985,7 +9191,7 @@ body {
     flex-wrap: nowrap;
     border-radius: 25px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    .creatorHandlerFrame {
+    .createrHandlerFrame {
       box-sizing: border-box;
       flex-shrink: 0;
       width: 1279px;
@@ -9217,591 +9423,5 @@ body {
       }
     }
   }
-  .backDrop {
-    z-index: 99;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(10px);
-    -o-backdrop-filter: blur(10px);
-    -moz-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .modal {
-    width: 883px;
-    height: 855px;
-    background: linear-gradient(
-      243deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.8) 100%
-    );
-    -webkit-backdrop-filter: blur(10px);
-    -o-backdrop-filter: blur(10px);
-    -moz-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    padding: 30px 40px 30px 40px;
-    box-sizing: border-box;
-    overflow: hidden;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0.796841278193901px 0.796841278193901px 0px
-        rgba(0, 0, 0, 0.01),
-      0px 2.413677098392273px 2.413677098392273px 0px rgba(0, 0, 0, 0.03017),
-      0px 6.3802836426702925px 6.3802836426702925px 0px rgba(0, 0, 0, 0.07975),
-      0px 20px 20px 0px rgba(0, 0, 0, 0.25);
-    border: 1.5px solid rgba(255, 255, 255, 0.1);
-    .nftRegistrationFrame {
-      flex-shrink: 0;
-      width: 803px;
-      height: 795px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-      padding: 0px 0px 0px 0px;
-      align-content: center;
-      flex-wrap: nowrap;
-      gap: 50px;
-      border-radius: 0px 0px 0px 0px;
-      .topText {
-        flex-shrink: 0;
-        width: 803px;
-        height: min-content; /* 31px */
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-        padding: 0px 0px 0px 0px;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 0px;
-        border-radius: 0px 0px 0px 0px;
-        flex-shrink: 0;
-        white-space: pre;
-        font-weight: 700;
-        font-style: normal;
-        font-family: "Inter-Bold", "Inter", sans-serif;
-        background: linear-gradient(to bottom, #d400ff, #ff00b7);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 30px;
-        letter-spacing: 0px;
-        line-height: 1.2;
-      }
-      .bottomFrame {
-        box-sizing: border-box;
-        flex-shrink: 0;
-        width: 803px;
-        height: 714px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 0px 40px 0px 40px;
-        overflow: hidden;
-        position: relative;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 20px;
-        border-radius: 0px 0px 0px 0px;
-        .genreList {
-          flex-shrink: 0;
-          width: 723px;
-          height: 39px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          border-radius: 0px 0px 0px 0px;
-          .genreText {
-            flex-shrink: 0;
-            width: auto; /* 52px */
-            height: auto; /* 31px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: #ffffff;
-            font-size: 26px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          .chooseInput {
-            flex-shrink: 0;
-            width: min-content;
-            height: 39px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 30px;
-            border-radius: 0px 0px 0px 0px;
-            .list {
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 488px;
-              height: 39px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              background-color: rgba(255, 255, 255, 0.1);
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 40px;
-              border-radius: 25px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              .option {
-                cursor: pointer;
-                box-sizing: border-box;
-                flex-shrink: 0;
-                width: min-content; /* 70px */
-                height: min-content; /* 34px */
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 5px 15px 5px 15px;
-                overflow: hidden;
-                position: relative;
-                align-content: center;
-                flex-wrap: nowrap;
-                gap: 0;
-                border-radius: 0px 0px 0px 0px;
-                flex-shrink: 0;
-                white-space: pre;
-                font-weight: 700;
-                font-style: normal;
-                font-family: "Inter-Bold", "Inter", sans-serif;
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 20px;
-                letter-spacing: 0px;
-                line-height: 1.2;
-                &:hover {
-                  background-color: rgba(255, 255, 255, 0.1);
-                  border-radius: 25px;
-                }
-              }
-            }
-            .defalt {
-              cursor: pointer;
-              flex-shrink: 0;
-              width: auto; /* 52px */
-              height: 31px;
-              white-space: pre;
-              position: relative;
-              font-weight: 700;
-              font-style: normal;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.5);
-              font-size: 26px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-            }
-          }
-        }
-        .bottomList {
-          flex-shrink: 0;
-          width: 723px;
-          height: 39px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          border-radius: 0px 0px 0px 0px;
-          :nth-child(1) {
-            flex-shrink: 0;
-            width: auto; /* 78px */
-            height: auto; /* 31px */
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: #ffffff;
-            font-size: 26px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          :nth-child(2) {
-            flex-shrink: 0;
-            width: 289px;
-            height: 39px;
-            border: transparent;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            background-color: transparent;
-            text-align: right;
-            align-items: center;
-            overflow: hidden;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 10px;
-            white-space: pre;
-            position: relative;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 26px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-            &::placeholder {
-              text-align: right;
-            }
-            &:focus {
-              outline: none;
-              &::-webkit-input-placeholder {
-                transition: 0.3s;
-                opacity: 0;
-              }
-            }
-          }
-          .soundSource,
-          .albumCover {
-            cursor: pointer;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 308px;
-            height: 39px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 10px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
-            white-space: pre;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 24px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-            text-align: center;
-          }
-          .switchBox {
-            flex-shrink: 0;
-            width: 240px;
-            height: 39px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 10px;
-            border-radius: 0px 0px 0px 0px;
-            .notTitle {
-              cursor: pointer;
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 115px;
-              height: 39px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              background-color: rgba(255, 255, 255, 0.1);
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0;
-              border-radius: 0px 0px 0px 0px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              white-space: pre;
-              font-weight: 700;
-              font-style: normal;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.7);
-              font-size: 20px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-            }
-            .title {
-              cursor: pointer;
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 115px;
-              height: 39px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              background-color: rgba(0, 0, 0, 0.1);
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0;
-              border-radius: 0px 0px 0px 0px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              white-space: pre;
-              font-weight: 700;
-              font-style: normal;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.7);
-              font-size: 20px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-            }
-          }
-        }
-        .bottomListButton {
-          flex-shrink: 0;
-          width: 723px;
-          height: 183px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          position: relative;
-          padding: 0px 0px 0px 0px;
-          align-content: center;
-          flex-wrap: nowrap;
-          border-radius: 0px 0px 0px 0px;
-          .cancelButton {
-            cursor: pointer;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 182px;
-            height: 64px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 0;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
-            white-space: pre;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 20px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-          .registerButton {
-            cursor: pointer;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 233px;
-            height: 82px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-            position: relative;
-            padding: 0px 0px 0px 0px;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 0;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
-            white-space: pre;
-            font-weight: 700;
-            font-style: normal;
-            font-family: "Inter-Bold", "Inter", sans-serif;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 26px;
-            letter-spacing: 0px;
-            line-height: 1.2;
-          }
-        }
-      }
-    }
-  }
 }
-// MyPage=> ForCreatorPage===============done
-// EventComponent CSS============start => 나중에 위치는 다 옮겨야함
-.EventFrame {
-  box-sizing: border-box;
-  width: 1359px;
-  height: min-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #2b2f5f;
-  overflow: visible;
-  align-content: center;
-  flex-wrap: nowrap;
-  position: absolute;
-  border-radius: 0px 0px 0px 0px;
-}
-// EventComponent CSS============done => 나중에 위치는 다 옮겨야함
-.signUpBackDrop {
-  z-index: 99;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.infoSuccessfulLog {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 738px;
-  height: 226px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 45px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.eventButton {
-}
-.loadingFrame {
-  width: 1920px;
-  height: 1080px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(
-    141.9% 200% at 50% 110.80000000000001%,
-    #292929 0%,
-    rgb(0, 0, 0) 100%
-  );
-  overflow: visible;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 30px;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  .loadingCenter {
-    flex-shrink: 0;
-    width: auto; /* 186px */
-    height: auto; /* 54px */
-    white-space: pre;
-    position: relative;
-    font-weight: 700;
-    font-style: normal;
-    font-family: "Inter-Bold", "Inter", sans-serif;
-    color: #ffffff;
-    font-size: 25px;
-    letter-spacing: 0px;
-    line-height: 1.2;
-  }
-  .progressBar {
-    width: 450px;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: stretch;
-    background-color: transparent;
-    border-radius: 25px;
-    border: 5px solid #ffffff;
-    box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px
-        rgba(0, 0, 0, 0),
-      0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996),
-      0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815),
-      0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017),
-      0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875),
-      0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975),
-      0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374),
-      0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-    .bar {
-      border-radius: 25px;
-      width: 0%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.5);
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.5) 0% rgba(255, 255, 255, 0.8) 32%
-          rgba(255, 255, 255, 1) 100%
-      );
-    }
-  }
-}
+// MyPage=> ForCreaterPage===============done

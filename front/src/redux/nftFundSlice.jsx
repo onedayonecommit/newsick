@@ -1,10 +1,15 @@
 //
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
+import {
+  fetchMakeIPFS,
+  metadataReady,
+  fetchCreateFund,
+} from "@/middleware/fetchFund";
 
 const initialState = {
   funding_nft_image: "", // 파일url
   funding_metadata: "", // metadata url
+  metadata_ready: false, // metadata 준비됨
   // 펀딩 정보 받는거 데이터넣을곳
   creator_id: "", // 크리에이터 지갑주소
   funding_info: "", // 펀딩제목
@@ -48,13 +53,14 @@ const nftFundSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchMakeIPFS.fulfilled, (state, action) => {
-        state.createStatus = true;
         state.fileUrl = action.payload.fileUrl;
         state.metadataUrl = action.payload.metadataUrl;
+        state.metadata_ready = true;
       })
       .addCase(fetchMakeIPFS.rejected, (state) => {
         state.createStatus = false;
       })
+
       .addCase(fetchCreateFund.pending, (state) => {
         state = initialState;
       })

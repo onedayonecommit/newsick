@@ -18,7 +18,6 @@ export const fetchMakeIPFS = createAsyncThunk(
         }
       );
       // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
-      console.log("메타메이터 확인 : ", _recieveMetadata.data);
       return _recieveMetadata.data;
     } catch (error) {
       console.log("메타데이터 생성 에러");

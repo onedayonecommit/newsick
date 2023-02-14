@@ -91,12 +91,20 @@ const FundingCreateContainer = () => {
   };
 
   const handleFile = async (event) => {
-    try {
-      const _file = event.target.files[0];
-      dispatch(fetchMakeIPFS({ fund_nft_image: _file }));
-    } catch (error) {
-      console.error(error);
-    }
+    const _file = event.target.files[0];
+    const _image = new Image();
+    _image.src = URL.createObjectURL(_file);
+    _image.onload = function () {
+      console.log(this.width);
+      console.log(this.height);
+      URL.revokeObjectURL(this.src);
+    };
+    // try {
+    //   const _file = event.target.files[0];
+    //   dispatch(fetchMakeIPFS({ fund_nft_image: _file }));
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   const makeFund = async (event) => {
@@ -111,21 +119,7 @@ const FundingCreateContainer = () => {
       max: data.funding_min, //  최대
     };
     let _holdershare = data.funding_holdershare;
-    // {
-    //   "creator": "0xC58738e2f023d76267C96720deCB4956740e044C",
-    //   "uri": "bafkreihekh5q6ibjytapafgiwjj456ukvzyk5fpdcr7jylpfrsyvrvwlxy",
-    //   "startdate":"2023-02-07T00:00:00Z",
-    //   "finishdate":"2023-02-16T15:00:00.000Z",
-    //   "makedate":"2023-03-01T15:00:00.000Z",
-    //   "price": 0.002,
-    //   "min": 2000,
-    //   "max": 4000
-    // },
-    // 30
 
-    console.log(_fundingStruct);
-    console.log(_holdershare);
-    // console.log(fundInfo);
     const _sendData_toContract = await NEWSIC_FUND.methods
       .setTokenUri(_fundingStruct, _holdershare)
       .send({ from: userInfo.address });
