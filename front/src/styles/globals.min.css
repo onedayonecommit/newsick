@@ -7480,7 +7480,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 10px 20px 10px 20px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -7509,6 +7509,22 @@ body {
   height: 120px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 0px;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 505px;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -7519,13 +7535,42 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 170px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(171, 171, 171, 0.1);
   flex-shrink: 0;
   white-space: pre;
-  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 27px;
+  font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.5s;
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  scale: 1.2;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgb(255, 255, 255);
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList {
   box-sizing: border-box;
@@ -7622,17 +7667,18 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 257px;
-  height: 66px;
+  width: 180px;
+  height: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
   padding: 20px 30px 20px 30px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
+  border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(168, 168, 168, 0.1);
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
@@ -7641,7 +7687,8 @@ body {
   align-content: flex-end;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
+  right: 8px;
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
   flex-shrink: 0;
@@ -8046,7 +8093,7 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 320px;
@@ -8056,7 +8103,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 25px 25px 25px 25px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -8065,7 +8112,10 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .atropos-inner, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .atropos-inner {
+  border-radius: 25px;
+}
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 270px;
@@ -8075,7 +8125,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 30px 30px 30px 30px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.8);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -8085,7 +8135,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0px 1.6733156777px 1.6733156777px -0.125px rgba(0, 0, 0, 0.05), 0px 3.984206391px 3.984206391px -0.25px rgba(0, 0, 0, 0.05598), 0px 7.2593218828px 7.2593218828px -0.375px rgba(0, 0, 0, 0.06089), 0px 12.068385492px 12.068385492px -0.5px rgba(0, 0, 0, 0.0681), 0px 19.5004927421px 19.5004927421px -0.625px rgba(0, 0, 0, 0.07925), 0px 31.9014182134px 31.9014182134px -0.75px rgba(0, 0, 0, 0.09785), 0px 54.9603521257px 54.9603521257px -0.875px rgba(0, 0, 0, 0.13244), 0px 100px 100px -1px rgba(0, 0, 0, 0.2);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .ownNftImg {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .ownNftImg, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .ownNftImg {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -8100,7 +8150,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border: 3px solid rgba(255, 255, 255, 0.5);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .nftTitleSection {
   flex-shrink: 0;
   width: 210px;
   height: 64px;
@@ -8116,12 +8166,12 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1), .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .nftTitleSection :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 95px */
+  width: min-content; /* 136px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content; /* 27px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8136,40 +8186,14 @@ body {
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.3);
-  font-size: 19px;
+  font-size: 27px;
   letter-spacing: 0px;
   line-height: 1;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2), .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 40px */
-  height: -moz-min-content;
-  height: min-content; /* 16px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 1;
-  text-align: center;
-}
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .middleLine {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .middleLine, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .middleLine {
   flex-shrink: 0;
   width: 210px;
   height: 1px;
@@ -8179,29 +8203,39 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .infoSection {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .sellButton, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .sellButton {
+  cursor: pointer;
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 210px;
-  height: 58px;
+  width: 170px;
+  height: 48px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .sellButton:hover, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .sellButton:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .SubscriptionContainer {

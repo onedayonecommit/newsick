@@ -7442,7 +7442,7 @@ animation: gradient-animation 6s ease infinite;
           justify-content: flex-start;
           align-items: flex-start;
           padding: 10px 20px 10px 20px;
-          overflow: hidden;
+          overflow: visible;
           position: relative;
           align-content: flex-start;
           flex-wrap: nowrap;
@@ -7464,30 +7464,75 @@ animation: gradient-animation 6s ease infinite;
               -webkit-text-fill-color: transparent;
           }
           .slideSection{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 1020px;
-              height: 120px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              flex-shrink: 0;
-              white-space: pre;
-              font-family: "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 27px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-          }
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 1020px;
+            height: 120px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 40px 0px 0px;
+            overflow: visible;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            border-radius: 0px 0px 0px 0px;
+            .infoSection{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 505px;
+                height: 120px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            .switchButton{
+                cursor: pointer;
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 170px;
+                height: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.2);
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 0;
+                border-radius: 25px;
+                border: 1px solid rgba(171, 171, 171, 0.1);
+                flex-shrink: 0;
+                white-space: pre;
+                font-weight: 700;
+                font-style: normal;
+                font-family: "Inter-Bold", "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 16px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+                transition: 0.5s;
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.1); 
+                    scale: 1.2;
+                    box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+                    border: 1px solid rgba(255, 255, 255, 1);
+                }
+            }
+        }
       }
       .nftItemList{
           box-sizing: border-box;
@@ -7586,19 +7631,20 @@ animation: gradient-animation 6s ease infinite;
                   .infoStateFrame{
                       box-sizing: border-box;
                       flex-shrink: 0;
-                      width: 257px;
-                      height: 66px;
+                      width: 180px;
+                      height: 40px;
                       display: flex;
                       flex-direction: row;
-                      justify-content: space-between;
-                      align-items: flex-end;
+                      justify-content: flex-end;
+                      align-items:center;;
                       padding: 20px 30px 20px 30px;
 
                       -webkit-backdrop-filter: blur(10px);
                       backdrop-filter: blur(10px);
                       -o-backdrop-filter: blur(10px);
                       -moz-backdrop-filter: blur(10px);
-
+                      
+                      border-radius: 50px;
                       background-color: rgba(255, 255, 255, 0.1);
                       border:1px solid rgba(168, 168, 168,0.1);
                       box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
@@ -7607,7 +7653,8 @@ animation: gradient-animation 6s ease infinite;
                       align-content: flex-end;
                       flex-wrap: nowrap;
                       position: absolute;
-                      bottom: 20px;
+                      bottom: 10px;
+                      right: 8px;
                       .price{
                           flex-shrink: 0;
                           width: min-content; /* 65px */
@@ -8000,7 +8047,7 @@ animation: gradient-animation 6s ease infinite;
           flex-wrap: wrap;
           gap: 50px;
           border-radius: 0px 0px 0px 0px;
-          .ownedNftBox{
+          .ownedNftBox,.atropos-banner{
               box-sizing: border-box;
               flex-shrink: 0;
               width: 320px;
@@ -8010,7 +8057,7 @@ animation: gradient-animation 6s ease infinite;
               justify-content: center;
               align-items: center;
               padding: 25px 25px 25px 25px;
-              background-color: rgba(255, 255, 255, 0.1);
+              background-color: rgba(0, 0, 0, 0.1);
               overflow: hidden;
               position: relative;
               align-content: center;
@@ -8018,6 +8065,9 @@ animation: gradient-animation 6s ease infinite;
               gap: 0;
               border-radius: 10px;
               border: 1px solid rgba(255, 255, 255, 0.1);
+              .atropos-inner{
+                border-radius: 25px;
+              }
               .ownedNftFrame{
                   box-sizing: border-box;
                   flex-shrink: 0;
@@ -8028,7 +8078,7 @@ animation: gradient-animation 6s ease infinite;
                   justify-content: flex-start;
                   align-items: center;
                   padding: 30px 30px 30px 30px;
-                  background-color: rgba(0, 0, 0, 0.2);
+                  background-color: rgba(0, 0, 0, 0.8);
                   overflow: hidden;
                   position: relative;
                   align-content: center;
@@ -8069,8 +8119,8 @@ animation: gradient-animation 6s ease infinite;
                       border-radius: 0px 0px 0px 0px;
                       :nth-child(1){
                           flex-shrink: 0;
-                          width: min-content; /* 95px */
-                          height: min-content; /* 19px */
+                          width: min-content; /* 136px */
+                          height: min-content; /* 27px */
                           display: flex;
                           flex-direction: column;
                           justify-content: center;
@@ -8085,36 +8135,12 @@ animation: gradient-animation 6s ease infinite;
                           flex-shrink: 0;
                           white-space: pre;
                           font-weight: 700;
+                          font-style: normal;
                           font-family: "Inter-Bold", "Inter", sans-serif;
                           color: rgba(255, 255, 255, 0.3);
-                          font-size: 19px;
+                          font-size: 27px;
                           letter-spacing: 0px;
                           line-height: 1;
-                      }
-                      :nth-child(2),:nth-child(3){
-                          flex-shrink: 0;
-                          width: min-content; /* 40px */
-                          height: min-content; /* 16px */
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: center;
-                          align-items: center;
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          gap: 10px;
-                          border-radius: 0px 0px 0px 0px;
-                          flex-shrink: 0;
-                          white-space: pre;
-                          font-weight: 700;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.3);
-                          font-size: 16px;
-                          letter-spacing: 0px;
-                          line-height: 1;
-                          text-align: center;
                       }
                   }
                   .middleLine{
@@ -8127,30 +8153,40 @@ animation: gradient-animation 6s ease infinite;
                       position: relative;
                       border-radius: 0px 0px 0px 0px;
                   }
-                  .infoSection{
-                      flex-shrink: 0;
-                      width: 210px;
-                      height: 58px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: flex-start;
-                      flex-wrap: nowrap;
-                      gap: 10px;
-                      border-radius: 0px 0px 0px 0px;
-                      flex-shrink: 0;
-                      white-space: pre;
-                      font-weight: 700;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: rgba(255, 255, 255, 0.3);
-                      font-size: 20px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
+                  .sellButton{
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 170px;
+                    height: 48px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    border-radius: 25px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 1);
+                        color: rgba(0, 0, 0, 1);
+                        border: 1px solid rgba(0, 0, 0, 1);
+                    }
+                }
               }
           }
       }
