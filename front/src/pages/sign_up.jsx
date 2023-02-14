@@ -17,6 +17,14 @@ const SignUp = () => {
   const [linkedAccount, setLinkedAccount] = useState("");
   const createStatus = useSelector((state) => state.userInfo.createStatus);
 
+  const [isFalseText, setIsFalseText] = useState();
+  const falseText = () => {
+    setIsFalseText(!isFalseText);
+  };
+  const [modalOpen, setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
+
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
 
@@ -66,11 +74,21 @@ const SignUp = () => {
     console.log("전송할 이더", creatorPrice);
     console.log(isCreator);
 
+    const regBlank = /[\s]/g;
+    const regSpecial = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
     // 이메일 정규식 체크
     const regEmail =
       /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+    if (!(userName.length > 0 && userName.length <= 10))
+      return alert("닉네임은 10자 이내로 입력해주세요");
+    if (regBlank.test(userName) == true)
+      return alert("공백은 입력이 불가합니다.");
+    if (regSpecial.test(userName) == true)
+      return alert("특수문자는 입력이 불가합니다.");
     if (regEmail.test(userEmail) == false)
-      return alert("이메일 형식에 맞게 입력");
+      return alert("이메일 형식에 맞게 입력해주세요.");
     else {
       // 크리에이터로 회원가입할 경우!
       if (isCreator == true) {
@@ -120,7 +138,6 @@ const SignUp = () => {
       } catch (error) {
         console.log(error);
       }
-      window.ethereum.on("accountsChanged", handleAccountsChanged);
     })();
   }, [web3, linkedAccount]);
 
@@ -140,37 +157,46 @@ const SignUp = () => {
     })();
   }, [createStatus]);
 
-  const handleAccountsChanged = (accounts) => {
-    console.log(accounts.length);
-    console.log("계정 바꿀때마다", accounts[0]);
-    console.log("state 계정", linkedAccount);
-    // console.log("유저유저", user.address);
-
-    if (accounts.length === 0) {
-      // 메타마스크 연결하세요!
-      console.log("Please connect to MetaMask.");
-    } else if (accounts[0] !== linkedAccount) {
-      setLinkedAccount(accounts[0]);
-    }
-  };
-
   return (
     <div className="signUpPageBackGround">
+      <AnimatePresence>
+        {modalOpen && <SuccessLog modalOpen={modalOpen} handleClose={close} />}
+      </AnimatePresence>
       <div className="signUpFrame">
         <div className="signUpSection">
           <div className="signUpTitle">SIGN UP</div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
-              <div className="nameInput">
+              <motion.div
+                className="nameInput"
+                initial={{ x: 0 }}
+                animate={isFalseText ? { x: [0, -15, 15, 0] } : { x: 0 }}
+                style={
+                  isFalseText
+                    ? { border: "1px solid red" }
+                    : { border: "1px solid white" }
+                }
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              >
                 <input ref={userNameRef} type="text" name="user_name" />
-              </div>
+              </motion.div>
             </div>
             <div className="userEmailSection">
               <div className="emailText">USER E-MAIL</div>
-              <div className="emailInput">
+              <motion.div
+                className="emailInput"
+                initial={{ x: 0 }}
+                animate={isFalseText ? { x: [0, -15, 15, 0] } : { x: 0 }}
+                style={
+                  isFalseText
+                    ? { border: "1px solid red" }
+                    : { border: "1px solid white" }
+                }
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              >
                 <input ref={userEmailInput} type="text" name="user_email" />
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className="signUpChoiceSection">
@@ -198,7 +224,10 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-        <div className="imgSection" />
+        <div
+          className="imgSection"
+          onClick={() => (modalOpen ? close() : open())}
+        />
       </div>
     </div>
   );

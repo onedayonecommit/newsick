@@ -13,6 +13,7 @@ async function bootstrap() {
       whitelist: true,
       transform: true,
       forbidNonWhitelisted: true,
+      forbidUnknownValues: false,
     }),
   );
   app.useStaticAssets(join(__dirname, '..', 'public'));

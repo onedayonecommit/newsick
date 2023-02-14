@@ -100,6 +100,37 @@ const SubscriptionContainer = () => {
             >
               Subscribe
             </div>
+            <div className="optionBenefitList">
+              <div>Custom domain</div>
+              <div>Password protect</div>
+              <div>10GB bandwidth</div>
+              <div>1,000 CMS items</div>
+              <div>10,000 visitors</div>
+            </div>
+            <div
+              className="option1BuyButton"
+              onClick={() => {
+                buyTicket();
+              }}
+            >
+              Subscribe
+            </div>
+          </div>
+          <div className="optionBox3">
+            <div className="optionTitle">Pro plan</div>
+            <div className="optionPrice">$45/mo</div>
+            <div className="benefitsSummary">
+              <div>Billed yearly</div>
+              <div />
+            </div>
+            <div className="optionBenefitList">
+              <div>Custom domain</div>
+              <div>Password protect</div>
+              <div>10GB bandwidth</div>
+              <div>1,000 CMS items</div>
+              <div>10,000 visitors</div>
+            </div>
+            <div className="option1BuyButton">Subscribe</div>
           </div>
           <div className="optionBox3">
             <div className="optionTitle">Pro plan</div>

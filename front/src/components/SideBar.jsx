@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import PlayBar from "./PlayBar";
+import { faCakeCandles } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import useWeb3 from "@/hooks/useWeb3";
+import { useSelector } from "react-redux";
 
 // 컴포넌트
 const SideBar = () => {
   const router = useRouter();
+  const { NEWSIC_FUND } = useWeb3();
   const sidePage = [
     ["FUNDING", "reward"],
     ["NFT MARKET", "NFTmarket"],
@@ -13,9 +15,17 @@ const SideBar = () => {
     ["SITE INFO", "newsic_is"],
     ["SUBSCRIPTIONS", "subscription"],
   ];
+  const userAccount = useSelector((state) => state.userInfo.address);
   function movePage(_page) {
     _page == "home" ? router.replace("/") : router.push(`/${_page}`);
   }
+
+  const resetContract = async () => {
+    const reset = await NEWSIC_FUND.methods.creatorDelete().send({
+      from: userAccount,
+    });
+    console.log("크리에이터 초기화", reset);
+  };
   return (
     <div className="sideBarSection">
       <div className="iconBar">
@@ -32,6 +42,7 @@ const SideBar = () => {
         >
           NEWSIC
         </div>
+        <button onClick={resetContract}>크리에이터 권한 제거</button>
         <div className="menuSection">
           {sidePage.map((value, index) => {
             return (

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import PageNationFrame from "../../components/PageNationFrame";
+import PageNationFrame from "../PageNationFrame";
 const nftItem = [
   {
     id: "a",
