@@ -8742,7 +8742,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .topSection .historyGrapSection {
+.MyPageCreatorFrame .topSection .creatorNoticeSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 958px;
@@ -8761,13 +8761,26 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .topSection .historyGrapSection .historyText {
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav {
   flex-shrink: 0;
   width: 868px;
+  height: 19px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeText {
+  flex-shrink: 0;
+  width: auto; /* 135px */
   height: auto; /* 19px */
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-word;
+  white-space: pre;
   position: relative;
   font-weight: 700;
   font-style: normal;
@@ -8778,22 +8791,135 @@ body {
   line-height: 1.2;
   text-align: left;
 }
-.MyPageCreatorFrame .topSection .historyGrapSection .historyGrapFrame {
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeShowAll {
+  flex-shrink: 0;
+  width: auto; /* 60px */
+  height: auto; /* 17px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: left;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList {
+  flex-shrink: 0;
+  width: 898px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList::-webkit-scrollbar {
+  width: 20px;
+  height: 56px;
+  background-color: transparent;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 868px;
-  height: 96px;
-  display: block;
+  width: 800px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
   overflow: hidden;
   position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .date {
+  flex-shrink: 0;
+  width: auto; /* 91px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .title {
+  flex-shrink: 0;
+  width: auto; /* 107px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 166px */
+  height: -moz-min-content;
+  height: min-content; /* 19px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
   border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 0px;
-  border-radius: 0px 0px 0px 5px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 68px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
 }
 .MyPageCreatorFrame .bottomSection {
   box-sizing: border-box;
@@ -8885,8 +9011,8 @@ body {
   font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
+  font-size: 15px;
+  letter-spacing: -1px;
   line-height: 1.2;
 }
 .MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList {
@@ -9066,7 +9192,7 @@ body {
 
 .modal {
   width: 883px;
-  height: 855px;
+  height: 910px;
   background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
   -webkit-backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
@@ -9328,7 +9454,7 @@ body {
   transition: 0.3s;
   opacity: 0;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource, .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource, .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover, .modal .nftRegistrationFrame .bottomFrame .bottomList .lyricsSource {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9433,7 +9559,7 @@ body {
 .modal .nftRegistrationFrame .bottomFrame .bottomListButton {
   flex-shrink: 0;
   width: 723px;
-  height: 183px;
+  height: 124px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

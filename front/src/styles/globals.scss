@@ -8542,475 +8542,600 @@ animation: gradient-animation 6s ease infinite;
 // SubscriptionContainer CSS ===============done
 // MyPage=> ForCreatorPage===============start
 .MyPageCreatorFrame{
-  box-sizing: border-box;
-  width: 1359px;
-  height: 950px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 140px 20px 20px 20px;
-  overflow: hidden;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 30px;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  .topSection{
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 1319px;
-      height: 200px;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 15px 0px 15px 0px;
-      overflow: hidden;
-      position: relative;
-      align-content: center;
-      flex-wrap: nowrap;
-      gap: 20px;
-      border-radius: 0px 0px 0px 0px;
-      .totalMoneySection{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 341px;
-          height: 170px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          padding: 20px 20px 20px 20px;
-          background-color: rgba(255, 255, 255, 0.1);
-          overflow: hidden;
-          position: relative;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 20px;
-          border-radius: 25px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          .infoText{
-              flex-shrink: 0;
-              width: min-content; /* 216px */
-              height: min-content; /* 30px */
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: flex-start;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: flex-start;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              :nth-child(1){
-                  flex-shrink: 0;
-                  width: auto; /* 187px */
-                  height: auto; /* 19px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 700;
-                  font-style: normal;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: rgba(255, 255, 255, 0.8);
-                  font-size: 16px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              }
-              :nth-child(2){
-                  flex-shrink: 0;
-                  width: 216px;
-                  height: 1px;
-                  display: block;
-                  background-color: rgba(255, 255, 255, 0.8);
-                  overflow: hidden;
-                  position: relative;
-                  border-radius: 0px 0px 0px 0px;
-              }
-          }
-          .infoNumber{
-              flex-shrink: 0;
-              width: min-content; /* 220px */
-              height: min-content; /* 36px */
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 10px;
-              border-radius: 0px 0px 0px 0px;
-              :nth-child(1){
-                  flex-shrink: 0;
-                  width: auto; /* 61px */
-                  height: auto; /* 36px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 700;
-                  font-style: normal;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: #ffffff;
-                  font-size: 30px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              }
-              :nth-child(2){
-                  flex-shrink: 0;
-                  width: 149px;
-                  height: 30px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: center;
-                  align-items: center;
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 0px 0px 0px 0px;
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-weight: 700;
-                  font-style: normal;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  background: linear-gradient(to right, #9d00ff, #f700ff);
-                  -webkit-background-clip: text;
-                  -webkit-text-fill-color: transparent;
-                  font-size: 30px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              }
-          }
-      }
-      .historyGrapSection{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 958px;
-          height: 170px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          padding: 20px 30px 20px 30px;
-          background-color: rgba(255, 255, 255, 0.1);
-          overflow: hidden;
-          position: relative;
-          align-content: center;
-          flex-wrap: nowrap;
-          gap: 15px;
-          border-radius: 25px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          .historyText{
-              flex-shrink: 0;
-              width: 868px;
-              height: auto; /* 19px */
-              white-space: pre-wrap;
-              word-wrap: break-word;
-              word-break: break-word;
-              position: relative;
-              font-weight: 700;
-              font-style: normal;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: rgba(255, 255, 255, 0.8);
-              font-size: 16px;
-              letter-spacing: 0px;
-              line-height: 1.2;
-              text-align: left;
-          }
-          .historyGrapFrame{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 868px;
-              height: 96px;
-              display: block;
-              overflow: hidden;
-              position: relative;
-              border-radius: 0px 0px 0px 0px;
-              border-color: rgba(255,255,255,0.5);
-              border-style: solid;
-              border-top-width: 0px;
-              border-bottom-width: 1px;
-              border-left-width: 1px;
-              border-right-width: 0px;   
-              border-radius: 0px 0px 0px 5px;
-          }
-      }
-  }
-  .bottomSection{
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 1319px;
-      height: 550px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 20px 20px 20px 20px;
-      background-color: rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-      position: relative;
-      align-content: flex-start;
-      flex-wrap: nowrap;
-      border-radius: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      .creatorHandlerFrame{
-          box-sizing: border-box;
-          flex-shrink: 0;
-          width: 1279px;
-          height: 510px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: flex-start;
-          padding: 0px 15px 0px 15px;
-          overflow: hidden;
-          position: relative;
-          align-content: flex-start;
-          flex-wrap: nowrap;
-          gap: 10px;
-          border-radius: 0px 0px 0px 0px;
-          .handleNavBar{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 1249px;
-              height: 30px;
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              align-items: center;
-              padding: 0px 15px 0px 15px;
-              overflow: hidden;
-              position: relative;
-              align-content: center;
-              flex-wrap: nowrap;
-              border-radius: 0px 0px 0px 0px;
-              .text{
-                  flex-shrink: 0;
-                  width: auto; /* 237px */
-                  height: auto; /* 30px */
-                  white-space: pre;
-                  position: relative;
-                  font-weight: 700;
-                  font-style: normal;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: rgba(255, 255, 255, 0.7);
-                  font-size: 25px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              } 
-              .button{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 157px;
-                  height: 30px;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  background-color: rgba(255, 255, 255, 0.1);
-                  overflow: hidden;
-                  position: relative;
-                  padding: 0px 0px 0px 0px;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 10px;
-                  border-radius: 20px 20px 20px 0px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-                  cursor: pointer;
-                  flex-shrink: 0;
-                  white-space: pre;
-                  font-weight: 700;
-                  font-style: normal;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: #ffffff;
-                  font-size: 14px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-              }
-          }
-          .funddingList{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 1260px;
-              height: 490px;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              align-items: flex-start;
-              padding: 10px 20px 10px 10px;
-              overflow-y: scroll;
-              overflow-x: hidden;
-              position: relative;
-              align-content: flex-start;
-              flex-wrap: nowrap;
-              gap: 15px;
-              border-radius: 0px 0px 0px 0px;
-              &::-webkit-scrollbar{
-                  width: 20px;
-                  height: 56px;
-                  background-color: transparent;
-              }
-              &::-webkit-scrollbar-thumb{
-                  background-color: rgba(0, 0, 0, 0.4);
-                  border-radius: 20px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-              }
-              .funddingItemBox{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 1219px;
-                  height: 60px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-                  align-items: center;
-                  padding: 0px 30px 0px 30px;
-                  background-color: rgba(255, 255, 255, 0.1);
-                  overflow: hidden;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  border-radius: 40px;
-                  border: 1px solid rgba(255, 255, 255, 0.1);
-                  .infoSection{
-                      flex-shrink: 0;
-                      width: min-content; /* 816px */
-                      height: min-content; /* 22px */
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 40px;
-                      border-radius: 0px 0px 0px 0px;
-                      .funddingTitle{
-                          cursor: pointer;
-                      }
-                      :nth-child(-n+5){
-                          flex-shrink: 0;
-                          width: auto; /* 127px */
-                          height: auto; /* 22px */
-                          white-space: pre;
-                          position: relative;
-                          font-weight: 700;
-                          font-style: normal;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.7);
-                          font-size: 18px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                  }
-                  .musicInputButton{
-                      cursor: pointer;
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 128px;
-                      height: 40px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center;
-                      background-color: rgba(0, 0, 0, 0.4);
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 0;
-                      border-radius: 25px;
-                      border: 1px solid rgba(255, 255, 255, 0.1);
-                      .buttonLine{
-                          box-sizing: border-box;
-                          flex-shrink: 0;
-                          width: 121px;
-                          height: 34px;
-                          display: flex;
-                          flex-direction: row;
-                          justify-content: center;
-                          align-items: center;
-                          overflow: hidden;
-                          position: relative;
-                          padding: 0px 0px 0px 0px;
-                          align-content: center;
-                          flex-wrap: nowrap;
-                          gap: 0;
-                          border-radius: 25px;
-                          border: 1px solid rgba(255, 255, 255, 0.1);
-                          flex-shrink: 0;
-                          white-space: pre;
-                          font-weight: 700;
-                          font-style: normal;
-                          font-family: "Inter-Bold", "Inter", sans-serif;
-                          color: rgba(255, 255, 255, 0.7);
-                          font-size: 18px;
-                          letter-spacing: 0px;
-                          line-height: 1.2;
-                      }
-                  }
-                  .funddingTerminationButton{
-                      cursor: pointer;
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 128px;
-                      height: 40px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      align-items: center;
-                      background-color: rgba(0, 0, 0, 0.4);
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 0;
-                      border-radius: 25px;
-                      border: 1px solid rgba(255, 255, 255, 0.1);
-                      flex-shrink: 0;
-                      white-space: pre; 
-                      font-weight: 700;
-                      font-style: normal;
-                      font-family: "Inter-Bold", "Inter", sans-serif;
-                      color: rgba(255, 255, 255, 0.7);
-                      font-size: 18px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-              }
-          }
-      }
-  }
+    box-sizing: border-box;
+    width: 1359px;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 140px 20px 20px 20px;
+    overflow: hidden;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+    position: relative;
+    border-radius: 0px 0px 0px 0px;
+    .topSection{
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1319px;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 15px 0px 15px 0px;
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+        border-radius: 0px 0px 0px 0px;
+        .totalMoneySection{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 341px;
+            height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px 20px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            .infoText{
+                flex-shrink: 0;
+                width: min-content; /* 216px */
+                height: min-content; /* 30px */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: flex-start;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                :nth-child(1){
+                    flex-shrink: 0;
+                    width: auto; /* 187px */
+                    height: auto; /* 19px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                :nth-child(2){
+                    flex-shrink: 0;
+                    width: 216px;
+                    height: 1px;
+                    display: block;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 0px 0px 0px 0px;
+                }
+            }
+            .infoNumber{
+                flex-shrink: 0;
+                width: min-content; /* 220px */
+                height: min-content; /* 36px */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                :nth-child(1){
+                    flex-shrink: 0;
+                    width: auto; /* 61px */
+                    height: auto; /* 36px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: #ffffff;
+                    font-size: 30px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                :nth-child(2){
+                    flex-shrink: 0;
+                    width: 149px;
+                    height: 30px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    border-radius: 0px 0px 0px 0px;
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    background: linear-gradient(to right, #9d00ff, #f700ff);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 30px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+            }
+        }
+        .creatorNoticeSection{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 958px;
+            height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 30px 20px 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 15px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            .noticeNav{
+                flex-shrink: 0;
+                width: 868px;
+                height: 19px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                border-radius: 0px 0px 0px 0px;
+                .noticeText{
+                    flex-shrink: 0;
+                    width: auto; /* 135px */
+                    height: auto; /* 19px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.8);
+                    font-size: 16px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                    text-align: left;
+                }
+                .noticeShowAll{
+                    flex-shrink: 0;
+                    width: auto; /* 60px */
+                    height: auto; /* 17px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.6);
+                    font-size: 14px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                    text-align: left;
+                }
+            }
+            .noticeList{
+                flex-shrink: 0;
+                width: 898px;
+                height: 96px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 15px;
+                border-radius: 0px 0px 0px 0px;
+                &::-webkit-scrollbar{
+                    width: 20px;
+                    height: 56px;
+                    background-color: transparent;
+                }
+                &::-webkit-scrollbar-thumb{
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 20px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .noticeWrap{
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 800px;
+                    height: 46px;
+                    border: 1px solid rgba(255,255,255,0.1);
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0px 40px 0px 40px;
+                    overflow: hidden;
+                    position: relative;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    border-radius: 25px;
+                    transition: 0.5s;
+                    &:hover{
+                        box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+                    }
+                    .date{
+                        flex-shrink: 0;
+                        width: auto; /* 91px */
+                        height: auto; /* 19px */
+                        white-space: pre;
+                        position: relative;
+                        font-family: "Inter", sans-serif;
+                        color: #ffffff;
+                        font-size: 16px;
+                        letter-spacing: -0.1px;
+                        line-height: 1.2;
+                    }
+                    .title{
+                        flex-shrink: 0;
+                        width: auto; /* 107px */
+                        height: auto; /* 19px */
+                        white-space: pre;
+                        position: relative;
+                        font-family: "Inter", sans-serif;
+                        color: #ffffff;
+                        font-size: 16px;
+                        letter-spacing: -0.1px;
+                        line-height: 1.2;
+                    }
+                    .infoFrame{
+                        flex-shrink: 0;
+                        width: min-content; /* 166px */
+                        height: min-content; /* 19px */
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 50px;
+                        border-radius: 0px 0px 0px 0px;
+                        :nth-child(1){
+                            flex-shrink: 0;
+                            width: auto; /* 68px */
+                            height: auto; /* 19px */
+                            white-space: pre;
+                            position: relative;
+                            font-family: "Inter", sans-serif;
+                            color: #ffffff;
+                            font-size: 16px;
+                            letter-spacing: -0.1px;
+                            line-height: 1.2;
+                        }
+                        :nth-child(2){
+                            flex-shrink: 0;
+                            width: auto; /* 48px */
+                            height: auto; /* 19px */
+                            white-space: pre;
+                            position: relative;
+                            font-family: "Inter", sans-serif;
+                            color: #ffffff;
+                            font-size: 16px;
+                            letter-spacing: -0.1px;
+                            line-height: 1.2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bottomSection{
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1319px;
+        height: 550px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 20px 20px 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        position: relative;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        .creatorHandlerFrame{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 1279px;
+            height: 510px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 0px 15px 0px 15px;
+            overflow: hidden;
+            position: relative;
+            align-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 0px 0px 0px 0px;
+            .handleNavBar{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 1249px;
+                height: 30px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px 15px 0px 15px;
+                overflow: hidden;
+                position: relative;
+                align-content: center;
+                flex-wrap: nowrap;
+                border-radius: 0px 0px 0px 0px;
+                .text{
+                    flex-shrink: 0;
+                    width: auto; /* 237px */
+                    height: auto; /* 30px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 25px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                } 
+                .button{
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 157px;
+                    height: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    overflow: hidden;
+                    position: relative;
+                    padding: 0px 0px 0px 0px;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+                    border-radius: 20px 20px 20px 0px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    cursor: pointer;
+                    flex-shrink: 0;
+                    white-space: pre;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: #ffffff;
+                    font-size: 15px;
+                    letter-spacing: -1px;
+                    line-height: 1.2;
+                }
+            }
+            .funddingList{
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 1260px;
+                height: 490px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 10px 20px 10px 10px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                position: relative;
+                align-content: flex-start;
+                flex-wrap: nowrap;
+                gap: 15px;
+                border-radius: 0px 0px 0px 0px;
+                &::-webkit-scrollbar{
+                    width: 20px;
+                    height: 56px;
+                    background-color: transparent;
+                }
+                &::-webkit-scrollbar-thumb{
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 20px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                .funddingItemBox{
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 1219px;
+                    height: 60px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0px 30px 0px 30px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    overflow: hidden;
+                    position: relative;
+                    align-content: center;
+                    flex-wrap: nowrap;
+                    border-radius: 40px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    .infoSection{
+                        flex-shrink: 0;
+                        width: min-content; /* 816px */
+                        height: min-content; /* 22px */
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 40px;
+                        border-radius: 0px 0px 0px 0px;
+                        .funddingTitle{
+                            cursor: pointer;
+                        }
+                        :nth-child(-n+5){
+                            flex-shrink: 0;
+                            width: auto; /* 127px */
+                            height: auto; /* 22px */
+                            white-space: pre;
+                            position: relative;
+                            font-weight: 700;
+                            font-style: normal;
+                            font-family: "Inter-Bold", "Inter", sans-serif;
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 18px;
+                            letter-spacing: 0px;
+                            line-height: 1.2;
+                        }
+                    }
+                    .musicInputButton{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 128px;
+                        height: 40px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 0;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        .buttonLine{
+                            box-sizing: border-box;
+                            flex-shrink: 0;
+                            width: 121px;
+                            height: 34px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+                            position: relative;
+                            padding: 0px 0px 0px 0px;
+                            align-content: center;
+                            flex-wrap: nowrap;
+                            gap: 0;
+                            border-radius: 25px;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            flex-shrink: 0;
+                            white-space: pre;
+                            font-weight: 700;
+                            font-style: normal;
+                            font-family: "Inter-Bold", "Inter", sans-serif;
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 18px;
+                            letter-spacing: 0px;
+                            line-height: 1.2;
+                        }
+                    }
+                    .funddingTerminationButton{
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        flex-shrink: 0;
+                        width: 128px;
+                        height: 40px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        overflow: hidden;
+                        position: relative;
+                        padding: 0px 0px 0px 0px;
+                        align-content: center;
+                        flex-wrap: nowrap;
+                        gap: 0;
+                        border-radius: 25px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        flex-shrink: 0;
+                        white-space: pre; 
+                        font-weight: 700;
+                        font-style: normal;
+                        font-family: "Inter-Bold", "Inter", sans-serif;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 18px;
+                        letter-spacing: 0px;
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+    }
 }
 .backDrop{
-  z-index: 99;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255,0.1);
-  -webkit-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255,0.1);
+    -webkit-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .modal{
     width: 883px;
-    height: 855px;
+    height: 910px;
     background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
     -webkit-backdrop-filter: blur(10px);
     -o-backdrop-filter: blur(10px);
@@ -9261,7 +9386,7 @@ animation: gradient-animation 6s ease infinite;
                       } 
                     
                 }
-                .soundSource,.albumCover{
+                .soundSource,.albumCover,.lyricsSource{
                     cursor: pointer;
                     box-sizing: border-box;
                     flex-shrink: 0;
@@ -9367,7 +9492,7 @@ animation: gradient-animation 6s ease infinite;
             .bottomListButton{
                 flex-shrink: 0;
                 width: 723px;
-                height: 183px;
+                height: 124px;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
