@@ -85,25 +85,46 @@ const MyPageThirdContainer = () => {
   const [myNftImage, setMyNftImage] = useState();
   const user_wallet_address = useSelector((state) => state.userInfo.address);
   useEffect(() => {
-    console.log(NEWSIC_FUND);
+    console.log("fundfund", NEWSIC_FUND);
   });
   const myNftListView = async () => {
     if (NEWSIC_FUND) {
       const _myNftList = await NEWSIC_FUND.methods.totalUri().call({ from: user_wallet_address });
       console.log("sisi", _myNftList);
-      setMyNftList(_myNftList);
+      const dataarr = [];
+      _myNftList.map(async (e) => {
+        console.log("jsonurl", e);
+        const response = await fetch(e);
+        console.log("여기 안나옴", response);
+        const data = await response.json();
+        console.log("여기도 안나옴", data);
+        console.log("여기도 안나옴", JSON.stringify(data));
+        dataarr.push(JSON.stringify(data));
+      });
+      setMyNftList(dataarr);
     }
   };
   useEffect(() => {
     myNftListView();
+    console.log("web3다개", web3);
   }, [NEWSIC_FUND]);
 
+  useEffect(() => {
+    console.log("엔엪티리스트", myNftList);
+  }, [myNftList]);
   return (
     <div className="thirdMyPage">
       <div className="MyPageThirdContainerFrame">
         <div className="infoSection">
           <div className="infoFrame">
-            <div>소유한 NFT 총 갯수</div>
+            <div>소유한 NFT 총 종류</div>
+            <button
+              onClick={() => {
+                console.log(myNftList);
+              }}
+            >
+              안녕안녕
+            </button>
             <div>24</div>
           </div>
           <div className="underLine" />

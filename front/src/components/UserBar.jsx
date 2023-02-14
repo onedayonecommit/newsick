@@ -43,11 +43,24 @@ const UserBar = () => {
         <div className="userInfoSection">
           <div className="creatorTicket" />
           <Image
-            className="userImage"
-            src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/976aa28a-93af-4b17-a268-7cd18a734a84.jpeg"
-            alt="프로필 이미지"
             width={150}
             height={150}
+            className="userImage"
+            src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/default_profile_image.png"
+            alt="프로필 이미지"
+            style={{
+              cursor: "pointer",
+              boxSizing: "border-box",
+              flexShrink: "0",
+              width: "150px",
+              height: "150px",
+              display: "block",
+              backgroundSize: "cover",
+              overflow: "hidden",
+              position: "relative",
+              borderRadius: "150px",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+            }}
             onClick={() => {
               movePage("my_page");
             }}
