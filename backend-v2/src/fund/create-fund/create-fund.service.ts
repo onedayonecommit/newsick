@@ -21,6 +21,8 @@ export class CreateFundService {
       discord_address,
       funding_title,
       nft_name,
+      funding_hard_cap,
+      funding_price,
     } = dto.fund;
     const { lyrics_name, lyrics_sns_address, lyrics_info } = dto.lyrics_maker;
     const { music_name, music_sns_address, music_info } = dto.music_maker;
@@ -39,6 +41,8 @@ export class CreateFundService {
         discord_address,
         funding_title,
         nft_name,
+        funding_hard_cap,
+        funding_price,
         lyrics_maker: {
           create: [{ lyrics_info, lyrics_name, lyrics_sns_address }],
         },

@@ -6,15 +6,26 @@ import { CreateFundController } from './create-fund/create-fund.controller';
 import { CreateFundService } from './create-fund/create-fund.service';
 import { OnGoingFundingController } from './on-going-funding/on-going-funding.controller';
 import { OnGoingFundingService } from './on-going-funding/on-going-funding.service';
+import { FundSupplyUpdateController } from './fund-supply-update/fund-supply-update.controller';
+import { FundSupplyUpdateService } from './fund-supply-update/fund-supply-update.service';
+import { RunningFundController } from '../mypage/running-fund/running-fund.controller';
+import { RunningFundService } from '../mypage/running-fund/running-fund.service';
 
 @Module({
-  controllers: [CreateFundController, OnGoingFundingController],
+  controllers: [
+    CreateFundController,
+    OnGoingFundingController,
+    FundSupplyUpdateController,
+    RunningFundController,
+  ],
   providers: [
     CreateFundService,
     PrismaService,
     IpfsUploadService,
     CreatorCheckService,
     OnGoingFundingService,
+    FundSupplyUpdateService,
+    RunningFundService,
   ],
 })
 export class FundModule {}

@@ -32,7 +32,7 @@ export class CreateFundController {
   )
   async createMetadata(@UploadedFiles() file): Promise<ipfsReturnDto> {
     console.log(file);
-    const resDto = JSON.parse(file.data[0].buffer);
+    const resDto = await JSON.parse(file.data[0].buffer);
     console.log(resDto);
     if (await this.authService.creatorCheck(resDto.producer)) {
       return await this.ipfsUploadService.ipfsUpload(
