@@ -120,16 +120,22 @@ const MyPageSecondContainer = () => {
   const [isFilled, setIsFilled] = useState();
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const [] = useState();
-  const dispatch = useDispatch();
+  const heartNftList = useSelector((state) => state.myPageInfo.heart_nft);
+  const heartFundingList = useSelector((state) => state.myPageInfo.heart_funding);
+  // const dispatch = useDispatch();
   const handleClick = (item) => {
     setSelectedItem(item.id);
   };
-  const user_wallet_address = useSelector((state) => state.userInfo.address);
-  console.log("123123", user_wallet_address);
-  useEffect(() => {
-    if (user_wallet_address) dispatch(fetchMyNftList({ user_wallet_address }));
-  }, [user_wallet_address]);
+  // useEffect(() => {
+  //   heartFundingList.map((e) => {
+  //     console.log(e.heartFundingList.funding_nft_image);
+  //   });
+  // }, []);
+  // const user_wallet_address = useSelector((state) => state.userInfo.address);
+  // console.log("123123", user_wallet_address);
+  // useEffect(() => {
+  //   if (user_wallet_address) dispatch(fetchMyNftList({ user_wallet_address }));
+  // }, [user_wallet_address]);
   return (
     <div className="secondMyPage">
       <div className="myPageSecondContainerFrame">
@@ -139,16 +145,16 @@ const MyPageSecondContainer = () => {
         </div>
         <div className=""></div>
         <div className="nftItemList">
-          {nftItem.map((item) => (
+          {heartFundingList.map((item) => (
             <div className="nftWishItemBox" key={item.id}>
               <div className="topSection">
-                <img className="nftImage" src={item.imgUrl} alt="ironImage" />
+                <img className="nftImage" src={item.heartFundingList.funding_nft_image} alt="ironImage" />
                 <motion.div key={item.id} style={{ color: isFilled && selectedItem === item.id ? "rgb(255, 255, 255)" : "rgba(0, 0, 0, 0.14)" }} transition={{ duration: 0.3 }} onClick={() => setIsFilled(!isFilled)} onClickCapture={() => handleClick(item)} className="wishButton">
                   <FontAwesomeIcon icon={faHeart} />
                 </motion.div>
                 <div className="infoStateFrame">
                   <div className="price">
-                    <div>{item.price}</div>
+                    <div>{item.heartFundingList.funding_price}</div>
                     <div>ETH</div>
                   </div>
                   <div className="state">

@@ -1,5 +1,6 @@
 import useWeb3 from "@/hooks/useWeb3";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import PageNationFrame from "../../components/PageNationFrame";
@@ -7,7 +8,7 @@ import PageNationFrame from "../../components/PageNationFrame";
 const ownNftDate = [
   {
     id: "a",
-    ownNftImgUrl: "https://i.pinimg.com/236x/9c/8f/f1/9c8ff1e1d708c24f4b5eb219aac3111d.jpg",
+    ownNftImgUrl: "https://i.pinimg.com/236x/3d/1c/da/3d1cdacb675553ecf505a9ed7c1b080a.jpg",
     ownNftName: "NFT Name",
     ownNftPrice: 60,
     state: "NFT State",
@@ -78,40 +79,9 @@ const ownNftDate = [
     info: "NFT Information",
   },
 ];
-
 const MyPageThirdContainer = () => {
-  const { web3, NEWSIC_FUND } = useWeb3();
-  const [myNftList, setMyNftList] = useState();
-  const [myNftImage, setMyNftImage] = useState();
-  const user_wallet_address = useSelector((state) => state.userInfo.address);
-  useEffect(() => {
-    console.log("fundfund", NEWSIC_FUND);
-  });
-  const myNftListView = async () => {
-    if (NEWSIC_FUND) {
-      const _myNftList = await NEWSIC_FUND.methods.totalUri().call({ from: user_wallet_address });
-      console.log("sisi", _myNftList);
-      const dataarr = [];
-      _myNftList.map(async (e) => {
-        console.log("jsonurl", e);
-        const response = await fetch(e);
-        console.log("여기 안나옴", response);
-        const data = await response.json();
-        console.log("여기도 안나옴", data);
-        console.log("여기도 안나옴", JSON.stringify(data));
-        dataarr.push(JSON.stringify(data));
-      });
-      setMyNftList(dataarr);
-    }
-  };
-  useEffect(() => {
-    myNftListView();
-    console.log("web3다개", web3);
-  }, [NEWSIC_FUND]);
-
-  useEffect(() => {
-    console.log("엔엪티리스트", myNftList);
-  }, [myNftList]);
+  const router = useRouter();
+  const myNftList = useSelector((state) => state.myPageInfo.myNftList);
   return (
     <div className="thirdMyPage">
       <div className="MyPageThirdContainerFrame">
@@ -130,20 +100,30 @@ const MyPageThirdContainer = () => {
           <div className="underLine" />
         </div>
         <div className="fundingItemList">
-          {ownNftDate.map((item) => (
-            <div className="ownedNftBox" key={item.id}>
-              <div className="ownedNftFrame">
-                <Image className="ownNftImg" src={item.ownNftImgUrl} alt="3dRender" width={210} height={189} />
-                <div className="nftTitleSection">
-                  <div>{item.ownNftName}</div>
-                  <div>{item.ownNftPrice} ETH</div>
-                  <div>{item.state}</div>
+          {myNftList.length != 0 ? (
+            myNftList.map((item) => (
+              <div className="ownedNftBox">
+                <div className="ownedNftFrame">
+                  <Image className="ownNftImg" src={item.data.image} alt="3dRender" width={210} height={189} />
+                  <div className="nftTitleSection">
+                    <div>{item.data.name}</div>
+                    <button
+                      onClick={() => {
+                        router.replace(`/NFTmarket/${item.tokenId}`);
+                      }}
+                      style={{ color: "red" }}
+                    >
+                      판매
+                    </button>
+                  </div>
+                  <div className="middleLine" />
+                  <div className="infoSection">{item.data.description}</div>
                 </div>
-                <div className="middleLine" />
-                <div className="infoSection">{item.info}</div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <div>보유한 Nft가 없습니다 펀딩 혹은 마켓플레이스 이용하여 nft를 구매하실 수 있습니다!</div>
+          )}
         </div>
       </div>
       <div className="pageNationFrame">

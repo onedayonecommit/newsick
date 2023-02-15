@@ -46,7 +46,7 @@ const UserBar = () => {
             width={150}
             height={150}
             className="userImage"
-            src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/default_profile_image.png"
+            src="https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/default_profile_image.png"
             alt="프로필 이미지"
             style={{
               cursor: "pointer",

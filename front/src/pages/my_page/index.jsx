@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MyPageFirstContainer, MyPageSecondContainer, MyPageThirdContainer } from "@/components/mypage";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMyPage } from "@/middleware/fetchMypage";
+import { fetchMyNftList, fetchMyPage, myNftList, myRunningFundList } from "@/middleware/fetchMypage";
 const MyPage = () => {
   const [selectedOption, setSelectedOption] = useState(0);
   const dispatch = useDispatch();
@@ -14,6 +14,12 @@ const MyPage = () => {
     console.log("통신좀 해");
     console.log(user_wallet_address);
     dispatch(fetchMyPage({ user_wallet_address }));
+    dispatch(myNftList(user_wallet_address));
+    dispatch(fetchMyNftList({ user_wallet_address }));
+    if (isCreator) {
+      console.log(isCreator, "ssississississi");
+      dispatch(myRunningFundList({ user_wallet_address }));
+    }
   }, [user_wallet_address]);
 
   const handleClick = (index) => {
