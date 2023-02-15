@@ -77,14 +77,23 @@ const FunddingDateItem = [
 ];
 const MyPageCreater = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [totalEth, setTotalEth] = useState();
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   const runningFundList = useSelector((state) => state.myPageInfo.runningFundList);
+
   useEffect(() => {
+    var aaa = 0;
     // runningFundList.map((e) => {
-    //   console.log(e, "sisisisisisi");
+    //   console.log(e.funding_price * e.funding_sales, "누적 판매 가격");
+    //   aaa += e.funding_price * e.funding_sales;
+    //   console.log(aaa, "aaagoodgood");
+    //   return aaa;
     // });
-    console.log("ssississi", runningFundList);
+    for (let i = 0; i < runningFundList.length; i++) {
+      aaa += runningFundList[i].funding_price * runningFundList[i].funding_sales;
+    }
+    setTotalEth(aaa);
   }, []);
   return (
     <div className="MyPageCreatorFrame">
@@ -97,7 +106,7 @@ const MyPageCreater = () => {
           </div>
           <div className="infoNumber">
             <div>ETH</div>
-            <div>2.255</div>
+            <div>{totalEth}</div>
           </div>{" "}
         </div>
         <div className="historyGrapSection">
