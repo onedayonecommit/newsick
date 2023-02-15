@@ -785,6 +785,11 @@ body{
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
   .controlBar{
+    .volumeBoxFrame{
+        position: absolute;
+        left: -245px;
+        bottom:25px;
+    }
       flex-shrink: 0;
       width: 610px;
       height: 105px;
@@ -859,7 +864,7 @@ body{
       .playBarFrame{
           flex-shrink: 0;
           width: 504px;
-          height: 38px;
+          height: 72px;
           display: block;
           overflow: hidden;
           position: relative;
@@ -868,36 +873,25 @@ body{
               position:absolute;
               height: 72px;
               left: 0px;
-              background-color: rgba(255,255,255,0.3);
+              background: linear-gradient(238deg, rgba(108, 99, 255, 0.2) 0%, rgba(248, 164, 216, 0.2) 100%);
 
           }
           .playMotionWave{
-              cursor: pointer;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0;
-              position: relative;
-              border-radius: 0px 0px 0px 0px;
-              .playWave1{
-                  pointer-events: none;
-                  position: relative;
-                  width: 100px;
-                  height: 36px;
-              }
-              .playWave2{
-                  pointer-events: none;
-                  position: relative;
-                  width: 100px;
-                  height: 36px;
-
-              }
-          }
+            left: -504px;
+            width: 1008px;
+            height: 72px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            position: absolute;
+            border-radius: 0px 0px 0px 0px;
+        }
           .playBackGround{
               position: absolute;
               top: 12px;
@@ -1726,7 +1720,7 @@ body{
               position:absolute;
               height: 72px;
               left: 0px;
-              background-color: rgba(255,255,255,0.3);
+              background: linear-gradient(238deg, rgba(108, 99, 255, 0.2) 0%, rgba(248, 164, 216, 0.2) 100%);
 
           }
           .playMotionWave{
@@ -1746,17 +1740,6 @@ body{
               gap: 0;
               position: absolute;
               border-radius: 0px 0px 0px 0px;
-              .playWave1{
-                  position: relative;
-                  width: 247px;
-                  height: 36px;
-              }
-              .playWave2{
-                  position: relative;
-                  width: 247px;
-                  height: 36px;
-
-              }
           }
           .playBackGround{
               position: absolute;
