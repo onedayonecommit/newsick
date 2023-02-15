@@ -18,7 +18,7 @@ export class IpfsUploadService {
       name: dto.nft_name,
       image: fileUrl,
       url: 'newsic.com',
-      metadata: {
+      properties: {
         producer: dto.producer,
         description: dto.description,
       },

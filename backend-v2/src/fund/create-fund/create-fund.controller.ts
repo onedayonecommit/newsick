@@ -3,7 +3,6 @@ import {
   Body,
   Controller,
   Post,
-  UploadedFile,
   UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
@@ -31,7 +30,6 @@ export class CreateFundController {
     FileFieldsInterceptor([{ name: 'fund_nft_image' }, { name: 'data' }]),
   )
   async createMetadata(@UploadedFiles() file): Promise<ipfsReturnDto> {
-    console.log(file);
     const resDto = JSON.parse(file.data[0].buffer);
     console.log(resDto);
     if (await this.authService.creatorCheck(resDto.producer)) {
@@ -49,5 +47,4 @@ export class CreateFundController {
     console.log(fundDto.fund.funding_production_date);
     return await this.createFundService.createFund(fundDto);
   }
-  // @Post('create/fund')
 }

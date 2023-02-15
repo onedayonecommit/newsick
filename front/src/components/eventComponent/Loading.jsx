@@ -17,7 +17,7 @@ const Loading = ({ setIsLoading }) => {
   }, []);
   setTimeout(() => {
     setIsLoading(false);
-  }, 5000);
+  }, 2000);
   return (
     <motion.div className="loadingFrame">
       <motion.div
@@ -35,7 +35,9 @@ const Loading = ({ setIsLoading }) => {
         }}
         style={{ opacity }}
       >
-        <motion.h1 style={{ opacity, color: "rgba(255,255,255,1)" }}>Loading...</motion.h1>
+        <motion.h1 style={{ opacity, color: "rgba(255,255,255,1)" }}>
+          Loading...
+        </motion.h1>
       </motion.div>
       <motion.div className="progressBar">
         <motion.div

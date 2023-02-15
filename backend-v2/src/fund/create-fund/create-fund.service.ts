@@ -46,23 +46,6 @@ export class CreateFundService {
           create: [{ music_info, music_name, music_sns_address }],
         },
         singer: { create: [{ singer_info, singer_name, singer_sns_address }] },
-        // id,
-        // creator_id,
-        // category,
-        // funding_info,
-        // funding_start_date,
-        // funding_finish_date,
-        // funding_production_date,
-        // funding_nft_image,
-        // funding_metadata,
-        // discord_address,
-        // lyrics_maker: {
-        //   create: [{ lyrics_name, lyrics_info, lyrics_sns_address }],
-        // },
-        // music_maker: {
-        //   create: [{ music_name, music_info, music_sns_address }],
-        // },
-        // singer: { create: [{ singer_name, singer_info, singer_sns_address }] },
       },
     });
   }

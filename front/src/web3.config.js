@@ -1,34 +1,59 @@
-const NEWSIC_FUND_CA = "0x5a3f358760f9C8bc78A47742e32Eb379d3f0fdd0";
+const NEWSIC_FUND_CA = "0x4525734379a265B61d99a93acdCa12ACAF5631A1";
 const NEWSIC_FUND_ABI = [
   {
-    inputs: [],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    anonymous: false,
     inputs: [
       {
-        indexed: true,
-        internalType: "address",
-        name: "account",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "operator",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "bool",
-        name: "approved",
-        type: "bool",
+        components: [
+          {
+            internalType: "address",
+            name: "creator",
+            type: "address",
+          },
+          {
+            internalType: "string",
+            name: "uri",
+            type: "string",
+          },
+          {
+            internalType: "uint256",
+            name: "startdate",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "finishdate",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "makedate",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "price",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "max",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "holdershare",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct NewSickFund.fundingStruct",
+        name: "_fundingStruct",
+        type: "tuple",
       },
     ],
-    name: "ApprovalForAll",
-    type: "event",
+    name: "_setURI",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [
@@ -64,6 +89,63 @@ const NEWSIC_FUND_ABI = [
     name: "burnBatch",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "operator",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "bool",
+        name: "approved",
+        type: "bool",
+      },
+    ],
+    name: "ApprovalForAll",
+    type: "event",
+  },
+  {
+    inputs: [],
+    name: "creatorDelete",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "creatorJoinPay",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256[]",
+        name: "_amount",
+        type: "uint256[]",
+      },
+    ],
+    name: "doAirDrop",
+    outputs: [],
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -224,6 +306,11 @@ const NEWSIC_FUND_ABI = [
             name: "max",
             type: "uint256",
           },
+          {
+            internalType: "uint256",
+            name: "holdershare",
+            type: "uint256",
+          },
         ],
         indexed: false,
         internalType: "struct NewSickFund.fundingStruct",
@@ -252,33 +339,6 @@ const NEWSIC_FUND_ABI = [
     ],
     name: "creatorApplicant",
     type: "event",
-  },
-  {
-    inputs: [],
-    name: "creatorDelete",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "creatorJoinPay",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256[]",
-        name: "_amount",
-        type: "uint256[]",
-      },
-    ],
-    name: "doAirDrop",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
   },
   {
     anonymous: false,
@@ -406,61 +466,6 @@ const NEWSIC_FUND_ABI = [
       },
     ],
     name: "setApprovalForAll",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        components: [
-          {
-            internalType: "address",
-            name: "creator",
-            type: "address",
-          },
-          {
-            internalType: "string",
-            name: "uri",
-            type: "string",
-          },
-          {
-            internalType: "uint256",
-            name: "startdate",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "finishdate",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "makedate",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "price",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "max",
-            type: "uint256",
-          },
-        ],
-        internalType: "struct NewSickFund.fundingStruct",
-        name: "_fundingStruct",
-        type: "tuple",
-      },
-      {
-        internalType: "uint256",
-        name: "_holdershare",
-        type: "uint256",
-      },
-    ],
-    name: "setTokenUri",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -605,25 +610,6 @@ const NEWSIC_FUND_ABI = [
         internalType: "uint256",
         name: "",
         type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "getUri",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
       },
     ],
     stateMutability: "view",
@@ -799,6 +785,11 @@ const NEWSIC_FUND_ABI = [
         name: "max",
         type: "uint256",
       },
+      {
+        internalType: "uint256",
+        name: "holdershare",
+        type: "uint256",
+      },
     ],
     stateMutability: "view",
     type: "function",
@@ -924,7 +915,7 @@ const NEWSIC_FUND_ABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "_id",
         type: "uint256",
       },
     ],
@@ -954,8 +945,108 @@ const NEWSIC_FUND_ABI = [
   },
 ];
 
-const NEWSIC_MARKET_CA = "0xA42029F746f4577cDCC5FF8F0C8bE4f6be080e25";
+const NEWSIC_MARKET_CA = "0x615AD5f8BcC596B4E160b11F31F141037d8BA43A";
 const NEWSIC_MARKET_ABI = [
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_amountOfToken",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_price",
+        type: "uint256",
+      },
+    ],
+    name: "_createBuyList",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_amountOfToken",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_price",
+        type: "uint256",
+      },
+    ],
+    name: "_createSellList",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_fee",
+        type: "uint256",
+      },
+    ],
+    name: "_patchMarketFee",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_amount",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_price",
+        type: "uint256",
+      },
+    ],
+    name: "cancelBuyOrder",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
   {
     inputs: [
       {
@@ -1097,6 +1188,35 @@ const NEWSIC_MARKET_ABI = [
     type: "event",
   },
   {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_amount",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_price",
+        type: "uint256",
+      },
+    ],
+    name: "cancelSellOrder",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     anonymous: false,
     inputs: [
       {
@@ -1157,77 +1277,6 @@ const NEWSIC_MARKET_ABI = [
     ],
     name: "SellRegistEvent",
     type: "event",
-  },
-  {
-    inputs: [],
-    name: "Token",
-    outputs: [
-      {
-        internalType: "contract NewSickFund",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
-    ],
-    name: "_createBuyList",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
-    ],
-    name: "_createSellList",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "function",
   },
   {
     inputs: [
@@ -1305,77 +1354,6 @@ const NEWSIC_MARKET_ABI = [
       },
     ],
     stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_fee",
-        type: "uint256",
-      },
-    ],
-    name: "_patchMarketFee",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
-    ],
-    name: "cancelBuyOrder",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
-    ],
-    name: "cancelSellOrder",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -1522,6 +1500,19 @@ const NEWSIC_MARKET_ABI = [
         internalType: "bool",
         name: "isSold",
         type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "Token",
+    outputs: [
+      {
+        internalType: "contract NewSickFund",
+        name: "",
+        type: "address",
       },
     ],
     stateMutability: "view",

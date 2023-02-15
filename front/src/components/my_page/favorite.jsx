@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import PageNationFrame from "../PageNationFrame";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const nftItem = [
   {
     id: "a",

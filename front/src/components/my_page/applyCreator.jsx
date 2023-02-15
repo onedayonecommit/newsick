@@ -1,13 +1,14 @@
 import useWeb3 from "@/hooks/useWeb3";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import MyPageCreater from "@/pages/my_page/creator";
 import { fetchApplyCreator } from "@/middleware/fetchUser";
-import { useSelector, useDispatch } from "react-redux";
-import MyPageCreator from "@/components";
 
-const ApplyCreator = () => {
+const MyPageFirstContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
-  const dispatch = useDispatch();
   const isCreator = useSelector((state) => state.userInfo.isCreator);
   const user_wallet_address = useSelector((state) => state.userInfo.address);
+  const dispatch = useDispatch();
 
   const creatorApply = async () => {
     const creatorPrice = await web3.utils.toWei("0.1", "ether");
@@ -56,9 +57,9 @@ const ApplyCreator = () => {
     </>
   ) : (
     <>
-      <MyPageCreator />
+      <MyPageCreater />
     </>
   );
 };
 
-export default ApplyCreator;
+export default MyPageFirstContainer;

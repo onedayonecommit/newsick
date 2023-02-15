@@ -74,7 +74,9 @@ export const fetchApplyCreator = createAsyncThunk(
         account
       );
       return applyCreatorResult.data;
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }
 );
 

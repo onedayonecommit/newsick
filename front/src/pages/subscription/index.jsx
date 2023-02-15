@@ -32,7 +32,6 @@ const SubscriptionContainer = () => {
     const _buy_ticket = await NEWSIC_FUND.methods
       .subscriptionPay()
       .send({ from: user.address, value: _price });
-    console.log("dddddd");
     setTicket(_buy_ticket);
     return _buy_ticket;
   };
