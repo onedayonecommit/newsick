@@ -172,6 +172,20 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
   const initialState = {
     slideIndex: 0,
   };
+  const slidesReducer = (state, event) => {
+    if (event.type === "NEXT") {
+      return {
+        ...state,
+        slideIndex: (state.slideIndex - 1) % slides.length,
+      };
+    }
+    if (event.type === "PREV") {
+      return {
+        ...state,
+        slideIndex: state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
+      };
+    }
+  };
 
   const [state, dispatch] = useReducer(slidesReducer, initialState);
   return (

@@ -1,10 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  fetchUserCreated,
-  fetchUserCheck,
-  fetchUserImage,
-  fetchApplyCreator,
-} from "../middleware/fetchUser";
+import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
 
 const initialState = {
   address: "",
@@ -32,15 +27,16 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        if (action.payload.createStatus != false) {
-          state.address = action.payload.user_wallet_address;
-          state.userName = action.payload.user_name;
-          state.userEmail = action.payload.user_email;
-          state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.creator[0].is_creator;
-          state.createStatus = action.payload.createStatus;
-          console.log("넘어온 유저정보 : ", action.payload);
-        }
+        console.log(action.payload, "ssibaljinjja");
+        // if (action.payload.createStatus != false) {
+        //   state.address = action.payload.user_wallet_address;
+        //   state.userName = action.payload.user_name;
+        //   state.userEmail = action.payload.user_email;
+        //   state.userImage = action.payload.user_profile_image;
+        //   state.isCreator = action.payload.creator[0].is_creator;
+        //   state.createStatus = action.payload.createStatus;
+        //   console.log("넘어온 유저정보 : ", action.payload);
+        // }
       })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
@@ -52,8 +48,7 @@ const userSlice = createSlice({
         // console.log(typeof action.payload);
         // console.log(typeof action.payload == "string");
         if (action.payload) {
-          if (typeof action.payload == "string")
-            alert(`이미 사용중인 ${action.payload} 입니다.`);
+          if (typeof action.payload == "string") alert(`이미 사용중인 ${action.payload} 입니다.`);
           else {
             console.log("hihihi", action.payload);
             state.address = action.payload.user_wallet_address;
