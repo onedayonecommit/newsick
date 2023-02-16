@@ -1126,7 +1126,7 @@ body{
     }
   }
           .backToMain{
-              color: white;
+              color: rgba(255,255,255,0.3);
               position:absolute;
               width: 40px;
               height: 40px;
@@ -1134,6 +1134,10 @@ body{
               left: 15px;
               cursor: pointer;
               z-index: 2;
+              transition: 0.3s;
+              &:hover{
+                  color: rgba(255,255,255,0.8);
+              }
           }
       }
       .lyricsSection{
@@ -1220,11 +1224,16 @@ body{
           align-content: center;
           flex-wrap: nowrap;
           border-radius: 0px 0px 0px 0px;
-          :nth-child(1){
-              color: rgba(255,255,255,0.8);
+            .backToMain{
+              color: rgba(255,255,255,0.3);
               position: relative;
               width: 40px;
               height: 40px;
+              transition: 0.3s;
+              cursor:pointer;
+              &:hover{
+                  color: rgba(255,255,255,0.8);
+              }
           }
           .playListText{
               flex-shrink: 0;
@@ -3781,7 +3790,7 @@ animation: gradient-animation 6s ease infinite;
       }
       .newSongList{
           flex-shrink: 0;
-          width: 1279px;
+          width: min-content;
           height: 216px;
           display: flex;
           flex-direction: row;
@@ -4008,18 +4017,28 @@ animation: gradient-animation 6s ease infinite;
           .topChartList{
               flex-shrink: 0;
               width: 635px;
-              height: 532px;
+              height: 522px;
               display: flex;
               flex-direction: column;
               justify-content: flex-start;
               align-items: center;
-              overflow: hidden;
+              overflow-y: scroll;
               position: relative;
               padding: 0px 0px 0px 0px;
               align-content: center;
               flex-wrap: nowrap;
               gap: 20px;
               border-radius: 0px 0px 0px 0px;
+              &::-webkit-scrollbar{
+                width: 0px;
+                height: 0px;
+                background-color: transparent;
+                }
+                &::-webkit-scrollbar-thumb{
+                    background-color: rgba(255, 255, 255, 0.4);
+                    border-radius: 20px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                }
               .musicTopItemBox{
                   flex-shrink: 0;
                   width: 635px;
@@ -5737,8 +5756,8 @@ animation: gradient-animation 6s ease infinite;
           border-radius: 0px 0px 0px 0px;
           .fundingTitle{
               flex-shrink: 0;
-              width: 303px;
-              height: 48px;
+              width: min-content;
+              height: min-content;
               display: block;
               overflow: hidden;
               position: relative;
@@ -7234,6 +7253,123 @@ animation: gradient-animation 6s ease infinite;
       gap: 40px;
       border-radius: 25px;
       border: 1px solid rgba(0, 0, 0, 0.1);
+      .shareSection{
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 1199px;
+        height: 163px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 0px 0px 0px 0px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        .shareFrame{
+            flex-shrink: 0;
+            width: min-content; /* 897px */
+            height: min-content; /* 50px */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 20px;
+            border-radius: 0px 0px 0px 0px;
+            .info{
+                flex-shrink: 0;
+                width: auto; /* 271px */
+                height: auto; /* 42px */
+                white-space: pre;
+                position: relative;
+                font-weight: 700;
+                font-style: normal;
+                font-family: "Inter-Bold", "Inter", sans-serif;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 35px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+            }
+            .contents{
+                flex-shrink: 0;
+                width: min-content; /* 606px */
+                height: min-content; /* 50px */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                :nth-child(1){
+                    flex-shrink: 0;
+                    width: auto; /* 291px */
+                    height: auto; /* 42px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 35px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                :nth-child(2),:nth-child(4){
+                    flex-shrink: 0;
+                    width: 125px;
+                    height: 50px;
+                    display: flex;
+                    overflow: hidden;
+                    justify-content: center;
+                    align-items: center;
+                    color: rgba(255,255,255,0.5);
+                    font-size: 18px;
+                    position: relative;
+                    border-radius: 5px;
+                    border:rgba(255,255,255,0.5) solid 1px;
+                    background-color: transparent;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                :nth-child(3){
+                    flex-shrink: 0;
+                    width: auto; /* 10px */
+                    height: auto; /* 42px */
+                    white-space: pre;
+                    position: relative;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: "Inter-Bold", "Inter", sans-serif;
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 35px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                    &::before{
+                        margin-right: 5px;
+                        content: "%";
+                        color: rgba(255,255,255,0.5);
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+      }
       .secondContentSection{
           flex-shrink: 0;
           width: 1199px;
@@ -7253,7 +7389,7 @@ animation: gradient-animation 6s ease infinite;
               box-sizing: border-box;
               flex-shrink: 0;
               width: 1199px;
-              height: 373px;
+              height: min-content;
               display: flex;
               flex-direction: column;
               justify-content: flex-start;
@@ -7292,7 +7428,7 @@ animation: gradient-animation 6s ease infinite;
                   box-sizing: border-box;
                   flex-shrink: 0;
                   width: 1159px;
-                  height: 289px;
+                  height: min-content;
                   display: block;
                   overflow: hidden;
                   position: relative;
@@ -7353,137 +7489,155 @@ animation: gradient-animation 6s ease infinite;
           gap: 20px;
           border-radius: 0px 0px 0px 0px;
           .genreSection{
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 1199px;
-              height: 100px;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
-              overflow: visible;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0;
-              border-radius: 0px 0px 0px 0px;
-              border-color: rgba(255, 255, 255, 0.1);
-              border-style: solid;
-              border-top-width: 0px;
-              border-bottom-width: 1px;
-              border-left-width: 0px;
-              border-right-width: 0px;
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: 1199px;
+                height: 100px;
+                display: flex;
+                flex-direction: row;
+                justify-content:space-between;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 40px 0px 80px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 0;
+                border-radius: 0px 0px 0px 0px;
+                border-color: rgba(255, 255, 255, 0.1);
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 1px;
+                border-left-width: 0px;
+                border-right-width: 0px;
+              .genreText{
+                flex-shrink: 0;
+                width: min-content;
+                height: min-content;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                border-radius: 0px 0px 0px 0px;
+                white-space: pre;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-weight: 600;
+                font-size: 20px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+            }
               .dropDownBox{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 110px;
-                  height: 221px;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  padding: 25px 15px 25px 15px;
+                  width: 200px;
+                  height: 50px;
                   background-color: rgba(0, 0, 0, 0.2);
-
-                  -webkit-backdrop-filter: blur(5px);
-                  backdrop-filter: blur(5px);
-                  -o-backdrop-filter: blur(5px);
-                  -moz-backdrop-filter: blur(5px);
-                  z-index: 1;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  gap: 25px;
-                  position: absolute;
-                  border-radius: 30px 5px 30px 5px;
                   border: 1px solid rgba(255, 255, 255, 0.1);
-                  top: 19px;
-                  right:105px;
-                 .dropOption{
-                  cursor: pointer;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  flex-shrink: 0;
-                  width: 100%;
-                  height: 25px;
-                  white-space: pre;
-                  position: relative;
-                  font-weight: bold;
-                  font-style: normal;
-                  font-family: "Inter-Bold", "Inter", sans-serif;
-                  color: rgba(255, 255, 255, 0.7);
-                  font-size: 18px;
-                  letter-spacing: 0px;
-                  line-height: 1.2;
-                  &:hover{
-                      background-color: rgba(255, 255, 255, 0.1);
-                      border-radius: 10px;
-                  }
-                 } 
+                  text-align: center;
+                  font-size: 20px;
+                  border-radius: 20px 5px 20px 5px;
+                  color: rgba(255,255,255,0.8);
+                &:focus{
+                    outline: "none";
+                }
+                  
+
               }
-              >div{
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                  width: 1199px;
-                  height: 100px;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;
-                  align-items: center;
-                  padding: 0px 40px 0px 40px;
-                  overflow: hidden;
-                  position: relative;
-                  align-content: center;
-                  flex-wrap: nowrap;
-                  border-radius: 0px 0px 0px 0px;
-                  .genreText{
-                      flex-shrink: 0;
-                      width: min-content;
-                      height: min-content;
-                      display: block;
-                      overflow: hidden;
-                      position: relative;
-                      border-radius: 0px 0px 0px 0px;
-                      white-space: pre;
-                      font-family: "Inter", sans-serif;
-                      color: #ffffff;
-                      font-size: 20px;
-                      letter-spacing: 0px;
-                      line-height: 1.2;
-                  }
-                  .genreDropDown{
-                      cursor: pointer;
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 55px;
-                      height: 55px;
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: center;
-                      align-items: center;
-                      overflow: hidden;
-                      position: relative;
-                      padding: 0px 0px 0px 0px;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 10px;
-                      border-radius: 0px 0px 0px 0px;
-                      border: 5px solid rgba(255, 255, 255, 0.7);
-                      .line{
-                          width: 30px;
-                          height: 2px;
-                          display: block;
-                          background-color: #ffffff;
-                          overflow: hidden;
-                          position: relative;
-                          border-radius: 0px 0px 0px 0px;
-                      }
-                  }
-              }
+
+          }
+          .nftPriceUnitSection{
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 1199px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 0px 40px 0px 80px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 0px 0px 0px 0px;
+            border-color: rgba(255, 255, 255, 0.1);
+            border-style: solid;
+            border-top-width: 0px;
+            border-bottom-width: 1px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            .nftPriceUnit{
+                flex-shrink: 0;
+                width: min-content; /* 131px */
+                height: min-content; /* 24px */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 10px;
+                border-radius: 0px 0px 0px 0px;
+                flex-shrink: 0;
+                white-space: pre;
+                font-family: "Inter", sans-serif;
+                color: #ffffff;
+                font-size: 20px;
+                letter-spacing: 0px;
+                line-height: 1.2;
+            }
+            .rightSide{
+                flex-shrink: 0;
+                width: min-content; /* 422px */
+                height: min-content; /* 50px */
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                padding: 0px 0px 0px 0px;
+                align-content: center;
+                flex-wrap: nowrap;
+                gap: 20px;
+                border-radius: 0px 0px 0px 0px; 
+                .nowText{
+                    flex-shrink: 0;
+                    width: auto; /* 60px */
+                    height: auto; /* 24px */
+                    white-space: pre;
+                    position: relative;
+                    font-family: "Inter", sans-serif;
+                    color: #ffffff;
+                    font-size: 20px;
+                    letter-spacing: 0px;
+                    line-height: 1.2;
+                }
+                .nftPriceUnitInput{
+                    background-color: transparent;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+                    width: 315px;
+                    height: 50px;
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 5px;
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    text-align: end;
+                    color: white;
+                    font-size: 20px;
+                    padding-inline:15px ;
+                    &:focus {
+                        outline: none;    
+                      }  
+                }
+            }
           }
           .fundingTitleSection,.fundingPeriodSection,.songProductionSection,
-          .nftPriceUnitSection,.minimumNumberSection{
+          .minimumNumberSection{
               box-sizing: border-box;
               flex-shrink: 0;
               width: 1199px;
@@ -7505,7 +7659,6 @@ animation: gradient-animation 6s ease infinite;
               border-bottom-width: 1px;
               border-left-width: 0px;
               border-right-width: 0px;
-              
               :nth-child(1){
                   box-sizing: border-box;
                   flex-shrink: 0;
@@ -7523,13 +7676,14 @@ animation: gradient-animation 6s ease infinite;
                   border-radius: 0px 0px 0px 0px;
                   .fundingTitle{
                       flex-shrink: 0;
-                      width: 123px;
-                      height: 24px;
+                      width: min-content;
+                      height: min-content;
                       display: block;
                       overflow: hidden;
                       position: relative;
                       border-radius: 0px 0px 0px 0px;
                       white-space: pre;
+                      font-weight: 600;
                       font-family: "Inter", sans-serif;
                       color: #ffffff;
                       font-size: 20px;
@@ -7540,12 +7694,12 @@ animation: gradient-animation 6s ease infinite;
                       background-color: transparent;
                       box-sizing: border-box;
                       flex-shrink: 0;
-                      width: 832px;
+                      width: 600px;
                       height: 50px;
                       display: block;
                       overflow: hidden;
                       position: relative;
-                      border-radius: 0px 0px 0px 0px;
+                      border-radius: 5px;
                       border: 1px solid rgba(255, 255, 255, 0.7);
                       text-align: end;
                       color: white;
@@ -7555,7 +7709,7 @@ animation: gradient-animation 6s ease infinite;
                           outline: none;    
                         }   
                   }
-                  .fundingPeriod,.songProduction,.nftPriceUnit,.minimumNumber{
+                  .fundingPeriod,.songProduction,.minimumNumber{
                       flex-shrink: 0;
                       width: min-content;
                       height: min-content;
@@ -7567,6 +7721,7 @@ animation: gradient-animation 6s ease infinite;
                       font-family: "Inter", sans-serif;
                       color: #ffffff;
                       font-size: 20px;
+                      font-weight: 600;
                       letter-spacing: 0px;
                       line-height: 1.2;
                   }
@@ -7587,6 +7742,7 @@ animation: gradient-animation 6s ease infinite;
                       border-radius: 0px 0px 0px 0px;
                       color: white;
                       >input{
+                          cursor: pointer;  
                           box-sizing: border-box;
                           flex-shrink: 0;
                           width: 389px;
@@ -7601,17 +7757,15 @@ animation: gradient-animation 6s ease infinite;
                           align-content: center;
                           flex-wrap: nowrap;
                           gap: 0;
-                          border-radius: 0px 0px 0px 0px;
+                          border-radius: 5px;
                           border: 1px solid rgba(255, 255, 255, 0.7);
                           font-size: 20px;
                           padding-inline:30px ;
                           background-color: transparent;
                           color: rgba(255,255,255,0.5);
-                          // ::-webkit-inner-spin-button{
-                          //     color: #FFFFFF;
-                          //     background-color: #FFFFFF;
-                          //     border: #FFFFFF 1px solid;
-                          // }
+                          &:focus{
+                            outline: none;
+                          }  
                       }
                   }
                   .songProductionFrame{
@@ -7677,31 +7831,6 @@ animation: gradient-animation 6s ease infinite;
                           background-color: transparent;
                           color: rgba(255,255,255,0.5);
                       }
-                  }
-                  .nftPriceUnitInput{
-                      box-sizing: border-box;
-                      flex-shrink: 0;
-                      width: 389px;
-                      height: 50px;
-                      display: flex;
-                      flex-direction: row;
-                      justify-content: flex-end;
-                      align-items: center;
-                      padding: 0px 15px 0px 15px;
-                      overflow: hidden;
-                      position: relative;
-                      align-content: center;
-                      flex-wrap: nowrap;
-                      gap: 0;
-                      border-radius: 0px 0px 0px 0px;
-                      border: 1px solid rgba(255, 255, 255, 0.7);
-                      background-color: transparent;
-                      font-size: 20px;
-                      text-align: end;
-                      color: #ffffff;
-                      &:focus {
-                          outline: none;    
-                        }   
                   }
                   .inputFrame{
                       flex-shrink: 0;
@@ -7838,7 +7967,7 @@ animation: gradient-animation 6s ease infinite;
                       }
                       :nth-child(2){
                           flex-shrink: 0;
-                          width: 330px;
+                          width: 375px;
                           height: 120px;
                           display: block;
                           overflow: hidden;
@@ -7851,13 +7980,13 @@ animation: gradient-animation 6s ease infinite;
                           color: rgba(255, 255, 255, 0.7);
                           font-size: 20px;
                           letter-spacing: 0px;
-                          line-height: 1.2;
+                          line-height: 2;
                       }
                   }
               }
               .rightSection{
                   flex-shrink: 0;
-                  width: 764px;
+                  width: 708px;
                   height: 521px;
                   display: flex;
                   flex-direction: column;
@@ -7872,7 +8001,7 @@ animation: gradient-animation 6s ease infinite;
                   border-radius: 0px 0px 0px 0px;
                   .submissionFrame{
                       flex-shrink: 0;
-                      width: 579px;
+                      width: 600px;
                       height: 103px;
                       display: flex;
                       flex-direction: row;
@@ -7883,18 +8012,17 @@ animation: gradient-animation 6s ease infinite;
                       padding: 0px 0px 0px 0px;
                       align-content: center;
                       flex-wrap: nowrap;
-                      gap: 10px;
+                      gap: 30px;
                       border-radius: 0px 0px 0px 0px;
                       .submissionButton{
                           box-sizing: border-box;
                           flex-shrink: 0;
-                          width: 129px;
-                          height: 43px;
+                          width: 200px;
+                          height: 50px;
                           display: flex;
                           flex-direction: row;
                           justify-content: center;
                           align-items: center;
-                          box-shadow: 0px 0.5976309586454258px 0.5976309586454258px 0px rgba(0, 0, 0, 0.01), 0px 1.8102578237942046px 1.8102578237942046px 0px rgba(0, 0, 0, 0.03017), 0px 4.785212732002719px 4.785212732002719px 0px rgba(0, 0, 0, 0.07975), 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
                           background-color: rgba(255, 255, 255, 0.1);
                           overflow: hidden;
                           position: relative;
@@ -7910,15 +8038,28 @@ animation: gradient-animation 6s ease infinite;
                           font-style: normal;
                           font-family: "Inter-Bold", "Inter", sans-serif;
                           color: rgba(255, 255, 255, 0.7);
-                          font-size: 16px;
+                          font-size: 18px;
                           letter-spacing: 0px;
                           line-height: 1.2;
-                      }
+                          opacity: 0.8;
+                          transition: 0.3;
+                          &:hover{
+                            opacity: 1;
+                            box-shadow: 0px 0.5976309586454258px 0.5976309586454258px 0px rgba(0, 0, 0, 0.01), 0px 1.8102578237942046px 1.8102578237942046px 0px rgba(0, 0, 0, 0.03017), 0px 4.785212732002719px 4.785212732002719px 0px rgba(0, 0, 0, 0.07975), 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+                          }
+                        }
+                        .text{
+                          font-size: 20px;
+                          color:white;
+                          letter-spacing: 1px;
+                          font-weight: 600;
+                          line-height: 1.4;
+                        }
                   }
                   .imgInputFrame{
                       box-sizing: border-box;
                       flex-shrink: 0;
-                      width: 579px;
+                      width: 600px;
                       height: 392px;
                       display: flex;
                       flex-direction: row;
@@ -8108,32 +8249,39 @@ animation: gradient-animation 6s ease infinite;
               }
           }
           .buttonFrame{
-              cursor: pointer;
-              box-sizing: border-box;
-              flex-shrink: 0;
-              width: 450px;
-              height: 74px;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              background-color: rgba(255, 255, 255, 0.1);
-              overflow: hidden;
-              position: relative;
-              padding: 0px 0px 0px 0px;
-              align-content: center;
-              flex-wrap: nowrap;
-              gap: 0;
-              border-radius: 25px;
-              border: 1px solid #ffffff;
-              flex-shrink: 0;
-              white-space: pre;
-              font-weight: 700;
-              font-family: "Inter-Bold", "Inter", sans-serif;
-              color: #ffffff;
-              font-size: 35px;
-              letter-spacing: 0px;
-              line-height: 1.2;
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 450px;
+            height: 74px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+            padding: 0px 0px 0px 0px;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.5);
+            flex-shrink: 0;
+            white-space: pre;
+            font-weight: 700;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: rgba(255,255,255,0.5);
+            font-size: 35px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+            transition: 0.4s;
+            &:hover{
+                scale: 1.1;
+                color: rgba(255,255,255,1);
+                border: 1px solid rgba(255,255,255,1);
+                box-shadow: 0px 1.6733156776526186px 1.6733156776526186px 0px rgba(0, 0, 0, 0), 0px 3.984206390969505px 3.984206390969505px 0px rgba(0, 0, 0, 0.00996), 0px 7.259321882820145px 7.259321882820145px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385491961365px 12.068385491961365px 0px rgba(0, 0, 0, 0.03017), 0px 19.50049274209897px 19.50049274209897px 0px rgba(0, 0, 0, 0.04875), 0px 31.901418213351462px 31.901418213351462px 0px rgba(0, 0, 0, 0.07975), 0px 54.96035212570371px 54.96035212570371px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+            }
           }
       }
       .rightSection{
