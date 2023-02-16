@@ -5,6 +5,8 @@ import image1 from "../../../public/image/Funding.jpg";
 import image2 from "../../../public/image/lee.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
 import { fetchPopularPick } from "@/middleware/fetchFund";
+import useWeb3 from "@/hooks/useWeb3";
+import { useSelector } from "react-redux";
 // 펀딩 메인페이지
 const data = [
   {
@@ -84,16 +86,27 @@ const fundingUItemData = [
 ];
 
 const FundingContainer = () => {
+  const { web3, NEWSIC_FUND } = useWeb3();
+  const user = useSelector((state) => {
+    state.userInfo;
+  });
   const [selectedDiv, setSelectedDiv] = useState("div1");
   const handleClick = (id) => {
     setSelectedDiv(id);
   };
 
+  // 메인 좋아요 가장 많은 NFT
   const popularPick = () => {
     console.log(fetchPopularPick());
   };
+
+  // 진행중인 펀딩 데이터 가져오는 함수
+  const ing_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.viewALL().call();
+    console.log(_data);
+  };
   useEffect(() => {
-    popularPick();
+    ing_fundingData();
   }, []);
 
   return (

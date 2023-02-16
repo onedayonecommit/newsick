@@ -28,6 +28,7 @@ const ConnectWallet = () => {
 
   const getRequestAccount = async () => {
     if (!web3) return;
+    console.log(createStatus);
 
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",

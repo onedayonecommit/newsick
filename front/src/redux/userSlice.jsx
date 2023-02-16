@@ -30,10 +30,10 @@ const userSlice = createSlice({
     builder
       .addCase(fetchUserCheck.pending, (state) => {
         state = initialState;
-        state.createStatus = false;
+        // state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        if (action.payload.createStatus != false) {
+        if (!action.payload.createStatus) {
           state.address = action.payload.user_wallet_address;
           state.userName = action.payload.user_name;
           state.userEmail = action.payload.user_email;
@@ -41,6 +41,8 @@ const userSlice = createSlice({
           state.isCreator = action.payload.creator[0].is_creator;
           state.createStatus = action.payload.createStatus;
           console.log("넘어온 유저정보 : ", action.payload);
+        } else {
+          console.log("이미 가입된 유저");
         }
       })
       .addCase(fetchUserCheck.rejected, (state) => {
