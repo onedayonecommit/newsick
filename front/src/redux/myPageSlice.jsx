@@ -1,4 +1,4 @@
-import { fetchMyNftList, fetchMyPage } from "@/middleware/fetchMypage";
+import { fetchMyNftList, fetchMyPage } from "@/middleware/fetchMyPage";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -24,7 +24,7 @@ const myPageSlice = createSlice({
       .addCase(fetchMyPage.rejected, (state, action) => {})
       .addCase(fetchMyNftList.pending, () => {})
       .addCase(fetchMyNftList.fulfilled, (state, action) => {
-        console.log("액쎤 빠로드", action.payload.fundingList);
+        // console.log("액쎤 빠로드", action.payload.fundingList);
         if (action.payload) {
           state.heart_nft = action.payload.nftList;
           state.heart_funding = action.payload.fundingList;

@@ -46,7 +46,7 @@ const UserBar = () => {
         {isCreator ? (
           <div className="userInfoSection">
             <div className="creatorTicket" />
-            <Link href="/mypage">
+            <Link href="/my_page">
               <Image
                 src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`}
                 className="userImage"
@@ -66,7 +66,7 @@ const UserBar = () => {
           </div>
         ) : (
           <div className="userInfoSection">
-            <Link href="/mypage">
+            <Link href="/my_page">
               <Image
                 src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`}
                 className="userImage"

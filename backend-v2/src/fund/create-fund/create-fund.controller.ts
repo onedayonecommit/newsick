@@ -6,6 +6,7 @@ import {
   UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
+import { UploadedFile } from '@nestjs/common/decorators';
 import {
   FileFieldsInterceptor,
   FileInterceptor,
@@ -25,19 +26,17 @@ export class CreateFundController {
     private readonly authService: CreatorCheckService,
   ) {}
 
-  @Post('create/metadata')
-  @UseInterceptors(
-    FileFieldsInterceptor([{ name: 'fund_nft_image' }, { name: 'data' }]),
-  )
-  async createMetadata(@UploadedFiles() file): Promise<ipfsReturnDto> {
-    const resDto = JSON.parse(file.data[0].buffer);
-    console.log(resDto);
-    if (await this.authService.creatorCheck(resDto.producer)) {
-      return await this.ipfsUploadService.ipfsUpload(
-        file.fund_nft_image[0],
-        resDto,
-      );
+  @Post('create/makeMetadata')
+  @UseInterceptors(FileInterceptor('nft_image'))
+  async createMetadata(
+    @UploadedFile() file: Express.Multer.File,
+    @Body() dto: metadataDto,
+  ): Promise<any> {
+    if (await this.authService.creatorCheck(dto.producer)) {
+      console.log('IPFS 생성');
+      return await this.ipfsUploadService.ipfsUpload(file, dto);
     } else {
+      console.log('IPFS 생성 실패');
       return;
     }
   }

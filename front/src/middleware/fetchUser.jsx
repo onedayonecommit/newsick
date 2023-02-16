@@ -52,7 +52,7 @@ export const fetchUserImage = createAsyncThunk(
     try {
       const userProfileImage = await axios({
         method: "post",
-        url: "http://localhost:8080/change-info/profile/image",
+        url: "http://localhost:4000/change-info/profile/image",
         data: formData,
         headers: {
           "Content-Type": "multipart/form-data",

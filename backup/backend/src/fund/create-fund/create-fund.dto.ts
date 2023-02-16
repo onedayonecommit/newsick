@@ -4,7 +4,7 @@ import {
   IsObject,
   IsOptional,
   IsString,
-} from 'class-validator';
+} from "class-validator";
 
 export class createFundDto {
   @IsNumber()

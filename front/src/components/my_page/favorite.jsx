@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import PageNationFrame from "../PageNationFrame";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchMyNftList } from "@/middleware/fetchMyPage";
 const nftItem = [
   {
     id: "a",

@@ -51,6 +51,7 @@ const NftMarketContainer = () => {
   const { web3, NEWSIC_FUND, NEWSIC_MARKET } = useWeb3();
   const [active, setActive] = useState(false);
   const [[page, direction], setPage] = useState([0, 0]);
+  const [place, setPlace] = useState("popular");
   const imageIndex = wrap(0, images.length, page);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
@@ -128,7 +129,12 @@ const NftMarketContainer = () => {
         <div className="topBarSection">
           <div className="topBar">
             <div className="text">Market Place</div>
-            <select className="dropDownBar">
+            <select
+              className="dropDownBar"
+              onChange={(e) => {
+                setPlace(e.target.value);
+              }}
+            >
               <option value="popular">popular</option>
               <option value="Close">Close</option>
               <option value="Latest ">Latest </option>

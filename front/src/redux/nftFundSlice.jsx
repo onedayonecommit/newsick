@@ -50,7 +50,7 @@ const nftFundSlice = createSlice({
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
       .addCase(fetchMakeIPFS.pending, (state) => {
-        state.createStatus = false;
+        state = initialState;
       })
       .addCase(fetchMakeIPFS.fulfilled, (state, action) => {
         state.fileUrl = action.payload.fileUrl;
@@ -65,19 +65,9 @@ const nftFundSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchCreateFund.fulfilled, (state, action) => {
-        if (typeof action.payload == "string") alert(action.payload);
-        else {
-          state.address = action.payload.user_wallet_address;
-          state.userName = action.payload.user_name;
-          state.userEmail = action.payload.user_email;
-          state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.is_creator;
-          state.createStatus = action.payload.createStatus;
-          alert("회원가입 추카추");
-
-          console.log("넘어온 유저정보 : ", action.payload);
-          console.log("업데이트 시킨 state : ", state);
-        }
+        console.log("펀딩정보 : ", action.payload);
+        console.log("업데이트 시킨 state : ", state);
+        // }
       })
       .addCase(fetchCreateFund.rejected, (state) => {
         state = initialState;

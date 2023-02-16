@@ -34,65 +34,19 @@ body {
   width: min-content;
   height: -moz-min-content;
   height: min-content;
-  display: flex;
-  flex-direction: column;
-  right: 20px;
+  color: white;
+  left: 42%;
   top: 50%;
-  transform: translate(0, -50%);
-  gap: 30px;
+  transform: translate(-50%, -50%);
 }
-.mainSlider .pageNav .pageNavItem {
-  scale: 0.9;
-  opacity: 0.5;
-  cursor: pointer;
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content;
-  height: -moz-min-content;
-  height: min-content; /* 24px */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 7px;
-  border-radius: 0px 0px 0px 0px;
-}
-.mainSlider .pageNav .pageNavItem :nth-child(1) {
-  flex-shrink: 0;
-  width: 15px;
-  height: 4.8px;
-  display: block;
-  background-color: #ffffff;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-}
-.mainSlider .pageNav .pageNavItem :nth-child(2) {
-  flex-shrink: 0;
-  width: auto; /* 92px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.mainSlider .mainFirstFrame {
+.mainSlider .sideFrame {
   box-sizing: border-box;
-  width: 1359px;
+  flex-shrink: 0;
+  width: 800px;
   height: 950px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   background-image: url("../../public/image/coverPageBack2.png");
   background-size: cover;
@@ -105,10 +59,11 @@ body {
   padding: 80px 50px 80px 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainFirstFrame .rankingInfoSection {
+.mainSlider .sideFrame .hotTopicText {
   flex-shrink: 0;
-  width: 465px;
-  height: 636px;
+  width: 800px;
+  height: -moz-min-content;
+  height: min-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,82 +76,30 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainFirstFrame .rankingInfoSection .infoFrame {
-  flex-shrink: 0;
+.mainSlider .sideFrame .hotTopicText :nth-child(1) {
   width: -moz-min-content;
-  width: min-content; /* 465px */
+  width: min-content;
   height: -moz-min-content;
-  height: min-content; /* 636px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 50px;
-  border-radius: 0px 0px 0px 0px;
-}
-.mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 193px */
-  height: -moz-min-content;
-  height: min-content; /* 154px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection .title {
-  flex-shrink: 0;
-  width: auto; /* 145px */
-  height: auto; /* 84px */
+  height: min-content;
   white-space: pre;
-  position: relative;
-  font-family: "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 70px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-  font-weight: bold;
-}
-.mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection .subTitle {
-  flex-shrink: 0;
-  width: auto; /* 193px */
-  height: auto; /* 60px */
-  white-space: pre;
-  position: relative;
-  font-family: "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 50px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .textSection {
-  flex-shrink: 0;
-  width: 465px;
-  height: 432px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-word;
-  position: relative;
-  font-family: "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255);
   font-size: 40px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.mainSlider .mainFirstFrame .rankingCard {
+.mainSlider .sideFrame .hotTopicText :nth-child(2) {
+  display: flex;
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+  white-space: pre;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.5;
+}
+.mainSlider .sideFrame .rankingCard {
   cursor: grabbing;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -210,12 +113,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: 0.5s;
 }
-.mainSlider .mainFirstFrame .rankingCard:hover {
+.mainSlider .sideFrame .rankingCard:hover {
   scale: 1.1;
 }
-.mainSlider .mainSecondFrame {
-  box-sizing: border-box;
-  width: 1359px;
+.mainSlider .slideHotTopicList {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: -650px;
+  width: 1000px;
   height: 950px;
   display: flex;
   flex-direction: column;
@@ -229,7 +135,7 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainSecondFrame .backGroundCover {
+.mainSlider .slideHotTopicList .backGroundCover {
   top: 0px;
   left: 0px;
   bottom: 0px;
@@ -245,7 +151,7 @@ body {
   border-radius: 0px 540px 540px 0px;
   border: 1px solid #222;
 }
-.mainSlider .mainSecondFrame .backGroundBlur {
+.mainSlider .slideHotTopicList .backGroundBlur {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -257,7 +163,7 @@ body {
   -moz-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
 }
-.mainSlider .mainSecondFrame .switchHotList {
+.mainSlider .slideHotTopicList .switchHotList {
   cursor: pointer;
   position: absolute;
   width: -moz-min-content;
@@ -269,104 +175,11 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.mainSlider .mainSecondFrame .sideFrame {
+.mainSlider .slideHotTopicList .sideFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 800px;
   height: 950px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 40px 0px 0px 0px;
-  overflow: hidden;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 30px;
-  border-radius: 0px 0px 0px 0px;
-}
-.mainSlider .mainSecondFrame .sideFrame .hotTopicText {
-  flex-shrink: 0;
-  width: 800px;
-  height: -moz-min-content;
-  height: min-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
-}
-.mainSlider .mainSecondFrame .sideFrame .hotTopicText :nth-child(1) {
-  width: -moz-min-content;
-  width: min-content;
-  height: -moz-min-content;
-  height: min-content;
-  white-space: pre;
-  color: rgb(255, 255, 255);
-  font-size: 40px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.mainSlider .mainSecondFrame .sideFrame .hotTopicText :nth-child(2) {
-  display: flex;
-  width: -moz-min-content;
-  width: min-content;
-  height: -moz-min-content;
-  height: min-content;
-  white-space: pre;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 35px;
-  letter-spacing: 0px;
-  line-height: 1.5;
-}
-.mainSlider .mainSecondFrame .sideFrame .sideContentBox {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 560px;
-  height: 680px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  z-index: 1;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.mainSlider .mainSecondFrame .slideHotTopicList {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: -650px;
-  width: 1000px;
-  height: 950px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: 1s;
-}
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides {
-  position: absolute;
-  transition: 1s;
-}
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContent {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -380,7 +193,7 @@ body {
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner {
+.mainSlider .slideHotTopicList .hotTopicSlideContentInner {
   transform-style: preserve-3d;
   transform: translateZ(50px);
   transition: opacity 0.3s linear;
@@ -411,12 +224,14 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .singerName,
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .songName,
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .fundingPrice {
+.mainSlider .slideHotTopicList .singerName,
+.mainSlider .slideHotTopicList .songName,
+.mainSlider .slideHotTopicList .fundingPrice {
   flex-shrink: 0;
-  width: auto; /* 64px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 64px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -425,7 +240,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .hotTopicSlideTitle {
+.mainSlider .slideHotTopicList .hotTopicSlideTitle {
   flex-shrink: 0;
   white-space: pre;
   font-family: "Inter", sans-serif;
@@ -434,7 +249,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .hotTopicSlideSubtitle {
+.mainSlider .slideHotTopicList .hotTopicSlideSubtitle {
   flex-shrink: 0;
   white-space: pre;
   font-family: "Inter", sans-serif;
@@ -443,7 +258,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.mainSlider .mainThirdFrame {
+
+.mainThirdFrame {
   width: 1359px;
   height: 950px;
   display: flex;
@@ -462,29 +278,58 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainThirdFrame .leftSlideContent {
-  box-sizing: border-box;
+.mainThirdFrame .leftSlideContent {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 790px */
-  height: -moz-min-content;
-  height: min-content; /* 950px */
+  width: 595px;
+  height: 950px;
   display: flex;
   flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 60px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainThirdFrame .leftSlideContent .slideListDownFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 270px;
+  height: 2550px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 50px 0px 50px;
-  overflow: visible;
+  padding: 0px 30px 0px 30px;
+  overflow: hidden;
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 50px;
+  gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame {
+.mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .closeItem {
+  box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 210px */
+  width: min-content;
+  /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
@@ -498,7 +343,7 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList {
+.mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .closeItem .closeFundingList {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -512,7 +357,7 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .closeItem {
+.mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .closeItem .closeFundingList .closeItem {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -524,10 +369,11 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame {
+.mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .slideListUpFrame {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 210px */
+  width: min-content;
+  /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
@@ -535,19 +381,33 @@ body {
   align-items: center;
   overflow: visible;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mainThirdFrame .leftSlideContent .slideListUpFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 270px;
+  height: 2550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+  overflow: hidden;
+  position: relative;
   align-content: center;
   flex-wrap: nowrap;
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList {
+.mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -555,7 +415,7 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList .closeItem {
+.mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList .closeItem {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -567,7 +427,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.mainSlider .mainThirdFrame .rightContent {
+.mainThirdFrame .leftSlideContent .rightContent {
   flex-shrink: 0;
   width: 560px;
   height: 950px;
@@ -601,7 +461,8 @@ body {
   flex-shrink: 0;
   width: 620px;
   height: -moz-min-content;
-  height: min-content; /* 42px */
+  height: min-content;
+  /* 42px */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -616,8 +477,10 @@ body {
 .changeUserInfoFrame .changeNavBar .successBtn {
   cursor: pointer;
   flex-shrink: 0;
-  width: auto; /* 56px */
-  height: auto; /* 34px */
+  width: auto;
+  /* 56px */
+  height: auto;
+  /* 34px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -634,8 +497,10 @@ body {
 }
 .changeUserInfoFrame .changeNavBar .infoText {
   flex-shrink: 0;
-  width: auto; /* 217px */
-  height: auto; /* 42px */
+  width: auto;
+  /* 217px */
+  height: auto;
+  /* 42px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -733,7 +598,8 @@ body {
   flex-shrink: 0;
   width: 300px;
   height: -moz-min-content;
-  height: min-content; /* 74px */
+  height: min-content;
+  /* 74px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1658,8 +1524,10 @@ body {
 }
 .musicBar .playInfo .palyInfoBox .playInfoFrame .songInfoSection .songInfoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 60px */
-  height: auto; /* 13px */
+  width: auto;
+  /* 60px */
+  height: auto;
+  /* 13px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1670,8 +1538,10 @@ body {
 }
 .musicBar .playInfo .palyInfoBox .playInfoFrame .songInfoSection .songInfoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 49px */
-  height: auto; /* 9px */
+  width: auto;
+  /* 49px */
+  height: auto;
+  /* 9px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1717,9 +1587,11 @@ body {
 .pageNationFrame {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 161px */
+  width: min-content;
+  /* 161px */
   height: -moz-min-content;
-  height: min-content; /* 17px */
+  height: min-content;
+  /* 17px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1909,6 +1781,23 @@ body {
   height: 1000px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.layoutFrame .layoutBox .sideBarSection .sideBarSection {
+  flex-shrink: 0;
+  width: 247px;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -1919,7 +1808,7 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .iconBar {
+.layoutFrame .layoutBox .sideBarSection .sideBarSection .iconBar {
   flex-shrink: 0;
   width: 57px;
   height: 1000px;
@@ -1938,7 +1827,7 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .iconBar .buttonList {
+.layoutFrame .layoutBox .sideBarSection .sideBarSection .iconBar .buttonList {
   flex-shrink: 0;
   width: 57px;
   height: 550px;
@@ -1955,12 +1844,14 @@ body {
   gap: 10px;
   border-radius: 25px 0px 0px 70px;
 }
-.layoutFrame .layoutBox .sideBarSection .iconBar .iconButton {
+.layoutFrame .layoutBox .sideBarSection .sideBarSection .iconBar .iconButton {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 40px */
+  width: min-content;
+  /* 40px */
   height: -moz-min-content;
-  height: min-content; /* 356px */
+  height: min-content;
+  /* 356px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1974,7 +1865,7 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .categories {
+.layoutFrame .layoutBox .sideBarSection .sideBarSection .categories {
   flex-shrink: 0;
   width: 190px;
   height: 1000px;
@@ -1991,7 +1882,7 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .categories .headerSection {
+.layoutFrame .layoutBox .sideBarSection .sideBarSection .categories .headerSection {
   font-family: "YdestreetB";
   box-sizing: border-box;
   flex-shrink: 0;
@@ -2020,7 +1911,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .sideBarSection .categories .menuSection {
+.layoutFrame .layoutBox .sideBarSection .sideBarSection .categories .menuSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 190px;
@@ -2037,7 +1928,7 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .sideBarSection .categories .menuSection .menuItem {
+.layoutFrame .layoutBox .sideBarSection .sideBarSection .categories .menuSection .menuItem {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -2060,7 +1951,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .contentSection {
+.layoutFrame .layoutBox .sideBarSection .contentSection {
   flex-shrink: 0;
   width: 1359px;
   height: 1000px;
@@ -2076,7 +1967,7 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .contentSection .content {
+.layoutFrame .layoutBox .sideBarSection .contentSection .content {
   flex-shrink: 0;
   width: 1359px;
   height: 950px;
@@ -2094,10 +1985,10 @@ body {
   border-radius: 0px 0px 0px 0px;
   overflow: scroll;
 }
-.layoutFrame .layoutBox .contentSection .content::-webkit-scrollbar {
+.layoutFrame .layoutBox .sideBarSection .contentSection .content::-webkit-scrollbar {
   display: none;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection {
+.layoutFrame .layoutBox .sideBarSection .contentSection .searchBarSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1359px;
@@ -2121,7 +2012,7 @@ body {
   border-left-width: 0px;
   border-right-width: 0px;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame {
+.layoutFrame .layoutBox .sideBarSection .contentSection .searchBarSection .searchBarFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 585px;
@@ -2140,7 +2031,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar {
+.layoutFrame .layoutBox .sideBarSection .contentSection .searchBarSection .searchBarFrame .searchBar {
   flex-shrink: 0;
   width: 525px;
   height: 32px;
@@ -2156,12 +2047,12 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1) {
+.layoutFrame .layoutBox .sideBarSection .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1) {
   color: rgb(255, 255, 255);
   width: 5%;
   height: 85%;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchInput {
+.layoutFrame .layoutBox .sideBarSection .contentSection .searchBarSection .searchInput {
   width: 95%;
   height: 85%;
   position: relative;
@@ -2170,10 +2061,10 @@ body {
   background-color: transparent;
   border: none;
 }
-.layoutFrame .layoutBox .contentSection .searchBarSection .searchInput:focus {
+.layoutFrame .layoutBox .sideBarSection .contentSection .searchBarSection .searchInput:focus {
   outline: none;
 }
-.layoutFrame .layoutBox .userBarSection {
+.layoutFrame .layoutBox .sideBarSection .userBarSection {
   flex-shrink: 0;
   width: 234px;
   height: 1000px;
@@ -2191,7 +2082,7 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .optionSection {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .optionSection {
   flex-shrink: 0;
   width: 234px;
   height: 50px;
@@ -2209,7 +2100,7 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .optionSection .changeMemberInfo {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 120px;
@@ -2240,10 +2131,10 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo:hover {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .optionSection .changeMemberInfo:hover {
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .userInfoSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 234px;
@@ -2260,7 +2151,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .creatorTicket {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .userInfoSection .creatorTicket {
   flex-shrink: 0;
   width: 42px;
   height: 63px;
@@ -2279,7 +2170,7 @@ body {
   position: absolute;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .metaConnectButton {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .userInfoSection .metaConnectButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -2306,7 +2197,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .userImage {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .userInfoSection .userImage {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -2321,12 +2212,14 @@ body {
   border-radius: 150px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .userInfoSection .userProfile {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 112px */
+  width: min-content;
+  /* 112px */
   height: -moz-min-content;
-  height: min-content; /* 46px */
+  height: min-content;
+  /* 46px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2339,12 +2232,14 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userName {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .userInfoSection .userProfile .userName {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 80px */
+  width: min-content;
+  /* 80px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2365,12 +2260,14 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .userProfile .userEmail {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .userInfoSection .userProfile .userEmail {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 112px */
+  width: min-content;
+  /* 112px */
   height: -moz-min-content;
-  height: min-content; /* 17px */
+  height: min-content;
+  /* 17px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2390,7 +2287,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.layoutFrame .layoutBox .userBarSection .stateInfoSection {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .stateInfoSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 234px;
@@ -2406,7 +2303,490 @@ body {
   border-left-width: 0px;
   border-right-width: 0px;
 }
-.layoutFrame .layoutBox .userBarSection .anotherInfoSection {
+.layoutFrame .layoutBox .sideBarSection .userBarSection .anotherInfoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 234px;
+  height: 135px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround {
+  position: fixed;
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-image: url("../../public/image/coverPageBack2.png");
+}
+.layoutFrame .coverPageBackGround .coverPageFrame {
+  flex-shrink: 0;
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .iconBar {
+  flex-shrink: 0;
+  width: 57px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(29, 32, 62, 0.3);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .iconBar .buttonList {
+  flex-shrink: 0;
+  width: 57px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(29, 32, 62, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px 0px 0px 70px;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .iconBar .iconButton {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 40px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 356px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .categories {
+  flex-shrink: 0;
+  width: 190px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(44, 47, 72, 0.5);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .categories .headerSection {
+  cursor: pointer;
+  font-family: "YdestreetB";
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 190px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  white-space: pre;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .categories .menuSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 190px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 0px 40px 0px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 50px;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .categories .menuSection .menuItem {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 190px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  font-weight: bold;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.layoutFrame .coverPageBackGround .coverPageFrame .categories .menuSection .menuItem:hover {
+  animation-duration: 0.3s;
+  transition: 0.5s;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.layoutFrame .coverPageBackGround .contentSection {
+  flex-shrink: 0;
+  width: 1359px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .contentSection .content {
+  flex-shrink: 0;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #2b2f5f;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  overflow: scroll;
+}
+.layoutFrame .coverPageBackGround .contentSection .content::-webkit-scrollbar {
+  display: none;
+}
+.layoutFrame .coverPageBackGround .contentSection .searchBarSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1359px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c2f48;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+.layoutFrame .coverPageBackGround .contentSection .searchBarSection .searchBarFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 585px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.layoutFrame .coverPageBackGround .contentSection .searchBarSection .searchBarFrame .searchBar {
+  flex-shrink: 0;
+  width: 525px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .contentSection .searchBarSection .searchBarFrame .searchBar:nth-child(1) {
+  color: rgb(255, 255, 255);
+  width: 5%;
+  height: 85%;
+}
+.layoutFrame .coverPageBackGround .contentSection .searchBarSection .searchInput {
+  width: 95%;
+  height: 85%;
+  position: relative;
+  font-family: "Arvo";
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+.layoutFrame .coverPageBackGround .contentSection .searchBarSection .searchInput:focus {
+  outline: none;
+}
+.layoutFrame .coverPageBackGround .userBarSection {
+  flex-shrink: 0;
+  width: 234px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: inset 1px 0px 0px 0px rgba(255, 255, 255, 0.1);
+  background-color: #2c2f48;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .userBarSection .optionSection {
+  flex-shrink: 0;
+  width: 234px;
+  height: 50px;
+  display: block;
+  box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0);
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .userBarSection .userInfoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 234px;
+  height: 265px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0px 30px 0px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .userBarSection .userInfoSection .userImage {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.layoutFrame .coverPageBackGround .userBarSection .userInfoSection .metaConnectButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 120px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(114.5% 375.5% at 23.4% 294%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.layoutFrame .coverPageBackGround .userBarSection .userInfoSection .userProfile {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 112px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 46px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .coverPageBackGround .userBarSection .userInfoSection .userProfile .userName {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 80px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 19px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.layoutFrame .coverPageBackGround .userBarSection .userInfoSection .userProfile .userEmail {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 112px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 17px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.layoutFrame .coverPageBackGround .userBarSection .stateInfoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 234px;
+  height: 550px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+.layoutFrame .coverPageBackGround .userBarSection .anotherInfoSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 234px;
@@ -2482,9 +2862,11 @@ body {
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 396px */
+  width: min-content;
+  /* 396px */
   height: -moz-min-content;
-  height: min-content; /* 395px */
+  height: min-content;
+  /* 395px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2516,9 +2898,11 @@ body {
 .coverPageBackGround .coverPageFrame .infoSection .infoBox .infoList .infoTextSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 396px */
+  width: min-content;
+  /* 396px */
   height: -moz-min-content;
-  height: min-content; /* 215px */
+  height: min-content;
+  /* 215px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2830,8 +3214,10 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .nameText,
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .emailText {
   flex-shrink: 0;
-  width: auto; /* 127px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 127px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 500;
@@ -2844,14 +3230,13 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection,
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content;
+  width: 400px;
   height: 69px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: flex-start;
@@ -2893,9 +3278,11 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 317px */
+  width: min-content;
+  /* 317px */
   height: -moz-min-content;
-  height: min-content; /* 95px */
+  height: min-content;
+  /* 95px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2911,9 +3298,11 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpinfoText {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 173px */
+  width: min-content;
+  /* 173px */
   height: -moz-min-content;
-  height: min-content; /* 20px */
+  height: min-content;
+  /* 20px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2937,9 +3326,11 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 317px */
+  width: min-content;
+  /* 317px */
   height: -moz-min-content;
-  height: min-content; /* 65px */
+  height: min-content;
+  /* 65px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2953,7 +3344,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .userButton,
-.signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .creatorButton {
+.signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection .signUpButtonSection .createrButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -3104,7 +3495,8 @@ body {
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 275px */
+  height: min-content;
+  /* 275px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3121,7 +3513,8 @@ body {
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 275px */
+  height: min-content;
+  /* 275px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3138,7 +3531,8 @@ body {
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 35px */
+  height: min-content;
+  /* 35px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3181,9 +3575,11 @@ body {
 .mainContainerFrame .rankingBoardSection .rankingBoardFrame .rankingList .rankingItem {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 867px */
+  width: min-content;
+  /* 867px */
   height: -moz-min-content;
-  height: min-content; /* 40px */
+  height: min-content;
+  /* 40px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3200,7 +3596,8 @@ body {
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 595px */
+  height: min-content;
+  /* 595px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3217,7 +3614,8 @@ body {
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 35px */
+  height: min-content;
+  /* 35px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3243,7 +3641,8 @@ body {
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 538px */
+  height: min-content;
+  /* 538px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3306,8 +3705,10 @@ body {
 }
 .mainContainerFrame .hotTopicSection .hotTopicList .hotTopicItemFrame .hotTopicinfoBox :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 150px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 150px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: #ffffff;
@@ -3318,8 +3719,10 @@ body {
 }
 .mainContainerFrame .hotTopicSection .hotTopicList .hotTopicItemFrame .hotTopicinfoBox :nth-child(3) {
   flex-shrink: 0;
-  width: auto; /* 150px */
-  height: auto; /* 15px */
+  width: auto;
+  /* 150px */
+  height: auto;
+  /* 15px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.4);
@@ -3422,7 +3825,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.mainContainerFrame .almostOverSection .alomostOverList .alomostContentBox .contentCreator {
+.mainContainerFrame .almostOverSection .alomostOverList .alomostContentBox .contentCreater {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 259px;
@@ -3586,7 +3989,8 @@ body {
   flex-shrink: 0;
   width: 1279px;
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3662,9 +4066,11 @@ body {
 .MusicContainerFrame .newSongSection .newSongList .newSongCard .newSongTagFrame {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: min-content;
+  /* 120px */
   height: -moz-min-content;
-  height: min-content; /* 43px */
+  height: min-content;
+  /* 43px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3748,7 +4154,8 @@ body {
   flex-shrink: 0;
   width: 635px;
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -3763,9 +4170,11 @@ body {
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 306px */
+  width: min-content;
+  /* 306px */
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -3780,8 +4189,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide .text {
   flex-shrink: 0;
-  width: auto; /* 126px */
-  height: auto; /* 31px */
+  width: auto;
+  /* 126px */
+  height: auto;
+  /* 31px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -3795,7 +4206,7 @@ body {
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide .topRankToggle {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 153px;
+  width: 152px;
   height: 30px;
   display: flex;
   flex-direction: row;
@@ -3837,8 +4248,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .rightSide {
   flex-shrink: 0;
-  width: auto; /* 63px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 63px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -3881,7 +4294,8 @@ body {
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 245px */
+  width: min-content;
+  /* 245px */
   height: 85px;
   display: flex;
   flex-direction: row;
@@ -3903,6 +4317,7 @@ body {
   display: block;
   overflow: hidden;
   position: relative;
+  background-image: url(IRON.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -3912,9 +4327,11 @@ body {
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: min-content;
+  /* 120px */
   height: -moz-min-content;
-  height: min-content; /* 43px */
+  height: min-content;
+  /* 43px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3929,8 +4346,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame .musicName {
   flex-shrink: 0;
-  width: auto; /* 120px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 120px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -3943,8 +4362,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame .singerName {
   flex-shrink: 0;
-  width: auto; /* 100px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 100px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -3958,7 +4379,8 @@ body {
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .rightSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 156px */
+  width: min-content;
+  /* 156px */
   height: 85px;
   display: flex;
   flex-direction: row;
@@ -3974,8 +4396,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .rightSection .lapTime {
   flex-shrink: 0;
-  width: auto; /* 36px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 36px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4105,7 +4529,8 @@ body {
   box-sizing: border-box;
   width: 1359px;
   height: -moz-min-content;
-  height: min-content; /* 1561px */
+  height: min-content;
+  /* 1561px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -4136,7 +4561,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -4153,7 +4578,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .sectionText {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .sectionText {
   flex-shrink: 0;
   width: 134px;
   height: 24px;
@@ -4176,7 +4601,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -4194,7 +4619,7 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox {
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -4218,12 +4643,14 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 93px */
+  width: min-content;
+  /* 93px */
   height: -moz-min-content;
-  height: min-content; /* 33px */
+  height: min-content;
+  /* 33px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4236,12 +4663,14 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo .creatorName {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .createrName {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 93px */
+  width: min-content;
+  /* 93px */
   height: -moz-min-content;
-  height: min-content; /* 16px */
+  height: min-content;
+  /* 16px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4262,12 +4691,14 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo .fundingInfo {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .createrInfo .fundingInfo {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 59px */
+  width: min-content;
+  /* 59px */
   height: -moz-min-content;
-  height: min-content; /* 12px */
+  height: min-content;
+  /* 12px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4289,7 +4720,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .detailButton {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrInfoBox .detailButton {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 67px;
@@ -4317,7 +4748,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorImg {
+.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame .createrImg {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -4374,12 +4805,14 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 265px */
+  width: min-content;
+  /* 265px */
   height: -moz-min-content;
-  height: min-content; /* 249px */
+  height: min-content;
+  /* 249px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4392,7 +4825,7 @@ body {
   gap: 71px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox {
   flex-shrink: 0;
   width: 265px;
   height: 138px;
@@ -4409,12 +4842,14 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingName {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingName {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 264px */
+  width: min-content;
+  /* 264px */
   height: -moz-min-content;
-  height: min-content; /* 46px */
+  height: min-content;
+  /* 46px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4435,12 +4870,14 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotCreatorName {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotCreaterName {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 194px */
+  width: min-content;
+  /* 194px */
   height: -moz-min-content;
-  height: min-content; /* 36px */
+  height: min-content;
+  /* 36px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4462,12 +4899,14 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingInfo {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .hotCreaterInfoBox .hotFundingInfo {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 172px */
+  width: min-content;
+  /* 172px */
   height: -moz-min-content;
-  height: min-content; /* 36px */
+  height: min-content;
+  /* 36px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4488,7 +4927,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .detailButton {
+.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreaterInfoFrame .detailButton {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 120px;
@@ -4525,6 +4964,7 @@ body {
   display: block;
   overflow: hidden;
   z-index: 1;
+  background-image: url(Funding.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -4584,8 +5024,10 @@ body {
 }
 .FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .feedText {
   flex-shrink: 0;
-  width: auto; /* 50px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 50px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 600;
@@ -4620,40 +5062,13 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingListSection .listTopBarFram .StateSection {
-  flex-shrink: 0;
-  width: 539px;
-  height: 29px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 39px;
-  border-radius: 0px 0px 0px 0px;
-}
-.FundingContainerFrame .fundingListSection .listTopBarFram .StateSection:nth-child(-n+4) {
-  flex-shrink: 0;
-  white-space: pre;
-  position: relative;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-  cursor: pointer;
-}
-.FundingContainerFrame .fundingListSection .listFram {
+.FundingContainerFrame .fundingListSection .listTopBarFram .listFram {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 965px */
+  height: min-content;
+  /* 965px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4666,13 +5081,67 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingListSection .listFram .fundingItem {
+.FundingContainerFrame .fundingListSection .listTopBarFram .listFram .fundingItem {
   flex-shrink: 0;
   width: 210px;
   height: 210px;
   display: block;
   background-color: rgba(255, 255, 255, 0.1);
   border: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  position: relative;
+  border-radius: 20px;
+}
+.FundingContainerFrame .fundingListSection .listTopBarFram .listFram .fundingItem .leftTime {
+  top: 0px;
+  right: 0px;
+  width: 98px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #74b974 0%, rgba(44, 139, 44, 0.7) 100%);
+  overflow: visible;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 0px 20px 0px 20px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.FundingContainerFrame .fundingListSection .listFram {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1319px;
+  height: 880px;
+  /* 880px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 0px 10px 0px;
+  overflow: visible;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.FundingContainerFrame .fundingListSection .listFram .fundingItem {
+  flex-shrink: 0;
+  width: 240px;
+  height: 200px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
   overflow: visible;
   position: relative;
   border-radius: 20px;
@@ -4880,9 +5349,11 @@ body {
 .detailContainerFrame .detailInfoSection .profileSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: min-content;
+  /* 120px */
   height: -moz-min-content;
-  height: min-content; /* 28px */
+  height: min-content;
+  /* 28px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4917,9 +5388,11 @@ body {
 .detailContainerFrame .detailInfoSection .topInfoSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 303px */
+  width: min-content;
+  /* 303px */
   height: -moz-min-content;
-  height: min-content; /* 189px */
+  height: min-content;
+  /* 189px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4951,9 +5424,11 @@ body {
 .detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 295px */
+  width: min-content;
+  /* 295px */
   height: -moz-min-content;
-  height: min-content; /* 126px */
+  height: min-content;
+  /* 126px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4968,8 +5443,10 @@ body {
 }
 .detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection :nth-child(-n+4) {
   flex-shrink: 0;
-  width: auto; /* 85px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 85px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4999,8 +5476,10 @@ body {
 }
 .detailContainerFrame .detailInfoSection .bottomInfoSection :nth-child(-n+2) {
   flex-shrink: 0;
-  width: auto; /* 92px */
-  height: auto; /* 28px */
+  width: auto;
+  /* 92px */
+  height: auto;
+  /* 28px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -5015,7 +5494,8 @@ body {
   box-sizing: border-box;
   width: 1359px;
   height: -moz-min-content;
-  height: min-content; /* 1439px */
+  height: min-content;
+  /* 1439px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -5066,7 +5546,7 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 20px;
+  border-radius: 0px 0px 0px 0px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topSwiperSection {
   flex-shrink: 0;
@@ -5085,7 +5565,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 20px;
+  border-radius: 0px 0px 0px 0px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topInfoSection {
   pointer-events: none;
@@ -5175,7 +5655,8 @@ body {
   flex-shrink: 0;
   width: 1319px;
   height: -moz-min-content;
-  height: min-content; /* 912px */
+  height: min-content;
+  /* 912px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -5223,9 +5704,11 @@ body {
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 345px */
+  width: min-content;
+  /* 345px */
   height: -moz-min-content;
-  height: min-content; /* 34px */
+  height: min-content;
+  /* 34px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5240,8 +5723,10 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar .text {
   flex-shrink: 0;
-  width: auto; /* 154px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 154px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -5254,9 +5739,11 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 152px */
+  width: min-content;
+  /* 152px */
   height: -moz-min-content;
-  height: min-content; /* 34px */
+  height: min-content;
+  /* 34px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5488,12 +5975,463 @@ body {
   gap: 10;
   border-radius: 0px 0px 0px 0px;
 }
-.nftMarketContainerFrame .nftSellSection .bottomFrame .bottomSection {
+.nftMarketContainerFrame .nftSellSection .bottomFrame .next {
+  right: 10px;
+}
+.nftMarketContainerFrame .nftSellSection .bottomFrame .prev {
+  left: 10px;
+  transform: scale(-1);
+}
+.nftMarketContainerFrame .nftSellSection .bottomFrame .nftTopFrame {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 447px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 20px;
+}
+.nftMarketContainerFrame .nftSellSection .bottomFrame .nftTopFrame .topSwiperSection {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 447px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20px;
+}
+.nftMarketContainerFrame .nftSellSection .bottomFrame .nftTopFrame .topInfoSection {
+  pointer-events: none;
+  top: 45px;
+  bottom: 45px;
+  left: 102px;
+  right: 101px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1116px;
+  height: 357px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: 1;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  position: absolute;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nftMarketContainerFrame .nftSellSection .bottomFrame .infoSection {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 380px;
+  height: 447px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  z-index: 2;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftMarketContainerFrame .nftSellSection .bottomFrame .slideSection {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .bottomFrame .slideSection .slideBox {
+  flex-shrink: 0;
+  width: 250px;
+  height: 310px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1319px;
+  height: -moz-min-content;
+  height: min-content;
+  /* 912px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 0px 20px 0px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .sellMiddle {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 771px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .topBarSection {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 34px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 32px;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .topBarSection .topBar {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 161px */
+  width: min-content;
+  /* 345px */
   height: -moz-min-content;
-  height: min-content; /* 17px */
+  height: min-content;
+  /* 34px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 39px;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .topBarSection .topBar .text {
+  flex-shrink: 0;
+  width: auto;
+  /* 154px */
+  height: auto;
+  /* 30px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .topBarSection .topBar .dropDownBar {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 152px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 34px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 20px 2px 20px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftBuyInfoSection {
+  flex-shrink: 0;
+  width: 486px;
+  height: 771px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList {
+  flex-shrink: 0;
+  width: 823px;
+  height: 771px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 17px;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox {
+  flex-shrink: 0;
+  width: 148px;
+  height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .topInfo {
+  flex-shrink: 0;
+  width: 148px;
+  height: 29px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .topInfo .nftName {
+  top: 0px;
+  left: 0px;
+  box-sizing: border-box;
+  width: 96px;
+  height: 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px 0px 5px;
+  background: linear-gradient(177deg, #642bf3 0%, rgba(39, 12, 105, 0.7) 100%);
+  z-index: 2;
+  overflow: visible;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 0px 20px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .topInfo .price {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  box-sizing: border-box;
+  width: 148px;
+  height: 29px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 0px 5px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .topInfo .price .priceCenterFrame {
+  flex-shrink: 0;
+  width: 52px;
+  height: 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .bottomImageFrame {
+  flex-shrink: 0;
+  width: 148px;
+  height: 146px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(235deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .bottomImageFrame .bottomImage {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 119px;
+  height: 119px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  touch-action: none;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .bottomImageFrame .likeIconFrame {
+  width: 27px;
+  height: 27px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 100px;
+  top: 5px;
+  right: 5px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .bottomImageFrame .likeIconFrame .likeIcon {
+  color: transparent;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 50px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .nftItemList .nftItemBox .bottomImageFrame .likeIconFrame .active {
+  color: white;
+  stroke: white;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .bottomFrame {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftMarketContainerFrame .nftSellSection .nftSellSection .bottomFrame .bottomSection {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 161px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 17px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5639,8 +6577,10 @@ body {
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartInfoSection .monthLayoutSection > div {
   flex-shrink: 0;
-  width: auto; /* 45px */
-  height: auto; /* 14px */
+  width: auto;
+  /* 45px */
+  height: auto;
+  /* 14px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -5711,9 +6651,11 @@ body {
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox .infoName {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 51px */
+  width: min-content;
+  /* 51px */
   height: -moz-min-content;
-  height: min-content; /* 14px */
+  height: min-content;
+  /* 14px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6172,9 +7114,11 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderPriceSection .RightSection .inputSection :nth-child(2) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 35px */
+  width: min-content;
+  /* 35px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6234,9 +7178,11 @@ body {
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection .inputList .orderQuantitySection .leftSection .text {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 68px */
+  width: min-content;
+  /* 68px */
   height: -moz-min-content;
-  height: min-content; /* 20px */
+  height: min-content;
+  /* 20px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6350,7 +7296,8 @@ body {
   box-sizing: border-box;
   width: 1359px;
   height: -moz-min-content;
-  height: min-content; /* 1653px */
+  height: min-content;
+  /* 1653px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6392,9 +7339,11 @@ body {
 .fundingCreateSecondContainerFrame .infoBox .infoFrame {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 356px */
+  width: min-content;
+  /* 356px */
   height: -moz-min-content;
-  height: min-content; /* 40px */
+  height: min-content;
+  /* 40px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6416,8 +7365,10 @@ body {
 .fundingCreateContainerFrame .infoBox .infoFrame :nth-child(2),
 .fundingCreateSecondContainerFrame .infoBox .infoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 297px */
-  height: auto; /* 36px */
+  width: auto;
+  /* 297px */
+  height: auto;
+  /* 36px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -6466,12 +7417,12 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3),
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) {
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1199px;
-  height: 373px;
+  height: 663px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6484,13 +7435,15 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(1),
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(1) {
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 106px */
+  width: min-content;
+  /* 106px */
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6510,25 +7463,278 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2),
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2) {
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name,
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1159px;
+  height: 83px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name select,
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex select,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name select,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex select {
+  flex-shrink: 0;
+  width: 105px;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+}
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .singerName,
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .singerName,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .singerName,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .singerName {
+  flex-shrink: 0;
+  width: auto;
+  /* 60px */
+  height: auto;
+  /* 24px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .nameInput,
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .nameInput,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .name .nameInput,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .sex .nameInput {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 325px;
+  height: 45px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+}
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .info,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .info {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1179px;
+  height: 373px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 40px 20px 40px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .info .infoText,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .info .infoText {
+  flex-shrink: 0;
+  width: auto;
+  /* 86px */
+  height: auto;
+  /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .secondContentSection .ProfileSection .info > input,
+.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection .ProfileSection .info > input {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1099px;
   height: 289px;
   display: block;
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
   background-color: transparent;
   color: white;
-  font-size: 20px;
-  resize: none;
+  font-size: 16px;
+  display: flex;
+  padding: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
-.fundingCreateContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2):focus,
-.fundingCreateSecondContainerFrame .mainContentSection .secondContentSection :nth-child(-n+3) :nth-child(2):focus {
-  outline: none;
+.fundingCreateContainerFrame .mainContentSection .shareSection,
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 163px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame,
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 897px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 50px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .info,
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .info {
+  flex-shrink: 0;
+  width: auto;
+  /* 271px */
+  height: auto;
+  /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content,
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content;
+  /* 606px */
+  height: -moz-min-content;
+  height: min-content;
+  /* 50px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(1),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(1) {
+  flex-shrink: 0;
+  width: auto;
+  /* 291px */
+  height: auto;
+  /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(2),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(2) {
+  flex-shrink: 0;
+  width: 125px;
+  height: 50px;
+  display: block;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border-color: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(3),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(3) {
+  flex-shrink: 0;
+  width: auto;
+  /* 10px */
+  height: auto;
+  /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 35px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(4),
+.fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .content :nth-child(4) {
+  flex-shrink: 0;
+  width: 125px;
+  height: 50px;
+  display: block;
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border-color: 1px solid rgba(255, 255, 255, 0.1);
 }
 .fundingCreateContainerFrame .mainContentSection .submissionButton,
 .fundingCreateSecondContainerFrame .mainContentSection .submissionButton {
@@ -6563,7 +7769,8 @@ body {
   flex-shrink: 0;
   width: 1199px;
   height: -moz-min-content;
-  height: min-content; /* 1121px */
+  height: min-content;
+  /* 1121px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6612,10 +7819,6 @@ body {
   align-items: center;
   padding: 25px 15px 25px 15px;
   background-color: rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  -o-backdrop-filter: blur(5px);
-  -moz-backdrop-filter: blur(5px);
   z-index: 1;
   align-content: center;
   flex-wrap: nowrap;
@@ -7163,8 +8366,10 @@ body {
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
-  width: auto; /* 20px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 20px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.7);
@@ -7217,9 +8422,11 @@ body {
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 330px */
+  width: min-content;
+  /* 330px */
   height: -moz-min-content;
-  height: min-content; /* 215px */
+  height: min-content;
+  /* 215px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7236,9 +8443,11 @@ body {
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .leftSection :nth-child(1) :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 152px */
+  width: min-content;
+  /* 152px */
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7300,7 +8509,6 @@ body {
   height: 103px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -7314,8 +8522,8 @@ body {
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .representativeImageSection .rightSection .submissionFrame .submissionButton {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 129px;
-  height: 43px;
+  width: 250px;
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7683,8 +8891,10 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .topInfoSection :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 192px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 192px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -7726,7 +8936,8 @@ body {
   flex-shrink: 0;
   width: 1060px;
   height: -moz-min-content;
-  height: min-content; /* 1754px */
+  height: min-content;
+  /* 1754px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7840,9 +9051,11 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 65px */
+  width: min-content;
+  /* 65px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7858,9 +9071,11 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 34px */
+  width: min-content;
+  /* 34px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7873,8 +9088,10 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
   flex-shrink: 0;
-  width: auto; /* 34px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 34px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: #ffffff;
@@ -7885,9 +9102,11 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(2) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 31px */
+  width: min-content;
+  /* 31px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7910,9 +9129,11 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 57px */
+  width: min-content;
+  /* 57px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7928,9 +9149,11 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 57px */
+  width: min-content;
+  /* 57px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7971,9 +9194,11 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .nftNameTag {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 100px */
+  width: min-content;
+  /* 100px */
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7996,9 +9221,11 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 161px */
+  width: min-content;
+  /* 161px */
   height: -moz-min-content;
-  height: min-content; /* 25px */
+  height: min-content;
+  /* 25px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8024,8 +9251,10 @@ body {
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 126px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 126px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -8188,8 +9417,10 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .infoSection .infoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 139px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 139px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -8201,8 +9432,10 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .infoSection .infoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 32px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 32px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -8313,9 +9546,11 @@ body {
 .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 95px */
+  width: min-content;
+  /* 95px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8340,9 +9575,11 @@ body {
 .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 40px */
+  width: min-content;
+  /* 40px */
   height: -moz-min-content;
-  height: min-content; /* 16px */
+  height: min-content;
+  /* 16px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8408,7 +9645,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -8418,6 +9654,25 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .SubscriptionContainer .SubscriptionFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1288px;
+  height: 871px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1288px;
@@ -8436,7 +9691,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionText {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionText {
   flex-shrink: 0;
   width: 500px;
   height: 193px;
@@ -8452,10 +9707,12 @@ body {
   gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionText :nth-child(1) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionText :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 362px */
-  height: auto; /* 70px */
+  width: auto;
+  /* 362px */
+  height: auto;
+  /* 70px */
   white-space: pre;
   position: relative;
   font-weight: 800;
@@ -8465,10 +9722,11 @@ body {
   letter-spacing: -0.8px;
   line-height: 1.4;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionText :nth-child(2) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionText :nth-child(2) {
   flex-shrink: 0;
   width: 500px;
-  height: auto; /* 61px */
+  height: auto;
+  /* 61px */
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-word;
@@ -8482,7 +9740,7 @@ body {
   line-height: 1.4;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionText :nth-child(3) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionText :nth-child(3) {
   flex-shrink: 0;
   width: 285px;
   height: 1px;
@@ -8492,7 +9750,7 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame {
   flex-shrink: 0;
   width: 995px;
   height: 558px;
@@ -8509,7 +9767,7 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 380px;
@@ -8531,13 +9789,15 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .recommendedMark {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 92px */
+  width: min-content;
+  /* 92px */
   height: -moz-min-content;
-  height: min-content; /* 29px */
+  height: min-content;
+  /* 29px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8563,7 +9823,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleLine {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .middleLine {
   flex-shrink: 0;
   width: 170px;
   height: 1px;
@@ -8573,17 +9833,19 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleMark {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .middleMark {
   width: 32px;
   height: 32px;
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 32px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionTitle {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .optionTitle {
   flex-shrink: 0;
-  width: auto; /* 90px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 90px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 600;
@@ -8595,10 +9857,12 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionPrice {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .optionPrice {
   flex-shrink: 0;
-  width: auto; /* 246px */
-  height: auto; /* 70px */
+  width: auto;
+  /* 246px */
+  height: auto;
+  /* 70px */
   white-space: pre;
   position: relative;
   font-weight: 800;
@@ -8608,13 +9872,15 @@ body {
   letter-spacing: -0.8px;
   line-height: 1.4;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 110px */
+  width: min-content;
+  /* 110px */
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8629,10 +9895,12 @@ body {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(1) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 78px */
-  height: auto; /* 21px */
+  width: auto;
+  /* 78px */
+  height: auto;
+  /* 21px */
   white-space: pre;
   position: relative;
   font-weight: 500;
@@ -8642,13 +9910,13 @@ body {
   letter-spacing: 0px;
   line-height: 150%;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(2) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(2) {
   width: 16px;
   height: 16px;
   border-radius: 16px;
   background-color: white;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList {
   flex-shrink: 0;
   width: 340px;
   height: 133px;
@@ -8664,12 +9932,14 @@ body {
   gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 142px */
+  width: min-content;
+  /* 142px */
   height: -moz-min-content;
-  height: min-content; /* 68px */
+  height: min-content;
+  /* 68px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8682,10 +9952,12 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) :nth-child(-n+2) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) :nth-child(-n+2) {
   flex-shrink: 0;
-  width: auto; /* 126px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 126px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -8694,7 +9966,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBuyButton {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBuyButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -8722,7 +9994,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection {
   flex-shrink: 0;
   width: 585px;
   height: 558px;
@@ -8738,7 +10010,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .subscriptionProgress {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .subscriptionProgress {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 450px;
@@ -8749,8 +10021,7 @@ body {
   border-radius: 450px;
   border: 10px solid #ffffff;
 }
-
-.MyPageCreatorFrame {
+.SubscriptionContainer .MyPageCreaterFrame {
   box-sizing: border-box;
   width: 1359px;
   height: 950px;
@@ -8766,7 +10037,7 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .topSection {
+.SubscriptionContainer .MyPageCreaterFrame .topSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
@@ -8783,7 +10054,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .topSection .totalMoneySection {
+.SubscriptionContainer .MyPageCreaterFrame .topSection .totalMoneySection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 341px;
@@ -8802,12 +10073,14 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .topSection .totalMoneySection .infoText {
+.SubscriptionContainer .MyPageCreaterFrame .topSection .totalMoneySection .infoText {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 216px */
+  width: min-content;
+  /* 216px */
   height: -moz-min-content;
-  height: min-content; /* 30px */
+  height: min-content;
+  /* 30px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8820,10 +10093,12 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .topSection .totalMoneySection .infoText :nth-child(1) {
+.SubscriptionContainer .MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 187px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 187px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -8834,7 +10109,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .topSection .totalMoneySection .infoText :nth-child(2) {
+.SubscriptionContainer .MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(2) {
   flex-shrink: 0;
   width: 216px;
   height: 1px;
@@ -8844,267 +10119,68 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber {
+.SubscriptionContainer .MyPageCreaterFrame .backDrop {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SubscriptionContainer .MyPageCreaterFrame .modal {
+  width: 883px;
+  height: 855px;
+  background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+  -webkit-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px 40px 30px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0.7968412782px 0.7968412782px 0px rgba(0, 0, 0, 0.01), 0px 2.4136770984px 2.4136770984px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836427px 6.3802836427px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 220px */
+  width: 803px;
+  height: 795px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .topText {
+  flex-shrink: 0;
+  width: 803px;
   height: -moz-min-content;
-  height: min-content; /* 36px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 61px */
-  height: auto; /* 36px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 30px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber :nth-child(2) {
-  flex-shrink: 0;
-  width: 149px;
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  background: linear-gradient(to right, #9d00ff, #f700ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 30px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.MyPageCreatorFrame .topSection .historyGrapSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 958px;
-  height: 170px;
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  padding: 20px 30px 20px 30px;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.MyPageCreatorFrame .topSection .historyGrapSection .historyText {
-  flex-shrink: 0;
-  width: 868px;
-  height: auto; /* 19px */
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-word;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-  text-align: left;
-}
-.MyPageCreatorFrame .topSection .historyGrapSection .historyGrapFrame {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 868px;
-  height: 96px;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 0px;
-  border-radius: 0px 0px 0px 5px;
-}
-.MyPageCreatorFrame .bottomSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1319px;
-  height: 550px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 20px 20px 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  position: relative;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1279px;
-  height: 510px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0px 15px 0px 15px;
-  overflow: hidden;
-  position: relative;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1249px;
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 15px 0px 15px;
-  overflow: hidden;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  border-radius: 0px 0px 0px 0px;
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar .text {
-  flex-shrink: 0;
-  width: auto; /* 237px */
-  height: auto; /* 30px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 25px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar .button {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 157px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 20px 20px 20px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1260px;
-  height: 490px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px 20px 10px 10px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: relative;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 0px 0px 0px 0px;
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList::-webkit-scrollbar {
-  width: 20px;
-  height: 56px;
-  background-color: transparent;
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1219px;
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 30px 0px 30px;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .infoSection {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 816px */
-  height: -moz-min-content;
-  height: min-content; /* 22px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -9114,13 +10190,15 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .infoSection .funddingTitle {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .topText .funddingTitle {
   cursor: pointer;
 }
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .infoSection :nth-child(-n+5) {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .topText :nth-child(-n+5) {
   flex-shrink: 0;
-  width: auto; /* 127px */
-  height: auto; /* 22px */
+  width: auto;
+  /* 127px */
+  height: auto;
+  /* 22px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -9131,7 +10209,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .musicInputButton {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .musicInputButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9151,7 +10229,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .musicInputButton .buttonLine {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .musicInputButton .buttonLine {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 121px;
@@ -9178,7 +10256,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .funddingTerminationButton {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .funddingTerminationButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9202,95 +10280,14 @@ body {
   font-weight: 700;
   font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 18px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-
-.backDrop {
-  z-index: 99;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal {
-  width: 883px;
-  height: 855px;
-  background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
-  -webkit-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  padding: 30px 40px 30px 40px;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 0.7968412782px 0.7968412782px 0px rgba(0, 0, 0, 0.01), 0px 2.4136770984px 2.4136770984px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836427px 6.3802836427px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-}
-.modal .nftRegistrationFrame {
-  flex-shrink: 0;
-  width: 803px;
-  height: 795px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 50px;
-  border-radius: 0px 0px 0px 0px;
-}
-.modal .nftRegistrationFrame .topText {
-  flex-shrink: 0;
-  width: 803px;
-  height: -moz-min-content;
-  height: min-content; /* 31px */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 0px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  background: linear-gradient(to bottom, #d400ff, #ff00b7);
+  background: linear-gradient(to bottom, #D400FF, #FF00B7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 30px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 803px;
@@ -9307,7 +10304,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.modal .nftRegistrationFrame .bottomFrame .genreList {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9322,10 +10319,12 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
   flex-shrink: 0;
-  width: auto; /* 52px */
-  height: auto; /* 31px */
+  width: auto;
+  /* 52px */
+  height: auto;
+  /* 31px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -9336,7 +10335,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content;
@@ -9353,7 +10352,7 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 488px;
@@ -9372,14 +10371,16 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 70px */
+  width: min-content;
+  /* 70px */
   height: -moz-min-content;
-  height: min-content; /* 34px */
+  height: min-content;
+  /* 34px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9401,14 +10402,15 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 25px;
 }
-.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
   cursor: pointer;
   flex-shrink: 0;
-  width: auto; /* 52px */
+  width: auto;
+  /* 52px */
   height: 31px;
   white-space: pre;
   position: relative;
@@ -9420,7 +10422,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9435,10 +10437,12 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 78px */
-  height: auto; /* 31px */
+  width: auto;
+  /* 78px */
+  height: auto;
+  /* 31px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -9449,7 +10453,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
   flex-shrink: 0;
   width: 289px;
   height: 39px;
@@ -9475,22 +10479,22 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::-moz-placeholder {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::-moz-placeholder {
   text-align: right;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
   text-align: right;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
   outline: none;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   opacity: 0;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource,
-.modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource,
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9520,7 +10524,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
   flex-shrink: 0;
   width: 240px;
   height: 39px;
@@ -9536,7 +10540,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9564,7 +10568,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9592,7 +10596,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomListButton {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton {
   flex-shrink: 0;
   width: 723px;
   height: 183px;
@@ -9607,7 +10611,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9636,7 +10640,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
+.SubscriptionContainer .MyPageCreaterFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9664,119 +10668,4 @@ body {
   font-size: 26px;
   letter-spacing: 0px;
   line-height: 1.2;
-}
-
-.EventFrame {
-  box-sizing: border-box;
-  width: 1359px;
-  height: -moz-min-content;
-  height: min-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #2b2f5f;
-  overflow: visible;
-  align-content: center;
-  flex-wrap: nowrap;
-  position: absolute;
-  border-radius: 0px 0px 0px 0px;
-}
-
-.signUpBackDrop {
-  z-index: 99;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.infoSuccessfulLog {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 738px;
-  height: 226px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 45px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-
-.loadingFrame {
-  width: 1920px;
-  height: 1080px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(141.9% 200% at 50% 110.8%, #292929 0%, rgb(0, 0, 0) 100%);
-  overflow: visible;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 30px;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-}
-.loadingFrame .loadingCenter {
-  flex-shrink: 0;
-  width: auto; /* 186px */
-  height: auto; /* 54px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 25px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.loadingFrame .progressBar {
-  width: 450px;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: stretch;
-  background-color: transparent;
-  border-radius: 25px;
-  border: 5px solid #ffffff;
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-}
-.loadingFrame .progressBar .bar {
-  border-radius: 25px;
-  width: 0%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0% rgba(255, 255, 255, 0.8) 32% rgb(255, 255, 255) 100%);
 }/*# sourceMappingURL=globals.css.map */

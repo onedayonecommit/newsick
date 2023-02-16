@@ -8840,7 +8840,6 @@ body {
             height: 103px;
             display: flex;
             flex-direction: row;
-            justify-content: center;
             align-items: center;
             overflow: hidden;
             position: relative;
@@ -8853,8 +8852,8 @@ body {
             .submissionButton {
               box-sizing: border-box;
               flex-shrink: 0;
-              width: 129px;
-              height: 43px;
+              width: 250px;
+              height: 50px;
               display: flex;
               flex-direction: row;
               justify-content: center;
