@@ -119,6 +119,7 @@ const nftItem = [
 const MyPageSecondContainer = () => {
   const [isFilled, setIsFilled] = useState();
   const [selectedItem, setSelectedItem] = useState(null);
+  const [hurryUpList, setHurryUpList] = useState(null);
 
   const heartNftList = useSelector((state) => state.myPageInfo.heart_nft);
   const heartFundingList = useSelector((state) => state.myPageInfo.heart_funding);
@@ -126,6 +127,17 @@ const MyPageSecondContainer = () => {
   const handleClick = (item) => {
     setSelectedItem(item.id);
   };
+  useEffect(() => {
+    var hurryarr = [];
+    for (let i = 0; i < heartFundingList.length; i++) {
+      console.log("여기 과연?", new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime());
+      console.log(new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime() > new Date().getTime() + 86400000);
+      if (new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime() > new Date().getTime() + 86400000) {
+        hurryarr.push(heartFundingList[i].heartFundingList);
+      }
+    }
+    setHurryUpList(hurryarr);
+  }, []);
   // useEffect(() => {
   //   heartFundingList.map((e) => {
   //     console.log(e.heartFundingList.funding_nft_image);
@@ -141,44 +153,52 @@ const MyPageSecondContainer = () => {
       <div className="myPageSecondContainerFrame">
         <div className="topInfoSection">
           <div>마감 임박한 펀딩</div>
-          <div className="slideSection">info</div>
+          <div className="slideSection">
+            {hurryUpList.map((e) => {
+              return e.funding_finish_date;
+            })}
+          </div>
         </div>
         <div className=""></div>
         <div className="nftItemList">
-          {heartFundingList.map((item) => (
-            <div className="nftWishItemBox" key={item.id}>
-              <div className="topSection">
-                <img className="nftImage" src={item.heartFundingList.funding_nft_image} alt="ironImage" />
-                <motion.div key={item.id} style={{ color: isFilled && selectedItem === item.id ? "rgb(255, 255, 255)" : "rgba(0, 0, 0, 0.14)" }} transition={{ duration: 0.3 }} onClick={() => setIsFilled(!isFilled)} onClickCapture={() => handleClick(item)} className="wishButton">
-                  <FontAwesomeIcon icon={faHeart} />
-                </motion.div>
-                <div className="infoStateFrame">
-                  <div className="price">
-                    <div>{item.heartFundingList.funding_price}</div>
-                    <div>ETH</div>
+          {heartFundingList ? (
+            heartFundingList.map((item) => (
+              <div className="nftWishItemBox" key={item.id}>
+                <div className="topSection">
+                  <img className="nftImage" src={item.heartFundingList.funding_nft_image} alt="ironImage" />
+                  <motion.div key={item.id} style={{ color: isFilled && selectedItem === item.id ? "rgb(255, 255, 255)" : "rgba(0, 0, 0, 0.14)" }} transition={{ duration: 0.3 }} onClick={() => setIsFilled(!isFilled)} onClickCapture={() => handleClick(item)} className="wishButton">
+                    <FontAwesomeIcon icon={faHeart} />
+                  </motion.div>
+                  <div className="infoStateFrame">
+                    <div className="price">
+                      <div>{item.heartFundingList.funding_price}</div>
+                      <div>ETH</div>
+                    </div>
+                    <div className="state">
+                      <div>{item.state}</div>
+                    </div>
                   </div>
-                  <div className="state">
-                    <div>{item.state}</div>
+                </div>
+                <div className="middleSection">
+                  <div className="nftNameTag">{item.nftName}</div>
+                  <div className="creatorNameTag">
+                    <img src={item.creatorImgUrl} alt="creatorImage" />
+                    <div>{item.creatorName}</div>
+                  </div>
+                </div>
+                <div className="bottomSection">
+                  <div className="detailButton" typeof="button">
+                    Detail
+                  </div>
+                  <div className="buyNowButton" typeof="button">
+                    Buy Now
                   </div>
                 </div>
               </div>
-              <div className="middleSection">
-                <div className="nftNameTag">{item.nftName}</div>
-                <div className="creatorNameTag">
-                  <img src={item.creatorImgUrl} alt="creatorImage" />
-                  <div>{item.creatorName}</div>
-                </div>
-              </div>
-              <div className="bottomSection">
-                <div className="detailButton" typeof="button">
-                  Detail
-                </div>
-                <div className="buyNowButton" typeof="button">
-                  Buy Now
-                </div>
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <></>
+          )}
         </div>
         <PageNationFrame />
       </div>
