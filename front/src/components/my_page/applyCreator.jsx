@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MyPageCreater from "@/pages/my_page/creator/createfund";
 import { fetchApplyCreator } from "@/middleware/fetchUser";
+import {motion} from "framer-motion"
 
 const MyPageFirstContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -48,10 +49,16 @@ const MyPageFirstContainer = () => {
               Go to Creator Now
             </div>
           </div>
-          <div className="rightSection">
-            <div className="lineUp" />
-            <div className="lineDown" />
-          </div>
+          <div className='rightSection'>
+                <motion.div className='lineUp'
+                    initial={{opacity:0,rotateY:-120,x:200}}
+                    animate={{opacity:1,rotateY:0,x:0}}
+                    transition={{duration:1}}
+                    style={{cursor:"pointer"}}
+                    whileHover={{x:70,y:50}}
+                />
+                <div className='lineDown'/>
+            </div>
         </div>
       </div>
     </>

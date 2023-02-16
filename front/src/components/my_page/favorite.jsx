@@ -1,9 +1,9 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import PageNationFrame from "../PageNationFrame";
+import { motion, useInView } from "framer-motion";
+import PageNationFrame from "../../components/PageNationFrame";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMyNftList } from "@/middleware/fetchMyPage";
 const nftItem = [
@@ -140,9 +140,29 @@ const nftItem = [
     creatorName: "Creator Name",
   },
 ];
+
+const itemVariant = {
+  initial: {
+    y: 100,
+    opacity: 0,
+    rotateY: -100,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    rotateY: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 const MyPageSecondContainer = () => {
   const [isFilled, setIsFilled] = useState();
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const container = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView({ root: container });
 
   const [] = useState();
   const dispatch = useDispatch();
@@ -155,16 +175,26 @@ const MyPageSecondContainer = () => {
     if (user_wallet_address) dispatch(fetchMyNftList({ user_wallet_address }));
   }, [user_wallet_address]);
   return (
-    <div className="secondMyPage">
+    <div className="secondMyPage" ref={container}>
       <div className="myPageSecondContainerFrame">
         <div className="topInfoSection">
-          <div>마감 임박한 펀딩</div>
-          <div className="slideSection">info</div>
+          <div>관심 있는 펀딩</div>
+          <div className="slideSection">
+            <div className="infoSection">info</div>
+            <div className="switchButton">NFT 보기</div>
+          </div>
         </div>
         <div className=""></div>
         <div className="nftItemList">
           {nftItem.map((item) => (
-            <div className="nftWishItemBox" key={item.id}>
+            <motion.div
+              className="nftWishItemBox"
+              key={item.id}
+              ref={ref}
+              variants={itemVariant}
+              initial={!isInView ? "initial" : "animate"}
+              animate={!isInView ? "animate" : "initial"}
+            >
               <div className="topSection">
                 <img className="nftImage" src={item.imgUrl} alt="ironImage" />
                 <motion.div
@@ -183,10 +213,6 @@ const MyPageSecondContainer = () => {
                   <FontAwesomeIcon icon={faHeart} />
                 </motion.div>
                 <div className="infoStateFrame">
-                  <div className="price">
-                    <div>{item.price}</div>
-                    <div>ETH</div>
-                  </div>
                   <div className="state">
                     <div>{item.state}</div>
                   </div>
@@ -207,7 +233,7 @@ const MyPageSecondContainer = () => {
                   Buy Now
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         <PageNationFrame />

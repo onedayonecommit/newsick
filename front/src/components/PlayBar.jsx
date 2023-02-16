@@ -137,42 +137,6 @@ const PlayBar = ({ soundClick, playerClick, isPlayerClick }) => {
               </defs>
             </svg>
           </motion.div>
-          <svg
-            viewBox="0 0 316 56"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="playBackGround"
-          >
-            <g filter="url(#filter0_f_597_303)">
-              <path
-                d="M158 0L316 28L158 56L0 28L158 0Z"
-                fill="url(#paint0_linear_597_303)"
-              ></path>
-            </g>
-            <defs>
-              <filter
-                id="filter0_f_597_303"
-                x="-40"
-                y="-40"
-                width="396"
-                height="136"
-                filterUnits="userSpaceOnUse"
-                colorInterpolationFilters="sRGB"
-              ></filter>
-              <linearGradient
-                id="paint0_linear_597_303"
-                x1="93"
-                y1="76"
-                x2="182.5"
-                y2="-20"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#00DAEA"></stop>
-                <stop offset="0.49889" stopColor="#1D138B"></stop>
-                <stop offset="1" stopColor="#C441F4"></stop>
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
       </div>
       <div className="playInfo">
