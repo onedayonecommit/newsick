@@ -50,3 +50,21 @@ export class createFundMainDto {
     }
 })
 이런식으로 데이터 요청을 하면 되고 각 키별로 상세한 dto확인이 필요하면 createFundDto / createFundLyricsDto / createFundMusicDto / createFundSingerDto 각각 확인해 보면 된다
+
+initialState :{
+    playlist:[{
+        normal_music_id:null,funding_music_id:3
+    },{normal_music_id:3,funding_music_id:1},{normal_music_id:null,funding_music_id:4}]
+}
+
+    if(e.normal_music_id == null && e.funding_music_id != null){
+        axios({
+            post, url: localhost:8080/funding/streaming
+        })
+    }
+    else if(e.normal_music_id != null && e.funding_music_id == null){
+        axios({
+            method:post,
+            url:localhost:8080//normal/streaming
+        })
+    }

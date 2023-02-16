@@ -32,6 +32,10 @@ export class createFundDto {
   funding_title: string;
   @IsString()
   nft_name: string;
+  @IsNumber()
+  funding_price: number;
+  @IsNumber()
+  funding_hard_cap: number;
 }
 
 export class createFundLyricsDto {

@@ -8,18 +8,43 @@ export class BuyTicketService {
 
   /** 스트리밍 티켓 구매 함수 */
   async buyTicket(dto: buyTicketDto) {
-    // console.log('티켓정보 받음');
-    const { user_wallet_address, ticket_type, expired } = dto;
-    return await this.db.user.update({
-      where: { user_wallet_address: user_wallet_address },
-      data: {
-        ticket: {
-          update: {
-            where: { id: user_wallet_address },
-            data: { ticket_type, expired },
-          },
+    const newExpired = new Date(new Date().getTime() + 2592000000);
+    const { user_wallet_address, ticket_type } = dto;
+    const { expired, status } = await this.nowCheck(user_wallet_address);
+    let returnDto = {};
+    if (status) {
+      const result = await this.db.ticket.update({
+        where: { id: user_wallet_address },
+        data: {
+          ticket_type,
+          expired: new Date(expired.getTime() + 2592000000),
         },
-      },
+      });
+      returnDto = { ...result, status: true };
+      return returnDto;
+    } else {
+      const result = await this.db.ticket.update({
+        where: { id: user_wallet_address },
+        data: {
+          ticket_type,
+          expired: newExpired,
+        },
+      });
+      returnDto = { ...result, status: true };
+      return returnDto;
+    }
+  }
+
+  /** 현재시간 기준으로 만료일 체크 */
+  async nowCheck(user_wallet_address: string) {
+    const result = await this.db.ticket.findUnique({
+      where: { id: user_wallet_address },
     });
+    const returnDto = { ...result, status: true };
+    if (result.expired.getTime() > new Date().getTime()) return returnDto;
+    else {
+      returnDto.status = false;
+      return returnDto;
+    }
   }
 }

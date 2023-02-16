@@ -10,6 +10,8 @@ import { AuthModule } from './auth/auth.module';
 import { MypageModule } from './mypage/mypage.module';
 import { AppController } from './app.controller';
 // import { AppController } from './app.controller';
+import { SearchModule } from './search/search.module';
+import { SimpleTestModule } from './simple-test/simple-test.module';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { AppController } from './app.controller';
     NftStorageModule,
     AuthModule,
     MypageModule,
+    SearchModule,
+    SimpleTestModule,
   ],
   controllers: [AppController],
   providers: [],

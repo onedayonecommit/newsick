@@ -6,17 +6,31 @@ import {
   MyPageThirdContainer,
 } from "@/components";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMyPage } from "@/middleware/fetchMypage";
+import {
+  fetchMyNftList,
+  fetchMyPage,
+  getNotice,
+  myNftList,
+  myRunningFundList,
+} from "@/middleware/fetchMypage";
 const MyPage = () => {
   const [selectedOption, setSelectedOption] = useState(0);
   const dispatch = useDispatch();
 
+  const isCreator = useSelector((state) => state.userInfo.isCreator);
   const user_wallet_address = useSelector((state) => state.userInfo.address);
 
   useEffect(() => {
     console.log("통신좀 해");
     console.log(user_wallet_address);
     dispatch(fetchMyPage({ user_wallet_address }));
+    dispatch(myNftList(user_wallet_address));
+    dispatch(fetchMyNftList({ user_wallet_address }));
+    if (isCreator) {
+      console.log(isCreator, "ssississississi");
+      dispatch(myRunningFundList({ user_wallet_address }));
+      dispatch(getNotice({ user_wallet_address }));
+    }
   }, [user_wallet_address]);
 
   const handleClick = (index) => {
@@ -52,12 +66,21 @@ const MyPage = () => {
               />
             )}
           </AnimatePresence>
-          <motion.div
-            className={` ${selectedOption === 0 ? "selected" : "option"}`}
-            onClick={() => handleClick(0)}
-          >
-            크리에이터 신청
-          </motion.div>
+          {isCreator ? (
+            <motion.div
+              className={` ${selectedOption === 0 ? "selected" : "option"}`}
+              onClick={() => handleClick(0)}
+            >
+              크리에이터
+            </motion.div>
+          ) : (
+            <motion.div
+              className={` ${selectedOption === 0 ? "selected" : "option"}`}
+              onClick={() => handleClick(0)}
+            >
+              크리에이터 신청
+            </motion.div>
+          )}
           <motion.div
             className={` ${selectedOption === 1 ? "selected" : "option"}`}
             onClick={() => handleClick(1)}

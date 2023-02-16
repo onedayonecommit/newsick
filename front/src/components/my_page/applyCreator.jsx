@@ -10,7 +10,6 @@ const MyPageFirstContainer = () => {
   const isCreator = useSelector((state) => state.userInfo.isCreator);
   const user_wallet_address = useSelector((state) => state.userInfo.address);
   const dispatch = useDispatch();
-
   const creatorApply = async () => {
     const creatorPrice = await web3.utils.toWei("0.1", "ether");
 
