@@ -6,7 +6,8 @@ import image2 from "../../../public/image/lee.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
 import { fetchPopularPick } from "@/middleware/fetchFund";
 import useWeb3 from "@/hooks/useWeb3";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 // 펀딩 메인페이지
 const data = [
   {
@@ -87,6 +88,7 @@ const fundingUItemData = [
 
 const FundingContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
+  const dispatch = useDispatch();
   const user = useSelector((state) => {
     state.userInfo;
   });
@@ -97,7 +99,7 @@ const FundingContainer = () => {
 
   // 메인 좋아요 가장 많은 NFT
   const popularPick = () => {
-    console.log(fetchPopularPick());
+    dispatch(fetchPopularPick());
   };
 
   // 진행중인 펀딩 데이터 가져오는 함수
@@ -105,6 +107,27 @@ const FundingContainer = () => {
     const _data = await NEWSIC_FUND.methods.viewALL().call();
     console.log(_data);
   };
+  // 진행예정 펀딩 데이터 가져오는 함수
+  const before_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.beforeStart().call();
+    console.log(_data);
+  };
+  // 진행종료후 제작중인 펀딩 데이터 가져오는 함수
+  const make_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.makeStart().call();
+    console.log(_data);
+  };
+  // 진행종료후 제작종료 펀딩 데이터 가져오는 함수
+  const end_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.fundingEnd().call();
+    console.log(_data);
+  };
+
+  // 세부페이지 들어가는 함수
+  const detailPage = (e) => {
+    return <Link href={`/reward/${e}`}></Link>;
+  };
+
   useEffect(() => {
     ing_fundingData();
   }, []);

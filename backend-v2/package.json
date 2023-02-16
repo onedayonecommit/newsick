@@ -24,7 +24,7 @@
     "@ethersproject/contracts": "^5.7.0",
     "@metamask/providers": "^10.2.1",
     "@nestjs-modules/mailer": "^1.8.1",
-    "@nestjs/common": "^9.3.2",
+    "@nestjs/common": "^9.3.9",
     "@nestjs/config": "^2.3.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/mapped-types": "^1.2.0",

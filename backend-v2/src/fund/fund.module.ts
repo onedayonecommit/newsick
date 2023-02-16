@@ -14,6 +14,8 @@ import { FundNoticeController } from './fund-notice/fund-notice.controller';
 import { FundNoticeService } from './fund-notice/fund-notice.service';
 import { HotFundController } from './hot-fund/hot-fund.controller';
 import { HotFundService } from './hot-fund/hot-fund.service';
+import { QueryDataController } from './query-data/query-data.controller';
+import { QueryDataService } from './query-data/query-data.service';
 
 @Module({
   controllers: [
@@ -23,6 +25,7 @@ import { HotFundService } from './hot-fund/hot-fund.service';
     RunningFundController,
     FundNoticeController,
     HotFundController,
+    QueryDataController,
   ],
   providers: [
     CreateFundService,
@@ -34,6 +37,7 @@ import { HotFundService } from './hot-fund/hot-fund.service';
     RunningFundService,
     FundNoticeService,
     HotFundService,
+    QueryDataService,
   ],
 })
 export class FundModule {}
