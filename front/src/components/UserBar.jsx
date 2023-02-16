@@ -3,8 +3,10 @@ import ConnectWallet from "./ConnectWallet";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import userImage from "../../public/image/userImageMain.png";
+import { motion } from "framer-motion";
 // 컴포넌트
-const UserBar = () => {
+const UserBar = ({ handleOpen }) => {
   const router = useRouter();
   function movePage(page) {
     page == "my_page" ? router.replace("/") : router.push(`/${page}`);
@@ -39,7 +41,11 @@ const UserBar = () => {
   return (
     <div className="userBarSection">
       <div className="infoSection">
-        <div className="optionSection"></div>
+        <div className="optionSection">
+          <motion.div className="changeMemberInfo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }} onClick={handleOpen}>
+            회원정보 변경
+          </motion.div>
+        </div>
         <div className="userInfoSection">
           <div className="creatorTicket" />
           <Image

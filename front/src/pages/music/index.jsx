@@ -27,48 +27,266 @@ const newSongItem =[
 ]
 
 const topChartItem = [
-  {
-      img:ironImg,
-      musicName:"Music Name",
-      singerName:"Singer Name",
-      lapTime:"3:36",
-  },
-  {
-      img:ironImg,
-      musicName:"Music Name",
-      singerName:"Singer Name",
-      lapTime:"3:36",
-  },
-  {
-      img:ironImg,
-      musicName:"Music Name",
-      singerName:"Singer Name",
-      lapTime:"3:36",
-  },
-  {
-      img:ironImg,
-      musicName:"Music Name",
-      singerName:"Singer Name",
-      lapTime:"3:36",
-  },
-  {
-      img:ironImg,
-      musicName:"Music Name",
-      singerName:"Singer Name",
-      lapTime:"3:36",
-  },
-  {
-      img:ironImg,
-      musicName:"Music Name",
-      singerName:"Singer Name",
-      lapTime:"3:36",
-  },
+    {
+        img:ironImg,
+        rank:1,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
+    {
+        img:ironImg,
+        rank:2,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
+    {
+        img:ironImg,
+        rank:3,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
+    {
+        img:ironImg,
+        rank:4,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
+    {
+        img:ironImg,
+        rank:5,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
+    {
+        img:ironImg,
+        rank:6,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
 ]
-
+const variantModal = {
+    initial:{
+        opacity: 0, scaleY: 0, transformOrigin: '50% 50%'
+    }, 
+    animate:{
+        opacity: 1, scaleY: 1,
+        transition:{
+            type: 'tween', duration: 0.3 
+        }
+    },
+    exit:{
+        opacity: 0, scaleY: 0,
+        transition:{
+            type: 'tween', duration: 0.3 
+        }
+    }
+}
 const MusicContainer = () => {
   const togglePointRef = useRef(null);
   const [toggle, setToggle] = useState(false);
   const [togglePointWidth, setTogglePointWidth] = useState(0);
+
+  //============================================================20230215 추가 start
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedGenre, setSelectedGenre] = useState(null);
+  const handleGenreClick = (genre) => {
+    setIsOpen(true);
+    setSelectedGenre(genre);
+  };
+  const ModalContent = () => {
+    switch (selectedGenre) {
+      case 'public':
+        return (
+          <>
+          <div className='publicBackImg'>
+            <div className='rankBackDrop'/>
+            <div className='rankContainer'>
+                <div className='topInfoSection'>
+                    <div className="infoFrame">
+                        <div>가요 TOP 100</div>
+                        <div onClick={() => setIsOpen(false)}>X</div>
+                    </div>
+                    <div className="infoText">매월 1일 오후 7시 업데이트</div>
+                    <div className="playButton">전체재생</div>
+                    <div className="lastLine"/>
+                </div>
+                <div className='bottomRankList'>
+                    {
+                        topChartItem.map((rank)=>(
+                            <div className='rankItemBox'>
+                                <div className='leftSide'>
+                                    <Image src={rank.img} alt="iron" className='rankItemImg'/>
+                                    <div className='rankNum'>{rank.rank}</div>
+                                    <div className='rankInfoFrame'>
+                                        <div className='musicName'>{rank.musicName}</div>
+                                        <div className='singerName'>{rank.singerName}</div>
+                                    </div>
+                                </div>
+                                <div className='rightSide'>
+                                    <div className='musicTime'>{rank.lapTime}</div>
+                                    <div className='likeButton'>
+                                        <FontAwesomeIcon icon={faHeart}/>
+                                    </div>
+                                    <div className='takeButton'>
+                                        <FontAwesomeIcon icon={faPlus}/>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+
+                </div>
+            </div>
+          </div>
+          </>
+        );
+      case 'pop':
+        return (
+          <>
+          <div className='popBackImg'>
+            <div className='rankBackDrop'/>
+            <div className='rankContainer'>
+                <div className='topInfoSection'>
+                    <div className="infoFrame">
+                        <div>팝 TOP 100</div>
+                        <div onClick={() => setIsOpen(false)}>X</div>
+                    </div>
+                    <div className="infoText">매월 1일 오후 7시 업데이트</div>
+                    <div className="playButton">전체재생</div>
+                    <div className="lastLine"/>
+                </div>
+                <div className='bottomRankList'>
+                    {
+                        topChartItem.map((rank)=>(
+                            <div className='rankItemBox'>
+                                <div className='leftSide'>
+                                    <Image src={rank.img} alt="iron" className='rankItemImg'/>
+                                    <div className='rankNum'>{rank.rank}</div>
+                                    <div className='rankInfoFrame'>
+                                        <div className='musicName'>{rank.musicName}</div>
+                                        <div className='singerName'>{rank.singerName}</div>
+                                    </div>
+                                </div>
+                                <div className='rightSide'>
+                                    <div className='musicTime'>{rank.lapTime}</div>
+                                    <div className='likeButton'>
+                                        <FontAwesomeIcon icon={faHeart}/>
+                                    </div>
+                                    <div className='takeButton'>
+                                        <FontAwesomeIcon icon={faPlus}/>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+
+                </div>
+            </div>
+          </div>
+          </>
+        );
+      case 'trot':
+        return (
+          <>
+          <div className='trotBackImg'>
+            <div className='rankBackDrop'/>
+            <div className='rankContainer'>
+                <div className='topInfoSection'>
+                    <div className="infoFrame">
+                        <div>트로트 TOP 100</div>
+                        <div onClick={() => setIsOpen(false)}>X</div>
+                    </div>
+                    <div className="infoText">매월 1일 오후 7시 업데이트</div>
+                    <div className="playButton">전체재생</div>
+                    <div className="lastLine"/>
+                </div>
+                <div className='bottomRankList'>
+                    {
+                        topChartItem.map((rank)=>(
+                            <div className='rankItemBox'>
+                                <div className='leftSide'>
+                                    <Image src={rank.img} alt="iron" className='rankItemImg'/>
+                                    <div className='rankNum'>{rank.rank}</div>
+                                    <div className='rankInfoFrame'>
+                                        <div className='musicName'>{rank.musicName}</div>
+                                        <div className='singerName'>{rank.singerName}</div>
+                                    </div>
+                                </div>
+                                <div className='rightSide'>
+                                    <div className='musicTime'>{rank.lapTime}</div>
+                                    <div className='likeButton'>
+                                        <FontAwesomeIcon icon={faHeart}/>
+                                    </div>
+                                    <div className='takeButton'>
+                                        <FontAwesomeIcon icon={faPlus}/>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+
+                </div>
+            </div>
+          </div>
+          </>
+        );
+      case 'classic':
+        return (
+          <>
+          <div className='classicBackImg'>
+            <div className='rankBackDrop'/>
+            <div className='rankContainer'>
+                <div className='topInfoSection'>
+                    <div className="infoFrame">
+                        <div>클래식 TOP 100</div>
+                        <div onClick={() => setIsOpen(false)}>X</div>
+                    </div>
+                    <div className="infoText">매월 1일 오후 7시 업데이트</div>
+                    <div className="playButton">전체재생</div>
+                    <div className="lastLine"/>
+                </div>
+                <div className='bottomRankList'>
+                    {
+                        topChartItem.map((rank)=>(
+                            <div className='rankItemBox'>
+                                <div className='leftSide'>
+                                    <Image src={rank.img} alt="iron" className='rankItemImg'/>
+                                    <div className='rankNum'>{rank.rank}</div>
+                                    <div className='rankInfoFrame'>
+                                        <div className='musicName'>{rank.musicName}</div>
+                                        <div className='singerName'>{rank.singerName}</div>
+                                    </div>
+                                </div>
+                                <div className='rightSide'>
+                                    <div className='musicTime'>{rank.lapTime}</div>
+                                    <div className='likeButton'>
+                                        <FontAwesomeIcon icon={faHeart}/>
+                                    </div>
+                                    <div className='takeButton'>
+                                        <FontAwesomeIcon icon={faPlus}/>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+
+                </div>
+            </div>
+          </div>
+          </>
+        );
+      default:
+        return null;
+    }
+  };
+  //============================================================20230215 추가 done
+
   useEffect(() => {
       const width = togglePointRef.current.offsetWidth;
       setTogglePointWidth(width);
@@ -142,13 +360,50 @@ return (
           <div className='genreListSection'>
               <div className='genreText'>Genre List</div>
               <div className='genreList'>
-                  <div>가요 </div>
-                  <div>팝</div>
-                  <div>트로트</div>
-                  <div>클래식</div>
+              <motion.div className='publicGenreFrame'
+                        onClick={() => handleGenreClick('public')}
+              
+                    >
+                        <div className='publicSongSection'>
+                            <div className='text'>가요</div>
+                        </div>
+                    </motion.div>
+                    <motion.div className='popGenreFrame'
+                        onClick={() => handleGenreClick('pop')}
+                    >
+                        <div className='popSection'>
+                            <div className='text'>팝</div>
+                        </div>
+                    </motion.div>
+                    <motion.div className='tortGenreFrame'
+                        onClick={() => handleGenreClick('trot')}
+                    >
+                         <div className='tortSection'>
+                            <div className='text'>트로트</div>
+                         </div>
+                    </motion.div>
+                    <motion.div className='classicGenreFrame'
+                        onClick={() => handleGenreClick('classic')}
+                    >
+                         <div className='classicSection'>
+                            <div className='text'>클래식</div>
+                         </div>
+                    </motion.div>
               </div>
           </div>
       </div>
+                {isOpen && (
+                   <motion.div
+                    className='genreModal'
+                    variants={variantModal}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    // onClick={() => setIsOpen(false)} 닫는 버튼
+                   >
+                     <ModalContent/>
+                   </motion.div>
+                )}
   </div>
 )
 }

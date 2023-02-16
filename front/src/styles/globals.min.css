@@ -23,6 +23,10 @@ body {
 .mainSlider {
   display: flex;
   flex-direction: column;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .mainSlider .pageNav {
   position: absolute;
@@ -90,12 +94,15 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 80px 50px 80px 50px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
   position: relative;
+  padding: 80px 50px 80px 50px;
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainFirstFrame .rankingInfoSection {
@@ -190,6 +197,7 @@ body {
   line-height: 1.2;
 }
 .mainSlider .mainFirstFrame .rankingCard {
+  cursor: grabbing;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 420px;
@@ -214,7 +222,7 @@ body {
   justify-content: space-evenly;
   align-items: flex-end;
   padding: 0px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   overflow: hidden;
   align-content: flex-end;
   flex-wrap: nowrap;
@@ -440,12 +448,15 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background-color: #2b2f5f;
   overflow: visible;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
+  background-image: url("../../public/image/coverPageBack2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
@@ -565,6 +576,201 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 
+.changeUserInfoFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 700px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 80px 40px 80px 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.changeUserInfoFrame .changeNavBar {
+  flex-shrink: 0;
+  width: 620px;
+  height: -moz-min-content;
+  height: min-content; /* 42px */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeNavBar .successBtn {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 56px */
+  height: auto; /* 34px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 28px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  transition: 0.3s;
+}
+.changeUserInfoFrame .changeNavBar .successBtn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+.changeUserInfoFrame .changeNavBar .infoText {
+  flex-shrink: 0;
+  width: auto; /* 217px */
+  height: auto; /* 42px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 32px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.changeUserInfoFrame .middleLine {
+  flex-shrink: 0;
+  width: 330px;
+  height: 2px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeMainSection {
+  flex-shrink: 0;
+  width: 620px;
+  height: 607px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.changeUserInfoFrame .changeMainSection .imgChange {
+  cursor: pointer;
+  left: 370px;
+  top: 281px;
+  bottom: 246px;
+  right: 170px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 1;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 80px;
+  border: 1px solid #ffffff;
+}
+.changeUserInfoFrame .changeMainSection .imgChange .faCamera {
+  color: transparent;
+  width: 45px;
+  height: 45px;
+  stroke-width: 50px;
+  stroke: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+.changeUserInfoFrame .changeMainSection .imgChange .faCamera:hover {
+  stroke: rgb(255, 255, 255);
+}
+.changeUserInfoFrame .changeMainSection .userImg {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.changeUserInfoFrame .changeMainSection .userNickName {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: -moz-min-content;
+  height: min-content; /* 74px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  border-color: #ffffff;
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  background-color: transparent;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 28px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName::-moz-placeholder {
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName::placeholder {
+  text-align: center;
+}
+.changeUserInfoFrame .changeMainSection .userNickName:focus {
+  outline: none;
+}
+
 .playBarSection {
   flex-shrink: 0;
   width: 610px;
@@ -597,6 +803,11 @@ body {
   flex-wrap: nowrap;
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
+}
+.playBarSection .controlBar .volumeBoxFrame {
+  position: absolute;
+  left: -245px;
+  bottom: 25px;
 }
 .playBarSection .controlBar .sideIcon {
   cursor: pointer;
@@ -658,7 +869,7 @@ body {
 .playBarSection .playBar .playBarFrame {
   flex-shrink: 0;
   width: 504px;
-  height: 38px;
+  height: 72px;
   display: block;
   overflow: hidden;
   position: relative;
@@ -668,10 +879,12 @@ body {
   position: absolute;
   height: 72px;
   left: 0px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(238deg, rgba(108, 99, 255, 0.2) 0%, rgba(248, 164, 216, 0.2) 100%);
 }
 .playBarSection .playBar .playBarFrame .playMotionWave {
-  cursor: pointer;
+  left: -504px;
+  width: 1008px;
+  height: 72px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -681,20 +894,8 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  position: relative;
+  position: absolute;
   border-radius: 0px 0px 0px 0px;
-}
-.playBarSection .playBar .playBarFrame .playMotionWave .playWave1 {
-  pointer-events: none;
-  position: relative;
-  width: 100px;
-  height: 36px;
-}
-.playBarSection .playBar .playBarFrame .playMotionWave .playWave2 {
-  pointer-events: none;
-  position: relative;
-  width: 100px;
-  height: 36px;
 }
 .playBarSection .playBar .playBarFrame .playBackGround {
   position: absolute;
@@ -1057,10 +1258,64 @@ body {
   border-left-width: 0px;
   border-right-width: 0px;
 }
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 216px */
+  height: -moz-min-content;
+  height: min-content; /* 16px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .totalNum {
+  flex-shrink: 0;
+  width: auto; /* 56px */
+  height: auto; /* 16px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDown {
+  flex-shrink: 0;
+  width: auto; /* 130px */
+  height: auto; /* 16px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .sortButton {
+  flex-shrink: 0;
+  width: auto; /* 28px */
+  height: auto; /* 16px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
 .MusicPlayFrame .songListSection .listSection .listFrame {
   flex-shrink: 0;
   width: 576px;
-  height: 529px;
+  height: 488px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1072,6 +1327,142 @@ body {
   flex-wrap: nowrap;
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 576px;
+  height: 75px;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  border-color: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 271px */
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .likeButton {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  color: transparent;
+  stroke: white;
+  stroke-width: 40px;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .songInfo {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 195px */
+  height: -moz-min-content;
+  height: min-content; /* 55px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .songInfo .songImg {
+  width: 55px;
+  height: 57px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .songInfo .infoFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 120px */
+  height: -moz-min-content;
+  height: min-content; /* 53px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 2px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .songInfo .infoFrame :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 120px */
+  height: auto; /* 28px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 23px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .songInfo .infoFrame :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 110px */
+  height: auto; /* 23px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 19px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .dragButton {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 39px */
+  height: -moz-min-content;
+  height: min-content; /* 34px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .dragButton :nth-child(1) {
+  cursor: pointer;
+  color: white;
+  width: 35px;
+  height: 30px;
 }
 
 .toggleFrame {
@@ -1305,7 +1696,7 @@ body {
   position: absolute;
   height: 72px;
   left: 0px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(238deg, rgba(108, 99, 255, 0.2) 0%, rgba(248, 164, 216, 0.2) 100%);
 }
 .musicBar .playBar .playBarFrame .playMotionWave {
   top: 18px;
@@ -1324,16 +1715,6 @@ body {
   gap: 0;
   position: absolute;
   border-radius: 0px 0px 0px 0px;
-}
-.musicBar .playBar .playBarFrame .playMotionWave .playWave1 {
-  position: relative;
-  width: 247px;
-  height: 36px;
-}
-.musicBar .playBar .playBarFrame .playMotionWave .playWave2 {
-  position: relative;
-  width: 247px;
-  height: 36px;
 }
 .musicBar .playBar .playBarFrame .playBackGround {
   position: absolute;
@@ -1894,7 +2275,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #2c2f48;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -1911,7 +2292,7 @@ body {
 .layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 585px;
+  width: 350px;
   height: 32px;
   display: flex;
   flex-direction: row;
@@ -1919,13 +2300,14 @@ body {
   align-items: center;
   padding: 0px 30px 0px 30px;
   background-color: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
 }
 .layoutFrame .layoutBox .contentSection .searchBarSection .searchBarFrame .searchBar {
   flex-shrink: 0;
@@ -1935,7 +2317,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -1982,12 +2364,53 @@ body {
   flex-shrink: 0;
   width: 234px;
   height: 50px;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
   position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
   border-radius: 0px 0px 0px 0px;
+}
+.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 120px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.layoutFrame .layoutBox .userBarSection .optionSection .changeMemberInfo:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection {
   box-sizing: border-box;
@@ -2059,7 +2482,9 @@ body {
   width: 150px;
   height: 150px;
   display: block;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
   position: relative;
   border-radius: 150px;
@@ -3806,6 +4231,7 @@ body {
   width: 634px;
   height: 522px;
   display: flex;
+  box-sizing: border-box;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -3814,23 +4240,678 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 5px;
+  gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MusicContainerFrame .bottomFrame .genreListSection .genreList :nth-child(-n+4) {
-  box-sizing: border-box;
-  padding-top: 15px;
-  text-align: center;
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .publicGenreFrame {
+  cursor: pointer;
   flex-shrink: 0;
-  width: 147px;
-  color: rgba(255, 255, 255, 0.8);
+  width: auto;
+  flex-grow: 1;
   height: 522px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+  transition: 0.4s;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .publicGenreFrame:hover {
+  flex-grow: 2.5;
+  max-width: 100%;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .publicGenreFrame .publicSongSection {
+  width: auto;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-image: url("../../public/image/public.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .publicGenreFrame .publicSongSection:hover > .text {
+  opacity: 1;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .publicGenreFrame .publicSongSection .text {
+  left: 40px;
+  top: 20px;
+  transition: 0.3s;
+  opacity: 0;
+  width: -moz-min-content;
+  width: min-content; /* 72px */
+  height: -moz-min-content;
+  height: min-content; /* 28px */
+  white-space: pre;
+  position: absolute;
+  font-weight: bold;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .popGenreFrame {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto;
+  flex-grow: 1;
+  height: 522px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+  transition: 0.4s;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .popGenreFrame:hover {
+  flex-grow: 2.5;
+  max-width: 100%;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .popGenreFrame .popSection {
+  width: auto;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-image: url("../../public/image/pop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .popGenreFrame .popSection:hover > .text {
+  opacity: 1;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .popGenreFrame .popSection .text {
+  transition: 0.3s;
+  opacity: 0;
+  width: -moz-min-content;
+  width: min-content; /* 72px */
+  height: -moz-min-content;
+  height: min-content; /* 28px */
+  white-space: pre;
+  position: absolute;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .tortGenreFrame {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto;
+  flex-grow: 1;
+  height: 522px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+  transition: 0.4s;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .tortGenreFrame:hover {
+  flex-grow: 2.5;
+  max-width: 100%;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .tortGenreFrame .tortSection {
+  width: auto;
+  height: 480px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-image: url("../../public/image/trot.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .tortGenreFrame .tortSection:hover > .text {
+  opacity: 1;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .tortGenreFrame .tortSection .text {
+  transition: 0.3s;
+  opacity: 0;
+  width: -moz-min-content;
+  width: min-content; /* 72px */
+  height: -moz-min-content;
+  height: min-content; /* 28px */
+  white-space: pre;
+  position: absolute;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .classicGenreFrame {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto;
+  flex-grow: 1;
+  height: 522px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+  transition: 0.4s;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .classicGenreFrame:hover {
+  flex-grow: 2.5;
+  max-width: 100%;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .classicGenreFrame .classicSection {
+  width: auto;
+  height: 480px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-image: url("../../public/image/classic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .classicGenreFrame .classicSection:hover > .text {
+  opacity: 1;
+}
+.MusicContainerFrame .bottomFrame .genreListSection .genreList .classicGenreFrame .classicSection .text {
+  transition: 0.3s;
+  opacity: 0;
+  width: -moz-min-content;
+  width: min-content; /* 72px */
+  height: -moz-min-content;
+  height: min-content; /* 28px */
+  white-space: pre;
+  position: absolute;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal {
+  z-index: 99;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: #000000;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.MusicContainerFrame .genreModal h2 {
+  color: white;
+  font-size: 24px;
+}
+.MusicContainerFrame .genreModal p {
+  color: white;
+  font-size: 16px;
+}
+.MusicContainerFrame .genreModal .publicBackImg {
+  width: 1359px;
+  height: 950px;
+  background-image: url("../../public/image/public.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.MusicContainerFrame .genreModal .popBackImg {
+  width: 1359px;
+  height: 950px;
+  background-image: url("../../public/image/pop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.MusicContainerFrame .genreModal .trotBackImg {
+  width: 1359px;
+  height: 950px;
+  background-image: url("../../public/image/trot.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.MusicContainerFrame .genreModal .classicBackImg {
+  width: 1359px;
+  height: 950px;
+  background-image: url("../../public/image/classic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.MusicContainerFrame .genreModal .rankBackDrop {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+}
+.MusicContainerFrame .genreModal .rankContainer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 30px 40px 80px;
+  overflow: visible;
+  z-index: 1;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection {
+  flex-shrink: 0;
+  width: 1199px;
+  height: 195px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoFrame {
+  flex-shrink: 0;
+  width: 1199px;
+  height: 41px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoFrame :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 217px */
+  height: auto; /* 41px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 34px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoFrame :nth-child(2) {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 24px */
+  height: auto; /* 41px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 34px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  transition: 0.3s;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoFrame :nth-child(2):hover {
+  scale: 1.5;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoText {
+  flex-shrink: 0;
+  width: auto; /* 276px */
+  height: auto; /* 28px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 23px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection .playButton {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 165px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(256deg, rgba(248, 164, 216, 0.6) 0%, rgba(108, 99, 255, 0.6) 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal .rankContainer .topInfoSection .lastLine {
+  flex-shrink: 0;
+  width: 500px;
+  height: 1px;
   display: block;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList {
+  flex-shrink: 0;
+  width: 1249px;
+  height: 635px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList::-webkit-scrollbar {
+  width: 20px;
+  height: 56px;
+  background-color: transparent;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox {
+  flex-shrink: 0;
+  width: 1199px;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 501px */
+  height: -moz-min-content;
+  height: min-content; /* 120px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 80px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide .rankItemImg {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100px;
+  border: 1px solid rgba(194, 194, 194, 0.4);
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide .rankNum {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 17px */
+  height: -moz-min-content;
+  height: min-content; /* 40px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 34px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide .rankInfoFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 204px */
+  height: -moz-min-content;
+  height: min-content; /* 74px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide .rankInfoFrame .musicName {
+  flex-shrink: 0;
+  width: auto; /* 204px */
+  height: auto; /* 41px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 34px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide .rankInfoFrame .singerName {
+  flex-shrink: 0;
+  width: auto; /* 168px */
+  height: auto; /* 33px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 27px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .rightSide {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 397px */
+  height: -moz-min-content;
+  height: min-content; /* 120px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 80px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .rightSide .musicTime {
+  flex-shrink: 0;
+  width: auto; /* 77px */
+  height: auto; /* 40px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 34px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .rightSide .likeButton {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 80px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .rightSide .likeButton :nth-child(1) {
+  width: 35px;
+  height: 35px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .rightSide .takeButton {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 80px;
+}
+.MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .rightSide .takeButton :nth-child(1) {
+  width: 35px;
+  height: 35px;
 }
 
 .FundingContainerFrame {
@@ -3844,6 +4925,7 @@ body {
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -4266,7 +5348,7 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: 1069px;
+  height: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -4383,25 +5465,27 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
-  height: 880px; /* 880px */
+  height: -moz-min-content;
+  height: min-content; /* 965px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding: 10px 0px 10px 0px;
-  overflow: visible;
+  padding: 10px 20px 10px 20px;
+  overflow: hidden;
   position: relative;
   align-content: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
 .FundingContainerFrame .fundingListSection .listFram .fundingItem {
   flex-shrink: 0;
-  width: 240px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
   display: block;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
   border-radius: 20px;
@@ -4751,6 +5835,7 @@ body {
   align-items: center;
   padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -4794,7 +5879,7 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 20px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topSwiperSection {
   flex-shrink: 0;
@@ -4813,7 +5898,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 20px;
 }
 .nftMarketContainerFrame .nftTopSection .nftTopFrame .topInfoSection {
   pointer-events: none;
@@ -7227,7 +8312,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 10px 20px 10px 20px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -7256,6 +8341,22 @@ body {
   height: 120px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 0px;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 505px;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -7266,13 +8367,42 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 170px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(171, 171, 171, 0.1);
   flex-shrink: 0;
   white-space: pre;
-  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 27px;
+  font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.5s;
+}
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  scale: 1.2;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgb(255, 255, 255);
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList {
   box-sizing: border-box;
@@ -7369,17 +8499,18 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 257px;
-  height: 66px;
+  width: 180px;
+  height: 40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
   padding: 20px 30px 20px 30px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
+  border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(168, 168, 168, 0.1);
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
@@ -7388,7 +8519,8 @@ body {
   align-content: flex-end;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
+  right: 8px;
 }
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
   flex-shrink: 0;
@@ -7793,7 +8925,7 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 320px;
@@ -7803,7 +8935,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 25px 25px 25px 25px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -7812,7 +8944,10 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .atropos-inner, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .atropos-inner {
+  border-radius: 25px;
+}
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 270px;
@@ -7822,7 +8957,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 30px 30px 30px 30px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.8);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -7832,7 +8967,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0px 1.6733156777px 1.6733156777px -0.125px rgba(0, 0, 0, 0.05), 0px 3.984206391px 3.984206391px -0.25px rgba(0, 0, 0, 0.05598), 0px 7.2593218828px 7.2593218828px -0.375px rgba(0, 0, 0, 0.06089), 0px 12.068385492px 12.068385492px -0.5px rgba(0, 0, 0, 0.0681), 0px 19.5004927421px 19.5004927421px -0.625px rgba(0, 0, 0, 0.07925), 0px 31.9014182134px 31.9014182134px -0.75px rgba(0, 0, 0, 0.09785), 0px 54.9603521257px 54.9603521257px -0.875px rgba(0, 0, 0, 0.13244), 0px 100px 100px -1px rgba(0, 0, 0, 0.2);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .ownNftImg {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .ownNftImg, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .ownNftImg {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -7847,7 +8982,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border: 3px solid rgba(255, 255, 255, 0.5);
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .nftTitleSection {
   flex-shrink: 0;
   width: 210px;
   height: 64px;
@@ -7863,12 +8998,12 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1) {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(1), .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .nftTitleSection :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 95px */
+  width: min-content; /* 136px */
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content; /* 27px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7883,40 +9018,14 @@ body {
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.3);
-  font-size: 19px;
+  font-size: 27px;
   letter-spacing: 0px;
   line-height: 1;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(2), .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .nftTitleSection :nth-child(3) {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 40px */
-  height: -moz-min-content;
-  height: min-content; /* 16px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 1;
-  text-align: center;
-}
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .middleLine {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .middleLine, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .middleLine {
   flex-shrink: 0;
   width: 210px;
   height: 1px;
@@ -7926,29 +9035,39 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .infoSection {
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .sellButton, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .sellButton {
+  cursor: pointer;
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 210px;
-  height: 58px;
+  width: 170px;
+  height: 48px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.thirdMyPage .MyPageThirdContainerFrame .fundingItemList .ownedNftBox .ownedNftFrame .sellButton:hover, .thirdMyPage .MyPageThirdContainerFrame .fundingItemList .atropos-banner .ownedNftFrame .sellButton:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .SubscriptionContainer {
@@ -7960,6 +9079,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -8045,11 +9165,11 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame {
   flex-shrink: 0;
-  width: 1200px;
+  width: 995px;
   height: 558px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   max-width: 1200px;
   overflow: visible;
@@ -8060,165 +9180,14 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.6);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionTitle {
-  flex-shrink: 0;
-  width: auto; /* 81px */
-  height: auto; /* 19px */
-  white-space: pre;
-  position: relative;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 177px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #000000;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 153px */
-  height: -moz-min-content;
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(0, 0, 0, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 103px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #000000;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .benefitsSummary :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .optionBenefitList :nth-child(-n+5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #000000;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 380px;
   height: 558px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 20px 20px 68px 20px;
   -webkit-backdrop-filter: blur(40px);
@@ -8233,18 +9202,18 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .recommendedMark {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 123px */
+  width: min-content; /* 92px */
   height: -moz-min-content;
-  height: min-content; /* 27px */
+  height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 16px 4px 8px;
+  padding: 5px 10px 5px 10px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
@@ -8255,6 +9224,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
+  position: relative;
   font-weight: 600;
   font-style: normal;
   color: #ffffff;
@@ -8264,9 +9234,26 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionTitle {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleLine {
   flex-shrink: 0;
-  width: auto; /* 89px */
+  width: 170px;
+  height: 1px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .middleMark {
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionTitle {
+  flex-shrink: 0;
+  width: auto; /* 90px */
   height: auto; /* 19px */
   white-space: pre;
   position: relative;
@@ -8279,9 +9266,9 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionPrice {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionPrice {
   flex-shrink: 0;
-  width: auto; /* 189px */
+  width: auto; /* 246px */
   height: auto; /* 70px */
   white-space: pre;
   position: relative;
@@ -8292,30 +9279,30 @@ body {
   letter-spacing: -0.8px;
   line-height: 1.4;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 129px */
+  width: min-content; /* 110px */
   height: -moz-min-content;
-  height: min-content; /* 29px */
+  height: min-content; /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 16px 4px 8px;
+  padding: 5px 16px 5px 16px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: visible;
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 0;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary :nth-child(1) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 79px */
+  width: auto; /* 78px */
   height: auto; /* 21px */
   white-space: pre;
   position: relative;
@@ -8326,193 +9313,60 @@ body {
   letter-spacing: 0px;
   line-height: 150%;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .benefitsSummary :nth-child(2) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(2) {
   width: 16px;
   height: 16px;
   border-radius: 16px;
   background-color: white;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
+  width: 340px;
+  height: 133px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
+  align-items: center;
+  overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .optionBenefitList :nth-child(-n+5) {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 118px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 24px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #ffffff;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
+  width: -moz-min-content;
+  width: min-content; /* 142px */
+  height: -moz-min-content;
+  height: min-content; /* 68px */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
+  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionTitle {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) :nth-child(-n+2) {
   flex-shrink: 0;
-  width: auto; /* 75px */
+  width: auto; /* 126px */
   height: auto; /* 19px */
   white-space: pre;
   position: relative;
-  font-weight: 600;
-  font-style: normal;
+  font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: 16px;
   letter-spacing: 0px;
-  text-transform: uppercase;
   line-height: 1.2;
-  text-align: center;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 185px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 129px */
-  height: -moz-min-content;
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 79px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .benefitsSummary :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .optionBenefitList :nth-child(-n+5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 .option1BuyButton {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBuyButton {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 240px;
@@ -8522,26 +9376,49 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
   background-color: #ffffff;
-  max-width: 240px;
   overflow: visible;
   position: relative;
   align-content: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
   border-radius: 24px 24px 0px 24px;
   flex-shrink: 0;
   white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   letter-spacing: 0px;
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection {
+  flex-shrink: 0;
+  width: 585px;
+  height: 558px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .subscriptionProgress {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 450px;
+  height: 450px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border-radius: 450px;
+  border: 10px solid #ffffff;
 }
 
 .MyPageCreatorFrame {
@@ -8697,7 +9574,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .topSection .historyGrapSection {
+.MyPageCreatorFrame .topSection .creatorNoticeSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 958px;
@@ -8716,13 +9593,26 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .topSection .historyGrapSection .historyText {
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav {
   flex-shrink: 0;
   width: 868px;
+  height: 19px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeText {
+  flex-shrink: 0;
+  width: auto; /* 135px */
   height: auto; /* 19px */
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-word;
+  white-space: pre;
   position: relative;
   font-weight: 700;
   font-style: normal;
@@ -8733,22 +9623,135 @@ body {
   line-height: 1.2;
   text-align: left;
 }
-.MyPageCreatorFrame .topSection .historyGrapSection .historyGrapFrame {
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeShowAll {
+  flex-shrink: 0;
+  width: auto; /* 60px */
+  height: auto; /* 17px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: left;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList {
+  flex-shrink: 0;
+  width: 898px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList::-webkit-scrollbar {
+  width: 20px;
+  height: 56px;
+  background-color: transparent;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 868px;
-  height: 96px;
-  display: block;
+  width: 800px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
   overflow: hidden;
   position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .date {
+  flex-shrink: 0;
+  width: auto; /* 91px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .title {
+  flex-shrink: 0;
+  width: auto; /* 107px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 166px */
+  height: -moz-min-content;
+  height: min-content; /* 19px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
   border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.5);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 0px;
-  border-radius: 0px 0px 0px 5px;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 68px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+}
+.MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
 }
 .MyPageCreatorFrame .bottomSection {
   box-sizing: border-box;
@@ -8840,8 +9843,8 @@ body {
   font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
+  font-size: 15px;
+  letter-spacing: -1px;
   line-height: 1.2;
 }
 .MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList {
@@ -9001,7 +10004,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .backDrop {
+
+.backDrop {
   z-index: 99;
   position: absolute;
   top: 0;
@@ -9017,9 +10021,10 @@ body {
   align-items: center;
   justify-content: center;
 }
-.MyPageCreatorFrame .modal {
+
+.modal {
   width: 883px;
-  height: 855px;
+  height: 910px;
   background: linear-gradient(243deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
   -webkit-backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
@@ -9038,7 +10043,7 @@ body {
   box-shadow: 0px 0.7968412782px 0.7968412782px 0px rgba(0, 0, 0, 0.01), 0px 2.4136770984px 2.4136770984px 0px rgba(0, 0, 0, 0.03017), 0px 6.3802836427px 6.3802836427px 0px rgba(0, 0, 0, 0.07975), 0px 20px 20px 0px rgba(0, 0, 0, 0.25);
   border: 1.5px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame {
+.modal .nftRegistrationFrame {
   flex-shrink: 0;
   width: 803px;
   height: 795px;
@@ -9054,7 +10059,7 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .topText {
+.modal .nftRegistrationFrame .topText {
   flex-shrink: 0;
   width: 803px;
   height: -moz-min-content;
@@ -9082,7 +10087,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame {
+.modal .nftRegistrationFrame .bottomFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 803px;
@@ -9099,7 +10104,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList {
+.modal .nftRegistrationFrame .bottomFrame .genreList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9114,7 +10119,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
+.modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
   flex-shrink: 0;
   width: auto; /* 52px */
   height: auto; /* 31px */
@@ -9128,7 +10133,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content;
@@ -9145,7 +10150,7 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 488px;
@@ -9164,7 +10169,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9193,11 +10198,11 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .list .option:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 25px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
+.modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
   cursor: pointer;
   flex-shrink: 0;
   width: auto; /* 52px */
@@ -9212,7 +10217,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList {
+.modal .nftRegistrationFrame .bottomFrame .bottomList {
   flex-shrink: 0;
   width: 723px;
   height: 39px;
@@ -9227,7 +10232,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 78px */
   height: auto; /* 31px */
@@ -9241,7 +10246,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2) {
   flex-shrink: 0;
   width: 289px;
   height: 39px;
@@ -9267,21 +10272,21 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::-moz-placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::-moz-placeholder {
   text-align: right;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2)::placeholder {
   text-align: right;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus {
   outline: none;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
+.modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(2):focus::-webkit-input-placeholder {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   opacity: 0;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource, .MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .soundSource, .modal .nftRegistrationFrame .bottomFrame .bottomList .albumCover, .modal .nftRegistrationFrame .bottomFrame .bottomList .lyricsSource {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9311,7 +10316,7 @@ body {
   line-height: 1.2;
   text-align: center;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox {
   flex-shrink: 0;
   width: 240px;
   height: 39px;
@@ -9327,7 +10332,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .notTitle {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9355,7 +10360,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
+.modal .nftRegistrationFrame .bottomFrame .bottomList .switchBox .title {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9383,10 +10388,10 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton {
   flex-shrink: 0;
   width: 723px;
-  height: 183px;
+  height: 124px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9398,7 +10403,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton .cancelButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9427,7 +10432,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreatorFrame .modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
+.modal .nftRegistrationFrame .bottomFrame .bottomListButton .registerButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -9570,4 +10575,374 @@ body {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0% rgba(255, 255, 255, 0.8) 32% rgb(255, 255, 255) 100%);
+}
+
+.searchTotalFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1359px;
+  height: 950px; /* 2393px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 80px 40px 80px;
+  background: radial-gradient(141.9% 200% at 50% 110.8%, #292929 0%, rgb(0, 0, 0) 100%);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame::-webkit-scrollbar {
+  width: 20px;
+  height: 56px;
+  background-color: transparent;
+}
+.searchTotalFrame::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.searchTotalFrame .searchInfoTextFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 360px */
+  height: -moz-min-content;
+  height: min-content; /* 32px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .searchInfoTextFrame :nth-child(1) {
+  flex-shrink: 0;
+  width: auto; /* 64px */
+  height: auto; /* 32px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 27px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .searchInfoTextFrame :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 281px */
+  height: auto; /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .justLine {
+  flex-shrink: 0;
+  width: 1199px;
+  height: 1px;
+  display: block;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .switchListBox {
+  flex-shrink: 0;
+  width: 1199px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .switchListBox .optionFunding, .searchTotalFrame .switchListBox .optionMusic, .searchTotalFrame .switchListBox .optionNftMusic, .searchTotalFrame .switchListBox .optionNft, .searchTotalFrame .switchListBox .optionDum {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 232px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 5px;
+  border: 1px solid rgba(138, 138, 138, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  transition: 0.3s;
+}
+.searchTotalFrame .switchListBox .optionFunding:hover, .searchTotalFrame .switchListBox .optionMusic:hover, .searchTotalFrame .switchListBox .optionNftMusic:hover, .searchTotalFrame .switchListBox .optionNft:hover, .searchTotalFrame .switchListBox .optionDum:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(0, 0, 0);
+}
+.searchTotalFrame .infoScrollBox {
+  flex-shrink: 0;
+  width: 1199px;
+  height: -moz-min-content;
+  height: min-content; /* 2170px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .infoScrollBox .artistSection {
+  flex-shrink: 0;
+  width: 1199px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .infoScrollBox .artistSection .navBar {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .infoScrollBox .artistSection .navBar .leftSide {
+  flex-shrink: 0;
+  width: 157px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .infoScrollBox .artistSection .navBar .leftSide .text {
+  flex-shrink: 0;
+  width: auto; /* 100px */
+  height: auto; /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .infoScrollBox .artistSection .navBar .leftSide .howMany {
+  flex-shrink: 0;
+  width: auto; /* 47px */
+  height: auto; /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .infoScrollBox .artistSection .navBar .showAll {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 85px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .infoScrollBox .artistSection .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 20px;
+}
+.searchTotalFrame .infoScrollBox .anotherInfoSection {
+  flex-shrink: 0;
+  width: 1199px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .infoScrollBox .anotherInfoSection .navBar {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px 0px 5px;
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .infoScrollBox .anotherInfoSection .navBar .leftSide {
+  flex-shrink: 0;
+  width: 157px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.searchTotalFrame .infoScrollBox .anotherInfoSection .navBar .leftSide .text {
+  flex-shrink: 0;
+  width: auto; /* 100px */
+  height: auto; /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .infoScrollBox .anotherInfoSection .navBar .leftSide .howMany {
+  flex-shrink: 0;
+  width: auto; /* 47px */
+  height: auto; /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .infoScrollBox .anotherInfoSection .navBar .showAll {
+  flex-shrink: 0;
+  width: auto; /* 85px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.searchTotalFrame .infoScrollBox .anotherInfoSection .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 560px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 20px;
 }
