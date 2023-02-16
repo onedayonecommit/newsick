@@ -575,6 +575,73 @@ body{
 }
 // ========================================Main CSS Done
 // ==================================COMPONENT CSS START
+.congratulationsEventModal{
+    z-index: 99999;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    align-content: center;
+    flex-wrap: nowrap;
+    border-radius: 0px 0px 0px 0px; 
+    .text{
+        z-index: 99;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 60px;
+        width:  700px;
+        font-weight: bold;
+        height: min-content;
+        display: flex;
+        background: linear-gradient(to right, #FF3DB8, #DB29FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }  
+    .leftDiv{
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 50%;
+        height: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        -webkit-backdrop-filter: blur(10px);
+        -o-backdrop-filter: blur(10px);
+        -moz-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+    }
+    .rightDiv{
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 50%;
+        height: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        -webkit-backdrop-filter: blur(10px);
+        -o-backdrop-filter: blur(10px);
+        -moz-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+    }
+}
 .changeUserInfoFrame{
     box-sizing: border-box;
     flex-shrink: 0;

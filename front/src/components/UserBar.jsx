@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import userImage from "../../public/image/userImageMain.png"
 import {motion} from "framer-motion"
 // 컴포넌트
-const UserBar = ({handleOpen }) => {
+const UserBar = ({handleOpen,handleClick }) => {
   const router = useRouter();
   function movePage(page){
     page == "my_page"? router.replace('/') : router.push(`/${page}`);
@@ -61,7 +61,7 @@ const UserBar = ({handleOpen }) => {
           <input type="file" name="file" accept="image/*" style={{ opacity: 0, height: "100px" }} onChange={profileImageHandler} />
           <ConnectWallet />
         </div>
-        <div className="stateInfoSection"></div>
+        <div className="stateInfoSection" onClick={handleClick}></div>
         <div className="anotherInfoSection"></div>
       </div>
     </div>

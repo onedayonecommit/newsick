@@ -6,6 +6,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useWeb3 from "@/hooks/useWeb3";
 
+
+// 이거는 항상 NEXT 부분이 최신이니까 React 에서 받지 말것
+
+
 const FundingCreateContainer = () => {
   // date 형식 맞춰
   const convertToTimestamp = (e) => {

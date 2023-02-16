@@ -3,6 +3,7 @@ import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar, VolumeBox } from "..
 import {AnimatePresence, motion} from "framer-motion"
 import Loading from "./eventComponent/Loading";
 import ChangeMember from "./ChangeMember";
+import Congratulations from "./Congratulations";
 const Layout = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isSoundClick,setIsSoundClick] = useState(false);
@@ -12,7 +13,12 @@ const Layout = (props) => {
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   const layOutRef = useRef(null)
-
+//====================================================
+const [isClick,setIsClick]=useState(false);
+const handleClick = () => {
+setIsClick(!isClick)
+//====================================================
+}
 
   const soundClick = () =>{
     setIsSoundClick(!isSoundClick);
@@ -28,6 +34,12 @@ const Layout = (props) => {
       ):( 
         <motion.div>
           <motion.div className='layoutFrame' ref={layOutRef}>
+            {/* ========================================================== */}
+              {
+                isClick?
+                <Congratulations isClick={isClick}/>:null
+              }
+            {/* ========================================================== */}
             <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick}/> 
               {
                 isSoundClick ? <VolumeBox/>:null
@@ -44,7 +56,7 @@ const Layout = (props) => {
                     {props.children}
                    </div>
                   </div>
-              <UserBar handleOpen={open}/>
+              <UserBar handleOpen={open} handleClick={handleClick}/>
             </div>
           </motion.div>
         </motion.div>
