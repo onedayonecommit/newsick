@@ -10,6 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// 유저 데이터 관리
 model user{
   id Int @default(autoincrement()) @id // 프라이머리 키 의미 없음
   user_email String @unique // 유저 이메일 중복 X
@@ -27,6 +28,7 @@ model user{
   heart_nft heart_nft[]
 }
 
+// 관리자 아이디 비밀번호
 model admin{
   admin_id String @id 
   admin_password String 
@@ -66,6 +68,7 @@ model funding{
   funding_price Decimal @db.Decimal(24,18)
   funding_hard_cap Int
   funding_sales Int @default(0)
+  funding_heart Int @default(0)
   funding_notice funding_notice[]
   funding_music funding_music[]
   music_maker music_maker[]
@@ -92,8 +95,6 @@ model music_maker{
   music_name String? @default("정보 없음")
   music_info String? @default("정보 없음") @db.VarChar(5000)
   music_sns_address String? @default("정보 없음")
-  
-  
 }
 
 model lyrics_maker{
@@ -182,7 +183,7 @@ model playlist{
 model heart_funding{
   id Int @default(autoincrement()) @id
   user_ids user @relation(fields: [user_id],references: [user_wallet_address])
-  user_id String 
+  user_id String
   funding_id Int
 }
 

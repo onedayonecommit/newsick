@@ -56,6 +56,23 @@ CREATE TABLE `funding` (
     `discord_address` VARCHAR(191) NOT NULL,
     `nft_name` VARCHAR(191) NOT NULL,
     `created_at` TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `funding_price` DECIMAL(24, 18) NOT NULL,
+    `funding_hard_cap` INTEGER NOT NULL,
+    `funding_sales` INTEGER NOT NULL DEFAULT 0,
+    `funding_heart` INTEGER NOT NULL DEFAULT 0,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `funding_notice` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `funding_id` INTEGER NOT NULL,
+    `creator_id` VARCHAR(191) NOT NULL,
+    `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updated_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `title` VARCHAR(100) NOT NULL,
+    `content` VARCHAR(5000) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -96,16 +113,16 @@ CREATE TABLE `singer` (
 -- CreateTable
 CREATE TABLE `funding_music` (
     `funding_id` INTEGER NOT NULL,
-    `music_name` VARCHAR(191) NOT NULL,
+    `music_name` VARCHAR(191) NOT NULL DEFAULT '',
     `music_lyrics` VARCHAR(5000) NULL,
-    `music_genre` VARCHAR(191) NOT NULL,
-    `music_maker` VARCHAR(191) NOT NULL,
+    `music_genre` VARCHAR(191) NOT NULL DEFAULT '',
+    `music_maker` VARCHAR(191) NOT NULL DEFAULT '',
     `lyrics_maker` VARCHAR(191) NULL,
     `singer` VARCHAR(191) NULL,
     `music_cover_image` VARCHAR(191) NOT NULL DEFAULT 'default_music_image.png',
-    `album_name` VARCHAR(191) NOT NULL,
+    `album_name` VARCHAR(191) NULL,
     `title` BOOLEAN NOT NULL DEFAULT false,
-    `music_path` VARCHAR(191) NOT NULL,
+    `music_path` VARCHAR(191) NOT NULL DEFAULT '',
     `pending_status` BOOLEAN NOT NULL DEFAULT false,
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updated_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -195,6 +212,12 @@ ALTER TABLE `ticket` ADD CONSTRAINT `ticket_id_fkey` FOREIGN KEY (`id`) REFERENC
 
 -- AddForeignKey
 ALTER TABLE `funding` ADD CONSTRAINT `funding_creator_id_fkey` FOREIGN KEY (`creator_id`) REFERENCES `creator`(`creator_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `funding_notice` ADD CONSTRAINT `funding_notice_funding_id_fkey` FOREIGN KEY (`funding_id`) REFERENCES `funding`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `funding_notice` ADD CONSTRAINT `funding_notice_creator_id_fkey` FOREIGN KEY (`creator_id`) REFERENCES `user`(`user_wallet_address`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `music_maker` ADD CONSTRAINT `music_maker_funding_id_fkey` FOREIGN KEY (`funding_id`) REFERENCES `funding`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

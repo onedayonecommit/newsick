@@ -8,7 +8,7 @@ import {
   VolumeBox,
 } from "../components";
 import { AnimatePresence, motion } from "framer-motion";
-import Loading from "./eventComponent/Loading";
+import Loading from "./events/Loading";
 import ChangeMember from "./ChangeMember";
 const Layout = (props) => {
   const [isLoading, setIsLoading] = useState(true);

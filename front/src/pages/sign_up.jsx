@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated, fetchUserCheck } from "../middleware/fetchUser";
 import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
-import SuccessLog from "@/components/eventComponent/SuccessLog";
+import SuccessLog from "@/components/events/SuccessLog";
 
 const SignUp = () => {
   const { web3, NEWSIC_FUND } = useWeb3();

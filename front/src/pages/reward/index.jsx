@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import image1 from "../../../public/image/Funding.jpg";
 import image2 from "../../../public/image/lee.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
+import { fetchPopularPick } from "@/middleware/fetchFund";
 // 펀딩 메인페이지
 const data = [
   {
@@ -87,6 +88,13 @@ const FundingContainer = () => {
   const handleClick = (id) => {
     setSelectedDiv(id);
   };
+
+  const popularPick = () => {
+    console.log(fetchPopularPick());
+  };
+  useEffect(() => {
+    popularPick();
+  }, []);
 
   return (
     <div className="FundingContainerFrame">

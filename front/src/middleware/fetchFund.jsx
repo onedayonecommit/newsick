@@ -37,3 +37,18 @@ export const fetchCreateFund = createAsyncThunk(
     }
   }
 );
+
+export const fetchPopularPick = createAsyncThunk(
+  "fund/popularPick",
+  async () => {
+    try {
+      const _recieveData = await axios.post(
+        "http://127.0.0.1:4000/hot-fund/top1"
+      );
+      console.log("top 확인", _recieveData);
+      return _recieveData.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);

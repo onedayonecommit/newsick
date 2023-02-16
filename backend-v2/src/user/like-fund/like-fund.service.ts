@@ -22,6 +22,10 @@ export class LikeFundService {
           },
         });
         console.log(result2);
+        await this.db.funding.update({
+          where: { id: funding_id },
+          data: { funding_heart: { decrement: 1 } },
+        });
         return result2;
       } else {
         console.log('없어서 추가함');
@@ -29,6 +33,10 @@ export class LikeFundService {
           data: { funding_id, user_id: user_wallet_address },
         });
         console.log(result3);
+        await this.db.funding.update({
+          where: { id: funding_id },
+          data: { funding_heart: { increment: 1 } },
+        });
         return result3;
       }
     } catch (error) {}

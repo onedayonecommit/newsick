@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, transform, useMotionValue } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
 const itemData = [
   {
     id: 1,
@@ -33,8 +34,16 @@ const MainFirstPage = () => {
     scale: 1,
     opacity: 1,
   });
+  const dispatch = useDispatch();
+  const user = useSelector((state) => {
+    state.userInfo;
+  });
+  const test = () => {
+    console.log(user.address);
+  };
   return (
     <motion.div className="mainFirstFrame">
+      <button onClick={test}>test</button>
       {itemData.map((item, index) => {
         if (index === count) {
           return (

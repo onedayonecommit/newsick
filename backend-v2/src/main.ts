@@ -4,6 +4,7 @@ import { PrismaClient } from '@prisma/client';
 import { hi2 } from 'src/contractInfo';
 import { ethers } from 'ethers';
 import { AppModule } from './app.module';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -36,5 +37,6 @@ async function bootstrap() {
       // });
     }
   }, 1000);
+  app.listen(4000);
 }
 bootstrap();

@@ -17,6 +17,7 @@ const s3_module_1 = require("./s3/s3.module");
 const nft_storage_module_1 = require("./nft-storage/nft-storage.module");
 const auth_module_1 = require("./auth/auth.module");
 const mypage_module_1 = require("./mypage/mypage.module");
+const app_controller_1 = require("./app.controller");
 const search_module_1 = require("./search/search.module");
 const simple_test_module_1 = require("./simple-test/simple-test.module");
 let AppModule = class AppModule {
@@ -36,7 +37,7 @@ AppModule = __decorate([
             search_module_1.SearchModule,
             simple_test_module_1.SimpleTestModule,
         ],
-        controllers: [],
+        controllers: [app_controller_1.AppController],
         providers: [],
     })
 ], AppModule);
