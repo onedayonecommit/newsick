@@ -1,83 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Modal from "./Modal";
+import { useSelector } from "react-redux";
 
-const dateFunndingData = [
-  [0, 10],
-  [5, 50],
-  [15, 75],
-  [55, 100],
-  [75, 10],
-  [100, 5],
-  [120, 50],
-  [140, 100],
-  [180, 50],
-];
-
-const FunddingDateItem = [
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-];
 const MyPageCreator = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   const block = Array.from({ length: 5 }, () => <div></div>);
+  const runningFundList = useSelector((state) => state.myPageInfo.runningFundList);
+  const noticeList = useSelector((state) => state.myPageInfo.noticeList);
+  const [totalEth, setTotalEth] = useState();
+  useEffect(() => {
+    var aaa = 0;
+    for (let i = 0; i < runningFundList.length; i++) {
+      aaa += runningFundList[i].funding_price * runningFundList[i].funding_sales;
+    }
+    console.log(noticeList, "노티스 리스트");
+    setTotalEth(aaa);
+  }, []);
   return (
     <div className="MyPageCreatorFrame">
       <AnimatePresence>{modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
@@ -89,7 +31,7 @@ const MyPageCreator = () => {
           </div>
           <div className="infoNumber">
             <div>ETH</div>
-            <div>2.255</div>
+            <div>{totalEth}</div>
           </div>{" "}
         </div>
         <div className="creatorNoticeSection">
@@ -98,9 +40,9 @@ const MyPageCreator = () => {
             <div className="noticeShowAll">Show All</div>
           </div>
           <div className="noticeList">
-            {block.map(() => (
+            {noticeList.map((item) => (
               <motion.div className="noticeWrap" whileHover={{ scale: 1.01 }}>
-                <div className="date">2023-02-13</div>
+                <div className="date">{(date = itme.created_at)}</div>
                 <div className="title">Fundding Title</div>
                 <div className="infoFrame">
                   <div>공지내용</div>
@@ -118,14 +60,22 @@ const MyPageCreator = () => {
             <div className="button">펀 딩 등 록</div>
           </div>
           <div className="funddingList">
-            {FunddingDateItem.map((item) => (
+            {runningFundList.map((item) => (
               <div className="funddingItemBox">
                 <div className="infoSection">
-                  <div className="funddingTitle">{item.funddingTitle}</div>
-                  <div className="funddingDate">{item.funddingDate}</div>
-                  <div className="unitPrice">{item.unitPrice}</div>
-                  <div className="leftDay">{item.leftDay}</div>
-                  <div className="quantityPercentage">{item.quantity}</div>
+                  <div className="funddingTitle">{item.funding_title}</div>
+                  <div className="funddingDate">
+                    {item.funding_start_date.split("T")[0]}~{item.funding_finish_date.split("T")[0]}
+                  </div>
+                  <div className="unitPrice">{item.funding_price}</div>
+                  <div className="leftDay">
+                    종료까지 {Math.floor((new Date(item.funding_finish_date).getTime() / 1000 - new Date().getTime() / 1000) / 3600)}
+                    시간
+                  </div>
+                  <div className="quantityPercentage">
+                    판매 수량 : {item.funding_sales}
+                    남은 수량 : {item.funding_hard_cap - item.funding_sales}
+                  </div>
                 </div>
                 <div className="musicInputButton">
                   <motion.div className="buttonLine" onClick={() => (modalOpen ? close() : open())} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -154,19 +104,19 @@ export default MyPageCreator;
 
     const MyPageCreater = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [totalEth, setTotalEth] = useState();
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   const runningFundList = useSelector((state) => state.myPageInfo.runningFundList);
-
+  
+  const [totalEth, setTotalEth] = useState();
   useEffect(() => {
     var aaa = 0;
-    // runningFundList.map((e) => {
-    //   console.log(e.funding_price * e.funding_sales, "누적 판매 가격");
-    //   aaa += e.funding_price * e.funding_sales;
-    //   console.log(aaa, "aaagoodgood");
-    //   return aaa;
-    // });
+    runningFundList.map((e) => {
+      console.log(e.funding_price * e.funding_sales, "누적 판매 가격");
+      aaa += e.funding_price * e.funding_sales;
+      console.log(aaa, "aaagoodgood");
+      return aaa;
+    });
     for (let i = 0; i < runningFundList.length; i++) {
       aaa += runningFundList[i].funding_price * runningFundList[i].funding_sales;
     }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MyPageFirstContainer, MyPageSecondContainer, MyPageThirdContainer } from "@/components/mypage";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMyNftList, fetchMyPage, myNftList, myRunningFundList } from "@/middleware/fetchMypage";
+import { fetchMyNftList, fetchMyPage, getNotice, myNftList, myRunningFundList } from "@/middleware/fetchMypage";
 const MyPage = () => {
   const [selectedOption, setSelectedOption] = useState(0);
   const dispatch = useDispatch();
@@ -19,6 +19,7 @@ const MyPage = () => {
     if (isCreator) {
       console.log(isCreator, "ssississississi");
       dispatch(myRunningFundList({ user_wallet_address }));
+      dispatch(getNotice({ user_wallet_address }));
     }
   }, [user_wallet_address]);
 

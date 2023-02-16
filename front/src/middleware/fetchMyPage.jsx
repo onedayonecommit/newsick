@@ -68,3 +68,16 @@ export const myRunningFundList = createAsyncThunk("mypage/running-fund", async (
     console.log(error);
   }
 });
+
+export const getNotice = createAsyncThunk("fund/notice/get", async (data) => {
+  try {
+    const getNoticeList = await axios({
+      method: "post",
+      url: "http://localhost:8080/fund/notice/get",
+      data: data,
+    });
+    return getNoticeList.data;
+  } catch (error) {
+    console.log(error);
+  }
+});
