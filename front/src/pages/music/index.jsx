@@ -24,6 +24,14 @@ const newSongItem =[
   { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
   { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
   { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
+  { img:parkImg,musicName:"Music Name",singerName:"Signer Name"},
 ]
 
 const topChartItem = [
@@ -69,6 +77,27 @@ const topChartItem = [
         singerName:"Singer Name",
         lapTime:"3:36",
     },
+    {
+        img:ironImg,
+        rank:7,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
+    {
+        img:ironImg,
+        rank:8,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
+    {
+        img:ironImg,
+        rank:9,
+        musicName:"Music Name",
+        singerName:"Singer Name",
+        lapTime:"3:36",
+    },
 ]
 const variantModal = {
     initial:{
@@ -87,7 +116,16 @@ const variantModal = {
         }
     }
 }
+const newSongVariant={
+    initial:{
+        x:"100vh",opacity:0
+    },
+    animate:{
+        x:0,opacity:1
+    },
+}
 const MusicContainer = () => {
+  const nuwSongListRef = useRef();
   const togglePointRef = useRef(null);
   const [toggle, setToggle] = useState(false);
   const [togglePointWidth, setTogglePointWidth] = useState(0);
@@ -294,25 +332,32 @@ const MusicContainer = () => {
   
 return (
   <div className='MusicContainerFrame'>
-      <div className='newSongSection'>
+      <div className='newSongSection' ref={nuwSongListRef}>
           <div className='text'>New Song</div>
-          <motion.div className='newSongList' drag="x" dragConstraints={{right:0,left:0}} >
+          <motion.div className='newSongList' drag="x" dragConstraints={nuwSongListRef} >
               {
-                  newSongItem.map((item)=>(
-                      <div className='newSongCard'>
-                          <Image src={item.img} alt="Park.jpg" className='newSongImg'/>
+                  newSongItem.map((item,index)=>(
+                    <motion.div className='newSongCard'
+                    variants={newSongVariant}
+                    key={index}
+                    initial="initial"
+                    animate="animate"
+                    // 차례대로 delay 하는 로직
+                    transition={{duration:0.3,type:"spring",delay:0.1*index}}
+                >   
+                          <Image src={item.img} alt="Park.jpg" className='newSongImg'  style={{webkitUserDrag:" none"}}/>
                           <div className='newSongTagFrame'>
                               <div>{item.musicName}</div>
                               <div>{item.singerName}</div>
                           </div>
-                      </div>
+                    </motion.div>
                   ))
               }
           </motion.div>
       </div>
       <div className='bottomFrame'>
           <div className='topChartSection'>
-              <div className='topChartTextFrame'>
+            <div className='topChartTextFrame' >
                   <div className='leftSide'>
                       <div className='text'>Top Chart</div>
                       <motion.div className='topRankToggle'>
@@ -331,7 +376,7 @@ return (
                   </div>
                   <div className='rightSide'>show All</div>
               </div>
-              <motion.div className='topChartList' drag="y"  dragConstraints={{top:0,bottom:0}}>
+              <motion.div className='topChartList'>
               {
                   topChartItem.map((item)=>(
                       <div className='musicTopItemBox'>

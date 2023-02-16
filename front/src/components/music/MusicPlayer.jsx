@@ -132,6 +132,14 @@ const MusicPlayer = ({layOutRef,isPlayerClick,playerClick}) => {
     const [isFlipped, setIsFlipped] = useState(false);
     const [listCount, setListCount] = useState(0);
     const [listItem,setListItem] =useState(slides)
+
+    const [liked, setLiked] = useState({});
+    const toggleLike = (id) => {
+      setLiked((prevLiked) => ({
+        ...prevLiked,
+        [id]: !prevLiked[id],
+      }));
+    };
     // 카드 뒤집기
     const FilippedChoice = ()=>{
       setIsFlipped(!isFlipped);
@@ -172,7 +180,7 @@ const MusicPlayer = ({layOutRef,isPlayerClick,playerClick}) => {
              variants={backVariant}
        >
                 <div className='listTopBar'>
-                <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} style={{cursor:"pointer"}}/>
+                <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick}/>
                   <div className='playListText'>PlayList</div>
                 </div>
                 <div className='listSection'>
@@ -203,8 +211,15 @@ const MusicPlayer = ({layOutRef,isPlayerClick,playerClick}) => {
                             whileTap={{scale:1.1}}
                            >
                             <motion.div className='listLeft'>
-                              <motion.span whileHover={{scale:1.1}} > 
-                                <FontAwesomeIcon icon={faHeart} className="likeButton"/>
+                            <motion.span 
+                              whileHover={{scale:1.1}} 
+                              onClick={() => toggleLike(list.id)}
+                              > 
+                                <FontAwesomeIcon icon={faHeart} className="likeButton"
+                                  style={{
+                                    color: liked[list.id] ? "white" : "transparent",
+                                  }}
+                                />
                               </motion.span>
                               <motion.div className='songInfo'>
                                 <Image src={list.image} alt="youn" className='songImg'/>
