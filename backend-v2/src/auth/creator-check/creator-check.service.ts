@@ -13,4 +13,12 @@ export class CreatorCheckService {
       return true;
     } else return false;
   }
+
+  async noticeOwnerCheck(creator_id: string, id: number) {
+    const result = await this.db.funding_notice.findFirst({
+      where: { id, creator_id },
+    });
+    if (result) return true;
+    else return false;
+  }
 }

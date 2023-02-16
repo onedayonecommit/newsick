@@ -10,6 +10,8 @@ import { FundSupplyUpdateController } from './fund-supply-update/fund-supply-upd
 import { FundSupplyUpdateService } from './fund-supply-update/fund-supply-update.service';
 import { RunningFundController } from '../mypage/running-fund/running-fund.controller';
 import { RunningFundService } from '../mypage/running-fund/running-fund.service';
+import { FundNoticeController } from './fund-notice/fund-notice.controller';
+import { FundNoticeService } from './fund-notice/fund-notice.service';
 
 @Module({
   controllers: [
@@ -17,6 +19,7 @@ import { RunningFundService } from '../mypage/running-fund/running-fund.service'
     OnGoingFundingController,
     FundSupplyUpdateController,
     RunningFundController,
+    FundNoticeController,
   ],
   providers: [
     CreateFundService,
@@ -26,6 +29,7 @@ import { RunningFundService } from '../mypage/running-fund/running-fund.service'
     OnGoingFundingService,
     FundSupplyUpdateService,
     RunningFundService,
+    FundNoticeService,
   ],
 })
 export class FundModule {}

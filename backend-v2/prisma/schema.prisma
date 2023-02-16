@@ -18,6 +18,7 @@ model user{
   user_profile_image String @default("default_profile_image.jpeg") // 유저 프로필 사진 S3파일 키값
   created_at DateTime @default(now()) // 생성 시점
   updated_at DateTime @default(now()) @updatedAt // 유저 정보 변경 시점
+  funding_notice funding_notice[]
   creator creator[] 
   ticket ticket[]
   heart_music heart_music[]
@@ -65,10 +66,23 @@ model funding{
   funding_price Decimal @db.Decimal(24,18)
   funding_hard_cap Int
   funding_sales Int @default(0)
+  funding_notice funding_notice[]
   funding_music funding_music[]
   music_maker music_maker[]
   lyrics_maker lyrics_maker[]
   singer singer[]
+}
+
+model funding_notice{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  creator_ids user @relation(fields: [creator_id],references: [user_wallet_address])
+  creator_id String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+  title String @db.VarChar(100)
+  content String @db.VarChar(5000)
 }
 
 model music_maker{
