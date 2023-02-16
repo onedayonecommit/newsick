@@ -18,6 +18,7 @@ const nft_storage_module_1 = require("./nft-storage/nft-storage.module");
 const auth_module_1 = require("./auth/auth.module");
 const mypage_module_1 = require("./mypage/mypage.module");
 const search_module_1 = require("./search/search.module");
+const simple_test_module_1 = require("./simple-test/simple-test.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -33,6 +34,7 @@ AppModule = __decorate([
             auth_module_1.AuthModule,
             mypage_module_1.MypageModule,
             search_module_1.SearchModule,
+            simple_test_module_1.SimpleTestModule,
         ],
         controllers: [],
         providers: [],

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { funding, user } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
-import { heartMusicDto, playlistInfoDto } from './mypage.dto';
+import { heartMusicDto, heartNftDto, playlistInfoDto } from './mypage.dto';
 
 @Injectable()
 export class MypageService {
@@ -29,12 +29,10 @@ export class MypageService {
           normal_music_id: null,
         });
       } else if (e.funding_music_id == null && e.normal_music_id != null) {
-        console.log('hi');
         heartMusicArray.push({
           normal_music_id: e.normal_music_id,
           funding_music_id: null,
         });
-        console.log('sisbal', heartMusicArray);
       }
     });
     result.playlist.map((e) => {
@@ -69,7 +67,6 @@ export class MypageService {
       const result = await this.db.funding.findUnique({
         where: { id: id[i] },
       });
-      console.log(result);
       resultDto.push(result);
     }
     return resultDto;
@@ -117,5 +114,34 @@ export class MypageService {
       }
     }
     return resultDto;
+  }
+
+  async myPageList(dto: heartNftDto) {
+    const nftResult = await this.db.heart_nft.findMany({
+      where: { user_id: dto.user_wallet_address },
+    });
+    const fundingResult = await this.db.heart_funding.findMany({
+      where: { user_id: dto.user_wallet_address },
+    });
+    const heartNftList = Promise.all(
+      nftResult.map(async (e) => {
+        const result = await this.db.funding.findUnique({
+          where: { id: e.funding_id },
+        });
+        return { heartNftList: result };
+      }),
+    );
+    const heartFundingList = Promise.all(
+      fundingResult.map(async (e) => {
+        const result = await this.db.funding.findUnique({
+          where: { id: e.funding_id },
+        });
+        return { heartFundingList: result };
+      }),
+    );
+    return {
+      nftList: await heartNftList,
+      fundingList: await heartFundingList,
+    };
   }
 }

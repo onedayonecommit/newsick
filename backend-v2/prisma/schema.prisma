@@ -11,28 +11,30 @@ datasource db {
 }
 
 model user{
-  id Int @default(autoincrement()) @id
-  user_email String @unique
-  user_wallet_address String @unique
-  user_name String @unique
-  user_profile_image String @default("default_profile_image.png")
-  created_at DateTime @default(now())
-  updated_at DateTime @default(now()) @updatedAt
-  creator creator[]
+  id Int @default(autoincrement()) @id // 프라이머리 키 의미 없음
+  user_email String @unique // 유저 이메일 중복 X
+  user_wallet_address String @unique // 유저 지갑주소 중복 X
+  user_name String @unique // 유저가 사용할 닉네임 중복 X
+  user_profile_image String @default("default_profile_image.jpeg") // 유저 프로필 사진 S3파일 키값
+  created_at DateTime @default(now()) // 생성 시점
+  updated_at DateTime @default(now()) @updatedAt // 유저 정보 변경 시점
+  funding_notice funding_notice[]
+  creator creator[] 
   ticket ticket[]
   heart_music heart_music[]
   heart_funding heart_funding[]
   playlist playlist[]
+  heart_nft heart_nft[]
 }
 
 model admin{
-  admin_id String @id
-  admin_password String
+  admin_id String @id 
+  admin_password String 
 }
 
 model creator{
-  creators_id user @relation(fields : [creator_id],references: [user_wallet_address])
-  creator_id String @id
+  creators_id user @relation(fields : [creator_id],references: [user_wallet_address]) // user테이블에서 id fk로 받은거
+  creator_id String @id // 위에
   is_creator Boolean @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
@@ -61,10 +63,26 @@ model funding{
   discord_address String
   nft_name String
   created_at DateTime @default(now()) @db.Timestamp(3)
+  funding_price Decimal @db.Decimal(24,18)
+  funding_hard_cap Int
+  funding_sales Int @default(0)
+  funding_notice funding_notice[]
   funding_music funding_music[]
   music_maker music_maker[]
   lyrics_maker lyrics_maker[]
   singer singer[]
+}
+
+model funding_notice{
+  id Int @default(autoincrement()) @id
+  funding_ids funding @relation(fields: [funding_id],references: [id])
+  funding_id Int
+  creator_ids user @relation(fields: [creator_id],references: [user_wallet_address])
+  creator_id String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+  title String @db.VarChar(100)
+  content String @db.VarChar(5000)
 }
 
 model music_maker{
@@ -99,16 +117,16 @@ model singer{
 model funding_music{
   funding_ids funding @relation(fields: [funding_id],references: [id])
   funding_id Int @id
-  music_name String // 곡 제목 필수
+  music_name String @default("") // 곡 제목 필수
   music_lyrics String? @db.VarChar(5000) // 가사 
-  music_genre String // 장르1 필수
-  music_maker String // 작곡가 필수
+  music_genre String @default("") // 장르1 필수
+  music_maker String @default("") // 작곡가 필수
   lyrics_maker String? // 작사가 
   singer String? // 가수
   music_cover_image String @default("default_music_image.png")
-  album_name String
+  album_name String?
   title Boolean @default(false)
-  music_path String
+  music_path String @default("")
   pending_status Boolean @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
@@ -165,5 +183,12 @@ model heart_funding{
   id Int @default(autoincrement()) @id
   user_ids user @relation(fields: [user_id],references: [user_wallet_address])
   user_id String 
+  funding_id Int
+}
+
+model heart_nft{
+  id Int @default(autoincrement()) @id
+  user_ids user @relation(fields: [user_id],references: [user_wallet_address])
+  user_id String
   funding_id Int
 }

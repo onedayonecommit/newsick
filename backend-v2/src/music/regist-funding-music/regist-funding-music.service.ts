@@ -24,9 +24,9 @@ export class RegistFundingMusicService {
     } = dto;
     const imgUrl = await this.uploadService.uploadFile(files.cover_image[0]);
     const mp3Url = await this.uploadService.uploadFile(files.mp3_file[0]);
-    const result = await this.db.funding_music.create({
+    const result = await this.db.funding_music.update({
+      where: { funding_id: funding_id },
       data: {
-        funding_id: funding_id,
         music_name: music_name,
         music_lyrics: music_lyrics,
         music_genre: music_genre,

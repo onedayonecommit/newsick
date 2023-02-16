@@ -1,9 +1,10 @@
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion,useAnimation } from 'framer-motion';
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated, fetchUserCheck } from "../middleware/fetchUser";
 import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
+import SuccessLog from '@/components/eventComponent/SuccessLog';
 
 const SignUp = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -16,6 +17,17 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const [linkedAccount, setLinkedAccount] = useState("");
   const createStatus = useSelector((state) => state.userInfo.createStatus);
+
+  //===========================20230212 추가된부분
+  const [isFalseText,setIsFalseText] =useState();
+  const falseText = () =>{
+    setIsFalseText(!isFalseText)
+  }
+  const [modalOpen,setModalOpen] = useState(false);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
+  //===========================20230212 추가된부분
+
 
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
@@ -105,21 +117,34 @@ const SignUp = () => {
 
   return (
     <div className="signUpPageBackGround">
+        <AnimatePresence>
+           {modalOpen && <SuccessLog modalOpen={modalOpen} handleClose={close}/>}
+        </AnimatePresence>
       <div className="signUpFrame">
         <div className="signUpSection">
-          <div className="signUpTitle">SIGN UP</div>
+          <div className="signUpTitle" onClick={falseText}>SIGN UP</div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
-              <div className="nameInput">
+              <motion.div className="nameInput"
+                initial={{ x: 0 }}
+                animate={isFalseText?{ x: [0, -15, 15, 0] }:{x:0}}
+                style={isFalseText?{border:"1px solid red"}:{border:"1px solid white"}}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              >
                 <input ref={userNameRef} type="text" name="user_name" />
-              </div>
+              </motion.div>
             </div>
             <div className="userEmailSection">
               <div className="emailText">USER E-MAIL</div>
-              <div className="emailInput">
+              <motion.div className="emailInput"
+                initial={{ x: 0 }}
+                animate={isFalseText?{ x: [0, -15, 15, 0] }:{x:0}}
+                style={isFalseText?{border:"1px solid red"}:{border:"1px solid white"}}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+              >
                 <input ref={userEmailInput} type="text" name="user_email" />
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className="signUpChoiceSection">
@@ -128,8 +153,8 @@ const SignUp = () => {
               <motion.div className="userButton" animate={backgroundColorControls} onTap={() => setIsCreator(false)}>
                 USER
               </motion.div>
-              <motion.div className="createrButton" animate={backgroundColorControls2} onTap={() => setIsCreator(true)}>
-                CREATER
+              <motion.div className="creatorButton" animate={backgroundColorControls2} onTap={() => setIsCreator(true)}>
+                CREATOR
               </motion.div>
             </div>
           </div>
@@ -139,7 +164,7 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-        <div className="imgSection" />
+        <div className='imgSection' onClick={()=>(modalOpen ? close():open())} />
       </div>
     </div>
   );

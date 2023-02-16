@@ -22,3 +22,8 @@ export class playlistInfoDto {
   @IsOptional()
   normal_music_id: number;
 }
+
+export class heartNftDto {
+  @IsString()
+  user_wallet_address: string;
+}

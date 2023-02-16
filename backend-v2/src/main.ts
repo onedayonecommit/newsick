@@ -1,5 +1,8 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { PrismaClient } from '@prisma/client';
+import { hi2 } from 'src/contractInfo';
+import { ethers } from 'ethers';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -14,9 +17,23 @@ async function bootstrap() {
   );
   await app.listen(8080);
 
-  // setInterval(() => {
-  //   if (Math.floor(new Date().getTime() / 1000) % 86400 == 0) {
-  //   }
-  // }, 1000);
+  const prisma = new PrismaClient();
+  setInterval(async () => {
+    // const eachETH = 0.000001;
+    // let totalETH = 0;
+    if ((Math.floor(new Date().getTime() / 1000) + 32400) % 86400 == 0) {
+      // const arr = [];
+      console.log('정각임', new Date());
+      // const result = await prisma.funding_music_player.findMany();
+      // result.map((e) => {
+      //   arr.push(ethers.parseEther(`${e.player_count * eachETH}`));
+      //   totalETH += e.player_count * eachETH;
+      // });
+      // await hi2({ value: ethers.parseEther(`${totalETH}`), amount: arr });
+      // await prisma.funding_music_player.updateMany({
+      //   data: { player_count: 0 },
+      // });
+    }
+  }, 1000);
 }
 bootstrap();

@@ -8,7 +8,7 @@ export class JoinController {
   constructor(private readonly joinService: JoinService) {}
 
   @Post('join')
-  async userJoin(@Body() joinDto): Promise<user | string> {
+  async userJoin(@Body() joinDto: joinDto): Promise<user | string> {
     console.log('가입 신청');
     return await this.joinService.userJoin(joinDto);
   }
