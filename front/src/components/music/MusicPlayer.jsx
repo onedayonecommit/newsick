@@ -1,11 +1,7 @@
 import React, { useReducer, useState } from "react";
 import { AnimatePresence, motion, Reorder } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faHeart,
-  faList,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faHeart, faList } from "@fortawesome/free-solid-svg-icons";
 import ironImage from "../../../public/image/IRON2.jpg";
 import leeImage from "../../../public/image/lee.jpg";
 import ParkImage from "../../../public/image/park.jpg";
@@ -169,8 +165,7 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
   if (event.type === "PREV") {
     return {
       ...state,
-      slideIndex:
-        state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
+      slideIndex: state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
     };
   }
 };
@@ -192,18 +187,9 @@ return (
       bounce: 0.5,
     }}
   >
-    <motion.div
-      className="songListSection"
-      initial="hidden"
-      animate={isFlipped ? "visible" : "hidden"}
-      variants={backVariant}
-    >
+    <motion.div className="songListSection" initial="hidden" animate={isFlipped ? "visible" : "hidden"} variants={backVariant}>
       <div className="listTopBar">
-        <FontAwesomeIcon
-          icon={faArrowLeft}
-          className="backToMain"
-          onClick={playerClick}
-        />
+        <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} />
         <div className="playListText">PlayList</div>
       </div>
       <div className="listSection">
@@ -214,32 +200,12 @@ return (
           </div>
           <div className="sortButton">정렬</div>
         </div>
-        <Reorder.Group
-          className="listFrame"
-          axis="y"
-          values={listItem}
-          onReorder={setListItem}
-        >
+        <Reorder.Group className="listFrame" axis="y" values={listItem} onReorder={setListItem}>
           <AnimatePresence>
             {slides.map((list, index) => (
-              <Reorder.Item
-                className="listSongItem"
-                key={list.id}
-                value={list}
-                variants={itemVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                layoutId={list.id}
-                custom={(index + 1) * 0.2}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 1.1 }}
-              >
+              <Reorder.Item className="listSongItem" key={list.id} value={list} variants={itemVariants} initial="hidden" animate="visible" exit="hidden" layoutId={list.id} custom={(index + 1) * 0.2} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.1 }}>
                 <motion.div className="listLeft">
-                  <motion.span
-                    whileHover={{ scale: 1.1 }}
-                    onClick={() => toggleLike(list.id)}
-                  >
+                  <motion.span whileHover={{ scale: 1.1 }} onClick={() => toggleLike(list.id)}>
                     <FontAwesomeIcon
                       icon={faHeart}
                       className="likeButton"
@@ -264,19 +230,10 @@ return (
           </AnimatePresence>
         </Reorder.Group>
       </div>
-      <MusicPlayerListBar
-        image={slides[listCount].image}
-        FilippedChoice={FilippedChoice}
-      />
+      <MusicPlayerListBar image={slides[listCount].image} FilippedChoice={FilippedChoice} />
     </motion.div>
     {/* ===============================================================위에가 playList */}
-    <motion.div
-      className="songDetailSection"
-      initial="visible"
-      animate={isFlipped ? "hidden" : "visible"}
-      variants={frontVariant}
-      style={isFlipped ? { pointerEvents: "none" } : ""}
-    >
+    <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant} style={isFlipped ? { pointerEvents: "none" } : ""}>
       <div className="listTopBar">
         <FontAwesomeIcon icon={faArrowLeft} />
         <div className="playListText">PlayList</div>
@@ -287,32 +244,16 @@ return (
       </div>
       <MusicPlayerPlayBar />
     </motion.div>
-    <motion.div
-      className="songDetailSection"
-      initial="visible"
-      animate={isFlipped ? "hidden" : "visible"}
-      variants={frontVariant}
-    >
+    <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant}>
       <div className="slideSection">
         <div className="slideBackground" />
-        <FontAwesomeIcon
-          icon={faArrowLeft}
-          className="backToMain"
-          onClick={playerClick}
-        />
+        <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} />
         <div className="slideList">
           <div className="slides">
             <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
             {[...slides, ...slides, ...slides].map((slide, i) => {
               let offset = slides.length + (state.slideIndex - i);
-              return (
-                <MusicSlideForm
-                  slide={slide}
-                  offset={offset}
-                  key={i}
-                  image={slide.image}
-                />
-              );
+              return <MusicSlideForm slide={slide} offset={offset} key={i} image={slide.image} />;
             })}
             <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
           </div>
