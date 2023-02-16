@@ -3,5 +3,5 @@ import { buyTicketDto } from './buy-ticket.dto';
 export declare class BuyTicketService {
     private readonly db;
     constructor(db: PrismaService);
-    buyTicket(dto: buyTicketDto): Promise<any>;
+    buyTicket(dto: buyTicketDto): Promise<import(".prisma/client").user>;
 }

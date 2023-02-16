@@ -5,5 +5,5 @@ export declare class RegistFundingMusicService {
     private readonly db;
     private readonly uploadService;
     constructor(db: PrismaService, uploadService: FileUploadService);
-    registFundMusic(files: any, dto: fundingMusicDto): Promise<any>;
+    registFundMusic(files: any, dto: fundingMusicDto): Promise<import(".prisma/client").funding_music>;
 }

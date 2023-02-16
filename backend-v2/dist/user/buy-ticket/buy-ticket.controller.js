@@ -21,7 +21,7 @@ let BuyTicketController = class BuyTicketController {
         this.buyTicketService = buyTicketService;
     }
     async buyTicket(dto) {
-        return await this.buyTicketService;
+        return await this.buyTicketService.buyTicket(dto);
     }
 };
 __decorate([
