@@ -168,103 +168,105 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
       slideIndex: state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
     };
   }
-};
-const initialState = {
-  slideIndex: 0,
-};
-const [state, dispatch] = useReducer(slidesReducer, initialState);
-return (
-  <motion.div
-    className="MusicPlayFrame"
-    drag
-    dragConstraints={layOutRef}
-    variants={musicPlayerOpen}
-    initial={isPlayerClick ? "animate" : "initial"}
-    animate={!isPlayerClick ? "initial" : "animate"}
-    transition={{
-      type: "spring",
-      duration: 0.75,
-      bounce: 0.5,
-    }}
-  >
-    <motion.div className="songListSection" initial="hidden" animate={isFlipped ? "visible" : "hidden"} variants={backVariant}>
-      <div className="listTopBar">
-        <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} />
-        <div className="playListText">PlayList</div>
-      </div>
-      <div className="listSection">
-        <div className="listControlBar">
-          <div className="dropDownFrame">
-            <div className="totalNum">총곡개수</div>
-            <div className="dropDown">플레이리스트보기 ▽</div>
-          </div>
-          <div className="sortButton">정렬</div>
+
+  const initialState = {
+    slideIndex: 0,
+  };
+
+  const [state, dispatch] = useReducer(slidesReducer, initialState);
+  return (
+    <motion.div
+      className="MusicPlayFrame"
+      drag
+      dragConstraints={layOutRef}
+      variants={musicPlayerOpen}
+      initial={isPlayerClick ? "animate" : "initial"}
+      animate={!isPlayerClick ? "initial" : "animate"}
+      transition={{
+        type: "spring",
+        duration: 0.75,
+        bounce: 0.5,
+      }}
+    >
+      <motion.div className="songListSection" initial="hidden" animate={isFlipped ? "visible" : "hidden"} variants={backVariant}>
+        <div className="listTopBar">
+          <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} />
+          <div className="playListText">PlayList</div>
         </div>
-        <Reorder.Group className="listFrame" axis="y" values={listItem} onReorder={setListItem}>
-          <AnimatePresence>
-            {slides.map((list, index) => (
-              <Reorder.Item className="listSongItem" key={list.id} value={list} variants={itemVariants} initial="hidden" animate="visible" exit="hidden" layoutId={list.id} custom={(index + 1) * 0.2} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.1 }}>
-                <motion.div className="listLeft">
-                  <motion.span whileHover={{ scale: 1.1 }} onClick={() => toggleLike(list.id)}>
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      className="likeButton"
-                      style={{
-                        color: liked[list.id] ? "white" : "transparent",
-                      }}
-                    />
-                  </motion.span>
-                  <motion.div className="songInfo">
-                    <Image src={list.image} alt="youn" className="songImg" />
-                    <motion.div className="infoFrame">
-                      <motion.div>{list.songName}</motion.div>
-                      <motion.div>{list.singerName}</motion.div>
+        <div className="listSection">
+          <div className="listControlBar">
+            <div className="dropDownFrame">
+              <div className="totalNum">총곡개수</div>
+              <div className="dropDown">플레이리스트보기 ▽</div>
+            </div>
+            <div className="sortButton">정렬</div>
+          </div>
+          <Reorder.Group className="listFrame" axis="y" values={listItem} onReorder={setListItem}>
+            <AnimatePresence>
+              {slides.map((list, index) => (
+                <Reorder.Item className="listSongItem" key={list.id} value={list} variants={itemVariants} initial="hidden" animate="visible" exit="hidden" layoutId={list.id} custom={(index + 1) * 0.2} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.1 }}>
+                  <motion.div className="listLeft">
+                    <motion.span whileHover={{ scale: 1.1 }} onClick={() => toggleLike(list.id)}>
+                      <FontAwesomeIcon
+                        icon={faHeart}
+                        className="likeButton"
+                        style={{
+                          color: liked[list.id] ? "white" : "transparent",
+                        }}
+                      />
+                    </motion.span>
+                    <motion.div className="songInfo">
+                      <Image src={list.image} alt="youn" className="songImg" />
+                      <motion.div className="infoFrame">
+                        <motion.div>{list.songName}</motion.div>
+                        <motion.div>{list.singerName}</motion.div>
+                      </motion.div>
                     </motion.div>
                   </motion.div>
-                </motion.div>
-                <motion.span className="dragButton">
-                  <FontAwesomeIcon icon={faList} />
-                </motion.span>
-              </Reorder.Item>
-            ))}
-          </AnimatePresence>
-        </Reorder.Group>
-      </div>
-      <MusicPlayerListBar image={slides[listCount].image} FilippedChoice={FilippedChoice} />
-    </motion.div>
-    {/* ===============================================================위에가 playList */}
-    <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant} style={isFlipped ? { pointerEvents: "none" } : ""}>
-      <div className="listTopBar">
-        <FontAwesomeIcon icon={faArrowLeft} />
-        <div className="playListText">PlayList</div>
-      </div>
-      <div className="listSection">
-        <div className="listControlBar"></div>
-        <div className="listFrame"></div>
-      </div>
-      <MusicPlayerPlayBar />
-    </motion.div>
-    <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant}>
-      <div className="slideSection">
-        <div className="slideBackground" />
-        <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} />
-        <div className="slideList">
-          <div className="slides">
-            <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
-            {[...slides, ...slides, ...slides].map((slide, i) => {
-              let offset = slides.length + (state.slideIndex - i);
-              return <MusicSlideForm slide={slide} offset={offset} key={i} image={slide.image} />;
-            })}
-            <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+                  <motion.span className="dragButton">
+                    <FontAwesomeIcon icon={faList} />
+                  </motion.span>
+                </Reorder.Item>
+              ))}
+            </AnimatePresence>
+          </Reorder.Group>
+        </div>
+        <MusicPlayerListBar image={slides[listCount].image} FilippedChoice={FilippedChoice} />
+      </motion.div>
+      {/* ===============================================================위에가 playList */}
+      <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant} style={isFlipped ? { pointerEvents: "none" } : ""}>
+        <div className="listTopBar">
+          <FontAwesomeIcon icon={faArrowLeft} />
+          <div className="playListText">PlayList</div>
+        </div>
+        <div className="listSection">
+          <div className="listControlBar"></div>
+          <div className="listFrame"></div>
+        </div>
+        <MusicPlayerPlayBar />
+      </motion.div>
+      <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant}>
+        <div className="slideSection">
+          <div className="slideBackground" />
+          <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} />
+          <div className="slideList">
+            <div className="slides">
+              <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+              {[...slides, ...slides, ...slides].map((slide, i) => {
+                let offset = slides.length + (state.slideIndex - i);
+                return <MusicSlideForm slide={slide} offset={offset} key={i} image={slide.image} />;
+              })}
+              <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="lyricsSection">
-        <div className="lyricsFrame">가사</div>
-      </div>
-      <MusicPlayerPlayBar FilippedChoice={FilippedChoice} />
+        <div className="lyricsSection">
+          <div className="lyricsFrame">가사</div>
+        </div>
+        <MusicPlayerPlayBar FilippedChoice={FilippedChoice} />
+      </motion.div>
     </motion.div>
-  </motion.div>
-);
+  );
+};
 
 export default MusicPlayer;
