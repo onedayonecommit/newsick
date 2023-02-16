@@ -8,7 +8,6 @@ const MyPageCreator = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
-  const block = Array.from({ length: 5 }, () => <div></div>);
   const runningFundList = useSelector((state) => state.myPageInfo.runningFundList);
   const noticeList = useSelector((state) => state.myPageInfo.noticeList);
   const [totalEth, setTotalEth] = useState();
@@ -42,7 +41,7 @@ const MyPageCreator = () => {
           <div className="noticeList">
             {noticeList.map((item) => (
               <motion.div className="noticeWrap" whileHover={{ scale: 1.01 }}>
-                <div className="date">{(date = itme.created_at)}</div>
+                <div className="date">regist date</div>
                 <div className="title">Fundding Title</div>
                 <div className="infoFrame">
                   <div>공지내용</div>

@@ -11574,16 +11574,16 @@ body {
           width: 1124px;
           height: 1686px;
           display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
+          flex-direction: column;
+          justify-content: flex-start;
           overflow: visible;
           position: relative;
           padding: 0px 0px 0px 0px;
-          align-content: center;
+          align-content: flex-start;
           flex-wrap: wrap;
           gap: 50px;
           border-radius: 0px 0px 0px 0px;
+          align-items: center;
           .ownedNftBox {
             box-sizing: border-box;
             flex-shrink: 0;
