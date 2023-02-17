@@ -6,15 +6,6 @@ import { useRouter } from "next/router";
 import useWeb3 from "../hooks/useWeb3";
 import { userAction } from "@/redux/userSlice";
 
-/**계정 전환했을 때 reset 시켜줄 초기 값 */
-const userStateReset = {
-  address: "",
-  userName: "",
-  userEmail: "",
-  isCreator: false,
-  createStatus: false,
-};
-
 // 계정을 바꾸면 다시 버튼이 생겨야함! 자동으로 로그아웃!
 const ConnectWallet = () => {
   const [account, setAccount] = useState("");
@@ -63,6 +54,7 @@ const ConnectWallet = () => {
     })();
   }, [web3, account]);
 
+  // 아래의 getAccoun
   useEffect(() => {
     (async () => {
       if (!web3) return;

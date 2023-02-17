@@ -2,7 +2,6 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import myPageSlice from "./myPageSlice";
 // slice 에서 export한 것 들!
 import userSlice from "./userSlice";
 
@@ -17,7 +16,6 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   userInfo: userSlice.reducer,
-  myPageInfo: myPageSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -20,11 +20,79 @@ const nftData = [
         info:"정보 텍스트",
     },
 ]
-
+const historyItem =[
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+    {
+        nftTitle:"NFT TITLE",
+        itemState:"미체결",
+        paymentTime:"2022.02.11 / 23:14",
+        itemPrice:0.2,
+        theNumber:120,
+    },
+]
 
 const NftDetailContainer = () => {
     const [selectedDiv, setSelectedDiv] = useState("div1")
-    
+    const [selectedTab, setSelectedTab] = useState("buy");
+    const handleTabClick = (tab) => {
+      setSelectedTab(tab);
+    };
+
     const block = Array.from({length:5},()=>(<div></div>))
 
     const handleClick = (id) => {
@@ -90,55 +158,206 @@ const NftDetailContainer = () => {
             </div>
             <div className='orderSection'>
                 <div className='categorySection'>
-                    <div className='buyTap'>매수</div>
-                    <div className='sellTap'>매도</div>
-                    <div className='historyTap'>거래내역</div>
-                </div>
-                <div className='inputSection'>
-                    <div className='inputList'>
-                        <div className='canOrderPriceSection'>
-                            <div className='leftSection'>
-                                <div className='text'>주문 가능</div>
-                            </div>
-                            <div className='RightSection'>
-                                <div className='inputSection'>
-                                    <div></div>
-                                    <div>KRW</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='buyPriceSection'>
-                            <div className='leftSection'>
-                                <div className='text'>매수 가격</div>
-                            </div>
-                            <div className='rightSection'>
-                                <input/>
-                            </div>
-                        </div>
-                        <div className='orderQuantitySection'>
-                        <div className='leftSection'>
-                                <div className='text'>주문 수량</div>
-                            </div>
-                            <div className='rightSection'>
-                                <input/>
-                            </div>
-                        </div>
-                        <div className='orderPriceSection'>
-                        <div className='leftSection'>
-                                <div className='text'>주문 총액</div>
-                            </div>
-                            <div className='RightSection'>
-                                <div className='inputSection'>
-                                    <div></div>
-                                    <div>KRW</div>
-                                </div>
-                            </div>
-                        </div>
+                        <div
+                        className={`tab ${selectedTab === "buy" ? "selected" : "unSelected"}`}
+                        onClick={() => handleTabClick("buy")}
+                        >매수
+                        {selectedTab === "buy" && (
+                          <motion.div
+                            className="underline"
+                            layoutId="underline"
+                            transition={{ duration: 0.2, type:"spring" }}
+                          />
+                        )}
                     </div>
-                    <div className='loginButtonSection'>
-                        <div className='loginButton'>LOGIN</div>
+                    <div 
+                        className={`tab ${selectedTab === "sell" ? "selected" : "unSelected"}`}
+                        onClick={() => handleTabClick("sell")}
+                        >매도
+                        {selectedTab === "sell" && (
+                          <motion.div
+                            className="underline"
+                            layoutId="underline"
+                            transition={{ duration: 0.2 ,type:"spring"}}
+                          />
+                        )}    
+                    </div>
+                    <div 
+                        className={`tab ${selectedTab === "history" ? "selected" : "unSelected"}`}
+                        onClick={() => handleTabClick("history")}
+                        >거래내역
+                        {selectedTab === "history" && (
+                          <motion.div
+                            className="underline"
+                            layoutId="underline"
+                            transition={{ duration: 0.2 ,type:"spring"}}
+                          />
+                        )}
                     </div>
                 </div>
+                {selectedTab === "buy" && 
+                            <motion.div 
+                                className='inputSection'
+                                initial={{opacity:0}}
+                                animate={{opacity:1}}
+                                transition={{duration:0.2}}     
+                            >
+                                <div className='inputList'>
+                                    <motion.div className='canOrderPriceSection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.1}}
+                                    >
+                                        <div className='leftSection'>
+                                            <div className='text'>주문 가능</div>
+                                        </div>
+                                        <div className='RightSection'>
+                                            <div className='inputSection'>
+                                                <div></div>
+                                                <div>ETH</div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                    <motion.div className='buyPriceSection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.2}}
+                                    >
+                                        <div className='leftSection'>
+                                            <div className='text'>매수 가격</div>
+                                        </div>
+                                        <div className='rightSection'>
+                                            <input/>
+                                        </div>
+                                    </motion.div>
+                                    <motion.div className='orderQuantitySection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.3}}
+                                    >
+                                    <div className='leftSection'>
+                                            <div className='text'>주문 수량</div>
+                                        </div>
+                                        <div className='rightSection'>
+                                            <input/>
+                                        </div>
+                                    </motion.div>
+                                    <motion.div className='orderPriceSection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.4}}
+                                    >
+                                    <div className='leftSection'>
+                                            <div className='text'>주문 총액</div>
+                                        </div>
+                                        <div className='RightSection'>
+                                            <div className='inputSection'>
+                                                <div></div>
+                                                <div>ETH</div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </div>
+                                <div className='loginButtonSection'>
+                                    <div className='loginButton'>LOGIN</div>
+                                </div>
+                            </motion.div>
+                }
+                {selectedTab === "sell" && 
+                            <motion.div 
+                                className='inputSection'
+                                initial={{opacity:0}}
+                                animate={{opacity:1}}
+                                transition={{duration:0.2}}     
+                            >
+                                <div className='inputList'>
+                                    <motion.div className='canOrderPriceSection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.1}}
+                                    >
+                                        <div className='leftSection'>
+                                            <div className='text'>주문 가능</div>
+                                        </div>
+                                        <div className='RightSection'>
+                                            <div className='inputSection'>
+                                                <div></div>
+                                                <div>ETH</div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                    <motion.div className='buyPriceSection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.2}}
+                                    >
+                                        <div className='leftSection'>
+                                            <div className='text'>매도 가격</div>
+                                        </div>
+                                        <div className='rightSection'>
+                                            <input/>
+                                        </div>
+                                    </motion.div>
+                                    <motion.div className='orderQuantitySection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.3}}
+                                    >
+                                    <div className='leftSection'>
+                                            <div className='text'>주문 수량</div>
+                                        </div>
+                                        <div className='rightSection'>
+                                            <input/>
+                                        </div>
+                                    </motion.div>
+                                    <motion.div className='orderPriceSection'
+                                        initial={{opacity:0}}
+                                        animate={{opacity:1}}
+                                        transition={{duration:0.2,delay:0.4}}
+                                    >
+                                    <div className='leftSection'>
+                                            <div className='text'>주문 총액</div>
+                                        </div>
+                                        <div className='RightSection'>
+                                            <div className='inputSection'>
+                                                <div></div>
+                                                <div>ETH</div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </div>
+                                <div className='loginButtonSection'>
+                                    <div className='loginButton'>LOGIN</div>
+                                </div>
+                            </motion.div>
+                }
+                {selectedTab === "history" && 
+                            <motion.div 
+                            className='scrollSection'
+                            initial={{opacity:0}}
+                            animate={{opacity:1}}
+                            transition={{duration:0.2}}     
+                            >
+                        {
+                            historyItem.map((history,index)=>(
+                                <motion.div className='historyItemBox'
+                                    initial={{x:100,opacity:0}}
+                                    animate={{x:0,opacity:1}}
+                                    transition={{duration:0.3,type:"spring",delay:0.1*index}}
+                                >
+                                        <div className='nftTitle'>{history.nftTitle}</div>
+                                        <div className='rightInfoSection'>
+                                            <div className='itemState'>{history.itemState}</div>
+                                            <div className='paymentTime'>{history.paymentTime}</div>
+                                            <div className='itemPrice'>{history.itemPrice} ETH</div>
+                                            <div className='itemNumber'>{history.theNumber} 개</div>
+                                            <div className='deleteButton'>X</div>
+                                        </div>
+                                </motion.div>    
+                            ))
+                        }    
+                            </motion.div>
+                }
             </div>
         </div>
     </div>

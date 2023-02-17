@@ -1,16 +1,12 @@
 import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
-import { faMemory, faFileLines } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useWeb3 from "@/hooks/useWeb3";
 
-
-// 이거는 항상 NEXT 부분이 최신이니까 React 에서 받지 말것
-
-
-const FundingCreateContainer = () => {
+const FundingCreate = () => {
   // date 형식 맞춰
   const convertToTimestamp = (e) => {
     const _date = new Date(e);
@@ -90,19 +86,21 @@ const FundingCreateContainer = () => {
   };
 
   const makeFund = async () => {
-    let _fundingStruct = {
-      creator: userInfo.address, // 크리에이터
-      uri: fundInfo.metadataUrl, // 메타데이터
-      startdate: convertToTimestamp(data.funding_start_date), // 시작일
-      finishdate: convertToTimestamp(data.funding_finish_date), // 종료일
-      makedate: convertToTimestamp(data.funding_production_date), // 음원제작 기간
-      price: Number(await web3.utils.toWei(data.funding_price, "ether")), // 개당 가격
-      max: data.funding_min * 2, // 최대
-      holdershare: data.funding_holdershare, // 음원수익(홀더)
-    };
-    const _sendData_toContract = await NEWSIC_FUND.methods
-      ._setURI(_fundingStruct)
-      .send({ from: _fundingStruct.creator });
+    let _fundingStruct = [
+      userInfo.address, // 크리에이터
+      fundInfo.metadataUrl, // 메타데이터
+      // convertToTimestamp(data.funding_start_date), // 시작일
+      // convertToTimestamp(data.funding_finish_date), // 종료일
+      // convertToTimestamp(data.funding_production_date), // 음원제작 기간
+      Math.floor(new Date(data.funding_start_date).getTime() / 1000), // 시작일
+      Math.floor(new Date(data.funding_finish_date).getTime() / 1000), // 종료일
+      Math.floor(new Date(data.funding_production_date).getTime() / 1000), // 음원제작 기간
+      0, // 개당 가격
+      data.funding_min, // 최대
+      data.funding_holdershare, // 음원수익(홀더)
+    ];
+    console.log(_fundingStruct, "스트럭트");
+    const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(data.funding_price, "ether")).send({ from: userInfo.address });
 
     console.log(_sendData_toContract.events.createFund.returnValues);
     setData({
@@ -187,10 +185,7 @@ const FundingCreateContainer = () => {
             <div className="leftSection">
               <div>
                 <div>음악 대표 이미지</div>
-                <div>
-                  권장 크기 : 1000 x 1000 (1:1 비율)대표이미지 기준 1000x1000
-                  이상 이미지를 등록하시면, 이미지 확대 기능이 제공됩니다.
-                </div>
+                <div>권장 크기 : 1000 x 1000 (1:1 비율)대표이미지 기준 1000x1000 이상 이미지를 등록하시면, 이미지 확대 기능이 제공됩니다.</div>
               </div>
             </div>
             <div className="rightSection">
@@ -238,14 +233,9 @@ const FundingCreateContainer = () => {
                       : ""
                   }
                 >
-                  {isSubmissionButton
-                    ? "이미지 변경 불가"
-                    : "확정(IPFS 만들기)"}
+                  {isSubmissionButton ? "이미지 변경 불가" : "확정(IPFS 만들기)"}
                 </motion.div>
-                <div className="text">
-                "IPFS 등록 후 Metadata가 생성됩니다." "생성 후 NFT NAME, NFT
-                설명, 등록 이미지는 변경이 불가합니다."
-                </div>
+                <div className="text">"IPFS 등록 후 Metadata가 생성됩니다." "생성 후 NFT NAME, NFT 설명, 등록 이미지는 변경이 불가합니다."</div>
               </div>
             </div>
           </div>
@@ -311,22 +301,22 @@ const FundingCreateContainer = () => {
             </div>
           </div>
           <div className="nftPriceUnitSection">
-              <div className="nftPriceUnit">NFT 개당 가격</div>
-              <div className="rightSide">
-                <div className="nowText">실시간</div>
-                <input
-                  className="nftPriceUnitInput"
-                  type="number"
-                  placeholder="숫자만 입력"
-                  onChange={(e) => {
-                      setData({
-                          ...data,
-                          funding_price: e.target.value,
-                      });
-                  }}
-                  />
-                <div className="nowText">ETH</div>
-              </div>
+            <div className="nftPriceUnit">NFT 개당 가격</div>
+            <div className="rightSide">
+              <div className="nowText">실시간</div>
+              <input
+                className="nftPriceUnitInput"
+                type="number"
+                placeholder="숫자만 입력"
+                onChange={(e) => {
+                  setData({
+                    ...data,
+                    funding_price: e.target.value,
+                  });
+                }}
+              />
+              <div className="nowText">ETH</div>
+            </div>
           </div>
           <div className="minimumNumberSection">
             <div>
@@ -370,7 +360,8 @@ const FundingCreateContainer = () => {
               <div className="info">* 음원 수익 배분 100% 기준 /</div>
               <div className="contents">
                 <div>제작자 : 보유자 =</div>
-                <div>{Number(100 - share)}%</div><div>:</div>
+                <div>{Number(100 - share)}%</div>
+                <div>:</div>
                 <input
                   type="number"
                   onChange={(e) => {
@@ -387,7 +378,7 @@ const FundingCreateContainer = () => {
           <div className="genreSection">
             <div className="genreText">장르 선택</div>
             <select
-             className="dropDownBox"
+              className="dropDownBox"
               onChange={(e) => {
                 setData({
                   ...data,
@@ -608,4 +599,4 @@ const FundingCreateContainer = () => {
   );
 };
 
-export default FundingCreateContainer;
+export default FundingCreate;

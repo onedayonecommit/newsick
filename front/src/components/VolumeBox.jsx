@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, useDragControls, useMotionValue, useTransform } from "framer-motion";
 
 const VolumeBox = () => {

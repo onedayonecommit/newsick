@@ -5602,188 +5602,235 @@ body {
   line-height: 1.2;
 }
 
-.detailContainerFrame {
+.fundingDetailFrame {
+  box-sizing: border-box;
   flex-shrink: 0;
   width: 1359px;
   height: 950px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 40px 20px 40px 20px;
   background-color: #2b2f5f;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .fundingInfoSection {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame {
+  z-index: 99;
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0px;
+  border-radius: 25px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
 }
-.detailContainerFrame .swiper {
-  width: 100%;
-  height: 100%;
-}
-.detailContainerFrame .swiper-slide {
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.detailContainerFrame .detailContainerBack {
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImg {
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 639px;
-  height: 950px;
+  width: 500px;
+  height: 500px;
   display: block;
   overflow: hidden;
   position: relative;
-  background-image: url("../../public/image/Singer.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 25px;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 500px;
+  height: 120px;
+  display: block;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  border-radius: 0px 0px 25px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 1s;
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame {
+  top: 0px;
+  bottom: 0px;
+  left: 520px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 1700px */
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.1) 0%, rgba(119, 88, 209, 0.3) 100%);
+  overflow: hidden;
+  z-index: 1;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 25px 0px 0px 25px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 0px;
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 1660px */
+  height: 460px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.detailContainerFrame .detailLostInfoSection {
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList .infoItemBox {
+  cursor: pointer;
   box-sizing: border-box;
-  width: 750px;
-  height: 950px;
+  flex-shrink: 0;
+  width: 400px;
+  height: 460px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  padding: 0px 40px 80px 40px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  padding: 40px 20px 40px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  z-index: 1;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList .infoItemBox .title {
+  flex-shrink: 0;
+  width: 360px;
+  height: -moz-min-content;
+  height: min-content; /* 32px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 20px 0px 0px;
   align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 0px 0px 0px 0px;
+  font-weight: bold;
+  flex-shrink: 0;
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 27px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList .infoItemBox .innerText {
+  flex-shrink: 0;
+  width: 360px;
+  height: 333px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
   flex-wrap: nowrap;
   gap: 0;
-  position: absolute;
   border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-.detailContainerFrame .detailLostInfoSection .previewSection {
-  box-sizing: border-box;
   flex-shrink: 0;
-  width: 670px;
-  height: 136px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-family: "Inter", sans-serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 18px;
   letter-spacing: 0px;
-  line-height: 1.2;
+  line-height: 2;
 }
-.detailContainerFrame .detailLostInfoSection .announceSection {
+.fundingDetailFrame .announcementSection {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 670px;
-  height: 632px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailLostInfoSection .discordSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 670px;
-  height: 182px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailInfoSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 720px;
-  height: 950px;
+  width: 1319px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  padding: 80px 40px 80px 40px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  z-index: 1;
+  align-items: center;
+  padding: 20px 40px 20px 40px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.1) 0%, rgba(119, 88, 209, 0.3) 100%);
+  overflow: visible;
   position: relative;
-  align-content: flex-end;
+  align-content: center;
   flex-wrap: nowrap;
-  gap: 50px;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.detailContainerFrame .detailInfoSection .profileSection {
+.fundingDetailFrame .announcementSection .announcementTitle {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: 1239px;
   height: -moz-min-content;
-  height: min-content; /* 28px */
+  height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -5795,120 +5842,59 @@ body {
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 24px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.detailContainerFrame .detailInfoSection .profileInfoSection {
+.fundingDetailFrame .announcementSection .announcementList {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 640px;
-  height: 712px;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.detailContainerFrame .detailInfoSection .topInfoSection {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 303px */
-  height: -moz-min-content;
-  height: min-content; /* 189px */
+  width: 1239px;
+  height: 261px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px 40px 0px 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
+  align-content: flex-start;
   flex-wrap: nowrap;
   gap: 15px;
   border-radius: 0px 0px 0px 0px;
 }
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingTitle {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content;
-  height: -moz-min-content;
-  height: min-content;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 40px;
-  letter-spacing: 0px;
-  line-height: 1.2;
+.fundingDetailFrame .announcementSection .announcementList::-webkit-scrollbar {
+  width: 20px;
+  background-color: transparent;
 }
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 295px */
-  height: -moz-min-content;
-  height: min-content; /* 126px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection :nth-child(-n+4) {
-  flex-shrink: 0;
-  width: auto; /* 85px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailInfoSection .bottomInfoSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 640px;
-  height: 551px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+.fundingDetailFrame .announcementSection .announcementList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.detailContainerFrame .detailInfoSection .bottomInfoSection :nth-child(-n+2) {
+.fundingDetailFrame .announcementSection .announcementList .announcementItem {
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 0.8;
   flex-shrink: 0;
-  width: auto; /* 92px */
-  height: auto; /* 28px */
-  white-space: pre;
+  width: 1199px;
+  height: 70px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
   position: relative;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+.fundingDetailFrame .announcementSection .announcementList .announcementItem:hover {
+  opacity: 1;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 
 .nftMarketContainerFrame {
@@ -6417,6 +6403,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
+  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
   background-color: #2b2f5f;
   overflow: hidden;
   position: relative;
@@ -6467,7 +6454,8 @@ body {
   backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -6599,7 +6587,7 @@ body {
   justify-content: flex-start;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
   align-content: flex-end;
@@ -6840,21 +6828,24 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.4);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
-  border-right-width: 0px;
 }
-.nftDetailContainerFrame .bottomSection .orderSection .categorySection .buyTap {
+.nftDetailContainerFrame .bottomSection .orderSection .categorySection .underline {
+  position: absolute;
+  width: 100%;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+}
+.nftDetailContainerFrame .bottomSection .orderSection .categorySection .selected {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 233px;
@@ -6870,12 +6861,6 @@ body {
   flex-wrap: nowrap;
   gap: 0;
   border-radius: 0px 0px 0px 0px;
-  border-color: #FFFFFF;
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
-  border-right-width: 0px;
   flex-shrink: 0;
   white-space: pre;
   font-family: "Inter", sans-serif;
@@ -6884,7 +6869,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.nftDetailContainerFrame .bottomSection .orderSection .categorySection .sellTap {
+.nftDetailContainerFrame .bottomSection .orderSection .categorySection .unSelected {
+  cursor: pointer;
   flex-shrink: 0;
   width: 233px;
   height: 64px;
@@ -6907,10 +6893,69 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.nftDetailContainerFrame .bottomSection .orderSection .categorySection .historyTap {
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection {
   flex-shrink: 0;
-  width: 233px;
-  height: 64px;
+  width: 700px;
+  height: 363px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: none;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 700px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .nftTitle {
+  flex-shrink: 0;
+  width: auto; /* 99px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 436px */
+  height: -moz-min-content;
+  height: min-content; /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6920,15 +6965,74 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
+  gap: 40px;
   border-radius: 0px 0px 0px 0px;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .itemState {
   flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 20px */
   white-space: pre;
+  position: relative;
   font-family: "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .paymentTime {
+  flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .itemPrice {
+  flex-shrink: 0;
+  width: auto; /* 57px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .itemNumber {
+  flex-shrink: 0;
+  width: auto; /* 112px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .deleteButton {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 11px */
+  height: auto; /* 20px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  transition: 0.4s;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .deleteButton:hover {
+  color: rgb(255, 255, 255);
+  scale: 1.1;
 }
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection {
   flex-shrink: 0;
@@ -7243,6 +7347,14 @@ body {
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .inputSection .loginButtonSection .loginButton:hover {
+  opacity: 1;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 
 .fundingCreateContainerFrame, .fundingCreateSecondContainerFrame {

@@ -1,15 +1,14 @@
 import useWeb3 from "@/hooks/useWeb3";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import MyPageCreater from "@/pages/my_page/creator";
 import { fetchApplyCreator } from "@/middleware/fetchUser";
-import {motion} from "framer-motion"
+import { useSelector, useDispatch } from "react-redux";
+import { MyPageCreator } from "@/components";
+import { motion } from "framer-motion";
 
-const MyPageFirstContainer = () => {
+const ApplyCreator = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
+  const dispatch = useDispatch();
   const isCreator = useSelector((state) => state.userInfo.isCreator);
   const user_wallet_address = useSelector((state) => state.userInfo.address);
-  const dispatch = useDispatch();
 
   const creatorApply = async () => {
     const creatorPrice = await web3.utils.toWei("0.1", "ether");
@@ -28,6 +27,7 @@ const MyPageFirstContainer = () => {
               <div>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</div>
               <div>0.1 ETH</div>
             </div>
+
             <div
               className="buttonFrame"
               onClick={() => {
@@ -38,24 +38,16 @@ const MyPageFirstContainer = () => {
               Go to Creator Now
             </div>
           </div>
-          <div className='rightSection'>
-                <motion.div className='lineUp'
-                    initial={{opacity:0,rotateY:-120,x:200}}
-                    animate={{opacity:1,rotateY:0,x:0}}
-                    transition={{duration:1}}
-                    style={{cursor:"pointer"}}
-                    whileHover={{x:70,y:50}}
-                />
-                <div className='lineDown'/>
-            </div>
+          <div className="rightSection">
+            <motion.div className="lineUp" initial={{ opacity: 0, rotateY: -120, x: 200 }} animate={{ opacity: 1, rotateY: 0, x: 0 }} transition={{ duration: 1 }} style={{ cursor: "pointer" }} whileHover={{ x: 70, y: 50 }} />
+            <div className="lineDown" />
+          </div>
         </div>
       </div>
     </>
   ) : (
-    <>
-      <MyPageCreater />
-    </>
+    <MyPageCreator />
   );
 };
 
-export default MyPageFirstContainer;
+export default ApplyCreator;

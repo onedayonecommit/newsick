@@ -1,10 +1,10 @@
-import { AnimatePresence, motion,useAnimation } from 'framer-motion';
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserCreated, fetchUserCheck } from "../middleware/fetchUser";
 import useWeb3 from "../hooks/useWeb3";
 import { useRouter } from "next/router";
-import SuccessLog from '@/components/eventComponent/SuccessLog';
+import { SuccessLog } from "@/components";
 
 const SignUp = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -18,16 +18,13 @@ const SignUp = () => {
   const [linkedAccount, setLinkedAccount] = useState("");
   const createStatus = useSelector((state) => state.userInfo.createStatus);
 
-  //===========================20230212 추가된부분
-  const [isFalseText,setIsFalseText] =useState();
-  const falseText = () =>{
-    setIsFalseText(!isFalseText)
-  }
-  const [modalOpen,setModalOpen] = useState(false);
+  const [isFalseText, setIsFalseText] = useState();
+  const falseText = () => {
+    setIsFalseText(!isFalseText);
+  };
+  const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
-  //===========================20230212 추가된부분
-
 
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
@@ -60,9 +57,16 @@ const SignUp = () => {
     console.log("전송할 이더", creatorPrice);
     console.log(isCreator);
 
+    const regBlank = /[\s]/g;
+    const regSpecial = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
     // 이메일 정규식 체크
     const regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력");
+
+    if (!(userName.length > 0 && userName.length <= 10)) return alert("닉네임은 10자 이내로 입력해주세요");
+    if (regBlank.test(userName) == true) return alert("공백은 입력이 불가합니다.");
+    if (regSpecial.test(userName) == true) return alert("특수문자는 입력이 불가합니다.");
+    if (regEmail.test(userEmail) == false) return alert("이메일 형식에 맞게 입력해주세요.");
     else {
       // 크리에이터로 회원가입할 경우!
       if (isCreator == true) {
@@ -117,32 +121,22 @@ const SignUp = () => {
 
   return (
     <div className="signUpPageBackGround">
-        <AnimatePresence>
-           {modalOpen && <SuccessLog modalOpen={modalOpen} handleClose={close}/>}
-        </AnimatePresence>
+      <AnimatePresence>{modalOpen && <SuccessLog modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
       <div className="signUpFrame">
         <div className="signUpSection">
-          <div className="signUpTitle" onClick={falseText}>SIGN UP</div>
+          <div className="signUpTitle" onClick={falseText}>
+            SIGN UP
+          </div>
           <div className="signUpInputSection">
             <div className="userNameSection">
               <div className="nameText">USER NAME</div>
-              <motion.div className="nameInput"
-                initial={{ x: 0 }}
-                animate={isFalseText?{ x: [0, -15, 15, 0] }:{x:0}}
-                style={isFalseText?{border:"1px solid red"}:{border:"1px solid white"}}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-              >
+              <motion.div className="nameInput" initial={{ x: 0 }} animate={isFalseText ? { x: [0, -15, 15, 0] } : { x: 0 }} style={isFalseText ? { border: "1px solid red" } : { border: "1px solid white" }} transition={{ duration: 0.25, ease: "easeInOut" }}>
                 <input ref={userNameRef} type="text" name="user_name" />
               </motion.div>
             </div>
             <div className="userEmailSection">
               <div className="emailText">USER E-MAIL</div>
-              <motion.div className="emailInput"
-                initial={{ x: 0 }}
-                animate={isFalseText?{ x: [0, -15, 15, 0] }:{x:0}}
-                style={isFalseText?{border:"1px solid red"}:{border:"1px solid white"}}
-                transition={{ duration: 0.25, ease: "easeInOut" }}
-              >
+              <motion.div className="emailInput" initial={{ x: 0 }} animate={isFalseText ? { x: [0, -15, 15, 0] } : { x: 0 }} style={isFalseText ? { border: "1px solid red" } : { border: "1px solid white" }} transition={{ duration: 0.25, ease: "easeInOut" }}>
                 <input ref={userEmailInput} type="text" name="user_email" />
               </motion.div>
             </div>
@@ -164,7 +158,7 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-        <div className='imgSection' onClick={()=>(modalOpen ? close():open())} />
+        <div className="imgSection" onClick={() => (modalOpen ? close() : open())} />
       </div>
     </div>
   );

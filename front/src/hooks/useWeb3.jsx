@@ -3,10 +3,20 @@ import Web3 from "web3";
 import { NEWSIC_FUND_CA, NEWSIC_FUND_ABI, NEWSIC_MARKET_CA, NEWSIC_MARKET_ABI } from "@/web3.config";
 import { useDispatch } from "react-redux";
 import { fetchUserCheck } from "@/middleware/fetchUser";
+// import { userAction } from "@/redux/userSlice";
+
+/**계정 전환했을 때 reset 시켜줄 초기 값 */
+const userStateReset = {
+  address: "",
+  userName: "",
+  userEmail: "",
+  isCreator: false,
+  createStatus: false,
+};
 
 const useWeb3 = () => {
   const [web3, setWeb3] = useState();
-  const [account, setAccount] = useState("");
+  const [changeAccount, setChangeAccount] = useState("");
   const [NEWSIC_FUND, setNEWSIC_FUND] = useState();
   const [NEWSIC_MARKET, setNEWSIC_MARKET] = useState();
   const dispatch = useDispatch();
@@ -34,19 +44,6 @@ const useWeb3 = () => {
   };
 
   useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       if (!web3) {
-  //         getWeb3();
-  //       } else {
-  //         getFundContract();
-  //         getMarketContract();
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   })();
-  // }, []);
     if (!web3) {
       getWeb3();
     } else {
@@ -56,20 +53,21 @@ const useWeb3 = () => {
     // window.ethereum.on("accountsChanged", handleAccountsChanged);
   }, [web3]);
 
-  // const handleAccountsChanged = (accounts) => {
-  //   console.log(accounts.length);
-  //   if (accounts.length === 0) {
-  //     // 메타마스크 연결하세요!
-  //     console.log("Please connect to MetaMask.");
-  //   } else if (accounts[0] !== account) {
-  //     console.log("계정 바꿀때마다", accounts[0]);
-  //     setAccount(accounts[0]);
-  //     dispatch(fetchUserCheck({ user_wallet_address: accounts[0] }));
-  //     console.log("state 계정", account);
-  //   }
-  // };
+  const handleAccountsChanged = (accounts) => {
+    console.log(accounts.length);
+    if (accounts.length === 0) {
+      // 메타마스크 연결하세요!
+      console.log("Please connect to MetaMask.");
+    } else if (accounts[0] !== changeAccount) {
+      console.log("계정 바꿀때마다", accounts[0]);
+      // dispatch(userAction.reset(userStateReset));
+      setChangeAccount(accounts[0]);
+      dispatch(fetchUserCheck({ user_wallet_address: accounts[0] }));
+      console.log("state 계정", changeAccount);
+    }
+  };
 
-  console.log(web3, NEWSIC_FUND, NEWSIC_MARKET);
+  console.log(web3, NEWSIC_FUND, NEWSIC_MARKET, changeAccount);
   return { web3, NEWSIC_FUND, NEWSIC_MARKET };
 };
 

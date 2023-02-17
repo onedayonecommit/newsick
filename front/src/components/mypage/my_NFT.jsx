@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import PageNationFrame from "../../components/PageNationFrame";
-import Atropos from 'atropos/react';
+import Atropos from "atropos/react";
 import "atropos/atropos.css";
 
 const ownNftDate = [
@@ -54,24 +54,9 @@ const ownNftDate = [
   },
 ];
 
-const MyPageThirdContainer = () => {
-  const { web3, NEWSIC_FUND } = useWeb3();
-  const [myNftList, setMyNftList] = useState();
-  const [myNftImage, setMyNftImage] = useState();
-  const user_wallet_address = useSelector((state) => state.userInfo.address);
-  useEffect(() => {
-    console.log(NEWSIC_FUND);
-  });
-  const myNftListView = async () => {
-    if (NEWSIC_FUND) {
-      const _myNftList = await NEWSIC_FUND.methods.totalUri().call({ from: user_wallet_address });
-      console.log("sisi", _myNftList);
-      setMyNftList(_myNftList);
-    }
-  };
-  useEffect(() => {
-    myNftListView();
-  }, [NEWSIC_FUND]);
+const my_NFT = () => {
+  const router = useRouter();
+  const myNftList = useSelector((state) => state.myPageInfo.myNftList);
 
   return (
     <div className="thirdMyPage">
@@ -87,12 +72,14 @@ const MyPageThirdContainer = () => {
           {ownNftDate.map((item) => (
             <Atropos className="ownedNftBox atropos-banner" key={item.id}>
               <div className="ownedNftFrame">
-                <Image className="ownNftImg" src={item.ownNftImgUrl} alt="3dRender" width={210} height={189} data-atropos-offset="10"/>
+                <Image className="ownNftImg" src={item.ownNftImgUrl} alt="3dRender" width={210} height={189} data-atropos-offset="10" />
                 <div className="nftTitleSection" data-atropos-offset="10">
                   <div>{item.ownNftName}</div>
                 </div>
                 <div className="middleLine" />
-                <div className="sellButton" data-atropos-offset="10">판 매 하 기</div>
+                <div className="sellButton" data-atropos-offset="10">
+                  판 매 하 기
+                </div>
               </div>
             </Atropos>
           ))}
@@ -105,4 +92,31 @@ const MyPageThirdContainer = () => {
   );
 };
 
-export default MyPageThirdContainer;
+export default my_NFT;
+
+/** 
+ {myNftList.length != 0 ? (
+            myNftList.map((item) => (
+              <div className="ownedNftBox">
+                <div className="ownedNftFrame">
+                  <Image className="ownNftImg" src={item.data.image} alt="3dRender" width={210} height={189} />
+                  <div className="nftTitleSection">
+                    <div>{item.data.name}</div>
+                    <button
+                      onClick={() => {
+                        router.replace(`/NFTmarket/${item.tokenId}`);
+                      }}
+                      style={{ color: "red" }}
+                    >
+                      판매
+                    </button>
+                  </div>
+                  <div className="middleLine" />
+                  <div className="infoSection">{item.data.description}</div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div>보유한 Nft가 없습니다 펀딩 혹은 마켓플레이스 이용하여 nft를 구매하실 수 있습니다!</div>
+          )}
+ */

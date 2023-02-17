@@ -12,11 +12,9 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
     // 유저가 되면 유저의 정보를 응답
     return UserCreated.data;
   } catch (error) {
-    // return thunkAPI.rejectWithValue({ errorMessage: "알 수 없는 에러가 발생했습니다." });
     console.log("회원가입에러");
   }
 });
-// http://192.168.0.169:8080/user/join
 
 // 지갑주소가 DB에 있나 확인
 export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (account) => {
@@ -30,7 +28,6 @@ export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (acc
     console.log("로그인에러");
   }
 });
-// http://192.168.0.169:8080/user/login
 
 /**유저 프로필 사진 등록 및 변경 */
 export const fetchUserImage = createAsyncThunk("user/fetchUserImage", async (formData, thunkAPI) => {
@@ -54,24 +51,23 @@ export const fetchApplyCreator = createAsyncThunk("user/fetchApplyCreator", asyn
   try {
     const applyCreatorResult = await axios.post("http://localhost:8080/application-creator", account);
     return applyCreatorResult.data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // 하영오빠가 작성한 미들웨어(구독권)
-// export const fetchBuyTicket = createAsyncThunk(
-//   "user/fetchBuyTicket",
-//   async (_data) => {
-//     console.log("DB에 넘겨주는 계정", _data);
-//     try {
-//       const _recieveData = await axios.post(
-//         "http://127.0.0.1:4000/buy-ticket",   // 여기 사용하는 back 주소
-//         _data
-//       );
-//       // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
-//       console.log("티켓구매 확인 : ", _recieveData.data);
-//       return _recieveData.data;
-//     } catch (error) {
-//       console.log("티켓구매 에러");
-//     }
-//   }
-// );
+export const fetchBuyTicket = createAsyncThunk("user/fetchBuyTicket", async (_data) => {
+  console.log("받은거", _data);
+  try {
+    const _recieveData = await axios.post(
+      "http://localhost:8080/buy-ticket", // 여기 사용하는 back 주소
+      _data
+    );
+    // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
+    console.log("티켓구매 확인 : ", _recieveData.data);
+    return _recieveData.data;
+  } catch (error) {
+    console.log("티켓구매 에러");
+  }
+});

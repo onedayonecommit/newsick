@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import useWeb3 from "@/hooks/useWeb3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, wrap, motion } from "framer-motion";
@@ -7,6 +7,7 @@ import image1 from "../../../public/image/IRON.jpg";
 import image2 from "../../../public/image/dddepth-343.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
 import Image from "next/image";
+import { NEWSIC_FUND_CA } from "@/web3.config";
 
 // nft 메인페이지
 const images = ["https://i.pinimg.com/564x/26/2c/d9/262cd9e6cdf5ba0f922d36aeb8a3f3fa.jpg", "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png", "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"];
@@ -36,15 +37,47 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-const data = Array.from({ length: 20 }, () => ({ nftName: "NFT 1", price: "2.2wei", bottomImage: image1 }));
+const data = Array.from({ length: 20 }, () => ({
+  nftName: "NFT 1",
+  price: "2.2wei",
+  bottomImage: image1,
+}));
 
 const NftMarketContainer = () => {
+  const { web3, NEWSIC_FUND, NEWSIC_MARKET } = useWeb3();
   const [active, setActive] = useState(false);
   const [[page, direction], setPage] = useState([0, 0]);
+  const [place, setPlace] = useState("popular");
   const imageIndex = wrap(0, images.length, page);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
+
+  const getNftList = async () => {
+    if (NEWSIC_FUND) {
+      const nftList = await NEWSIC_FUND.methods.getTokenId.call().encodeABI();
+      console.log("토큰아이디", nftList);
+
+      web3.eth.call(
+        {
+          to: NEWSIC_FUND_CA,
+          data: NEWSIC_FUND.methods.getTokenId().encodeABI(),
+        },
+        (err, result) => {
+          if (err) {
+            console.log(err);
+          } else {
+            const tokenId = web3.eth.abi.decodeParameter("uint256", result);
+            console.log("토큰아디", tokenId);
+          }
+        }
+      );
+    }
+  };
+
+  useEffect(() => {
+    getNftList();
+  }, [NEWSIC_FUND]);
 
   return (
     <div className="nftMarketContainerFrame">
@@ -92,7 +125,12 @@ const NftMarketContainer = () => {
         <div className="topBarSection">
           <div className="topBar">
             <div className="text">Market Place</div>
-            <select className="dropDownBar">
+            <select
+              className="dropDownBar"
+              onChange={(e) => {
+                setPlace(e.target.value);
+              }}
+            >
               <option value="popular">popular</option>
               <option value="Close">Close</option>
               <option value="Latest ">Latest </option>
