@@ -12,6 +12,7 @@ import image2 from "../../../public/image/lee.jpg";
 import { PageNationFrame } from "@/components";
 import useWeb3 from "@/hooks/useWeb3";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
 // 펀딩 메인페이지
 const data = [
@@ -120,32 +121,31 @@ const FundingContainer = () => {
   return (
     <div className="FundingContainerFrame">
       <div className="fundingTopBar">
-        <div className="todayCreaterSection">
-          <div className="sectionText">Today Creater</div>
-          <div className="createrInfoFrame">
-            <div className="createrInfoBox">
-              <div className="createrInfo">
-                <div className="createrName">CreaterName</div>
+        <div className="todayCreatorSection">
+          <div className="sectionText">Today Creator</div>
+          <div className="creatorInfoFrame">
+            <div className="creatorInfoBox">
+              <div className="creatorInfo">
+                <div className="creatorName">CreatorName</div>
                 <div className="fundingInfo">FundingInfo</div>
               </div>
-              <button className="detailButton">DETAIL</button>
+              <div className="detailButton">DETAIL</div>
             </div>
-            <div className="createrImg" />
+            <div className="creatorImg" />
           </div>
-          ß
         </div>
         <motion.div className="swiperSection">
           {data.map((item, index) => (
             <motion.div className="swiperBox" key={index}>
-              <div className="hotCreaterInfoFrame">
-                <div className="hotCreaterInfoBox">
+              <div className="hotCreatorInfoFrame">
+                <div className="hotCreatorInfoBox">
                   <div className="hotFundingName">{item.fundingName}</div>
-                  <div className="hotCreaterName">{item.creatorName}</div>
+                  <div className="hotCreatorName">{item.creatorName}</div>
                   <div className="hotFundingInfo">{item.fundingInfo}</div>
                 </div>
                 <div className="detailButton">DETAIL</div>
               </div>
-              <img className="swiperImage" src={item.image.src} alt={item.fundingName} />
+              <Image className="swiperImage" src={item.image} alt={item.fundingName} />
             </motion.div>
           ))}
         </motion.div>
@@ -161,16 +161,16 @@ const FundingContainer = () => {
           </div>
           <div className="StateSection">
             <motion.div style={{ color: selectedDiv === "div1" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div1")}>
-              진행중인 펀딩
+              제작 완료
             </motion.div>
             <motion.div style={{ color: selectedDiv === "div2" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div2")}>
-              진행 예정 펀딩
+              종료 펀딩
             </motion.div>
             <motion.div style={{ color: selectedDiv === "div3" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div3")}>
-              제작중(버튼)
+              진행중인 펀딩
             </motion.div>
             <motion.div style={{ color: selectedDiv === "div4" ? "#ffffff" : "rgba(255, 255, 255, 0.4)" }} onClick={() => handleClick("div4")}>
-              종료 펀딩
+              진행 예정 펀딩
             </motion.div>
           </div>
         </div>

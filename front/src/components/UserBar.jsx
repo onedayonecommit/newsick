@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import ConnectWallet from "./ConnectWallet";
+import { ConnectWallet } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
 import { fetchUserImage } from "@/middleware/fetchUser";
 import { motion } from "framer-motion";
 
 // 컴포넌트
-const UserBar = ({ handleOpen }) => {
+const UserBar = ({ handleOpen, handleClick }) => {
   const dispatch = useDispatch();
   const userImg = useSelector((state) => state.userInfo.userImage);
   console.log("유저 기본 이미지", userImg);
@@ -56,7 +56,7 @@ const UserBar = ({ handleOpen }) => {
           </div>
         )}
 
-        <div className="stateInfoSection"></div>
+        <div className="stateInfoSection" onClick={handleClick}></div>
         <div className="anotherInfoSection"></div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ApplyCreator, MyPageSecondContainer, MyPageThirdContainer } from "@/components";
+import { ApplyCreator, Favorite, MyPageSecondContainer, MyPageThirdContainer } from "@/components";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMyPage } from "@/middleware/fetchMypage";
 const MyPage = () => {
@@ -46,8 +46,8 @@ const MyPage = () => {
         </div>
       </div>
       {selectedOption === 0 ? <ApplyCreator /> : null}
-      {selectedOption === 1 ? <MyPageSecondContainer /> : null}
-      {selectedOption === 2 ? <MyPageThirdContainer /> : null}
+      {selectedOption === 1 ? <Favorite /> : null}
+      {selectedOption === 2 ? <my_NFT /> : null}
     </div>
   );
 };

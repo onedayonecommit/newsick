@@ -54,7 +54,7 @@ const ownNftDate = [
   },
 ];
 
-const MyPageThirdContainer = () => {
+const my_NFT = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
   const [myNftList, setMyNftList] = useState();
   const [myNftImage, setMyNftImage] = useState();
@@ -107,4 +107,4 @@ const MyPageThirdContainer = () => {
   );
 };
 
-export default MyPageThirdContainer;
+export default my_NFT;

@@ -4,7 +4,8 @@ import UserBar from "./UserBar";
 import PlayBar from "./PlayBar";
 import PageNationFrame from "./PageNationFrame";
 import VolumeBox from "./VolumeBox";
-import CoverPage from "./CoverPage";
+import ChangeMember from "./ChangeMember";
+import ConnectWallet from "./ConnectWallet";
 
 // reward
 import board from "./reward/board";
@@ -14,12 +15,12 @@ import In_production from "./reward/In_production";
 import ongoing from "./reward/ongoing";
 
 // mypage
-import Modal from "./mypage/RegisterNftSong";
+import RegisterNftSong from "./mypage/RegisterNftSong";
 import MyPageCreator from "./mypage/MyPageCreator";
 import ApplyFundMusic from "./mypage/RegisterNftSong";
 import Graph from "./mypage/Graph";
-import MyPageSecondContainer from "./mypage/Favorite";
-import MyPageThirdContainer from "./mypage/my_NFT";
+import Favorite from "./mypage/Favorite";
+import my_NFT from "./mypage/my_NFT";
 import ApplyCreator from "./mypage/ApplyCreator";
 
 // music
@@ -41,27 +42,29 @@ import Loading from "./events/Loading";
 import MypageBackDrop from "./events/MypageBackDrop";
 import SignUpBackDrop from "./events/SignUpBackDrop";
 import SuccessLog from "./events/SuccessLog";
+import Congratulations from "./events/Congratulations";
 
 export {
+  ChangeMember,
+  ConnectWallet,
   SideBar,
   SearchBar,
   UserBar,
   PageNationFrame,
   PlayBar,
   VolumeBox,
-  CoverPage,
   board,
   commingsoon,
   end,
   In_production,
   ongoing,
-  Modal,
+  RegisterNftSong,
   MyPageCreator,
   ApplyFundMusic,
   Graph,
   ApplyCreator,
-  MyPageSecondContainer,
-  MyPageThirdContainer,
+  Favorite,
+  my_NFT,
   MusicPlayer,
   MusicPlayerPlayBar,
   MusicSlideForm,
@@ -76,4 +79,5 @@ export {
   SignUpBackDrop,
   SuccessLog,
   MusicPlayerListBar,
+  Congratulations,
 };

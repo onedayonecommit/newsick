@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Modal } from "@/components";
+import { RegisterNftSong } from "@/components";
 import Link from "next/link";
 
 const FunddingDateItem = [

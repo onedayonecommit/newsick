@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useTransform } from "framer-motion";
 import { MainFirstPage, MainSecondPage, MainThirdPage } from "@/components";
 

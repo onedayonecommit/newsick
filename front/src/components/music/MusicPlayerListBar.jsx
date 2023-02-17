@@ -3,19 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight, faList, faPause, faRepeat, faShuffle, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
-const playBarState = {
-  animate: {
-    width: ["calc(0%)", "calc(100%)"],
-    transition: {
-      width: {
-        ease: "linear",
-        duration: 200,
-        repeat: Infinity,
-        repeatType: "loop",
-      },
-    },
-  },
-};
+import VolumeBox from "../VolumeBox";
 const variantPlay = {
   animate: {
     x: ["calc(0px)", "calc(504px)"],
@@ -29,9 +17,36 @@ const variantPlay = {
     },
   },
 };
+const playBarState = {
+  animate: {
+    width: ["calc(0%)", "calc(100%)"],
+    transition: {
+      width: {
+        ease: "linear",
+        duration: 200,
+        repeat: Infinity,
+        repeatType: "loop",
+      },
+    },
+  },
+};
+const volumBarVariant = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
 const MusicPlayerListBar = ({ image, index, FilippedChoice }) => {
   const [isPlay, setIsPlay] = useState();
-
+  const [clickVolum, setClickVolume] = useState();
+  const ClickVolume = () => {
+    setClickVolume(!clickVolum);
+  };
   return (
     <div className="playBarSection">
       <div className="playBar">
@@ -83,7 +98,10 @@ const MusicPlayerListBar = ({ image, index, FilippedChoice }) => {
         </div>
       </div>
       <motion.div className="controlBar">
-        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>
+        <motion.div className="volumeBoxFrame" variants={volumBarVariant} initial={clickVolum ? "initial" : "animate"} animate={clickVolum ? "animate" : "initial"}>
+          <VolumeBox />
+        </motion.div>
+        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }} onClick={ClickVolume}>
           <FontAwesomeIcon className="sideIcon" icon={faVolumeHigh} />
         </motion.span>
         <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>

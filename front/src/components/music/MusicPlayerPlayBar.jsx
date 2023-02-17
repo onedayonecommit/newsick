@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight, faList, faPause, faRepeat, faShuffle, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import VolumeBox from "../VolumeBox";
 const playBarState = {
   animate: {
     width: ["calc(0%)", "calc(100%)"],
@@ -28,8 +29,23 @@ const variantPlay = {
     },
   },
 };
+const volumBarVariant = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
 const MusicPlayerPlayBar = ({ FilippedChoice }) => {
   const [isPlay, setIsPlay] = useState();
+  const [clickVolum, setClickVolume] = useState();
+  const ClickVolume = () => {
+    setClickVolume(!clickVolum);
+  };
   return (
     <div className="playBarSection">
       <div className="playBar">
@@ -65,23 +81,13 @@ const MusicPlayerPlayBar = ({ FilippedChoice }) => {
               </defs>
             </svg>
           </motion.div>
-          <svg viewBox="0 0 316 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="playBackGround">
-            <g filter="url(#filter0_f_597_303)">
-              <path d="M158 0L316 28L158 56L0 28L158 0Z" fill="url(#paint0_linear_597_303)"></path>
-            </g>
-            <defs>
-              <filter id="filter0_f_597_303" x="-40" y="-40" width="396" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB"></filter>
-              <linearGradient id="paint0_linear_597_303" x1="93" y1="76" x2="182.5" y2="-20" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#00DAEA"></stop>
-                <stop offset="0.49889" stopColor="#1D138B"></stop>
-                <stop offset="1" stopColor="#C441F4"></stop>
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
       </div>
       <motion.div className="controlBar">
-        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>
+        <motion.div className="volumeBoxFrame" variants={volumBarVariant} initial={clickVolum ? "initial" : "animate"} animate={clickVolum ? "animate" : "initial"}>
+          <VolumeBox />
+        </motion.div>
+        <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }} onClick={ClickVolume}>
           <FontAwesomeIcon className="sideIcon" icon={faVolumeHigh} />
         </motion.span>
         <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>

@@ -2,6 +2,7 @@ import useWeb3 from "@/hooks/useWeb3";
 import { fetchApplyCreator } from "@/middleware/fetchUser";
 import { useSelector, useDispatch } from "react-redux";
 import { MyPageCreator } from "@/components";
+import { motion } from "framer-motion";
 
 const ApplyCreator = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -38,16 +39,14 @@ const ApplyCreator = () => {
             </div>
           </div>
           <div className="rightSection">
-            <div className="lineUp" />
+            <motion.div className="lineUp" initial={{ opacity: 0, rotateY: -120, x: 200 }} animate={{ opacity: 1, rotateY: 0, x: 0 }} transition={{ duration: 1 }} style={{ cursor: "pointer" }} whileHover={{ x: 70, y: 50 }} />
             <div className="lineDown" />
           </div>
         </div>
       </div>
     </>
   ) : (
-    <>
-      <MyPageCreator />
-    </>
+    <MyPageCreator />
   );
 };
 
