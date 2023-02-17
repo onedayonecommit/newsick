@@ -4,11 +4,9 @@ import { PrismaClient } from '@prisma/client';
 import { hi2 } from 'src/contractInfo';
 import { ethers } from 'ethers';
 import { AppModule } from './app.module';
-import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  // const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule);
   app.enableCors();
   app.useGlobalPipes(
     new ValidationPipe({
@@ -18,6 +16,8 @@ async function bootstrap() {
       forbidUnknownValues: false,
     }),
   );
+
+  app.listen(8080);
 
   const prisma = new PrismaClient();
   setInterval(async () => {
