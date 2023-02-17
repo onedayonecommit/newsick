@@ -1394,11 +1394,14 @@ body{
                     line-height: 1.2;
                 }
                 .dropDown{
+                    cursor: pointer;
                     flex-shrink: 0;
                     width: auto; /* 130px */
                     height: auto; /* 16px */
                     white-space: pre;
+                    display: flex;
                     position: relative;
+                    gap: 10px;
                     font-family: "Inter", sans-serif;
                     color: #ffffff;
                     font-size: 18px;
@@ -2324,8 +2327,10 @@ body{
                       align-content: center;
                       flex-wrap: nowrap;
                       font-weight: bold;
+                      background-color:none;
+                      border:none;
                       gap: 0;
-                      border-radius: 0px 0px 0px 0px;
+                      border-radius: 25px;
                       color: #ffffff;
                       font-size: 15px;
                       letter-spacing: 0px;
@@ -6531,6 +6536,14 @@ animation: gradient-animation 6s ease infinite;
                   width: 502px;
                   height: 264px;
                   border: 1px solid rgba(255, 255, 255, 0.1);
+                  display: flex;
+                  align-items: center;
+                  padding: 0px 50px 0px 50px;
+                  .historyGraphFrame{
+                    position: "relative";
+                    width: 502px;
+                    height: 200px;
+                  }
               }
           }
       }
@@ -6567,6 +6580,7 @@ animation: gradient-animation 6s ease infinite;
               gap: 20px;
               border-radius: 0px 0px 0px 0px;
               .nftInfoBox{
+                  cursor:grab;
                   box-sizing: border-box;
                   flex-shrink: 0;
                   width: 300px;
@@ -6584,6 +6598,9 @@ animation: gradient-animation 6s ease infinite;
                   gap: 15px;
                   border-radius: 25px;
                   border: 1px solid rgba(255, 255, 255, 0.1);
+                  &:hover{
+                    box-shadow: 0.6032302072222955px 0px 0.6032302072222955px 0px rgba(0, 0, 0, 0.02), 2.290210571630906px 0px 2.290210571630906px 0px rgba(0, 0, 0, 0.05726), 10px 0px 10px 0px rgba(0, 0, 0, 0.25);
+                  }
                   .infoName{
                       flex-shrink: 0;
                       width: min-content; /* 51px */
