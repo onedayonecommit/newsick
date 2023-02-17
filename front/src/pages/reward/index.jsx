@@ -11,7 +11,8 @@ import image1 from "../../../public/image/Funding.jpg";
 import image2 from "../../../public/image/lee.jpg";
 import { PageNationFrame } from "@/components";
 import useWeb3 from "@/hooks/useWeb3";
-import { useSelector } from "react-redux";
+import { fetchPopularPick, fetchBringData } from "@/middleware/fetchFund";
+import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 
 // 펀딩 메인페이지
@@ -93,30 +94,58 @@ const fundingUItemData = [
 ];
 
 const FundingContainer = () => {
-  const [selectedDiv, setSelectedDiv] = useState("div1");
   const { web3, NEWSIC_FUND } = useWeb3();
-  const [ongoingList, setOngoingList] = useState();
-  const user_wallet_address = useSelector((state) => state.userInfo.address);
-
-  console.log("리워드 웹스리", web3);
-  console.log("리워드 컨트랙트", NEWSIC_FUND);
-
-  const ongoingFundList = async () => {
-    // console.log("dddd");
-    if (NEWSIC_FUND) {
-      const ongoing = await NEWSIC_FUND.methods.viewAll().call();
-      setOngoingList(ongoing);
-      console.log("펀딩 리스트 컨트랙트", ongoing);
-    }
-  };
-
-  useEffect(() => {
-    ongoingFundList();
-  }, [NEWSIC_FUND]);
-
+  const dispatch = useDispatch();
+  const user = useSelector((state) => {
+    state.userInfo;
+  });
+  const fund = useSelector((state) => {
+    state.fundList;
+  });
+  const [selectedDiv, setSelectedDiv] = useState("div1");
   const handleClick = (id) => {
     setSelectedDiv(id);
   };
+
+  // 메인 좋아요 가장 많은 NFT
+  const popularPick = (_data) => {
+    dispatch(fetchPopularPick(_data));
+  };
+
+  // 진행중인 펀딩 데이터 가져오는 함수
+  const ing_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.viewALL().call();
+    console.log(_data);
+    dispatch(fetchBringData(_data));
+  };
+  // 진행예정 펀딩 데이터 가져오는 함수
+  const before_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.beforeStart().call();
+    console.log(_data);
+    dispatch(fetchBringData(_data));
+  };
+  // 진행종료후 제작중인 펀딩 데이터 가져오는 함수
+  const make_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.makeStart().call();
+    console.log(_data);
+    dispatch(fetchBringData(_data));
+  };
+  // 진행종료후 제작종료 펀딩 데이터 가져오는 함수
+  const end_fundingData = async () => {
+    const _data = await NEWSIC_FUND.methods.fundingEnd().call();
+    console.log(_data);
+    dispatch(fetchBringData(_data));
+  };
+
+  // 세부페이지 들어가는 함수
+  const detailPage = (e) => {
+    return <Link href={`/reward/${e}`}></Link>;
+  };
+
+  useEffect(() => {
+    const _data = dispatch(fetchBringData());
+    console.log("응???", _data);
+  }, []);
 
   return (
     <div className="FundingContainerFrame">

@@ -21,45 +21,47 @@ const svgVariants = {
 const SubscriptionContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
   const user = useSelector((state) => state.userInfo);
+  const [ticket, setTicket] = useState({});
   const dispatch = useDispatch();
-  // let d = new Date();
-  // let set_date = 30;
-  // d.setDate(d.getDate() + set_date);
 
-  // let year = d.getFullYear();
-  // let month = ("0" + (d.getMonth() + 1)).slice(-2);
-  // let day = ("0" + d.getDate()).slice(-2);
-  // let dt = year + "-" + month + "-" + day;
+  // 티켓구매 컨트랙트로
+  const tempFunc = async () => {
+    // 가격 설정
+    const _price = await web3.utils.toWei("0.005", "ether");
+    // 티켓구매
+    const _buy_ticket = await NEWSIC_FUND.methods.subscriptionPay().send({ from: user.address, value: _price });
+    setTicket(_buy_ticket);
+    return _buy_ticket;
+  };
 
   // 구독권 구매
   const buyTicket = async () => {
-    const date = new Date();
-    const options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-    };
-    let formattedDate = date.toLocaleDateString("en-US", options);
-    // 가격 설정
-    const _price = await web3.utils.toWei("0.005", "ether");
-    // 컨트랙트로 티켓 구매
-    const _buy_ticket = await NEWSIC_FUND.methods.subscriptionPay().send({ from: user.address, value: _price });
-    // 구매 후 백으로 데이터 전달(UserSlice에 있음)
-    // console.log(typeof _buy_ticket.from);
-    // console.log(d);
-    dispatch(
-      fetchBuyTicket({
-        user_wallet_address: _buy_ticket.from,
-        ticket_type: 1, // 기본타입(n)
-        expired: formattedDate,
-      })
-    );
+    const _date = new Date();
+    const set_date = 30;
+    _date.setDate(_date.getDate() + set_date);
+    if (NEWSIC_FUND) {
+      // backend 저장
+      tempFunc()
+        .then((_ticket) => {
+          console.log(_ticket);
+          dispatch(
+            fetchBuyTicket({
+              user_wallet_address: _ticket.from,
+              ticket_type: 3, // 1 : 기본타입(1)
+              expired: _date.toISOString(),
+            })
+          );
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    } else {
+      console.log("컨트랙트 안읽혀짐");
+    }
     // console.log(_buy_ticket);
   };
+
+  useEffect(() => {}, [NEWSIC_FUND]);
 
   return (
     <div className="SubscriptionContainer">

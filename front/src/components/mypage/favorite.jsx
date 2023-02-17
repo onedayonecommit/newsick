@@ -248,20 +248,31 @@ const Favorite = () => {
     setIsNftView(!isNftView);
   };
 
+  const heartNftList = useSelector((state) => state.myPageInfo.heart_nft);
+  const heartFundingList = useSelector((state) => state.myPageInfo.heart_funding);
+
   const container = useRef(null);
   const ref = useRef(null);
   const isInView = useInView({ root: container });
 
   const [] = useState();
-  const dispatch = useDispatch();
+
   const handleClick = (item) => {
     setSelectedItem(item.id);
   };
-  const user_wallet_address = useSelector((state) => state.userInfo.address);
-  console.log("123123", user_wallet_address);
+
   useEffect(() => {
-    if (user_wallet_address) dispatch(fetchMyNftList({ user_wallet_address }));
-  }, [user_wallet_address]);
+    var hurryarr = [];
+    for (let i = 0; i < heartFundingList.length; i++) {
+      console.log("여기 과연?", new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime());
+      console.log(new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime() > new Date().getTime() + 86400000);
+      if (new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime() > new Date().getTime() + 86400000) {
+        hurryarr.push(heartFundingList[i].heartFundingList);
+      }
+    }
+    setHurryUpList(hurryarr);
+  }, []);
+
   return (
     <div className="secondMyPage" ref={container}>
       {isNftView ? (
@@ -364,3 +375,52 @@ const Favorite = () => {
 };
 
 export default Favorite;
+/**
+ * <div>마감 임박한 펀딩</div>
+          <div className="slideSection">
+            {hurryUpList.map((e) => {
+              return e.funding_finish_date;
+            })}
+          </div>
+        </div>
+        <div className=""></div>
+        <div className="nftItemList">
+          {heartFundingList ? (
+            heartFundingList.map((item) => (
+              <div className="nftWishItemBox" key={item.id}>
+                <div className="topSection">
+                  <img className="nftImage" src={item.heartFundingList.funding_nft_image} alt="ironImage" />
+                  <motion.div key={item.id} style={{ color: isFilled && selectedItem === item.id ? "rgb(255, 255, 255)" : "rgba(0, 0, 0, 0.14)" }} transition={{ duration: 0.3 }} onClick={() => setIsFilled(!isFilled)} onClickCapture={() => handleClick(item)} className="wishButton">
+                    <FontAwesomeIcon icon={faHeart} />
+                  </motion.div>
+                  <div className="infoStateFrame">
+                    <div className="price">
+                      <div>{item.heartFundingList.funding_price}</div>
+                      <div>ETH</div>
+                    </div>
+                    <div className="state">
+                      <div>{item.state}</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="middleSection">
+                  <div className="nftNameTag">{item.nftName}</div>
+                  <div className="creatorNameTag">
+                    <img src={item.creatorImgUrl} alt="creatorImage" />
+                    <div>{item.creatorName}</div>
+                  </div>
+                </div>
+                <div className="bottomSection">
+                  <div className="detailButton" typeof="button">
+                    Detail
+                  </div>
+                  <div className="buyNowButton" typeof="button">
+                    Buy Now
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <></>
+          )} 
+          */
