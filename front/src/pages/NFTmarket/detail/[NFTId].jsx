@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion} from "framer-motion"
-
+import { Graph } from '@/components'
 // nft 상세 페이지
 const nftData = [
     {
@@ -85,7 +85,18 @@ const historyItem =[
         theNumber:120,
     },
 ]
-
+const dateFunndingData = [
+    [0,10],
+    [5,50],
+    [15,75],
+    [55,100],
+    [75,10],
+    [100,5],
+    [120,50],
+    [140,100],
+    [180,50],
+    [200,50],
+];
 const NftDetailContainer = () => {
     const [selectedDiv, setSelectedDiv] = useState("div1")
     const [selectedTab, setSelectedTab] = useState("buy");
@@ -126,7 +137,9 @@ const NftDetailContainer = () => {
                             </motion.div>
                         </div>
                     </div>
-                    <div className='chartSection'></div>
+                    <div className='chartSection'>
+                        <Graph data={dateFunndingData} />
+                    </div>
                 </div>
             </div>
             <div className='infoSwiperSection'>

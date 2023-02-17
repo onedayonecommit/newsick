@@ -13,7 +13,7 @@ function Graph({ data }) {
 function createPath(data) {
   let path = "M";
   data.forEach((point, index) => {
-    const x = (point[0] / 200) * 100;
+    const x = (point[0] / 100) * 100;
     const y = 200 - (point[1] / 100) * 200;
     path += `${x} ${y} `;
     if (index !== data.length - 1) {
