@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MyPageCreater from "@/pages/my_page/creator/createfund";
 import { fetchApplyCreator } from "@/middleware/fetchUser";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
 const MyPageFirstContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
@@ -13,9 +13,7 @@ const MyPageFirstContainer = () => {
   const creatorApply = async () => {
     const creatorPrice = await web3.utils.toWei("0.1", "ether");
 
-    const creatorPay = await NEWSIC_FUND.methods
-      .creatorJoinPay()
-      .send({ from: user_wallet_address, value: creatorPrice });
+    const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: user_wallet_address, value: creatorPrice });
     console.log(creatorPay);
     dispatch(
       fetchApplyCreator({
@@ -31,11 +29,7 @@ const MyPageFirstContainer = () => {
           <div className="leftSection">
             <div className="textSection">
               <div>Anyone can be a creator!</div>
-              <div>
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley
-              </div>
+              <div>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</div>
               <div>0.1 ETH</div>
             </div>
             <div
@@ -48,16 +42,10 @@ const MyPageFirstContainer = () => {
               Go to Creator Now
             </div>
           </div>
-          <div className='rightSection'>
-                <motion.div className='lineUp'
-                    initial={{opacity:0,rotateY:-120,x:200}}
-                    animate={{opacity:1,rotateY:0,x:0}}
-                    transition={{duration:1}}
-                    style={{cursor:"pointer"}}
-                    whileHover={{x:70,y:50}}
-                />
-                <div className='lineDown'/>
-            </div>
+          <div className="rightSection">
+            <motion.div className="lineUp" initial={{ opacity: 0, rotateY: -120, x: 200 }} animate={{ opacity: 1, rotateY: 0, x: 0 }} transition={{ duration: 1 }} style={{ cursor: "pointer" }} whileHover={{ x: 70, y: 50 }} />
+            <div className="lineDown" />
+          </div>
         </div>
       </div>
     </>

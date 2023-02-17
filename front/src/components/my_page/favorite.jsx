@@ -5,138 +5,113 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import PageNationFrame from "../../components/PageNationFrame";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMyNftList } from "@/middleware/fetchMyPage";
 const nftItem = [
   {
     id: "a",
-    imgUrl:
-      "https://i.pinimg.com/236x/ce/93/7e/ce937eb3c1a0cb0722066411249bfbb2.jpg",
+    imgUrl: "https://i.pinimg.com/236x/ce/93/7e/ce937eb3c1a0cb0722066411249bfbb2.jpg",
     price: 55,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/ce/93/7e/ce937eb3c1a0cb0722066411249bfbb2.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/ce/93/7e/ce937eb3c1a0cb0722066411249bfbb2.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "b",
-    imgUrl:
-      "https://i.pinimg.com/236x/12/54/45/125445aeca8e66dbadc042efb01daa7a.jpg",
+    imgUrl: "https://i.pinimg.com/236x/12/54/45/125445aeca8e66dbadc042efb01daa7a.jpg",
     price: 66,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/12/54/45/125445aeca8e66dbadc042efb01daa7a.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/12/54/45/125445aeca8e66dbadc042efb01daa7a.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "c",
-    imgUrl:
-      "https://i.pinimg.com/236x/4d/7f/49/4d7f4910370d3d4c2393a3be7470e78c.jpg",
+    imgUrl: "https://i.pinimg.com/236x/4d/7f/49/4d7f4910370d3d4c2393a3be7470e78c.jpg",
     price: 77,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/4d/7f/49/4d7f4910370d3d4c2393a3be7470e78c.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/4d/7f/49/4d7f4910370d3d4c2393a3be7470e78c.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "d",
-    imgUrl:
-      "https://i.pinimg.com/236x/8b/4c/c1/8b4cc19001b73c05bf5351031496bbf0.jpg",
+    imgUrl: "https://i.pinimg.com/236x/8b/4c/c1/8b4cc19001b73c05bf5351031496bbf0.jpg",
     price: 88,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/8b/4c/c1/8b4cc19001b73c05bf5351031496bbf0.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/8b/4c/c1/8b4cc19001b73c05bf5351031496bbf0.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "e",
-    imgUrl:
-      "https://i.pinimg.com/236x/57/18/16/571816184fcb5580e192354c59fcd029.jpg",
+    imgUrl: "https://i.pinimg.com/236x/57/18/16/571816184fcb5580e192354c59fcd029.jpg",
     price: 99,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/57/18/16/571816184fcb5580e192354c59fcd029.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/57/18/16/571816184fcb5580e192354c59fcd029.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "f",
-    imgUrl:
-      "https://i.pinimg.com/474x/b4/76/23/b4762351d227fceeb3e13b989daf22a1.jpg",
+    imgUrl: "https://i.pinimg.com/474x/b4/76/23/b4762351d227fceeb3e13b989daf22a1.jpg",
     price: 88,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/474x/b4/76/23/b4762351d227fceeb3e13b989daf22a1.jpg",
+    creatorImgUrl: "https://i.pinimg.com/474x/b4/76/23/b4762351d227fceeb3e13b989daf22a1.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "g",
-    imgUrl:
-      "https://i.pinimg.com/236x/f0/1e/45/f01e45c71541c040b8c807d9ee821d8b.jpg",
+    imgUrl: "https://i.pinimg.com/236x/f0/1e/45/f01e45c71541c040b8c807d9ee821d8b.jpg",
     price: 77,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/f0/1e/45/f01e45c71541c040b8c807d9ee821d8b.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/f0/1e/45/f01e45c71541c040b8c807d9ee821d8b.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "h",
-    imgUrl:
-      "https://i.pinimg.com/236x/23/c8/de/23c8de238cb8cf5f7504756691323d34.jpg",
+    imgUrl: "https://i.pinimg.com/236x/23/c8/de/23c8de238cb8cf5f7504756691323d34.jpg",
     price: 66,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/23/c8/de/23c8de238cb8cf5f7504756691323d34.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/23/c8/de/23c8de238cb8cf5f7504756691323d34.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "i",
-    imgUrl:
-      "https://i.pinimg.com/236x/71/78/45/717845e2818a50116cdc05961f584e01.jpg",
+    imgUrl: "https://i.pinimg.com/236x/71/78/45/717845e2818a50116cdc05961f584e01.jpg",
     price: 55,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/71/78/45/717845e2818a50116cdc05961f584e01.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/71/78/45/717845e2818a50116cdc05961f584e01.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "j",
-    imgUrl:
-      "https://i.pinimg.com/236x/1e/a7/e2/1ea7e2fa301c529bee2a55d4b0be2f18.jpg",
+    imgUrl: "https://i.pinimg.com/236x/1e/a7/e2/1ea7e2fa301c529bee2a55d4b0be2f18.jpg",
     price: 44,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/1e/a7/e2/1ea7e2fa301c529bee2a55d4b0be2f18.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/1e/a7/e2/1ea7e2fa301c529bee2a55d4b0be2f18.jpg",
     creatorName: "Creator Name",
   },
   {
     id: "k",
-    imgUrl:
-      "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20160727_163%2Ftjfxkd478_1469587133146lABHS_JPEG%2F20160727001201_0.jpg&type=a340",
+    imgUrl: "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20160727_163%2Ftjfxkd478_1469587133146lABHS_JPEG%2F20160727001201_0.jpg&type=a340",
     price: 10000,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20160727_163%2Ftjfxkd478_1469587133146lABHS_JPEG%2F20160727001201_0.jpg&type=a340",
+    creatorImgUrl: "https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20160727_163%2Ftjfxkd478_1469587133146lABHS_JPEG%2F20160727001201_0.jpg&type=a340",
     creatorName: "Creator Name",
   },
   {
     id: "l",
-    imgUrl:
-      "https://i.pinimg.com/236x/cb/f4/d1/cbf4d1653c4dffc9d749855a2d4a2bd0.jpg",
+    imgUrl: "https://i.pinimg.com/236x/cb/f4/d1/cbf4d1653c4dffc9d749855a2d4a2bd0.jpg",
     price: 33,
     state: "On Sale",
     nftName: "NFT Name",
-    creatorImgUrl:
-      "https://i.pinimg.com/236x/cb/f4/d1/cbf4d1653c4dffc9d749855a2d4a2bd0.jpg",
+    creatorImgUrl: "https://i.pinimg.com/236x/cb/f4/d1/cbf4d1653c4dffc9d749855a2d4a2bd0.jpg",
     creatorName: "Creator Name",
   },
 ];
@@ -162,9 +137,7 @@ const MyPageSecondContainer = () => {
   const [hurryUpList, setHurryUpList] = useState(null);
 
   const heartNftList = useSelector((state) => state.myPageInfo.heart_nft);
-  const heartFundingList = useSelector(
-    (state) => state.myPageInfo.heart_funding
-  );
+  const heartFundingList = useSelector((state) => state.myPageInfo.heart_funding);
   // const dispatch = useDispatch();
   const container = useRef(null);
   const ref = useRef(null);
@@ -178,24 +151,9 @@ const MyPageSecondContainer = () => {
   useEffect(() => {
     var hurryarr = [];
     for (let i = 0; i < heartFundingList.length; i++) {
-      console.log(
-        "여기 과연?",
-        new Date(
-          heartFundingList[i].heartFundingList.funding_finish_date
-        ).getTime()
-      );
-      console.log(
-        new Date(
-          heartFundingList[i].heartFundingList.funding_finish_date
-        ).getTime() >
-          new Date().getTime() + 86400000
-      );
-      if (
-        new Date(
-          heartFundingList[i].heartFundingList.funding_finish_date
-        ).getTime() >
-        new Date().getTime() + 86400000
-      ) {
+      console.log("여기 과연?", new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime());
+      console.log(new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime() > new Date().getTime() + 86400000);
+      if (new Date(heartFundingList[i].heartFundingList.funding_finish_date).getTime() > new Date().getTime() + 86400000) {
         hurryarr.push(heartFundingList[i].heartFundingList);
       }
     }
@@ -215,23 +173,13 @@ const MyPageSecondContainer = () => {
         <div className=""></div>
         <div className="nftItemList">
           {nftItem.map((item) => (
-            <motion.div
-              className="nftWishItemBox"
-              key={item.id}
-              ref={ref}
-              variants={itemVariant}
-              initial={!isInView ? "initial" : "animate"}
-              animate={!isInView ? "animate" : "initial"}
-            >
+            <motion.div className="nftWishItemBox" key={item.id} ref={ref} variants={itemVariant} initial={!isInView ? "initial" : "animate"} animate={!isInView ? "animate" : "initial"}>
               <div className="topSection">
                 <img className="nftImage" src={item.imgUrl} alt="ironImage" />
                 <motion.div
                   key={item.id}
                   style={{
-                    color:
-                      isFilled && selectedItem === item.id
-                        ? "rgb(255, 255, 255)"
-                        : "rgba(0, 0, 0, 0.14)",
+                    color: isFilled && selectedItem === item.id ? "rgb(255, 255, 255)" : "rgba(0, 0, 0, 0.14)",
                   }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setIsFilled(!isFilled)}

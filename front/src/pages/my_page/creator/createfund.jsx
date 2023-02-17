@@ -86,20 +86,21 @@ const FundingCreateContainer = () => {
   };
 
   const makeFund = async () => {
-    let _fundingStruct = {
-      creator: userInfo.address, // 크리에이터
-      uri: fundInfo.metadataUrl, // 메타데이터
-      startdate: convertToTimestamp(data.funding_start_date), // 시작일
-      finishdate: convertToTimestamp(data.funding_finish_date), // 종료일
-      makedate: convertToTimestamp(data.funding_production_date), // 음원제작 기간
-      price: Number(await web3.utils.toWei(data.funding_price, "ether")), // 개당 가격
-      max: data.funding_min * 2, // 최대
-      holdershare: data.funding_holdershare, // 음원수익(홀더)
-    };
-    const _sendData_toContract = await NEWSIC_FUND.methods
-      ._setURI(_fundingStruct)
-      .send({ from: _fundingStruct.creator });
-
+    let _fundingStruct = [
+      userInfo.address, // 크리에이터
+      fundInfo.metadataUrl, // 메타데이터
+      // convertToTimestamp(data.funding_start_date), // 시작일
+      // convertToTimestamp(data.funding_finish_date), // 종료일
+      // convertToTimestamp(data.funding_production_date), // 음원제작 기간
+      Math.floor(new Date(data.funding_start_date).getTime() / 1000), // 시작일
+      Math.floor(new Date(data.funding_finish_date).getTime() / 1000), // 종료일
+      Math.floor(new Date(data.funding_production_date).getTime() / 1000), // 음원제작 기간
+      0, // 개당 가격
+      data.funding_min, // 최대
+      data.funding_holdershare, // 음원수익(홀더)
+    ];
+    console.log(_fundingStruct, "스트럭트");
+    const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(data.funding_price, "ether")).send({ from: userInfo.address });
     console.log(_sendData_toContract.events.createFund.returnValues);
     setData({
       ...data,
@@ -183,10 +184,7 @@ const FundingCreateContainer = () => {
             <div className="leftSection">
               <div>
                 <div>음악 대표 이미지</div>
-                <div>
-                  권장 크기 : 1000 x 1000 (1:1 비율)대표이미지 기준 1000x1000
-                  이상 이미지를 등록하시면, 이미지 확대 기능이 제공됩니다.
-                </div>
+                <div>권장 크기 : 1000 x 1000 (1:1 비율)대표이미지 기준 1000x1000 이상 이미지를 등록하시면, 이미지 확대 기능이 제공됩니다.</div>
               </div>
             </div>
             <div className="rightSection">
@@ -234,13 +232,10 @@ const FundingCreateContainer = () => {
                       : ""
                   }
                 >
-                  {isSubmissionButton
-                    ? "이미지 변경 불가"
-                    : "확정(IPFS 만들기)"}
+                  {isSubmissionButton ? "이미지 변경 불가" : "확정(IPFS 만들기)"}
                 </motion.div>
                 <br></br>
-                "IPFS 등록 후 Metadata가 생성됩니다." "생성 후 NFT NAME, NFT
-                설명, 등록 이미지는 변경이 불가합니다."
+                "IPFS 등록 후 Metadata가 생성됩니다." "생성 후 NFT NAME, NFT 설명, 등록 이미지는 변경이 불가합니다."
               </div>
             </div>
           </div>

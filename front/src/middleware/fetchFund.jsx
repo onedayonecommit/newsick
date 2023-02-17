@@ -11,6 +11,7 @@ export const fetchMakeIPFS = createAsyncThunk("fund/metadata", async (_formData)
       data: _formData,
       headers: { "Content-Type": "multipart/form-data" },
     });
+    console.log("메타데이터:", _recieveMetadata);
     return _recieveMetadata.data;
   } catch (error) {
     console.log("메타데이터 생성 에러ddddddd");
