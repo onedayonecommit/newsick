@@ -4,7 +4,7 @@ import Image from "next/image";
 import image1 from "../../../public/image/Funding.jpg";
 import image2 from "../../../public/image/lee.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
-import { fetchPopularPick } from "@/middleware/fetchFund";
+import { fetchPopularPick, fetchBringData } from "@/middleware/fetchFund";
 import useWeb3 from "@/hooks/useWeb3";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
@@ -92,6 +92,9 @@ const FundingContainer = () => {
   const user = useSelector((state) => {
     state.userInfo;
   });
+  const fund = useSelector((state) => {
+    state.fundList;
+  });
   const [selectedDiv, setSelectedDiv] = useState("div1");
   const handleClick = (id) => {
     setSelectedDiv(id);
@@ -133,7 +136,8 @@ const FundingContainer = () => {
   };
 
   useEffect(() => {
-    ing_fundingData();
+    const _data = dispatch(fetchBringData());
+    console.log("응???", _data);
   }, []);
 
   return (

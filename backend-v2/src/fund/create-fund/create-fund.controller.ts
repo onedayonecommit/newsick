@@ -14,7 +14,6 @@ import {
 import { STATUS_CODES } from 'http';
 import { CreatorCheckService } from 'src/auth/creator-check/creator-check.service';
 import { IpfsUploadService } from 'src/nft-storage/ipfs-upload/ipfs-upload.service';
-import { ipfsReturnDto } from 'src/nft-storage/ipfs-upload/return.dto';
 import { createFundMainDto, metadataDto } from './create-fund.dto';
 import { CreateFundService } from './create-fund.service';
 

@@ -675,7 +675,7 @@ body {
   height: -moz-min-content;
   height: min-content;
   display: flex;
-  background: linear-gradient(to right, #FF3DB8, #DB29FF);
+  background: linear-gradient(to right, #ff3db8, #db29ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   justify-content: center;
@@ -11269,7 +11269,8 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame, .secondMyPage .myPageSecondContainerFrameNFT {
+.secondMyPage .myPageSecondContainerFrame,
+.secondMyPage .myPageSecondContainerFrameNFT {
   flex-shrink: 0;
   width: 1060px;
   height: 2100px;
@@ -11285,7 +11286,8 @@ body {
   gap: 0;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .topInfoSection, .secondMyPage .myPageSecondContainerFrameNFT .topInfoSection {
+.secondMyPage .myPageSecondContainerFrame .topInfoSection,
+.secondMyPage .myPageSecondContainerFrameNFT .topInfoSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1060px;
@@ -11302,7 +11304,8 @@ body {
   gap: 15px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .topInfoSection :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .topInfoSection :nth-child(1) {
+.secondMyPage .myPageSecondContainerFrame .topInfoSection :nth-child(1),
+.secondMyPage .myPageSecondContainerFrameNFT .topInfoSection :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 192px */
   height: auto; /* 30px */
@@ -11317,7 +11320,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection, .secondMyPage .myPageSecondContainerFrameNFT .topInfoSection .slideSection {
+.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection,
+.secondMyPage .myPageSecondContainerFrameNFT .topInfoSection .slideSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1020px;
@@ -11333,15 +11337,16 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .topInfoSection
   .slideSection
+  .infoSection,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .topInfoSection
+  .slideSection
   .infoSection {
-=======
-.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .infoSection, .secondMyPage .myPageSecondContainerFrameNFT .topInfoSection .slideSection .infoSection {
->>>>>>> jjj
   box-sizing: border-box;
   flex-shrink: 0;
   width: 505px;
@@ -11359,15 +11364,16 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .topInfoSection
   .slideSection
+  .switchButton,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .topInfoSection
+  .slideSection
   .switchButton {
-=======
-.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton, .secondMyPage .myPageSecondContainerFrameNFT .topInfoSection .slideSection .switchButton {
->>>>>>> jjj
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -11397,15 +11403,16 @@ body {
   line-height: 1.2;
   transition: 0.5s;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .topInfoSection
   .slideSection
+  .switchButton:hover,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .topInfoSection
+  .slideSection
   .switchButton:hover {
-=======
-.secondMyPage .myPageSecondContainerFrame .topInfoSection .slideSection .switchButton:hover, .secondMyPage .myPageSecondContainerFrameNFT .topInfoSection .slideSection .switchButton:hover {
->>>>>>> jjj
   background-color: rgba(0, 0, 0, 0.1);
   scale: 1.2;
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
@@ -11418,7 +11425,8 @@ body {
     0px 100px 100px 0px rgba(0, 0, 0, 0.25);
   border: 1px solid rgb(255, 255, 255);
 }
-.secondMyPage .myPageSecondContainerFrame .nftItemList, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList {
+.secondMyPage .myPageSecondContainerFrame .nftItemList,
+.secondMyPage .myPageSecondContainerFrameNFT .nftItemList {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1060px;
@@ -11436,7 +11444,8 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox {
+.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox,
+.secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 286px;
@@ -11459,15 +11468,16 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
+  .topSection,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
   .topSection {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection {
->>>>>>> jjj
   box-sizing: border-box;
   flex-shrink: 0;
   width: 286px;
@@ -11485,16 +11495,18 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .topSection
+  .nftImage,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
   .nftImage {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .nftImage, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .nftImage {
->>>>>>> jjj
   flex-shrink: 0;
   width: 286px;
   height: 192px;
@@ -11506,16 +11518,18 @@ body {
   background-position: center;
   border-radius: 0px 0px 0px 0px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .topSection
+  .wishButton,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
   .wishButton {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .wishButton, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .wishButton {
->>>>>>> jjj
   top: 10px;
   right: 10px;
   flex-shrink: 0;
@@ -11535,31 +11549,36 @@ body {
   position: absolute;
   border-radius: 100px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .topSection
   .wishButton
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
+  .wishButton
   :nth-child(1) {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .wishButton :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .wishButton :nth-child(1) {
->>>>>>> jjj
   position: relative;
   width: 22px;
   height: 21px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .topSection
+  .infoStateFrame,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
   .infoStateFrame {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .infoStateFrame {
->>>>>>> jjj
   box-sizing: border-box;
   flex-shrink: 0;
   width: 180px;
@@ -11592,17 +11611,20 @@ body {
   bottom: 10px;
   right: 8px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .topSection
   .infoStateFrame
+  .price,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
+  .infoStateFrame
   .price {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .infoStateFrame .price {
->>>>>>> jjj
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 65px */
@@ -11620,7 +11642,6 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
@@ -11628,10 +11649,15 @@ body {
   .topSection
   .infoStateFrame
   .price
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
+  .infoStateFrame
+  .price
   :nth-child(1) {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(1) {
->>>>>>> jjj
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 34px */
@@ -11658,7 +11684,6 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
@@ -11666,10 +11691,15 @@ body {
   .topSection
   .infoStateFrame
   .price
+  :nth-child(2),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
+  .infoStateFrame
+  .price
   :nth-child(2) {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(2), .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .infoStateFrame .price :nth-child(2) {
->>>>>>> jjj
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 31px */
@@ -11694,17 +11724,20 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .topSection
   .infoStateFrame
+  .state,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
+  .infoStateFrame
   .state {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .infoStateFrame .state {
->>>>>>> jjj
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 57px */
@@ -11722,7 +11755,6 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
@@ -11730,10 +11762,15 @@ body {
   .topSection
   .infoStateFrame
   .state
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .topSection
+  .infoStateFrame
+  .state
   :nth-child(1) {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .topSection .infoStateFrame .state :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .topSection .infoStateFrame .state :nth-child(1) {
->>>>>>> jjj
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 57px */
@@ -11759,15 +11796,16 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
+  .middleSection,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
   .middleSection {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .middleSection {
->>>>>>> jjj
   box-sizing: border-box;
   flex-shrink: 0;
   width: 286px;
@@ -11784,16 +11822,18 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .middleSection
+  .nftNameTag,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .middleSection
   .nftNameTag {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .nftNameTag, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .middleSection .nftNameTag {
->>>>>>> jjj
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 100px */
@@ -11818,16 +11858,18 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .middleSection
+  .creatorNameTag,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .middleSection
   .creatorNameTag {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .middleSection .creatorNameTag {
->>>>>>> jjj
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 161px */
@@ -11845,17 +11887,20 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .middleSection
   .creatorNameTag
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .middleSection
+  .creatorNameTag
   :nth-child(1) {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .middleSection .creatorNameTag :nth-child(1) {
->>>>>>> jjj
   box-sizing: border-box;
   flex-shrink: 0;
   width: 25px;
@@ -11866,17 +11911,20 @@ body {
   border-radius: 25px;
   border: 1px solid #ffffff;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .middleSection
   .creatorNameTag
+  :nth-child(2),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .middleSection
+  .creatorNameTag
   :nth-child(2) {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag :nth-child(2), .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .middleSection .creatorNameTag :nth-child(2) {
->>>>>>> jjj
   flex-shrink: 0;
   width: auto; /* 126px */
   height: auto; /* 24px */
@@ -11888,15 +11936,16 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
+  .bottomSection,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
   .bottomSection {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .bottomSection, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .bottomSection {
->>>>>>> jjj
   flex-shrink: 0;
   width: 286px;
   height: 70px;
@@ -11912,16 +11961,18 @@ body {
   gap: 15px;
   border-radius: 0px 0px 0px 0px;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .bottomSection
+  .detailButton,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .bottomSection
   .detailButton {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .bottomSection .detailButton, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .bottomSection .detailButton {
->>>>>>> jjj
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -11952,16 +12003,18 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-<<<<<<< HEAD
 .secondMyPage
   .myPageSecondContainerFrame
   .nftItemList
   .nftWishItemBox
   .bottomSection
+  .buyNowButton,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .nftItemList
+  .nftWishItemBox
+  .bottomSection
   .buyNowButton {
-=======
-.secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .bottomSection .buyNowButton, .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .bottomSection .buyNowButton {
->>>>>>> jjj
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -11988,7 +12041,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList {
+.secondMyPage .myPageSecondContainerFrame .fundItemList,
+.secondMyPage .myPageSecondContainerFrameNFT .fundItemList {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1060px;
@@ -12006,7 +12060,8 @@ body {
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox {
+.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox,
+.secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 286px;
@@ -12015,7 +12070,11 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(223deg, rgba(0, 0, 0, 0.2) 0%, rgba(171, 171, 171, 0.1) 100%);
+  background: linear-gradient(
+    223deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(171, 171, 171, 0.1) 100%
+  );
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -12025,7 +12084,16 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 286px;
@@ -12043,7 +12111,18 @@ body {
   border-radius: 0px 0px 0px 0px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .nftImage, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .nftImage {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .nftImage,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .nftImage {
   flex-shrink: 0;
   width: 286px;
   height: 192px;
@@ -12055,7 +12134,18 @@ body {
   background-position: center;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .wishButton, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .wishButton {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .wishButton,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .wishButton {
   top: 10px;
   right: 10px;
   flex-shrink: 0;
@@ -12075,12 +12165,36 @@ body {
   position: absolute;
   border-radius: 100px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .wishButton :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .wishButton :nth-child(1) {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .wishButton
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .wishButton
+  :nth-child(1) {
   position: relative;
   width: 22px;
   height: 21px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .infoStateFrame, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .infoStateFrame {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 180px;
@@ -12097,7 +12211,14 @@ body {
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(168, 168, 168, 0.1);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
+    0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
+    0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
+    0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017),
+    0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875),
+    0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
+    0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
+    0px 100px 100px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   z-index: 1;
   align-content: flex-end;
@@ -12106,7 +12227,20 @@ body {
   bottom: 10px;
   right: 8px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .infoStateFrame .price, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .infoStateFrame .price {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .price,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .price {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 65px */
@@ -12124,7 +12258,22 @@ body {
   gap: 5px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .infoStateFrame .price :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .infoStateFrame .price :nth-child(1) {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .price
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .price
+  :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 34px */
@@ -12151,7 +12300,22 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .infoStateFrame .price :nth-child(2), .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .infoStateFrame .price :nth-child(2) {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .price
+  :nth-child(2),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .price
+  :nth-child(2) {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 31px */
@@ -12176,7 +12340,20 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .infoStateFrame .state, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .infoStateFrame .state {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .state,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .state {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 57px */
@@ -12194,7 +12371,22 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .topSection .infoStateFrame .state :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .topSection .infoStateFrame .state :nth-child(1) {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .state
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .topSection
+  .infoStateFrame
+  .state
+  :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 57px */
@@ -12220,7 +12412,16 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .middleSection, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .middleSection {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .middleSection,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .middleSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 286px;
@@ -12237,7 +12438,18 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .middleSection .nftNameTag, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .middleSection .nftNameTag {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .nftNameTag,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .nftNameTag {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 100px */
@@ -12262,7 +12474,18 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .middleSection .creatorNameTag, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .middleSection .creatorNameTag {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .creatorNameTag,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .creatorNameTag {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 161px */
@@ -12280,7 +12503,20 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .middleSection .creatorNameTag :nth-child(1), .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .middleSection .creatorNameTag :nth-child(1) {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .creatorNameTag
+  :nth-child(1),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .creatorNameTag
+  :nth-child(1) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 25px;
@@ -12291,7 +12527,20 @@ body {
   border-radius: 25px;
   border: 1px solid #ffffff;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .middleSection .creatorNameTag :nth-child(2), .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .middleSection .creatorNameTag :nth-child(2) {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .creatorNameTag
+  :nth-child(2),
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .middleSection
+  .creatorNameTag
+  :nth-child(2) {
   flex-shrink: 0;
   width: auto; /* 126px */
   height: auto; /* 24px */
@@ -12303,7 +12552,16 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .bottomSection, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .bottomSection {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .bottomSection,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .bottomSection {
   flex-shrink: 0;
   width: 286px;
   height: 70px;
@@ -12319,7 +12577,18 @@ body {
   gap: 15px;
   border-radius: 0px 0px 0px 0px;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .bottomSection .detailButton, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .bottomSection .detailButton {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .bottomSection
+  .detailButton,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .bottomSection
+  .detailButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -12329,7 +12598,11 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(66deg, rgba(209, 56, 255, 0.4) 0%, rgba(109, 0, 143, 0.3) 100%);
+  background: linear-gradient(
+    66deg,
+    rgba(209, 56, 255, 0.4) 0%,
+    rgba(109, 0, 143, 0.3) 100%
+  );
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -12346,7 +12619,18 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .bottomSection .buyNowButton, .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .bottomSection .buyNowButton {
+.secondMyPage
+  .myPageSecondContainerFrame
+  .fundItemList
+  .fundWishItemBox
+  .bottomSection
+  .buyNowButton,
+.secondMyPage
+  .myPageSecondContainerFrameNFT
+  .fundItemList
+  .fundWishItemBox
+  .bottomSection
+  .buyNowButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;

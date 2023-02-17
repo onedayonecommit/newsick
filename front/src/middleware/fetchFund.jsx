@@ -9,7 +9,7 @@ export const fetchMakeIPFS = createAsyncThunk(
     try {
       const _recieveMetadata = await axios({
         method: "post",
-        url: "http://localhost:8080/create-fund/create/makeMetadata",
+        url: "http://127.0.0.1:8080/create-fund/create/makeMetadata",
         data: _formData,
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -53,10 +53,10 @@ export const fetchPopularPick = createAsyncThunk(
   }
 );
 
-export const fetchBringData = createAsyncThunk("fund/popularPick", async () => {
+export const fetchBringData = createAsyncThunk("fund/allList", async () => {
   try {
     const _recieveData = await axios.post(
-      "http://127.0.0.1:8080/query-data/find"
+      "http://127.0.0.1:8080/hot-fund/all/list"
     );
     console.log("들어온 데이터 확인", _recieveData);
     return _recieveData.data;

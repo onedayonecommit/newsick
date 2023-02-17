@@ -14,7 +14,7 @@ export class HotFundService {
 
   async fundingList() {
     return await this.db.funding.findMany({
-      orderBy: { funding_heart: 'desc' },
+      orderBy: { id: 'asc' },
     });
   }
 }
