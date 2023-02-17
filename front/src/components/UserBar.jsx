@@ -41,14 +41,14 @@ const UserBar = ({ handleOpen, handleClick }) => {
           <div className="userInfoSection">
             <div className="creatorTicket" />
             <Link href="/mypage">
-              <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
+              <Image src={`https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
             </Link>
             <ConnectWallet />
           </div>
         ) : (
           <div className="userInfoSection">
             <Link href="/mypage">
-              <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
+              <Image src={`https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/${userImg}`} className="userImage" alt="프로필 이미지" width={100} height={100} />
             </Link>
             {/* 이미지 프로필 동적으로 변경해두기! */}
             <input type="file" name="file" accept="image/*" style={{ opacity: 0, height: "100px" }} onChange={profileImageHandler} />

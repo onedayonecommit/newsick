@@ -1,5 +1,5 @@
 import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
-import { faMemory, faFileLines } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
@@ -86,17 +86,21 @@ const FundingCreate = () => {
   };
 
   const makeFund = async () => {
-    let _fundingStruct = {
-      creator: userInfo.address, // 크리에이터
-      uri: fundInfo.metadataUrl, // 메타데이터
-      startdate: convertToTimestamp(data.funding_start_date), // 시작일
-      finishdate: convertToTimestamp(data.funding_finish_date), // 종료일
-      makedate: convertToTimestamp(data.funding_production_date), // 음원제작 기간
-      price: Number(await web3.utils.toWei(data.funding_price, "ether")), // 개당 가격
-      max: data.funding_min * 2, // 최대
-      holdershare: data.funding_holdershare, // 음원수익(홀더)
-    };
-    const _sendData_toContract = await NEWSIC_FUND.methods._setURI(_fundingStruct).send({ from: _fundingStruct.creator });
+    let _fundingStruct = [
+      userInfo.address, // 크리에이터
+      fundInfo.metadataUrl, // 메타데이터
+      // convertToTimestamp(data.funding_start_date), // 시작일
+      // convertToTimestamp(data.funding_finish_date), // 종료일
+      // convertToTimestamp(data.funding_production_date), // 음원제작 기간
+      Math.floor(new Date(data.funding_start_date).getTime() / 1000), // 시작일
+      Math.floor(new Date(data.funding_finish_date).getTime() / 1000), // 종료일
+      Math.floor(new Date(data.funding_production_date).getTime() / 1000), // 음원제작 기간
+      0, // 개당 가격
+      data.funding_min, // 최대
+      data.funding_holdershare, // 음원수익(홀더)
+    ];
+    console.log(_fundingStruct, "스트럭트");
+    const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(data.funding_price, "ether")).send({ from: userInfo.address });
 
     console.log(_sendData_toContract.events.createFund.returnValues);
     setData({
