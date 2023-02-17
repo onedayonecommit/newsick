@@ -98,29 +98,33 @@ const FundingContainer = () => {
   };
 
   // 메인 좋아요 가장 많은 NFT
-  const popularPick = () => {
-    dispatch(fetchPopularPick());
+  const popularPick = (_data) => {
+    dispatch(fetchPopularPick(_data));
   };
 
   // 진행중인 펀딩 데이터 가져오는 함수
   const ing_fundingData = async () => {
     const _data = await NEWSIC_FUND.methods.viewALL().call();
     console.log(_data);
+    dispatch(fetchBringData(_data));
   };
   // 진행예정 펀딩 데이터 가져오는 함수
   const before_fundingData = async () => {
     const _data = await NEWSIC_FUND.methods.beforeStart().call();
     console.log(_data);
+    dispatch(fetchBringData(_data));
   };
   // 진행종료후 제작중인 펀딩 데이터 가져오는 함수
   const make_fundingData = async () => {
     const _data = await NEWSIC_FUND.methods.makeStart().call();
     console.log(_data);
+    dispatch(fetchBringData(_data));
   };
   // 진행종료후 제작종료 펀딩 데이터 가져오는 함수
   const end_fundingData = async () => {
     const _data = await NEWSIC_FUND.methods.fundingEnd().call();
     console.log(_data);
+    dispatch(fetchBringData(_data));
   };
 
   // 세부페이지 들어가는 함수
