@@ -29,7 +29,7 @@ const UserBar = ({ handleOpen }) => {
       //==========================프로필 이미지 변경===============================
       // await axios({
       //   method: "post",
-      //   url: "http://127.0.0.1:4000/change-info/profile/image",
+      //   url: "http://localhost:8080/change-info/profile/image",
       //   data: formData,
       //   headers: {
       //     "Content-Type": "multipart/form-data",
@@ -45,12 +45,7 @@ const UserBar = ({ handleOpen }) => {
     <div className="userBarSection">
       <div className="infoSection">
         <div className="optionSection">
-          <motion.div
-            className="changeMemberInfo"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.8 }}
-            onClick={handleOpen}
-          >
+          <motion.div className="changeMemberInfo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }} onClick={handleOpen}>
             회원정보 변경
           </motion.div>
         </div>
@@ -79,13 +74,7 @@ const UserBar = ({ handleOpen }) => {
               movePage("my_page");
             }}
           />
-          <input
-            type="file"
-            name="file"
-            accept="image/*"
-            style={{ opacity: 0, height: "100px" }}
-            onChange={profileImageHandler}
-          />
+          <input type="file" name="file" accept="image/*" style={{ opacity: 0, height: "100px" }} onChange={profileImageHandler} />
           <ConnectWallet />
         </div>
         <div className="stateInfoSection"></div>

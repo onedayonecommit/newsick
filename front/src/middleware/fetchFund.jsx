@@ -9,7 +9,7 @@ export const fetchMakeIPFS = createAsyncThunk(
     try {
       const _recieveMetadata = await axios({
         method: "post",
-        url: "http://localhost:4000/create-fund/create/makeMetadata",
+        url: "http://localhost:8080/create-fund/create/makeMetadata",
         data: _formData,
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -26,7 +26,7 @@ export const fetchCreateFund = createAsyncThunk(
   async (_data) => {
     try {
       const _recieveMetadata = await axios.post(
-        "http://127.0.0.1:4000/create-fund/create/fund", // 여기 사용하는 back 주소
+        "http://127.0.0.1:8080/create-fund/create/fund", // 여기 사용하는 back 주소
         _data
       );
       // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
@@ -43,7 +43,7 @@ export const fetchPopularPick = createAsyncThunk(
   async () => {
     try {
       const _recieveData = await axios.post(
-        "http://127.0.0.1:4000/hot-fund/top1"
+        "http://127.0.0.1:8080/hot-fund/top1"
       );
       console.log("top 확인", _recieveData);
       return _recieveData.data;
@@ -52,3 +52,15 @@ export const fetchPopularPick = createAsyncThunk(
     }
   }
 );
+
+export const fetchBringData = createAsyncThunk("fund/popularPick", async () => {
+  try {
+    const _recieveData = await axios.post(
+      "http://127.0.0.1:8080/query-data/find"
+    );
+    console.log("들어온 데이터 확인", _recieveData);
+    return _recieveData.data;
+  } catch (error) {
+    console.log(error);
+  }
+});

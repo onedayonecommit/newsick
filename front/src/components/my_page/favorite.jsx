@@ -201,16 +201,7 @@ const MyPageSecondContainer = () => {
     }
     setHurryUpList(hurryarr);
   }, []);
-  // useEffect(() => {
-  //   heartFundingList.map((e) => {
-  //     console.log(e.heartFundingList.funding_nft_image);
-  //   });
-  // }, []);
-  // const user_wallet_address = useSelector((state) => state.userInfo.address);
-  // console.log("123123", user_wallet_address);
-  // useEffect(() => {
-  //   if (user_wallet_address) dispatch(fetchMyNftList({ user_wallet_address }));
-  // }, [user_wallet_address]);
+
   return (
     <div className="secondMyPage" ref={container}>
       <div className="myPageSecondContainerFrame">

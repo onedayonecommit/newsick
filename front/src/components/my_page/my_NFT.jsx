@@ -84,7 +84,7 @@ const MyPageThirdContainer = () => {
           <div className="underLine" />
         </div>
         <div className="fundingItemList">
-          {ownNftDate.map((item) => (
+          {/* {ownNftDate.map((item) => (
             <Atropos className="ownedNftBox atropos-banner" key={item.id}>
               <div className="ownedNftFrame">
                 <Image
@@ -104,7 +104,31 @@ const MyPageThirdContainer = () => {
                 </div>
               </div>
             </Atropos>
-          ))}
+          ))} */}
+          {myNftList.length != 0 ? (
+            myNftList.map((item) => (
+              <div className="ownedNftBox">
+                <div className="ownedNftFrame">
+                  <Image className="ownNftImg" src={item.data.image} alt="3dRender" width={210} height={189} />
+                  <div className="nftTitleSection">
+                    <div>{item.data.name}</div>
+                    <button
+                      onClick={() => {
+                        router.replace(`/NFTmarket/${item.tokenId}`);
+                      }}
+                      style={{ color: "red" }}
+                    >
+                      판매
+                    </button>
+                  </div>
+                  <div className="middleLine" />
+                  <div className="infoSection">{item.data.description}</div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <div>보유한 Nft가 없습니다 펀딩 혹은 마켓플레이스 이용하여 nft를 구매하실 수 있습니다!</div>
+          )}
         </div>
       </div>
       <div className="pageNationFrame">
