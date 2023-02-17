@@ -1,16 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  fetchUserCreated,
-  fetchUserCheck,
-  fetchUserImage,
-  fetchApplyCreator,
-} from "../middleware/fetchUser";
+import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
 
 const initialState = {
   address: "",
   userName: "",
   userEmail: "",
-  userImage: "default_profile_image.png",
+  userImage: "default_profile_image.jpeg",
   isCreator: false,
   createStatus: false,
   // 구독권 state 만들기
@@ -52,10 +47,8 @@ const userSlice = createSlice({
         // console.log(typeof action.payload);
         // console.log(typeof action.payload == "string");
         if (action.payload) {
-          if (typeof action.payload == "string")
-            alert(`이미 사용중인 ${action.payload} 입니다.`);
+          if (typeof action.payload == "string") alert(`이미 사용중인 ${action.payload} 입니다.`);
           else {
-            console.log("hihihi", action.payload);
             state.address = action.payload.user_wallet_address;
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;

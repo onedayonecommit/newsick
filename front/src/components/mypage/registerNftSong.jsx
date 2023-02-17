@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { MypageBackDrop } from "@/components";
 
@@ -41,7 +41,7 @@ const subMenuAnimate = {
     },
   },
 };
-const Modal = ({ handleClose, text }) => {
+const RegisterNftSong = ({ handleClose, text }) => {
   const [isChoice, setIsChoice] = useState("Sub");
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
@@ -169,4 +169,4 @@ const Modal = ({ handleClose, text }) => {
   );
 };
 
-export default Modal;
+export default RegisterNftSong;

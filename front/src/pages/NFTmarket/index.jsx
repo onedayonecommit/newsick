@@ -10,11 +10,7 @@ import Image from "next/image";
 import { NEWSIC_FUND_CA } from "@/web3.config";
 
 // nft 메인페이지
-const images = [
-  "https://i.pinimg.com/564x/26/2c/d9/262cd9e6cdf5ba0f922d36aeb8a3f3fa.jpg",
-  "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
-];
+const images = ["https://i.pinimg.com/564x/26/2c/d9/262cd9e6cdf5ba0f922d36aeb8a3f3fa.jpg", "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png", "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"];
 
 const variants = {
   enter: (direction) => {
@@ -41,17 +37,12 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-const data = Array.from({ length: 20 }, () => ({
-  nftName: "NFT 1",
-  price: "2.2wei",
-  bottomImage: image1,
-}));
+const data = Array.from({ length: 20 }, () => ({ nftName: "NFT 1", price: "2.2wei", bottomImage: image1 }));
 
 const NftMarketContainer = () => {
   const { web3, NEWSIC_FUND, NEWSIC_MARKET } = useWeb3();
   const [active, setActive] = useState(false);
   const [[page, direction], setPage] = useState([0, 0]);
-  const [place, setPlace] = useState("popular");
   const imageIndex = wrap(0, images.length, page);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
@@ -129,12 +120,7 @@ const NftMarketContainer = () => {
         <div className="topBarSection">
           <div className="topBar">
             <div className="text">Market Place</div>
-            <select
-              className="dropDownBar"
-              onChange={(e) => {
-                setPlace(e.target.value);
-              }}
-            >
+            <select className="dropDownBar">
               <option value="popular">popular</option>
               <option value="Close">Close</option>
               <option value="Latest ">Latest </option>
@@ -152,30 +138,16 @@ const NftMarketContainer = () => {
                   </div>
                 </div>
                 <div className="bottomImageFrame">
-                  <Image
-                    className="bottomImage"
-                    src={item.bottomImage}
-                    alt={""}
-                    width={119}
-                    height={119}
-                  />
+                  <Image className="bottomImage" src={item.bottomImage} alt={""} width={119} height={119} />
                   <div className="likeIconFrame">
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      className={`likeIcon ${active[index] ? "active" : ""}`}
-                      onClick={() =>
-                        setActive({ ...active, [index]: !active[index] })
-                      }
-                    />
+                    <FontAwesomeIcon icon={faHeart} className={`likeIcon ${active[index] ? "active" : ""}`} onClick={() => setActive({ ...active, [index]: !active[index] })} />
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="nftBuyInfoSection">
-            NFT 구매 관련 주의 사항 및 공지 사항
-          </div>
+          <div className="nftBuyInfoSection">NFT 구매 관련 주의 사항 및 공지 사항</div>
         </div>
         <div className="bottomFrame">
           <div className="bottomSection">

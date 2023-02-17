@@ -76,10 +76,7 @@ const MusicSlideForm = ({ slide, offset, image }) => {
           }}
           whileTap={{ cursor: "grabbing" }}
         >
-          <motion.div
-            className="slideContentInner"
-            style={{ x, y, rotateX, rotateY, z: 100 }}
-          >
+          <motion.div className="slideContentInner" style={{ x, y, rotateX, rotateY, z: 100 }}>
             <h2 className="slideTitle">{slide.songName}</h2>
             <h3 className="slideSubtitle">{slide.singerName}</h3>
           </motion.div>

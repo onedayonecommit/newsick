@@ -1,15 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import {
-  MusicPlayer,
-  PlayBar,
-  SearchBar,
-  SideBar,
-  UserBar,
-  VolumeBox,
-} from "../components";
+import { useRef, useState } from "react";
+import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar, VolumeBox } from "../components";
 import { AnimatePresence, motion } from "framer-motion";
-import Loading from "./eventComponent/Loading";
-import ChangeMember from "./ChangeMember";
+import { Loading, ChangeMember, Congratulations } from "@/components";
+
 const Layout = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isSoundClick, setIsSoundClick] = useState(false);
@@ -19,6 +12,12 @@ const Layout = (props) => {
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   const layOutRef = useRef(null);
+  //====================================================
+  const [isClick, setIsClick] = useState(false);
+  const handleClick = () => {
+    setIsClick(!isClick);
+    //====================================================
+  };
 
   const soundClick = () => {
     setIsSoundClick(!isSoundClick);
@@ -33,29 +32,20 @@ const Layout = (props) => {
       ) : (
         <motion.div>
           <motion.div className="layoutFrame" ref={layOutRef}>
-            <MusicPlayer
-              layOutRef={layOutRef}
-              isPlayerClick={isPlayerClick}
-              playerClick={playerClick}
-            />
+            {/* ========================================================== */}
+            {isClick ? <Congratulations isClick={isClick} /> : null}
+            {/* ========================================================== */}
+            <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick} />
             {isSoundClick ? <VolumeBox /> : null}
-            <AnimatePresence>
-              {modalOpen && (
-                <ChangeMember modalOpen={modalOpen} handleClose={close} />
-              )}
-            </AnimatePresence>
+            <AnimatePresence>{modalOpen && <ChangeMember modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
             <div className="layoutBox">
               <SideBar />
-              <PlayBar
-                soundClick={soundClick}
-                playerClick={playerClick}
-                isPlayerClick={isPlayerClick}
-              />
+              <PlayBar soundClick={soundClick} playerClick={playerClick} isPlayerClick={isPlayerClick} />
               <div className="contentSection">
                 <SearchBar />
                 <div className="content">{props.children}</div>
               </div>
-              <UserBar handleOpen={open} />
+              <UserBar handleOpen={open} handleClick={handleClick} />
             </div>
           </motion.div>
         </motion.div>

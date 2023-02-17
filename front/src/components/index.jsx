@@ -4,7 +4,8 @@ import UserBar from "./UserBar";
 import PlayBar from "./PlayBar";
 import PageNationFrame from "./PageNationFrame";
 import VolumeBox from "./VolumeBox";
-import CoverPage from "./CoverPage";
+import ChangeMember from "./ChangeMember";
+import ConnectWallet from "./ConnectWallet";
 
 // reward
 import board from "./reward/board";
@@ -14,13 +15,13 @@ import In_production from "./reward/In_production";
 import ongoing from "./reward/ongoing";
 
 // mypage
-import RegisterNftSong from "./my_page/RegisterNftSong";
-import MyPageCreator from "./my_page/MyPageCreator";
-import ApplyFundMusic from "./my_page/RegisterNftSong";
-import Graph from "./my_page/Graph";
-import ApplyCreator from "./my_page/ApplyCreator";
-import MyPageSecondContainer from "./my_page/Favorite";
-import MyPageThirdContainer from "./my_page/my_NFT";
+import RegisterNftSong from "./mypage/RegisterNftSong";
+import MyPageCreator from "./mypage/MyPageCreator";
+import ApplyFundMusic from "./mypage/RegisterNftSong";
+import Graph from "./mypage/Graph";
+import Favorite from "./mypage/Favorite";
+import my_NFT from "./mypage/my_NFT";
+import ApplyCreator from "./mypage/ApplyCreator";
 
 // music
 import MusicPlayer from "./music/MusicPlayer";
@@ -28,6 +29,7 @@ import MusicPlayerPlayBar from "./music/MusicPlayerPlayBar";
 import MusicSlideForm from "./music/MusicSlideForm";
 import NftTop100 from "./music/NftTop100";
 import SongTop100 from "./music/SongTop100";
+import MusicPlayerListBar from "./music/MusicPlayerListBar";
 
 // main
 import MainFirstPage from "./main/MainFirstPage";
@@ -40,15 +42,17 @@ import Loading from "./events/Loading";
 import MypageBackDrop from "./events/MypageBackDrop";
 import SignUpBackDrop from "./events/SignUpBackDrop";
 import SuccessLog from "./events/SuccessLog";
+import Congratulations from "./events/Congratulations";
 
 export {
+  ChangeMember,
+  ConnectWallet,
   SideBar,
   SearchBar,
   UserBar,
   PageNationFrame,
   PlayBar,
   VolumeBox,
-  CoverPage,
   board,
   commingsoon,
   end,
@@ -59,8 +63,8 @@ export {
   ApplyFundMusic,
   Graph,
   ApplyCreator,
-  MyPageSecondContainer,
-  MyPageThirdContainer,
+  Favorite,
+  my_NFT,
   MusicPlayer,
   MusicPlayerPlayBar,
   MusicSlideForm,
@@ -74,4 +78,6 @@ export {
   MypageBackDrop,
   SignUpBackDrop,
   SuccessLog,
+  MusicPlayerListBar,
+  Congratulations,
 };
