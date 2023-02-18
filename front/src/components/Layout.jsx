@@ -35,8 +35,8 @@ const Layout = (props) => {
             {/* ========================================================== */}
             {isClick ? <Congratulations isClick={isClick} /> : null}
             {/* ========================================================== */}
-            <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick} />
             {isSoundClick ? <VolumeBox /> : null}
+            <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick} />
             <AnimatePresence>{modalOpen && <ChangeMember modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
             <div className="layoutBox">
               <SideBar />

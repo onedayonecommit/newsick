@@ -15,12 +15,7 @@ const initialState = {
 const userSlice = createSlice({
   name: "userInfo",
   initialState,
-  reducers: {
-    reset: (state, action) => {
-      state = action.payload;
-      console.log("초기화된 state : ", action.payload);
-    },
-  },
+
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
@@ -69,7 +64,7 @@ const userSlice = createSlice({
       .addCase(fetchUserImage.pending, (state) => {
         state.userImage;
       })
-      .addCase(fetchUserImage.fulfilled, (state) => {
+      .addCase(fetchUserImage.fulfilled, (state, action) => {
         state.userImage = action.payload.file;
       })
       .addCase(fetchUserImage.rejected, (state) => {
