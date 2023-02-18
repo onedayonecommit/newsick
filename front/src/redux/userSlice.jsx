@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
+import { PURGE } from "redux-persist";
 
 const initialState = {
   address: "",
@@ -35,7 +36,7 @@ const userSlice = createSlice({
           state.isCreator = action.payload.creator[0].is_creator;
           state.createStatus = action.payload.createStatus;
           console.log("넘어온 유저정보 : ", action.payload);
-        }
+        } else state.createStatus = false;
       })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
@@ -79,7 +80,8 @@ const userSlice = createSlice({
           console.log("creator apply", action.payload);
           state.isCreator = action.payload.is_creator;
         }
-      });
+      })
+      .addCase(PURGE, () => initialState);
   },
 });
 

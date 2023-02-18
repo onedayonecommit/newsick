@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { PlayBar } from "@/components";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 // 컴포넌트
 const SideBar = () => {
