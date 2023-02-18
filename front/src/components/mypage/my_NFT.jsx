@@ -2,9 +2,10 @@ import useWeb3 from "@/hooks/useWeb3";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import PageNationFrame from "../../components/PageNationFrame";
+import PageNationFrame from "../PageNationFrame";
 import Atropos from "atropos/react";
 import "atropos/atropos.css";
+import { useRouter } from "next/router";
 
 const ownNftDate = [
   {
@@ -54,30 +55,41 @@ const ownNftDate = [
   },
 ];
 
-const my_NFT = () => {
+const My_NFT = () => {
   const router = useRouter();
   const myNftList = useSelector((state) => state.myPageInfo.myNftList);
-
+  useEffect(() => {
+    console.log(myNftList[0].image, "good");
+    console.log(myNftList.image, "good");
+    console.log(myNftList, "good");
+    console.log(myNftList[0], "good");
+  }, []);
   return (
     <div className="thirdMyPage">
       <div className="MyPageThirdContainerFrame">
         <div className="infoSection">
           <div className="infoFrame">
             <div>소유한 NFT 총 갯수</div>
-            <div>24</div>
+            <div>{myNftList.length}</div>
           </div>
           <div className="underLine" />
         </div>
         <div className="fundingItemList">
-          {ownNftDate.map((item) => (
-            <Atropos className="ownedNftBox atropos-banner" key={item.id}>
+          {myNftList.map((item) => (
+            <Atropos className="ownedNftBox atropos-banner" key={item.tokenId}>
               <div className="ownedNftFrame">
-                <Image className="ownNftImg" src={item.ownNftImgUrl} alt="3dRender" width={210} height={189} data-atropos-offset="10" />
+                <Image className="ownNftImg" src={item.data.image} alt="3dRender" width={210} height={189} data-atropos-offset="10" />
                 <div className="nftTitleSection" data-atropos-offset="10">
-                  <div>{item.ownNftName}</div>
+                  <div>{item.data.name}</div>
                 </div>
                 <div className="middleLine" />
-                <div className="sellButton" data-atropos-offset="10">
+                <div
+                  className="sellButton"
+                  data-atropos-offset="10"
+                  onClick={() => {
+                    router.push("");
+                  }}
+                >
                   판 매 하 기
                 </div>
               </div>
@@ -92,7 +104,7 @@ const my_NFT = () => {
   );
 };
 
-export default my_NFT;
+export default My_NFT;
 
 /** 
  {myNftList.length != 0 ? (

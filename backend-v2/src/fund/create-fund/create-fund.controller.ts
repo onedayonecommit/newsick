@@ -1,14 +1,21 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Post,
-  UploadedFile,
+  UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
+import { UploadedFile } from '@nestjs/common/decorators';
+import {
+  FileFieldsInterceptor,
+  FileInterceptor,
+} from '@nestjs/platform-express';
+import { STATUS_CODES } from 'http';
+import { CreatorCheckService } from 'src/auth/creator-check/creator-check.service';
 import { IpfsUploadService } from 'src/nft-storage/ipfs-upload/ipfs-upload.service';
 import { ipfsReturnDto } from 'src/nft-storage/ipfs-upload/return.dto';
-import { createFundMainDto } from './create-fund.dto';
+import { createFundMainDto, metadataDto } from './create-fund.dto';
 import { CreateFundService } from './create-fund.service';
 
 @Controller('create-fund')
@@ -16,14 +23,22 @@ export class CreateFundController {
   constructor(
     private readonly createFundService: CreateFundService,
     private readonly ipfsUploadService: IpfsUploadService,
+    private readonly authService: CreatorCheckService,
   ) {}
 
-  @Post('create/metadata')
-  @UseInterceptors(FileInterceptor('fund_nft_image'))
+  @Post('create/makeMetadata')
+  @UseInterceptors(FileInterceptor('nft_image'))
   async createMetadata(
     @UploadedFile() file: Express.Multer.File,
-  ): Promise<ipfsReturnDto> {
-    return await this.ipfsUploadService.ipfsUpload(file);
+    @Body() dto: metadataDto,
+  ): Promise<any> {
+    if (await this.authService.creatorCheck(dto.producer)) {
+      console.log('IPFS 생성');
+      return await this.ipfsUploadService.ipfsUpload(file, dto);
+    } else {
+      console.log('IPFS 생성 실패');
+      return;
+    }
   }
 
   @Post('create/fund')
@@ -31,5 +46,4 @@ export class CreateFundController {
     console.log(fundDto.fund.funding_production_date);
     return await this.createFundService.createFund(fundDto);
   }
-  // @Post('create/fund')
 }

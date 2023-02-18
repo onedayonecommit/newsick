@@ -16,11 +16,12 @@ const SideBar = () => {
   function movePage(_page) {
     _page == "home" ? router.replace("/") : router.push(`/${_page}`);
   }
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
   const [isHover, setIsHover] = useState(false);
   //---크리에이터 권한 초기화 함수---------
   const resetContract = async () => {
     const reset = await NEWSIC_FUND.methods.creatorDelete().send({
-      from: userAccount,
+      from: user_wallet_address,
     });
     console.log("크리에이터 초기화", reset);
   };

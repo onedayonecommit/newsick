@@ -20,7 +20,7 @@ import MyPageCreator from "./mypage/MyPageCreator";
 import ApplyFundMusic from "./mypage/RegisterNftSong";
 import Graph from "./mypage/Graph";
 import Favorite from "./mypage/Favorite";
-import my_NFT from "./mypage/my_NFT";
+import My_NFT from "./mypage/My_NFT";
 import ApplyCreator from "./mypage/ApplyCreator";
 
 // music
@@ -64,7 +64,7 @@ export {
   Graph,
   ApplyCreator,
   Favorite,
-  my_NFT,
+  My_NFT,
   MusicPlayer,
   MusicPlayerPlayBar,
   MusicSlideForm,

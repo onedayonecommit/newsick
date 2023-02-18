@@ -8,7 +8,9 @@ import { S3Module } from './s3/s3.module';
 import { NftStorageModule } from './nft-storage/nft-storage.module';
 import { AuthModule } from './auth/auth.module';
 import { MypageModule } from './mypage/mypage.module';
+// import { AppController } from './app.controller';
 import { SearchModule } from './search/search.module';
+import { SimpleTestModule } from './simple-test/simple-test.module';
 
 @Module({
   imports: [
@@ -22,6 +24,7 @@ import { SearchModule } from './search/search.module';
     AuthModule,
     MypageModule,
     SearchModule,
+    SimpleTestModule,
   ],
   controllers: [],
   providers: [],

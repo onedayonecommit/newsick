@@ -19,17 +19,17 @@ const initialState = {
   lyrics_maker: {
     lyrics_name: "", // 작사가명
     lyrics_info: "", // 작사가 소개
-    lyrics_sex: 0, // 작사가 성별
+    lyrics_sns_address: "", // sns 주소
   },
   music_maker: {
     music_name: "", // 작곡가 명
     music_info: "", // 작곡가 소개
-    music_sex: 0, // 작곡가 성별
+    music_sns_address: "",
   },
   singer: {
     singer_name: "", // 가수명
     singer_info: "", // 가수소개
-    singer_sex: 0, // 가수성별
+    singer_sns_address: "",
   },
   createStatus: false,
 };

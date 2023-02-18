@@ -10,6 +10,7 @@ import { FileUploadService } from 'src/s3/file-upload/file-upload.service';
 import { ApproveFundingMusicService } from './approve-funding-music/approve-funding-music.service';
 import { ApproveFundingMusicController } from './approve-funding-music/approve-funding-music.controller';
 import { StreamingAuthService } from 'src/auth/streaming-auth/streaming-auth.service';
+import { CreatorCheckService } from 'src/auth/creator-check/creator-check.service';
 
 @Module({
   controllers: [
@@ -26,6 +27,7 @@ import { StreamingAuthService } from 'src/auth/streaming-auth/streaming-auth.ser
     FileUploadService,
     ApproveFundingMusicService,
     StreamingAuthService,
+    CreatorCheckService,
   ],
 })
 export class MusicModule {}

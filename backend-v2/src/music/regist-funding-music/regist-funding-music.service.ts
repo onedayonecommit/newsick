@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreatorCheckService } from 'src/auth/creator-check/creator-check.service';
 import { PrismaService } from 'src/prisma.service';
 import { FileUploadService } from 'src/s3/file-upload/file-upload.service';
 import { fundingMusicDto } from './funding-music.dto';
@@ -8,6 +9,7 @@ export class RegistFundingMusicService {
   constructor(
     private readonly db: PrismaService,
     private readonly uploadService: FileUploadService,
+    private readonly authService: CreatorCheckService,
   ) {}
 
   async registFundMusic(files, dto: fundingMusicDto) {
@@ -24,9 +26,10 @@ export class RegistFundingMusicService {
     } = dto;
     const imgUrl = await this.uploadService.uploadFile(files.cover_image[0]);
     const mp3Url = await this.uploadService.uploadFile(files.mp3_file[0]);
-    const result = await this.db.funding_music.create({
+    // if (await this.authService.fundingOwnerCheck()) // creator check 하는게 좋을듯
+    const result = await this.db.funding_music.update({
+      where: { funding_id: funding_id },
       data: {
-        funding_id: funding_id,
         music_name: music_name,
         music_lyrics: music_lyrics,
         music_genre: music_genre,
