@@ -1,12 +1,12 @@
 import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
-import { faMemory, faFileLines } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useWeb3 from "@/hooks/useWeb3";
 
-const FundingCreateContainer = () => {
+const FundingCreate = () => {
   // date 형식 맞춰
   const convertToTimestamp = (e) => {
     const _date = new Date(e);
@@ -101,6 +101,7 @@ const FundingCreateContainer = () => {
     ];
     console.log(_fundingStruct, "스트럭트");
     const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(data.funding_price, "ether")).send({ from: userInfo.address });
+
     console.log(_sendData_toContract.events.createFund.returnValues);
     setData({
       ...data,
@@ -234,8 +235,7 @@ const FundingCreateContainer = () => {
                 >
                   {isSubmissionButton ? "이미지 변경 불가" : "확정(IPFS 만들기)"}
                 </motion.div>
-                <br></br>
-                "IPFS 등록 후 Metadata가 생성됩니다." "생성 후 NFT NAME, NFT 설명, 등록 이미지는 변경이 불가합니다."
+                <div className="text">"IPFS 등록 후 Metadata가 생성됩니다." "생성 후 NFT NAME, NFT 설명, 등록 이미지는 변경이 불가합니다."</div>
               </div>
             </div>
           </div>
@@ -301,9 +301,9 @@ const FundingCreateContainer = () => {
             </div>
           </div>
           <div className="nftPriceUnitSection">
-            <div>
-              <div className="nftPriceUnit">NFT 개당 가격</div>
-              <div>실시간</div>
+            <div className="nftPriceUnit">NFT 개당 가격</div>
+            <div className="rightSide">
+              <div className="nowText">실시간</div>
               <input
                 className="nftPriceUnitInput"
                 type="number"
@@ -315,7 +315,7 @@ const FundingCreateContainer = () => {
                   });
                 }}
               />
-              <div>ETH</div>
+              <div className="nowText">ETH</div>
             </div>
           </div>
           <div className="minimumNumberSection">
@@ -357,10 +357,11 @@ const FundingCreateContainer = () => {
           </div>
           <div className="shareSection">
             <div className="shareFrame">
-              <div className="info">* 음원 수익 배분 100% 기준</div>
-              <div className="content">
+              <div className="info">* 음원 수익 배분 100% 기준 /</div>
+              <div className="contents">
                 <div>제작자 : 보유자 =</div>
-                <div>{Number(100 - share)}%</div>%<div>:</div>
+                <div>{Number(100 - share)}%</div>
+                <div>:</div>
                 <input
                   type="number"
                   onChange={(e) => {
@@ -377,6 +378,7 @@ const FundingCreateContainer = () => {
           <div className="genreSection">
             <div className="genreText">장르 선택</div>
             <select
+              className="dropDownBox"
               onChange={(e) => {
                 setData({
                   ...data,
@@ -597,4 +599,4 @@ const FundingCreateContainer = () => {
   );
 };
 
-export default FundingCreateContainer;
+export default FundingCreate;

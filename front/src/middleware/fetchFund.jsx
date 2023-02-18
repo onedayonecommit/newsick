@@ -32,3 +32,25 @@ export const fetchCreateFund = createAsyncThunk("fund/createFund", async (_data)
     console.log("메타데이터 생성 에러");
   }
 });
+
+// 인기있는 펀딩 가져오기
+export const fetchPopularPick = createAsyncThunk("fund/popularPick", async () => {
+  try {
+    const _recieveData = await axios.post("http://127.0.0.1:8080/hot-fund/top1");
+    console.log("top 확인", _recieveData);
+    return _recieveData.data;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// 전체 펀딩 데이터 가져오기
+export const fetchBringData = createAsyncThunk("fund/allList", async () => {
+  try {
+    const _recieveData = await axios.post("http://127.0.0.1:8080/hot-fund/all/list");
+    console.log("들어온 데이터 확인", _recieveData);
+    return _recieveData.data;
+  } catch (error) {
+    console.log(error);
+  }
+});

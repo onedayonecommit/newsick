@@ -27,7 +27,6 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        console.log(action.payload, "ssibaljinjja");
         if (action.payload.createStatus != false) {
           state.address = action.payload.user_wallet_address;
           state.userName = action.payload.user_name;
@@ -50,7 +49,6 @@ const userSlice = createSlice({
         if (action.payload) {
           if (typeof action.payload == "string") alert(`이미 사용중인 ${action.payload} 입니다.`);
           else {
-            console.log("hihihi", action.payload);
             state.address = action.payload.user_wallet_address;
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;

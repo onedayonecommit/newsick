@@ -1,10 +1,5 @@
-import { useEffect, useState } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion, useMotionValue, useTransform } from "framer-motion";
 import { MainFirstPage, MainSecondPage, MainThirdPage } from "@/components";
 
 const pageData = [
@@ -70,20 +65,12 @@ const Home = () => {
             //   }
           }}
         >
-          {currentPage === 0 ? (
-            <MainFirstPage />
-          ) : currentPage === 1 ? (
-            <MainSecondPage />
-          ) : (
-            <MainThirdPage />
-          )}
+          {currentPage === 0 ? <MainFirstPage /> : currentPage === 1 ? <MainSecondPage /> : <MainThirdPage />}
         </motion.div>
         <div className="pageNav">
           {pageData.map((page) => (
             <motion.div
-              className={`pageNavItem ${
-                page.pageNum === currentPage ? "active" : ""
-              }`}
+              className={`pageNavItem ${page.pageNum === currentPage ? "active" : ""}`}
               key={page.pageNum}
               onClick={() => {
                 setCurrentPage(page.pageNum);
@@ -95,9 +82,7 @@ const Home = () => {
               whileTap={{
                 scale: 1,
               }}
-              style={
-                currentPage === page.pageNum ? { scale: 1.4, opacity: 1 } : null
-              }
+              style={currentPage === page.pageNum ? { scale: 1.4, opacity: 1 } : null}
             >
               <div />
               <div>{page.pageName}</div>

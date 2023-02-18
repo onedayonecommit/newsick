@@ -1,10 +1,6 @@
 //
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  fetchMakeIPFS,
-  metadataReady,
-  fetchCreateFund,
-} from "@/middleware/fetchFund";
+import { fetchMakeIPFS, metadataReady, fetchCreateFund } from "@/middleware/fetchFund";
 
 const initialState = {
   funding_nft_image: "", // 파일url

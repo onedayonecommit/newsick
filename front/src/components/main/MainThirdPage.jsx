@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 const Data = [
   {
     id: 1,
@@ -56,79 +56,54 @@ const MainThirdPage = () => {
       <div className="mainThirdFrame">
         <div className="leftSlideContent">
           <div className="slideListDownFrame">
-            <motion.div
-              className="closeFundingList"
-              animate="animate"
-              variants={variantsdown}
-            >
+            <motion.div className="closeFundingList" animate="animate" variants={variantsdown}>
               {Data.map((item) => (
-                <motion.div
-                  className="closeItem"
-                  key={item.id}
-                  whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
-                  onHoverStart={() => setIsHovered(true)}
-                  onHoverEnd={() => setIsHovered(false)}
-                >
+                <motion.div className="closeItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
                   {item.name}
                 </motion.div>
               ))}
             </motion.div>
-            <motion.div
-              className="closeFundingList"
-              animate="animate"
-              variants={variantsdown}
-            >
+            <motion.div className="closeFundingList" animate="animate" variants={variantsdown}>
               {Data.map((item) => (
-                <motion.div
-                  className="closeItem"
-                  key={item.id}
-                  whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
-                  onHoverStart={() => setIsHovered(true)}
-                  onHoverEnd={() => setIsHovered(false)}
-                >
+                <motion.div className="closeItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
                   {item.name}
                 </motion.div>
               ))}
             </motion.div>
           </div>
           <div className="slideListUpFrame">
-            <motion.div
-              className="closeFundingList"
-              animate="animate"
-              variants={variantsUp}
-            >
+            <motion.div className="closeFundingList" animate="animate" variants={variantsUp}>
               {Data.map((item) => (
-                <motion.div
-                  className="closeItem"
-                  key={item.id}
-                  whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
-                  onHoverStart={() => setIsHovered(true)}
-                  onHoverEnd={() => setIsHovered(false)}
-                >
+                <motion.div className="closeItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
                   {item.name}
                 </motion.div>
               ))}
             </motion.div>
-            <motion.div
-              className="closeFundingList"
-              animate="animate"
-              variants={variantsUp}
-            >
+            <motion.div className="closeFundingList" animate="animate" variants={variantsUp}>
               {Data.map((item) => (
-                <motion.div
-                  className="closeItem"
-                  key={item.id}
-                  whileHover={{ scale: isHovered ? 1.2 : 0.5 }}
-                  onHoverStart={() => setIsHovered(true)}
-                  onHoverEnd={() => setIsHovered(false)}
-                >
+                <motion.div className="closeItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                  {item.name}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+          <div className="slideListDownFrame">
+            <motion.div className="closeFundingList" animate="animate" variants={variantsdown}>
+              {Data.map((item) => (
+                <motion.div className="closeItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
+                  {item.name}
+                </motion.div>
+              ))}
+            </motion.div>
+            <motion.div className="closeFundingList" animate="animate" variants={variantsdown}>
+              {Data.map((item) => (
+                <motion.div className="closeItem" key={item.id} whileHover={{ scale: isHovered ? 1.2 : 0.5 }} onHoverStart={() => setIsHovered(true)} onHoverEnd={() => setIsHovered(false)}>
                   {item.name}
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </div>
-        <div className="rightContent"></div>
       </div>
     </AnimatePresence>
   );

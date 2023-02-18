@@ -1,10 +1,4 @@
-import {
-  fetchMyNftList,
-  fetchMyPage,
-  getNotice,
-  myNftList,
-  myRunningFundList,
-} from "@/middleware/fetchMypage";
+import { fetchMyNftList, fetchMyPage, getNotice, myNftList, myRunningFundList } from "@/middleware/fetchMypage";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {

@@ -36,14 +36,7 @@ const dropIn = {
 const ChangeMember = ({ handleClose, text }) => {
   return (
     <MypageBackDrop onClick={handleClose}>
-      <motion.div
-        onClick={(e) => e.stopPropagation()}
-        className="changeUserInfoFrame"
-        variants={dropIn}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      >
+      <motion.div onClick={(e) => e.stopPropagation()} className="changeUserInfoFrame" variants={dropIn} initial="hidden" animate="visible" exit="exit">
         <div className="changeNavBar">
           <div className="successBtn" onClick={handleClose}>
             완료
@@ -54,12 +47,7 @@ const ChangeMember = ({ handleClose, text }) => {
         <div className="changeMainSection">
           <label className="imgChange" for="imgChange">
             <FontAwesomeIcon icon={faCamera} className="faCamera" />
-            <input
-              type="file"
-              className="imgChange"
-              id="imgChange"
-              style={{ display: "none" }}
-            />
+            <input type="file" className="imgChange" id="imgChange" style={{ display: "none" }} />
           </label>
           <img className="userImg" src={testUserImg} alt="userImg" />
           <motion.span

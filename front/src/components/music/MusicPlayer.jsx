@@ -76,20 +76,6 @@ const itemVariants = {
 //       }
 //     }
 // }
-
-// const playBarState ={
-//     animate:{
-//       width:["calc(0%)","calc(100%)"],
-//       transition:{
-//         width:{
-//           ease:"linear",
-//           duration: 200,
-//           repeat: Infinity,
-//           repeatType: "loop",
-//         }
-//       }
-//     }
-// }
 const frontVariant = {
   visible: {
     rotateY: 0,
@@ -162,16 +148,6 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
   const FilippedChoice = () => {
     setIsFlipped(!isFlipped);
   };
-  if (event.type === "PREV") {
-    return {
-      ...state,
-      slideIndex: state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
-    };
-  }
-
-  const initialState = {
-    slideIndex: 0,
-  };
   const slidesReducer = (state, event) => {
     if (event.type === "NEXT") {
       return {
@@ -186,7 +162,9 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
       };
     }
   };
-
+  const initialState = {
+    slideIndex: 0,
+  };
   const [state, dispatch] = useReducer(slidesReducer, initialState);
   return (
     <motion.div
@@ -249,28 +227,31 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
       </motion.div>
       {/* ===============================================================위에가 playList */}
       <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant} style={isFlipped ? { pointerEvents: "none" } : ""}>
-        <div className="listTopBar">
-          <FontAwesomeIcon icon={faArrowLeft} />
-          <div className="playListText">PlayList</div>
-        </div>
-        <div className="listSection">
-          <div className="listControlBar"></div>
-          <div className="listFrame"></div>
-        </div>
-        <MusicPlayerPlayBar />
-      </motion.div>
-      <motion.div className="songDetailSection" initial="visible" animate={isFlipped ? "hidden" : "visible"} variants={frontVariant}>
         <div className="slideSection">
           <div className="slideBackground" />
           <FontAwesomeIcon icon={faArrowLeft} className="backToMain" onClick={playerClick} />
           <div className="slideList">
             <div className="slides">
-              <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+              <button
+                onClick={() => {
+                  dispatch({ type: "PREV" });
+                  setListCount(listCount === slides.length - 1 ? 0 : listCount + 1);
+                }}
+              >
+                ‹
+              </button>
               {[...slides, ...slides, ...slides].map((slide, i) => {
                 let offset = slides.length + (state.slideIndex - i);
                 return <MusicSlideForm slide={slide} offset={offset} key={i} image={slide.image} />;
               })}
-              <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
+              <button
+                onClick={() => {
+                  dispatch({ type: "NEXT" });
+                  setListCount(listCount === 0 ? slides.length - 1 : listCount - 1);
+                }}
+              >
+                ›
+              </button>
             </div>
           </div>
         </div>
