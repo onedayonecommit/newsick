@@ -1379,7 +1379,56 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent {
+  margin-top: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(231deg, rgba(16, 11, 60, 0.9) 0%, hsla(246deg, 100%, 8%, 0.9) 100%);
+  overflow: hidden;
+  z-index: 10;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent .itemBox {
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 25px;
+  gap: 35px;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent .dropItem {
+  cursor: pointer;
+  padding: 5px 20px 5px 20px;
+  flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
 .MusicPlayFrame .songListSection .listSection .listControlBar .sortButton {
+  cursor: pointer;
   flex-shrink: 0;
   width: auto; /* 28px */
   height: auto; /* 16px */
@@ -1399,7 +1448,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -2343,7 +2392,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  background-color: #2b2f5f;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -5026,8 +5074,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -5261,7 +5308,7 @@ body {
   height: 372px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-end;
   overflow: hidden;
   position: relative;
@@ -5269,32 +5316,118 @@ body {
   align-content: flex-end;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox {
-  box-sizing: border-box;
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardItemImg {
   flex-shrink: 0;
   width: 955px;
+  height: 372px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 413px;
   height: 372px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-start;
-  padding: 20px 20px 20px 20px;
+  align-items: flex-end;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  position: relative;
-  align-content: flex-start;
+  z-index: 1;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
   flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  gap: 10;
+  position: absolute;
+  border-radius: 400px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame {
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame {
+  box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 265px */
+  width: min-content; /* 50px */
   height: -moz-min-content;
-  height: min-content; /* 249px */
+  height: min-content; /* 150px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 25px 0px;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 0px 0px 0px 0px;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .nextButton, .FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .previousButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .nextButton:hover, .FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .previousButton:hover {
+  scale: 1.2;
+  color: rgb(255, 255, 255);
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .nextButton :nth-child(1), .FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .previousButton :nth-child(1) {
+  width: 20px;
+  height: 25px;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 25px 25px 25px 25px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 0px 0px 0px 0px;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 224px */
+  height: -moz-min-content;
+  height: min-content; /* 130px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -5304,106 +5437,54 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: flex-end;
   flex-wrap: nowrap;
-  gap: 71px;
+  gap: 10;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox {
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: 265px;
-  height: 138px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-  z-index: 2;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingName {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 264px */
-  height: -moz-min-content;
-  height: min-content; /* 46px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
+  width: auto; /* 224px */
+  height: auto; /* 42px */
   white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 38px;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 35px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotCreatorName {
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 194px */
-  height: -moz-min-content;
-  height: min-content; /* 36px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
+  width: auto; /* 112px */
+  height: auto; /* 36px */
   white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 30px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-  text-align: center;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingInfo {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 172px */
-  height: -moz-min-content;
-  height: min-content; /* 36px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
   font-size: 30px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .detailButton {
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame :nth-child(3) {
+  flex-shrink: 0;
+  width: auto; /* 51px */
+  height: auto; /* 32px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 27px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .detailButton {
+  cursor: pointer;
+  opacity: 0.7;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 120px;
@@ -5412,39 +5493,30 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  z-index: 2;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
   border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #000000;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.4s;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .swiperImage {
-  top: 0px;
-  left: 0px;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: hidden;
-  z-index: 1;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  border-radius: 0px 0px 0px 0px;
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .detailButton:hover {
+  opacity: 1;
+  scale: 1.1;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 .FundingContainerFrame .fundingListSection {
   box-sizing: border-box;
@@ -5629,8 +5701,7 @@ body {
   justify-content: flex-start;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
   overflow: hidden;
   position: relative;
   align-content: flex-end;
@@ -5924,8 +5995,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -6420,8 +6490,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
-  background-color: #2b2f5f;
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
   overflow: hidden;
   position: relative;
   align-content: flex-end;
@@ -9831,8 +9900,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  background-image: url("../../public/image/wallpaper3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -9849,6 +9920,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -9943,10 +10018,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 20px 68px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   overflow: visible;
   position: relative;
   align-content: center;

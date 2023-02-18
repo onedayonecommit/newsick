@@ -6,27 +6,31 @@
 - 제작 완료
 */
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import image1 from "../../../public/image/Funding.jpg";
-import image2 from "../../../public/image/lee.jpg";
+import { AnimatePresence, motion } from "framer-motion";
+import image1 from "../../../public/image/cover.jpg";
+import image2 from "../../../public/image/chang.jpg";
 import { PageNationFrame } from "@/components";
 import useWeb3 from "@/hooks/useWeb3";
 import { fetchPopularPick, fetchBringData } from "@/middleware/fetchFund";
 import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 // 펀딩 메인페이지
 const data = [
   {
-    fundingName: "Funding1",
-    creatorName: "Creator1",
-    fundingInfo: "Info1",
+    id:1,
+    fundingName: "Funding Title",
+    creatorName: "Creator",
+    fundingInfo: "info",
     image: image1,
   },
   {
-    fundingName: "Funding 2",
-    creatorName: "Creator 2",
-    fundingInfo: "Info 2",
+    id:2,
+    fundingName: "Funding Title",
+    creatorName: "Creator",
+    fundingInfo: "info",
     image: image2,
   },
 ];
@@ -93,7 +97,35 @@ const fundingUItemData = [
   },
 ];
 
+
 const FundingContainer = () => {
+// ===========================================================
+  const [activeIndex, setActiveIndex] = useState(0);
+  const handleDragEnd = (event, info) => {
+    const { offset, velocity } = info;
+    const swipe = offset.x > 0 ? -1 : 1;
+    const nextIndex = activeIndex + swipe;
+    const lastIndex = data.length - 1;
+    if (nextIndex < 0) {
+      setActiveIndex(lastIndex);
+    } else if (nextIndex > lastIndex) {
+      setActiveIndex(0);
+    } else {
+      setActiveIndex(nextIndex);
+    }
+  };
+  const handleNextClick = () => {
+    const lastIndex = data.length - 1;
+    const nextIndex = activeIndex === lastIndex ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  };
+  const handlePreviousClick = () => {
+    const nextIndex = data.length - 1;
+    const lastIndex = activeIndex === nextIndex ? 0 : activeIndex + 1;
+    setActiveIndex(lastIndex);
+  };
+  // ===========================================================
+
   const { web3, NEWSIC_FUND } = useWeb3();
   const dispatch = useDispatch();
   const user = useSelector((state) => {
@@ -106,6 +138,7 @@ const FundingContainer = () => {
   const handleClick = (id) => {
     setSelectedDiv(id);
   };
+  
 
   // 메인 좋아요 가장 많은 NFT
   const popularPick = (_data) => {
@@ -163,21 +196,53 @@ const FundingContainer = () => {
             <div className="creatorImg" />
           </div>
         </div>
-        <motion.div className="swiperSection">
-          {data.map((item, index) => (
-            <motion.div className="swiperBox" key={index}>
-              <div className="hotCreatorInfoFrame">
-                <div className="hotCreatorInfoBox">
-                  <div className="hotFundingName">{item.fundingName}</div>
-                  <div className="hotCreatorName">{item.creatorName}</div>
-                  <div className="hotFundingInfo">{item.fundingInfo}</div>
-                </div>
-                <div className="detailButton">DETAIL</div>
-              </div>
-              <Image className="swiperImage" src={item.image} alt={item.fundingName} />
-            </motion.div>
-          ))}
-        </motion.div>
+        <AnimatePresence>
+          <motion.div className="swiperSection">
+            {
+              data.map((item, index)=>(
+                  <motion.div
+                    key={item.id}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      position: "absolute",
+                      left: `${(index - activeIndex) * 100}%`,
+                    }}
+                    drag="x"
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    exit={{opacity:0}}
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.1}
+                    onDragEnd={handleDragEnd}
+                    transition={{ 
+                       type: "spring", stiffness: 300, damping: 30 , duration: 0.3
+                    }}
+                  >
+                    <Image src={item.image} alt="coverImg" className="rewardItemImg" style={{ webkitUserDrag: " none" }}/>
+                    <div className="rewardInfoFrame">
+                      <div className="buttonFrame">
+                        <div className="nextButton" onClick={handleNextClick}>
+                          <FontAwesomeIcon icon={faArrowRight}/>
+                        </div>
+                        <div className="previousButton" onClick={handlePreviousClick}>
+                          <FontAwesomeIcon icon={faArrowLeft}/>
+                        </div>
+                      </div>
+                      <div className="infoSection">
+                        <div className="infoFrame">
+                            <div>{item.fundingName}</div>
+                            <div>{item.creatorName}</div>
+                            <div>{item.fundingInfo}</div>
+                        </div>
+                        <div className="detailButton">detail</div>
+                      </div>
+                    </div>
+                  </motion.div>
+              ))
+            }
+          </motion.div>
+        </AnimatePresence>
       </div>
       <div className="fundingListSection">
         <div className="listTopBarFram">

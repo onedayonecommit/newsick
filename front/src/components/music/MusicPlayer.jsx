@@ -1,6 +1,8 @@
 import React, { useReducer, useState } from "react";
 import { AnimatePresence, motion, Reorder } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// npm install @radix-ui/react-dropdown-menu
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { faArrowLeft, faHeart, faList } from "@fortawesome/free-solid-svg-icons";
 import ironImage from "../../../public/image/IRON2.jpg";
 import leeImage from "../../../public/image/lee.jpg";
@@ -172,16 +174,41 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
           <div className="listControlBar">
             <div className="dropDownFrame">
               <div className="totalNum">총곡개수</div>
-                <motion.div className='dropDown'
-                            onMouseEnter={HoverList}
-                            onMouseLeave={UnHoverList}
-                            >플레이리스트보기 
-                            <motion.div
-                              variants={listHoverVariant}
-                              initial={hoverList===false?"initial":"animate"}
-                              animate={hoverList===true?"animate":"initial"}
+              <DropdownMenu.Root>
+                            <DropdownMenu.Trigger asChild>
+                              <motion.div className='dropDown'
+                                onMouseEnter={HoverList}
+                                onMouseLeave={UnHoverList}
+                                >플레이리스트보기 
+                                <motion.div
+                                  variants={listHoverVariant}
+                                  initial={hoverList===false?"initial":"animate"}
+                                  animate={hoverList===true?"animate":"initial"}
 
-                            >▽</motion.div></motion.div>
+                                >▽</motion.div></motion.div>
+                            </DropdownMenu.Trigger>
+                                    <DropdownMenu.Content className='dropDownContent' >
+                                      <motion.div
+                                        initial={{opacity:0 , x:10}}
+                                        animate={{opacity:1,x:0}}
+                                        exit={{opacity:0, x:10}}
+                                        transition={{
+                                          duration:0.3
+                                        }}
+                                        className="itemBox"
+                                      > 
+                                        <DropdownMenu.Item className='dropItem'>
+                                          Play List
+                                        </DropdownMenu.Item>
+                                        <DropdownMenu.Item className='dropItem'>
+                                          Play List
+                                        </DropdownMenu.Item>
+                                        <DropdownMenu.Item className='dropItem'>
+                                          Play List
+                                        </DropdownMenu.Item>
+                                      </motion.div>
+                                   </DropdownMenu.Content>
+                          </DropdownMenu.Root>
             </div>
             <div className="sortButton">정렬</div>
           </div>
