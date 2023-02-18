@@ -27,9 +27,9 @@ const Layout = (props) => {
   };
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <Loading setIsLoading={setIsLoading} />
-      ) : (
+      ) : ( */}
         <motion.div>
           <motion.div className="layoutFrame" ref={layOutRef}>
             {/* ========================================================== */}
@@ -49,7 +49,7 @@ const Layout = (props) => {
             </div>
           </motion.div>
         </motion.div>
-      )}
+      {/* )} */}
     </>
   );
 };
