@@ -511,6 +511,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .closeItem {
+  box-shadow: 0.3016151036px 0.3016151036px 0.4265481701px 0px rgba(255, 255, 255, 0.02), 1.1451052858px 1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), 5px 5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25), -0.3016151036px -0.3016151036px 0.4265481701px 0px hsla(0deg, 0%, 100%, 0.01508), -1.1451052858px -1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), -5px -5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25);
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -554,6 +555,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList .closeItem {
+  box-shadow: 0.3016151036px 0.3016151036px 0.4265481701px 0px rgba(255, 255, 255, 0.02), 1.1451052858px 1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), 5px 5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25), -0.3016151036px -0.3016151036px 0.4265481701px 0px hsla(0deg, 0%, 100%, 0.01508), -1.1451052858px -1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), -5px -5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25);
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -6556,8 +6558,7 @@ body {
   height: 264px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  align-items: center;
-  padding: 0px 50px 0px 50px;
+  align-items: flex-end;
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartSection .historyGraphFrame {
   position: "relative";

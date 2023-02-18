@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion} from "framer-motion"
-import { Graph } from '@/components'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 // nft 상세 페이지
 const nftData = [
     {
@@ -85,21 +85,13 @@ const historyItem =[
         theNumber:120,
     },
 ]
-const dateFunndingData = [
-    [0,10],
-    [5,50],
-    [15,75],
-    [55,100],
-    [75,10],
-    [100,5],
-    [120,50],
-    [140,100],
-    [180,50],
-    [200,50],
-    [320,70],
-    [450,15],
-    [540,45],
-    [600,70],
+
+const graphDate = [
+    {name: '2022.07', ETH: 400, pv: 2400, amt: 2400},
+    {name: '2022.08', ETH: 300, pv: 2400, amt: 2400},
+    {name: '2022.09', ETH: 300, pv: 2400, amt: 2400},
+    {name: '2022.10', ETH: 200, pv: 2400, amt: 2400},
+    {name: '2022.11', ETH: 270, pv: 2400, amt: 2400},
 ];
 const NftDetailContainer = () => {
     const [selectedDiv, setSelectedDiv] = useState("div1")
@@ -142,7 +134,13 @@ const NftDetailContainer = () => {
                         </div>
                     </div>
                     <div className='chartSection'>
-                        <Graph data={dateFunndingData} />
+                        <LineChart data={graphDate} width={502} height={200} >
+                        <Line type="monotone" dataKey="ETH" stroke="#8884d8" />
+                            {/* <CartesianGrid stroke="#ccc" strokeDasharray="5 5" /> */}
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip />
+                        </LineChart>
                     </div>
                 </div>
             </div>
