@@ -42,7 +42,7 @@ const FundingDetail = () => {
             <Image src={leeImg} alt="fundingImg" className='fundingImg'/>
             <div className='fundingImgInfo'
               style={hoverFunding===true?{height:"120px"}:{height:"0px"}}
-            >시발</div>        
+            ></div>        
           </motion.div>
             <motion.div className='infoSlideFrame'>
             {/* {right:0,left:-510} */}
