@@ -1,10 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
-import { HYDRATE, createWrapper } from "next-redux-wrapper";
+// import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import storage from "redux-persist/lib/storage";
 import myPageSlice from "./myPageSlice";
 import nftFundSlice from "./nftFundSlice";
+import musicSlice from "./musicSlice";
 // slice 에서 export한 것 들!
 import userSlice from "./userSlice";
 
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   userInfo: userSlice.reducer,
   myPageInfo: myPageSlice.reducer,
   fundInfo: nftFundSlice.reducer,
+  musicList: musicSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

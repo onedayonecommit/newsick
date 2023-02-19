@@ -5,13 +5,13 @@
 - 신규 앨범
 - 장르별
 */
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import parkImg from "../../../public/image/park.jpg";
-import ironImg from "../../../public/image/IRON.jpg";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faPlus, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import { FundMusicTop100, NormalMusicTop100 } from "@/components";
 
 // 뮤직 메인페이지
 
@@ -34,71 +34,6 @@ const newSongItem = [
   { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
 ];
 
-const topChartItem = [
-  {
-    img: ironImg,
-    rank: 1,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 2,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 3,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 4,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 5,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 6,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 7,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 8,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-  {
-    img: ironImg,
-    rank: 9,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-    lapTime: "3:36",
-  },
-];
 const variantModal = {
   initial: {
     opacity: 0,
@@ -134,9 +69,6 @@ const newSongVariant = {
 };
 const MusicContainer = () => {
   const nuwSongListRef = useRef();
-  const togglePointRef = useRef(null);
-  const [toggle, setToggle] = useState(false);
-  const [togglePointWidth, setTogglePointWidth] = useState(0);
 
   //============================================================20230215 추가 start
   const [isOpen, setIsOpen] = useState(false);
@@ -320,6 +252,9 @@ const MusicContainer = () => {
     }
   };
   //============================================================20230215 추가 done
+  const togglePointRef = useRef(null);
+  const [toggle, setToggle] = useState(false);
+  const [togglePointWidth, setTogglePointWidth] = useState(0);
 
   useEffect(() => {
     const width = togglePointRef.current.offsetWidth;
@@ -361,31 +296,10 @@ const MusicContainer = () => {
                 </motion.div>
               </motion.div>
             </div>
-            <div className="rightSide">show All</div>
+            {!toggle ? <NormalMusicTop100 /> : <FundMusicTop100 />}
           </div>
-          <motion.div className="topChartList">
-            {topChartItem.map((item) => (
-              <div className="musicTopItemBox">
-                <div className="leftSection">
-                  <Image src={item.img} alt="" className="musicTopItemImg" />
-                  <div className="musicInfoFrame">
-                    <div className="musicName">{item.musicName}</div>
-                    <div className="singerName">{item.singerName}</div>
-                  </div>
-                </div>
-                <div className="rightSection">
-                  <div className="lapTime">{item.lapTime}</div>
-                  <div className="likeButton">
-                    <FontAwesomeIcon icon={faHeart} />
-                  </div>
-                  <div className="takeListButton">
-                    <FontAwesomeIcon icon={faPlus} />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </div>
+
         <div className="genreListSection">
           <div className="genreText">Genre List</div>
           <div className="genreList">

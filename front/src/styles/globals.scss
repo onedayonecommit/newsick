@@ -4048,8 +4048,49 @@ body {
       padding: 0px 0px 0px 0px;
       align-content: center;
       flex-wrap: nowrap;
-      gap: 30px;
+
       border-radius: 0px 0px 0px 0px;
+      .topRankToggle {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 153px;
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0px 3px 0px 3px;
+        overflow: hidden;
+        position: relative;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        border-radius: 25px;
+        border: 1px solid #ffffff;
+        .togglePoint {
+          cursor: pointer;
+          flex-shrink: 0;
+          width: min-content;
+          height: min-content;
+          display: block;
+          background-color: #ffffff;
+          overflow: hidden;
+          position: relative;
+          border-radius: 25px;
+          border: 1px solid rgba(166, 166, 166, 0.1);
+          > div {
+            width: 70px;
+            height: 22px;
+            display: flex;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+          }
+        }
+      }
       .topChartTextFrame {
         backdrop-filter: blur(10px);
         z-index: 5;
@@ -4057,14 +4098,15 @@ body {
         width: 635px;
         height: min-content; /* 31px */
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: flex-start;
         overflow: hidden;
         position: relative;
         padding: 0px 0px 0px 0px;
         align-content: flex-end;
         flex-wrap: nowrap;
+        gap: 30px;
         border-radius: 0px 0px 0px 0px;
         .leftSide {
           flex-shrink: 0;
@@ -4095,48 +4137,8 @@ body {
             letter-spacing: 0px;
             line-height: 1.2;
           }
-          .topRankToggle {
-            box-sizing: border-box;
-            flex-shrink: 0;
-            width: 153px;
-            height: 30px;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0px 3px 0px 3px;
-            overflow: hidden;
-            position: relative;
-            align-content: center;
-            flex-wrap: nowrap;
-            gap: 0;
-            border-radius: 25px;
-            border: 1px solid #ffffff;
-            .togglePoint {
-              cursor: pointer;
-              flex-shrink: 0;
-              width: min-content;
-              height: min-content;
-              display: block;
-              background-color: #ffffff;
-              overflow: hidden;
-              position: relative;
-              border-radius: 25px;
-              border: 1px solid rgba(166, 166, 166, 0.1);
-              > div {
-                width: 70px;
-                height: 22px;
-                display: flex;
-                color: rgba(0, 0, 0, 0.8);
-                font-weight: bold;
-                text-align: center;
-                justify-content: center;
-                align-items: center;
-                font-size: 12px;
-              }
-            }
-          }
         }
+
         .rightSide {
           flex-shrink: 0;
           width: auto; /* 63px */
