@@ -219,6 +219,10 @@ body {
   position: relative;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.5s;
+}
+.mainSlider .mainFirstFrame .rankingCard:hover {
+  scale: 1.1;
 }
 .mainSlider .mainSecondFrame {
   box-sizing: border-box;
@@ -246,8 +250,6 @@ body {
   width: 875px;
   height: 950px;
   display: block;
-  -webkit-backdrop-filter: blur(0px);
-  backdrop-filter: blur(0px);
   overflow: hidden;
   z-index: 0;
   position: absolute;
@@ -519,32 +521,36 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent {
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 595px;
-  height: 950px;
+  width: -moz-min-content;
+  width: min-content; /* 790px */
+  height: -moz-min-content;
+  height: min-content; /* 950px */
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  padding: 0px 50px 0px 50px;
+  overflow: visible;
   position: relative;
-  padding: 0px 0px 0px 60px;
   align-content: center;
   flex-wrap: nowrap;
+  gap: 50px;
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame {
-  box-sizing: border-box;
   flex-shrink: 0;
-  width: 270px;
+  width: -moz-min-content;
+  width: min-content; /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 30px 0px 30px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 40px;
@@ -560,7 +566,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -574,6 +580,16 @@ body {
   .slideListDownFrame
   .closeFundingList
   .closeItem {
+  box-shadow: 0.3016151036px 0.3016151036px 0.4265481701px 0px
+      rgba(255, 255, 255, 0.02),
+    1.1451052858px 1.1451052858px 1.6194234255px 0px
+      hsla(0deg, 0%, 100%, 0.05726),
+    5px 5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25),
+    -0.3016151036px -0.3016151036px 0.4265481701px 0px
+      hsla(0deg, 0%, 100%, 0.01508),
+    -1.1451052858px -1.1451052858px 1.6194234255px 0px
+      hsla(0deg, 0%, 100%, 0.05726),
+    -5px -5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25);
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -586,17 +602,17 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame {
-  box-sizing: border-box;
   flex-shrink: 0;
-  width: 270px;
+  width: -moz-min-content;
+  width: min-content; /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 30px 0px 30px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
+  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 40px;
@@ -612,7 +628,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -626,6 +642,16 @@ body {
   .slideListUpFrame
   .closeFundingList
   .closeItem {
+  box-shadow: 0.3016151036px 0.3016151036px 0.4265481701px 0px
+      rgba(255, 255, 255, 0.02),
+    1.1451052858px 1.1451052858px 1.6194234255px 0px
+      hsla(0deg, 0%, 100%, 0.05726),
+    5px 5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25),
+    -0.3016151036px -0.3016151036px 0.4265481701px 0px
+      hsla(0deg, 0%, 100%, 0.01508),
+    -1.1451052858px -1.1451052858px 1.6194234255px 0px
+      hsla(0deg, 0%, 100%, 0.05726),
+    -5px -5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25);
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -1527,18 +1553,91 @@ body {
   .listControlBar
   .dropDownFrame
   .dropDown {
+  cursor: pointer;
   flex-shrink: 0;
   width: auto; /* 130px */
   height: auto; /* 16px */
   white-space: pre;
+  display: flex;
   position: relative;
+  gap: 10px;
   font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
+.MusicPlayFrame
+  .songListSection
+  .listSection
+  .listControlBar
+  .dropDownFrame
+  .dropDownContent {
+  margin-top: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    231deg,
+    rgba(16, 11, 60, 0.9) 0%,
+    hsla(246deg, 100%, 8%, 0.9) 100%
+  );
+  overflow: hidden;
+  z-index: 10;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicPlayFrame
+  .songListSection
+  .listSection
+  .listControlBar
+  .dropDownFrame
+  .dropDownContent
+  .itemBox {
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 25px;
+  gap: 35px;
+}
+.MusicPlayFrame
+  .songListSection
+  .listSection
+  .listControlBar
+  .dropDownFrame
+  .dropDownContent
+  .dropItem {
+  cursor: pointer;
+  padding: 5px 20px 5px 20px;
+  flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 19px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
 .MusicPlayFrame .songListSection .listSection .listControlBar .sortButton {
+  cursor: pointer;
   flex-shrink: 0;
   width: auto; /* 28px */
   height: auto; /* 16px */
@@ -1558,7 +1657,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -2526,6 +2625,15 @@ body {
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.3s;
+}
+.layoutFrame .layoutBox .sideBarSection .categories .headerSection:hover {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  background: linear-gradient(to right, #ff3db8, #db29ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .layoutFrame .layoutBox .sideBarSection .categories .menuSection {
   box-sizing: border-box;
@@ -2560,32 +2668,14 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   font-weight: bold;
+  background-color: none;
+  border: none;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 25px;
   color: #ffffff;
   font-size: 15px;
   letter-spacing: 0px;
   line-height: 1.2;
-}
-.layoutFrame
-  .layoutBox
-  .sideBarSection
-  .categories
-  .menuSection
-  .menuItem:hover {
-  animation-duration: 0.3s;
-  transition: 0.5s;
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
-    0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
-    0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
-    0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017),
-    0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875),
-    0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
-    0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
-    0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .layoutFrame .layoutBox .contentSection {
   flex-shrink: 0;
@@ -2611,7 +2701,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  background-color: #2b2f5f;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -2805,20 +2894,24 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.layoutFrame .layoutBox .userBarSection .userInfoSection .userImage {
-  cursor: pointer;
-  box-sizing: border-box;
+.layoutFrame .layoutBox .userBarSection .userInfoSection .creatorTicket {
   flex-shrink: 0;
-  width: 150px;
-  height: 150px;
+  width: 42px;
+  height: 63px;
   display: block;
   overflow: hidden;
-  position: relative;
-  background-size: cover;
+  transform: rotate(10deg);
+  z-index: 1;
+  top: 97px;
+  left: 163px;
+  right: 29px;
+  bottom: 105px;
+  background-image: url("../../public/image/creatorTicket.png");
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 150px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
 }
 .layoutFrame .layoutBox .userBarSection .userInfoSection .metaConnectButton {
   cursor: pointer;
@@ -3469,13 +3562,14 @@ body {
   .signUpInputSection
   .userEmailSection {
   flex-shrink: 0;
-  width: 400px;
+  width: -moz-min-content;
+  width: min-content;
   height: 69px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: flex-start;
@@ -3663,7 +3757,7 @@ body {
   .signUpSection
   .signUpChoiceSection
   .signUpButtonSection
-  .createrButton {
+  .creatorButton {
   cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -4182,7 +4276,7 @@ body {
   .almostOverSection
   .alomostOverList
   .alomostContentBox
-  .contentCreater {
+  .contentCreator {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 259px;
@@ -4606,7 +4700,7 @@ body {
   .topRankToggle {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 152px;
+  width: 153px;
   height: 30px;
   display: flex;
   flex-direction: row;
@@ -4762,7 +4856,6 @@ body {
   display: block;
   overflow: hidden;
   position: relative;
-  background-image: url();
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -5873,11 +5966,10 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
   background: radial-gradient(
-    88.4% 113.9% at 35.9% 106.5%,
-    #212236 0%,
-    hsl(0deg, 0%, 0%) 100%
+    50% 50% at 50% 50%,
+    #111827 0%,
+    rgb(20, 23, 30) 100%
   );
   overflow: visible;
   align-content: flex-start;
@@ -5902,7 +5994,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -5919,7 +6011,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .sectionText {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .sectionText {
   flex-shrink: 0;
   width: 134px;
   height: 24px;
@@ -5942,7 +6034,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.FundingContainerFrame .fundingTopBar .todayCreaterSection .createrInfoFrame {
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -5962,9 +6054,9 @@ body {
 }
 .FundingContainerFrame
   .fundingTopBar
-  .todayCreaterSection
-  .createrInfoFrame
-  .createrInfoBox {
+  .todayCreatorSection
+  .creatorInfoFrame
+  .creatorInfoBox {
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -5990,10 +6082,10 @@ body {
 }
 .FundingContainerFrame
   .fundingTopBar
-  .todayCreaterSection
-  .createrInfoFrame
-  .createrInfoBox
-  .createrInfo {
+  .todayCreatorSection
+  .creatorInfoFrame
+  .creatorInfoBox
+  .creatorInfo {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 93px */
@@ -6013,11 +6105,11 @@ body {
 }
 .FundingContainerFrame
   .fundingTopBar
-  .todayCreaterSection
-  .createrInfoFrame
-  .createrInfoBox
-  .createrInfo
-  .createrName {
+  .todayCreatorSection
+  .creatorInfoFrame
+  .creatorInfoBox
+  .creatorInfo
+  .creatorName {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 93px */
@@ -6045,10 +6137,10 @@ body {
 }
 .FundingContainerFrame
   .fundingTopBar
-  .todayCreaterSection
-  .createrInfoFrame
-  .createrInfoBox
-  .createrInfo
+  .todayCreatorSection
+  .creatorInfoFrame
+  .creatorInfoBox
+  .creatorInfo
   .fundingInfo {
   flex-shrink: 0;
   width: -moz-min-content;
@@ -6078,9 +6170,9 @@ body {
 }
 .FundingContainerFrame
   .fundingTopBar
-  .todayCreaterSection
-  .createrInfoFrame
-  .createrInfoBox
+  .todayCreatorSection
+  .creatorInfoFrame
+  .creatorInfoBox
   .detailButton {
   box-sizing: border-box;
   flex-shrink: 0;
@@ -6111,9 +6203,9 @@ body {
 }
 .FundingContainerFrame
   .fundingTopBar
-  .todayCreaterSection
-  .createrInfoFrame
-  .createrImg {
+  .todayCreatorSection
+  .creatorInfoFrame
+  .creatorImg {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -6142,7 +6234,7 @@ body {
   height: 372px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-end;
   overflow: hidden;
   position: relative;
@@ -6150,36 +6242,166 @@ body {
   align-content: flex-end;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox {
-  box-sizing: border-box;
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardItemImg {
   flex-shrink: 0;
   width: 955px;
+  height: 372px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 413px;
   height: 372px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-start;
-  padding: 20px 20px 20px 20px;
+  align-items: flex-end;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  position: relative;
-  align-content: flex-start;
+  z-index: 1;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 10;
+  position: absolute;
+  border-radius: 400px 0px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .buttonFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 50px */
+  height: -moz-min-content;
+  height: min-content; /* 150px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 25px 0px;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 25px;
   border-radius: 0px 0px 0px 0px;
 }
 .FundingContainerFrame
   .fundingTopBar
   .swiperSection
-  .swiperBox
-  .hotCreaterInfoFrame {
+  .rewardInfoFrame
+  .buttonFrame
+  .nextButton,
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .buttonFrame
+  .previousButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+}
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .buttonFrame
+  .nextButton:hover,
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .buttonFrame
+  .previousButton:hover {
+  scale: 1.2;
+  color: rgb(255, 255, 255);
+}
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .buttonFrame
+  .nextButton
+  :nth-child(1),
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .buttonFrame
+  .previousButton
+  :nth-child(1) {
+  width: 20px;
+  height: 25px;
+}
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 25px 25px 25px 25px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 0px 0px 0px 0px;
+}
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .infoSection
+  .infoFrame {
   flex-shrink: 0;
   width: -moz-min-content;
-  width: min-content; /* 265px */
+  width: min-content; /* 224px */
   height: -moz-min-content;
-  height: min-content; /* 249px */
+  height: min-content; /* 130px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6189,124 +6411,45 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: flex-end;
   flex-wrap: nowrap;
-  gap: 71px;
+  gap: 10;
   border-radius: 0px 0px 0px 0px;
 }
 .FundingContainerFrame
   .fundingTopBar
   .swiperSection
-  .swiperBox
-  .hotCreaterInfoFrame
-  .hotCreaterInfoBox {
+  .rewardInfoFrame
+  .infoSection
+  .infoFrame
+  :nth-child(1) {
   flex-shrink: 0;
-  width: 265px;
-  height: 138px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-  z-index: 2;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.FundingContainerFrame
-  .fundingTopBar
-  .swiperSection
-  .swiperBox
-  .hotCreaterInfoFrame
-  .hotCreaterInfoBox
-  .hotFundingName {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 264px */
-  height: -moz-min-content;
-  height: min-content; /* 46px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
+  width: auto; /* 224px */
+  height: auto; /* 42px */
   white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 38px;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 35px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
 .FundingContainerFrame
   .fundingTopBar
   .swiperSection
-  .swiperBox
-  .hotCreaterInfoFrame
-  .hotCreaterInfoBox
-  .hotCreaterName {
+  .rewardInfoFrame
+  .infoSection
+  .infoFrame
+  :nth-child(2) {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 194px */
-  height: -moz-min-content;
-  height: min-content; /* 36px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
+  width: auto; /* 112px */
+  height: auto; /* 36px */
   white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 30px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-  text-align: center;
-}
-.FundingContainerFrame
-  .fundingTopBar
-  .swiperSection
-  .swiperBox
-  .hotCreaterInfoFrame
-  .hotCreaterInfoBox
-  .hotFundingInfo {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 172px */
-  height: -moz-min-content;
-  height: min-content; /* 36px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
   font-size: 30px;
   letter-spacing: 0px;
   line-height: 1.2;
@@ -6314,9 +6457,31 @@ body {
 .FundingContainerFrame
   .fundingTopBar
   .swiperSection
-  .swiperBox
-  .hotCreaterInfoFrame
+  .rewardInfoFrame
+  .infoSection
+  .infoFrame
+  :nth-child(3) {
+  flex-shrink: 0;
+  width: auto; /* 51px */
+  height: auto; /* 32px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 27px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .infoSection
   .detailButton {
+  cursor: pointer;
+  opacity: 0.7;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 120px;
@@ -6325,40 +6490,42 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  z-index: 2;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
   border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #000000;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.4s;
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .swiperImage {
-  top: 0px;
-  left: 0px;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: hidden;
-  z-index: 1;
-  background-image: url();
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  border-radius: 0px 0px 0px 0px;
+.FundingContainerFrame
+  .fundingTopBar
+  .swiperSection
+  .rewardInfoFrame
+  .infoSection
+  .detailButton:hover {
+  opacity: 1;
+  scale: 1.1;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
+    0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
+    0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
+    0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017),
+    0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875),
+    0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
+    0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
+    0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 .FundingContainerFrame .fundingListSection {
   box-sizing: border-box;
@@ -6544,188 +6711,256 @@ body {
   line-height: 1.2;
 }
 
-.detailContainerFrame {
+.fundingDetailFrame {
+  box-sizing: border-box;
   flex-shrink: 0;
   width: 1359px;
   height: 950px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 40px 20px 40px 20px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #111827 0%,
+    rgb(20, 23, 30) 100%
+  );
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .fundingInfoSection {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 500px;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #2b2f5f;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame {
+  z-index: 2;
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0px;
+  border-radius: 25px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
 }
-.detailContainerFrame .swiper {
-  width: 100%;
-  height: 100%;
-}
-.detailContainerFrame .swiper-slide {
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.detailContainerFrame .detailContainerBack {
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImg {
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 639px;
-  height: 950px;
+  width: 500px;
+  height: 500px;
   display: block;
   overflow: hidden;
   position: relative;
-  background-image: url("../../public/image/Singer.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 25px;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 500px;
+  height: 120px;
+  display: block;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  position: absolute;
+  border-radius: 0px 0px 25px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 1s;
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame {
+  top: 0px;
+  bottom: 0px;
+  left: 520px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 1700px */
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(119, 88, 209, 0.3) 100%
+  );
+  overflow: hidden;
+  z-index: 1;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 25px 0px 0px 25px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 0px;
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 1660px */
+  height: 460px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.detailContainerFrame .detailLostInfoSection {
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList .infoItemBox {
+  cursor: pointer;
   box-sizing: border-box;
-  width: 750px;
-  height: 950px;
+  flex-shrink: 0;
+  width: 400px;
+  height: 460px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  padding: 0px 40px 80px 40px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  padding: 40px 20px 40px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  z-index: 1;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingDetailFrame
+  .fundingInfoSection
+  .infoSlideFrame
+  .infoList
+  .infoItemBox
+  .title {
+  flex-shrink: 0;
+  width: 360px;
+  height: -moz-min-content;
+  height: min-content; /* 32px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 20px 0px 0px;
   align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 0px 0px 0px 0px;
+  font-weight: bold;
+  flex-shrink: 0;
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 27px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingDetailFrame
+  .fundingInfoSection
+  .infoSlideFrame
+  .infoList
+  .infoItemBox
+  .innerText {
+  flex-shrink: 0;
+  width: 360px;
+  height: 333px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
   flex-wrap: nowrap;
   gap: 0;
-  position: absolute;
   border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-.detailContainerFrame .detailLostInfoSection .previewSection {
-  box-sizing: border-box;
   flex-shrink: 0;
-  width: 670px;
-  height: 136px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-family: "Inter", sans-serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 18px;
   letter-spacing: 0px;
-  line-height: 1.2;
+  line-height: 2;
 }
-.detailContainerFrame .detailLostInfoSection .announceSection {
+.fundingDetailFrame .announcementSection {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 670px;
-  height: 632px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailLostInfoSection .discordSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 670px;
-  height: 182px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailInfoSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 720px;
-  height: 950px;
+  width: 1319px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  padding: 80px 40px 80px 40px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  z-index: 1;
+  align-items: center;
+  padding: 20px 40px 20px 40px;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(119, 88, 209, 0.3) 100%
+  );
+  overflow: visible;
   position: relative;
-  align-content: flex-end;
+  align-content: center;
   flex-wrap: nowrap;
-  gap: 50px;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.detailContainerFrame .detailInfoSection .profileSection {
+.fundingDetailFrame .announcementSection .announcementTitle {
   flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: 1239px;
   height: -moz-min-content;
-  height: min-content; /* 28px */
+  height: min-content; /* 29px */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -6737,124 +6972,71 @@ body {
   flex-shrink: 0;
   white-space: pre;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 24px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.detailContainerFrame .detailInfoSection .profileInfoSection {
+.fundingDetailFrame .announcementSection .announcementList {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 640px;
-  height: 712px;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.detailContainerFrame .detailInfoSection .topInfoSection {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 303px */
-  height: -moz-min-content;
-  height: min-content; /* 189px */
+  width: 1239px;
+  height: 261px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px 40px 0px 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
+  align-content: flex-start;
   flex-wrap: nowrap;
   gap: 15px;
   border-radius: 0px 0px 0px 0px;
 }
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingTitle {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content;
-  height: -moz-min-content;
-  height: min-content;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 40px;
-  letter-spacing: 0px;
-  line-height: 1.2;
+.fundingDetailFrame .announcementSection .announcementList::-webkit-scrollbar {
+  width: 20px;
+  background-color: transparent;
 }
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 295px */
-  height: -moz-min-content;
-  height: min-content; /* 126px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.detailContainerFrame
-  .detailInfoSection
-  .topInfoSection
-  .fundingBillSection
-  :nth-child(-n + 4) {
-  flex-shrink: 0;
-  width: auto; /* 85px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailInfoSection .bottomInfoSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 640px;
-  height: 551px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+.fundingDetailFrame
+  .announcementSection
+  .announcementList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.detailContainerFrame .detailInfoSection .bottomInfoSection :nth-child(-n + 2) {
+.fundingDetailFrame .announcementSection .announcementList .announcementItem {
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 0.8;
   flex-shrink: 0;
-  width: auto; /* 92px */
-  height: auto; /* 28px */
-  white-space: pre;
+  width: 1199px;
+  height: 70px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
   position: relative;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+.fundingDetailFrame
+  .announcementSection
+  .announcementList
+  .announcementItem:hover {
+  opacity: 1;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
+    0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
+    0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
+    0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017),
+    0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875),
+    0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
+    0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
+    0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 
 .nftMarketContainerFrame {
@@ -6867,11 +7049,10 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
   background: radial-gradient(
-    88.4% 113.9% at 35.9% 106.5%,
-    #212236 0%,
-    hsl(0deg, 0%, 0%) 100%
+    50% 50% at 50% 50%,
+    #111827 0%,
+    rgb(20, 23, 30) 100%
   );
   overflow: visible;
   align-content: center;
@@ -7427,7 +7608,11 @@ body {
   justify-content: center;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #111827 0%,
+    rgb(20, 23, 30) 100%
+  );
   overflow: hidden;
   position: relative;
   align-content: flex-end;
@@ -7481,7 +7666,8 @@ body {
   backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -7593,6 +7779,18 @@ body {
   width: 502px;
   height: 264px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: flex-end;
+}
+.nftDetailContainerFrame
+  .topSection
+  .statisticsSection
+  .statisticsSectionFrame
+  .chartSection
+  .historyGraphFrame {
+  position: "relative";
+  width: 502px;
+  height: 200px;
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection {
   left: 572px;
@@ -7631,6 +7829,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox {
+  cursor: grab;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 300px;
@@ -7640,7 +7839,7 @@ body {
   justify-content: flex-start;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
   align-content: flex-end;
@@ -7648,6 +7847,15 @@ body {
   gap: 15px;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nftDetailContainerFrame
+  .topSection
+  .infoSwiperSection
+  .frameBox
+  .nftInfoBox:hover {
+  box-shadow: 0.6032302072px 0px 0.6032302072px 0px rgba(0, 0, 0, 0.02),
+    2.2902105716px 0px 2.2902105716px 0px rgba(0, 0, 0, 0.05726),
+    10px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .nftDetailContainerFrame
   .topSection
@@ -7938,21 +8146,32 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.4);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
-  border-right-width: 0px;
 }
-.nftDetailContainerFrame .bottomSection .orderSection .categorySection .buyTap {
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .categorySection
+  .underline {
+  position: absolute;
+  width: 100%;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .categorySection
+  .selected {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 233px;
@@ -7968,12 +8187,6 @@ body {
   flex-wrap: nowrap;
   gap: 0;
   border-radius: 0px 0px 0px 0px;
-  border-color: #ffffff;
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
-  border-right-width: 0px;
   flex-shrink: 0;
   white-space: pre;
   font-family: "Inter", sans-serif;
@@ -7986,7 +8199,8 @@ body {
   .bottomSection
   .orderSection
   .categorySection
-  .sellTap {
+  .unSelected {
+  cursor: pointer;
   flex-shrink: 0;
   width: 233px;
   height: 64px;
@@ -8009,14 +8223,89 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection {
+  flex-shrink: 0;
+  width: 700px;
+  height: 363px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: none;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
 .nftDetailContainerFrame
   .bottomSection
   .orderSection
-  .categorySection
-  .historyTap {
+  .scrollSection::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox {
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 233px;
-  height: 64px;
+  width: 700px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .nftTitle {
+  flex-shrink: 0;
+  width: auto; /* 99px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .rightInfoSection {
+  flex-shrink: 0;
+  width: -moz-min-content;
+  width: min-content; /* 436px */
+  height: -moz-min-content;
+  height: min-content; /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8026,15 +8315,110 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
+  gap: 40px;
   border-radius: 0px 0px 0px 0px;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .rightInfoSection
+  .itemState {
   flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 20px */
   white-space: pre;
+  position: relative;
   font-family: "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .rightInfoSection
+  .paymentTime {
+  flex-shrink: 0;
+  width: auto; /* 48px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .rightInfoSection
+  .itemPrice {
+  flex-shrink: 0;
+  width: auto; /* 57px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .rightInfoSection
+  .itemNumber {
+  flex-shrink: 0;
+  width: auto; /* 112px */
+  height: auto; /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .rightInfoSection
+  .deleteButton {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto; /* 11px */
+  height: auto; /* 20px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  transition: 0.4s;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .scrollSection
+  .historyItemBox
+  .rightInfoSection
+  .deleteButton:hover {
+  color: rgb(255, 255, 255);
+  scale: 1.1;
 }
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection {
   flex-shrink: 0;
@@ -8528,6 +8912,26 @@ body {
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.nftDetailContainerFrame
+  .bottomSection
+  .orderSection
+  .inputSection
+  .loginButtonSection
+  .loginButton:hover {
+  opacity: 1;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
+    0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
+    0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
+    0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017),
+    0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875),
+    0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
+    0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
+    0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 
 .fundingCreateContainerFrame,
@@ -8897,11 +9301,11 @@ body {
 .fundingCreateContainerFrame
   .mainContentSection
   .secondContentSection
-  .ProfileSection,
+  :nth-child(-n + 3),
 .fundingCreateSecondContainerFrame
   .mainContentSection
   .secondContentSection
-  .ProfileSection {
+  :nth-child(-n + 3) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1199px;
@@ -8922,12 +9326,12 @@ body {
 .fundingCreateContainerFrame
   .mainContentSection
   .secondContentSection
-  .ProfileSection
+  :nth-child(-n + 3)
   :nth-child(1),
 .fundingCreateSecondContainerFrame
   .mainContentSection
   .secondContentSection
-  .ProfileSection
+  :nth-child(-n + 3)
   :nth-child(1) {
   flex-shrink: 0;
   width: -moz-min-content;
@@ -8956,23 +9360,13 @@ body {
 .fundingCreateContainerFrame
   .mainContentSection
   .secondContentSection
-  .ProfileSection
-  .name,
-.fundingCreateContainerFrame
-  .mainContentSection
-  .secondContentSection
-  .ProfileSection
-  .sex,
+  :nth-child(-n + 3)
+  :nth-child(2),
 .fundingCreateSecondContainerFrame
   .mainContentSection
   .secondContentSection
-  .ProfileSection
-  .name,
-.fundingCreateSecondContainerFrame
-  .mainContentSection
-  .secondContentSection
-  .ProfileSection
-  .sex {
+  :nth-child(-n + 3)
+  :nth-child(2) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1159px;
@@ -8982,208 +9376,23 @@ body {
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background-color: transparent;
   color: white;
-  font-size: 16px;
-  display: flex;
-  padding: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection,
-.fundingCreateSecondContainerFrame .mainContentSection .shareSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 1199px;
-  height: 163px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame,
-.fundingCreateSecondContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 897px */
-  height: -moz-min-content;
-  height: min-content; /* 50px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 20px;
-  border-radius: 0px 0px 0px 0px;
+  font-size: 20px;
+  resize: none;
 }
 .fundingCreateContainerFrame
   .mainContentSection
-  .shareSection
-  .shareFrame
-  .info,
+  .secondContentSection
+  :nth-child(-n + 3)
+  :nth-child(2):focus,
 .fundingCreateSecondContainerFrame
   .mainContentSection
-  .shareSection
-  .shareFrame
-  .info {
-  flex-shrink: 0;
-  width: auto; /* 271px */
-  height: auto; /* 42px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 35px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content,
-.fundingCreateSecondContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 606px */
-  height: -moz-min-content;
-  height: min-content; /* 50px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.fundingCreateContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(1),
-.fundingCreateSecondContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 291px */
-  height: auto; /* 42px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 35px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(2),
-.fundingCreateSecondContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(2) {
-  flex-shrink: 0;
-  width: 125px;
-  height: 50px;
-  display: block;
-  background-color: transparent;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border-color: 1px solid rgba(255, 255, 255, 0.1);
-}
-.fundingCreateContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(3),
-.fundingCreateSecondContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(3) {
-  flex-shrink: 0;
-  width: auto; /* 10px */
-  height: auto; /* 42px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 35px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.fundingCreateContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(4),
-.fundingCreateSecondContainerFrame
-  .mainContentSection
-  .shareSection
-  .shareFrame
-  .content
-  :nth-child(4) {
-  flex-shrink: 0;
-  width: 125px;
-  height: 50px;
-  display: block;
-  background-color: transparent;
-  overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border-color: 1px solid rgba(255, 255, 255, 0.1);
+  .secondContentSection
+  :nth-child(-n + 3)
+  :nth-child(2):focus {
+  outline: none;
 }
 .fundingCreateContainerFrame .mainContentSection .submissionButton,
 .fundingCreateSecondContainerFrame .mainContentSection .submissionButton {
@@ -13044,12 +13253,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #2b2f5f;
-  background: radial-gradient(
-    88.4% 113.9% at 35.9% 106.5%,
-    #212236 0%,
-    hsl(0deg, 0%, 0%) 100%
-  );
+  background-image: url("../../public/image/wallpaper3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -13066,6 +13273,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -13150,200 +13361,7 @@ body {
   gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox1 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
-    0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
-    0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
-    0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017),
-    0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875),
-    0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
-    0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
-    0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.6);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .optionTitle {
-  flex-shrink: 0;
-  width: auto; /* 81px */
-  height: auto; /* 19px */
-  white-space: pre;
-  position: relative;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 177px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #000000;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 153px */
-  height: -moz-min-content;
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(0, 0, 0, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 15px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .benefitsSummary
-  :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 103px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #000000;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .benefitsSummary
-  :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .optionBenefitList {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .optionBenefitList
-  :nth-child(-n + 5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox1
-  .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #000000;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox2 {
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 380px;
@@ -13353,8 +13371,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 20px 68px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
     0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
     0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
@@ -13363,7 +13379,7 @@ body {
     0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
     0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
     0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   overflow: visible;
   position: relative;
   align-content: center;
@@ -13375,7 +13391,7 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
+  .optionBox
   .recommendedMark {
   box-sizing: border-box;
   flex-shrink: 0;
@@ -13411,8 +13427,8 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
-  .optionTitle {
+  .optionBox
+  .middleLine {
   flex-shrink: 0;
   width: 170px;
   height: 1px;
@@ -13455,7 +13471,7 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
+  .optionBox
   .optionPrice {
   flex-shrink: 0;
   width: auto; /* 246px */
@@ -13472,7 +13488,7 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
+  .optionBox
   .benefitsSummary {
   box-sizing: border-box;
   flex-shrink: 0;
@@ -13497,7 +13513,7 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
+  .optionBox
   .benefitsSummary
   :nth-child(1) {
   flex-shrink: 0;
@@ -13515,7 +13531,7 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
+  .optionBox
   .benefitsSummary
   :nth-child(2) {
   width: 16px;
@@ -13526,7 +13542,7 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
+  .optionBox
   .optionBenefitList {
   flex-shrink: 0;
   width: 340px;
@@ -13546,78 +13562,19 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox2
+  .optionBox
   .optionBenefitList
-  :nth-child(-n + 5) {
+  :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 118px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 24px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox2
-  .option1BuyButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 240px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px 10px 10px;
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
-  background-color: #ffffff;
-  max-width: 240px;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  border-radius: 24px 24px 0px 24px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-style: normal;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox3 {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 380px;
-  height: 462px;
+  width: -moz-min-content;
+  width: min-content; /* 142px */
+  height: -moz-min-content;
+  height: min-content; /* 68px */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px 20px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0),
-    0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996),
-    0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815),
-    0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017),
-    0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875),
-    0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975),
-    0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374),
-    0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -13628,8 +13585,10 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox3
-  .optionTitle {
+  .optionBox
+  .optionBenefitList
+  :nth-child(1)
+  :nth-child(-n + 2) {
   flex-shrink: 0;
   width: auto; /* 126px */
   height: auto; /* 19px */
@@ -13644,117 +13603,9 @@ body {
 .SubscriptionContainer
   .SubscriptionFrame
   .SubscriptionListFrame
-  .optionBox3
-  .optionPrice {
-  flex-shrink: 0;
-  width: auto; /* 185px */
-  height: auto; /* 70px */
-  white-space: pre;
-  position: relative;
-  font-weight: 800;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 50px;
-  letter-spacing: -0.8px;
-  line-height: 1.4;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox3
-  .benefitsSummary {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 129px */
-  height: -moz-min-content;
-  height: min-content; /* 29px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px 4px 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox3
-  .benefitsSummary
-  :nth-child(1) {
-  flex-shrink: 0;
-  width: auto; /* 79px */
-  height: auto; /* 21px */
-  white-space: pre;
-  position: relative;
-  font-weight: 500;
-  font-style: normal;
-  color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 150%;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox3
-  .benefitsSummary
-  :nth-child(2) {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: white;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox3
-  .optionBenefitList {
-  flex-shrink: 0;
-  width: -moz-min-content;
-  width: min-content; /* 165px */
-  height: -moz-min-content;
-  height: min-content; /* 160px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox3
-  .optionBenefitList
-  :nth-child(-n + 5) {
-  flex-shrink: 0;
-  width: auto; /* 109px */
-  height: auto; /* 24px */
-  white-space: pre;
-  position: relative;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-.SubscriptionContainer
-  .SubscriptionFrame
-  .SubscriptionListFrame
-  .optionBox3
-  .option1BuyButton {
+  .optionBox
+  .optionBuyButton {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 240px;
@@ -13816,7 +13667,7 @@ body {
   border: 10px solid #ffffff;
 }
 
-.MyPageCreaterFrame {
+.MyPageCreatorFrame {
   box-sizing: border-box;
   width: 1359px;
   height: 950px;
@@ -13832,7 +13683,7 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection {
+.MyPageCreatorFrame .topSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
@@ -13849,7 +13700,7 @@ body {
   gap: 20px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection {
+.MyPageCreatorFrame .topSection .totalMoneySection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 341px;
@@ -13868,7 +13719,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoText {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoText {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 216px */
@@ -13886,7 +13737,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(1) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoText :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 187px */
   height: auto; /* 19px */
@@ -13900,7 +13751,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoText :nth-child(2) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoText :nth-child(2) {
   flex-shrink: 0;
   width: 216px;
   height: 1px;
@@ -13910,7 +13761,7 @@ body {
   position: relative;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber {
   flex-shrink: 0;
   width: -moz-min-content;
   width: min-content; /* 220px */
@@ -13928,7 +13779,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber :nth-child(1) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber :nth-child(1) {
   flex-shrink: 0;
   width: auto; /* 61px */
   height: auto; /* 36px */
@@ -13942,7 +13793,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .topSection .totalMoneySection .infoNumber :nth-child(2) {
+.MyPageCreatorFrame .topSection .totalMoneySection .infoNumber :nth-child(2) {
   flex-shrink: 0;
   width: 149px;
   height: 30px;
@@ -14196,7 +14047,7 @@ body {
   letter-spacing: -0.1px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .bottomSection {
+.MyPageCreatorFrame .bottomSection {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1319px;
@@ -14214,7 +14065,7 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1279px;
@@ -14231,7 +14082,7 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1249px;
@@ -14247,7 +14098,7 @@ body {
   flex-wrap: nowrap;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar .text {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar .text {
   flex-shrink: 0;
   width: auto; /* 237px */
   height: auto; /* 30px */
@@ -14261,7 +14112,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .handleNavBar .button {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar .button {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 157px;
@@ -14290,7 +14141,7 @@ body {
   letter-spacing: -1px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame .bottomSection .createrHandlerFrame .funddingList {
+.MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1260px;
@@ -14308,25 +14159,25 @@ body {
   gap: 15px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList::-webkit-scrollbar {
   width: 20px;
   height: 56px;
   background-color: transparent;
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList
   .funddingItemBox {
   box-sizing: border-box;
@@ -14346,9 +14197,9 @@ body {
   border-radius: 40px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList
   .funddingItemBox
   .infoSection {
@@ -14369,18 +14220,18 @@ body {
   gap: 40px;
   border-radius: 0px 0px 0px 0px;
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList
   .funddingItemBox
   .infoSection
   .funddingTitle {
   cursor: pointer;
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList
   .funddingItemBox
   .infoSection
@@ -14398,9 +14249,9 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList
   .funddingItemBox
   .musicInputButton {
@@ -14423,9 +14274,9 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList
   .funddingItemBox
   .musicInputButton
@@ -14456,9 +14307,9 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MyPageCreaterFrame
+.MyPageCreatorFrame
   .bottomSection
-  .createrHandlerFrame
+  .creatorHandlerFrame
   .funddingList
   .funddingItemBox
   .funddingTerminationButton {

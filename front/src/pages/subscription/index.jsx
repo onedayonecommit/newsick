@@ -49,7 +49,7 @@ const SubscriptionContainer = () => {
           dispatch(
             fetchBuyTicket({
               user_wallet_address: _ticket.from,
-              ticket_type: 1, // 1 : 기본타입(1)
+              ticket_type: 3, // 1 : 기본타입(1)
               expired: _date.toISOString(),
             })
           );

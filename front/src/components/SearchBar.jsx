@@ -1,3 +1,4 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
@@ -34,13 +35,7 @@ const SearchBar = () => {
             <FontAwesomeIcon icon={faSearch} />
           </motion.span>
         </div>
-        <input
-          className="searchInput"
-          type="text"
-          placeholder="Search for Content..."
-          onBlur={handleBlur}
-          onFocus={handleFocus}
-        />
+        <input className="searchInput" type="text" placeholder="Search for Content..." onBlur={handleBlur} onFocus={handleFocus} />
       </motion.div>
     </div>
   );

@@ -20,7 +20,16 @@ const fundListSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchBringData.fulfilled, (state, action) => {
-        state.data;
+        // console.log("ohohohohoh", action.payload);
+        state.data = action.payload;
+        state.isBring = true;
+        // console.log("yayayyya", state.data);
+      })
+      .addCase(fetchBringData.rejected, (state) => {
+        state.isBring = false;
       });
   },
 });
+
+export const { fundListAction } = fundListSlice.actions;
+export default fundListSlice;

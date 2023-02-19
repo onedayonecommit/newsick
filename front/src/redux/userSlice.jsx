@@ -1,10 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  fetchUserCreated,
-  fetchUserCheck,
-  fetchUserImage,
-  fetchApplyCreator,
-} from "../middleware/fetchUser";
+import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
+import { PURGE } from "redux-persist";
 
 const initialState = {
   address: "",
@@ -19,30 +15,23 @@ const initialState = {
 const userSlice = createSlice({
   name: "userInfo",
   initialState,
-  reducers: {
-    reset: (state, action) => {
-      state = action.payload;
-      console.log("초기화된 state : ", action.payload);
-    },
-  },
+
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
       .addCase(fetchUserCheck.pending, (state) => {
-        state = initialState;
-        // state.createStatus = false;
+        state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        console.log(action.payload, "ssibaljinjja");
-        // if (action.payload.createStatus != false) {
-        //   state.address = action.payload.user_wallet_address;
-        //   state.userName = action.payload.user_name;
-        //   state.userEmail = action.payload.user_email;
-        //   state.userImage = action.payload.user_profile_image;
-        //   state.isCreator = action.payload.creator[0].is_creator;
-        //   state.createStatus = action.payload.createStatus;
-        //   console.log("넘어온 유저정보 : ", action.payload);
-        // }
+        if (action.payload.createStatus != false) {
+          state.address = action.payload.user_wallet_address;
+          state.userName = action.payload.user_name;
+          state.userEmail = action.payload.user_email;
+          state.userImage = action.payload.user_profile_image;
+          state.isCreator = action.payload.creator[0].is_creator;
+          state.createStatus = action.payload.createStatus;
+          console.log("넘어온 유저정보 : ", action.payload);
+        } else state.createStatus = false;
       })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
@@ -54,10 +43,8 @@ const userSlice = createSlice({
         // console.log(typeof action.payload);
         // console.log(typeof action.payload == "string");
         if (action.payload) {
-          if (typeof action.payload == "string")
-            alert(`이미 사용중인 ${action.payload} 입니다.`);
+          if (typeof action.payload == "string") alert(`이미 사용중인 ${action.payload} 입니다.`);
           else {
-            console.log("hihihi", action.payload);
             state.address = action.payload.user_wallet_address;
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;
@@ -77,7 +64,7 @@ const userSlice = createSlice({
       .addCase(fetchUserImage.pending, (state) => {
         state.userImage;
       })
-      .addCase(fetchUserImage.fulfilled, (state) => {
+      .addCase(fetchUserImage.fulfilled, (state, action) => {
         state.userImage = action.payload.file;
       })
       .addCase(fetchUserImage.rejected, (state) => {
@@ -88,7 +75,8 @@ const userSlice = createSlice({
           console.log("creator apply", action.payload);
           state.isCreator = action.payload.is_creator;
         }
-      });
+      })
+      .addCase(PURGE, () => initialState);
   },
 });
 

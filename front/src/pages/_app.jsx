@@ -1,9 +1,10 @@
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import Layout from "@/components/Layout";
 import "@/styles/globals.min.css";
 import SignUp from "./sign_up";
 import { store, persistor } from "@/redux/store";
 import { PersistGate } from "redux-persist/lib/integration/react";
+import { useEffect, useState } from "react";
 
 const App = ({ Component, ...pageProps }) => {
   return (
