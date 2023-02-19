@@ -1,13 +1,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import storage from "redux-persist/lib/storage";
 import myPageSlice from "./myPageSlice";
 import nftFundSlice from "./nftFundSlice";
 // slice 에서 export한 것 들!
 import userSlice from "./userSlice";
-
-// const logger = createLogger();
 
 // redux-persist 사용
 const persistConfig = {

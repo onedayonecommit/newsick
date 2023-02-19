@@ -35,12 +35,10 @@ const openPlayBar = {
   initial: {
     y: 0,
     opacity: 1,
-    zIndex: 999,
   },
   animate: {
     y: "-100vw",
     opacity: 0,
-    zIndex: -1,
   },
 };
 
