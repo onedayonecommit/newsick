@@ -27,14 +27,16 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        if (action.payload.createStatus != false) {
-          state.address = action.payload.user_wallet_address;
-          state.userName = action.payload.user_name;
-          state.userEmail = action.payload.user_email;
-          state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.creator[0].is_creator;
-          state.createStatus = action.payload.createStatus;
-          console.log("넘어온 유저정보 : ", action.payload);
+        if (action.payload) {
+          if (action.payload.createStatus != false) {
+            state.address = action.payload.user_wallet_address;
+            state.userName = action.payload.user_name;
+            state.userEmail = action.payload.user_email;
+            state.userImage = action.payload.user_profile_image;
+            state.isCreator = action.payload.creator[0].is_creator;
+            state.createStatus = action.payload.createStatus;
+            console.log("넘어온 유저정보 : ", action.payload);
+          }
         }
       })
       .addCase(fetchUserCheck.rejected, (state) => {
@@ -68,7 +70,7 @@ const userSlice = createSlice({
       .addCase(fetchUserImage.pending, (state) => {
         state.userImage;
       })
-      .addCase(fetchUserImage.fulfilled, (state) => {
+      .addCase(fetchUserImage.fulfilled, (state, action) => {
         state.userImage = action.payload.file;
       })
       .addCase(fetchUserImage.rejected, (state) => {
