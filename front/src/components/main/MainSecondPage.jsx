@@ -81,7 +81,12 @@ const MainSecondPage = () => {
   const Rotate = 360 / slidesNum;
   const RADIUS = 100;
   return (
-    <div className="mainSecondFrame">
+    <motion.div className="mainSecondFrame"
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      exit={{opacity:0}}
+      transition={{duration:0.3}}
+    >
       <div className="backGroundCover" style={{ backgroundImage: `url('${slides[backgroundCount]?.image.src}')`, backgroundSize: "cover" }} />
       <div className="backGroundBlur" />
       <div className="sideFrame">
@@ -159,7 +164,7 @@ const MainSecondPage = () => {
           );
         })}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

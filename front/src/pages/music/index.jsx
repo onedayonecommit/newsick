@@ -327,7 +327,12 @@ const MusicContainer = () => {
   }, []);
 
   return (
-    <div className="MusicContainerFrame">
+    <motion.div className="MusicContainerFrame"
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      exit={{opacity:0}}
+      transition={{duration:0.3}}
+    >
       <div className="newSongSection" ref={nuwSongListRef}>
         <div className="text">New Song</div>
         <motion.div className="newSongList" drag="x" dragConstraints={nuwSongListRef}>
@@ -424,7 +429,7 @@ const MusicContainer = () => {
           <ModalContent />
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

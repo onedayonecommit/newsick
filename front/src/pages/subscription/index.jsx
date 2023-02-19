@@ -64,7 +64,12 @@ const SubscriptionContainer = () => {
   useEffect(() => {}, [NEWSIC_FUND]);
 
   return (
-    <div className="SubscriptionContainer">
+    <motion.div className="SubscriptionContainer"
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      exit={{opacity:0}}
+      transition={{duration:0.3}}
+    >
       <div className="SubscriptionFrame">
         <div className="SubscriptionText">
           <div>Ready to start?</div>
@@ -87,23 +92,39 @@ const SubscriptionContainer = () => {
                 <div>30일 오디오 컨텐츠</div>
               </div>
             </div>
-            <div
+            <motion.div
               className="optionBuyButton"
+              whileTap={{scale:0.8}}
               onClick={() => {
                 buyTicket();
               }}
             >
               Subscribe
-            </div>
+            </motion.div>
           </div>
           <div className="subscriptionProgressSection">
             <motion.svg viewBox="0 0 100 100" width="450" height="450" variants={svgVariants} initial="hidden" animate="visible">
-              <motion.circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="4" strokeDasharray="283" variants={svgVariants} animate={{ pathLength: "70%" }} />
+              <motion.circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="4" strokeDasharray="283" variants={svgVariants} animate={{ pathLength: "70%" }}>
+              </motion.circle>
             </motion.svg>
+            <motion.div className="persentCircle">
+                <motion.div
+                  initial={{opacity:0}}
+                  animate={{opacity:1}}
+                  exit={{opacity:0}}
+                  transition={{duration:0.4, delay:0.5}}
+                >회원 구독권 구매 비율</motion.div>
+                <motion.div
+                  initial={{opacity:0}}
+                  animate={{opacity:1}}
+                  exit={{opacity:0}}
+                  transition={{duration:0.4, delay:1}}
+                >70%</motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
