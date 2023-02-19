@@ -4,22 +4,22 @@ import { useState } from "react";
 const FaqData = [
     {
       id: 1,
-      title: "Who made it ?",
+      title: "제 작 자 들",
       content: "Paid plans are billed both at a Site and Team level. Both subscriptions are always linked to the email of the purchaser. In order to get extra features and faster loading time to your site, you can acquire any of our site plans. In the moment of purchasing the first site plan within a team, a Team account will be added automatically so editors will be charged at a team level."
     },
     {
       id: 2,
-      title: "Precautions",
+      title: "주 의 사 항",
       content: "We offer a range of pricing plans to suit different needs..."
     },
     {
       id: 3,
-      title: "What was it made it for?",
+      title: "사이트 제작 의도",
       content: "You can cancel your subscription at any time by visiting..."
     },
     {
       id: 4,
-      title: "Refund Regulations",
+      title: "환 불 규 정",
       content: "You can cancel your subscription at any time by visiting..."
     }
   ];
@@ -116,9 +116,9 @@ const siteInfo = () => {
                 </div>
                 <div className="middleLine"></div>
                 <div className="bottomInfoSection">
-                    <div>Copyright © 2023 DesignCode</div>
-                    <div>Terms</div>
-                    <div>Privacy Policy</div>
+                    <div>Made It © 2023 NESIC in Kyugil</div>
+                    <div>CODBERG</div>
+                    <div>TEAM 2</div>
                 </div>
             </motion.div>
         </motion.div>
