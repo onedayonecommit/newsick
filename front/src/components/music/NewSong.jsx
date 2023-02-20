@@ -47,6 +47,7 @@ const NewSong = () => {
             key={index}
             initial="initial"
             animate="animate"
+            whileTap={{scale:0.9}}
             // 차례대로 delay 하는 로직
             transition={{ duration: 0.3, type: "spring", delay: 0.1 * index }}
           >

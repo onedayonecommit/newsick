@@ -144,7 +144,7 @@ const NftDetailContainer = () => {
                         </div>
                     </div>
                     <div className='chartSection'>
-                        <LineChart data={graphDate} width={502} height={200} >
+                        <LineChart data={graphDate} width={1200} height={200} >
                         <Line type="monotone" dataKey="ETH" stroke="#8884d8" />
                             {/* <CartesianGrid stroke="#ccc" strokeDasharray="5 5" /> */}
                             <XAxis dataKey="name" />
@@ -153,21 +153,6 @@ const NftDetailContainer = () => {
                         </LineChart>
                     </div>
                 </div>
-            </div>
-            <div className='infoSwiperSection'>
-                <motion.div drag="x" dragConstraints={{right:0,left:-510}} className='frameBox'>
-                {
-                    nftData.map((item)=>(
-                        <motion.div className='nftInfoBox'
-                            whileHover={{scale:1.01}}
-                            whileTap={{scale:0.9}}
-                        >
-                            <div className='infoName'>{item.infoName}</div>
-                            <div className='infoText'>{item.info}</div>
-                        </motion.div>
-                    ))
-                }
-                </motion.div>
             </div>
         </div>
         <div className='bottomSection'>

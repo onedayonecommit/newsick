@@ -3946,7 +3946,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -3955,6 +3955,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .MusicContainerFrame .newSongSection .newSongList .newSongCard {
+  cursor: grab;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 160px;
@@ -3974,6 +3975,9 @@ body {
   gap: 10px;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicContainerFrame .newSongSection .newSongList .newSongCard:hover {
+  border: 1px solid rgb(255, 255, 255);
 }
 .MusicContainerFrame .newSongSection .newSongList .newSongCard .newSongImg {
   box-sizing: border-box;
@@ -6537,10 +6541,10 @@ body {
 .nftDetailContainerFrame .topSection {
   top: 40px;
   left: 20px;
-  right: 0px;
+  right: 20px;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 1997px;
+  width: 1319px;
   height: 374px;
   display: flex;
   flex-direction: row;
@@ -6554,7 +6558,7 @@ body {
   flex-wrap: nowrap;
   gap: 10px;
   position: absolute;
-  border-radius: 25px 0px 0px 25px;
+  border-radius: 25px;
   border-color: rgba(255, 255, 255, 0.1);
   border-style: solid;
   border-top-width: 1px;
@@ -6565,7 +6569,7 @@ body {
 .nftDetailContainerFrame .topSection .statisticsSection {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 542px;
+  width: 1279px;
   height: 334px;
   display: flex;
   flex-direction: column;
@@ -6587,7 +6591,7 @@ body {
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame {
   flex-shrink: 0;
-  width: 502px;
+  width: 1239px;
   height: 294px;
   display: flex;
   flex-direction: column;
@@ -6603,7 +6607,7 @@ body {
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartInfoSection {
   flex-shrink: 0;
-  width: 502px;
+  width: 1239px;
   height: 20px;
   display: flex;
   flex-direction: row;
@@ -6659,7 +6663,7 @@ body {
   line-height: 1.2;
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartSection {
-  width: 502px;
+  width: 1239px;
   height: 264px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
@@ -6667,7 +6671,7 @@ body {
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartSection .historyGraphFrame {
   position: "relative";
-  width: 502px;
+  width: 1239px;
   height: 200px;
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection {

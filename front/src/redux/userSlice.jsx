@@ -7,7 +7,7 @@ const initialState = {
   userName: "",
   userEmail: "",
   userImage: "default_profile_image.png",
-  isCreator: false,
+  isCreator: true,
   createStatus: false,
   // 구독권 state 만들기
 };
