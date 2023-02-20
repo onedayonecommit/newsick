@@ -21,4 +21,28 @@ export class TotalService {
       }),
     ]);
   }
+
+  async fundSearchService() {
+    return await this.db.funding.findMany({
+      orderBy: { id: 'asc' },
+    });
+  }
+
+  async marketSearchService() {
+    return await this.db.funding.findMany({
+      orderBy: { id: 'asc' },
+    });
+  }
+
+  async nMusicSearchService() {
+    return await this.db.normal_music.findMany({
+      orderBy: { id: 'asc' },
+    });
+  }
+
+  async fMusicSearchService() {
+    return await this.db.funding_music.findMany({
+      orderBy: { funding_id: 'asc' },
+    });
+  }
 }
