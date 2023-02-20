@@ -202,16 +202,124 @@ body {
   flex-shrink: 0;
   width: 420px;
   height: 550px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 20px 0px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .mainSlider .mainFirstFrame .rankingCard:hover {
   scale: 1.1;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingInfoSection {
+  flex-shrink: 0;
+  width: 410px;
+  height: -moz-min-content;
+  height: min-content; /* 101px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingInfoSection .musicName {
+  flex-shrink: 0;
+  width: auto; /* 240px */
+  height: auto; /* 48px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingInfoSection .signerName {
+  flex-shrink: 0;
+  width: auto; /* 213px */
+  height: auto; /* 43px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingDetailButton {
+  cursor: pointer;
+  opacity: 0.5;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 210px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-align: center;
+  transition: 0.3s;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingDetailButton:hover {
+  opacity: 1;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingImg {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-shrink: 0;
+  width: 420px;
+  height: 550px;
+  display: block;
+  overflow: hidden;
+  opacity: 0.6;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainSecondFrame {
   box-sizing: border-box;
@@ -1431,6 +1539,12 @@ body {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent .dropItem:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 .MusicPlayFrame .songListSection .listSection .listControlBar .sortButton {
   cursor: pointer;
@@ -4208,6 +4322,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox {
+  cursor: pointer;
   flex-shrink: 0;
   width: 635px;
   height: 85px;
@@ -4220,7 +4335,13 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection {
   flex-shrink: 0;
@@ -4273,8 +4394,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame .musicName {
   flex-shrink: 0;
-  width: auto; /* 120px */
-  height: auto; /* 24px */
+  width: -moz-min-content;
+  width: min-content; /* 120px */
+  height: -moz-min-content;
+  height: min-content; /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4287,8 +4410,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame .singerName {
   flex-shrink: 0;
-  width: auto; /* 100px */
-  height: auto; /* 19px */
+  width: -moz-min-content;
+  width: min-content; /* 100px */
+  height: -moz-min-content;
+  height: min-content; /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -5150,7 +5275,7 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 5px;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .sectionText {
   flex-shrink: 0;
@@ -5174,8 +5299,10 @@ body {
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  border-radius: 5px;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame {
+  border-radius: 10px;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 344px;
@@ -5189,8 +5316,7 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  gap: 5px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox {
@@ -5289,6 +5415,7 @@ body {
   text-align: center;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .detailButton {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 67px;
@@ -5315,6 +5442,11 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
   text-align: center;
+  transition: 0.4s;
+}
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .detailButton:hover {
+  scale: 1.3;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorImg {
   box-sizing: border-box;
@@ -5623,6 +5755,7 @@ body {
   line-height: 1.2;
 }
 .FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .sequenceDropdown {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 110px;
@@ -5646,6 +5779,12 @@ body {
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .sequenceDropdown:focus {
+  outline: none;
+}
+.FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .sequenceDropdown > option {
+  background-color: #000000;
 }
 .FundingContainerFrame .fundingListSection .listTopBarFram .StateSection {
   flex-shrink: 0;
@@ -6264,6 +6403,7 @@ body {
   line-height: 1.2;
 }
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: -moz-min-content;
@@ -6289,6 +6429,13 @@ body {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.4s;
+}
+.nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar:focus {
+  outline: none;
+}
+.nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar > option {
+  background-color: black;
 }
 .nftMarketContainerFrame .nftSellSection .nftBuyInfoSection {
   flex-shrink: 0;

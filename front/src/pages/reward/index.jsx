@@ -303,7 +303,7 @@ const FundingContainer = () => {
             <div className="feedText">FEED</div>
             <select className="sequenceDropdown">
               <option value="popular">popular</option>
-              <option value="Close">Close</option>s<option value="Latest ">Latest </option>
+              <option value="Close">Close</option><option value="Latest ">Latest </option>
             </select>
           </div>
           <div className="StateSection">
