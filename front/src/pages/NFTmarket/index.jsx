@@ -66,6 +66,7 @@ const NftMarketContainer = () => {
   }, []);
 
   return (
+    // 제일 상위에 구매 버튼이랑 제일 Hot 한 아이템 넣어주기
     <motion.div className="nftMarketContainerFrame" initial={{ opacity: 0, scale: 0, y: "-50vh" }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0, y: "-50vh" }} transition={{ duration: 0.3 }}>
       <div className="nftTopSection">
         <AnimatePresence initial={false} custom={direction}>
