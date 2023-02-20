@@ -8556,7 +8556,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(132deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(132deg, rgba(0, 0, 0, 0.1) 100%, rgba(0, 0, 0, 1) 100%);
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -12578,3 +12578,164 @@ body {
   }
 }
 // SongDetail 페이지 CSS ================================= DONE
+// 404 페이지 CSS ==================================START
+.page404container{
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 70px;
+  border-radius: 0px 0px 0px 0px;
+    .infoFrame{
+      flex-shrink: 0;
+      width: 65%;
+      height: min-content; /* 106px */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      border-radius: 0px 0px 0px 0px;
+      .leftSideText{
+        flex-shrink: 0;
+        width: min-content; /* 336px */
+        height: min-content; /* 106px */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 10px;
+        border-radius: 0px 0px 0px 0px;
+        &>div{
+          flex-shrink: 0;
+          width: auto; /* 252px */
+          height: auto; /* 48px */
+          white-space: pre;
+          position: relative;
+          font-weight: bold;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #000000;
+          font-size: 40px;
+          letter-spacing: -1px;
+          line-height: 1.2;
+        }
+      }
+      .rightSideButton{
+        flex-shrink: 0;
+        width: min-content; /* 520px */
+        height: min-content; /* 70px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 28px;
+        border-radius: 0px 0px 0px 0px;
+        .homeButton{
+          cursor: pointer;
+          opacity: 0.6;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 200px;
+          height: 70px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.8);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 35px;
+          letter-spacing: 2px;
+          line-height: 1.2;
+          transition: 0.4s;
+          &:hover{
+            opacity: 1;
+          }
+        }
+        .backButton{
+          cursor: pointer;
+          opacity: 0.6;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 200px;
+          height: 70px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.8);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10;
+          border-radius: 25px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 35px;
+          letter-spacing: 2px;
+          line-height: 1.2;
+          transition: 0.4s;
+          &:hover{
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .lostPageImg{
+      flex-shrink: 0;
+      width: 65%;
+      height: 55%;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      background-image: url("../../public/image/404Horse.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 0px 0px 0px 0px;
+    }
+}
+// 404 페이지 CSS ==================================DONE
