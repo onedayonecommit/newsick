@@ -8,6 +8,7 @@ import nftFundSlice from "./nftFundSlice";
 import musicSlice from "./musicSlice";
 // slice 에서 export한 것 들!
 import userSlice from "./userSlice";
+import fundListSlice from "./nftFundFindSlice";
 
 // redux-persist 사용
 const persistConfig = {
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   myPageInfo: myPageSlice.reducer,
   fundInfo: nftFundSlice.reducer,
   musicList: musicSlice.reducer,
+  fundList: fundListSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

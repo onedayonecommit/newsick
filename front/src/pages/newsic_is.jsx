@@ -109,7 +109,7 @@ const siteInfo = () => {
         </div>
         <div className="middleLine"></div>
         <div className="bottomInfoSection">
-          <div>Made It © 2023 NESIC in Kyugil</div>
+          <div>Made It © 2023 NEWSIC in Kyugil</div>
           <div>CODBERG</div>
           <div>TEAM 2</div>
         </div>

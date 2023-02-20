@@ -2412,6 +2412,7 @@ body {
         width: 1359px;
         height: 950px;
         display: flex;
+        background: radial-gradient(68.30000000000001% 100% at 36.4% 106.3%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
@@ -3203,8 +3204,14 @@ body {
               background: none;
               padding: 0px 15px 0px 15px;
               color: white;
+              transition: 0.3s;
               &:focus {
                 outline: none;
+              }
+              &::placeholder {
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 16px;
+                font-weight: bold;
               }
             }
           }
@@ -4048,49 +4055,7 @@ body {
       padding: 0px 0px 0px 0px;
       align-content: center;
       flex-wrap: nowrap;
-
       border-radius: 0px 0px 0px 0px;
-      .topRankToggle {
-        box-sizing: border-box;
-        flex-shrink: 0;
-        width: 153px;
-        height: 30px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 0px 3px 0px 3px;
-        overflow: hidden;
-        position: relative;
-        align-content: center;
-        flex-wrap: nowrap;
-        gap: 0;
-        border-radius: 25px;
-        border: 1px solid #ffffff;
-        .togglePoint {
-          cursor: pointer;
-          flex-shrink: 0;
-          width: min-content;
-          height: min-content;
-          display: block;
-          background-color: #ffffff;
-          overflow: hidden;
-          position: relative;
-          border-radius: 25px;
-          border: 1px solid rgba(166, 166, 166, 0.1);
-          > div {
-            width: 70px;
-            height: 22px;
-            display: flex;
-            color: rgba(0, 0, 0, 0.8);
-            font-weight: bold;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-          }
-        }
-      }
       .topChartTextFrame {
         backdrop-filter: blur(10px);
         z-index: 5;
@@ -4137,8 +4102,48 @@ body {
             letter-spacing: 0px;
             line-height: 1.2;
           }
+          .topRankToggle {
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: 153px;
+            height: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px 3px 0px 3px;
+            overflow: hidden;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            border-radius: 25px;
+            border: 1px solid #ffffff;
+            .togglePoint {
+              cursor: pointer;
+              flex-shrink: 0;
+              width: min-content;
+              height: min-content;
+              display: block;
+              background-color: #ffffff;
+              overflow: hidden;
+              position: relative;
+              border-radius: 25px;
+              border: 1px solid rgba(166, 166, 166, 0.1);
+              > div {
+                width: 70px;
+                height: 22px;
+                display: flex;
+                color: rgba(0, 0, 0, 0.8);
+                font-weight: bold;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+              }
+            }
+          }
         }
-
         .rightSide {
           flex-shrink: 0;
           width: auto; /* 63px */
@@ -10137,6 +10142,13 @@ body {
           text-transform: uppercase;
           line-height: 1.2;
           text-align: center;
+          transition: 0.4s;
+          &:hover {
+            scale: 1.1;
+            font-size: 20px;
+            color: rgba(0, 0, 0, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+          }
         }
       }
       .subscriptionProgressSection {
@@ -10164,6 +10176,22 @@ body {
           position: relative;
           border-radius: 450px;
           border: 10px solid #ffffff;
+        }
+        .persentCircle {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+          :nth-child(1) {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+          }
+          :nth-child(2) {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 1);
+          }
         }
       }
     }
@@ -11685,3 +11713,355 @@ body {
   }
 }
 // 검색정보창 SearchTotal CSS  =====================================================  DONE
+// SiteInfo CSS 사이트소개페이지 CSS ================================================ START
+.siteInfoContainer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 40px 20px;
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+  .infoSection {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1319px;
+    height: 576px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    .faqItemBox {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 800px;
+      height: min-content; /* 201px */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 20px 20px 20px;
+      -webkit-backdrop-filter: blur(40px);
+      backdrop-filter: blur(40px);
+      background-color: rgba(0, 0, 0, 0.4);
+      overflow: visible;
+      position: relative;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 15px;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      .topControlBar {
+        flex-shrink: 0;
+        width: 760px;
+        height: min-content; /* 32px */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        overflow: visible;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        border-radius: 0px 0px 0px 0px;
+        .faqTitle {
+          flex-shrink: 0;
+          width: 728px;
+          height: auto; /* 30px */
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          word-break: break-word;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          color: #ffffff;
+          font-size: 22px;
+          letter-spacing: -0.2px;
+          line-height: 1.4;
+        }
+        .controlIcon {
+          cursor: pointer;
+          width: 25px;
+          height: 25px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+      .middleLine {
+        flex-shrink: 0;
+        width: 760px;
+        height: 1px;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow: visible;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+      }
+      .faqTextSection {
+        flex-shrink: 0;
+        width: 760px;
+        height: auto; /* 108px */
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-word;
+        position: relative;
+        font-weight: 400;
+        font-style: normal;
+        color: #ffffff;
+        font-size: 18px;
+        letter-spacing: 0px;
+        line-height: 150%;
+      }
+    }
+  }
+  .footerSection {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1319px;
+    height: 274px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 30px 80px 30px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: visible;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    .topInfoSection {
+      flex-shrink: 0;
+      width: 1259px;
+      height: min-content; /* 166px */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 30px;
+      border-radius: 0px 0px 0px 0px;
+      .sendEmailSection {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 400px;
+        height: min-content; /* 166px */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px 20px 20px 20px;
+        background-color: rgba(0, 0, 0, 0.4);
+        max-width: 400px;
+        overflow: visible;
+        position: relative;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 20px;
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        :nth-child(1) {
+          flex-shrink: 0;
+          width: auto; /* 226px */
+          height: auto; /* 21px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          color: #ffffff;
+          font-size: 14px;
+          letter-spacing: 0px;
+          text-transform: uppercase;
+          line-height: 150%;
+        }
+        .sendInputFrame {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .sendInput {
+            width: 230px;
+            height: 40px;
+            border-radius: 10px;
+            padding: 0px 10px 0px 10px;
+            color: #000000;
+            font-size: 16px;
+            &:focus {
+              outline: none;
+            }
+          }
+          .sendButton {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            background: linear-gradient(248deg, rgba(255, 0, 0, 0.6) 0%, rgba(255, 0, 0, 0.4) 100%);
+            border-radius: 10px;
+            height: 40px;
+            width: 80px;
+            border: rgba(255, 255, 255, 0.1);
+          }
+        }
+        :nth-child(3) {
+          flex-shrink: 0;
+          width: 360px;
+          height: auto; /* 21px */
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          word-break: break-word;
+          position: relative;
+          font-weight: 500;
+          font-style: normal;
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 14px;
+          letter-spacing: 0px;
+          line-height: 150%;
+          text-align: left;
+        }
+      }
+      .addressSection {
+        flex-shrink: 0;
+        width: 400px;
+        height: min-content; /* 152px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width: 400px;
+        overflow: visible;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        border-radius: 0px 0px 0px 0px;
+        .adressFrame {
+          flex-shrink: 0;
+          width: 185px;
+          height: min-content; /* 152px */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          min-width: 100px;
+          overflow: visible;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: flex-start;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 0px 0px 0px 0px;
+          .discordAdress,
+          .gitHubAdress,
+          .notionAdress {
+            cursor: pointer;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: min-content; /* 119px */
+            height: 44px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 8px 8px 8px 8px;
+            overflow: visible;
+            position: relative;
+            align-content: center;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border-radius: 10px;
+            & > svg {
+              width: 30px;
+              height: 30px;
+              color: white;
+            }
+            & > div {
+              flex-shrink: 0;
+              width: auto; /* 63px */
+              height: auto; /* 21px */
+              white-space: pre;
+              position: relative;
+              font-weight: 700;
+              font-style: normal;
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              letter-spacing: 0px;
+              text-transform: uppercase;
+              line-height: 150%;
+            }
+          }
+        }
+      }
+    }
+    .middleLine {
+      flex-shrink: 0;
+      width: 315px;
+      height: 1px;
+      display: block;
+      background-color: rgba(255, 255, 255, 0.1);
+      overflow: visible;
+      position: relative;
+      border-radius: 0px 0px 0px 0px;
+    }
+    .bottomInfoSection {
+      flex-shrink: 0;
+      width: min-content; /* 369px */
+      height: min-content; /* 21px */
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: visible;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: center;
+      flex-wrap: nowrap;
+      gap: 20px;
+      border-radius: 0px 0px 0px 0px;
+      :nth-child(-n + 3) {
+        flex-shrink: 0;
+        width: auto; /* 89px */
+        height: auto; /* 21px */
+        white-space: pre;
+        position: relative;
+        font-weight: 500;
+        font-style: normal;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        letter-spacing: 0px;
+        line-height: 150%;
+      }
+    }
+  }
+}
+// SiteInfo CSS 사이트소개페이지 CSS ================================================ DONE

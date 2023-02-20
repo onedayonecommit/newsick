@@ -23,7 +23,9 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        if (action.payload.createStatus != false) {
+        if (action.payload == undefined) {
+          alert("메타마스크를 연동하세요!");
+        } else if (action.payload.createStatus != false) {
           state.address = action.payload.user_wallet_address;
           state.userName = action.payload.user_name;
           state.userEmail = action.payload.user_email;
