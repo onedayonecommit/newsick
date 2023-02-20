@@ -22,8 +22,6 @@ import { PlaylistController } from './playlist/playlist.controller';
 import { PlaylistService } from './playlist/playlist.service';
 import { LikeNftController } from './like-nft/like-nft.controller';
 import { LikeNftService } from './like-nft/like-nft.service';
-import { UserBarController } from './user-bar/user-bar.controller';
-import { UserBarService } from './user-bar/user-bar.service';
 
 @Module({
   controllers: [
@@ -36,7 +34,6 @@ import { UserBarService } from './user-bar/user-bar.service';
     LikeFundController,
     PlaylistController,
     LikeNftController,
-    UserBarController,
   ],
   providers: [
     JoinService,
@@ -53,7 +50,6 @@ import { UserBarService } from './user-bar/user-bar.service';
     LikeFundService,
     PlaylistService,
     LikeNftService,
-    UserBarService,
   ],
 })
 export class UserModule {}

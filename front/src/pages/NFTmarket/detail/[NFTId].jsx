@@ -1,28 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { marketDetail, marketDetailInfo } from "@/middleware/fetchNft";
 
 // nft 상세 페이지
-const nftData = [
-  {
-    infoName: "음원 정보",
-    info: "정보 텍스트",
-  },
-  {
-    infoName: "가수 프로필",
-    info: "정보 텍스트",
-  },
-  {
-    infoName: "작곡가 프로필",
-    info: "정보 텍스트",
-  },
-  {
-    infoName: "기타 등등",
-    info: "정보 텍스트",
-  },
-];
 
 const NftDetailContainer = () => {
   const [selectedDiv, setSelectedDiv] = useState("div1");
@@ -60,16 +42,7 @@ const NftDetailContainer = () => {
             <div className="chartSection"></div>
           </div>
         </div>
-        <div className="infoSwiperSection">
-          <motion.div drag="x" dragConstraints={{ right: 0, left: -510 }} className="frameBox">
-            {nftData.map((item) => (
-              <div className="nftInfoBox">
-                <div className="infoName">{item.infoName}</div>
-                <div className="infoText">{item.info}</div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        <div className="infoSwiperSection">{/* <motion.div drag="x" dragConstraints={{ right: 0, left: -510 }} className="frameBox"></motion.div> */}</div>
       </div>
       <div className="bottomSection">
         <div className="askingPriceSection">

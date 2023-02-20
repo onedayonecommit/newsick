@@ -9,6 +9,7 @@ const initialState = {
   isCreator: false,
   createStatus: false,
   // 구독권 state 만들기
+  ticket: "",
 };
 
 const userSlice = createSlice({
@@ -35,6 +36,7 @@ const userSlice = createSlice({
             state.userImage = action.payload.user_profile_image;
             state.isCreator = action.payload.creator[0].is_creator;
             state.createStatus = action.payload.createStatus;
+            state.ticket = action.payload.ticket[0].expired;
             console.log("넘어온 유저정보 : ", action.payload);
           }
         }
