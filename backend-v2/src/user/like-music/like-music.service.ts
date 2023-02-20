@@ -21,12 +21,12 @@ export class LikeMusicService {
       where: { user_id, normal_music_id },
     });
     if (result) {
-      console.log('노말뮤직 있어서 삭제한다');
-      console.log(result);
-      const result2 = await this.db.heart_music.deleteMany({
-        where: { user_id, normal_music_id },
-      });
-      return result2;
+      // console.log('노말뮤직 있어서 삭제한다');
+      // console.log(result);
+      // const result2 = await this.db.heart_music.deleteMany({
+      //   where: { user_id, normal_music_id },
+      // });
+      return 'Already add liked normal music';
     } else {
       console.log('노말 뮤직 없어서 추가함');
       console.log(result);
@@ -46,12 +46,12 @@ export class LikeMusicService {
       where: { user_id, funding_music_id },
     });
     if (result) {
-      console.log('펀딩뮤직 있어서 삭제한다');
-      console.log(result);
-      const result2 = await this.db.heart_music.deleteMany({
-        where: { user_id, funding_music_id },
-      });
-      return result2;
+      // console.log('펀딩뮤직 있어서 삭제한다');
+      // console.log(result);
+      // const result2 = await this.db.heart_music.deleteMany({
+      //   where: { user_id, funding_music_id },
+      // });
+      return 'already add liked funding_music';
     } else {
       console.log('펀딩뮤직 없어서 추가함');
       console.log(result);
@@ -64,5 +64,26 @@ export class LikeMusicService {
       console.log(result3);
       return result3;
     }
+  }
+
+  async likeDeleteMusic(dto: likeMusicDto) {
+    const { user_wallet_address, normal_music_id, funding_music_id } = dto;
+    if (normal_music_id != undefined && funding_music_id == undefined) {
+      return await this.normalMusicAdd(user_wallet_address, normal_music_id);
+    }
+    if (normal_music_id == undefined && funding_music_id != undefined) {
+      return await this.fundingMusicAdd(user_wallet_address, funding_music_id);
+    }
+  }
+
+  async normalMusicDelete(user_id: string, normal_music_id: number) {
+    return await this.db.heart_music.deleteMany({
+      where: { user_id, normal_music_id },
+    });
+  }
+  async fundingMusicDelete(user_id: string, funding_music_id: number) {
+    return await this.db.heart_music.deleteMany({
+      where: { user_id, funding_music_id },
+    });
   }
 }

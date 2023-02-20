@@ -14,6 +14,12 @@ import { FundNoticeController } from './fund-notice/fund-notice.controller';
 import { FundNoticeService } from './fund-notice/fund-notice.service';
 import { FundFinishController } from './fund-finish/fund-finish.controller';
 import { FundFinishService } from './fund-finish/fund-finish.service';
+import { MarketFundingListController } from './market-funding-list/market-funding-list.controller';
+import { MarketFundingListService } from './market-funding-list/market-funding-list.service';
+import { MainPageController } from './main-page/main-page.controller';
+import { MainPageService } from './main-page/main-page.service';
+import { HotFundController } from './hot-fund/hot-fund.controller';
+import { HotFundService } from './hot-fund/hot-fund.service';
 
 @Module({
   controllers: [
@@ -23,6 +29,9 @@ import { FundFinishService } from './fund-finish/fund-finish.service';
     RunningFundController,
     FundNoticeController,
     FundFinishController,
+    MarketFundingListController,
+    MainPageController,
+    HotFundController,
   ],
   providers: [
     CreateFundService,
@@ -34,6 +43,9 @@ import { FundFinishService } from './fund-finish/fund-finish.service';
     RunningFundService,
     FundNoticeService,
     FundFinishService,
+    MarketFundingListService,
+    MainPageService,
+    HotFundService,
   ],
 })
 export class FundModule {}

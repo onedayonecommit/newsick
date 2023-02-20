@@ -44,7 +44,6 @@ model creator{
 model ticket{
   ids user @relation(fields: [id],references: [user_wallet_address])
   id String @id
-  ticket_type Int @default(0)
   expired DateTime @default(now()) @db.Timestamp(3)
 }
 
@@ -68,6 +67,7 @@ model funding{
   funding_sales Int @default(0)
   funding_finish_status Boolean @default(false)
   funding_music_regist Boolean @default(false)
+  holder_share Decimal @db.Decimal(16,10)
   funding_notice funding_notice[]
   funding_music funding_music[]
   music_maker music_maker[]
@@ -136,7 +136,7 @@ model funding_music{
 model funding_music_player{
   music_ids funding_music @relation(fields: [music_id],references: [funding_id])
   music_id Int @id
-  player_count Int @default(0)
+  player_count Int @default(0) @map("fm_player_count")
   heart Int @default(0)
 }
 
@@ -159,7 +159,7 @@ model normal_music{
 model normal_music_player{
   music_ids normal_music @relation(fields: [music_id],references: [id])
   music_id Int @id
-  player_count Int @default(0)
+  player_count Int @default(0) @map(name:"nm_player_count")
   heart Int @default(0)
 }
 

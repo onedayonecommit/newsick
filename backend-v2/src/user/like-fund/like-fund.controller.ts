@@ -10,4 +10,9 @@ export class LikeFundController {
   async likeFund(@Body() dto: likeFundDto) {
     return await this.likeFundService.likeFund(dto);
   }
+
+  @Post('delete')
+  async likeFundDelete(dto: likeFundDto) {
+    return await this.likeFundService.likeFundDelete(dto);
+  }
 }
