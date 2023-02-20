@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
+import { PURGE } from "redux-persist";
 
 const initialState = {
   address: "",
@@ -14,29 +15,26 @@ const initialState = {
 const userSlice = createSlice({
   name: "userInfo",
   initialState,
-  reducers: {
-    reset: (state, action) => {
-      state = action.payload;
-      console.log("초기화된 state : ", action.payload);
-    },
-  },
+
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
       .addCase(fetchUserCheck.pending, (state) => {
         state.createStatus = false;
       })
-      // .addCase(fetchUserCheck.fulfilled, (state, action) => {
-      //   if (action.payload.createStatus != false) {
-      //     state.address = action.payload.user_wallet_address;
-      //     state.userName = action.payload.user_name;
-      //     state.userEmail = action.payload.user_email;
-      //     state.userImage = action.payload.user_profile_image;
-      //     state.isCreator = action.payload.creator[0].is_creator;
-      //     state.createStatus = action.payload.createStatus;
-      //     console.log("넘어온 유저정보 : ", action.payload);
-      //   }
-      // })
+      .addCase(fetchUserCheck.fulfilled, (state, action) => {
+        if (action.payload == undefined) {
+          alert("메타마스크를 연동하세요!");
+        } else if (action.payload.createStatus != false) {
+          state.address = action.payload.user_wallet_address;
+          state.userName = action.payload.user_name;
+          state.userEmail = action.payload.user_email;
+          state.userImage = action.payload.user_profile_image;
+          state.isCreator = action.payload.creator[0].is_creator;
+          state.createStatus = action.payload.createStatus;
+          console.log("넘어온 유저정보 : ", action.payload);
+        } else state.createStatus = false;
+      })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
       })
@@ -68,7 +66,7 @@ const userSlice = createSlice({
       .addCase(fetchUserImage.pending, (state) => {
         state.userImage;
       })
-      .addCase(fetchUserImage.fulfilled, (state) => {
+      .addCase(fetchUserImage.fulfilled, (state, action) => {
         state.userImage = action.payload.file;
       })
       .addCase(fetchUserImage.rejected, (state) => {
@@ -79,7 +77,8 @@ const userSlice = createSlice({
           console.log("creator apply", action.payload);
           state.isCreator = action.payload.is_creator;
         }
-      });
+      })
+      .addCase(PURGE, () => initialState);
   },
 });
 
