@@ -233,7 +233,7 @@ const FundingContainer = () => {
   }, []);
 
   return (
-    <div className="FundingContainerFrame">
+    <motion.div className="FundingContainerFrame" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0 }} transition={{ duration: 0.3 }}>
       <div className="fundingTopBar">
         <div className="todayCreatorSection">
           <div className="sectionText">Today Creator</div>
@@ -351,7 +351,7 @@ const FundingContainer = () => {
 
         <PageNationFrame />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

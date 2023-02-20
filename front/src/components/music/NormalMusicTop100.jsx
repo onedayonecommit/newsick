@@ -14,63 +14,54 @@ const topChartItem = [
     rank: 1,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 2,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 3,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 4,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 5,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 6,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 7,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 8,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 9,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
 ];
 
@@ -96,10 +87,6 @@ const NormalMusicTop100 = () => {
               </div>
             </div>
             <div className="rightSection">
-              <div className="lapTime">{item.lapTime}</div>
-              <div className="likeButton">
-                <FontAwesomeIcon icon={faHeart} />
-              </div>
               <div className="takeListButton">
                 <FontAwesomeIcon icon={faPlus} />
               </div>

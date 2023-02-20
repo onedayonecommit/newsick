@@ -66,7 +66,7 @@ const NftMarketContainer = () => {
   }, []);
 
   return (
-    <div className="nftMarketContainerFrame">
+    <motion.div className="nftMarketContainerFrame" initial={{ opacity: 0, scale: 0, y: "-50vh" }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0, y: "-50vh" }} transition={{ duration: 0.3 }}>
       <div className="nftTopSection">
         <AnimatePresence initial={false} custom={direction}>
           <div className="nftTopFrame">
@@ -156,7 +156,7 @@ const NftMarketContainer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

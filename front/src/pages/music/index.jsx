@@ -69,7 +69,7 @@ const MusicContainer = () => {
   }, []);
 
   return (
-    <div className="MusicContainerFrame">
+    <motion.div className="MusicContainerFrame" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
       <NewSong />
       <div className="bottomFrame">
         <div className="topChartSection">
@@ -124,7 +124,7 @@ const MusicContainer = () => {
           <ModalContent />
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

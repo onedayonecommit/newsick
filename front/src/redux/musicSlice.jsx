@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchNormalMusicList } from "@/middleware/fetchMusic";
+import { fetchNormalMusicList, fetchFundMusicList, fetchNewMusicList } from "@/middleware/fetchMusic";
 
 const initialState = {
   normalMusicList: [],
   fundMusicList: [],
+  newMusicList: [],
 };
 
 const musicSlice = createSlice({
@@ -19,7 +20,25 @@ const musicSlice = createSlice({
       })
       .addCase(fetchNormalMusicList.rejected, (state) => {
         state.normalMusicList = [];
+      })
+      .addCase(fetchFundMusicList.pending, (state) => {
+        state.fundMusicList = [];
+      })
+      .addCase(fetchFundMusicList.fulfilled, (state, action) => {
+        state.fundMusicList = action.payload;
+      })
+      .addCase(fetchFundMusicList.rejected, (state) => {
+        state.fundMusicList = [];
       });
+    // .addCase(fetchNewMusicList.pending, (state) => {
+    //   state.newMusicList = [];
+    // })
+    // .addCase(fetchNewMusicList.fulfilled, (state, action) => {
+    //   state.newMusicList = action.payload;
+    // })
+    // .addCase(fetchNewMusicList.rejected, (state) => {
+    //   state.newMusicList = [];
+    // });
   },
 });
 
