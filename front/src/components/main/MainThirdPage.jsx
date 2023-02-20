@@ -53,7 +53,12 @@ const MainThirdPage = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <AnimatePresence>
-      <motion.div className="mainThirdFrame" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
+      <motion.div className="mainThirdFrame"
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
+        transition={{duration:0.3}}
+      >
         <div className="leftSlideContent">
           <div className="slideListDownFrame">
             <motion.div className="closeFundingList" animate="animate" variants={variantsdown}>

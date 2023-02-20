@@ -27,16 +27,21 @@ const Layout = (props) => {
   };
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <Loading setIsLoading={setIsLoading} />
-      ) : (
-        <motion.div>
+      ) : ( */}
+        <motion.div
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          exit={{opacity:0}}
+          transition={{duration:0.3}}
+        >
           <motion.div className="layoutFrame" ref={layOutRef}>
             {/* ========================================================== */}
             {isClick ? <Congratulations isClick={isClick} /> : null}
             {/* ========================================================== */}
-            {isSoundClick ? <VolumeBox /> : null}
             <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick} />
+            {isSoundClick ? <VolumeBox /> : null}
             <AnimatePresence>{modalOpen && <ChangeMember modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
             <div className="layoutBox">
               <SideBar />
@@ -49,7 +54,7 @@ const Layout = (props) => {
             </div>
           </motion.div>
         </motion.div>
-      )}
+      {/* )} */}
     </>
   );
 };

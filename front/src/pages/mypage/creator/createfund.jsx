@@ -2,23 +2,11 @@ import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useWeb3 from "@/hooks/useWeb3";
-import { useRouter } from "next/router";
-import { nftFundAction } from "@/redux/nftFundSlice";
-import { persistor } from "@/redux/store";
 
 const FundingCreate = () => {
-  const createStatus = useSelector((state) => state.fundInfo.createStatus);
-  useEffect(() => {
-    if (createStatus) {
-      alert("펀딩 생성이 완료되었습니다.");
-      router.push("/mypage");
-      persistor.purge();
-    }
-  }, [createStatus]);
-  const router = useRouter();
   // date 형식 맞춰
   const convertToTimestamp = (e) => {
     const _date = new Date(e);
@@ -44,22 +32,22 @@ const FundingCreate = () => {
     funding_min: 0, // NFT 최소 판매개수
     funding_holdershare: 0, // 홀더가 가져갈 퍼센트 몫
     discord_address: "", // 디스코드 주소
-    funding_hard_cap: 0,
-    funding_price: 0,
-    holder_share: 0,
     lyrics_maker: {
       lyrics_name: "", // 작사가명
       lyrics_info: "", // 작사가 소개
+      lyrics_sex: 0, // 작사가 성별
       lyrics_sns_address: "", // 작사가 sns 주소
     },
     music_maker: {
       music_name: "", // 작곡가 명
       music_info: "", // 작곡가 소개
+      music_sex: 0, // 작곡가 성별
       music_sns_address: "", // 작곡가 sns 주소
     },
     singer: {
       singer_name: "", // 가수명
       singer_info: "", // 가수소개
+      singer_sex: 0, // 가수성별
       singer_sns_address: "", // 가수 sns 주소
     },
   });
@@ -100,7 +88,7 @@ const FundingCreate = () => {
   const makeFund = async () => {
     let _fundingStruct = [
       userInfo.address, // 크리에이터
-      fundInfo.funding_metadata, // 메타데이터
+      fundInfo.metadataUrl, // 메타데이터
       // convertToTimestamp(data.funding_start_date), // 시작일
       // convertToTimestamp(data.funding_finish_date), // 종료일
       // convertToTimestamp(data.funding_production_date), // 음원제작 기간
@@ -112,31 +100,28 @@ const FundingCreate = () => {
       data.funding_holdershare, // 음원수익(홀더)
     ];
     console.log(_fundingStruct, "스트럭트");
-    const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(String(data.funding_price), "ether")).send({ from: userInfo.address });
+    const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(data.funding_price, "ether")).send({ from: userInfo.address });
 
-    console.log("펀딩생성 후 이벤트", _sendData_toContract.events.createFund.returnValues);
+    console.log(_sendData_toContract.events.createFund.returnValues);
     setData({
       ...data,
       id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
     });
-    console.log("서버 통신 시작");
+
     const _sendData_toBack = {
       fund: {
-        id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
+        id: data.id,
         creator_id: data.creator_id,
         category: data.category,
         funding_info: data.nftDescription,
         funding_start_date: convertToISO8601(data.funding_start_date),
         funding_finish_date: convertToISO8601(data.funding_finish_date),
         funding_production_date: convertToISO8601(data.funding_production_date),
-        funding_nft_image: fundInfo.funding_nft_image,
-        funding_metadata: fundInfo.funding_metadata,
+        funding_nft_image: fundInfo.fileUrl,
+        funding_metadata: fundInfo.metadataUrl,
         discord_address: data.discord_address,
         funding_title: data.funding_title,
         nft_name: data.nftName,
-        funding_hard_cap: data.funding_hard_cap,
-        funding_price: data.funding_price,
-        holder_share: data.funding_holdershare,
       },
       lyrics_maker: {
         lyrics_name: data.lyrics_maker.lyrics_name,
@@ -155,7 +140,6 @@ const FundingCreate = () => {
       },
     };
     console.log(_sendData_toBack);
-    console.log("서버 통신 시작2");
     dispatch(fetchCreateFund(_sendData_toBack));
   };
 
@@ -327,7 +311,7 @@ const FundingCreate = () => {
                 onChange={(e) => {
                   setData({
                     ...data,
-                    funding_price: Number(e.target.value),
+                    funding_price: e.target.value,
                   });
                 }}
               />
@@ -336,7 +320,7 @@ const FundingCreate = () => {
           </div>
           <div className="minimumNumberSection">
             <div>
-              <div className="minimumNumber">최대 판매개수</div>
+              <div className="minimumNumber">최소 판매개수</div>
               <div className="inputFrame">
                 <input
                   className="minimumNumberInput"
@@ -345,7 +329,7 @@ const FundingCreate = () => {
                   onChange={(e) => {
                     setData({
                       ...data,
-                      funding_hard_cap: Number(e.target.value),
+                      funding_min: e.target.value,
                     });
                   }}
                 />
@@ -384,7 +368,7 @@ const FundingCreate = () => {
                     setShare(e.target.value);
                     setData({
                       ...data,
-                      funding_holdershare: Number(e.target.value),
+                      funding_holdershare: e.target.value,
                     });
                   }}
                 ></input>
@@ -439,6 +423,24 @@ const FundingCreate = () => {
                   }}
                 />
               </div>
+              <div className="sex">
+                <label>가수성별</label>
+                <select
+                  onChange={(e) => {
+                    setData({
+                      ...data,
+                      singer: {
+                        ...data.singer,
+                        singer_sex: e.target.value,
+                      },
+                    });
+                  }}
+                >
+                  <option value={0}>선택</option>
+                  <option value={1}>남</option>
+                  <option value={2}>여</option>
+                </select>
+              </div>
               <div className="info">
                 <div className="infoText"> 가수소개</div>
                 <input
@@ -482,6 +484,24 @@ const FundingCreate = () => {
                     });
                   }}
                 />
+              </div>
+              <div className="sex">
+                <label>작곡가성별</label>
+                <select
+                  onChange={(e) => {
+                    setData({
+                      ...data,
+                      music_maker: {
+                        ...data.music_maker,
+                        music_sex: e.target.value,
+                      },
+                    });
+                  }}
+                >
+                  <option value={0}>선택</option>
+                  <option value={1}>남</option>
+                  <option value={2}>여</option>
+                </select>
               </div>
               <div className="info">
                 <div className="infoText"> 작곡가소개</div>
@@ -529,6 +549,24 @@ const FundingCreate = () => {
                     });
                   }}
                 />
+              </div>
+              <div className="sex">
+                <label>작사가성별</label>
+                <select
+                  onChange={(e) => {
+                    setData({
+                      ...data,
+                      lyrics_maker: {
+                        ...data.lyrics_maker,
+                        lyrics_sex: e.target.value,
+                      },
+                    });
+                  }}
+                >
+                  <option value={0}>선택</option>
+                  <option value={1}>남</option>
+                  <option value={2}>여</option>
+                </select>
               </div>
               <div className="info">
                 <div className="infoText"> 작사가소개</div>

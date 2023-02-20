@@ -1,8 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RegisterNftSong } from "@/components";
 import Link from "next/link";
-import { useSelector } from "react-redux";
 
 const FunddingDateItem = [
   {
@@ -64,21 +63,9 @@ const FunddingDateItem = [
 ];
 const MyPageCreator = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [totalEth, setTotalEth] = useState(0);
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   const block = Array.from({ length: 5 }, () => <div></div>);
-  const myFundingList = useSelector((state) => state.myPageInfo.runningFundList);
-  const noticeList = useSelector((state) => state.myPageInfo.noticeList);
-
-  useEffect(() => {
-    let totalETH = 0;
-    myFundingList.map((e) => {
-      totalETH += e.funding_sales * e.funding_price;
-    });
-    setTotalEth(totalETH);
-  });
-
   return (
     <div className="MyPageCreatorFrame">
       <AnimatePresence>{modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
@@ -90,7 +77,7 @@ const MyPageCreator = () => {
           </div>
           <div className="infoNumber">
             <div>ETH</div>
-            <div>{totalEth}</div>
+            <div>2.255</div>
           </div>{" "}
         </div>
         <div className="creatorNoticeSection">
@@ -99,13 +86,13 @@ const MyPageCreator = () => {
             <div className="noticeShowAll">Show All</div>
           </div>
           <div className="noticeList">
-            {noticeList.map((item) => (
+            {block.map(() => (
               <motion.div className="noticeWrap" whileHover={{ scale: 1.01 }}>
-                <div className="date">{new Date(item.created_at).toISOString().split("T")[0].substring(2)}</div>
-                <div className="title">{item.title}</div>
+                <div className="date">2023-02-13</div>
+                <div className="title">Fundding Title</div>
                 <div className="infoFrame">
-                  <div>{item.funding_id}</div>
-                  {/* <div>조회수</div> */}
+                  <div>공지내용</div>
+                  <div>조회수</div>
                 </div>
               </motion.div>
             ))}
@@ -121,29 +108,21 @@ const MyPageCreator = () => {
             </Link>
           </div>
           <div className="funddingList">
-            {myFundingList.map((item) => (
+            {FunddingDateItem.map((item) => (
               <div className="funddingItemBox">
                 <div className="infoSection">
-                  <div className="funddingTitle">{item.funding_title}</div>
-                  <div className="funddingDate">
-                    {new Date(item.funding_start_date).toISOString().split("T")[0].substring(2)}~{new Date(item.funding_finish_date).toISOString().split("T")[0].substring(2)}
-                  </div>
-                  <div className="unitPrice">{item.funding_price} ETH</div>
-                  <div className="leftDay">종료까지 {Math.floor((Math.floor(new Date(item.funding_finish_date).getTime() / 1000) - Math.floor(new Date().getTime() / 1000)) / 3600)} 분</div>
-                  <div className="quantityPercentage">누적 판매 수량 : {item.funding_sales}</div>
+                  <div className="funddingTitle">{item.funddingTitle}</div>
+                  <div className="funddingDate">{item.funddingDate}</div>
+                  <div className="unitPrice">{item.unitPrice}</div>
+                  <div className="leftDay">{item.leftDay}</div>
+                  <div className="quantityPercentage">{item.quantity}</div>
                 </div>
                 <div className="musicInputButton">
-                  {item.funding_music_regist ? (
-                    <motion.div className="buttonLine" onClick={() => (modalOpen ? close() : open())} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                      음원등록
-                    </motion.div>
-                  ) : (
-                    <motion.div className="buttonLine" onClick={() => alert("이미 음원을 등록하셨습니다. 재 등록 원하는 경우 별도 문의 바랍니다.")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                      음원 등록 완료
-                    </motion.div>
-                  )}
+                  <motion.div className="buttonLine" onClick={() => (modalOpen ? close() : open())} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                    음원등록
+                  </motion.div>
                 </div>
-                {item.funding_finish_status ? <div className="funddingTerminationButton">펀딩종료</div> : <div className="funddingTerminationButton">분배완료</div>}
+                <div className="funddingTerminationButton">펀딩종료</div>
               </div>
             ))}
           </div>

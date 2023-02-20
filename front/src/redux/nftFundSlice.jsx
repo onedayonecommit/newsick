@@ -1,6 +1,7 @@
+//
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchMakeIPFS, metadataReady, fetchCreateFund } from "@/middleware/fetchFund";
-import { PURGE } from "redux-persist";
+
 const initialState = {
   funding_nft_image: "", // 파일url
   funding_metadata: "", // metadata url
@@ -18,17 +19,17 @@ const initialState = {
   lyrics_maker: {
     lyrics_name: "", // 작사가명
     lyrics_info: "", // 작사가 소개
-    lyrics_sns_address: "", // sns 주소
+    lyrics_sex: 0, // 작사가 성별
   },
   music_maker: {
     music_name: "", // 작곡가 명
     music_info: "", // 작곡가 소개
-    music_sns_address: "",
+    music_sex: 0, // 작곡가 성별
   },
   singer: {
     singer_name: "", // 가수명
     singer_info: "", // 가수소개
-    singer_sns_address: "",
+    singer_sex: 0, // 가수성별
   },
   createStatus: false,
 };
@@ -36,7 +37,11 @@ const initialState = {
 const nftFundSlice = createSlice({
   name: "fundInfo",
   initialState,
-  reducers: {},
+  reducers: {
+    reset: (state, action) => {
+      state = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
@@ -44,8 +49,8 @@ const nftFundSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchMakeIPFS.fulfilled, (state, action) => {
-        state.funding_nft_image = action.payload.fileUrl;
-        state.funding_metadata = action.payload.metadataUrl;
+        state.fileUrl = action.payload.fileUrl;
+        state.metadataUrl = action.payload.metadataUrl;
         state.metadata_ready = true;
       })
       .addCase(fetchMakeIPFS.rejected, (state) => {
@@ -56,17 +61,13 @@ const nftFundSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchCreateFund.fulfilled, (state, action) => {
-        if (action.payload) {
-          state.createStatus = true;
-        }
         console.log("펀딩정보 : ", action.payload);
         console.log("업데이트 시킨 state : ", state);
         // }
       })
       .addCase(fetchCreateFund.rejected, (state) => {
         state = initialState;
-      })
-      .addCase(PURGE, () => initialState);
+      });
   },
 });
 

@@ -16,7 +16,7 @@ const Loading = ({ setIsLoading }) => {
   }, []);
   setTimeout(() => {
     setIsLoading(false);
-  }, 10);
+  }, 1000);
   return (
     <motion.div className="loadingFrame">
       <motion.div

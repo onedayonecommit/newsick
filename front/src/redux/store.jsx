@@ -1,14 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import logger from "redux-logger";
-import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
-// import { HYDRATE, createWrapper } from "next-redux-wrapper";
+import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import myPageSlice from "./myPageSlice";
-import nftFundSlice from "./nftFundSlice";
-import musicSlice from "./musicSlice";
 // slice 에서 export한 것 들!
 import userSlice from "./userSlice";
-import fundListSlice from "./nftFundFindSlice";
+
+// const logger = createLogger();
 
 // redux-persist 사용
 const persistConfig = {
@@ -19,10 +16,6 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   userInfo: userSlice.reducer,
-  myPageInfo: myPageSlice.reducer,
-  fundInfo: nftFundSlice.reducer,
-  musicList: musicSlice.reducer,
-  fundList: fundListSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -32,8 +25,7 @@ export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      // serializableCheck : false
-      serializableCheck: { ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER] },
+      serializableCheck: false,
     }).concat(logger),
 });
 
