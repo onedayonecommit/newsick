@@ -36,6 +36,8 @@ export class createFundDto {
   funding_price: number;
   @IsNumber()
   funding_hard_cap: number;
+  @IsNumber()
+  holder_share: number;
 }
 
 export class createFundLyricsDto {

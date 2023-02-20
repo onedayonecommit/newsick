@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { heart_nft } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
 import { likeNftDto } from './like-nft.dto';
 
@@ -6,14 +7,10 @@ import { likeNftDto } from './like-nft.dto';
 export class LikeNftService {
   constructor(private readonly db: PrismaService) {}
 
-  async likeNft(dto: likeNftDto) {
+  async likeNft(dto: likeNftDto): Promise<heart_nft | string> {
     const checkResult = await this.searchLikeNft(dto);
     if (checkResult) {
-      const result = await this.db.heart_nft.deleteMany({
-        where: { user_id: dto.user_wallet_address, funding_id: dto.funding_id },
-      });
-      const resDto = { ...result, message: '삭제' };
-      return resDto;
+      return 'already heart nft';
     } else {
       const result = await this.db.heart_nft.create({
         data: { user_id: dto.user_wallet_address, funding_id: dto.funding_id },
@@ -21,6 +18,12 @@ export class LikeNftService {
       const resDto = { ...result, message: '추가' };
       return resDto;
     }
+  }
+
+  async deleteNft(dto: likeNftDto) {
+    return await this.db.heart_nft.deleteMany({
+      where: { user_id: dto.user_wallet_address, funding_id: dto.funding_id },
+    });
   }
 
   async searchLikeNft(dto: likeNftDto): Promise<boolean> {
