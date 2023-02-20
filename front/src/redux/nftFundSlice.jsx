@@ -1,7 +1,6 @@
-//
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchMakeIPFS, metadataReady, fetchCreateFund } from "@/middleware/fetchFund";
-
+import { PURGE } from "redux-persist";
 const initialState = {
   funding_nft_image: "", // 파일url
   funding_metadata: "", // metadata url
@@ -37,11 +36,7 @@ const initialState = {
 const nftFundSlice = createSlice({
   name: "fundInfo",
   initialState,
-  reducers: {
-    reset: (state, action) => {
-      state = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
@@ -49,8 +44,8 @@ const nftFundSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchMakeIPFS.fulfilled, (state, action) => {
-        state.fileUrl = action.payload.fileUrl;
-        state.metadataUrl = action.payload.metadataUrl;
+        state.funding_nft_image = action.payload.fileUrl;
+        state.funding_metadata = action.payload.metadataUrl;
         state.metadata_ready = true;
       })
       .addCase(fetchMakeIPFS.rejected, (state) => {
@@ -61,13 +56,17 @@ const nftFundSlice = createSlice({
         state = initialState;
       })
       .addCase(fetchCreateFund.fulfilled, (state, action) => {
+        if (action.payload) {
+          state.createStatus = true;
+        }
         console.log("펀딩정보 : ", action.payload);
         console.log("업데이트 시킨 state : ", state);
         // }
       })
       .addCase(fetchCreateFund.rejected, (state) => {
         state = initialState;
-      });
+      })
+      .addCase(PURGE, () => initialState);
   },
 });
 
