@@ -10,6 +10,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 // 펀딩 메인페이지
 const data = [
@@ -120,14 +121,12 @@ const FundingContainer = () => {
   };
   // ===========================================================
   const { web3, NEWSIC_FUND } = useWeb3();
-  const user = useSelector((state) => state.userInfo.address);
   const fund = useSelector((state) => state.fundList.data);
   const popular = useSelector((state) => state.fundList.popular);
   const [_fund, setFund] = useState(fund);
   const [selectedDiv, setSelectedDiv] = useState("div1");
-  const handleClick = (id) => {
-    setSelectedDiv(id);
-  };
+  const [time, setTime] = useState();
+
   console.log("펀드펀드", popular);
   // console.log("유저유저", user);
 
@@ -153,6 +152,7 @@ const FundingContainer = () => {
           }
         });
         setFund(_arr);
+
         console.log("ing");
 
         return _arr;
@@ -229,15 +229,16 @@ const FundingContainer = () => {
     // console.log(_data);
     // dispatch(fetchBringData(_data));
   };
-
+  const route = useRouter();
   // 세부페이지 들어가는 함수
   const detailPage = (e) => {
-    console.log(e);
-    return <Link href={`/reward/${e}`}></Link>;
+    route.push({
+      pathname: `reward/${e}`,
+      state: { data: fund[e] },
+    });
   };
 
   const timeSet = (_startTime, _finishTime, _productTime) => {
-    console.log("sisisisisisisisisiiba", _fund);
     const _start = new Date(_startTime);
     const _finish = new Date(_finishTime);
     const _product = new Date(_productTime);
@@ -249,13 +250,13 @@ const FundingContainer = () => {
       remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
       remainingMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
       console.log("1111111111111111111111");
-    } else if (_start - _time < 0 && _finish - _time > 0) {
+    } else if (_start - _time < 0 && _finish - _time >= 0) {
       const timeDiff = _finish - _time;
       remainingdays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
       remainingMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
       console.log("22222222222222222222222");
-    } else if (_finish - _time < 0 && _product - _time > 0) {
+    } else if (_finish - _time < 0 && _product - _time >= 0) {
       const timeDiff = _product - _time;
       remainingdays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
@@ -298,7 +299,7 @@ const FundingContainer = () => {
                 className="detailButton"
                 onClick={() => detailPage(popular.id)}
               >
-                DETAIL
+                <Link href="/reward/">DETAIL</Link>
               </div>
             </div>
             <div className="creatorImg" />

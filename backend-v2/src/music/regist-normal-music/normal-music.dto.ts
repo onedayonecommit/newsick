@@ -4,6 +4,7 @@ export class normalMusicDto {
   //   @IsString()
   music_name: string;
   //   @IsString()
+
   @IsOptional()
   singer?: string;
   //   @IsString()
@@ -18,6 +19,7 @@ export class normalMusicDto {
   music_genre: string;
   //   @IsString()
   album_name: string;
+
   //   @IsBoolean()
   title: boolean;
 }

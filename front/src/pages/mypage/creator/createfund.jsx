@@ -78,6 +78,7 @@ const FundingCreate = () => {
     }
     setData({ ...data, creator_id: userInfo.address });
     setIsSubmissionButton(true);
+    console.log("yyyyyyyyyyyyyyyyyyyyy", _formData);
   };
 
   // 이미지 세팅
