@@ -18,7 +18,7 @@ const NftDetailContainer = () => {
     const NFTId = router.query.NFTId;
     console.log(NFTId, "엔엪티아이디다 임마");
     dispatch(marketDetail(NFTId));
-    dispatch(marketDetailInfo(NFTId));
+    // dispatch(marketDetailInfo(NFTId));
   }, []);
   return (
     <div className="nftDetailContainerFrame">

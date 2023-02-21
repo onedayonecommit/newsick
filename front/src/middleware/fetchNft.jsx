@@ -21,6 +21,9 @@ export const marketDetail = createAsyncThunk("market-funding-list-contract", asy
   try {
     const detailList = await contract.methods._offers(Number(_tokenId)).call();
     console.log(detailList, "detailList");
+    console.log(detailList[0], "detailList");
+    console.log(detailList[1], "detailList");
+    return detailList;
   } catch (error) {
     console.log(error);
   }

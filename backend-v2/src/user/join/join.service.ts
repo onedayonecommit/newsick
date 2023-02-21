@@ -35,7 +35,7 @@ export class JoinService {
             create: [{ is_creator: is_creator }],
           },
           ticket: {
-            create: [{ ticket_type: 0 }],
+            create: [],
           },
         },
       });
