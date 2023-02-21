@@ -1,4 +1,4 @@
-import { IsOptional } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class normalMusicDto {
   //   @IsString()
@@ -22,4 +22,6 @@ export class normalMusicDto {
 
   //   @IsBoolean()
   title: boolean;
+  // @IsString()
+  lyrics: string;
 }

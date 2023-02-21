@@ -284,6 +284,11 @@ const FundingContainer = () => {
     checkTime("ing");
   }, []);
 
+  useEffect(() => {
+    const _data = dispatch(fetchBringData());
+    console.log("응???", _data);
+  }, []);
+
   return (
     <div className="FundingContainerFrame">
       <div className="fundingTopBar">

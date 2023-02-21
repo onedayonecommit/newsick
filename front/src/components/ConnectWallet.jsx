@@ -4,7 +4,7 @@ import { fetchUserCheck } from "../middleware/fetchUser";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import useWeb3 from "../hooks/useWeb3";
-import { userAction } from "@/redux/userSlice";
+import userSlice, { userAction } from "@/redux/userSlice";
 
 // 계정을 바꾸면 다시 버튼이 생겨야함! 자동으로 로그아웃!
 const ConnectWallet = () => {
@@ -48,6 +48,10 @@ const ConnectWallet = () => {
         // 여기서 회원이면 유저 정보 전체 받아오고
         // 비회원이면 createStatus : false 받아옴
         dispatch(fetchUserCheck({ user_wallet_address: linkedAccount[0] }));
+        web3.eth.getBalance(linkedAccount[0]).then((balance) => {
+          const ether = web3.utils.fromWei(balance, "ether");
+          dispatch(userAction.addBalance(ether));
+        });
       } catch (err) {
         console.log(err);
       }

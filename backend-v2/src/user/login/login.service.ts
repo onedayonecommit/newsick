@@ -10,7 +10,10 @@ export class LoginService {
     try {
       const result = await this.db.user.findUnique({
         where: { user_wallet_address },
-        include: { creator: { where: { creator_id: user_wallet_address } } },
+        include: {
+          creator: { where: { creator_id: user_wallet_address } },
+          ticket: { where: { id: user_wallet_address } },
+        },
       });
       const resDto = { ...result, createStatus: false };
       if (result) {

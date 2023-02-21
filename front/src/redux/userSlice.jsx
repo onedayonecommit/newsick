@@ -1,21 +1,37 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
+import {
+  fetchUserCreated,
+  fetchUserCheck,
+  fetchUserImage,
+  fetchApplyCreator,
+} from "../middleware/fetchUser";
 import { PURGE } from "redux-persist";
 
 const initialState = {
   address: "",
+  balance: "",
   userName: "",
   userEmail: "",
   userImage: "default_profile_image.png",
   isCreator: false,
   createStatus: false,
   // 구독권 state 만들기
+  ticket: "",
 };
 
 const userSlice = createSlice({
   name: "userInfo",
   initialState,
-
+  reducers: {
+    reset: (state, action) => {
+      state = action.payload;
+      console.log("초기화된 state : ", action.payload);
+    },
+    addBalance: (state, action) => {
+      state.balance = action.payload;
+      console.log(action.payload, "겟빨란스");
+    },
+  },
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
@@ -23,15 +39,18 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
-        if (action.payload.createStatus != false) {
-          state.address = action.payload.user_wallet_address;
-          state.userName = action.payload.user_name;
-          state.userEmail = action.payload.user_email;
-          state.userImage = action.payload.user_profile_image;
-          state.isCreator = action.payload.creator[0].is_creator;
-          state.createStatus = action.payload.createStatus;
-          console.log("넘어온 유저정보 : ", action.payload);
-        } else state.createStatus = false;
+        if (action.payload) {
+          if (action.payload.createStatus != false) {
+            state.address = action.payload.user_wallet_address;
+            state.userName = action.payload.user_name;
+            state.userEmail = action.payload.user_email;
+            state.userImage = action.payload.user_profile_image;
+            state.isCreator = action.payload.creator[0].is_creator;
+            state.createStatus = action.payload.createStatus;
+            state.ticket = action.payload.ticket[0].expired;
+            console.log("넘어온 유저정보 : ", action.payload);
+          }
+        }
       })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
@@ -43,7 +62,8 @@ const userSlice = createSlice({
         // console.log(typeof action.payload);
         // console.log(typeof action.payload == "string");
         if (action.payload) {
-          if (typeof action.payload == "string") alert(`이미 사용중인 ${action.payload} 입니다.`);
+          if (typeof action.payload == "string")
+            alert(`이미 사용중인 ${action.payload} 입니다.`);
           else {
             state.address = action.payload.user_wallet_address;
             state.userName = action.payload.user_name;

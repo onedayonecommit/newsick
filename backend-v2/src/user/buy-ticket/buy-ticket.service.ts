@@ -9,14 +9,13 @@ export class BuyTicketService {
   /** 스트리밍 티켓 구매 함수 */
   async buyTicket(dto: buyTicketDto) {
     const newExpired = new Date(new Date().getTime() + 2592000000);
-    const { user_wallet_address, ticket_type } = dto;
+    const { user_wallet_address } = dto;
     const { expired, status } = await this.nowCheck(user_wallet_address);
     let returnDto = {};
     if (status) {
       const result = await this.db.ticket.update({
         where: { id: user_wallet_address },
         data: {
-          ticket_type,
           expired: new Date(expired.getTime() + 2592000000),
         },
       });
@@ -26,7 +25,6 @@ export class BuyTicketService {
       const result = await this.db.ticket.update({
         where: { id: user_wallet_address },
         data: {
-          ticket_type,
           expired: newExpired,
         },
       });

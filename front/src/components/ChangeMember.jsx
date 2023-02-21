@@ -91,11 +91,8 @@ const ChangeMember = ({ handleClose, text }) => {
             <FontAwesomeIcon icon={faCamera} className="faCamera" />
             <input
               type="file"
-              name="file"
-              accept="image/*"
               className="imgChange"
               id="imgChange"
-              onChange={profileImageHandler}
               style={{ display: "none" }}
             />
           </label>

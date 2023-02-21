@@ -16,7 +16,7 @@ model user{
   user_email String @unique // 유저 이메일 중복 X
   user_wallet_address String @unique // 유저 지갑주소 중복 X
   user_name String @unique // 유저가 사용할 닉네임 중복 X
-  user_profile_image String @default("default_profile_image.jpeg") // 유저 프로필 사진 S3파일 키값
+  user_profile_image String @default("default_profile_image.png") // 유저 프로필 사진 S3파일 키값
   created_at DateTime @default(now()) // 생성 시점
   updated_at DateTime @default(now()) @updatedAt // 유저 정보 변경 시점
   funding_notice funding_notice[]
@@ -46,7 +46,6 @@ model creator{
 model ticket{
   ids user @relation(fields: [id],references: [user_wallet_address])
   id String @id
-  ticket_type Int @default(0)
   expired DateTime @default(now()) @db.Timestamp(3)
 }
 
@@ -68,7 +67,9 @@ model funding{
   funding_price Decimal @db.Decimal(24,18)
   funding_hard_cap Int
   funding_sales Int @default(0)
-  funding_heart Int @default(0)
+  funding_finish_status Boolean @default(false)
+  funding_music_regist Boolean @default(false)
+  holder_share Decimal @db.Decimal(16,10)
   funding_notice funding_notice[]
   funding_music funding_music[]
   music_maker music_maker[]
@@ -137,7 +138,7 @@ model funding_music{
 model funding_music_player{
   music_ids funding_music @relation(fields: [music_id],references: [funding_id])
   music_id Int @id
-  player_count Int @default(0)
+  player_count Int @default(0) @map("fm_player_count")
   heart Int @default(0)
 }
 
@@ -160,7 +161,7 @@ model normal_music{
 model normal_music_player{
   music_ids normal_music @relation(fields: [music_id],references: [id])
   music_id Int @id
-  player_count Int @default(0)
+  player_count Int @default(0) @map(name:"nm_player_count")
   heart Int @default(0)
 }
 

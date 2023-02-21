@@ -14,19 +14,15 @@ export class LikeFundService {
       });
       console.log(result);
       if (result) {
-        console.log('이미 눌러놔서 삭제할거임');
-        const result2 = await this.db.heart_funding.deleteMany({
-          where: {
-            funding_id: funding_id,
-            user_id: user_wallet_address,
-          },
-        });
-        console.log(result2);
-        await this.db.funding.update({
-          where: { id: funding_id },
-          data: { funding_heart: { decrement: 1 } },
-        });
-        return result2;
+        // console.log('이미 눌러놔서 삭제할거임');
+        // const result2 = await this.db.heart_funding.deleteMany({
+        //   where: {
+        //     funding_id: funding_id,
+        //     user_id: user_wallet_address,
+        //   },
+        // });
+        // console.log(result2);
+        return 'already add liked fund list';
       } else {
         console.log('없어서 추가함');
         const result3 = await this.db.heart_funding.create({
@@ -39,6 +35,14 @@ export class LikeFundService {
         });
         return result3;
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async likeFundDelete(dto: likeFundDto) {
+    return await this.db.heart_funding.deleteMany({
+      where: { user_id: dto.user_wallet_address, funding_id: dto.funding_id },
+    });
   }
 }

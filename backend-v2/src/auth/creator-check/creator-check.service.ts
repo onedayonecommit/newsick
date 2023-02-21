@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { flatten, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
 
 @Injectable()
@@ -16,6 +16,14 @@ export class CreatorCheckService {
 
   async noticeOwnerCheck(creator_id: string, id: number) {
     const result = await this.db.funding_notice.findFirst({
+      where: { id, creator_id },
+    });
+    if (result) return true;
+    else return false;
+  }
+
+  async fundingOwnerCheck(creator_id: string, id: number) {
+    const result = await this.db.funding.findFirst({
       where: { id, creator_id },
     });
     if (result) return true;

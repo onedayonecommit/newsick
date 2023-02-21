@@ -58,21 +58,44 @@ const RegisterNftSong = ({ handleClose, text }) => {
   };
   useEffect(() => {
     if (isChoice === "Sub") {
-      backgroundColorControls.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "rgba(255, 255, 255, 1)", style: { border: "1px solid rgba(255, 255, 255, 0.1)" } });
+      backgroundColorControls.start({
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
+        color: "rgba(255, 255, 255, 1)",
+        style: { border: "1px solid rgba(255, 255, 255, 0.1)" },
+      });
     } else {
-      backgroundColorControls.start({ backgroundColor: "rgba(255, 255, 255, 0.1)", color: "rgba(255, 255, 255, 0.2)", style: { border: "none" } });
+      backgroundColorControls.start({
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        color: "rgba(255, 255, 255, 0.2)",
+        style: { border: "none" },
+      });
     }
   }, [isChoice, backgroundColorControls]);
   useEffect(() => {
     if (isChoice === "Title") {
-      backgroundColorControls2.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "rgba(255, 255, 255, 1)", style: { border: "1px solid rgba(255, 255, 255, 0.1)" } });
+      backgroundColorControls2.start({
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
+        color: "rgba(255, 255, 255, 1)",
+        style: { border: "1px solid rgba(255, 255, 255, 0.1)" },
+      });
     } else {
-      backgroundColorControls2.start({ backgroundColor: "rgba(255, 255, 255, 0.1)", color: "rgba(255, 255, 255, 0.2)", style: { border: "none" } });
+      backgroundColorControls2.start({
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        color: "rgba(255, 255, 255, 0.2)",
+        style: { border: "none" },
+      });
     }
   }, [isChoice, backgroundColorControls2]);
   return (
     <MypageBackDrop onClick={handleClose}>
-      <motion.div onClick={(e) => e.stopPropagation()} className="modal orangeGradient" variants={dropIn} initial="hidden" animate="visible" exit="exit">
+      <motion.div
+        onClick={(e) => e.stopPropagation()}
+        className="modal orangeGradient"
+        variants={dropIn}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
         <div className="nftRegistrationFrame">
           <div className="topText">NFT 펀딩용 음원동록</div>
           <div className="bottomFrame">
@@ -99,17 +122,34 @@ const RegisterNftSong = ({ handleClose, text }) => {
             <div className="genreList">
               <div className="genreText">장르</div>
               <div className="chooseInput">
-                <motion.div className="list" initial="exit" animate={isHover ? "enter" : "exit"} variants={subMenuAnimate}>
-                  <div className="option" onClick={() => handleOptionClick("가요")}>
+                <motion.div
+                  className="list"
+                  initial="exit"
+                  animate={isHover ? "enter" : "exit"}
+                  variants={subMenuAnimate}
+                >
+                  <div
+                    className="option"
+                    onClick={() => handleOptionClick("가요")}
+                  >
                     가요
                   </div>
-                  <div className="option" onClick={() => handleOptionClick("팝")}>
+                  <div
+                    className="option"
+                    onClick={() => handleOptionClick("팝")}
+                  >
                     팝
                   </div>
-                  <div className="option" onClick={() => handleOptionClick("트로트")}>
+                  <div
+                    className="option"
+                    onClick={() => handleOptionClick("트로트")}
+                  >
                     트로트
                   </div>
-                  <div className="option" onClick={() => handleOptionClick("클래식")}>
+                  <div
+                    className="option"
+                    onClick={() => handleOptionClick("클래식")}
+                  >
                     클래식
                   </div>
                 </motion.div>
@@ -129,7 +169,12 @@ const RegisterNftSong = ({ handleClose, text }) => {
               >
                 + 음원 파일 선택하기
               </motion.label>
-              <input type="file" className="soundSource" id="soundSource" style={{ display: "none" }} />
+              <input
+                type="file"
+                className="soundSource"
+                id="soundSource"
+                style={{ display: "none" }}
+              />
             </div>
             <div className="bottomList">
               <div>앨범 커버사진</div>
@@ -142,15 +187,28 @@ const RegisterNftSong = ({ handleClose, text }) => {
               >
                 + 커버사진 선택하기
               </motion.label>
-              <input type="file" className="albumCover" id="albumCover" style={{ display: "none" }} />
+              <input
+                type="file"
+                className="albumCover"
+                id="albumCover"
+                style={{ display: "none" }}
+              />
             </div>
             <div className="bottomList">
               <div>타이틀 여부</div>
               <div className="switchBox">
-                <motion.div className="notTitle" animate={backgroundColorControls} onTap={() => setIsChoice("Sub")}>
+                <motion.div
+                  className="notTitle"
+                  animate={backgroundColorControls}
+                  onTap={() => setIsChoice("Sub")}
+                >
                   SUB
                 </motion.div>
-                <motion.div className="title" animate={backgroundColorControls2} onTap={() => setIsChoice("Title")}>
+                <motion.div
+                  className="title"
+                  animate={backgroundColorControls2}
+                  onTap={() => setIsChoice("Title")}
+                >
                   TITLE
                 </motion.div>
               </div>

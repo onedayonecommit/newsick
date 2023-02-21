@@ -10,6 +10,13 @@ import { FileUploadService } from 'src/s3/file-upload/file-upload.service';
 import { ApproveFundingMusicService } from './approve-funding-music/approve-funding-music.service';
 import { ApproveFundingMusicController } from './approve-funding-music/approve-funding-music.controller';
 import { StreamingAuthService } from 'src/auth/streaming-auth/streaming-auth.service';
+import { CreatorCheckService } from 'src/auth/creator-check/creator-check.service';
+import { MusicMainListService } from './music-main-list/music-main-list.service';
+import { MusicMainListController } from './music-main-list/music-main-list.controller';
+import { MusicGenreListService } from './music-genre-list/music-genre-list.service';
+import { MusicGenreListController } from './music-genre-list/music-genre-list.controller';
+import { MusicDetailInfoController } from './music-detail-info/music-detail-info.controller';
+import { MusicDetailInfoService } from './music-detail-info/music-detail-info.service';
 
 @Module({
   controllers: [
@@ -17,6 +24,9 @@ import { StreamingAuthService } from 'src/auth/streaming-auth/streaming-auth.ser
     RegistNormalMusicController,
     RegistFundingMusicController,
     ApproveFundingMusicController,
+    MusicMainListController,
+    MusicGenreListController,
+    MusicDetailInfoController,
   ],
   providers: [
     StreamingService,
@@ -26,6 +36,10 @@ import { StreamingAuthService } from 'src/auth/streaming-auth/streaming-auth.ser
     FileUploadService,
     ApproveFundingMusicService,
     StreamingAuthService,
+    CreatorCheckService,
+    MusicMainListService,
+    MusicGenreListService,
+    MusicDetailInfoService,
   ],
 })
 export class MusicModule {}

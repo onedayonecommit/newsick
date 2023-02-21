@@ -15,4 +15,8 @@ export class OnGoingFundingService {
       },
     });
   }
+
+  async allList() {
+    return await this.db.funding.findMany({});
+  }
 }

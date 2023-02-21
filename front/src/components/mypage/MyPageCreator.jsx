@@ -75,12 +75,11 @@ const MyPageCreator = () => {
 
   useEffect(() => {
     let totalETH = 0;
-    console.log("ddddddddddddddd", myFundingList);
     myFundingList.map((e) => {
       totalETH += e.funding_sales * e.funding_price;
     });
     setTotalEth(totalETH);
-  }, []);
+  });
 
   return (
     <div className="MyPageCreatorFrame">
@@ -156,7 +155,7 @@ const MyPageCreator = () => {
                         Math.floor(new Date().getTime() / 1000)) /
                         3600
                     )}{" "}
-                    분
+                    시간
                   </div>
                   <div className="quantityPercentage">
                     누적 판매 수량 : {item.funding_sales}

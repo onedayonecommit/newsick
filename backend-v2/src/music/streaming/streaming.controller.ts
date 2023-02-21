@@ -6,8 +6,8 @@ import { StreamingService } from './streaming.service';
 export class StreamingController {
   constructor(private readonly streamingService: StreamingService) {}
 
-  @Post('music')
-  async musicStreaming(@Body() dto: streamingDto) {
-    return await this.streamingService.musicStreaming(dto.user_wallet_address);
+  @Post('normal/music')
+  async fundingMusicStreaming(@Body() dto: streamingDto) {
+    return await this.streamingService.fundingMusicStreaming(dto);
   }
 }

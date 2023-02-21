@@ -29,9 +29,7 @@ const SubscriptionContainer = () => {
     // 가격 설정
     const _price = await web3.utils.toWei("0.005", "ether");
     // 티켓구매
-    const _buy_ticket = await NEWSIC_FUND.methods
-      .subscriptionPay()
-      .send({ from: user.address, value: _price });
+    const _buy_ticket = await NEWSIC_FUND.methods.subscriptionPay().send({ from: user.address, value: _price });
     setTicket(_buy_ticket);
     return _buy_ticket;
   };
@@ -70,9 +68,7 @@ const SubscriptionContainer = () => {
       <div className="SubscriptionFrame">
         <div className="SubscriptionText">
           <div>Ready to start?</div>
-          <div>
-            Launch a site for free. Choose a site plan to unlock more features.
-          </div>
+          <div>Launch a site for free. Choose a site plan to unlock more features.</div>
           <div />
         </div>
         <div className="SubscriptionListFrame">
@@ -101,25 +97,8 @@ const SubscriptionContainer = () => {
             </div>
           </div>
           <div className="subscriptionProgressSection">
-            <motion.svg
-              viewBox="0 0 100 100"
-              width="450"
-              height="450"
-              variants={svgVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.circle
-                cx="50"
-                cy="50"
-                r="45"
-                fill="none"
-                stroke="rgba(255,255,255,0.8)"
-                strokeWidth="4"
-                strokeDasharray="283"
-                variants={svgVariants}
-                animate={{ pathLength: "70%" }}
-              />
+            <motion.svg viewBox="0 0 100 100" width="450" height="450" variants={svgVariants} initial="hidden" animate="visible">
+              <motion.circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="4" strokeDasharray="283" variants={svgVariants} animate={{ pathLength: "70%" }} />
             </motion.svg>
           </div>
         </div>

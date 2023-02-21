@@ -56,13 +56,7 @@ const SideBar = () => {
                   borderRadius: "25px",
                   border: "1px solid rgba(255, 255, 255, 0.1)",
                 }}
-                transition={{
-                  ease: [0.44, 0, 0.56, 1],
-                  stiffness: 500,
-                  damping: 60,
-                  mass: 1,
-                  duration: 0.3,
-                }}
+                transition={{ ease: [0.44, 0, 0.56, 1], stiffness: 500, damping: 60, mass: 1, duration: 0.3 }}
                 whileTap={{ scale: 0.9 }}
                 className="menuItem"
                 onClick={() => {

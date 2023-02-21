@@ -10,4 +10,9 @@ export class LikeMusicController {
   async likeMusic(@Body() dto: likeMusicDto) {
     return await this.likeMusicService.likeMusic(dto);
   }
+
+  @Post('delete')
+  async deleteMusic(@Body() dto: likeMusicDto) {
+    return await this.likeMusicService.likeDeleteMusic(dto);
+  }
 }

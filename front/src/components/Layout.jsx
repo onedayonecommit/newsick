@@ -42,12 +42,12 @@ const Layout = (props) => {
             {/* ========================================================== */}
             {isClick ? <Congratulations isClick={isClick} /> : null}
             {/* ========================================================== */}
-            {isSoundClick ? <VolumeBox /> : null}
             <MusicPlayer
               layOutRef={layOutRef}
               isPlayerClick={isPlayerClick}
               playerClick={playerClick}
             />
+            {isSoundClick ? <VolumeBox /> : null}
             <AnimatePresence>
               {modalOpen && (
                 <ChangeMember modalOpen={modalOpen} handleClose={close} />

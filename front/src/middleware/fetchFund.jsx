@@ -58,8 +58,9 @@ export const fetchPopularPick = createAsyncThunk(
 // 전체 펀딩 데이터 가져오기
 export const fetchBringData = createAsyncThunk("fund/allList", async () => {
   try {
-    const _recieveData = await axios.post(
-      "https://www.poopoobin.com/hot-fund/all/list"
+    const _recieveMetadata = await axios.post(
+      "https://www.poopoobin.com/create-fund/create/fund", // 여기 사용하는 back 주소
+      _data
     );
     console.log("들어온 데이터 확인", _recieveData);
     return _recieveData.data;

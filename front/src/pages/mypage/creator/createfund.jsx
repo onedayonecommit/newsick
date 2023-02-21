@@ -2,13 +2,23 @@ import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useWeb3 from "@/hooks/useWeb3";
 import { useRouter } from "next/router";
+import { nftFundAction } from "@/redux/nftFundSlice";
+import { persistor } from "@/redux/store";
 
 const FundingCreate = () => {
-  const route = useRouter();
+  const createStatus = useSelector((state) => state.fundInfo.createStatus);
+  useEffect(() => {
+    if (createStatus) {
+      alert("펀딩 생성이 완료되었습니다.");
+      router.push("/mypage");
+      persistor.purge();
+    }
+  }, [createStatus]);
+  const router = useRouter();
   // date 형식 맞춰
   const convertToTimestamp = (e) => {
     const _date = new Date(e);
@@ -36,6 +46,7 @@ const FundingCreate = () => {
     discord_address: "", // 디스코드 주소
     funding_hard_cap: 0,
     funding_price: 0,
+    holder_share: 0,
     lyrics_maker: {
       lyrics_name: "", // 작사가명
       lyrics_info: "", // 작사가 소개
@@ -117,23 +128,24 @@ const FundingCreate = () => {
       ...data,
       id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
     });
-
+    console.log("서버 통신 시작");
     const _sendData_toBack = {
       fund: {
-        id: data.id,
+        id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
         creator_id: data.creator_id,
         category: data.category,
         funding_info: data.nftDescription,
         funding_start_date: convertToISO8601(data.funding_start_date),
         funding_finish_date: convertToISO8601(data.funding_finish_date),
         funding_production_date: convertToISO8601(data.funding_production_date),
-        funding_nft_image: fundInfo.fileUrl,
-        funding_metadata: fundInfo.metadataUrl,
+        funding_nft_image: fundInfo.funding_nft_image,
+        funding_metadata: fundInfo.funding_metadata,
         discord_address: data.discord_address,
         funding_title: data.funding_title,
         nft_name: data.nftName,
         funding_hard_cap: data.funding_hard_cap,
         funding_price: data.funding_price,
+        holder_share: data.funding_holdershare,
       },
       lyrics_maker: {
         lyrics_name: data.lyrics_maker.lyrics_name,
@@ -332,7 +344,7 @@ const FundingCreate = () => {
                 onChange={(e) => {
                   setData({
                     ...data,
-                    funding_price: e.target.value,
+                    funding_price: Number(e.target.value),
                   });
                 }}
               />
@@ -341,7 +353,7 @@ const FundingCreate = () => {
           </div>
           <div className="minimumNumberSection">
             <div>
-              <div className="minimumNumber">최소 판매개수</div>
+              <div className="minimumNumber">최대 판매개수</div>
               <div className="inputFrame">
                 <input
                   className="minimumNumberInput"
@@ -350,7 +362,7 @@ const FundingCreate = () => {
                   onChange={(e) => {
                     setData({
                       ...data,
-                      funding_min: e.target.value,
+                      funding_hard_cap: Number(e.target.value),
                     });
                   }}
                 />
@@ -389,7 +401,7 @@ const FundingCreate = () => {
                     setShare(e.target.value);
                     setData({
                       ...data,
-                      funding_holdershare: e.target.value,
+                      funding_holdershare: Number(e.target.value),
                     });
                   }}
                 ></input>
