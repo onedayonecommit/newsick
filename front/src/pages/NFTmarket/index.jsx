@@ -7,7 +7,6 @@ import image1 from "../../../public/image/IRON.jpg";
 import image2 from "../../../public/image/dddepth-343.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
 import Image from "next/image";
-import { NEWSIC_FUND_CA } from "@/web3.config";
 import { useDispatch, useSelector } from "react-redux";
 import { marketNftList } from "@/middleware/fetchNft";
 import { useRouter } from "next/router";

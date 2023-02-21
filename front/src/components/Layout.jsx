@@ -1,10 +1,14 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar, VolumeBox } from "../components";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loading, ChangeMember, Congratulations } from "@/components";
+import { useSelector } from "react-redux";
 
 const Layout = (props) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const excuteContract = useSelector((state) => state.eventView.excuteContract);
+  console.log("컨트랙트 실행 여부", excuteContract);
+
+  // const [isLoading, setIsLoading] = useState(true);
   const [isSoundClick, setIsSoundClick] = useState(false);
   const [isPlayerClick, setIsPlayerClick] = useState(false);
   const [switchState, setSwitchState] = useState(false);
@@ -25,10 +29,12 @@ const Layout = (props) => {
   const playerClick = () => {
     setIsPlayerClick(!isPlayerClick);
   };
+
   return (
     <>
-      {isLoading ? (
-        <Loading setIsLoading={setIsLoading} />
+      {excuteContract ? (
+        // <Loading setIsLoading={setIsLoading} />
+        <Loading />
       ) : (
         <motion.div>
           <motion.div className="layoutFrame" ref={layOutRef}>

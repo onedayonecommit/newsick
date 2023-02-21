@@ -3884,7 +3884,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 30px 30px 30px 30px;
-  background: radial-gradient(68.30000000000001% 100% at 36.4% 106.3%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+  // background: radial-gradient(68.30000000000001% 100% at 36.4% 106.3%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
   overflow: visible;
   position: relative;
   align-content: center;
@@ -3939,7 +3939,7 @@ body {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-      overflow: hidden;
+      overflow: visible;
       position: relative;
       padding: 0px 0px 0px 0px;
       align-content: center;
@@ -3947,6 +3947,7 @@ body {
       gap: 30px;
       border-radius: 0px 0px 0px 0px;
       .newSongCard {
+        cursor: grab;
         box-sizing: border-box;
         flex-shrink: 0;
         width: 160px;
@@ -3966,6 +3967,9 @@ body {
         gap: 10px;
         border-radius: 25px;
         border: 1px solid rgba(255, 255, 255, 0.1);
+        &:hover {
+          border: 1px solid rgba(255, 255, 255, 1);
+        }
         .newSongImg {
           box-sizing: border-box;
           flex-shrink: 0;
@@ -6502,10 +6506,10 @@ body {
   .topSection {
     top: 40px;
     left: 20px;
-    right: 0px;
+    right: 20px;
     box-sizing: border-box;
     flex-shrink: 0;
-    width: 1997px;
+    width: 1319px;
     height: 374px;
     display: flex;
     flex-direction: row;
@@ -6519,7 +6523,7 @@ body {
     flex-wrap: nowrap;
     gap: 10px;
     position: absolute;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 25px;
     border-color: rgba(255, 255, 255, 0.1);
     border-style: solid;
     border-top-width: 1px;
@@ -6529,7 +6533,7 @@ body {
     .statisticsSection {
       box-sizing: border-box;
       flex-shrink: 0;
-      width: 542px;
+      width: 1279px;
       height: 334px;
       display: flex;
       flex-direction: column;
@@ -6552,7 +6556,7 @@ body {
       border-radius: 20px;
       .statisticsSectionFrame {
         flex-shrink: 0;
-        width: 502px;
+        width: 1239px;
         height: 294px;
         display: flex;
         flex-direction: column;
@@ -6567,7 +6571,7 @@ body {
         border-radius: 0px 0px 0px 0px;
         .chartInfoSection {
           flex-shrink: 0;
-          width: 502px;
+          width: 1239px;
           height: 20px;
           display: flex;
           flex-direction: row;
@@ -6623,7 +6627,7 @@ body {
           }
         }
         .chartSection {
-          width: 502px;
+          width: 1239px;
           height: 264px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           display: flex;
@@ -6632,7 +6636,7 @@ body {
           //   padding: 0px 50px 0px 50px;
           .historyGraphFrame {
             position: "relative";
-            width: 502px;
+            width: 1239px;
             height: 200px;
           }
         }
@@ -12065,3 +12069,370 @@ body {
   }
 }
 // SiteInfo CSS 사이트소개페이지 CSS ================================================ DONE
+// SongDetail 페이지 CSS ================================= START
+.songDetailContainer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px 40px 20px;
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+  .songInfoSection {
+    flex-shrink: 0;
+    width: 1319px;
+    height: min-content; /* 400px */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 0px 0px 0px 0px;
+    .songImg {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 400px;
+      height: 400px;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 10px;
+      border: 1px solid rgba(179, 179, 179, 0.5);
+    }
+    .songInfoBox {
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 909px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 40px 20px 40px 20px;
+      overflow: hidden;
+      position: relative;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 30px;
+      border-radius: 0px 0px 0px 0px;
+      .songTitleInfo {
+        flex-shrink: 0;
+        width: 762px;
+        height: 115px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 15px;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(1) {
+          flex-shrink: 0;
+          width: auto; /* 595px */
+          height: auto; /* 48px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 40px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        :nth-child(2) {
+          flex-shrink: 0;
+          width: auto; /* 162px */
+          height: auto; /* 36px */
+          white-space: pre;
+          position: relative;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 30px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+        }
+        :nth-child(3) {
+          flex-shrink: 0;
+          width: 762px;
+          height: 1px;
+          display: block;
+          background-color: #ffffff;
+          overflow: hidden;
+          position: relative;
+          border-radius: 0px 0px 0px 0px;
+        }
+      }
+      .songSubInfo {
+        flex-shrink: 0;
+        width: 604px;
+        height: 75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 15px;
+        border-radius: 0px 0px 0px 0px;
+        :nth-child(-n + 2) {
+          flex-shrink: 0;
+          width: min-content; /* 604px */
+          height: min-content; /* 30px */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10;
+          border-radius: 0px 0px 0px 0px;
+          :nth-child(1) {
+            flex-shrink: 0;
+            width: auto; /* 50px */
+            height: auto; /* 30px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 25px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+          :nth-child(2) {
+            flex-shrink: 0;
+            width: auto; /* 544px */
+            height: auto; /* 30px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 25px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+      }
+      .songPlayButtonFrame {
+        flex-shrink: 0;
+        width: min-content; /* 370px */
+        height: min-content; /* 75px */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        padding: 0px 0px 0px 0px;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 40px;
+        border-radius: 0px 0px 0px 0px;
+        .playButton {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 165px;
+          height: 75px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(227deg, rgba(18, 0, 255, 0.7) 0%, rgba(0, 229, 255, 0.7) 100%);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: 0.3s;
+          &:hover {
+            gap: 20px;
+          }
+          .playIcon {
+            width: 30px;
+            height: 30px;
+            color: white;
+          }
+          .playText {
+            flex-shrink: 0;
+            width: auto; /* 50px */
+            height: auto; /* 30px */
+            white-space: pre;
+            position: relative;
+            font-weight: 700;
+            font-style: normal;
+            font-family: "Inter-Bold", "Inter", sans-serif;
+            color: #ffffff;
+            font-size: 25px;
+            letter-spacing: 0px;
+            line-height: 1.2;
+          }
+        }
+        .buyButton {
+          cursor: pointer;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          width: 165px;
+          height: 75px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          position: relative;
+          padding: 0px 0px 0px 0px;
+          align-content: center;
+          flex-wrap: nowrap;
+          gap: 10px;
+          border-radius: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          flex-shrink: 0;
+          white-space: pre;
+          font-weight: 700;
+          font-style: normal;
+          font-family: "Inter-Bold", "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 25px;
+          letter-spacing: 0px;
+          line-height: 1.2;
+          transition: 0.3s;
+          &:hover {
+            border: 1px solid rgba(255, 255, 255, 1);
+          }
+        }
+      }
+    }
+  }
+  .songTextSection {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 1319px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 40px 20px 40px;
+    overflow: hidden;
+    position: relative;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 20px;
+    border-radius: 0px 0px 0px 0px;
+    .infoTextSection {
+      flex-shrink: 0;
+      width: min-content; /* 891px */
+      height: min-content; /* 74px */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+      position: relative;
+      padding: 0px 0px 0px 0px;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 25px;
+      border-radius: 0px 0px 0px 0px;
+      :nth-child(1) {
+        flex-shrink: 0;
+        width: auto; /* 80px */
+        height: auto; /* 48px */
+        white-space: pre;
+        position: relative;
+        font-weight: 700;
+        font-style: normal;
+        font-family: "Inter-Bold", "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 40px;
+        letter-spacing: 0px;
+        line-height: 1.2;
+      }
+      :nth-child(2) {
+        flex-shrink: 0;
+        width: 891px;
+        height: 1px;
+        display: block;
+        background-color: #ffffff;
+        overflow: hidden;
+        position: relative;
+        border-radius: 0px 0px 0px 0px;
+      }
+    }
+    .textSection {
+      flex-shrink: 0;
+      width: 1239px;
+      height: 316px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: relative;
+      padding: 0px 10px 0px 10px;
+      align-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 10;
+      border-radius: 0px 0px 0px 0px;
+      flex-shrink: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      word-break: break-word;
+      font-weight: 700;
+      font-style: normal;
+      font-family: "Inter-Bold", "Inter", sans-serif;
+      color: #ffffff;
+      font-size: 25px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+      &::-webkit-scrollbar {
+        width: 15px;
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+// SongDetail 페이지 CSS ================================= DONE

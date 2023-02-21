@@ -6,8 +6,10 @@
 - 장르별
 */
 import { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { FundMusicTop100, NormalMusicTop100, NewSong, Song100, Pop100, Trot100, Classic100 } from "@/components";
+import { fetchGenreList } from "@/middleware/fetchMusic";
 
 // 뮤직 메인페이지
 
@@ -36,23 +38,30 @@ const variantModal = {
 };
 
 const MusicContainer = () => {
-  //============================================================20230215 추가 start
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedGenre, setSelectedGenre] = useState(null);
+  const [selectedGenre, setSelectedGenre] = useState("");
+
+  // const song100Handler = () => {
+
+  // };
+
   const handleGenreClick = (genre) => {
     setIsOpen(true);
     setSelectedGenre(genre);
+    console.log("보낼 장르", genre);
+    dispatch(fetchGenreList(genre));
   };
+
   const ModalContent = () => {
     switch (selectedGenre) {
-      case "public":
-        // 가요
+      case "가요":
         return <Song100 isOpen={isOpen} setIsOpen={setIsOpen} />;
-      case "pop":
+      case "팝":
         return <Pop100 isOpen={isOpen} setIsOpen={setIsOpen} />;
-      case "trot":
+      case "트로트":
         return <Trot100 isOpen={isOpen} setIsOpen={setIsOpen} />;
-      case "classic":
+      case "클래식":
         return <Classic100 isOpen={isOpen} setIsOpen={setIsOpen} />;
       default:
         return null;
@@ -89,22 +98,22 @@ const MusicContainer = () => {
         <div className="genreListSection">
           <div className="genreText">Genre List</div>
           <div className="genreList">
-            <motion.div className="publicGenreFrame" onClick={() => handleGenreClick("public")}>
+            <motion.div className="publicGenreFrame" onClick={() => handleGenreClick("가요")}>
               <div className="publicSongSection">
                 <div className="text">가요</div>
               </div>
             </motion.div>
-            <motion.div className="popGenreFrame" onClick={() => handleGenreClick("pop")}>
+            <motion.div className="popGenreFrame" onClick={() => handleGenreClick("팝")}>
               <div className="popSection">
                 <div className="text">팝</div>
               </div>
             </motion.div>
-            <motion.div className="tortGenreFrame" onClick={() => handleGenreClick("trot")}>
+            <motion.div className="tortGenreFrame" onClick={() => handleGenreClick("트로트")}>
               <div className="tortSection">
                 <div className="text">트로트</div>
               </div>
             </motion.div>
-            <motion.div className="classicGenreFrame" onClick={() => handleGenreClick("classic")}>
+            <motion.div className="classicGenreFrame" onClick={() => handleGenreClick("클래식")}>
               <div className="classicSection">
                 <div className="text">클래식</div>
               </div>

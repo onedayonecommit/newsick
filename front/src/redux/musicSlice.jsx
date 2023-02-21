@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchNormalMusicList, fetchFundMusicList, fetchNewMusicList } from "@/middleware/fetchMusic";
+import { fetchNormalMusicList, fetchFundMusicList, fetchPlayList, fetchNewMusicList, fetchGenreList } from "@/middleware/fetchMusic";
 
 const initialState = {
   normalMusicList: [],
   fundMusicList: [],
   newMusicList: [],
+  playList: [],
+  likeMusicList: [],
+  musicGenreList: [],
 };
 
 const musicSlice = createSlice({
-  name: "musicList",
+  name: "musicInfo",
   initialState,
   extraReducers: (builder) => {
     builder
@@ -29,16 +32,36 @@ const musicSlice = createSlice({
       })
       .addCase(fetchFundMusicList.rejected, (state) => {
         state.fundMusicList = [];
+      })
+      .addCase(fetchPlayList.pending, (state) => {
+        state.playList = [];
+      })
+      .addCase(fetchPlayList.fulfilled, (state, action) => {
+        console.log("플레이리스트 액션 페이로드", action.payload);
+        state.playList = action.payload;
+      })
+      .addCase(fetchPlayList.rejected, (state) => {
+        state.playList = [];
+      })
+      .addCase(fetchNewMusicList.pending, (state) => {
+        state.newMusicList = [];
+      })
+      .addCase(fetchNewMusicList.fulfilled, (state, action) => {
+        state.newMusicList = action.payload;
+      })
+      .addCase(fetchNewMusicList.rejected, (state) => {
+        state.newMusicList = [];
+      })
+      .addCase(fetchGenreList.pending, (state) => {
+        state.musicGenreList = [];
+      })
+      .addCase(fetchGenreList.fulfilled, (state, action) => {
+        console.log("장르 음악 페이로드", action.payload);
+        state.musicGenreList = action.payload;
+      })
+      .addCase(fetchGenreList.rejected, (state) => {
+        state.musicGenreList = [];
       });
-    // .addCase(fetchNewMusicList.pending, (state) => {
-    //   state.newMusicList = [];
-    // })
-    // .addCase(fetchNewMusicList.fulfilled, (state, action) => {
-    //   state.newMusicList = action.payload;
-    // })
-    // .addCase(fetchNewMusicList.rejected, (state) => {
-    //   state.newMusicList = [];
-    // });
   },
 });
 

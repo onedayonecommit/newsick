@@ -7,7 +7,7 @@ import Web3 from "web3";
 // NFT 판매중인 목록 가져오기
 export const marketNftList = createAsyncThunk("market-funding-list-backend", async () => {
   try {
-    const nftList = await axios({ url: "http://localhost:8080/market-funding-list/all", method: "get" });
+    const nftList = await axios({ url: "https://www.poopoobin.com/market-funding-list/all", method: "get" });
     console.log(nftList.data);
     return nftList.data;
   } catch (error) {
@@ -29,7 +29,7 @@ export const marketDetail = createAsyncThunk("market-funding-list-contract", asy
 export const marketDetailInfo = createAsyncThunk("market-funding-detail-list-backend", async (id) => {
   const result = await axios({
     method: "get",
-    url: `http://localhost:8080/market-funding-list/${id}`,
+    url: `https://www.poopoobin.com/market-funding-list/${id}`,
   });
   console.log(result.data, "마켓디테일");
   return result.data;

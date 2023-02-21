@@ -33,17 +33,18 @@ const UserBar = ({ handleOpen, handleClick }) => {
           <div className="userInfoSection">
             {/* 크리에이터일 때 티켓 붙음! */}
             <div className="creatorTicket" />
-            <Image src={`https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/${userImg}`} onClick={linkMypage} className="userImage" alt="프로필 이미지" width={100} height={100} />
+            <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} onClick={linkMypage} className="userImage" alt="프로필 이미지" width={100} height={100} />
             <ConnectWallet />
           </div>
         ) : (
           <div className="userInfoSection">
-            <Image src={`https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/${userImg}`} onClick={linkMypage} className="userImage" alt="프로필 이미지" width={100} height={100} />
+            <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} onClick={linkMypage} className="userImage" alt="프로필 이미지" width={100} height={100} />
             <ConnectWallet />
           </div>
         )}
 
-        <div className="stateInfoSection" onClick={handleClick}></div>
+        {/* <div className="stateInfoSection" onClick={handleClick}></div> */}
+        <div className="stateInfoSection"></div>
         <div className="anotherInfoSection"></div>
       </div>
     </div>

@@ -8,66 +8,9 @@ import { fetchNormalMusicList } from "@/middleware/fetchMusic";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const topChartItem = [
-  {
-    img: ironImg,
-    rank: 1,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 2,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 3,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 4,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 5,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 6,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 7,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 8,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-  {
-    img: ironImg,
-    rank: 9,
-    musicName: "Music Name",
-    singerName: "Singer Name",
-  },
-];
-
 const NormalMusicTop100 = () => {
   const dispatch = useDispatch();
-  const normalList = useSelector((state) => state.musicList.normalMusicList);
+  const normalList = useSelector((state) => state.musicInfo.normalMusicList);
   console.log("노말뮤직 리스트", normalList);
 
   useEffect(() => {
@@ -77,13 +20,13 @@ const NormalMusicTop100 = () => {
   return (
     <div className="topChartSection">
       <motion.div className="topChartList">
-        {topChartItem.map((item) => (
+        {normalList.map((item) => (
           <div className="musicTopItemBox">
             <div className="leftSection">
-              <Image src={item.img} alt="" className="musicTopItemImg" />
+              <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${item.music_cover_image}`} alt="" className="musicTopItemImg" width={85} height={85} />
               <div className="musicInfoFrame">
-                <div className="musicName">{item.musicName}</div>
-                <div className="singerName">{item.singerName}</div>
+                <div className="musicName">{item.music_name}</div>
+                <div className="singerName">{item.singer}</div>
               </div>
             </div>
             <div className="rightSection">

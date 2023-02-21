@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import ironImg from "../../../public/image/IRON.jpg";
 import { faHeart, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 const topChartItem = [
   {
@@ -10,67 +11,70 @@ const topChartItem = [
     rank: 1,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 2,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 3,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 4,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 5,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 6,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 7,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 8,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 9,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
 ];
 
 const Song100 = ({ isOpen, setIsOpen }) => {
+  const song100Arr = useSelector((state) => state.musicInfo.musicGenreList);
+  console.log("가요 리스트", song100Arr);
+  // const [song100, setSong100] = useState([]);
+
+  // song100Arr.sort((a, b) => {
+  //   console.log(b);
+  //   console.log(b.normal_music_player[0]);
+  //   console(a);
+  //   console.log(a.funding_music_player[0]);
+  //   return b?.funding_music_player[0]?.player_count || b?.normal_music_player[0]?.player_count - a?.funding_music_player[0]?.player_count || a?.normal_music_player[0]?.player_count;
+  // });
+
   return (
     <div className="publicBackImg">
       <div className="rankBackDrop" />
@@ -86,26 +90,26 @@ const Song100 = ({ isOpen, setIsOpen }) => {
               X
             </div>
           </div>
-          <div className="infoText">매월 1일 오후 7시 업데이트</div>
-          <div className="playButton">전체재생</div>
+          {/* <div className="infoText">매월 1일 오후 7시 업데이트</div>
+          <div className="playButton">전체재생</div> */}
           <div className="lastLine" />
         </div>
         <div className="bottomRankList">
-          {topChartItem.map((rank) => (
+          {song100Arr.map((rank, i) => (
             <div className="rankItemBox">
               <div className="leftSide">
-                <Image src={rank.img} alt="iron" className="rankItemImg" />
-                <div className="rankNum">{rank.rank}</div>
+                <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${rank.music_cover_image}`} alt="iron" className="rankItemImg" width={120} height={120} />
+                <div className="rankNum">{i + 1}</div>
                 <div className="rankInfoFrame">
-                  <div className="musicName">{rank.musicName}</div>
-                  <div className="singerName">{rank.singerName}</div>
+                  <div className="musicName">{rank.music_name}</div>
+                  <div className="singerName">{rank.singer}</div>
                 </div>
               </div>
               <div className="rightSide">
-                <div className="musicTime">{rank.lapTime}</div>
-                <div className="likeButton">
+                {/* <div className="musicTime">{rank.lapTime}</div> */}
+                {/* <div className="likeButton">
                   <FontAwesomeIcon icon={faHeart} />
-                </div>
+                </div> */}
                 <div className="takeButton">
                   <FontAwesomeIcon icon={faPlus} />
                 </div>

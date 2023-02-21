@@ -10,63 +10,54 @@ const topChartItem = [
     rank: 1,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 2,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 3,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 4,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 5,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 6,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 7,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 8,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
   {
     img: ironImg,
     rank: 9,
     musicName: "Music Name",
     singerName: "Singer Name",
-    lapTime: "3:36",
   },
 ];
 
@@ -80,8 +71,8 @@ const Trot100 = ({ isOpen, setIsOpen }) => {
             <div>트로트 TOP 100</div>
             <div onClick={() => setIsOpen(!isOpen)}>X</div>
           </div>
-          <div className="infoText">매월 1일 오후 7시 업데이트</div>
-          <div className="playButton">전체재생</div>
+          {/* <div className="infoText">매월 1일 오후 7시 업데이트</div>
+          <div className="playButton">전체재생</div> */}
           <div className="lastLine" />
         </div>
         <div className="bottomRankList">
@@ -97,9 +88,9 @@ const Trot100 = ({ isOpen, setIsOpen }) => {
               </div>
               <div className="rightSide">
                 <div className="musicTime">{rank.lapTime}</div>
-                <div className="likeButton">
+                {/* <div className="likeButton">
                   <FontAwesomeIcon icon={faHeart} />
-                </div>
+                </div> */}
                 <div className="takeButton">
                   <FontAwesomeIcon icon={faPlus} />
                 </div>
