@@ -21,6 +21,9 @@ export const marketDetail = createAsyncThunk("market-funding-list-contract", asy
   try {
     const detailList = await contract.methods._offers(Number(_tokenId)).call();
     console.log(detailList, "detailList");
+    console.log(detailList[0], "detailList");
+    console.log(detailList[1], "detailList");
+    return detailList;
   } catch (error) {
     console.log(error);
   }
@@ -33,4 +36,23 @@ export const marketDetailInfo = createAsyncThunk("market-funding-detail-list-bac
   });
   console.log(result.data, "마켓디테일");
   return result.data;
+});
+
+export const marketDetailBuy = createAsyncThunk("market_detail_buy", async (data) => {
+  const { tokenId, amountOfToken, price } = data;
+  const web3 = new Web3(window.ethereum);
+  const contract = new web3.eth.Contract(NEWSIC_MARKET_ABI, NEWSIC_MARKET_CA);
+  try {
+    const buyResult = await contract.methods._createBuyList(tokenId, amountOfToken, price);
+    console.log(buyResult.events.BuyEvent.returnValues._status);
+  } catch (error) {}
+});
+
+export const marketDetailSell = createAsyncThunk("market_detail_sell", async (data) => {
+  const { tokenId, amountOfToken, price } = data;
+  const web3 = new Web3(window.ethereum);
+  const contract = new web3.eth.Contract(NEWSIC_MARKET_ABI, NEWSIC_MARKET_CA);
+  try {
+    const sellResult = await contract.methods._createSellList(tokenId, amountOfToken, price);
+  } catch (error) {}
 });

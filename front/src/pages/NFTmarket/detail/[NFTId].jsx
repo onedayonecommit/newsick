@@ -10,15 +10,20 @@ const NftDetailContainer = () => {
   const [selectedDiv, setSelectedDiv] = useState("div1");
   const dispatch = useDispatch();
   const block = Array.from({ length: 5 }, () => <div></div>);
+  const createStatus = useSelector((state) => state.userInfo.createStatus);
   const router = useRouter();
+  const [orderEth, setOrderEth] = useState(0);
+  const [orderCount, setOrderCount] = useState(0);
+  const _balance = useSelector((state) => state.userInfo.balance);
   const handleClick = (id) => {
     setSelectedDiv(id);
   };
+
   useEffect(() => {
     const NFTId = router.query.NFTId;
     console.log(NFTId, "엔엪티아이디다 임마");
     dispatch(marketDetail(NFTId));
-    dispatch(marketDetailInfo(NFTId));
+    console.log(_balance);
   }, []);
   return (
     <div className="nftDetailContainerFrame">
@@ -72,8 +77,8 @@ const NftDetailContainer = () => {
                 </div>
                 <div className="RightSection">
                   <div className="inputSection">
-                    <div></div>
-                    <div>KRW</div>
+                    <div>{_balance}</div>
+                    <div>ETH</div>
                   </div>
                 </div>
               </div>
@@ -82,7 +87,11 @@ const NftDetailContainer = () => {
                   <div className="text">매수 가격</div>
                 </div>
                 <div className="rightSection">
-                  <input />
+                  <input
+                    onChange={(e) => {
+                      setOrderEth(Number(e.target.value));
+                    }}
+                  />
                 </div>
               </div>
               <div className="orderQuantitySection">
@@ -90,7 +99,11 @@ const NftDetailContainer = () => {
                   <div className="text">주문 수량</div>
                 </div>
                 <div className="rightSection">
-                  <input />
+                  <input
+                    onChange={(e) => {
+                      setOrderCount(Number(e.target.value));
+                    }}
+                  />
                 </div>
               </div>
               <div className="orderPriceSection">
@@ -99,14 +112,25 @@ const NftDetailContainer = () => {
                 </div>
                 <div className="RightSection">
                   <div className="inputSection">
-                    <div></div>
-                    <div>KRW</div>
+                    <div>{orderEth * orderCount}</div>
+                    <div>ETH</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="loginButtonSection">
-              <div className="loginButton">LOGIN</div>
+              {createStatus ? (
+                <div className="loginButton">매수</div>
+              ) : (
+                <div
+                  className="loginButton"
+                  onClick={() => {
+                    alert("지갑 연결 후 거래하실 수 있습니다.");
+                  }}
+                >
+                  로그인
+                </div>
+              )}
             </div>
           </div>
         </div>

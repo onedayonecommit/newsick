@@ -4,18 +4,28 @@ import { PURGE } from "redux-persist";
 
 const initialState = {
   address: "",
+  balance: "",
   userName: "",
   userEmail: "",
   userImage: "default_profile_image.png",
   isCreator: false,
   createStatus: false,
-  // ticket: "",
+  ticket: "",
 };
 
 const userSlice = createSlice({
   name: "userInfo",
   initialState,
-
+  reducers: {
+    reset: (state, action) => {
+      state = action.payload;
+      console.log("초기화된 state : ", action.payload);
+    },
+    addBalance: (state, action) => {
+      state.balance = action.payload;
+      console.log(action.payload, "겟빨란스");
+    },
+  },
   extraReducers: (builder) => {
     // return 방식을 사용해서 state 값을 복사해서 새로운 state의 값으로 씌워버리기
     builder
@@ -32,7 +42,7 @@ const userSlice = createSlice({
             state.userImage = action.payload.user_profile_image;
             state.isCreator = action.payload.creator[0].is_creator;
             state.createStatus = action.payload.createStatus;
-            // state.ticket = action.payload.ticket[0].expired;
+            state.ticket = action.payload.ticket[0].expired;
             // console.log("구독권 정보 : ", action.payload.ticket[0].expired);
           }
         } else state.createStatus = false;
@@ -54,7 +64,7 @@ const userSlice = createSlice({
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;
             state.createStatus = action.payload.createStatus;
-            // state.userImage = action.payload.user_profile_image;
+            state.userImage = action.payload.user_profile_image;
             alert("회원가입 추카추");
 
             console.log("넘어온 유저정보 : ", action.payload);

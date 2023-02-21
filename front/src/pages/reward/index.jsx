@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 // 펀딩 메인페이지
 const data = [
@@ -119,13 +121,13 @@ const FundingContainer = () => {
   };
   // ===========================================================
   const { web3, NEWSIC_FUND } = useWeb3();
-  const user = useSelector((state) => state.userInfo.address);
   const fund = useSelector((state) => state.fundList.data);
+  const popular = useSelector((state) => state.fundList.popular);
+  const [_fund, setFund] = useState(fund);
   const [selectedDiv, setSelectedDiv] = useState("div1");
-  const handleClick = (id) => {
-    setSelectedDiv(id);
-  };
-  console.log("펀드펀드", fund);
+  const [time, setTime] = useState();
+
+  console.log("펀드펀드", popular);
   // console.log("유저유저", user);
 
   // 메인 좋아요 가장 많은 NFT
@@ -142,84 +144,126 @@ const FundingContainer = () => {
           const _checkStartTime = new Date(value.funding_start_date);
           const _checkFinishTime = new Date(value.funding_finish_date);
           if (_checkFinishTime - _current > 0 && _checkStartTime - _current < 0) {
+            console.log("ing_PUSH");
             _arr.push(value);
           }
         });
+        setFund(_arr);
+
+        console.log("ing");
 
         return _arr;
       case "before":
         fund.map((value, index) => {
           const _checkStartTime = new Date(value.funding_start_date);
           if (_checkStartTime - _current < 0) {
+            console.log("before_PUSH");
             _arr.push(value);
           }
         });
+        setFund(_arr);
+        console.log("before");
 
         return _arr;
       case "make":
         fund.map((value, index) => {
-          const _checkStartTime = new Date(value.funding_start_date);
           const _checkFinishTime = new Date(value.funding_finish_date);
           const _checkMakeTime = new Date(value.funding_production_date);
           if (_checkFinishTime - _current < 0 && _checkMakeTime - _current > 0) {
+            console.log("make_PUSH");
             _arr.push(value);
           }
         });
 
+        setFund(_arr);
+        console.log("make");
         return _arr;
       case "end":
         fund.map((value, index) => {
           const _checkMakeTime = new Date(value.funding_production_date);
           if (_checkMakeTime - _current < 0) {
+            console.log("end_PUSH");
             _arr.push(value);
           }
         });
+        setFund(_arr);
+        console.log("end");
         return _arr;
       default:
         return;
     }
   };
   // 진행중인 펀딩 데이터 가져오는 함수
-  const ing_fundingData = async () => {
+  const ing_fundingData = async (key) => {
     // dispatch(fetchBringData(_data));
     checkTime("ing");
+    setSelectedDiv(key);
   };
   // 진행예정 펀딩 데이터 가져오는 함수
-  const before_fundingData = async () => {
+  const before_fundingData = async (key) => {
     checkTime("before");
-    const _data = await NEWSIC_FUND.methods.beforeStart().call();
-    console.log(_data);
+    setSelectedDiv(key);
+    // const _data = await NEWSIC_FUND.methods.beforeStart().call();
+    // console.log(_data);
     // dispatch(fetchBringData(_data));
   };
   // 진행종료후 제작중인 펀딩 데이터 가져오는 함수
-  const make_fundingData = async () => {
+  const make_fundingData = async (key) => {
     checkTime("make");
-    const _data = await NEWSIC_FUND.methods.makeStart().call();
-    console.log(_data);
+    setSelectedDiv(key);
+    // const _data = await NEWSIC_FUND.methods.makeStart().call();
+    // console.log(_data);
     // dispatch(fetchBringData(_data));
   };
   // 진행종료후 제작종료 펀딩 데이터 가져오는 함수
-  const end_fundingData = async () => {
+  const end_fundingData = async (key) => {
     checkTime("end");
-    const _data = await NEWSIC_FUND.methods.fundingEnd().call();
-    console.log(_data);
+    setSelectedDiv(key);
+    // const _data = await NEWSIC_FUND.methods.fundingEnd().call();
+    // console.log(_data);
     // dispatch(fetchBringData(_data));
   };
-
+  const route = useRouter();
   // 세부페이지 들어가는 함수
   const detailPage = (e) => {
-    return <Link href={`/reward/${e}`}></Link>;
+    route.push({
+      pathname: `reward/${e}`,
+      state: { data: fund[e] },
+    });
   };
 
-  const timeSet = (_finishTime) => {
+  const timeSet = (_startTime, _finishTime, _productTime) => {
+    const _start = new Date(_startTime);
     const _finish = new Date(_finishTime);
+    const _product = new Date(_productTime);
     const _time = new Date();
-    const timeDiff = _finish - _time;
+    let remainingdays, remainingHours, remainingMinutes;
+    if (_start - _time > 0) {
+      const timeDiff = _start - _time;
+      remainingdays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+      remainingMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+      console.log("1111111111111111111111");
+    } else if (_start - _time < 0 && _finish - _time >= 0) {
+      const timeDiff = _finish - _time;
+      remainingdays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+      remainingMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+      console.log("22222222222222222222222");
+    } else if (_finish - _time < 0 && _product - _time >= 0) {
+      const timeDiff = _product - _time;
+      remainingdays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+      remainingMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+      console.log("33333333333333333333333");
+    } else {
+      console.log("444444444444444444444");
+      remainingdays = 0;
+      remainingHours = 0;
+      remainingMinutes = 0;
+    }
 
-    const remainingdays = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    const remainingHours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
-    const remainingMinutes = Math.floor((timeDiff / (1000 * 60)) % 60);
-    const remainingSeconds = Math.floor((timeDiff / 1000) % 60);
+    // const remainingSeconds = Math.floor((timeDiff / 1000) % 60);
 
     return (
       <div>
@@ -230,20 +274,24 @@ const FundingContainer = () => {
 
   useEffect(() => {
     dispatch(fetchBringData());
+    dispatch(fetchPopularPick());
+    checkTime("ing");
   }, []);
 
   return (
-    <motion.div className="FundingContainerFrame" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0 }} transition={{ duration: 0.3 }}>
+    <div className="FundingContainerFrame">
       <div className="fundingTopBar">
         <div className="todayCreatorSection">
-          <div className="sectionText">Today Creator</div>
+          <div className="sectionText">Today Fund</div>
           <div className="creatorInfoFrame">
             <div className="creatorInfoBox">
               <div className="creatorInfo">
-                <div className="creatorName">CreatorName</div>
-                <div className="fundingInfo">FundingInfo</div>
+                <div className="creatorName">{popular?.nft_name}</div>
+                <div className="fundingInfo">{popular?.funding_title}</div>
               </div>
-              <div className="detailButton">DETAIL</div>
+              <div className="detailButton" onClick={() => detailPage(popular.id)}>
+                <Link href="/reward/">DETAIL</Link>
+              </div>
             </div>
             <div className="creatorImg" />
           </div>
@@ -311,47 +359,47 @@ const FundingContainer = () => {
               style={{
                 color: selectedDiv === "div1" ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
               }}
-              onClick={() => handleClick("div1")}
-            >
-              제작 완료
-            </motion.div>
-            <motion.div
-              style={{
-                color: selectedDiv === "div2" ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
-              }}
-              onClick={() => handleClick("div2")}
-            >
-              종료 펀딩
-            </motion.div>
-            <motion.div
-              style={{
-                color: selectedDiv === "div3" ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
-              }}
-              onClick={() => handleClick("div3")}
+              onClick={() => ing_fundingData("div1")}
             >
               진행중인 펀딩
             </motion.div>
             <motion.div
               style={{
-                color: selectedDiv === "div4" ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
+                color: selectedDiv === "div2" ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
               }}
-              onClick={() => handleClick("div4")}
+              onClick={() => before_fundingData("div2")}
             >
               진행 예정 펀딩
+            </motion.div>
+            <motion.div
+              style={{
+                color: selectedDiv === "div3" ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
+              }}
+              onClick={() => make_fundingData("div3")}
+            >
+              제작중 펀딩
+            </motion.div>
+            <motion.div
+              style={{
+                color: selectedDiv === "div4" ? "#ffffff" : "rgba(255, 255, 255, 0.4)",
+              }}
+              onClick={() => end_fundingData("div4")}
+            >
+              제작 완료
             </motion.div>
           </div>
         </div>
         <div className="listFram">
-          {fundingUItemData.map((item, index) => (
+          {_fund?.map((item, index) => (
             <motion.div className="fundingItem" key={index}>
-              <div className="leftTime">{timeSet(item.funding_finish_date)}</div>
+              <div className="leftTime">{timeSet(item.funding_start_date, item.funding_finish_date, item.funding_production_date)}</div>
             </motion.div>
           ))}
         </div>
 
         <PageNationFrame />
       </div>
-    </motion.div>
+    </div>
   );
 };
 

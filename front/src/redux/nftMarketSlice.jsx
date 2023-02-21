@@ -7,6 +7,8 @@ const initialState = {
   detail_offer_info: [],
   detail_sell_info: [],
   detail_fund_info: {},
+  my_sell_history: [],
+  my_buy_history: [],
 };
 
 const marketSlice = createSlice({
@@ -25,8 +27,9 @@ const marketSlice = createSlice({
       .addCase(marketDetail.pending, (state) => {})
       .addCase(marketDetail.fulfilled, (state, action) => {
         if (action.payload) {
-          state.detail_info = action.payload;
-          console.log(state.detail_info);
+          console.log(action.payload, "엔엪티");
+          state.detail_offer_info = action.payload[0];
+          state.detail_sell_info = action.payload[1];
         }
       })
       .addCase(marketDetailInfo.pending, () => {})
