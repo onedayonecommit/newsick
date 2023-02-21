@@ -4,6 +4,8 @@ import rankingImg1 from "../../../public/image/IRON2.jpg"
 import rankingImg2 from "../../../public/image/lee.jpg"
 import rankingImg3 from "../../../public/image/park.jpg"
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const itemData = [
   {
     id: 1,
@@ -81,6 +83,18 @@ const MainFirstPage = () => {
     } else {
     }
   };
+
+  const handleNextClick = () => {
+    const lastIndex = itemData.length - 1;
+    const nextIndex = currentPage === lastIndex ? 0 : currentPage + 1;
+    setCurrentPage(nextIndex);
+  };
+  const handlePreviousClick = () => {
+    const nextIndex = itemData.length - 1;
+    const lastIndex = currentPage === nextIndex ? 0 : currentPage + 1;
+    setCurrentPage(lastIndex);
+  };
+
   useEffect(() => {
     rendergood();
   }, [result]);
@@ -139,6 +153,10 @@ const MainFirstPage = () => {
           );
         }
       })}
+      <div className="nextButtonFrame">
+          <div className="buttonFrame" onClick={handlePreviousClick}><FontAwesomeIcon icon={faArrowLeft} /></div>
+          <div className="buttonFrame" onClick={handleNextClick}><FontAwesomeIcon icon={faArrowRight}/></div>
+      </div>
     </motion.div>
   );
 };

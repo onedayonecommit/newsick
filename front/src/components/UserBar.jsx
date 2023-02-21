@@ -23,7 +23,6 @@ const UserBar = ({ handleOpen, handleClick }) => {
 
   return (
     <div className="userBarSection">
-      <div className="infoSection">
         <div className="optionSection">
           <motion.div className="changeMemberInfo" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }} onClick={handleOpen}>
             회원정보 변경
@@ -45,7 +44,6 @@ const UserBar = ({ handleOpen, handleClick }) => {
 
         <div className="stateInfoSection" onClick={handleClick}></div>
         <div className="anotherInfoSection"></div>
-      </div>
     </div>
   );
 };
