@@ -32,10 +32,10 @@ export class JoinService {
           user_name,
           user_wallet_address,
           creator: {
-            create: [{ is_creator: is_creator }],
+            create: [{ is_creator }],
           },
           ticket: {
-            create: [],
+            create: [{}],
           },
         },
       });
