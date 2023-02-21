@@ -65,7 +65,14 @@ const ChangeMember = ({ handleClose, text }) => {
 
   return (
     <MypageBackDrop onClick={handleClose}>
-      <motion.div onClick={(e) => e.stopPropagation()} className="changeUserInfoFrame" variants={dropIn} initial="hidden" animate="visible" exit="exit">
+      <motion.div
+        onClick={(e) => e.stopPropagation()}
+        className="changeUserInfoFrame"
+        variants={dropIn}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
         <div className="changeNavBar">
           <div
             className="successBtn"
@@ -82,9 +89,23 @@ const ChangeMember = ({ handleClose, text }) => {
         <div className="changeMainSection">
           <label className="imgChange" for="imgChange">
             <FontAwesomeIcon icon={faCamera} className="faCamera" />
-            <input type="file" name="file" accept="image/*" className="imgChange" id="imgChange" onChange={profileImageHandler} style={{ display: "none" }} />
+            <input
+              type="file"
+              name="file"
+              accept="image/*"
+              className="imgChange"
+              id="imgChange"
+              onChange={profileImageHandler}
+              style={{ display: "none" }}
+            />
           </label>
-          <Image className="userImg" src={`https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/${userImage}`} alt="userImg" width={300} height={300} />
+          <Image
+            className="userImg"
+            src={`https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/${userImage}`}
+            alt="userImg"
+            width={300}
+            height={300}
+          />
           <motion.span
             whileHover={{
               scale: 1.1,

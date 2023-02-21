@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchBringData } from "@/middleware/fetchFund";
+import { fetchBringData, fetchPopularPick } from "@/middleware/fetchFund";
 
 const initialState = {
-  isBring: false,
+  isDataBring: false,
+  isPopularBring: false,
+  popular: [],
   data: [],
 };
 
@@ -16,6 +18,16 @@ const fundListSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchPopularPick.pending, (state) => {
+        state = initialState;
+      })
+      .addCase(fetchPopularPick.fulfilled, (state, action) => {
+        state.popular = action.payload;
+        state.isPopularBring = true;
+      })
+      .addCase(fetchPopularPick.rejected, (state) => {
+        state.isPopularBring = false;
+      })
       .addCase(fetchBringData.pending, (state) => {
         state = initialState;
       })

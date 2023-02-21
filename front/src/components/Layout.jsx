@@ -1,5 +1,12 @@
 import { useRef, useState } from "react";
-import { MusicPlayer, PlayBar, SearchBar, SideBar, UserBar, VolumeBox } from "../components";
+import {
+  MusicPlayer,
+  PlayBar,
+  SearchBar,
+  SideBar,
+  UserBar,
+  VolumeBox,
+} from "../components";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loading, ChangeMember, Congratulations } from "@/components";
 
@@ -36,11 +43,23 @@ const Layout = (props) => {
             {isClick ? <Congratulations isClick={isClick} /> : null}
             {/* ========================================================== */}
             {isSoundClick ? <VolumeBox /> : null}
-            <MusicPlayer layOutRef={layOutRef} isPlayerClick={isPlayerClick} playerClick={playerClick} />
-            <AnimatePresence>{modalOpen && <ChangeMember modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
+            <MusicPlayer
+              layOutRef={layOutRef}
+              isPlayerClick={isPlayerClick}
+              playerClick={playerClick}
+            />
+            <AnimatePresence>
+              {modalOpen && (
+                <ChangeMember modalOpen={modalOpen} handleClose={close} />
+              )}
+            </AnimatePresence>
             <div className="layoutBox">
               <SideBar />
-              <PlayBar soundClick={soundClick} playerClick={playerClick} isPlayerClick={isPlayerClick} />
+              <PlayBar
+                soundClick={soundClick}
+                playerClick={playerClick}
+                isPlayerClick={isPlayerClick}
+              />
               <div className="contentSection">
                 <SearchBar />
                 <div className="content">{props.children}</div>

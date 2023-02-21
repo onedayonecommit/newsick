@@ -29,7 +29,7 @@ const UserBar = ({ handleOpen, handleClick }) => {
       //==========================프로필 이미지 변경===============================
       // await axios({
       //   method: "post",
-      //   url: "http://localhost:8080/change-info/profile/image",
+      //   url: "https://www.poopoobin.com/change-info/profile/image",
       //   data: formData,
       //   headers: {
       //     "Content-Type": "multipart/form-data",

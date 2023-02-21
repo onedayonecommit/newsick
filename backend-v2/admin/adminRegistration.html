@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./admin.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../admin.css" />
+  </head>
+  <body>
     <div class="adminPage">
-        
+      <h1>normal music 입력</h1>
+      <form
+        action="보낼주소 입력"
+        style="display: flex; flex-direction: column"
+        method="post"
+      >
+        <label for="music_file">음악파일</label>
+        <input type="file" placeholder="파일" id="music_file" /><br />
+        <label for="img_file">이미지파일</label>
+        <input type="file" placeholder="파일" id="img_file" /><br />
+        <label for="music_name">노래제목</label>
+        <input type="text" placeholder="제목입력" id="music_name" /><br />
+        <label for="music_name">가사</label>
+        <input type="text" placeholder="가사 입력" id="music_name" /><br />
+        <label for="singer">가수명</label>
+        <input type="text" placeholder="가수명" id="singer" /><br />
+        <label for="music_lyrics">작곡가</label>
+        <input type="text" placeholder="작곡가명" id="music_lyrics" /><br />
+        <label for="lyrics_maker">작사가</label>
+        <input type="text" placeholder="작사가명" id="lyrics_maker" /><br />
+        <label>장르</label>
+        <label for="gayo">가요</label>
+        <input type="radio" id="gayo" name="ganre" value="가요" />
+        <label for="pop">팝</label>
+        <input type="radio" id="pop" name="ganre" value="팝" />
+        <label for="trot">트로트</label>
+        <input type="radio" id="trot" name="ganre" value="트로트" />
+        <label for="classic">클래식</label>
+        <input type="radio" id="classic" name="ganre" value="클래식" /><br />
+        <label for="album_name">앨범명</label>
+        <input type="text" placeholder="음악파일" id="album_name" /><br />
+        <label for="title">타이틀</label>
+        <input type="text" placeholder="음악파일" id="title" /><br />
+        <input type="submit" value="등록" />
+      </form>
     </div>
-</body>
+  </body>
 </html>
