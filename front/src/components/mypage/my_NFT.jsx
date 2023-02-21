@@ -10,12 +10,7 @@ import { useRouter } from "next/router";
 const My_NFT = () => {
   const router = useRouter();
   const myNftList = useSelector((state) => state.myPageInfo.myNftList);
-  useEffect(() => {
-    console.log(myNftList[0].image, "good");
-    console.log(myNftList.image, "good");
-    console.log(myNftList, "good");
-    console.log(myNftList[0], "good");
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className="thirdMyPage">
       <div className="MyPageThirdContainerFrame">

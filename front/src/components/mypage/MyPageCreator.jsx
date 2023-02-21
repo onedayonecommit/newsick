@@ -129,7 +129,7 @@ const MyPageCreator = () => {
                     {new Date(item.funding_start_date).toISOString().split("T")[0].substring(2)}~{new Date(item.funding_finish_date).toISOString().split("T")[0].substring(2)}
                   </div>
                   <div className="unitPrice">{item.funding_price} ETH</div>
-                  <div className="leftDay">종료까지 {Math.floor((Math.floor(new Date(item.funding_finish_date).getTime() / 1000) - Math.floor(new Date().getTime() / 1000)) / 3600)} 분</div>
+                  <div className="leftDay">종료까지 {Math.floor((Math.floor(new Date(item.funding_finish_date).getTime() / 1000) - Math.floor(new Date().getTime() / 1000)) / 3600)} 시간</div>
                   <div className="quantityPercentage">누적 판매 수량 : {item.funding_sales}</div>
                 </div>
                 <div className="musicInputButton">

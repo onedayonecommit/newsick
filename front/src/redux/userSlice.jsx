@@ -3,6 +3,7 @@ import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } f
 
 const initialState = {
   address: "",
+  balance: "",
   userName: "",
   userEmail: "",
   userImage: "default_profile_image.png",
@@ -19,6 +20,10 @@ const userSlice = createSlice({
     reset: (state, action) => {
       state = action.payload;
       console.log("초기화된 state : ", action.payload);
+    },
+    addBalance: (state, action) => {
+      state.balance = action.payload;
+      console.log(action.payload, "겟빨란스");
     },
   },
   extraReducers: (builder) => {

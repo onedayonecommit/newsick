@@ -7,6 +7,8 @@ const initialState = {
   detail_offer_info: [],
   detail_sell_info: [],
   detail_fund_info: {},
+  my_sell_history: [],
+  my_buy_history: [],
 };
 
 const marketSlice = createSlice({

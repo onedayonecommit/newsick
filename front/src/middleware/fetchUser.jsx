@@ -7,7 +7,7 @@ import axios from "axios";
 export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (createUser, thunkAPI) => {
   console.log(createUser);
   try {
-    const UserCreated = await axios.post("http://localhost:8080/user/join", createUser);
+    const UserCreated = await axios.post("https://www.poopoobin.com/user/join", createUser);
     console.log(UserCreated.data);
     // 유저가 되면 유저의 정보를 응답
     return UserCreated.data;
@@ -20,7 +20,7 @@ export const fetchUserCreated = createAsyncThunk("user/fetchUser", async (create
 export const fetchUserCheck = createAsyncThunk("user/fetchUserCheck", async (account) => {
   console.log("DB에 넘겨주는 계정", account);
   try {
-    const accountCheck = await axios.post("http://localhost:8080/user/login", account);
+    const accountCheck = await axios.post("https://www.poopoobin.com/user/login", account);
     // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
     console.log("회원 여부 확인 : ", accountCheck.data);
     return accountCheck.data;
@@ -35,7 +35,7 @@ export const fetchUserImage = createAsyncThunk("user/fetchUserImage", async (for
   try {
     const userProfileImage = await axios({
       method: "post",
-      url: "http://localhost:8080/change-info/profile/image",
+      url: "https://www.poopoobin.com/change-info/profile/image",
       data: formData,
       headers: {
         "Content-Type": "multipart/form-data",
@@ -49,7 +49,7 @@ export const fetchUserImage = createAsyncThunk("user/fetchUserImage", async (for
 
 export const fetchApplyCreator = createAsyncThunk("user/fetchApplyCreator", async (account) => {
   try {
-    const applyCreatorResult = await axios.post("http://localhost:8080/application-creator", account);
+    const applyCreatorResult = await axios.post("https://www.poopoobin.com/application-creator", account);
     return applyCreatorResult.data;
   } catch (error) {
     console.log(error);
@@ -61,7 +61,7 @@ export const fetchBuyTicket = createAsyncThunk("user/fetchBuyTicket", async (_da
   console.log("받은거", _data);
   try {
     const _recieveData = await axios.post(
-      "http://localhost:8080/buy-ticket", // 여기 사용하는 back 주소
+      "https://www.poopoobin.com/buy-ticket", // 여기 사용하는 back 주소
       _data
     );
     // DB에서 회원이면 유저정보 주고 아니면 createStatus만 반환
