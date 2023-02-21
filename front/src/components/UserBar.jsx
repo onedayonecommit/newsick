@@ -3,12 +3,16 @@ import { ConnectWallet } from "@/components";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 // 컴포넌트
 const UserBar = ({ handleOpen, handleClick }) => {
   const router = useRouter();
   const userImg = useSelector((state) => state.userInfo.userImage);
-  console.log("유저 기본 이미지", userImg);
+  // const [userImage, setUserImage] = useState();
+
+  // setUserImage(userImg);
+  // console.log("유저 기본 이미지", userImage);
 
   const isCreator = useSelector((state) => state.userInfo.isCreator);
   const createStatus = useSelector((state) => state.userInfo.createStatus);
@@ -29,7 +33,7 @@ const UserBar = ({ handleOpen, handleClick }) => {
             회원정보 변경
           </motion.div>
         </div>
-        {isCreator ? (
+        {isCreator && userImg ? (
           <div className="userInfoSection">
             {/* 크리에이터일 때 티켓 붙음! */}
             <div className="creatorTicket" />
@@ -51,3 +55,7 @@ const UserBar = ({ handleOpen, handleClick }) => {
   );
 };
 export default UserBar;
+
+// export const getServerSideProps =()=>{
+
+// }
