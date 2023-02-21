@@ -420,7 +420,7 @@ const FundingContainer = () => {
           </div>
         </div>
         <div className="listFram">
-          {_fund?.map((item, index) => (
+          {_fund.map((item, index) => (
             <motion.div className="fundingItem" key={index}>
               <div className="leftTime">
                 {timeSet(
