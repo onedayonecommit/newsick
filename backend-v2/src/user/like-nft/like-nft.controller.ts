@@ -10,4 +10,9 @@ export class LikeNftController {
   async likeNft(@Body() dto: likeNftDto) {
     return await this.likeNftService.likeNft(dto);
   }
+
+  @Post('delete')
+  async deleteNft(@Body() dto: likeNftDto) {
+    return await this.likeNftService.deleteNft(dto);
+  }
 }

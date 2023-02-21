@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight, faList, faPause, faRepeat, faShuffle, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import VolumeBox from "../VolumeBox";
+import AudioPlayer from "react-h5-audio-player";
+import { useDispatch, useSelector } from "react-redux";
+
 const playBarState = {
   animate: {
     width: ["calc(0%)", "calc(100%)"],
@@ -43,9 +46,13 @@ const volumBarVariant = {
 const MusicPlayerPlayBar = ({ FilippedChoice }) => {
   const [isPlay, setIsPlay] = useState();
   const [clickVolum, setClickVolume] = useState();
+  const myPlayList = useSelector((state) => state.musicInfo.playList);
+  console.log("내 플레이 리스트", myPlayList);
+
   const ClickVolume = () => {
     setClickVolume(!clickVolum);
   };
+
   return (
     <div className="playBarSection">
       <div className="playBar">
@@ -111,8 +118,12 @@ const MusicPlayerPlayBar = ({ FilippedChoice }) => {
           <FontAwesomeIcon className="sideIcon" icon={faList} />
         </motion.span>
       </motion.div>
+      <AudioPlayer src="https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/AwakenOYStudio.mp3" showSkipControls={true} showJumpControls={false} loop={true} />
     </div>
   );
 };
 
 export default MusicPlayerPlayBar;
+
+// onClickPrevious={}
+//       onClickNext = {}

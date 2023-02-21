@@ -7,7 +7,9 @@ import image1 from "../../../public/image/IRON.jpg";
 import image2 from "../../../public/image/dddepth-343.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
 import Image from "next/image";
-import { NEWSIC_FUND_CA } from "@/web3.config";
+import { useDispatch, useSelector } from "react-redux";
+import { marketNftList } from "@/middleware/fetchNft";
+import { useRouter } from "next/router";
 
 // nft 메인페이지
 const images = ["https://i.pinimg.com/564x/26/2c/d9/262cd9e6cdf5ba0f922d36aeb8a3f3fa.jpg", "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png", "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"];
@@ -44,7 +46,9 @@ const data = Array.from({ length: 20 }, () => ({
 }));
 
 const NftMarketContainer = () => {
-  const { web3, NEWSIC_FUND, NEWSIC_MARKET } = useWeb3();
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const marketList = useSelector((state) => state.marketInfo.funding_list);
   const [active, setActive] = useState(false);
   const [[page, direction], setPage] = useState([0, 0]);
   const [place, setPlace] = useState("popular");
@@ -53,34 +57,15 @@ const NftMarketContainer = () => {
     setPage([page + newDirection, newDirection]);
   };
 
-  const getNftList = async () => {
-    if (NEWSIC_FUND) {
-      const nftList = await NEWSIC_FUND.methods.getTokenId.call().encodeABI();
-      console.log("토큰아이디", nftList);
-
-      web3.eth.call(
-        {
-          to: NEWSIC_FUND_CA,
-          data: NEWSIC_FUND.methods.getTokenId().encodeABI(),
-        },
-        (err, result) => {
-          if (err) {
-            console.log(err);
-          } else {
-            const tokenId = web3.eth.abi.decodeParameter("uint256", result);
-            console.log("토큰아디", tokenId);
-          }
-        }
-      );
-    }
-  };
-
   useEffect(() => {
-    getNftList();
-  }, [NEWSIC_FUND]);
+    (async () => {
+      dispatch(marketNftList());
+      console.log(marketList, "마켓 진입");
+    })();
+  }, []);
 
   return (
-    <div className="nftMarketContainerFrame">
+    <motion.div className="nftMarketContainerFrame" initial={{ opacity: 0, scale: 0, y: "-50vh" }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0, y: "-50vh" }} transition={{ duration: 0.3 }}>
       <div className="nftTopSection">
         <AnimatePresence initial={false} custom={direction}>
           <div className="nftTopFrame">
@@ -139,16 +124,21 @@ const NftMarketContainer = () => {
         </div>
         <div className="sellMiddle">
           <div className="nftItemList">
-            {data.map((item, index) => (
+            {marketList.map((item, index) => (
               <div key={index} className="nftItemBox">
                 <div className="topInfo">
-                  <div className="nftName">{item.nftName}</div>
+                  <div className="nftName">{item.nft_name}</div>
                   <div className="price">
-                    <div className="priceCenterFrame">{item.price}</div>
+                    <div className="priceCenterFrame">{item.id}</div>
                   </div>
                 </div>
-                <div className="bottomImageFrame">
-                  <Image className="bottomImage" src={item.bottomImage} alt={""} width={119} height={119} />
+                <div
+                  className="bottomImageFrame"
+                  onClick={() => {
+                    router.push(`NFTmarket/detail/${item.id}`);
+                  }}
+                >
+                  <Image className="bottomImage" src={item.funding_nft_image} alt={""} width={119} height={119} />
                   <div className="likeIconFrame">
                     <FontAwesomeIcon icon={faHeart} className={`likeIcon ${active[index] ? "active" : ""}`} onClick={() => setActive({ ...active, [index]: !active[index] })} />
                   </div>
@@ -165,7 +155,7 @@ const NftMarketContainer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

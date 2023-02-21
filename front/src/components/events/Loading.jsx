@@ -2,7 +2,8 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const Loading = ({ setIsLoading }) => {
+// const Loading = ({ setIsLoading }) => {
+const Loading = () => {
   const progress = useMotionValue(0);
   const [timeProgress, setTimeProgress] = useState(0);
   const opacity = useTransform(progress, [0, 1], [0, 1]);
@@ -14,9 +15,9 @@ const Loading = ({ setIsLoading }) => {
       clearInterval(id);
     };
   }, []);
-  setTimeout(() => {
-    setIsLoading(false);
-  }, 1000);
+  // setTimeout(() => {
+  //   setIsLoading(false);
+  // }, 10);
   return (
     <motion.div className="loadingFrame">
       <motion.div

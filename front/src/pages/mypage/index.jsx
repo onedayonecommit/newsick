@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ApplyCreator, Favorite, MyPageSecondContainer, MyPageThirdContainer } from "@/components";
+import { ApplyCreator, Favorite, MyPageSecondContainer, MyPageThirdContainer, My_NFT } from "@/components";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMyPage } from "@/middleware/fetchMypage";
+import { fetchMyNftList, fetchMyPage, getNotice, myNftList, myRunningFundList } from "@/middleware/fetchMypage";
 const MyPage = () => {
   const [selectedOption, setSelectedOption] = useState(0);
   const dispatch = useDispatch();
@@ -13,6 +13,13 @@ const MyPage = () => {
   useEffect(() => {
     console.log("통신좀 해");
     dispatch(fetchMyPage({ user_wallet_address }));
+    dispatch(myNftList(user_wallet_address));
+    dispatch(fetchMyNftList({ user_wallet_address }));
+    if (isCreator) {
+      console.log(isCreator, "ssississississi");
+      dispatch(myRunningFundList({ user_wallet_address }));
+      dispatch(getNotice({ user_wallet_address }));
+    }
   }, [user_wallet_address]);
 
   const handleClick = (index) => {
@@ -47,7 +54,7 @@ const MyPage = () => {
       </div>
       {selectedOption === 0 ? <ApplyCreator /> : null}
       {selectedOption === 1 ? <Favorite /> : null}
-      {selectedOption === 2 ? <my_NFT /> : null}
+      {selectedOption === 2 ? <My_NFT /> : null}
     </div>
   );
 };

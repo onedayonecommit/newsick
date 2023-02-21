@@ -8,6 +8,7 @@ export class CreateFundService {
   constructor(private readonly db: PrismaService) {}
 
   async createFund(dto: createFundMainDto): Promise<funding> {
+    console.log(dto);
     const {
       id,
       creator_id,
@@ -23,10 +24,12 @@ export class CreateFundService {
       nft_name,
       funding_hard_cap,
       funding_price,
+      holder_share,
     } = dto.fund;
     const { lyrics_name, lyrics_sns_address, lyrics_info } = dto.lyrics_maker;
     const { music_name, music_sns_address, music_info } = dto.music_maker;
     const { singer_name, singer_sns_address, singer_info } = dto.singer;
+    console.log(funding_hard_cap, '하드캡 && 가격', funding_price);
     return await this.db.funding.create({
       data: {
         id,
@@ -43,6 +46,7 @@ export class CreateFundService {
         nft_name,
         funding_hard_cap,
         funding_price,
+        holder_share,
         lyrics_maker: {
           create: [{ lyrics_info, lyrics_name, lyrics_sns_address }],
         },

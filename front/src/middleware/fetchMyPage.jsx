@@ -7,7 +7,7 @@ export const fetchMyPage = createAsyncThunk("mypage/fetchMyPage", async (mypageD
   try {
     const result = await axios({
       method: "post",
-      url: "http://localhost:8080/mypage/second",
+      url: "https://www.poopoobin.com/mypage/second",
       data: mypageData,
     });
     return result.data;
@@ -21,7 +21,7 @@ export const fetchMyNftList = createAsyncThunk("mypage/fetchMyNftList", async (m
   try {
     const result = await axios({
       method: "post",
-      url: "http://localhost:8080/mypage/heartlist",
+      url: "https://www.poopoobin.com/mypage/heartlist",
       data: mypageData,
     });
     return result.data;
@@ -59,7 +59,7 @@ export const myRunningFundList = createAsyncThunk("mypage/running-fund", async (
     console.log("통신 시작");
     const myFundingList = await axios({
       method: "post",
-      url: "http://localhost:8080/mypage/creator/running-fund",
+      url: "https://www.poopoobin.com/mypage/creator/running-fund",
       data: user_wallet_address,
     });
     console.log(myFundingList.data, "ssissississi");
@@ -73,7 +73,7 @@ export const getNotice = createAsyncThunk("fund/notice/get", async (data) => {
   try {
     const getNoticeList = await axios({
       method: "post",
-      url: "http://localhost:8080/fund/notice/get",
+      url: "https://www.poopoobin.com/fund/notice/get",
       data: data,
     });
     return getNoticeList.data;

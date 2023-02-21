@@ -2,10 +2,16 @@ import { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { PlayBar } from "@/components";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import useWeb3 from "@/hooks/useWeb3";
+import { persistor } from "@/redux/store";
 
 // 컴포넌트
 const SideBar = () => {
+  const { web3, NEWSIC_FUND } = useWeb3();
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
   const router = useRouter();
+
   const sidePage = [
     ["FUNDING", "reward"],
     ["NFT MARKET", "NFTmarket"],
@@ -16,14 +22,14 @@ const SideBar = () => {
   function movePage(_page) {
     _page == "home" ? router.replace("/") : router.push(`/${_page}`);
   }
-  const [isHover, setIsHover] = useState(false);
+  console.log("초기화할 지갑주소", user_wallet_address);
   //---크리에이터 권한 초기화 함수---------
-  const resetContract = async () => {
-    const reset = await NEWSIC_FUND.methods.creatorDelete().send({
-      from: userAccount,
-    });
-    console.log("크리에이터 초기화", reset);
-  };
+  // const resetContract = async () => {
+  //   const reset = await NEWSIC_FUND.methods.creatorDelete().send({
+  //     from: user_wallet_address,
+  //   });
+  //   console.log("크리에이터 초기화", reset);
+  // };
   // ----------------------------------
   return (
     <div className="sideBarSection">
@@ -41,7 +47,7 @@ const SideBar = () => {
         >
           NEWSIC
         </div>
-        <button onClick={resetContract}>크리에이터 권한 제거</button>
+        {/* <button onClick={resetContract}>크리에이터 권한 제거</button> */}
         <div className="menuSection">
           {sidePage.map((value, index) => {
             return (
