@@ -91,14 +91,17 @@ const ChangeMember = ({ handleClose, text }) => {
             <FontAwesomeIcon icon={faCamera} className="faCamera" />
             <input
               type="file"
+              name="file"
+              accept="image/*"
               className="imgChange"
               id="imgChange"
+              onChange={profileImageHandler}
               style={{ display: "none" }}
             />
           </label>
           <Image
             className="userImg"
-            src={`https://gyeongil-newsic-2team-bucket.s3.ap-northeast-3.amazonaws.com/${userImage}`}
+            src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImage}`}
             alt="userImg"
             width={300}
             height={300}

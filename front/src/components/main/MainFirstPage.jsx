@@ -72,7 +72,7 @@ const MainFirstPage = () => {
   }, [result]);
 
   return (
-    <motion.div className="mainFirstFrame">
+    <motion.div className="mainFirstFrame" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
       {itemData.map((item, index) => {
         if (index === currentPage) {
           return (
@@ -91,7 +91,7 @@ const MainFirstPage = () => {
                 variants={cardVariant}
                 initial={currentPage ? "initial" : ""}
                 drag="x"
-                dragConstraints={{ right: 0, left: 200 }}
+                dragConstraints={{ right: 0 }}
                 animate={currentPage ? "animate" : ""}
                 exit="exit"
                 onDragStart={(e) => {

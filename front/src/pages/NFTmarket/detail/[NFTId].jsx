@@ -168,3 +168,18 @@ const NftDetailContainer = () => {
 };
 
 export default NftDetailContainer;
+
+// export async function getServerSideProps(context) {
+//   const { NFTId } = context.query; // NFTID를 쿼리에서 가져옵니다.
+//   const web3 = new Web3("https://goerli.infura.io/v3/38ffb7857b6943d589150bc276de6e8f");
+//   console.log(NFTId, "타입 nftid");
+//   const contract = new web3.eth.Contract(NEWSIC_MARKET_ABI, NEWSIC_MARKET_CA);
+//   const result = await contract.methods._offers(Number(NFTId)).call();
+//   console.log(result[0]);
+//   return {
+//     props: {
+//       buyOffer: result[0],
+//       sellOffer: result[1],
+//     },
+//   };
+// }

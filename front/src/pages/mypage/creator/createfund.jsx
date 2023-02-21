@@ -104,7 +104,7 @@ const FundingCreate = () => {
   const makeFund = async () => {
     let _fundingStruct = [
       userInfo.address, // 크리에이터
-      fundInfo.metadataUrl, // 메타데이터
+      fundInfo.funding_metadata, // 메타데이터
       // convertToTimestamp(data.funding_start_date), // 시작일
       // convertToTimestamp(data.funding_finish_date), // 종료일
       // convertToTimestamp(data.funding_production_date), // 음원제작 기간
@@ -119,11 +119,14 @@ const FundingCreate = () => {
     const _sendData_toContract = await NEWSIC_FUND.methods
       ._setUri(
         _fundingStruct,
-        await web3.utils.toWei(data.funding_price, "ether")
+        await web3.utils.toWei(String(data.funding_price), "ether")
       )
       .send({ from: userInfo.address });
 
-    console.log(_sendData_toContract.events.createFund.returnValues);
+    console.log(
+      "펀딩생성 후 이벤트",
+      _sendData_toContract.events.createFund.returnValues
+    );
     setData({
       ...data,
       id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
@@ -164,6 +167,7 @@ const FundingCreate = () => {
       },
     };
     console.log(_sendData_toBack);
+    console.log("서버 통신 시작2");
     dispatch(fetchCreateFund(_sendData_toBack));
     route.replace("/mypage");
   };

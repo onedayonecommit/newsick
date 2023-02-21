@@ -8,16 +8,7 @@ import {
 } from "@/web3.config";
 import { useDispatch } from "react-redux";
 import { fetchUserCheck } from "@/middleware/fetchUser";
-// import { userAction } from "@/redux/userSlice";
-
-/**계정 전환했을 때 reset 시켜줄 초기 값 */
-const userStateReset = {
-  address: "",
-  userName: "",
-  userEmail: "",
-  isCreator: false,
-  createStatus: false,
-};
+import { persistor } from "@/redux/store";
 
 const useWeb3 = () => {
   const [web3, setWeb3] = useState();
@@ -71,7 +62,8 @@ const useWeb3 = () => {
       console.log("Please connect to MetaMask.");
     } else if (accounts[0] !== changeAccount) {
       console.log("계정 바꿀때마다", accounts[0]);
-      // dispatch(userAction.reset(userStateReset));
+
+      persistor.purge(); // 로컬 스토리지에 저장되어있던 계정의 state 초기화
       setChangeAccount(accounts[0]);
       dispatch(fetchUserCheck({ user_wallet_address: accounts[0] }));
       console.log("state 계정", changeAccount);

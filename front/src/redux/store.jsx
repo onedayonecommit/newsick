@@ -20,14 +20,16 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+// import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import storage from "redux-persist/lib/storage";
 import myPageSlice from "./myPageSlice";
 import fundListSlice from "./nftFundFindSlice";
 import nftFundSlice from "./nftFundSlice";
-// slice 에서 export한 것 들!
+import musicSlice from "./musicSlice";
 import userSlice from "./userSlice";
-
-// const logger = createLogger();
+import fundListSlice from "./nftFundFindSlice";
+import marketSlice from "./nftMarketSlice";
+import eventSlice from "./eventSlice";
 
 // redux-persist 사용
 const persistConfig = {
@@ -40,7 +42,10 @@ const rootReducer = combineReducers({
   userInfo: userSlice.reducer,
   myPageInfo: myPageSlice.reducer,
   fundInfo: nftFundSlice.reducer,
+  musicInfo: musicSlice.reducer,
   fundList: fundListSlice.reducer,
+  marketInfo: marketSlice.reducer,
+  eventView: eventSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

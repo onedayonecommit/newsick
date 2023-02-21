@@ -1,15 +1,16 @@
-import React, { useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 import { AnimatePresence, motion, Reorder } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// npm install @radix-ui/react-dropdown-menu
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { faArrowLeft, faHeart, faList } from "@fortawesome/free-solid-svg-icons";
 import ironImage from "../../../public/image/IRON2.jpg";
 import leeImage from "../../../public/image/lee.jpg";
 import ParkImage from "../../../public/image/park.jpg";
 import YounImage from "../../../public/image/YOUNHA.jpg";
 import ChangImage from "../../../public/image/chang.jpg";
-import MusicSlideForm from "./MusicSlideForm";
-import MusicPlayerPlayBar from "./MusicPlayerPlayBar";
-import MusicPlayerListBar from "./MusicPlayerListBar";
+import { MusicSlideForm, MusicPlayerPlayBar, MusicPlayerListBar } from "@/components";
+
 import Image from "next/image";
 const slides = [
   {
@@ -43,19 +44,7 @@ const slides = [
     image: ChangImage,
   },
 ];
-const variantPlay = {
-  animate: {
-    x: ["calc(0px)", "calc(504px)"],
-    transition: {
-      x: {
-        ease: "linear",
-        duration: 15,
-        repeat: Infinity,
-        repeatType: "loop",
-      },
-    },
-  },
-};
+
 const itemVariants = {
   hidden: { opacity: 0 },
   visible: (custom) => ({
@@ -63,19 +52,7 @@ const itemVariants = {
     transition: { delay: custom },
   }),
 };
-// const playBarState ={
-//     animate:{
-//       width:["calc(0%)","calc(100%)"],
-//       transition:{
-//         width:{
-//           ease:"linear",
-//           duration: 200,
-//           repeat: Infinity,
-//           repeatType: "loop",
-//         }
-//       }
-//     }
-// }
+
 const frontVariant = {
   visible: {
     rotateY: 0,
@@ -83,6 +60,7 @@ const frontVariant = {
     transition: {
       duration: 0.7,
     },
+    display: "flex",
   },
   hidden: {
     rotateY: 180,
@@ -90,17 +68,12 @@ const frontVariant = {
     transition: {
       duration: 0.7,
     },
+    transitionEnd: {
+      display: "none",
+    },
   },
-  // 카드 뒤집기
 };
-// transition: {
-//   x:{
-//       ease: "linear",
-//       duration: 15,
-//       repeat: Infinity,
-//       repeatType: "loop",
-//   },
-// },
+
 const backVariant = {
   hidden: {
     rotateY: 0,
@@ -115,6 +88,7 @@ const backVariant = {
     transition: {
       duration: 0.7,
     },
+    display: "flex",
   },
   // 카드 뒤집기
 };
@@ -131,12 +105,30 @@ const musicPlayerOpen = {
     zIndex: 999,
   },
 };
-
+const listHoverVariant = {
+  initial: {
+    y: 0,
+  },
+  animate: {
+    y: [2, -2],
+    transition: {
+      repeat: Infinity,
+      repeatType: "loop",
+      duration: 0.5,
+    },
+  },
+};
 const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [listCount, setListCount] = useState(0);
   const [listItem, setListItem] = useState(slides);
-
+  const [hoverList, setHoverList] = useState(false);
+  const HoverList = () => {
+    setHoverList(true);
+  };
+  const UnHoverList = () => {
+    setHoverList(false);
+  };
   const [liked, setLiked] = useState({});
   const toggleLike = (id) => {
     setLiked((prevLiked) => ({
@@ -189,7 +181,31 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
           <div className="listControlBar">
             <div className="dropDownFrame">
               <div className="totalNum">총곡개수</div>
-              <div className="dropDown">플레이리스트보기 ▽</div>
+              <DropdownMenu.Root>
+                <DropdownMenu.Trigger asChild>
+                  <motion.div className="dropDown" onMouseEnter={HoverList} onMouseLeave={UnHoverList}>
+                    플레이리스트보기
+                    <motion.div variants={listHoverVariant} initial={hoverList === false ? "initial" : "animate"} animate={hoverList === true ? "animate" : "initial"}>
+                      ▽
+                    </motion.div>
+                  </motion.div>
+                </DropdownMenu.Trigger>
+                <DropdownMenu.Content className="dropDownContent">
+                  <motion.div
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 10 }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                    className="itemBox"
+                  >
+                    <DropdownMenu.Item className="dropItem">Play List</DropdownMenu.Item>
+                    <DropdownMenu.Item className="dropItem">Play List</DropdownMenu.Item>
+                    <DropdownMenu.Item className="dropItem">Play List</DropdownMenu.Item>
+                  </motion.div>
+                </DropdownMenu.Content>
+              </DropdownMenu.Root>
             </div>
             <div className="sortButton">정렬</div>
           </div>

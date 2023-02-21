@@ -27,9 +27,16 @@ import ApplyCreator from "./mypage/ApplyCreator";
 import MusicPlayer from "./music/MusicPlayer";
 import MusicPlayerPlayBar from "./music/MusicPlayerPlayBar";
 import MusicSlideForm from "./music/MusicSlideForm";
-import NftTop100 from "./music/NftTop100";
-import SongTop100 from "./music/SongTop100";
+import NftTop100 from "./music/FundMusicTop100";
+import SongTop100 from "./music/NormalMusicTop100";
 import MusicPlayerListBar from "./music/MusicPlayerListBar";
+import FundMusicTop100 from "./music/FundMusicTop100";
+import NormalMusicTop100 from "./music/NormalMusicTop100";
+import NewSong from "./music/NewSong";
+import Song100 from "./music/Song100";
+import Pop100 from "./music/Pop100";
+import Trot100 from "./music/Trot100";
+import Classic100 from "./music/Classic100";
 
 // main
 import MainFirstPage from "./main/MainFirstPage";
@@ -68,6 +75,8 @@ export {
   MusicPlayer,
   MusicPlayerPlayBar,
   MusicSlideForm,
+  FundMusicTop100,
+  NormalMusicTop100,
   NftTop100,
   SongTop100,
   MainFirstPage,
@@ -80,4 +89,9 @@ export {
   SuccessLog,
   MusicPlayerListBar,
   Congratulations,
+  NewSong,
+  Song100,
+  Pop100,
+  Trot100,
+  Classic100,
 };

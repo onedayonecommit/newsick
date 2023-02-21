@@ -284,11 +284,6 @@ const FundingContainer = () => {
     checkTime("ing");
   }, []);
 
-  useEffect(() => {
-    const _data = dispatch(fetchBringData());
-    console.log("응???", _data);
-  }, []);
-
   return (
     <div className="FundingContainerFrame">
       <div className="fundingTopBar">
@@ -425,7 +420,7 @@ const FundingContainer = () => {
           </div>
         </div>
         <div className="listFram">
-          {_fund.map((item, index) => (
+          {_fund?.map((item, index) => (
             <motion.div className="fundingItem" key={index}>
               <div className="leftTime">
                 {timeSet(

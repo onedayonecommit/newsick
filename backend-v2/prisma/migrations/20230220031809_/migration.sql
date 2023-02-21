@@ -4,7 +4,7 @@ CREATE TABLE `user` (
     `user_email` VARCHAR(191) NOT NULL,
     `user_wallet_address` VARCHAR(191) NOT NULL,
     `user_name` VARCHAR(191) NOT NULL,
-    `user_profile_image` VARCHAR(191) NOT NULL DEFAULT 'default_profile_image.jpeg',
+    `user_profile_image` VARCHAR(191) NOT NULL DEFAULT 'default_profile_image.png',
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updated_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
@@ -35,7 +35,6 @@ CREATE TABLE `creator` (
 -- CreateTable
 CREATE TABLE `ticket` (
     `id` VARCHAR(191) NOT NULL,
-    `ticket_type` INTEGER NOT NULL DEFAULT 0,
     `expired` TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     PRIMARY KEY (`id`)
@@ -64,7 +63,11 @@ CREATE TABLE `funding` (
 ========
     `funding_finish_status` BOOLEAN NOT NULL DEFAULT false,
     `funding_music_regist` BOOLEAN NOT NULL DEFAULT false,
+<<<<<<< HEAD:backend-v2/prisma/migrations/20230217144324_rebuild/migration.sql
 >>>>>>>> GH:backend-v2/prisma/migrations/20230217144324_rebuild/migration.sql
+=======
+    `holder_share` DECIMAL(16, 10) NOT NULL,
+>>>>>>> jinny:backend-v2/prisma/migrations/20230220031809_/migration.sql
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -138,7 +141,7 @@ CREATE TABLE `funding_music` (
 -- CreateTable
 CREATE TABLE `funding_music_player` (
     `music_id` INTEGER NOT NULL,
-    `player_count` INTEGER NOT NULL DEFAULT 0,
+    `fm_player_count` INTEGER NOT NULL DEFAULT 0,
     `heart` INTEGER NOT NULL DEFAULT 0,
 
     PRIMARY KEY (`music_id`)
@@ -165,7 +168,7 @@ CREATE TABLE `normal_music` (
 -- CreateTable
 CREATE TABLE `normal_music_player` (
     `music_id` INTEGER NOT NULL,
-    `player_count` INTEGER NOT NULL DEFAULT 0,
+    `nm_player_count` INTEGER NOT NULL DEFAULT 0,
     `heart` INTEGER NOT NULL DEFAULT 0,
 
     PRIMARY KEY (`music_id`)
