@@ -292,8 +292,8 @@ const FundingContainer = () => {
           <div className="creatorInfoFrame">
             <div className="creatorInfoBox">
               <div className="creatorInfo">
-                <div className="creatorName">{popular.nft_name}</div>
-                <div className="fundingInfo">{popular.funding_title}</div>
+                <div className="creatorName">{popular?.nft_name}</div>
+                <div className="fundingInfo">{popular?.funding_title}</div>
               </div>
               <div
                 className="detailButton"
@@ -420,7 +420,7 @@ const FundingContainer = () => {
           </div>
         </div>
         <div className="listFram">
-          {_fund.map((item, index) => (
+          {_fund?.map((item, index) => (
             <motion.div className="fundingItem" key={index}>
               <div className="leftTime">
                 {timeSet(
