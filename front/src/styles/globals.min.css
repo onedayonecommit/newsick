@@ -5947,7 +5947,89 @@ body {
   position: absolute;
   border-radius: 0vw 0vw 1.29vw 1.29vw;
   border: 0.052vw solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.032vw;
   transition: 1s;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum {
+  flex-shrink: 0;
+  width: 10.32vw;
+  height: 2.58vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0vw 0vw 0vw 0vw;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0.516vw;
+  border-radius: 0vw 0vw 0vw 0vw;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum :nth-child(1) {
+  box-sizing: border-box;
+  text-align: right;
+  flex-shrink: 0;
+  width: 7.74vw;
+  height: 1.393vw;
+  display: block;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0vw 0vw 0vw 0vw;
+  border: 0.155vw solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum :nth-child(1):focus {
+  outline: none;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum :nth-child(2) {
+  flex-shrink: 0;
+  width: auto; /* 0.929vw */
+  height: auto; /* 1.135vw */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.929vw;
+  letter-spacing: 0vw;
+  line-height: 1.2;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyButton {
+  cursor: pointer;
+  opacity: 0.5;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 7.74vw;
+  height: 2.064vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0vw 0vw 0vw 0vw;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0.516vw;
+  border-radius: 1.29vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 1.342vw;
+  letter-spacing: 0vw;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyButton:hover {
+  opacity: 1;
 }
 .fundingDetailFrame .fundingInfoSection .infoSlideFrame {
   top: 0vw;

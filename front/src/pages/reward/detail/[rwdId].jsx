@@ -33,16 +33,21 @@ const FundingDetail = () => {
                     }  
         <div className='fundingInfoSection' ref={infoSlideFrameRef}>
           <motion.div className='fundingImgFrame'
-            whileHover={{scale:1.2,x:50,y:50}}
-            transition={{duration:0.3}}
-            style={{cursor:"pointer"}}
-            onMouseEnter={onHoverFundingImg}
-            onMouseLeave={onLeaveFundingImg}
+            // whileHover={{scale:1.2,x:50,y:50}}
+            // transition={{duration:0.3}}
+            // style={{cursor:"pointer"}}
+            // onMouseEnter={onHoverFundingImg}
+            // onMouseLeave={onLeaveFundingImg}
           >
             <Image src={leeImg} alt="fundingImg" className='fundingImg'/>
             <div className='fundingImgInfo'
-              style={hoverFunding===true?{height:"120px"}:{height:"0px"}}
-            ></div>        
+            >
+              <div className='buyNum'>
+                <input/>
+                <div>개</div>
+              </div>
+              <div className='buyButton'>BUY</div>
+              </div>        
           </motion.div>
             <motion.div className='infoSlideFrame'>
             {/* {right:0,left:-510} */}
