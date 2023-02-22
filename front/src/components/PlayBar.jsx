@@ -47,15 +47,6 @@ const openPlayBar = {
 const PlayBar = ({ soundClick, playerClick, isPlayerClick }) => {
   const [isPlay, setIsPlay] = useState();
   const [selected, setSelected] = useState();
-  const dispatch = useDispatch();
-  const user_wallet_address = useSelector((state) => state.userInfo.address);
-  console.log("플레이리스트 가져올 때 지갑주소", user_wallet_address);
-  // const myPlayList = useSelector((state)=>state.musicInfo.playList)
-  // console.log("사이드바에 띄워줄 플레이 정보")
-
-  const getPlayList = () => {
-    dispatch(fetchPlayList({ user_wallet_address }));
-  };
 
   const shackIcon = () => {
     return {
@@ -118,7 +109,6 @@ const PlayBar = ({ soundClick, playerClick, isPlayerClick }) => {
             alt="YOUNHA.jpg"
             onClick={() => {
               playerClick();
-              getPlayList();
             }}
             width={50}
             height={50}

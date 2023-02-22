@@ -93,6 +93,7 @@ const fundingUItemData = [
 ];
 
 const FundingContainer = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   // ===========================================================
   const [activeIndex, setActiveIndex] = useState(0);
@@ -127,14 +128,6 @@ const FundingContainer = () => {
   const [selectedDiv, setSelectedDiv] = useState("div1");
   const [time, setTime] = useState();
 
-  console.log("펀드펀드", popular);
-  // console.log("유저유저", user);
-
-  // 메인 좋아요 가장 많은 NFT
-  const popularPick = (_data) => {
-    dispatch(fetchPopularPick(_data));
-  };
-
   const checkTime = (key) => {
     const _current = new Date();
     const _arr = [];
@@ -144,7 +137,7 @@ const FundingContainer = () => {
           const _checkStartTime = new Date(value.funding_start_date);
           const _checkFinishTime = new Date(value.funding_finish_date);
           if (_checkFinishTime - _current > 0 && _checkStartTime - _current < 0) {
-            console.log("ing_PUSH");
+            console.log("ing_PUSH", value);
             _arr.push(value);
           }
         });
@@ -193,6 +186,7 @@ const FundingContainer = () => {
         return;
     }
   };
+  const top1List = useSelector((state) => state.fundList.top1);
   // 진행중인 펀딩 데이터 가져오는 함수
   const ing_fundingData = async (key) => {
     // dispatch(fetchBringData(_data));
@@ -227,7 +221,7 @@ const FundingContainer = () => {
   // 세부페이지 들어가는 함수
   const detailPage = (e) => {
     route.push({
-      pathname: `reward/${e}`,
+      pathname: `reward/detail/${e}`,
       state: { data: fund[e] },
     });
   };
@@ -276,6 +270,7 @@ const FundingContainer = () => {
     dispatch(fetchBringData());
     dispatch(fetchPopularPick());
     checkTime("ing");
+    console.log(top1List, "top1listlist");
   }, []);
 
   return (
@@ -286,14 +281,22 @@ const FundingContainer = () => {
           <div className="creatorInfoFrame">
             <div className="creatorInfoBox">
               <div className="creatorInfo">
-                <div className="creatorName">{popular?.nft_name}</div>
-                <div className="fundingInfo">{popular?.funding_title}</div>
+                <div className="creatorName">{top1List?.nft_name}</div>
+                <div className="fundingInfo">{top1List?.funding_title}</div>
+                <div>누적 판매 갯수 : {top1List?.funding_sales}</div>
+                <div>누적 판매 량 : {top1List?.funding_sales * top1List?.funding_price} ETH</div>
               </div>
-              <div className="detailButton" onClick={() => detailPage(popular.id)}>
-                <Link href="/reward/">DETAIL</Link>
+              <div className="detailButton" onClick={() => detailPage(top1List.id)}>
+                <div
+                  onClick={() => {
+                    router.push(`reward/detail/${top1List.id}`);
+                  }}
+                >
+                  DETAIL
+                </div>
               </div>
             </div>
-            <div className="creatorImg" />
+            <Image src={top1List?.funding_nft_image} width={344} height={318} alt="nft" />
           </div>
         </div>
         <AnimatePresence>
@@ -391,8 +394,19 @@ const FundingContainer = () => {
         </div>
         <div className="listFram">
           {_fund?.map((item, index) => (
-            <motion.div className="fundingItem" key={index}>
+            <motion.div
+              className="fundingItem"
+              key={index}
+              onClick={() => {
+                router.push(`/reward/detail/${item.id}`);
+              }}
+            >
               <div className="leftTime">{timeSet(item.funding_start_date, item.funding_finish_date, item.funding_production_date)}</div>
+              <div>제목 : {item.funding_title}</div>
+              <div>가격 : {item.funding_price}ETH</div>
+              <div>남은 갯수 : {item.funding_hard_cap - item.funding_sales}</div>
+              <div>목표치까지 : {Math.floor((item.funding_sales / item.funding_hard_cap) * 100)} % </div>
+              <Image src={item.funding_nft_image} width={210} height={210} alt="nft" />
             </motion.div>
           ))}
         </div>

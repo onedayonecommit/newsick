@@ -9,11 +9,6 @@ import { useEffect, useState } from "react";
 const UserBar = ({ handleOpen, handleClick }) => {
   const router = useRouter();
   const userImg = useSelector((state) => state.userInfo.userImage);
-  // const [userImage, setUserImage] = useState();
-
-  // setUserImage(userImg);
-  // console.log("유저 기본 이미지", userImage);
-
   const isCreator = useSelector((state) => state.userInfo.isCreator);
   const createStatus = useSelector((state) => state.userInfo.createStatus);
 
@@ -55,7 +50,3 @@ const UserBar = ({ handleOpen, handleClick }) => {
   );
 };
 export default UserBar;
-
-// export const getServerSideProps =()=>{
-
-// }

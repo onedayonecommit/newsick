@@ -16,11 +16,16 @@ const ApplyCreator = () => {
 
   const creatorApply = async () => {
     const creatorPrice = await web3.utils.toWei("0.1", "ether");
-    dispatch(eventAction.excuteStatus(true));
-    const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: user_wallet_address, value: creatorPrice });
-    console.log(creatorPay);
-    dispatch(eventAction.excuteStatus(false));
-    dispatch(fetchApplyCreator({ user_wallet_address, is_creator: creatorPay.events.creatorApplicant.returnValues._status }));
+    try {
+      dispatch(eventAction.excuteStatus(true));
+      const creatorPay = await NEWSIC_FUND.methods.creatorJoinPay().send({ from: user_wallet_address, value: creatorPrice });
+      console.log(creatorPay);
+      dispatch(eventAction.excuteStatus(false));
+      dispatch(fetchApplyCreator({ user_wallet_address, is_creator: creatorPay.events.creatorApplicant.returnValues._status }));
+    } catch (err) {
+      dispatch(eventAction.excuteStatus(false));
+      alert("크리에이터 신청을 취소하셨습니다");
+    }
   };
 
   useEffect(() => {

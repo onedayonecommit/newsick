@@ -65,15 +65,20 @@ const topChartItem = [
 const Song100 = ({ isOpen, setIsOpen }) => {
   const song100Arr = useSelector((state) => state.musicInfo.musicGenreList);
   console.log("가요 리스트", song100Arr);
-  // const [song100, setSong100] = useState([]);
+  const [song100, setSong100] = useState([]);
 
-  // song100Arr.sort((a, b) => {
-  //   console.log(b);
-  //   console.log(b.normal_music_player[0]);
-  //   console(a);
-  //   console.log(a.funding_music_player[0]);
-  //   return b?.funding_music_player[0]?.player_count || b?.normal_music_player[0]?.player_count - a?.funding_music_player[0]?.player_count || a?.normal_music_player[0]?.player_count;
-  // });
+  const song100List = [...song100Arr];
+  console.log("스프레드 연산 가요", song100List);
+  const songList = song100List.sort((a, b) => {
+    console.log(b);
+    console.log(b.normal_music_player[0]);
+    console.log(b.normal_music_player[0].player_count);
+
+    // const aPlayerCount = a.normal_music_player[0]?.player_count || a.funding_music_player[0]?.player_count || 0;
+    // const bPlayerCount = b.normal_music_player[0]?.player_count || b.funding_music_player[0]?.player_count || 0;
+    // return bPlayerCount - aPlayerCount;
+    return b.normal_music_player[0].player_count - a.normal_music_player[0].player_count;
+  });
 
   return (
     <div className="publicBackImg">
@@ -95,7 +100,7 @@ const Song100 = ({ isOpen, setIsOpen }) => {
           <div className="lastLine" />
         </div>
         <div className="bottomRankList">
-          {song100Arr.map((rank, i) => (
+          {songList.map((rank, i) => (
             <div className="rankItemBox">
               <div className="leftSide">
                 <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${rank.music_cover_image}`} alt="iron" className="rankItemImg" width={120} height={120} />

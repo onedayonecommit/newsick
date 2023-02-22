@@ -1,25 +1,41 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import rankingImg1 from "../../../public/image/IRON2.jpg";
+import rankingImg2 from "../../../public/image/lee.jpg";
+import rankingImg3 from "../../../public/image/park.jpg";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const itemData = [
   {
     id: 1,
     title: "Title 1",
     subTitle: "SubTitle 1",
     text: "Item 1 text. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    musicName: "Music Name",
+    singerName: "Singer Name",
+    musicImg: rankingImg1,
   },
   {
     id: 2,
     title: "Title 2",
     subTitle: "SubTitle 2",
     text: "Item 2 text. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    musicName: "Music Name",
+    singerName: "Singer Name",
+    musicImg: rankingImg2,
   },
   {
     id: 3,
     title: "Title 3",
     subTitle: "SubTitle 3",
     text: "Item 3 text. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    musicName: "Music Name",
+    singerName: "Singer Name",
+    musicImg: rankingImg3,
   },
 ];
+
 const cardVariant = {
   initial: {
     x: 700,
@@ -67,6 +83,18 @@ const MainFirstPage = () => {
     } else {
     }
   };
+
+  const handleNextClick = () => {
+    const lastIndex = itemData.length - 1;
+    const nextIndex = currentPage === lastIndex ? 0 : currentPage + 1;
+    setCurrentPage(nextIndex);
+  };
+  const handlePreviousClick = () => {
+    const nextIndex = itemData.length - 1;
+    const lastIndex = currentPage === nextIndex ? 0 : currentPage + 1;
+    setCurrentPage(lastIndex);
+  };
+
   useEffect(() => {
     rendergood();
   }, [result]);
@@ -102,22 +130,27 @@ const MainFirstPage = () => {
                   setResult(start - e.clientX);
 
                   console.log(e.clientX);
-                  // setEnd(e.clientY);
-                  // setResult(start-end);
-                  // console.log(result);
-                  //   if(Math.abs(result) > 100 && result > 0) {
-                  //     return setCurrentPage((currentPage + 1) % 3);
-                  //   }else if (Math.abs(result) > 100 && result < 0){
-                  //     return setCurrentPage((currentPage - 1) % 3);
-                  //   }else {
-                  //     return;
-                  //   }
                 }}
-              ></motion.div>
+              >
+                <div className="rankingInfoSection">
+                  <div className="musicName">{item.musicName}</div>
+                  <div className="signerName">{item.singerName}</div>
+                </div>
+                <motion.div className="rankingDetailButton">Detail</motion.div>
+                <Image src={item.musicImg} alt="rankinImg" className="rankingImg" style={{ webkitUserDrag: " none" }} />
+              </motion.div>
             </>
           );
         }
       })}
+      <div className="nextButtonFrame">
+        <div className="buttonFrame" onClick={handlePreviousClick}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </div>
+        <div className="buttonFrame" onClick={handleNextClick}>
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+      </div>
     </motion.div>
   );
 };

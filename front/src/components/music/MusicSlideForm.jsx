@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useSelector } from "react-redux";
+import Image from "next/image";
 
 const MusicSlideForm = ({ slide, offset, image }) => {
   const x = useMotionValue(0);
@@ -57,8 +59,8 @@ const MusicSlideForm = ({ slide, offset, image }) => {
         className="slide"
         data-active={active}
         style={{
-          "--offset": offset,
-          "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
+          "--offset": -offset,
+          "--dir": offset === 0 ? 0 : offset > 0 ? -1.1 : 1.1,
           x,
           y,
           rotateX,
@@ -71,14 +73,15 @@ const MusicSlideForm = ({ slide, offset, image }) => {
       >
         <motion.div
           className="slideContent"
-          style={{
-            backgroundImage: `url('${slide.image.src}')`,
-          }}
+          // style={{
+          //   backgroundImage: `url(${slide.music_cover_image.src})`,
+          // }}
           whileTap={{ cursor: "grabbing" }}
         >
+          <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${slide.music_cover_image}`} width={230} height={310} alt="플레이리스트 슬라이드" />
           <motion.div className="slideContentInner" style={{ x, y, rotateX, rotateY, z: 100 }}>
-            <h2 className="slideTitle">{slide.songName}</h2>
-            <h3 className="slideSubtitle">{slide.singerName}</h3>
+            <h2 className="slideTitle">{slide.music_name}</h2>
+            <h3 className="slideSubtitle">{slide.singer}</h3>
           </motion.div>
         </motion.div>
         {/* </div> */}

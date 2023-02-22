@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchNormalMusicList, fetchFundMusicList, fetchPlayList, fetchNewMusicList, fetchGenreList } from "@/middleware/fetchMusic";
+import { fetchNormalMusicList, fetchFundMusicList, fetchPlayList, fetchNewMusicList, fetchGenreList, fetchAddSong } from "@/middleware/fetchMusic";
 
 const initialState = {
   normalMusicList: [],
@@ -61,6 +61,16 @@ const musicSlice = createSlice({
       })
       .addCase(fetchGenreList.rejected, (state) => {
         state.musicGenreList = [];
+      })
+      .addCase(fetchAddSong.pending, (state) => {
+        state.playList = [];
+      })
+      .addCase(fetchAddSong.fulfilled, (state, action) => {
+        console.log("추가된 내 플레이리스트 페이로드", action.payload);
+        state.playList = action.payload;
+      })
+      .addCase(fetchAddSong.rejected, (state) => {
+        state.playList = [];
       });
   },
 });

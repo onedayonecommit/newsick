@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretLeft, faCaretRight, faList, faPause, faRepeat, faShuffle, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faCaretLeft, faCaretRight, faPause, faRepeat, faShuffle, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import VolumeBox from "../VolumeBox";
 const variantPlay = {
   animate: {
@@ -124,17 +124,18 @@ const MusicPlayerListBar = ({ image, index, FilippedChoice }) => {
         <motion.span whileHover={{ scale: 1.2, transition: { duration: 0.2 } }} whileTap={{ scale: 0.9 }}>
           <Image
             className="nowMusicImg"
+            // src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${image}`}
             src={image}
             alt="nowPlayMusicImage"
             onClick={FilippedChoice}
             style={{
               cursor: "pointer",
-              width: "50px",
-              height: "50px",
               backgroundSize: "fill",
               borderRadius: "50px",
               border: "1px solid rgba(255,255,255,0.1)",
             }}
+            width={50}
+            height={50}
           />
         </motion.span>
       </motion.div>

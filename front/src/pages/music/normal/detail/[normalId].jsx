@@ -1,11 +1,22 @@
 // 곡(앨범) 상세페이지
-import React from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import SongImag from "../../../../public/image/rabi.jpg";
+import SongImag from "../../../../../public/image/rabi.jpg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-const songDetail = () => {
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+import { fetchSongDetailInfo } from "@/middleware/fetchMusic";
+
+const NormalSongDetail = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  useEffect(() => {
+    const normalId = router.query.normalId;
+    dispatch(fetchSongDetailInfo(`?nmid=${normalId}`));
+  }, []);
+
   return (
     <motion.div className="songDetailContainer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
       <div className="songInfoSection">
@@ -52,4 +63,4 @@ const songDetail = () => {
   );
 };
 
-export default songDetail;
+export default NormalSongDetail;
