@@ -67,3 +67,14 @@ export const fetchBringData = createAsyncThunk("fund/allList", async () => {
     console.log(error);
   }
 });
+
+export const fetchDetailPage = createAsyncThunk(
+  "fund/detailPage",
+  async (_data) => {
+    try {
+      return _data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);

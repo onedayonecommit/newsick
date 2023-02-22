@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchBringData } from "@/middleware/fetchFund";
+import { fetchBringData, fetchDetailPage } from "@/middleware/fetchFund";
 
 const initialState = {
   isBring: false,
   data: [],
+  page: [],
 };
 
 const fundListSlice = createSlice({
@@ -21,6 +22,9 @@ const fundListSlice = createSlice({
       })
       .addCase(fetchBringData.fulfilled, (state, action) => {
         state.data = action.payload;
+      })
+      .addCase(fetchDetailPage.fulfilled, (state, action) => {
+        state.page = action.payload;
       });
   },
 });

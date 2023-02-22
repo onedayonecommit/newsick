@@ -4,7 +4,11 @@ import image1 from "../../../public/image/cover.jpg";
 import image2 from "../../../public/image/chang.jpg";
 import { PageNationFrame } from "@/components";
 import useWeb3 from "@/hooks/useWeb3";
-import { fetchPopularPick, fetchBringData } from "@/middleware/fetchFund";
+import {
+  fetchPopularPick,
+  fetchBringData,
+  fetchDetailPage,
+} from "@/middleware/fetchFund";
 import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -222,10 +226,8 @@ const FundingContainer = () => {
   const route = useRouter();
   // 세부페이지 들어가는 함수
   const detailPage = (e) => {
-    route.push({
-      pathname: `reward/detail/${e}`,
-      state: { name: "Yaya", age: 20 },
-    });
+    route.push(`reward/detail/${e}`);
+    dispatch(fetchDetailPage(fund[e]));
   };
 
   const timeSet = (_startTime, _finishTime, _productTime) => {
@@ -429,7 +431,14 @@ const FundingContainer = () => {
                   item.funding_production_date
                 )}
               </div>
-              <Image src={item.funding_nft_image} width={220} height={220} />
+              <Image
+                src={item.funding_nft_image}
+                width={220}
+                height={220}
+                onClick={() => {
+                  detailPage(item.id);
+                }}
+              />
             </motion.div>
           ))}
         </div>

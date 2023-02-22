@@ -5,22 +5,39 @@ const FaqData = [
   {
     id: 1,
     title: "제 작 자 들",
-    content: "Paid plans are billed both at a Site and Team level. Both subscriptions are always linked to the email of the purchaser. In order to get extra features and faster loading time to your site, you can acquire any of our site plans. In the moment of purchasing the first site plan within a team, a Team account will be added automatically so editors will be charged at a team level.",
+    content:
+      "윤하영 ( BACK / CONTRACT / team leader ) , 이지니 ( FRONT / team member ) , 임준우 ( FRONT / team member ) , 김경환 ( BACK / CONTRACT /  team member )",
   },
   {
     id: 2,
     title: "주 의 사 항",
-    content: "We offer a range of pricing plans to suit different needs...",
+    content: `본 고지는 회원님들이 가상자산을 거래하거나 보유할 때 발생할 수 있는 대표적인 위험을 안내하기 위함입니다.
+
+가상자산거래는 손실에 대한 위험이 매우 클 수 있으므로 회원님의 가상자산거래시 본인의 투자목적, 재산상황, 거래(투자)경험 등을 감안하시고 아래 유의 사항을 충분히 인지 후 거래 하시기 바랍니다.
+    
+[가상자산 투자 유의사항]
+    
+1) 가상자산은 법정화폐가 아니므로 특정주체가 가치를 보장하지 않습니다.
+2) 가상자산은 365일 24시간 전 세계에서 거래되며, 시장의 수요 및 공급, 각 가상자산의 정책, 국가별 법령 및 제도, 네트워크 상황 등 다양한 요인으로 급격한 시세 변동이 발생할 수 있습니다.
+3) 가상자산은 가격 변동폭에 제한이 없으므로, 원금손실 가능성이 있음을 특히 유의하시기 바랍니다.
+4) 가상자산은 초고위험 상품으로 투자자 자기책임 원칙이 우선되는 만큼, 회원님이 투자하려는 가상자산의 정보를 백서 또는 평가보고서 등을 통해 충분히 확인한 후에 신중히 투자 결정하시기 바라오며, 과도한 투자를 지양하고 여유자금으로 분산투자 하는 것을 권유 드립니다.
+5) 본 거래소도 회원님들에게 안전한 투자환경을 제공하기 위해 가상자산의 거래지원에 보다 유의하고, 회원님들께 최신의 정보를 제공하기 위해 노력하겠습니다.
+
+위 사항들은 가상자산 거래에 수반되는 위험 등에 대해 회원님이 알아야 할 사항을 간략하게 서술한 것으로 가상자산 거래와 관련된 모든 위험을 기술 한 것은 아닙니다. 또한 본 고지 내용은 거래소의 이용약관이나 국내외 관련법규 등에 우선하지 못한다는 점을 양지하여 주시기 바랍니다.`,
   },
   {
     id: 3,
     title: "사이트 제작 의도",
-    content: "You can cancel your subscription at any time by visiting...",
+    content: `- 음원 NFT를 지분화하여 펀딩할 수 있는 플랫폼
+- 이더리움 기반의 NFT 음악 디지털 앨범 펀딩 플랫폼
+- NFT 음악 디지털 앨범 투자를 받을 수 있는 Application 입니다.
+- 구독권이 있는 사용자는 스트리밍 서비스를 들을 수 있습니다 `,
   },
   {
     id: 4,
-    title: "환 불 규 정",
-    content: "You can cancel your subscription at any time by visiting...",
+    title: "(구독권) 환 불 규 정",
+    content: `* 결제일 기준 7일 이내 이용내역이 없는 경우, 청약철회 신청 가능하며 전액 환불됩니다.
+* 결제일 기준 7일 이내 이용내역이 있는 경우, 결제금액에서 이용금액을 제외한 나머지 금액이 환불됩니다.`,
   },
 ];
 const siteInfo = () => {
@@ -34,13 +51,37 @@ const siteInfo = () => {
     }
   };
   return (
-    <motion.div className="siteInfoContainer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
+    <motion.div
+      className="siteInfoContainer"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="infoSection">
         {FaqData.map((item, index) => (
-          <motion.div key={item.id} initial={{ x: "100vh", opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: "100vh", opacity: 0 }} transition={{ duration: 0.3, type: "spring", delay: 0.1 * index }} className="faqItemBox">
-            <div className="topControlBar" onClick={() => toggleActive(item.id)}>
+          <motion.div
+            key={item.id}
+            initial={{ x: "100vh", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100vh", opacity: 0 }}
+            transition={{ duration: 0.3, type: "spring", delay: 0.1 * index }}
+            className="faqItemBox"
+          >
+            <div
+              className="topControlBar"
+              onClick={() => toggleActive(item.id)}
+            >
               <div className="faqTitle">{item.title}</div>
-              <motion.svg initial={{ rotate: 0 }} animate={{ rotate: activeId === item.id ? 45 : 0 }} transition={{ duration: 0.4 }} className="controlIcon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <motion.svg
+                initial={{ rotate: 0 }}
+                animate={{ rotate: activeId === item.id ? 45 : 0 }}
+                transition={{ duration: 0.4 }}
+                className="controlIcon"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M8 2.75C8 2.47386 7.77614 2.25 7.5 2.25C7.22386 2.25 7 2.47386 7 2.75V7H2.75C2.47386 7 2.25 7.22386 2.25 7.5C2.25 7.77614 2.47386 8 2.75 8H7V12.25C7 12.5261 7.22386 12.75 7.5 12.75C7.77614 12.75 8 12.5261 8 12.25V8H12.25C12.5261 8 12.75 7.77614 12.75 7.5C12.75 7.22386 12.5261 7 12.25 7H8V2.75Z"
                   fill="currentColor"
@@ -50,10 +91,21 @@ const siteInfo = () => {
                 ></path>
               </motion.svg>
             </div>
-            <motion.div className="middleLine" initial={{ opacity: 0 }} animate={{ opacity: activeId === item.id ? 1 : 0 }} transition={{ duration: 0.4 }} />
+            <motion.div
+              className="middleLine"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: activeId === item.id ? 1 : 0 }}
+              transition={{ duration: 0.4 }}
+            />
             <AnimatePresence>
               {activeId === item.id && (
-                <motion.div className="faqTextSection" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.4 }}>
+                <motion.div
+                  className="faqTextSection"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
                   {item.content}
                 </motion.div>
               )}
@@ -61,12 +113,23 @@ const siteInfo = () => {
           </motion.div>
         ))}
       </div>
-      <motion.div className="footerSection" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
+      <motion.div
+        className="footerSection"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <div className="topInfoSection">
           <div className="addressSection">
             <div className="adressFrame">
               <div className="discordAdress">
-                <svg className="discordIcon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="discordIcon"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -77,7 +140,12 @@ const siteInfo = () => {
                 <div>DISCORD</div>
               </div>
               <div className="gitHubAdress">
-                <svg className="gitIcon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="gitIcon"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z"
                     fill="currentColor"
@@ -88,7 +156,12 @@ const siteInfo = () => {
                 <div>GIT-HUB</div>
               </div>
               <div className="notionAdress">
-                <svg className="notionIcon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="notionIcon"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M3.25781 3.11684C3.67771 3.45796 3.83523 3.43193 4.62369 3.37933L12.0571 2.93299C12.2147 2.93299 12.0836 2.77571 12.0311 2.74957L10.7965 1.85711C10.56 1.67347 10.2448 1.46315 9.64083 1.51576L2.44308 2.04074C2.18059 2.06677 2.12815 2.19801 2.2327 2.30322L3.25781 3.11684ZM3.7041 4.84917V12.6704C3.7041 13.0907 3.91415 13.248 4.38693 13.222L12.5562 12.7493C13.0292 12.7233 13.0819 12.4341 13.0819 12.0927V4.32397C13.0819 3.98306 12.9508 3.79921 12.6612 3.82545L4.12422 4.32397C3.80918 4.35044 3.7041 4.50803 3.7041 4.84917ZM11.7688 5.26872C11.8212 5.50518 11.7688 5.74142 11.5319 5.76799L11.1383 5.84641V11.6205C10.7965 11.8042 10.4814 11.9092 10.2188 11.9092C9.79835 11.9092 9.69305 11.7779 9.37812 11.3844L6.80345 7.34249V11.2532L7.61816 11.437C7.61816 11.437 7.61816 11.9092 6.96086 11.9092L5.14879 12.0143C5.09615 11.9092 5.14879 11.647 5.33259 11.5944L5.80546 11.4634V6.29276L5.1489 6.24015C5.09625 6.00369 5.22739 5.66278 5.5954 5.63631L7.53935 5.50528L10.2188 9.5998V5.97765L9.53564 5.89924C9.4832 5.61018 9.69305 5.40028 9.95576 5.37425L11.7688 5.26872ZM1.83874 1.33212L9.32557 0.780787C10.245 0.701932 10.4815 0.754753 11.0594 1.17452L13.4492 2.85424C13.8436 3.14309 13.975 3.22173 13.975 3.53661V12.7493C13.975 13.3266 13.7647 13.6681 13.0293 13.7203L4.33492 14.2454C3.78291 14.2717 3.52019 14.193 3.23111 13.8253L1.47116 11.5419C1.1558 11.1216 1.02466 10.8071 1.02466 10.4392V2.25041C1.02466 1.77825 1.23504 1.38441 1.83874 1.33212Z"
                     fill="currentColor"

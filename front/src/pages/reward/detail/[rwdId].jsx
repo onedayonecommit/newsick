@@ -5,13 +5,16 @@ import { useRef } from "react";
 import { useState } from "react";
 import FundingDetailModal from "@/components/FundingDetailModal";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import useWeb3 from "@/hooks/useWeb3";
 import { useRouter } from "next/router";
 
 const FundingDetail = () => {
-  const router = useRouter();
-  // const { name, age } = router?.state;
-  // console.log("들온데이터어어어어어어", name, age);
+  const _pageData = useSelector((state) => state.fundList.page);
+  const { web3, NEWSIC_FUND } = useWeb3();
+  const [amount, setAmount] = useState(0);
   const infoSlideFrameRef = useRef(null);
+
   const block = Array.from({ length: 10 });
   const [hoverFunding, setHoverFunding] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,6 +31,19 @@ const FundingDetail = () => {
     setIsModalOpen(false);
   };
 
+  const user = useSelector((state) => state.userInfo);
+  const fundBuy = async () => {
+    const _price = await web3.utils.toWei(_pageData.funding_price, "ether");
+    const _temp = String(_price * amount);
+    console.log(_temp);
+    try {
+      const _buy_ticket = await NEWSIC_FUND.methods
+        .mint(_pageData.id, amount, "0x00")
+        .send({ from: user.address, value: _temp });
+      return _buy_ticket;
+    } catch (error) {}
+  };
+
   return (
     <div className="fundingDetailFrame">
       {isModalOpen && (
@@ -36,21 +52,26 @@ const FundingDetail = () => {
         </FundingDetailModal>
       )}
       <div className="fundingInfoSection" ref={infoSlideFrameRef}>
-        <motion.div
-          className="fundingImgFrame"
-          whileHover={{ scale: 1.2, x: 50, y: 50 }}
-          transition={{ duration: 0.3 }}
-          style={{ cursor: "pointer" }}
-          onMouseEnter={onHoverFundingImg}
-          onMouseLeave={onLeaveFundingImg}
-        >
-          <Image src={leeImg} alt="fundingImg" className="fundingImg" />
-          <div
-            className="fundingImgInfo"
-            style={
-              hoverFunding === true ? { height: "120px" } : { height: "0px" }
-            }
-          ></div>
+        <motion.div className="fundingImgFrame">
+          <Image
+            src={_pageData.funding_nft_image}
+            width={100}
+            height={100}
+            alt="fundingImg"
+            className="fundingImg"
+          />
+          <div className="fundingImgInfo">
+            <div className="buyNum">
+              <input
+                type="number"
+                onChange={(e) => setAmount(e.target.value)}
+              />
+              <div>개</div>
+            </div>
+            <div className="buyButton" onClick={fundBuy}>
+              BUY
+            </div>
+          </div>
         </motion.div>
         <motion.div className="infoSlideFrame">
           {/* {right:0,left:-510} */}
