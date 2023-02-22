@@ -10,16 +10,6 @@ import {
   REGISTER,
 } from "redux-persist";
 import logger from "redux-logger";
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
 // import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import storage from "redux-persist/lib/storage";
 import myPageSlice from "./myPageSlice";
@@ -27,7 +17,6 @@ import fundListSlice from "./nftFundFindSlice";
 import nftFundSlice from "./nftFundSlice";
 import musicSlice from "./musicSlice";
 import userSlice from "./userSlice";
-import fundListSlice from "./nftFundFindSlice";
 import marketSlice from "./nftMarketSlice";
 import eventSlice from "./eventSlice";
 

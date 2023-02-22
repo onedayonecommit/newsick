@@ -4,64 +4,6 @@ import { RegisterNftSong } from "@/components";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 
-const FunddingDateItem = [
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-];
 const MyPageCreator = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [totalEth, setTotalEth] = useState(0);
@@ -162,7 +104,7 @@ const MyPageCreator = () => {
                   </div>
                 </div>
                 <div className="musicInputButton">
-                  {item.funding_music_regist ? (
+                  {item.funding_music_regist == undefined ? (
                     <motion.div
                       className="buttonLine"
                       onClick={() => (modalOpen ? close() : open())}

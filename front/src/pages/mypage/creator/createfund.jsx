@@ -169,7 +169,7 @@ const FundingCreate = () => {
     console.log(_sendData_toBack);
     console.log("서버 통신 시작2");
     dispatch(fetchCreateFund(_sendData_toBack));
-    route.replace("/mypage");
+    router.replace("/mypage");
   };
 
   return (

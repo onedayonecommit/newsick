@@ -159,7 +159,7 @@ const FundingContainer = () => {
       case "before":
         fund.map((value, index) => {
           const _checkStartTime = new Date(value.funding_start_date);
-          if (_checkStartTime - _current < 0) {
+          if (_checkStartTime - _current > 0) {
             console.log("before_PUSH");
             _arr.push(value);
           }
@@ -201,7 +201,6 @@ const FundingContainer = () => {
   };
   // 진행중인 펀딩 데이터 가져오는 함수
   const ing_fundingData = async (key) => {
-    // dispatch(fetchBringData(_data));
     checkTime("ing");
     setSelectedDiv(key);
   };
@@ -209,32 +208,23 @@ const FundingContainer = () => {
   const before_fundingData = async (key) => {
     checkTime("before");
     setSelectedDiv(key);
-    // const _data = await NEWSIC_FUND.methods.beforeStart().call();
-    // console.log(_data);
-    // dispatch(fetchBringData(_data));
   };
   // 진행종료후 제작중인 펀딩 데이터 가져오는 함수
   const make_fundingData = async (key) => {
     checkTime("make");
     setSelectedDiv(key);
-    // const _data = await NEWSIC_FUND.methods.makeStart().call();
-    // console.log(_data);
-    // dispatch(fetchBringData(_data));
   };
   // 진행종료후 제작종료 펀딩 데이터 가져오는 함수
   const end_fundingData = async (key) => {
     checkTime("end");
     setSelectedDiv(key);
-    // const _data = await NEWSIC_FUND.methods.fundingEnd().call();
-    // console.log(_data);
-    // dispatch(fetchBringData(_data));
   };
   const route = useRouter();
   // 세부페이지 들어가는 함수
   const detailPage = (e) => {
     route.push({
-      pathname: `reward/${e}`,
-      state: { data: fund[e] },
+      pathname: `reward/detail/${e}`,
+      state: { name: "Yaya", age: 20 },
     });
   };
 
@@ -302,19 +292,25 @@ const FundingContainer = () => {
                 <Link href="/reward/">DETAIL</Link>
               </div>
             </div>
-            <div className="creatorImg" />
+            <Image
+              src={`${popular.funding_nft_image}`}
+              // className="creatorImg"
+              width={350}
+              height={350}
+            />
           </div>
         </div>
         <AnimatePresence>
           <motion.div className="swiperSection">
-            {data.map((item, index) => (
+            {fund.map((item, index) => (
               <motion.div
-                key={item.id}
+                key={item.id + 1}
                 style={{
                   width: "100%",
                   height: "100%",
                   position: "absolute",
                   left: `${(index - activeIndex) * 100}%`,
+                  backgroundSize: "center",
                 }}
                 drag="x"
                 initial={{ opacity: 0 }}
@@ -331,10 +327,14 @@ const FundingContainer = () => {
                 }}
               >
                 <Image
-                  src={item.image}
+                  src={item.funding_nft_image}
                   alt="coverImg"
                   className="rewardItemImg"
-                  style={{ webkitUserDrag: " none" }}
+                  style={{
+                    webkitUserDrag: " none",
+                  }}
+                  width={500}
+                  height={500}
                 />
                 <div className="rewardInfoFrame">
                   <div className="buttonFrame">
@@ -429,6 +429,7 @@ const FundingContainer = () => {
                   item.funding_production_date
                 )}
               </div>
+              <Image src={item.funding_nft_image} width={220} height={220} />
             </motion.div>
           ))}
         </div>

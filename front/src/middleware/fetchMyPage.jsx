@@ -95,3 +95,35 @@ export const getNotice = createAsyncThunk("fund/notice/get", async (data) => {
     console.log(error);
   }
 });
+
+export const registNotice = createAsyncThunk(
+  "fund/notice/regist",
+  async (data) => {
+    try {
+      const getNoticeList = await axios({
+        method: "post",
+        url: "https://www.poopoobin.com/fund/notice/regist",
+        data: data,
+      });
+      return getNoticeList.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const updateNotice = createAsyncThunk(
+  "fund/notice/update",
+  async (data) => {
+    try {
+      const getNoticeList = await axios({
+        method: "post",
+        url: "https://www.poopoobin.com/fund/notice/update",
+        data: data,
+      });
+      return getNoticeList.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);

@@ -1,4 +1,10 @@
-import { fetchMyNftList, fetchMyPage, getNotice, myNftList, myRunningFundList } from "@/middleware/fetchMypage";
+import {
+  fetchMyNftList,
+  fetchMyPage,
+  getNotice,
+  myNftList,
+  myRunningFundList,
+} from "@/middleware/fetchMypage";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -54,6 +60,7 @@ const myPageSlice = createSlice({
       .addCase(getNotice.fulfilled, (state, action) => {
         if (action.payload) {
           state.noticeList = action.payload;
+          console.log("노티스 로드");
         }
       })
       .addCase(getNotice.rejected, () => {});
