@@ -26,18 +26,13 @@ const FundingDetail = () => {
 
   return (
     <div className='fundingDetailFrame'>
-                    {isModalOpen && (
-                    <FundingDetailModal isOpen={isModalOpen} onClose={handleModalClose}>
-                      <div className='fundingInfoSection'></div>
-                    </FundingDetailModal>)
-                    }  
+        {isModalOpen && (
+        <FundingDetailModal isOpen={isModalOpen} onClose={handleModalClose}>
+          <div className='fundingInfoSection'></div>
+        </FundingDetailModal>)
+        }  
         <div className='fundingInfoSection' ref={infoSlideFrameRef}>
           <motion.div className='fundingImgFrame'
-            // whileHover={{scale:1.2,x:50,y:50}}
-            // transition={{duration:0.3}}
-            // style={{cursor:"pointer"}}
-            // onMouseEnter={onHoverFundingImg}
-            // onMouseLeave={onLeaveFundingImg}
           >
             <Image src={leeImg} alt="fundingImg" className='fundingImg'/>
             <div className='fundingImgInfo'
@@ -52,7 +47,7 @@ const FundingDetail = () => {
             <motion.div className='infoSlideFrame'>
             {/* {right:0,left:-510} */}
               <motion.div className='infoList' drag="x" dragConstraints={{right:0,left:-1300}}>
-                  <motion.div className='infoItemBox' onClick={handleBoxClick}
+                  <motion.div className='infoItemBox'
                     initial={{x:"100vh",opacity:0}}
                     animate={{x:0,opacity:1}}
                     transition={{duration:0.2,delay:0.1 ,type:"spring"}}
@@ -101,6 +96,7 @@ const FundingDetail = () => {
               {
                 block.map((index)=>(
                   <motion.div 
+                    onClick={handleBoxClick}
                     className='announcementItem'
                     initial={{x:100,opacity:0}}
                     animate={{x:0,opacity:1}}

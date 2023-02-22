@@ -142,15 +142,16 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
   };
   const slidesReducer = (state, event) => {
     if (event.type === "NEXT") {
+      const nextIndex = state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1;
       return {
         ...state,
-        slideIndex: (state.slideIndex - 1) % slides.length,
+        slideIndex: nextIndex,
       };
     }
     if (event.type === "PREV") {
       return {
         ...state,
-        slideIndex: state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
+        slideIndex: state.slideIndex === slides.length - 1 ? 0 : state.slideIndex + 1,
       };
     }
   };
@@ -250,7 +251,7 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
             <div className="slides">
               <button
                 onClick={() => {
-                  dispatch({ type: "PREV" });
+                  dispatch({ type: "NEXT" });
                   setListCount(listCount === slides.length - 1 ? 0 : listCount + 1);
                 }}
               >
@@ -262,7 +263,7 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
               })}
               <button
                 onClick={() => {
-                  dispatch({ type: "NEXT" });
+                  dispatch({ type: "PREV" });
                   setListCount(listCount === 0 ? slides.length - 1 : listCount - 1);
                 }}
               >

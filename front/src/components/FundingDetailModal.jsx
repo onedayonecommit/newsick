@@ -16,7 +16,7 @@ const FundingDetailModal = ({ isOpen, onClose, children }) => {
       exit={{ y: 50, opacity: 0 }}
     >
       {children}
-      <button onClick={onClose}>Close</button>
+      <motion.div className='fundingModalCloseButton' onClick={onClose} whileTap={{scale:0.9}}>CLOSE</motion.div>
     </motion.div>
   </motion.div>
   )

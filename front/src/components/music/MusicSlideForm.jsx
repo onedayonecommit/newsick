@@ -57,8 +57,8 @@ const MusicSlideForm = ({ slide, offset, image }) => {
         className="slide"
         data-active={active}
         style={{
-          "--offset": offset,
-          "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
+          "--offset": -offset,
+          "--dir": offset === 0 ? 0 : offset > 0 ? -1.1 : 1.1,
           x,
           y,
           rotateX,

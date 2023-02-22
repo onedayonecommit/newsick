@@ -30,9 +30,9 @@ const MyPage = () => {
       <div className="toggleFrame">
         <div className="toggle">
           <AnimatePresence>
-            {selectedOption === 0 && <motion.div className="togglePoint" initial={{ x: 5 }} animate={{ x: 5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
-            {selectedOption === 1 && <motion.div className="togglePoint" initial={{ x: 356.5 }} animate={{ x: 356.5 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
-            {selectedOption === 2 && <motion.div className="togglePoint" initial={{ x: 718 }} animate={{ x: 718 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
+            {selectedOption === 0 && <motion.div className="togglePoint" initial={{ x: "0.258vw" }} animate={{ x: "0.258vw" }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
+            {selectedOption === 1 && <motion.div className="togglePoint" initial={{ x: "18.86vw" }} animate={{ x: "18.86vw" }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
+            {selectedOption === 2 && <motion.div className="togglePoint" initial={{ x: "37.049vw" }} animate={{ x: "37.049vw" }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />}
           </AnimatePresence>
           {isCreator ? (
             <motion.div className={` ${selectedOption === 0 ? "selected" : "option"}`} onClick={() => handleClick(0)}>

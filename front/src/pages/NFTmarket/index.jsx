@@ -149,7 +149,15 @@ const NftMarketContainer = () => {
             ))}
           </div>
 
-          <div className="nftBuyInfoSection">NFT 구매 관련 주의 사항 및 공지 사항</div>
+          <div className="nftBuyInfoSection">
+                <div className="mainText">본 고지는 회원님들이 가상자산을 거래하거나 보유할 때 발생할 수 있는 대표적인 위험을 안내하기 위함입니다.</div>
+                <div className="text">[가상자산 투자 유의사항]</div>
+                <div className="text">1) 가상자산은 법정화폐가 아니므로 특정주체가 가치를 보장하지 않습니다.</div>
+                <div className="text">2) 가상자산은 365일 24시간 전 세계에서 거래되며, 시장의 수요 및 공급, 각 가상자산의 정책, 국가별 법령 및 제도, 네트워크 상황 등 다양한 요인으로 급격한 시세 변동이 발생할 수 있습니다.</div>
+                <div className="text">3) 가상자산은 가격 변동폭에 제한이 없으므로, 원금손실 가능성이 있음을 특히 유의하시기 바랍니다.</div>
+                <div className="text">4) 가상자산은 초고위험 상품으로 투자자 자기책임 원칙이 우선되는 만큼, 회원님이 투자하려는 가상자산의 정보를 백서 또는 평가보고서 등을 통해 충분히 확인한 후에 신중히 투자 결정하시기 바라오며, 과도한 투자를 지양하고 여유자금으로 분산투자 하는 것을 권유 드립니다.</div>
+                <div className="text">5) 본 거래소도 회원님들에게 안전한 투자환경을 제공하기 위해 가상자산의 거래지원에 보다 유의하고, 회원님들께 최신의 정보를 제공하기 위해 노력하겠습니다.</div>
+          </div>
         </div>
         <div className="bottomFrame">
           <div className="bottomSection">
