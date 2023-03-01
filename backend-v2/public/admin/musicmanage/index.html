@@ -6,13 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../admin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="adminPage">
-      <input />
-      <input />
-      <input />
-      <input />
+      <h1>normal music 입력</h1>
+      <form style="display: flex; flex-direction: column" method="post">
+        <label for="mp3_file"
+          >음악파일 <input type="file" placeholder="파일" id="mp3_file" /><br />
+        </label>
+        <label for="cover_image"
+          >이미지파일
+          <input type="file" placeholder="파일" id="cover_image" /><br />
+        </label>
+        <label for="music_name"
+          >노래제목
+          <input type="text" placeholder="제목입력" id="music_name" /><br />
+        </label>
+        <label for="singer"
+          >가수명 <input type="text" placeholder="가수명" id="singer" /><br />
+        </label>
+        <label for="music_lyrics"
+          >가사
+          <input type="text" placeholder="가사 입력" id="music_lyrics" /><br />
+        </label>
+        <label for="lyrics_maker"
+          >작사가
+          <input type="text" placeholder="작사가명" id="lyrics_maker" /><br />
+        </label>
+        <label for="music_maker"
+          >작곡가
+          <input type="text" placeholder="작곡가명" id="music_maker" /><br />
+        </label>
+        <label>장르 </label>
+        <label for="gayo"
+          >가요
+          <input type="radio" id="gayo" name="genre" value="가요" />
+        </label>
+        <label for="pop"
+          >팝
+          <input type="radio" id="pop" name="genre" value="팝" />
+        </label>
+        <label for="trot"
+          >트로트
+          <input type="radio" id="trot" name="genre" value="트로트" />
+        </label>
+        <label for="classic"
+          >클래식
+          <input type="radio" id="classic" name="genre" value="클래식" /><br />
+        </label>
+        <label for="album_name"
+          >앨범명
+          <input type="text" placeholder="음악파일" id="album_name" /><br />
+        </label>
+        <label for="title"
+          >타이틀 <input type="text" placeholder="음악파일" id="title" /><br />
+        </label>
+        <input type="submit" value="등록" />
+      </form>
     </div>
   </body>
+  <script>
+    const form = document.querySelector('form');
+    const data = new FormData();
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      data.append('mp3_file', document.querySelector('#mp3_file').value);
+      data.append('cover_image', document.querySelector('#cover_image').value);
+      data.append('music_name', document.querySelector('#music_name').value);
+      data.append('singer', document.querySelector('#singer').value);
+      data.append(
+        'music_lyrics',
+        document.querySelector('#music_lyrics').value,
+      );
+      data.append(
+        'lyrics_maker',
+        document.querySelector('#lyrics_maker').value,
+      );
+      data.append('music_maker', document.querySelector('#music_maker').value);
+      data.append('music_genre', document.getElementsByName('genre').value);
+      data.append('album_name', document.querySelector('#album_name').value);
+
+      await axios
+        .post('https://www.poopoobin.com/regist-normal-music/oh', data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(data);
+          console.log(err);
+        });
+    });
+  </script>
 </html>

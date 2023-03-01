@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import PageNationFrame from "../../components/PageNationFrame";
+import PageNationFrame from "../PageNationFrame";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMyNftList } from "@/middleware/fetchMyPage";
 

@@ -21,7 +21,6 @@ const svgVariants = {
 const SubscriptionContainer = () => {
   const { web3, NEWSIC_FUND } = useWeb3();
   const user = useSelector((state) => state.userInfo);
-  const [ticket, setTicket] = useState({});
   const dispatch = useDispatch();
 
   // 티켓구매 컨트랙트로
@@ -29,16 +28,21 @@ const SubscriptionContainer = () => {
     // 가격 설정
     const _price = await web3.utils.toWei("0.005", "ether");
     // 티켓구매
-    const _buy_ticket = await NEWSIC_FUND.methods.subscriptionPay().send({ from: user.address, value: _price });
-    setTicket(_buy_ticket);
-    return _buy_ticket;
+
+    try {
+      const _buy_ticket = await NEWSIC_FUND.methods.subscriptionPay().send({ from: user.address, value: _price });
+      const status = await _buy_ticket.events.subscriber.returnValues._status;
+      if (status) {
+        dispatch(fetchBuyTicket({ user_wallet_address: user.address }));
+      }
+      alert("구독권 구매 성공하였습니다.")
+    } catch (error) {
+      
+    }
   };
 
   // 구독권 구매
   const buyTicket = async () => {
-    const _date = new Date();
-    const set_date = 30;
-    _date.setDate(_date.getDate() + set_date);
     if (NEWSIC_FUND) {
       // backend 저장
       tempFunc()
@@ -91,7 +95,7 @@ const SubscriptionContainer = () => {
               className="optionBuyButton"
               whileTap={{ scale: 0.8 }}
               onClick={() => {
-                buyTicket();
+                tempFunc();
               }}
             >
               Subscribe

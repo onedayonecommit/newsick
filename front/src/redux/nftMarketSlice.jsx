@@ -1,5 +1,5 @@
 // 컨트랙트에서 데이터 가져오기
-import { marketDetail, marketDetailInfo, marketNftList } from "@/middleware/fetchNFT";
+import { marketDetail, marketDetailInfo, marketNftList } from "@/middleware/fetchNft";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -28,8 +28,28 @@ const marketSlice = createSlice({
       .addCase(marketDetail.fulfilled, (state, action) => {
         if (action.payload) {
           console.log(action.payload, "엔엪티");
-          state.detail_offer_info = action.payload[0];
-          state.detail_sell_info = action.payload[1];
+          // const buyOffer = [];
+          // const sellOffer = [];
+          // for (let i = 0; i < action.payload[0].length; i++){
+          //   if (i = 0) { buyOffer.push(action.payload[0][0]) }
+          //   else {
+          //     buyOffer.map((e, i) => {
+          //     if (e[3] == action.payload[0][i][3]) buyOffer[i][3] += action.payload[0][i][3];
+          //     else buyOffer.push(action.payload[0][i][3]);
+          //     })
+          //   }
+          // }
+          // for (let i = 0; i < action.payload[1].length; i++){
+          //   if (i = 0) { sellOffer.push(action.payload[0][0]) }
+          //   else {
+          //     sellOffer.map((e, i) => {
+          //     if (e[3] == action.payload[1][i][3]) sellOffer[i][3] += action.payload[1][i][3];
+          //     else sellOffer.push(action.payload[1][i][3]);
+          //     })
+          //   }
+          // }
+          state.detail_offer_info = action.payload[0]; // 2중배열
+          state.detail_sell_info = action.payload[1]; // 2중배열
         }
       })
       .addCase(marketDetailInfo.pending, () => {})

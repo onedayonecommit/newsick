@@ -1,9 +1,11 @@
+// 음원 플레이 버튼 있는 곳
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight, faList, faPause, faRepeat, faShuffle, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
 import VolumeBox from "../VolumeBox";
 import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const playBarState = {
@@ -43,7 +45,23 @@ const volumBarVariant = {
     },
   },
 };
+
+const handleClickNext = () => {
+  setTrackIndex((currentTrack) => (currentTrack < musics.length - 1 ? currentTrack + 1 : 0));
+};
+const handleClickPrev = () => {
+  setTrackIndex((currentTrack) => (currentTrack == 0 ? musics.length - 1 : currentTrack - 1));
+};
+
 const MusicPlayerPlayBar = ({ FilippedChoice }) => {
+  const [currentTrack, setCurrentTrack] = useState(0);
+  const [trackIndex, setTrackIndex] = useState(0);
+  const handleClickNext = () => {
+    setTrackIndex((currentTrack) => (currentTrack < musics.length - 1 ? currentTrack + 1 : 0));
+  };
+  const handleClickPrev = () => {
+    setTrackIndex((currentTrack) => (currentTrack == 0 ? musics.length - 1 : currentTrack - 1));
+  };
   const [isPlay, setIsPlay] = useState();
   const [clickVolum, setClickVolume] = useState();
   const myPlayList = useSelector((state) => state.musicInfo.playList);

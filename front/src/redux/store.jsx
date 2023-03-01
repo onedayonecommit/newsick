@@ -10,6 +10,8 @@ import userSlice from "./userSlice";
 import fundListSlice from "./nftFundFindSlice";
 import marketSlice from "./nftMarketSlice";
 import eventSlice from "./eventSlice";
+import searchSlice from "./searchSlice";
+import nmDetailSlice from "./normalMusicSlice";
 
 // redux-persist 사용
 const persistConfig = {
@@ -26,6 +28,8 @@ const rootReducer = combineReducers({
   fundList: fundListSlice.reducer,
   marketInfo: marketSlice.reducer,
   eventView: eventSlice.reducer,
+  searchInfo: searchSlice.reducer,
+  detailInfo: nmDetailSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

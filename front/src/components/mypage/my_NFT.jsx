@@ -34,7 +34,7 @@ const My_NFT = () => {
                   className="sellButton"
                   data-atropos-offset="10"
                   onClick={() => {
-                    router.push("");
+                    router.push(`/NFTmarket/detail/${item.tokenId}`);
                   }}
                 >
                   판 매 하 기

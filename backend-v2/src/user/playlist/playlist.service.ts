@@ -52,4 +52,39 @@ export class PlaylistService {
       }
     }
   }
+
+  async myPlayList(user_wallet_address: string) {
+    const result = await this.db.playlist.findMany({
+      where: { user_id: user_wallet_address },
+    });
+    const returnDto = [];
+    result.map(async (e) => {
+      if (e.funding_music_id == null && e.normal_music_id != null) {
+        const result2 = await this.db.normal_music.findUnique({
+          where: { id: e.normal_music_id },
+          select: {
+            music_cover_image: true,
+            id: true,
+            title: true,
+            music_lyrics: true,
+            singer: true,
+          },
+        });
+        returnDto.push(result2);
+      } else if (e.funding_music_id != null && e.normal_music_id == null) {
+        const result2 = await this.db.funding_music.findUnique({
+          where: { funding_id: e.funding_music_id },
+          select: {
+            music_cover_image: true,
+            funding_id: true,
+            title: true,
+            music_lyrics: true,
+            singer: true,
+          },
+        });
+        returnDto.push(result2);
+      }
+    });
+    return returnDto;
+  }
 }

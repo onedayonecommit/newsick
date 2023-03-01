@@ -10,8 +10,9 @@ import ParkImage from "../../../public/image/park.jpg";
 import YounImage from "../../../public/image/YOUNHA.jpg";
 import ChangImage from "../../../public/image/chang.jpg";
 import { MusicSlideForm, MusicPlayerPlayBar, MusicPlayerListBar } from "@/components";
-
 import Image from "next/image";
+import { fetchPlayList } from "@/middleware/fetchMusic";
+
 const slides = [
   {
     id: 0,
@@ -119,10 +120,22 @@ const listHoverVariant = {
   },
 };
 const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
+  const dispatch = useDispatch();
+  const myPlayList = useSelector((state) => state.musicInfo.playList);
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
+  console.log("현재 내 재생 목록", myPlayList);
+  console.log("현재 내 재생 목록 불러오기 계정", user_wallet_address);
   const [isFlipped, setIsFlipped] = useState(false);
   const [listCount, setListCount] = useState(0);
   const [listItem, setListItem] = useState(slides);
   const [hoverList, setHoverList] = useState(false);
+  const [selectPlayList, setSelectPlayList] = useState(true);
+
+  useEffect(() => {
+    dispatch(fetchPlayList({ user_wallet_address }));
+    // dispatch(fetchLikeMusicList({ user_wallet_address }));
+  }, []);
+
   const HoverList = () => {
     setHoverList(true);
   };
@@ -142,22 +155,23 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
   };
   const slidesReducer = (state, event) => {
     if (event.type === "NEXT") {
+      const nextIndex = state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1;
       return {
         ...state,
-        slideIndex: (state.slideIndex - 1) % slides.length,
+        slideIndex: nextIndex,
       };
     }
     if (event.type === "PREV") {
       return {
         ...state,
-        slideIndex: state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
+        slideIndex: state.slideIndex === slides.length - 1 ? 0 : state.slideIndex + 1,
       };
     }
   };
   const initialState = {
     slideIndex: 0,
   };
-  const [state, dispatch] = useReducer(slidesReducer, initialState);
+  const [state, dispat] = useReducer(slidesReducer, initialState);
   return (
     <motion.div
       className="MusicPlayFrame"
@@ -200,9 +214,15 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
                     }}
                     className="itemBox"
                   >
-                    <DropdownMenu.Item className="dropItem">Play List</DropdownMenu.Item>
-                    <DropdownMenu.Item className="dropItem">Play List</DropdownMenu.Item>
-                    <DropdownMenu.Item className="dropItem">Play List</DropdownMenu.Item>
+                    {selectPlayList ? (
+                      <DropdownMenu.Item className="dropItem" onClick={() => setSelectPlayList(false)}>
+                        좋아요 누른 곡
+                      </DropdownMenu.Item>
+                    ) : (
+                      <DropdownMenu.Item className="dropItem" onClick={() => setSelectPlayList(true)}>
+                        현재 내 재생목록
+                      </DropdownMenu.Item>
+                    )}
                   </motion.div>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
@@ -211,7 +231,7 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
           </div>
           <Reorder.Group className="listFrame" axis="y" values={listItem} onReorder={setListItem}>
             <AnimatePresence>
-              {slides.map((list, index) => (
+              {myPlayList?.map((list, index) => (
                 <Reorder.Item className="listSongItem" key={list.id} value={list} variants={itemVariants} initial="hidden" animate="visible" exit="hidden" layoutId={list.id} custom={(index + 1) * 0.2} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1.1 }}>
                   <motion.div className="listLeft">
                     <motion.span whileHover={{ scale: 1.1 }} onClick={() => toggleLike(list.id)}>
@@ -224,10 +244,10 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
                       />
                     </motion.span>
                     <motion.div className="songInfo">
-                      <Image src={list.image} alt="youn" className="songImg" />
+                      <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${list.music_cover_image}`} alt="youn" className="songImg" width={55} height={57} />
                       <motion.div className="infoFrame">
-                        <motion.div>{list.songName}</motion.div>
-                        <motion.div>{list.singerName}</motion.div>
+                        <motion.div>{list.title}</motion.div>
+                        <motion.div>{list.singer}</motion.div>
                       </motion.div>
                     </motion.div>
                   </motion.div>
@@ -250,19 +270,21 @@ const MusicPlayer = ({ layOutRef, isPlayerClick, playerClick }) => {
             <div className="slides">
               <button
                 onClick={() => {
-                  dispatch({ type: "PREV" });
+                  dispat({ type: "NEXT" });
                   setListCount(listCount === slides.length - 1 ? 0 : listCount + 1);
                 }}
               >
                 ‹
               </button>
-              {[...slides, ...slides, ...slides].map((slide, i) => {
-                let offset = slides.length + (state.slideIndex - i);
-                return <MusicSlideForm slide={slide} offset={offset} key={i} image={slide.image} />;
+              {myPlayList.map((slide, i) => {
+                let offset = myPlayList.length + (state.slideIndex - i);
+                console.log("슬라이드에 뭐들엇냐..", slide);
+                console.log("슬라이드에 뭐들엇냐..", slide.music_cover_image);
+                return <MusicSlideForm slide={slide} offset={offset} key={i} image={slide.music_cover_image} />;
               })}
               <button
                 onClick={() => {
-                  dispatch({ type: "NEXT" });
+                  dispat({ type: "PREV" });
                   setListCount(listCount === 0 ? slides.length - 1 : listCount - 1);
                 }}
               >

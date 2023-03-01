@@ -5,7 +5,8 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { MypageBackDrop } from "@/components";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUserImage } from "@/middleware/fetchUser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const dropIn = {
   hidden: {
@@ -39,10 +40,16 @@ const dropIn = {
 
 const ChangeMember = ({ handleClose, text }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const userAddress = useSelector((state) => state.userInfo.address);
   const userImg = useSelector((state) => state.userInfo.userImage);
+  // console.log("유저의 이미지이이이이ㅣㅇ이", userImg);
+  const nickname = useSelector((state) => state.userInfo.userName);
   const [userImage, setUserImage] = useState();
+  const [previewImage, setpreviewImage] = useState();
+  const [changeImg, setChangeImg] = useState(false);
 
+  /**완료 버튼 눌렀을 때 */
   const changeProfile = () => {
     const formData = new FormData();
     formData.append("image", userImage);
@@ -52,15 +59,25 @@ const ChangeMember = ({ handleClose, text }) => {
     setUserImage(userImg);
   };
 
+  /**프로필 이미지 미리보기 */
   const profileImageHandler = async (e) => {
-    console.log("클릭이벤트", e);
+    const reader = new FileReader();
+    // console.log("클릭이벤트", e);
     e.preventDefault();
 
     if (e.target.files) {
       const imgData = e.target.files[0];
-      console.log(imgData);
+      // console.log(imgData);
       setUserImage(imgData);
+      reader.readAsDataURL(imgData);
+      setChangeImg(true);
     }
+    reader.onload = () => {
+      const previewImg = reader.result;
+      if (previewImg) {
+        setpreviewImage(previewImg);
+      }
+    };
   };
 
   return (
@@ -84,7 +101,8 @@ const ChangeMember = ({ handleClose, text }) => {
             <FontAwesomeIcon icon={faCamera} className="faCamera" />
             <input type="file" name="file" accept="image/*" className="imgChange" id="imgChange" onChange={profileImageHandler} style={{ display: "none" }} />
           </label>
-          <Image className="userImg" src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImage}`} alt="userImg" width={300} height={300} />
+          {changeImg ? <Image className="userImg" src={previewImage} alt="userImg" width={300} height={300} /> : <Image className="userImg" src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${userImg}`} alt="userImg" width={300} height={300} />}
+
           <motion.span
             whileHover={{
               scale: 1.1,
@@ -93,7 +111,7 @@ const ChangeMember = ({ handleClose, text }) => {
               duration: 0.3,
             }}
           >
-            <input className="userNickName" placeholder="현재 닉네임" />
+            <input type="text" className="userNickName" placeholder={nickname} />
           </motion.span>
         </div>
       </motion.div>

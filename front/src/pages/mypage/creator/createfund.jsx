@@ -2,12 +2,12 @@ import { fetchMakeIPFS, fetchCreateFund } from "@/middleware/fetchFund";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useWeb3 from "@/hooks/useWeb3";
 import { useRouter } from "next/router";
-import { nftFundAction } from "@/redux/nftFundSlice";
 import { persistor } from "@/redux/store";
+import { eventAction } from "@/redux/eventSlice";
 
 const FundingCreate = () => {
   const createStatus = useSelector((state) => state.fundInfo.createStatus);
@@ -80,7 +80,9 @@ const FundingCreate = () => {
     _formData.append("producer", userInfo.address);
     _formData.append("description", data.nftDescription);
     try {
+      dispatch(eventAction.excuteStatus(true));
       dispatch(fetchMakeIPFS(_formData));
+      dispatch(eventAction.excuteStatus(false));
     } catch (error) {
       console.error(error);
     }
@@ -108,55 +110,63 @@ const FundingCreate = () => {
       Math.floor(new Date(data.funding_finish_date).getTime() / 1000), // 종료일
       Math.floor(new Date(data.funding_production_date).getTime() / 1000), // 음원제작 기간
       0, // 개당 가격
-      data.funding_min, // 최대
+      data.funding_hard_cap, // 최대
       data.funding_holdershare, // 음원수익(홀더)
     ];
     console.log(_fundingStruct, "스트럭트");
-    const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(String(data.funding_price), "ether")).send({ from: userInfo.address });
+    dispatch(eventAction.excuteStatus(true));
 
-    console.log("펀딩생성 후 이벤트", _sendData_toContract.events.createFund.returnValues);
-    setData({
-      ...data,
-      id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
-    });
-    console.log("서버 통신 시작");
-    const _sendData_toBack = {
-      fund: {
+    try {
+      const _sendData_toContract = await NEWSIC_FUND.methods._setUri(_fundingStruct, await web3.utils.toWei(String(data.funding_price), "ether")).send({ from: userInfo.address });
+      dispatch(eventAction.excuteStatus(false));
+
+      console.log("펀딩생성 후 이벤트", _sendData_toContract.events.createFund.returnValues);
+      setData({
+        ...data,
         id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
-        creator_id: data.creator_id,
-        category: data.category,
-        funding_info: data.nftDescription,
-        funding_start_date: convertToISO8601(data.funding_start_date),
-        funding_finish_date: convertToISO8601(data.funding_finish_date),
-        funding_production_date: convertToISO8601(data.funding_production_date),
-        funding_nft_image: fundInfo.funding_nft_image,
-        funding_metadata: fundInfo.funding_metadata,
-        discord_address: data.discord_address,
-        funding_title: data.funding_title,
-        nft_name: data.nftName,
-        funding_hard_cap: data.funding_hard_cap,
-        funding_price: data.funding_price,
-        holder_share: data.funding_holdershare,
-      },
-      lyrics_maker: {
-        lyrics_name: data.lyrics_maker.lyrics_name,
-        lyrics_sns_address: data.lyrics_maker.lyrics_sns_address,
-        lyrics_info: data.lyrics_maker.lyrics_info,
-      },
-      music_maker: {
-        music_name: data.music_maker.music_name,
-        music_sns_address: data.music_maker.music_sns_address,
-        music_info: data.music_maker.music_info,
-      },
-      singer: {
-        singer_name: data.singer.singer_name,
-        singer_sns_address: data.singer.singer_sns_address,
-        singer_info: data.singer.singer_info,
-      },
-    };
-    console.log(_sendData_toBack);
-    console.log("서버 통신 시작2");
-    dispatch(fetchCreateFund(_sendData_toBack));
+      });
+      console.log("서버 통신 시작");
+      const _sendData_toBack = {
+        fund: {
+          id: Number(_sendData_toContract.events.createFund.returnValues.tokenId),
+          creator_id: data.creator_id,
+          category: data.category,
+          funding_info: data.nftDescription,
+          funding_start_date: convertToISO8601(data.funding_start_date),
+          funding_finish_date: convertToISO8601(data.funding_finish_date),
+          funding_production_date: convertToISO8601(data.funding_production_date),
+          funding_nft_image: fundInfo.funding_nft_image,
+          funding_metadata: fundInfo.funding_metadata,
+          discord_address: data.discord_address,
+          funding_title: data.funding_title,
+          nft_name: data.nftName,
+          funding_hard_cap: data.funding_hard_cap,
+          funding_price: data.funding_price,
+          holder_share: data.funding_holdershare,
+        },
+        lyrics_maker: {
+          lyrics_name: data.lyrics_maker.lyrics_name,
+          lyrics_sns_address: data.lyrics_maker.lyrics_sns_address,
+          lyrics_info: data.lyrics_maker.lyrics_info,
+        },
+        music_maker: {
+          music_name: data.music_maker.music_name,
+          music_sns_address: data.music_maker.music_sns_address,
+          music_info: data.music_maker.music_info,
+        },
+        singer: {
+          singer_name: data.singer.singer_name,
+          singer_sns_address: data.singer.singer_sns_address,
+          singer_info: data.singer.singer_info,
+        },
+      };
+      console.log(_sendData_toBack);
+      console.log("서버 통신 시작2");
+      dispatch(fetchCreateFund(_sendData_toBack));
+    } catch (error) {
+      dispatch(eventAction.excuteStatus(false));
+      alert("펀딩 생성을 취소 하셨습니다.");
+    }
   };
 
   return (

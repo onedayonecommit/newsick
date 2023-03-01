@@ -12,7 +12,6 @@ const Custom404 = () => {
           <Link href={"/"}>
             <div className="homeButton">Home</div>
           </Link>
-
           {/* <div className="backButton">Back</div> */}
         </div>
       </div>

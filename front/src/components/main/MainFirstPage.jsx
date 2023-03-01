@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 const itemData = [
   {
     id: 1,
@@ -80,10 +82,10 @@ const MainFirstPage = () => {
               <motion.div className="rankingInfoSection">
                 <div className="infoFrame">
                   <div className="titleSection">
-                    <div className="title">{item.title}</div>
-                    <div className="subTitle">{item.subTitle}</div>
+                    <div className="title">{`힙합은 안멋져`}</div>
+                    <div className="subTitle">{`hip hop is not cool`}</div>
                   </div>
-                  <div className="textSection">{item.text}</div>
+                  <div className="textSection">{`Hip-hop right now isn't too cool. However, with this funding, let's make cool hip-hop.`}</div>
                 </div>
               </motion.div>
               <motion.div
@@ -113,7 +115,9 @@ const MainFirstPage = () => {
                   //     return;
                   //   }
                 }}
-              ></motion.div>
+              >
+                <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/hiphop.png`} width={420} height={550} alt={`ranking` } />
+              </motion.div>
             </>
           );
         }

@@ -207,6 +207,11 @@ const NEWSIC_FUND_ABI = [
             name: "max",
             type: "uint256",
           },
+          {
+            internalType: "uint256",
+            name: "holdershare",
+            type: "uint256",
+          },
         ],
         indexed: false,
         internalType: "struct NewSickFund.fundingStruct",
@@ -235,33 +240,6 @@ const NEWSIC_FUND_ABI = [
     ],
     name: "creatorApplicant",
     type: "event",
-  },
-  {
-    inputs: [],
-    name: "creatorDelete",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "creatorJoinPay",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256[]",
-        name: "_amount",
-        type: "uint256[]",
-      },
-    ],
-    name: "doAirDrop",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
   },
   {
     anonymous: false,
@@ -568,25 +546,6 @@ const NEWSIC_FUND_ABI = [
         internalType: "uint256",
         name: "",
         type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "getUri",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
       },
     ],
     stateMutability: "view",
@@ -921,6 +880,11 @@ const NEWSIC_FUND_ABI = [
         name: "max",
         type: "uint256",
       },
+      {
+        internalType: "uint256",
+        name: "holdershare",
+        type: "uint256",
+      },
     ],
     stateMutability: "view",
     type: "function",
@@ -1005,7 +969,7 @@ const NEWSIC_FUND_ABI = [
         ],
         internalType: "struct NewSickFund.totalUris[]",
         name: "",
-        type: "string[]",
+        type: "tuple[]",
       },
     ],
     stateMutability: "view",
@@ -1028,7 +992,7 @@ const NEWSIC_FUND_ABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "_id",
         type: "uint256",
       },
     ],
@@ -1058,603 +1022,677 @@ const NEWSIC_FUND_ABI = [
   },
 ];
 
-const NEWSIC_MARKET_CA = "0x3AE79403038F32C2c3F11702F3BCf97e6e65BA89";
+const NEWSIC_MARKET_CA = "0xA895B7E4D36234c1C8C355A56F58B2C00193Aebb";
 const NEWSIC_MARKET_ABI = [
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: "address",
-        name: "_tokenAddress",
-        type: "address",
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
       {
-        internalType: "address",
-        name: "_admin",
-        type: "address",
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
       },
+      {
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    stateMutability: "nonpayable",
-    type: "constructor",
+    "name": "_createBuyList",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
   },
   {
-    anonymous: false,
-    inputs: [
+    "inputs": [
       {
-        indexed: true,
-        internalType: "address",
-        name: "_buyer",
-        type: "address",
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    name: "BuyEvent",
-    type: "event",
+    "name": "_createSellList",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    anonymous: false,
-    inputs: [
+    "inputs": [
       {
-        indexed: true,
-        internalType: "address",
-        name: "_buyer",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "_fee",
+        "type": "uint256"
+      }
     ],
-    name: "BuyRegistEvent",
-    type: "event",
+    "name": "_patchMarketFee",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    anonymous: false,
-    inputs: [
+    "inputs": [
       {
-        indexed: true,
-        internalType: "address",
-        name: "_seller",
-        type: "address",
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    name: "CanceledBuy",
-    type: "event",
+    "name": "cancelBuyOrder",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    anonymous: false,
-    inputs: [
+    "inputs": [
       {
-        indexed: true,
-        internalType: "address",
-        name: "_seller",
-        type: "address",
+        "internalType": "address",
+        "name": "_tokenAddress",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
+        "internalType": "address",
+        "name": "_admin",
+        "type": "address"
+      }
     ],
-    name: "CanceledSell",
-    type: "event",
+    "stateMutability": "nonpayable",
+    "type": "constructor"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: "address",
-        name: "_seller",
-        type: "address",
+        "indexed": true,
+        "internalType": "address",
+        "name": "_buyer",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    name: "SellEvent",
-    type: "event",
+    "name": "BuyEvent",
+    "type": "event"
   },
   {
-    anonymous: false,
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        indexed: true,
-        internalType: "address",
-        name: "_seller",
-        type: "address",
+        "indexed": true,
+        "internalType": "address",
+        "name": "_buyer",
+        "type": "address"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
       },
       {
-        indexed: false,
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
-      },
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
+      }
     ],
-    name: "SellRegistEvent",
-    type: "event",
+    "name": "BuyRegistEvent",
+    "type": "event"
   },
   {
-    inputs: [],
-    name: "Token",
-    outputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        internalType: "contract NewSickFund",
-        name: "",
-        type: "address",
+        "indexed": true,
+        "internalType": "address",
+        "name": "_seller",
+        "type": "address"
       },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    stateMutability: "view",
-    type: "function",
+    "name": "CanceledBuy",
+    "type": "event"
   },
   {
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
+        "indexed": true,
+        "internalType": "address",
+        "name": "_seller",
+        "type": "address"
       },
       {
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
       {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
       },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    name: "_createBuyList",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "payable",
-    type: "function",
+    "name": "CanceledSell",
+    "type": "event"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
       {
-        internalType: "uint256",
-        name: "_amountOfToken",
-        type: "uint256",
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
       },
       {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    name: "_createSellList",
-    outputs: [
+    "name": "cancelSellOrder",
+    "outputs": [
       {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
     ],
-    stateMutability: "nonpayable",
-    type: "function",
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [
+    "anonymous": false,
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
+        "indexed": true,
+        "internalType": "address",
+        "name": "_seller",
+        "type": "address"
       },
-    ],
-    name: "_offers",
-    outputs: [
       {
-        components: [
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
+    ],
+    "name": "SellEvent",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_amountOfToken",
+        "type": "uint256"
+      }
+    ],
+    "name": "SellRegistEvent",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "_offers",
+    "outputs": [
+      {
+        "components": [
           {
-            internalType: "address",
-            name: "offer",
-            type: "address",
+            "internalType": "address",
+            "name": "offer",
+            "type": "address"
           },
           {
-            internalType: "uint256",
-            name: "tokenId",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "amountOfToken",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "amountOfToken",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "price",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
           },
           {
-            internalType: "bool",
-            name: "isSold",
-            type: "bool",
-          },
+            "internalType": "bool",
+            "name": "isSold",
+            "type": "bool"
+          }
         ],
-        internalType: "struct Market.OfferList[]",
-        name: "",
-        type: "tuple[]",
+        "internalType": "struct Market.OfferList[]",
+        "name": "",
+        "type": "tuple[]"
       },
       {
-        components: [
+        "components": [
           {
-            internalType: "address",
-            name: "seller",
-            type: "address",
+            "internalType": "address",
+            "name": "seller",
+            "type": "address"
           },
           {
-            internalType: "uint256",
-            name: "tokenId",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "amountOfToken",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "amountOfToken",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "price",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
           },
           {
-            internalType: "bool",
-            name: "isSold",
-            type: "bool",
-          },
+            "internalType": "bool",
+            "name": "isSold",
+            "type": "bool"
+          }
         ],
-        internalType: "struct Market.SellList[]",
-        name: "",
-        type: "tuple[]",
-      },
+        "internalType": "struct Market.SellList[]",
+        "name": "",
+        "type": "tuple[]"
+      }
     ],
-    stateMutability: "view",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [],
+    "name": "_ofLength",
+    "outputs": [
       {
-        internalType: "uint256",
-        name: "_fee",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    name: "_patchMarketFee",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [],
+    "name": "_soLength",
+    "outputs": [
       {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    name: "cancelBuyOrder",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    name: "cancelSellOrder",
-    outputs: [
+    "name": "fee",
+    "outputs": [
       {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    stateMutability: "nonpayable",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       },
-    ],
-    name: "fee",
-    outputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    stateMutability: "view",
-    type: "function",
+    "name": "howmuch",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [],
+    "name": "marketplaceFee",
+    "outputs": [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
     ],
-    name: "howmuch",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: "marketplaceFee",
-    outputs: [
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
+      }
     ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
+    "name": "myorder",
+    "outputs": [
       {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "myorder",
-    outputs: [
-      {
-        components: [
+        "components": [
           {
-            internalType: "address",
-            name: "offer",
-            type: "address",
+            "internalType": "address",
+            "name": "offer",
+            "type": "address"
           },
           {
-            internalType: "uint256",
-            name: "tokenId",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "amountOfToken",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "amountOfToken",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "price",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
           },
           {
-            internalType: "bool",
-            name: "isSold",
-            type: "bool",
-          },
+            "internalType": "bool",
+            "name": "isSold",
+            "type": "bool"
+          }
         ],
-        internalType: "struct Market.OfferList[]",
-        name: "",
-        type: "tuple[]",
+        "internalType": "struct Market.OfferList[]",
+        "name": "",
+        "type": "tuple[]"
       },
       {
-        components: [
+        "components": [
           {
-            internalType: "address",
-            name: "seller",
-            type: "address",
+            "internalType": "address",
+            "name": "seller",
+            "type": "address"
           },
           {
-            internalType: "uint256",
-            name: "tokenId",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "amountOfToken",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "amountOfToken",
+            "type": "uint256"
           },
           {
-            internalType: "uint256",
-            name: "price",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
           },
           {
-            internalType: "bool",
-            name: "isSold",
-            type: "bool",
-          },
+            "internalType": "bool",
+            "name": "isSold",
+            "type": "bool"
+          }
         ],
-        internalType: "struct Market.SellList[]",
-        name: "",
-        type: "tuple[]",
-      },
+        "internalType": "struct Market.SellList[]",
+        "name": "",
+        "type": "tuple[]"
+      }
     ],
-    stateMutability: "view",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
+        "internalType": "uint256",
+        "name": "_tokenId",
+        "type": "uint256"
       },
+      {
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      }
     ],
-    name: "sales",
-    outputs: [
+    "name": "offertest",
+    "outputs": [
       {
-        internalType: "address",
-        name: "seller",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "amountOfToken",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "price",
-        type: "uint256",
-      },
-      {
-        internalType: "bool",
-        name: "isSold",
-        type: "bool",
-      },
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
     ],
-    stateMutability: "view",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
-];
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "sales",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "seller",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountOfToken",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isSold",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "Token",
+    "outputs": [
+      {
+        "internalType": "contract NewSickFund",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "a",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "b",
+        "type": "bool"
+      }
+    ],
+    "name": "truetest",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]
 
 export { NEWSIC_FUND_CA, NEWSIC_FUND_ABI, NEWSIC_MARKET_CA, NEWSIC_MARKET_ABI };

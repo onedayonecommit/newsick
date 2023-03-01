@@ -8,16 +8,10 @@ import ChangeMember from "./ChangeMember";
 import ConnectWallet from "./ConnectWallet";
 
 // reward
-import board from "./reward/board";
-import commingsoon from "./reward/commingsoon";
-import end from "./reward/end";
-import In_production from "./reward/In_production";
-import ongoing from "./reward/ongoing";
-
+import FundingDetailModal from "./reward/FundingDetailModal";
 // mypage
 import RegisterNftSong from "./mypage/RegisterNftSong";
 import MyPageCreator from "./mypage/MyPageCreator";
-import ApplyFundMusic from "./mypage/RegisterNftSong";
 import Graph from "./mypage/Graph";
 import Favorite from "./mypage/Favorite";
 import My_NFT from "./mypage/My_NFT";
@@ -60,14 +54,8 @@ export {
   PageNationFrame,
   PlayBar,
   VolumeBox,
-  board,
-  commingsoon,
-  end,
-  In_production,
-  ongoing,
   RegisterNftSong,
   MyPageCreator,
-  ApplyFundMusic,
   Graph,
   ApplyCreator,
   Favorite,
@@ -94,4 +82,5 @@ export {
   Pop100,
   Trot100,
   Classic100,
+  FundingDetailModal,
 };

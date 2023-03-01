@@ -3,6 +3,7 @@ import Image from "next/image";
 import ironImg from "../../../public/image/IRON.jpg";
 import { faHeart, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const topChartItem = [
   {
@@ -62,6 +63,7 @@ const topChartItem = [
 ];
 
 const Trot100 = ({ isOpen, setIsOpen }) => {
+  const song100Arr = useSelector((state) => state.musicInfo.musicGenreList);
   return (
     <div className="trotBackImg">
       <div className="rankBackDrop" />
@@ -76,14 +78,14 @@ const Trot100 = ({ isOpen, setIsOpen }) => {
           <div className="lastLine" />
         </div>
         <div className="bottomRankList">
-          {topChartItem.map((rank) => (
+          {song100Arr.map((rank, i) => (
             <div className="rankItemBox">
               <div className="leftSide">
-                <Image src={rank.img} alt="iron" className="rankItemImg" />
-                <div className="rankNum">{rank.rank}</div>
+                <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${rank.music_cover_image}`} alt="iron" className="rankItemImg" />
+                <div className="rankNum">{i + 1}</div>
                 <div className="rankInfoFrame">
-                  <div className="musicName">{rank.musicName}</div>
-                  <div className="singerName">{rank.singerName}</div>
+                  <div className="musicName">{rank.music_name}</div>
+                  <div className="singerName">{rank.singer_name}</div>
                 </div>
               </div>
               <div className="rightSide">

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ApplyCreator, Favorite, MyPageSecondContainer, MyPageThirdContainer, My_NFT } from "@/components";
+import { ApplyCreator, Favorite, My_NFT } from "@/components";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMyNftList, fetchMyPage, getNotice, myNftList, myRunningFundList } from "@/middleware/fetchMypage";
+import { fetchMyNftList, fetchMyPage, getNotice, myNftList, myRunningFundList } from "@/middleware/fetchMyPage";
 const MyPage = () => {
   const [selectedOption, setSelectedOption] = useState(0);
   const dispatch = useDispatch();

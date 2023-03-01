@@ -4,64 +4,6 @@ import { RegisterNftSong } from "@/components";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 
-const FunddingDateItem = [
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-  {
-    funddingTitle: "Fundding Title",
-    funddingDate: "펀딩기간 ~ 펀딩기간",
-    unitPrice: "개당 단가",
-    leftDay: "남은 기간(일)",
-    quantity: "수량 완료 분수 ( 5/10 )",
-  },
-];
 const MyPageCreator = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [totalEth, setTotalEth] = useState(0);
@@ -81,7 +23,7 @@ const MyPageCreator = () => {
 
   return (
     <div className="MyPageCreatorFrame">
-      <AnimatePresence>{modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
+      <AnimatePresence>{modalOpen && <RegisterNftSong modalOpen={modalOpen} handleClose={close} />}</AnimatePresence>
       <div className="topSection">
         <div className="totalMoneySection">
           <div className="infoText">
@@ -129,19 +71,20 @@ const MyPageCreator = () => {
                     {new Date(item.funding_start_date).toISOString().split("T")[0].substring(2)}~{new Date(item.funding_finish_date).toISOString().split("T")[0].substring(2)}
                   </div>
                   <div className="unitPrice">{item.funding_price} ETH</div>
-                  <div className="leftDay">종료까지 {Math.floor((Math.floor(new Date(item.funding_finish_date).getTime() / 1000) - Math.floor(new Date().getTime() / 1000)) / 3600)} 시간</div>
+                  <div className="leftDay">{Math.floor((Math.floor(new Date(item.funding_finish_date).getTime() / 1000) - Math.floor(new Date().getTime() / 1000)) / 3600) > 0 ? `종료까지 : ${Math.floor((Math.floor(new Date(item.funding_finish_date).getTime() / 1000) - Math.floor(new Date().getTime() / 1000)) / 3600)}  시간` : `종료 되었습니다.`} </div>
                   <div className="quantityPercentage">누적 판매 수량 : {item.funding_sales}</div>
                 </div>
                 <div className="musicInputButton">
-                  {item.funding_music_regist ? (
-                    <motion.div className="buttonLine" onClick={() => (modalOpen ? close() : open())} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                      음원등록
-                    </motion.div>
-                  ) : (
-                    <motion.div className="buttonLine" onClick={() => alert("이미 음원을 등록하셨습니다. 재 등록 원하는 경우 별도 문의 바랍니다.")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                  {/* {item.funding_music_regist ? (
+                    )
+                    : (
+                      <motion.div className="buttonLine" onClick={() => alert("이미 음원을 등록하셨습니다. 재 등록 원하는 경우 별도 문의 바랍니다.")} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                       음원 등록 완료
-                    </motion.div>
-                  )}
+                      </motion.div>
+                    )} */}
+                  <motion.div className="buttonLine" onClick={() => (modalOpen ? close() : open())} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                    음원등록
+                  </motion.div>
                 </div>
                 {item.funding_finish_status ? <div className="funddingTerminationButton">펀딩종료</div> : <div className="funddingTerminationButton">분배완료</div>}
               </div>

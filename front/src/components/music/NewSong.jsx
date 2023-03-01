@@ -1,29 +1,12 @@
 // 신규 곡
 import { useRef, useEffect } from "react";
-import parkImg from "../../../public/image/park.jpg";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNewMusicList } from "@/middleware/fetchMusic";
+import { useRouter } from "next/router";
 
-const newSongItem = [
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-  { img: parkImg, musicName: "Music Name", singerName: "Signer Name" },
-];
+//
 
 const newSongVariant = {
   initial: {
@@ -38,6 +21,7 @@ const newSongVariant = {
 
 const NewSong = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const newSongList = useSelector((state) => state.musicInfo.newMusicList);
   console.log("뉴 송 리스트", newSongList);
 
@@ -59,8 +43,11 @@ const NewSong = () => {
             animate="animate"
             // 차례대로 delay 하는 로직
             transition={{ duration: 0.3, type: "spring", delay: 0.1 * index }}
+            onClick={() => {
+              router.push(item.funding_id == null && item.id != null ? `music/normal/detail/${item.id}` : `music/funding/detail/${item.funding_id}`);
+            }}
           >
-            <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${item.music_cover_image}`} alt="Park.jpg" className="newSongImg" style={{ webkitUserDrag: " none" }} width={120} height={120} />
+            <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/${item.music_cover_image}`} alt={`${item.music_cover_image}.jpg`} className="newSongImg" style={{ webkitUserDrag: " none" }} width={120} height={120} />
             <div className="newSongTagFrame">
               <div>{item.music_name}</div>
               <div>{item.singer}</div>
