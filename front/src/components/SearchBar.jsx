@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useRouter } from "next/router";
 // 컴포넌트
 const SearchBar = () => {
   const [isFocused, setIsFocused] = useState(false);
-
+  const [search, setSearch] = useState("");
+  const router = useRouter();
   const handleBlur = () => {
     setIsFocused(false);
   };
@@ -15,6 +17,11 @@ const SearchBar = () => {
     setIsFocused(true);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      router.push(`/search_results/${search}`);
+    }
+  };
   return (
     <div className="searchBarSection">
       <motion.div
@@ -35,7 +42,17 @@ const SearchBar = () => {
             <FontAwesomeIcon icon={faSearch} />
           </motion.span>
         </div>
-        <input className="searchInput" type="text" placeholder="Search for Content..." onBlur={handleBlur} onFocus={handleFocus} />
+        <input
+          className="searchInput"
+          type="text"
+          placeholder="Search for Content..."
+          onBlur={handleBlur}
+          onFocus={handleFocus}
+          onKeyDown={(e) => handleKeyDown(e)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
       </motion.div>
     </div>
   );

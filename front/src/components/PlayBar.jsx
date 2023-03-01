@@ -3,6 +3,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPlayList } from "@/middleware/fetchMusic";
 
 const variantPlay = {
   animate: {
@@ -35,18 +37,25 @@ const openPlayBar = {
   initial: {
     y: 0,
     opacity: 1,
-    zIndex: 999,
   },
   animate: {
     y: "-100vw",
     opacity: 0,
-    zIndex: -1,
   },
 };
 
 const PlayBar = ({ soundClick, playerClick, isPlayerClick }) => {
   const [isPlay, setIsPlay] = useState();
   const [selected, setSelected] = useState();
+  const dispatch = useDispatch();
+  const user_wallet_address = useSelector((state) => state.userInfo.address);
+  console.log("플레이리스트 가져올 때 지갑주소", user_wallet_address);
+  // const myPlayList = useSelector((state)=>state.musicInfo.playList)
+  // console.log("사이드바에 띄워줄 플레이 정보")
+
+  const getPlayList = () => {
+    dispatch(fetchPlayList({ user_wallet_address }));
+  };
 
   const shackIcon = () => {
     return {
@@ -103,7 +112,17 @@ const PlayBar = ({ soundClick, playerClick, isPlayerClick }) => {
       </div>
       <div className="playInfo">
         <motion.span>
-          <Image className="singerPhoto" src="https://i.pinimg.com/236x/55/17/28/551728771d95781f1b89395dd0949732.jpg" alt="YOUNHA.jpg" onClick={playerClick} width={50} height={50} />
+          <Image
+            className="singerPhoto"
+            src="https://i.pinimg.com/236x/55/17/28/551728771d95781f1b89395dd0949732.jpg"
+            alt="YOUNHA.jpg"
+            onClick={() => {
+              playerClick();
+              getPlayList();
+            }}
+            width={50}
+            height={50}
+          />
         </motion.span>
         <div className="palyInfoBox">
           <div className="playInfoFrame">

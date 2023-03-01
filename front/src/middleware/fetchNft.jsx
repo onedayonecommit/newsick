@@ -29,6 +29,16 @@ export const marketDetail = createAsyncThunk("market-funding-list-contract", asy
   }
 });
 
+// export const myNftAmount = createAsyncThunk("marketDetailAmount", async (tokenId, user_wallet_address) => {
+//   const web3 = new Web3(window.ethereum);
+//   const contract = new web3.eth.Contract(NEWSIC_MARKET_ABI, NEWSIC_MARKET_CA);
+//   try {
+//     const myNftAmount = await contract.methods.balanceOf(user_wallet_address,tokenId)
+//   } catch (error) {
+    
+//   }
+// })
+
 export const marketDetailInfo = createAsyncThunk("market-funding-detail-list-backend", async (id) => {
   const result = await axios({
     method: "get",

@@ -54,3 +54,23 @@ export const fetchBringData = createAsyncThunk("fund/allList", async () => {
     console.log(error);
   }
 });
+
+export const fetchDetailInfo = createAsyncThunk("fund/detail/info", async (data) => {
+  try {
+    console.log(data, "통신 전");
+    const detailList = await axios({
+      url: `https://www.poopoobin.com/market-funding-list/${data}`,
+      method: "get",
+    });
+    console.log(detailList.data, "통신 후 결과값");
+    return detailList.data;
+  } catch (error) {}
+});
+
+export const fetchDetailPage = createAsyncThunk("fund/detailPage", async (_data) => {
+  try {
+    return _data;
+  } catch (error) {
+    console.log(error);
+  }
+});

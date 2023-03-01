@@ -53,7 +53,8 @@ body {
   width: min-content;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -78,8 +79,10 @@ body {
 }
 .mainSlider .pageNav .pageNavItem :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 92px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 92px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -129,10 +132,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 465px */
+  width: min-content;
+  /* 465px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 636px */
+  height: min-content;
+  /* 636px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,10 +154,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 193px */
+  width: min-content;
+  /* 193px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 154px */
+  height: min-content;
+  /* 154px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -167,8 +174,10 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection .title {
   flex-shrink: 0;
-  width: auto; /* 145px */
-  height: auto; /* 84px */
+  width: auto;
+  /* 145px */
+  height: auto;
+  /* 84px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -180,8 +189,10 @@ body {
 }
 .mainSlider .mainFirstFrame .rankingInfoSection .infoFrame .titleSection .subTitle {
   flex-shrink: 0;
-  width: auto; /* 193px */
-  height: auto; /* 60px */
+  width: auto;
+  /* 193px */
+  height: auto;
+  /* 60px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -211,16 +222,130 @@ body {
   flex-shrink: 0;
   width: 420px;
   height: 550px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 20px 0px;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .mainSlider .mainFirstFrame .rankingCard:hover {
   scale: 1.1;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingInfoSection {
+  flex-shrink: 0;
+  width: 410px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 101px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingInfoSection .musicName {
+  flex-shrink: 0;
+  width: auto;
+  /* 240px */
+  height: auto;
+  /* 48px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingInfoSection .signerName {
+  flex-shrink: 0;
+  width: auto;
+  /* 213px */
+  height: auto;
+  /* 43px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  text-align: center;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingDetailButton {
+  cursor: pointer;
+  opacity: 0.5;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 210px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-align: center;
+  transition: 0.3s;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingDetailButton:hover {
+  opacity: 1;
+}
+.mainSlider .mainFirstFrame .rankingCard .rankingImg {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-shrink: 0;
+  width: 420px;
+  height: 550px;
+  display: block;
+  overflow: hidden;
+  opacity: 0.6;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainSecondFrame {
   box-sizing: border-box;
@@ -431,8 +556,10 @@ body {
 .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .songName,
 .mainSlider .mainSecondFrame .slideHotTopicList .hotTopSlides .hotTopicSlideContentInner .fundingPrice {
   flex-shrink: 0;
-  width: auto; /* 64px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 64px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -483,10 +610,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 790px */
+  width: min-content;
+  /* 790px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 950px */
+  height: min-content;
+  /* 950px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -503,7 +632,8 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 210px */
+  width: min-content;
+  /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
@@ -532,6 +662,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListDownFrame .closeFundingList .closeItem {
+  box-shadow: 0.3016151036px 0.3016151036px 0.4265481701px 0px rgba(255, 255, 255, 0.02), 1.1451052858px 1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), 5px 5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25), -0.3016151036px -0.3016151036px 0.4265481701px 0px hsla(0deg, 0%, 100%, 0.01508), -1.1451052858px -1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), -5px -5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25);
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -547,7 +678,8 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 210px */
+  width: min-content;
+  /* 210px */
   height: 2550px;
   display: flex;
   flex-direction: column;
@@ -576,6 +708,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .mainSlider .mainThirdFrame .leftSlideContent .slideListUpFrame .closeFundingList .closeItem {
+  box-shadow: 0.3016151036px 0.3016151036px 0.4265481701px 0px rgba(255, 255, 255, 0.02), 1.1451052858px 1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), 5px 5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25), -0.3016151036px -0.3016151036px 0.4265481701px 0px hsla(0deg, 0%, 100%, 0.01508), -1.1451052858px -1.1451052858px 1.6194234255px 0px hsla(0deg, 0%, 100%, 0.05726), -5px -5px 7.0710678119px 0px hsla(0deg, 0%, 100%, 0.25);
   box-sizing: border-box;
   flex-shrink: 0;
   width: 210px;
@@ -688,7 +821,8 @@ body {
   width: 620px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 42px */
+  height: min-content;
+  /* 42px */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -703,8 +837,10 @@ body {
 .changeUserInfoFrame .changeNavBar .successBtn {
   cursor: pointer;
   flex-shrink: 0;
-  width: auto; /* 56px */
-  height: auto; /* 34px */
+  width: auto;
+  /* 56px */
+  height: auto;
+  /* 34px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -721,8 +857,10 @@ body {
 }
 .changeUserInfoFrame .changeNavBar .infoText {
   flex-shrink: 0;
-  width: auto; /* 217px */
-  height: auto; /* 42px */
+  width: auto;
+  /* 217px */
+  height: auto;
+  /* 42px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -821,7 +959,8 @@ body {
   width: 300px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 74px */
+  height: min-content;
+  /* 74px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1367,10 +1506,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 216px */
+  width: min-content;
+  /* 216px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 16px */
+  height: min-content;
+  /* 16px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1385,8 +1526,10 @@ body {
 }
 .MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .totalNum {
   flex-shrink: 0;
-  width: auto; /* 56px */
-  height: auto; /* 16px */
+  width: auto;
+  /* 56px */
+  height: auto;
+  /* 16px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1396,21 +1539,87 @@ body {
   line-height: 1.2;
 }
 .MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDown {
+  cursor: pointer;
   flex-shrink: 0;
-  width: auto; /* 130px */
-  height: auto; /* 16px */
+  width: auto;
+  /* 130px */
+  height: auto;
+  /* 16px */
   white-space: pre;
+  display: flex;
   position: relative;
+  gap: 10px;
   font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: 18px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.MusicPlayFrame .songListSection .listSection .listControlBar .sortButton {
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent {
+  margin-top: 10px;
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: auto; /* 28px */
-  height: auto; /* 16px */
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(231deg, rgba(16, 11, 60, 0.9) 0%, hsla(246deg, 100%, 8%, 0.9) 100%);
+  overflow: hidden;
+  z-index: 10;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent .itemBox {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 25px;
+  gap: 35px;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent .dropItem {
+  cursor: pointer;
+  padding: 5px 20px 5px 20px;
+  flex-shrink: 0;
+  width: auto;
+  /* 48px */
+  height: auto;
+  /* 19px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  transition: 0.4s;
+  border-radius: 10px;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .dropDownFrame .dropDownContent .dropItem:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.MusicPlayFrame .songListSection .listSection .listControlBar .sortButton {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto;
+  /* 28px */
+  height: auto;
+  /* 16px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1427,7 +1636,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -1457,7 +1666,8 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 271px */
+  width: min-content;
+  /* 271px */
   height: 55px;
   display: flex;
   flex-direction: row;
@@ -1483,10 +1693,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 195px */
+  width: min-content;
+  /* 195px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 55px */
+  height: min-content;
+  /* 55px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1512,10 +1724,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: min-content;
+  /* 120px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 53px */
+  height: min-content;
+  /* 53px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1530,8 +1744,10 @@ body {
 }
 .MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .songInfo .infoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 120px */
-  height: auto; /* 28px */
+  width: auto;
+  /* 120px */
+  height: auto;
+  /* 28px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1542,8 +1758,10 @@ body {
 }
 .MusicPlayFrame .songListSection .listSection .listFrame .listSongItem .listLeft .songInfo .infoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 110px */
-  height: auto; /* 23px */
+  width: auto;
+  /* 110px */
+  height: auto;
+  /* 23px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1556,10 +1774,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 39px */
+  width: min-content;
+  /* 39px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 34px */
+  height: min-content;
+  /* 34px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1944,8 +2164,10 @@ body {
 }
 .musicBar .playInfo .palyInfoBox .playInfoFrame .songInfoSection .songInfoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 60px */
-  height: auto; /* 13px */
+  width: auto;
+  /* 60px */
+  height: auto;
+  /* 13px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1956,8 +2178,10 @@ body {
 }
 .musicBar .playInfo .palyInfoBox .playInfoFrame .songInfoSection .songInfoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 49px */
-  height: auto; /* 9px */
+  width: auto;
+  /* 49px */
+  height: auto;
+  /* 9px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -2004,10 +2228,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 161px */
+  width: min-content;
+  /* 161px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 17px */
+  height: min-content;
+  /* 17px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2247,10 +2473,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 40px */
+  width: min-content;
+  /* 40px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 356px */
+  height: min-content;
+  /* 356px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2282,6 +2510,7 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .layoutFrame .layoutBox .sideBarSection .categories .headerSection {
+  cursor: pointer;
   font-family: "YdestreetB";
   box-sizing: border-box;
   flex-shrink: 0;
@@ -2309,6 +2538,15 @@ body {
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.3s;
+}
+.layoutFrame .layoutBox .sideBarSection .categories .headerSection:hover {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  background: linear-gradient(to right, #ff3db8, #db29ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .layoutFrame .layoutBox .sideBarSection .categories .menuSection {
   box-sizing: border-box;
@@ -2343,8 +2581,10 @@ body {
   align-content: center;
   flex-wrap: nowrap;
   font-weight: bold;
+  background-color: none;
+  border: none;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 25px;
   color: #ffffff;
   font-size: 15px;
   letter-spacing: 0px;
@@ -2371,10 +2611,10 @@ body {
   width: 1359px;
   height: 950px;
   display: flex;
+  background: radial-gradient(68.3% 100% at 36.4% 106.3%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  background-color: #2b2f5f;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -2616,10 +2856,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 112px */
+  width: min-content;
+  /* 112px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 46px */
+  height: min-content;
+  /* 46px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2636,10 +2878,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 80px */
+  width: min-content;
+  /* 80px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -2664,10 +2908,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 112px */
+  width: min-content;
+  /* 112px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 17px */
+  height: min-content;
+  /* 17px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2780,10 +3026,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 396px */
+  width: min-content;
+  /* 396px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 395px */
+  height: min-content;
+  /* 395px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2816,10 +3064,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 396px */
+  width: min-content;
+  /* 396px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 215px */
+  height: min-content;
+  /* 215px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -3144,8 +3394,10 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .nameText,
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .emailText {
   flex-shrink: 0;
-  width: auto; /* 127px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 127px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 500;
@@ -3198,6 +3450,7 @@ body {
   background: none;
   padding: 0px 15px 0px 15px;
   color: white;
+  transition: 0.3s;
 }
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input:focus,
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input:focus,
@@ -3205,14 +3458,34 @@ body {
 .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input:focus {
   outline: none;
 }
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input::-moz-placeholder, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input::-moz-placeholder, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput > input::-moz-placeholder, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: bold;
+}
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input:-ms-input-placeholder, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input:-ms-input-placeholder, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput > input:-ms-input-placeholder, .signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: bold;
+}
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .nameInput > input::placeholder,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userNameSection .emailInput > input::placeholder,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .nameInput > input::placeholder,
+.signUpPageBackGround .signUpFrame .signUpSection .signUpInputSection .userEmailSection .emailInput > input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: bold;
+}
 .signUpPageBackGround .signUpFrame .signUpSection .signUpChoiceSection {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 317px */
+  width: min-content;
+  /* 317px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 95px */
+  height: min-content;
+  /* 95px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3229,10 +3502,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 173px */
+  width: min-content;
+  /* 173px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 20px */
+  height: min-content;
+  /* 20px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3257,10 +3532,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 317px */
+  width: min-content;
+  /* 317px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 65px */
+  height: min-content;
+  /* 65px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -3427,7 +3704,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 275px */
+  height: min-content;
+  /* 275px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3445,7 +3723,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 275px */
+  height: min-content;
+  /* 275px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3463,7 +3742,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 35px */
+  height: min-content;
+  /* 35px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3507,10 +3787,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 867px */
+  width: min-content;
+  /* 867px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 40px */
+  height: min-content;
+  /* 40px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3528,7 +3810,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 595px */
+  height: min-content;
+  /* 595px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3546,7 +3829,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 35px */
+  height: min-content;
+  /* 35px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3573,7 +3857,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 538px */
+  height: min-content;
+  /* 538px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3636,8 +3921,10 @@ body {
 }
 .mainContainerFrame .hotTopicSection .hotTopicList .hotTopicItemFrame .hotTopicinfoBox :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 150px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 150px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: #ffffff;
@@ -3648,8 +3935,10 @@ body {
 }
 .mainContainerFrame .hotTopicSection .hotTopicList .hotTopicItemFrame .hotTopicinfoBox :nth-child(3) {
   flex-shrink: 0;
-  width: auto; /* 150px */
-  height: auto; /* 15px */
+  width: auto;
+  /* 150px */
+  height: auto;
+  /* 15px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.4);
@@ -3888,7 +4177,6 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 30px 30px 30px 30px;
-  background: radial-gradient(68.3% 100% at 36.4% 106.3%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
   overflow: visible;
   position: relative;
   align-content: center;
@@ -3917,7 +4205,8 @@ body {
   width: 1279px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3949,7 +4238,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
@@ -3958,6 +4247,8 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .MusicContainerFrame .newSongSection .newSongList .newSongCard {
+  cursor: -webkit-grab;
+  cursor: grab;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 160px;
@@ -3978,6 +4269,9 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+.MusicContainerFrame .newSongSection .newSongList .newSongCard:hover {
+  border: 1px solid rgb(255, 255, 255);
+}
 .MusicContainerFrame .newSongSection .newSongList .newSongCard .newSongImg {
   box-sizing: border-box;
   flex-shrink: 0;
@@ -3996,10 +4290,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: min-content;
+  /* 120px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 43px */
+  height: min-content;
+  /* 43px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4077,7 +4373,6 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame {
@@ -4088,26 +4383,30 @@ body {
   width: 635px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: flex-end;
   flex-wrap: nowrap;
+  gap: 30px;
   border-radius: 0px 0px 0px 0px;
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 306px */
+  width: min-content;
+  /* 306px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4122,8 +4421,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .leftSide .text {
   flex-shrink: 0;
-  width: auto; /* 126px */
-  height: auto; /* 31px */
+  width: auto;
+  /* 126px */
+  height: auto;
+  /* 31px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4181,8 +4482,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartTextFrame .rightSide {
   flex-shrink: 0;
-  width: auto; /* 63px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 63px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -4218,6 +4521,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox {
+  cursor: pointer;
   flex-shrink: 0;
   width: 635px;
   height: 85px;
@@ -4230,13 +4534,20 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 245px */
+  width: min-content;
+  /* 245px */
   height: 85px;
   display: flex;
   flex-direction: row;
@@ -4268,10 +4579,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 120px */
+  width: min-content;
+  /* 120px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 43px */
+  height: min-content;
+  /* 43px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4286,8 +4599,14 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame .musicName {
   flex-shrink: 0;
-  width: auto; /* 120px */
-  height: auto; /* 24px */
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 120px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4300,8 +4619,14 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .leftSection .musicInfoFrame .singerName {
   flex-shrink: 0;
-  width: auto; /* 100px */
-  height: auto; /* 19px */
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 100px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4316,7 +4641,8 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 156px */
+  width: min-content;
+  /* 156px */
   height: 85px;
   display: flex;
   flex-direction: row;
@@ -4332,8 +4658,10 @@ body {
 }
 .MusicContainerFrame .bottomFrame .topChartSection .topChartList .musicTopItemBox .rightSection .lapTime {
   flex-shrink: 0;
-  width: auto; /* 36px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 36px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4496,10 +4824,12 @@ body {
   opacity: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 72px */
+  width: min-content;
+  /* 72px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 28px */
+  height: min-content;
+  /* 28px */
   white-space: pre;
   position: absolute;
   font-weight: bold;
@@ -4560,10 +4890,12 @@ body {
   opacity: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 72px */
+  width: min-content;
+  /* 72px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 28px */
+  height: min-content;
+  /* 28px */
   white-space: pre;
   position: absolute;
   font-weight: 700;
@@ -4624,10 +4956,12 @@ body {
   opacity: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 72px */
+  width: min-content;
+  /* 72px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 28px */
+  height: min-content;
+  /* 28px */
   white-space: pre;
   position: absolute;
   font-weight: 700;
@@ -4688,10 +5022,12 @@ body {
   opacity: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 72px */
+  width: min-content;
+  /* 72px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 28px */
+  height: min-content;
+  /* 28px */
   white-space: pre;
   position: absolute;
   font-weight: 700;
@@ -4817,8 +5153,10 @@ body {
 }
 .MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 217px */
-  height: auto; /* 41px */
+  width: auto;
+  /* 217px */
+  height: auto;
+  /* 41px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4832,8 +5170,10 @@ body {
 .MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoFrame :nth-child(2) {
   cursor: pointer;
   flex-shrink: 0;
-  width: auto; /* 24px */
-  height: auto; /* 41px */
+  width: auto;
+  /* 24px */
+  height: auto;
+  /* 41px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4850,8 +5190,10 @@ body {
 }
 .MusicContainerFrame .genreModal .rankContainer .topInfoSection .infoText {
   flex-shrink: 0;
-  width: auto; /* 276px */
-  height: auto; /* 28px */
+  width: auto;
+  /* 276px */
+  height: auto;
+  /* 28px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -4945,10 +5287,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 501px */
+  width: min-content;
+  /* 501px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 120px */
+  height: min-content;
+  /* 120px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -4979,10 +5323,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 17px */
+  width: min-content;
+  /* 17px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 40px */
+  height: min-content;
+  /* 40px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5008,10 +5354,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 204px */
+  width: min-content;
+  /* 204px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 74px */
+  height: min-content;
+  /* 74px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -5026,8 +5374,10 @@ body {
 }
 .MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide .rankInfoFrame .musicName {
   flex-shrink: 0;
-  width: auto; /* 204px */
-  height: auto; /* 41px */
+  width: auto;
+  /* 204px */
+  height: auto;
+  /* 41px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -5040,8 +5390,10 @@ body {
 }
 .MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .leftSide .rankInfoFrame .singerName {
   flex-shrink: 0;
-  width: auto; /* 168px */
-  height: auto; /* 33px */
+  width: auto;
+  /* 168px */
+  height: auto;
+  /* 33px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -5056,10 +5408,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 397px */
+  width: min-content;
+  /* 397px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 120px */
+  height: min-content;
+  /* 120px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5074,8 +5428,10 @@ body {
 }
 .MusicContainerFrame .genreModal .rankContainer .bottomRankList .rankItemBox .rightSide .musicTime {
   flex-shrink: 0;
-  width: auto; /* 77px */
-  height: auto; /* 40px */
+  width: auto;
+  /* 77px */
+  height: auto;
+  /* 40px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -5136,14 +5492,14 @@ body {
   width: 1359px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 1561px */
+  height: min-content;
+  /* 1561px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
   overflow: visible;
   align-content: flex-start;
   flex-wrap: nowrap;
@@ -5153,184 +5509,192 @@ body {
 }
 .FundingContainerFrame .fundingTopBar {
   flex-shrink: 0;
-  width: 1319px;
-  height: 372px;
+  width: 68.06vw;
+  height: 19.195vw;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 20px;
+  gap: 100px;
   border-radius: 0px 0px 0px 0px;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 344px;
-  height: 372px;
+  width: 17.75vw;
+  height: 19.195vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0px 0px 0px;
+  padding: 1.032vw 0vw 0vw 0vw;
   overflow: hidden;
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0.516vw;
+  border-radius: 0.258vw;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .sectionText {
   flex-shrink: 0;
-  width: 134px;
-  height: 24px;
+  width: 6.914vw;
+  height: 1.238vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0.516vw;
+  border-radius: 0vw 0vw 0vw 0vw;
   flex-shrink: 0;
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 20px;
-  letter-spacing: 0px;
+  font-size: 1.032vw;
+  letter-spacing: 0vw;
   line-height: 1.2;
+  border-radius: 0.258vw;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame {
+  border-radius: 0.516vw;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 344px;
-  height: 318px;
+  width: 17.75vw;
+  height: 16.409vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.258vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox {
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
+  top: 0vw;
+  bottom: 0vw;
+  right: 0vw;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 105px;
-  height: 318px;
+  width: 5.418vw;
+  height: 16.409vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0vw 0.052vw 0.103vw 0vw rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.3);
   overflow: hidden;
   z-index: 1;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 50px;
+  gap: 2.58vw;
   position: absolute;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0vw 0vw 0vw 0vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 93px */
+  width: min-content;
+  /* 4.799vw */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 33px */
+  height: min-content;
+  /* 1.703vw */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 5px;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0.258vw;
+  border-radius: 0vw 0vw 0vw 0vw;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo .creatorName {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 93px */
+  width: min-content;
+  /* 4.799vw */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 16px */
+  height: min-content;
+  /* 0.826vw */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 0vw 0vw 0vw 0vw;
   flex-shrink: 0;
   white-space: pre;
   font-weight: 600;
   font-family: "Inter-SemiBold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 14px;
-  letter-spacing: 0px;
+  font-size: 0.722vw;
+  letter-spacing: 0vw;
   line-height: 1.2;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .creatorInfo .fundingInfo {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 59px */
+  width: min-content;
+  /* 3.044vw */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 12px */
+  height: min-content;
+  /* 0.619vw */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 0vw 0vw 0vw 0vw;
   flex-shrink: 0;
   white-space: pre;
   font-weight: 600;
   font-family: "Inter-SemiBold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 10px;
-  letter-spacing: 0px;
+  font-size: 0.516vw;
+  letter-spacing: 0vw;
   line-height: 1.2;
   text-align: center;
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .detailButton {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 67px;
-  height: 21px;
+  width: 3.457vw;
+  height: 1.084vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5338,243 +5702,281 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.516vw;
+  border-radius: 1.29vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
   white-space: pre;
   font-weight: 600;
   font-family: "Inter-SemiBold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 10px;
-  letter-spacing: 0px;
+  font-size: 0.516vw;
+  letter-spacing: 0vw;
   line-height: 1.2;
   text-align: center;
+  transition: 0.4s;
+}
+.FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorInfoBox .detailButton:hover {
+  scale: 1.3;
+  box-shadow: 0vw 0.086vw 0.086vw 0vw rgba(0, 0, 0, 0), 0vw 0.206vw 0.206vw 0vw rgba(0, 0, 0, 0.00996), 0vw 0.375vw 0.375vw 0vw rgba(0, 0, 0, 0.01815), 0vw 0.623vw 0.623vw 0vw rgba(0, 0, 0, 0.03017), 0vw 1.006vw 1.006vw 0vw rgba(0, 0, 0, 0.04875), 0vw 1.646vw 1.646vw 0vw rgba(0, 0, 0, 0.07975), 0vw 2.836vw 2.836vw 0vw rgba(0, 0, 0, 0.1374), 0vw 5.16vw 5.16vw 0vw rgba(0, 0, 0, 0.25);
 }
 .FundingContainerFrame .fundingTopBar .todayCreatorSection .creatorInfoFrame .creatorImg {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 344px;
-  height: 318px;
+  width: 17.75vw;
+  height: 16.409vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 0.516vw;
   background-image: url("../../public/image/park.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0vw 0vw 0vw 0vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
 }
 .FundingContainerFrame .fundingTopBar .swiperSection {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 955px;
-  height: 372px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 955px;
-  height: 372px;
+  width: 19.195vw;
+  height: 19.195vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-start;
-  padding: 20px 20px 20px 20px;
-  overflow: hidden;
-  position: relative;
-  align-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content; /* 265px */
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content; /* 249px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-end;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0vw 0vw 0vw 0vw;
   align-content: flex-end;
   flex-wrap: nowrap;
-  gap: 71px;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0;
+  border-radius: 0.516vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
 }
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox {
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardItemImg {
   flex-shrink: 0;
-  width: 265px;
-  height: 138px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-  z-index: 2;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingName {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content; /* 264px */
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content; /* 46px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 38px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotCreatorName {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content; /* 194px */
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content; /* 36px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 30px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-  text-align: center;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .hotCreatorInfoBox .hotFundingInfo {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content; /* 172px */
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content; /* 36px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 30px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .hotCreatorInfoFrame .detailButton {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 120px;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.4);
-  overflow: hidden;
-  z-index: 2;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 600;
-  font-family: "Inter-SemiBold", "Inter", sans-serif;
-  color: #000000;
-  font-size: 20px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.FundingContainerFrame .fundingTopBar .swiperSection .swiperBox .swiperImage {
-  top: 0px;
-  left: 0px;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
+  width: 19.195vw;
+  height: 19.195vw;
   display: block;
   overflow: hidden;
-  z-index: 1;
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 0.516vw;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame {
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 12.9vw;
+  height: 10.32vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  -webkit-backdrop-filter: blur(0.516vw);
+  backdrop-filter: blur(0.516vw);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  padding: 0vw 0vw 0vw 0vw;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 0;
   position: absolute;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 20.64vw 0vw 0vw 0vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 1.548vw */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 5.676vw */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0vw 0vw 1.29vw 0vw;
+  overflow: visible;
+  z-index: 1;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0.616vw;
+  position: absolute;
+  border-radius: 0vw 0vw 0vw 0vw;
+  right: 8.904vw;
+  bottom: 0.002vw;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .nextButton,
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .previousButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1.548vw;
+  height: 1.548vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  padding: 0vw 0vw 0vw 0vw;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0.516vw;
+  border-radius: 2.58vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .nextButton:hover,
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .previousButton:hover {
+  scale: 1.2;
+  color: rgb(255, 255, 255);
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .nextButton :nth-child(1),
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .buttonFrame .previousButton :nth-child(1) {
+  width: 1.032vw;
+  height: 1.29vw;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 12.9vw;
+  height: 10.32vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0vw 0.516vw 0.516vw 0vw;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 1.29vw;
+  border-radius: 0vw 0vw 0vw 0vw;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 8.256vw */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 5.057vw */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  padding: 0vw 0vw 0vw 0vw;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 0.516vw;
+  border-radius: 0vw 0vw 0vw 0vw;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame :nth-child(1) {
+  flex-shrink: 0;
+  width: auto;
+  /* 8.256vw */
+  height: auto;
+  /* 1.548vw */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #000000;
+  font-size: 1.29vw;
+  letter-spacing: 0vw;
+  line-height: 1.2;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame :nth-child(2) {
+  flex-shrink: 0;
+  width: auto;
+  /* 3.87vw */
+  height: auto;
+  /* 1.238vw */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #000000;
+  font-size: 1.032vw;
+  letter-spacing: 0vw;
+  line-height: 1.2;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .infoFrame :nth-child(3) {
+  flex-shrink: 0;
+  width: auto;
+  /* 1.961vw */
+  height: auto;
+  /* 1.238vw */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #000000;
+  font-size: 1.032vw;
+  letter-spacing: 0vw;
+  line-height: 1.2;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .detailButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 4.954vw;
+  height: 1.393vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0vw 0vw 0vw 0vw;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0.516vw;
+  border-radius: 1.29vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 0.826vw;
+  letter-spacing: 0vw;
+  line-height: 1.2;
+}
+.FundingContainerFrame .fundingTopBar .swiperSection .rewardInfoFrame .infoSection .detailButton:hover {
+  opacity: 1;
+  scale: 1.1;
+  box-shadow: 0vw 0.086vw 0.086vw 0vw rgba(0, 0, 0, 0), 0vw 0.206vw 0.206vw 0vw rgba(0, 0, 0, 0.00996), 0vw 0.375vw 0.375vw 0vw rgba(0, 0, 0, 0.01815), 0vw 0.623vw 0.623vw 0vw rgba(0, 0, 0, 0.03017), 0vw 1.006vw 1.006vw 0vw rgba(0, 0, 0, 0.04875), 0vw 1.646vw 1.646vw 0vw rgba(0, 0, 0, 0.07975), 0vw 2.836vw 2.836vw 0vw rgba(0, 0, 0, 0.1374), 0vw 5.16vw 5.16vw 0vw rgba(0, 0, 0, 0.25);
 }
 .FundingContainerFrame .fundingListSection {
   box-sizing: border-box;
@@ -5629,8 +6031,10 @@ body {
 }
 .FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .feedText {
   flex-shrink: 0;
-  width: auto; /* 50px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 50px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 600;
@@ -5641,6 +6045,7 @@ body {
   line-height: 1.2;
 }
 .FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .sequenceDropdown {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 110px;
@@ -5664,6 +6069,12 @@ body {
   font-size: 14px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .sequenceDropdown:focus {
+  outline: none;
+}
+.FundingContainerFrame .fundingListSection .listTopBarFram .sequenceSection .sequenceDropdown > option {
+  background-color: #000000;
 }
 .FundingContainerFrame .fundingListSection .listTopBarFram .StateSection {
   flex-shrink: 0;
@@ -5699,7 +6110,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 965px */
+  height: min-content;
+  /* 965px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -5719,7 +6131,7 @@ body {
   display: block;
   background-color: rgba(255, 255, 255, 0.1);
   border: rgba(255, 255, 255, 0.1);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   border-radius: 20px;
 }
@@ -5750,228 +6162,101 @@ body {
   line-height: 1.2;
 }
 
-.detailContainerFrame {
+.fundingDetailFrame {
+  box-sizing: border-box;
   flex-shrink: 0;
   width: 1359px;
   height: 950px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 40px 20px 40px 20px;
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
+  overflow: hidden;
+  position: relative;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .fundingInfoSection {
+  flex-shrink: 0;
+  width: 1319px;
+  height: 500px;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #2b2f5f;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame {
+  z-index: 2;
+  flex-shrink: 0;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0px;
+  border-radius: 25px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
 }
-.detailContainerFrame .swiper {
-  width: 100%;
-  height: 100%;
-}
-.detailContainerFrame .swiper-slide {
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.detailContainerFrame .detailContainerBack {
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImg {
+  box-sizing: border-box;
   flex-shrink: 0;
-  width: 639px;
-  height: 950px;
+  width: 500px;
+  height: 500px;
   display: block;
   overflow: hidden;
   position: relative;
-  background-image: url("../../public/image/Singer.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0px 0px 0px 0px;
+  border-radius: 25px;
 }
-.detailContainerFrame .detailLostInfoSection {
-  box-sizing: border-box;
-  width: 750px;
-  height: 950px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  padding: 0px 40px 80px 40px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  z-index: 1;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 0;
-  position: absolute;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-.detailContainerFrame .detailLostInfoSection .previewSection {
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo {
+  bottom: 0;
+  left: 0;
+  right: 0;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 670px;
-  height: 136px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailLostInfoSection .announceSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 670px;
-  height: 632px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailLostInfoSection .discordSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 670px;
-  height: 182px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailInfoSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 720px;
-  height: 950px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  padding: 80px 40px 80px 40px;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  z-index: 1;
-  position: relative;
-  align-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 50px;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.1);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-.detailContainerFrame .detailInfoSection .profileSection {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content; /* 120px */
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content; /* 28px */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
-  flex-shrink: 0;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 23px;
-  letter-spacing: 0px;
-  line-height: 1.2;
-}
-.detailContainerFrame .detailInfoSection .profileInfoSection {
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 640px;
-  height: 712px;
+  width: 25.8vw;
+  height: 6.192vw;
   display: block;
+  -webkit-backdrop-filter: blur(0.516vw);
+  backdrop-filter: blur(0.516vw);
+  background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.detailContainerFrame .detailInfoSection .topInfoSection {
-  flex-shrink: 0;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content; /* 303px */
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content; /* 189px */
+  z-index: 1;
+  position: absolute;
+  border-radius: 0vw 0vw 1.29vw 1.29vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: 1s;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum {
+  flex-shrink: 0;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -5979,70 +6264,226 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 15px;
+  gap: 10px;
   border-radius: 0px 0px 0px 0px;
 }
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingTitle {
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum :nth-child(1) {
+  box-sizing: border-box;
+  text-align: right;
+  flex-shrink: 0;
+  width: 150px;
+  height: 27px;
+  display: block;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum :nth-child(1):focus {
+  outline: none;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyNum :nth-child(2) {
+  flex-shrink: 0;
+  width: auto;
+  /* 18px */
+  height: auto;
+  /* 22px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyButton {
+  cursor: pointer;
+  opacity: 0.5;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 7.74vw;
+  height: 2.064vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  padding: 0vw 0vw 0vw 0vw;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0.516vw;
+  border-radius: 1.29vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 1.342vw;
+  letter-spacing: 0vw;
+  font-weight: bold;
+  line-height: 1.2;
+  transition: 0.4;
+}
+.fundingDetailFrame .fundingInfoSection .fundingImgFrame .fundingImgInfo .buyButton:hover {
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
+  opacity: 1;
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame {
+  top: 0px;
+  bottom: 0px;
+  left: 520px;
+  box-sizing: border-box;
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  display: block;
+  /* 1700px */
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.1) 0%, rgba(119, 88, 209, 0.3) 100%);
   overflow: hidden;
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  white-space: pre;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
-  color: #ffffff;
-  font-size: 40px;
-  letter-spacing: 0px;
-  line-height: 1.2;
+  z-index: 1;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  border-radius: 25px 0px 0px 25px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 0px;
 }
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection {
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 295px */
+  width: min-content;
+  /* 1660px */
+  height: 460px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList .infoItemBox {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 400px;
+  height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px 40px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList .infoItemBox .title {
+  flex-shrink: 0;
+  width: 360px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 126px */
+  height: min-content;
+  /* 32px */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 20px 0px 0px;
   align-content: flex-end;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 10;
   border-radius: 0px 0px 0px 0px;
-}
-.detailContainerFrame .detailInfoSection .topInfoSection .fundingBillSection :nth-child(-n+4) {
+  font-weight: bold;
   flex-shrink: 0;
-  width: auto; /* 85px */
-  height: auto; /* 24px */
   white-space: pre;
   position: relative;
-  font-weight: 700;
-  font-family: "Inter-Bold", "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 27px;
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.detailContainerFrame .detailInfoSection .bottomInfoSection {
+.fundingDetailFrame .fundingInfoSection .infoSlideFrame .infoList .infoItemBox .innerText {
+  flex-shrink: 0;
+  width: 360px;
+  height: 333px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 2;
+}
+.fundingDetailFrame .announcementSection {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 640px;
-  height: 551px;
+  width: 1319px;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 40px 20px 40px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.1) 0%, rgba(119, 88, 209, 0.3) 100%);
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.fundingDetailFrame .announcementSection .announcementTitle {
+  flex-shrink: 0;
+  width: 1239px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 29px */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   position: relative;
@@ -6051,20 +6492,62 @@ body {
   flex-wrap: nowrap;
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.detailContainerFrame .detailInfoSection .bottomInfoSection :nth-child(-n+2) {
   flex-shrink: 0;
-  width: auto; /* 92px */
-  height: auto; /* 28px */
   white-space: pre;
-  position: relative;
   font-weight: 700;
+  font-style: normal;
   font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 24px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.fundingDetailFrame .announcementSection .announcementList {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1239px;
+  height: 261px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px 40px 0px 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.fundingDetailFrame .announcementSection .announcementList::-webkit-scrollbar {
+  width: 20px;
+  background-color: transparent;
+}
+.fundingDetailFrame .announcementSection .announcementList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.fundingDetailFrame .announcementSection .announcementList .announcementItem {
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 1199px;
+  height: 70px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+.fundingDetailFrame .announcementSection .announcementList .announcementItem:hover {
+  opacity: 1;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 
 .nftMarketContainerFrame {
@@ -6072,14 +6555,14 @@ body {
   width: 1359px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 1439px */
+  height: min-content;
+  /* 1439px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
   overflow: visible;
   align-content: center;
   flex-wrap: nowrap;
@@ -6233,7 +6716,8 @@ body {
   width: 1319px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 912px */
+  height: min-content;
+  /* 912px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -6282,10 +6766,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 345px */
+  width: min-content;
+  /* 345px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 34px */
+  height: min-content;
+  /* 34px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6300,8 +6786,10 @@ body {
 }
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar .text {
   flex-shrink: 0;
-  width: auto; /* 154px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 154px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -6311,14 +6799,17 @@ body {
   line-height: 1.2;
 }
 .nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 152px */
+  width: min-content;
+  /* 152px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 34px */
+  height: min-content;
+  /* 34px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6338,29 +6829,70 @@ body {
   font-size: 16px;
   letter-spacing: 0px;
   line-height: 1.2;
+  transition: 0.4s;
+}
+.nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar:focus {
+  outline: none;
+}
+.nftMarketContainerFrame .nftSellSection .topBarSection .topBar .dropDownBar > option {
+  background-color: black;
 }
 .nftMarketContainerFrame .nftSellSection .nftBuyInfoSection {
   flex-shrink: 0;
-  width: 486px;
-  height: 771px;
+  width: 24.077vw;
+  height: 38.783vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0.774vw 0.774vw 0.774vw 0.774vw;
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
-  padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 10px;
-  border-radius: 0px 0px 0px 0px;
+  gap: 0.516vw;
+  border-radius: 1.29vw;
+  border: 0.052vw solid rgba(255, 255, 255, 0.1);
+}
+.nftMarketContainerFrame .nftSellSection .nftBuyInfoSection .mainText {
   flex-shrink: 0;
-  white-space: pre;
-  font-family: "Inter", sans-serif;
+  width: 100%;
+  height: auto;
+  /* 3.715vw */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
   color: #ffffff;
-  font-size: 20px;
-  letter-spacing: 0px;
-  line-height: 1.2;
+  font-size: 0.826vw;
+  letter-spacing: 0vw;
+  line-height: 2;
+  text-align: left;
+  background: linear-gradient(to right, #667FFF, #2448FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nftMarketContainerFrame .nftSellSection .nftBuyInfoSection .text {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  /* 7.43vw */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Inter-Medium", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 0.826vw;
+  letter-spacing: 0vw;
+  line-height: 2;
+  text-align: left;
 }
 .nftMarketContainerFrame .nftSellSection .nftItemList {
   flex-shrink: 0;
@@ -6554,10 +7086,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 161px */
+  width: min-content;
+  /* 161px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 17px */
+  height: min-content;
+  /* 17px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6581,7 +7115,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
-  background-color: #2b2f5f;
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
   overflow: hidden;
   position: relative;
   align-content: flex-end;
@@ -6592,10 +7126,10 @@ body {
 .nftDetailContainerFrame .topSection {
   top: 40px;
   left: 20px;
-  right: 0px;
+  right: 20px;
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 1997px;
+  width: 1319px;
   height: 374px;
   display: flex;
   flex-direction: row;
@@ -6609,7 +7143,7 @@ body {
   flex-wrap: nowrap;
   gap: 10px;
   position: absolute;
-  border-radius: 25px 0px 0px 25px;
+  border-radius: 25px;
   border-color: rgba(255, 255, 255, 0.1);
   border-style: solid;
   border-top-width: 1px;
@@ -6620,7 +7154,7 @@ body {
 .nftDetailContainerFrame .topSection .statisticsSection {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 542px;
+  width: 1279px;
   height: 334px;
   display: flex;
   flex-direction: column;
@@ -6631,7 +7165,8 @@ body {
   backdrop-filter: blur(10px);
   -o-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
   align-content: center;
@@ -6641,7 +7176,7 @@ body {
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame {
   flex-shrink: 0;
-  width: 502px;
+  width: 1239px;
   height: 294px;
   display: flex;
   flex-direction: column;
@@ -6657,7 +7192,7 @@ body {
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartInfoSection {
   flex-shrink: 0;
-  width: 502px;
+  width: 1239px;
   height: 20px;
   display: flex;
   flex-direction: row;
@@ -6703,8 +7238,10 @@ body {
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartInfoSection .monthLayoutSection > div {
   flex-shrink: 0;
-  width: auto; /* 45px */
-  height: auto; /* 14px */
+  width: auto;
+  /* 45px */
+  height: auto;
+  /* 14px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -6713,9 +7250,16 @@ body {
   line-height: 1.2;
 }
 .nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartSection {
-  width: 502px;
+  width: 1239px;
   height: 264px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: flex-end;
+}
+.nftDetailContainerFrame .topSection .statisticsSection .statisticsSectionFrame .chartSection .historyGraphFrame {
+  position: "relative";
+  width: 1239px;
+  height: 200px;
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection {
   left: 572px;
@@ -6756,6 +7300,8 @@ body {
   border-radius: 0px 0px 0px 0px;
 }
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox {
+  cursor: -webkit-grab;
+  cursor: grab;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 300px;
@@ -6765,7 +7311,7 @@ body {
   justify-content: flex-start;
   align-items: flex-end;
   padding: 40px 20px 40px 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
   align-content: flex-end;
@@ -6774,14 +7320,19 @@ body {
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+.nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox:hover {
+  box-shadow: 0.6032302072px 0px 0.6032302072px 0px rgba(0, 0, 0, 0.02), 2.2902105716px 0px 2.2902105716px 0px rgba(0, 0, 0, 0.05726), 10px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
 .nftDetailContainerFrame .topSection .infoSwiperSection .frameBox .nftInfoBox .infoName {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 51px */
+  width: min-content;
+  /* 51px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 14px */
+  height: min-content;
+  /* 14px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7008,21 +7559,24 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
   gap: 0;
-  border-radius: 0px 0px 0px 0px;
-  border-color: rgba(255, 255, 255, 0.4);
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
-  border-right-width: 0px;
 }
-.nftDetailContainerFrame .bottomSection .orderSection .categorySection .buyTap {
+.nftDetailContainerFrame .bottomSection .orderSection .categorySection .underline {
+  position: absolute;
+  width: 100%;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+}
+.nftDetailContainerFrame .bottomSection .orderSection .categorySection .selected {
+  cursor: pointer;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 233px;
@@ -7038,12 +7592,6 @@ body {
   flex-wrap: nowrap;
   gap: 0;
   border-radius: 0px 0px 0px 0px;
-  border-color: #ffffff;
-  border-style: solid;
-  border-top-width: 0px;
-  border-bottom-width: 1px;
-  border-left-width: 0px;
-  border-right-width: 0px;
   flex-shrink: 0;
   white-space: pre;
   font-family: "Inter", sans-serif;
@@ -7052,7 +7600,8 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.nftDetailContainerFrame .bottomSection .orderSection .categorySection .sellTap {
+.nftDetailContainerFrame .bottomSection .orderSection .categorySection .unSelected {
+  cursor: pointer;
   flex-shrink: 0;
   width: 233px;
   height: 64px;
@@ -7075,10 +7624,75 @@ body {
   letter-spacing: 0px;
   line-height: 1.2;
 }
-.nftDetailContainerFrame .bottomSection .orderSection .categorySection .historyTap {
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection {
   flex-shrink: 0;
-  width: 233px;
-  height: 64px;
+  width: 700px;
+  height: 363px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: none;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  border-radius: 0px 0px 0px 0px;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 700px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .nftTitle {
+  flex-shrink: 0;
+  width: auto;
+  /* 99px */
+  height: auto;
+  /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 436px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7088,15 +7702,84 @@ body {
   padding: 0px 0px 0px 0px;
   align-content: center;
   flex-wrap: nowrap;
-  gap: 0;
+  gap: 40px;
   border-radius: 0px 0px 0px 0px;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .itemState {
   flex-shrink: 0;
+  width: auto;
+  /* 48px */
+  height: auto;
+  /* 20px */
   white-space: pre;
+  position: relative;
   font-family: "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .paymentTime {
+  flex-shrink: 0;
+  width: auto;
+  /* 48px */
+  height: auto;
+  /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .itemPrice {
+  flex-shrink: 0;
+  width: auto;
+  /* 57px */
+  height: auto;
+  /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .itemNumber {
+  flex-shrink: 0;
+  width: auto;
+  /* 112px */
+  height: auto;
+  /* 24px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .deleteButton {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: auto;
+  /* 11px */
+  height: auto;
+  /* 20px */
+  white-space: pre;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  transition: 0.4s;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .scrollSection .historyItemBox .rightInfoSection .deleteButton:hover {
+  color: rgb(255, 255, 255);
+  scale: 1.1;
 }
 .nftDetailContainerFrame .bottomSection .orderSection .inputSection {
   flex-shrink: 0;
@@ -7243,10 +7926,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 35px */
+  width: min-content;
+  /* 35px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7307,10 +7992,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 68px */
+  width: min-content;
+  /* 68px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 20px */
+  height: min-content;
+  /* 20px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7417,6 +8104,14 @@ body {
   font-size: 20px;
   letter-spacing: 0px;
   line-height: 1.2;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.nftDetailContainerFrame .bottomSection .orderSection .inputSection .loginButtonSection .loginButton:hover {
+  opacity: 1;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
 }
 
 .fundingCreateContainerFrame,
@@ -7425,7 +8120,8 @@ body {
   width: 1359px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 1653px */
+  height: min-content;
+  /* 1653px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -7468,10 +8164,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 356px */
+  width: min-content;
+  /* 356px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 40px */
+  height: min-content;
+  /* 40px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7493,8 +8191,10 @@ body {
 .fundingCreateContainerFrame .infoBox .infoFrame :nth-child(2),
 .fundingCreateSecondContainerFrame .infoBox .infoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 297px */
-  height: auto; /* 36px */
+  width: auto;
+  /* 297px */
+  height: auto;
+  /* 36px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -7551,10 +8251,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 897px */
+  width: min-content;
+  /* 897px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 50px */
+  height: min-content;
+  /* 50px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7570,8 +8272,10 @@ body {
 .fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .info,
 .fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .info {
   flex-shrink: 0;
-  width: auto; /* 271px */
-  height: auto; /* 42px */
+  width: auto;
+  /* 271px */
+  height: auto;
+  /* 42px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -7587,10 +8291,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 606px */
+  width: min-content;
+  /* 606px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 50px */
+  height: min-content;
+  /* 50px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7606,8 +8312,10 @@ body {
 .fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .contents :nth-child(1),
 .fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .contents :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 291px */
-  height: auto; /* 42px */
+  width: auto;
+  /* 291px */
+  height: auto;
+  /* 42px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -7645,8 +8353,10 @@ body {
 .fundingCreateContainerFrame .mainContentSection .shareSection .shareFrame .contents :nth-child(3),
 .fundingCreateSecondContainerFrame .mainContentSection .shareSection .shareFrame .contents :nth-child(3) {
   flex-shrink: 0;
-  width: auto; /* 10px */
-  height: auto; /* 42px */
+  width: auto;
+  /* 10px */
+  height: auto;
+  /* 42px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -7708,10 +8418,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 106px */
+  width: min-content;
+  /* 106px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7787,7 +8499,8 @@ body {
   width: 1199px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 1121px */
+  height: min-content;
+  /* 1121px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -7889,10 +8602,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 131px */
+  width: min-content;
+  /* 131px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7917,10 +8632,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 422px */
+  width: min-content;
+  /* 422px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 50px */
+  height: min-content;
+  /* 50px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -7936,8 +8653,10 @@ body {
 .fundingCreateContainerFrame .mainContentSection .contentSection .nftPriceUnitSection .rightSide .nowText,
 .fundingCreateSecondContainerFrame .mainContentSection .contentSection .nftPriceUnitSection .rightSide .nowText {
   flex-shrink: 0;
-  width: auto; /* 60px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 60px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -8347,8 +9066,10 @@ body {
   overflow: hidden;
   position: relative;
   border-radius: 0px 0px 0px 0px;
-  width: auto; /* 20px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 20px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.7);
@@ -8402,10 +9123,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 330px */
+  width: min-content;
+  /* 330px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 215px */
+  height: min-content;
+  /* 215px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8423,10 +9146,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 152px */
+  width: min-content;
+  /* 152px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8606,7 +9331,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(132deg, rgba(0, 0, 0, 0.1) 0%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(132deg, rgba(0, 0, 0, 0.1) 100%, rgb(0, 0, 0) 100%);
   overflow: hidden;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -8896,8 +9621,10 @@ body {
 .secondMyPage .myPageSecondContainerFrame .topInfoSection :nth-child(1),
 .secondMyPage .myPageSecondContainerFrameNFT .topInfoSection :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 192px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 192px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -8990,7 +9717,8 @@ body {
   width: 1060px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 1754px */
+  height: min-content;
+  /* 1754px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9114,10 +9842,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 65px */
+  width: min-content;
+  /* 65px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9135,10 +9865,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 34px */
+  width: min-content;
+  /* 34px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9151,8 +9883,10 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
   flex-shrink: 0;
-  width: auto; /* 34px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 34px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: #ffffff;
@@ -9165,10 +9899,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 31px */
+  width: min-content;
+  /* 31px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9193,10 +9929,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 57px */
+  width: min-content;
+  /* 57px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9214,10 +9952,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 57px */
+  width: min-content;
+  /* 57px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9261,10 +10001,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 100px */
+  width: min-content;
+  /* 100px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9289,10 +10031,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 161px */
+  width: min-content;
+  /* 161px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 25px */
+  height: min-content;
+  /* 25px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9320,8 +10064,10 @@ body {
 .secondMyPage .myPageSecondContainerFrame .nftItemList .nftWishItemBox .middleSection .creatorNameTag :nth-child(2),
 .secondMyPage .myPageSecondContainerFrameNFT .nftItemList .nftWishItemBox .middleSection .creatorNameTag :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 126px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 126px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -9410,7 +10156,8 @@ body {
   width: 1060px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 1754px */
+  height: min-content;
+  /* 1754px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9534,10 +10281,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 65px */
+  width: min-content;
+  /* 65px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9555,10 +10304,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 34px */
+  width: min-content;
+  /* 34px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9571,8 +10322,10 @@ body {
   gap: 10px;
   border-radius: 0px 0px 0px 0px;
   flex-shrink: 0;
-  width: auto; /* 34px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 34px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   font-family: "Inter", sans-serif;
   color: #ffffff;
@@ -9585,10 +10338,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 31px */
+  width: min-content;
+  /* 31px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9613,10 +10368,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 57px */
+  width: min-content;
+  /* 57px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9634,10 +10391,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 57px */
+  width: min-content;
+  /* 57px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9681,10 +10440,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 100px */
+  width: min-content;
+  /* 100px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 24px */
+  height: min-content;
+  /* 24px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9709,10 +10470,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 161px */
+  width: min-content;
+  /* 161px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 25px */
+  height: min-content;
+  /* 25px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9740,8 +10503,10 @@ body {
 .secondMyPage .myPageSecondContainerFrame .fundItemList .fundWishItemBox .middleSection .creatorNameTag :nth-child(2),
 .secondMyPage .myPageSecondContainerFrameNFT .fundItemList .fundWishItemBox .middleSection .creatorNameTag :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 126px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 126px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -9907,8 +10672,10 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .infoSection .infoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 139px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 139px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -9920,8 +10687,10 @@ body {
 }
 .thirdMyPage .MyPageThirdContainerFrame .infoSection .infoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 32px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 32px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -9949,12 +10718,12 @@ body {
   height: 1686px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: wrap;
   gap: 50px;
   border-radius: 0px 0px 0px 0px;
@@ -10042,10 +10811,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 136px */
+  width: min-content;
+  /* 136px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 27px */
+  height: min-content;
+  /* 27px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10123,8 +10894,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #2b2f5f;
-  background: radial-gradient(88.4% 113.9% at 35.9% 106.5%, #212236 0%, hsl(0deg, 0%, 0%) 100%);
+  background-image: url("../../public/image/wallpaper3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: visible;
   position: relative;
   padding: 0px 0px 0px 0px;
@@ -10141,6 +10914,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -10170,8 +10947,10 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionText :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 362px */
-  height: auto; /* 70px */
+  width: auto;
+  /* 362px */
+  height: auto;
+  /* 70px */
   white-space: pre;
   position: relative;
   font-weight: 800;
@@ -10184,7 +10963,8 @@ body {
 .SubscriptionContainer .SubscriptionFrame .SubscriptionText :nth-child(2) {
   flex-shrink: 0;
   width: 500px;
-  height: auto; /* 61px */
+  height: auto;
+  /* 61px */
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-word;
@@ -10235,10 +11015,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px 20px 68px 20px;
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
   box-shadow: 0px 1.6733156777px 1.6733156777px 0px rgba(0, 0, 0, 0), 0px 3.984206391px 3.984206391px 0px rgba(0, 0, 0, 0.00996), 0px 7.2593218828px 7.2593218828px 0px rgba(0, 0, 0, 0.01815), 0px 12.068385492px 12.068385492px 0px rgba(0, 0, 0, 0.03017), 0px 19.5004927421px 19.5004927421px 0px rgba(0, 0, 0, 0.04875), 0px 31.9014182134px 31.9014182134px 0px rgba(0, 0, 0, 0.07975), 0px 54.9603521257px 54.9603521257px 0px rgba(0, 0, 0, 0.1374), 0px 100px 100px 0px rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   overflow: visible;
   position: relative;
   align-content: center;
@@ -10252,10 +11030,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 92px */
+  width: min-content;
+  /* 92px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 29px */
+  height: min-content;
+  /* 29px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10300,8 +11080,10 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionTitle {
   flex-shrink: 0;
-  width: auto; /* 90px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 90px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 600;
@@ -10315,8 +11097,10 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionPrice {
   flex-shrink: 0;
-  width: auto; /* 246px */
-  height: auto; /* 70px */
+  width: auto;
+  /* 246px */
+  height: auto;
+  /* 70px */
   white-space: pre;
   position: relative;
   font-weight: 800;
@@ -10331,10 +11115,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 110px */
+  width: min-content;
+  /* 110px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10351,8 +11137,10 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .benefitsSummary :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 78px */
-  height: auto; /* 21px */
+  width: auto;
+  /* 78px */
+  height: auto;
+  /* 21px */
   white-space: pre;
   position: relative;
   font-weight: 500;
@@ -10388,10 +11176,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 142px */
+  width: min-content;
+  /* 142px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 68px */
+  height: min-content;
+  /* 68px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10406,8 +11196,10 @@ body {
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBenefitList :nth-child(1) :nth-child(-n+2) {
   flex-shrink: 0;
-  width: auto; /* 126px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 126px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -10443,6 +11235,13 @@ body {
   text-transform: uppercase;
   line-height: 1.2;
   text-align: center;
+  transition: 0.4s;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .optionBox .optionBuyButton:hover {
+  scale: 1.1;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection {
   flex-shrink: 0;
@@ -10470,6 +11269,22 @@ body {
   position: relative;
   border-radius: 450px;
   border: 10px solid #ffffff;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .persentCircle {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .persentCircle :nth-child(1) {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+.SubscriptionContainer .SubscriptionFrame .SubscriptionListFrame .subscriptionProgressSection .persentCircle :nth-child(2) {
+  font-size: 28px;
+  color: rgb(255, 255, 255);
 }
 
 .MyPageCreatorFrame {
@@ -10528,10 +11343,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 216px */
+  width: min-content;
+  /* 216px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 30px */
+  height: min-content;
+  /* 30px */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10546,8 +11363,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .totalMoneySection .infoText :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 187px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 187px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -10572,10 +11391,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 220px */
+  width: min-content;
+  /* 220px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 36px */
+  height: min-content;
+  /* 36px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10590,8 +11411,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .totalMoneySection .infoNumber :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 61px */
-  height: auto; /* 36px */
+  width: auto;
+  /* 61px */
+  height: auto;
+  /* 36px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -10665,8 +11488,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeText {
   flex-shrink: 0;
-  width: auto; /* 135px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 135px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -10680,8 +11505,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .creatorNoticeSection .noticeNav .noticeShowAll {
   flex-shrink: 0;
-  width: auto; /* 60px */
-  height: auto; /* 17px */
+  width: auto;
+  /* 60px */
+  height: auto;
+  /* 17px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -10744,8 +11571,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .date {
   flex-shrink: 0;
-  width: auto; /* 91px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 91px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -10756,8 +11585,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .title {
   flex-shrink: 0;
-  width: auto; /* 107px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 107px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -10770,10 +11601,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 166px */
+  width: min-content;
+  /* 166px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 19px */
+  height: min-content;
+  /* 19px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10788,8 +11621,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 68px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 68px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -10800,8 +11635,10 @@ body {
 }
 .MyPageCreatorFrame .topSection .creatorNoticeSection .noticeList .noticeWrap .infoFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 48px */
-  height: auto; /* 19px */
+  width: auto;
+  /* 48px */
+  height: auto;
+  /* 19px */
   white-space: pre;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -10863,8 +11700,10 @@ body {
 }
 .MyPageCreatorFrame .bottomSection .creatorHandlerFrame .handleNavBar .text {
   flex-shrink: 0;
-  width: auto; /* 237px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 237px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -10954,10 +11793,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 816px */
+  width: min-content;
+  /* 816px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 22px */
+  height: min-content;
+  /* 22px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10975,8 +11816,10 @@ body {
 }
 .MyPageCreatorFrame .bottomSection .creatorHandlerFrame .funddingList .funddingItemBox .infoSection :nth-child(-n+5) {
   flex-shrink: 0;
-  width: auto; /* 127px */
-  height: auto; /* 22px */
+  width: auto;
+  /* 127px */
+  height: auto;
+  /* 22px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11123,7 +11966,8 @@ body {
   width: 803px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 31px */
+  height: min-content;
+  /* 31px */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -11181,8 +12025,10 @@ body {
 }
 .modal .nftRegistrationFrame .bottomFrame .genreList .genreText {
   flex-shrink: 0;
-  width: auto; /* 52px */
-  height: auto; /* 31px */
+  width: auto;
+  /* 52px */
+  height: auto;
+  /* 31px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11236,10 +12082,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 70px */
+  width: min-content;
+  /* 70px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 34px */
+  height: min-content;
+  /* 34px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -11268,7 +12116,8 @@ body {
 .modal .nftRegistrationFrame .bottomFrame .genreList .chooseInput .defalt {
   cursor: pointer;
   flex-shrink: 0;
-  width: auto; /* 52px */
+  width: auto;
+  /* 52px */
   height: 31px;
   white-space: pre;
   position: relative;
@@ -11297,8 +12146,10 @@ body {
 }
 .modal .nftRegistrationFrame .bottomFrame .bottomList :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 78px */
-  height: auto; /* 31px */
+  width: auto;
+  /* 78px */
+  height: auto;
+  /* 31px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11614,8 +12465,10 @@ body {
 }
 .loadingFrame .loadingCenter {
   flex-shrink: 0;
-  width: auto; /* 186px */
-  height: auto; /* 54px */
+  width: auto;
+  /* 186px */
+  height: auto;
+  /* 54px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11650,7 +12503,8 @@ body {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 1359px;
-  height: 950px; /* 2393px */
+  height: 950px;
+  /* 2393px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -11679,10 +12533,12 @@ body {
   flex-shrink: 0;
   width: -webkit-min-content;
   width: -moz-min-content;
-  width: min-content; /* 360px */
+  width: min-content;
+  /* 360px */
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 32px */
+  height: min-content;
+  /* 32px */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -11697,8 +12553,10 @@ body {
 }
 .searchTotalFrame .searchInfoTextFrame :nth-child(1) {
   flex-shrink: 0;
-  width: auto; /* 64px */
-  height: auto; /* 32px */
+  width: auto;
+  /* 64px */
+  height: auto;
+  /* 32px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11711,8 +12569,10 @@ body {
 }
 .searchTotalFrame .searchInfoTextFrame :nth-child(2) {
   flex-shrink: 0;
-  width: auto; /* 281px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 281px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11796,7 +12656,8 @@ body {
   width: 1199px;
   height: -webkit-min-content;
   height: -moz-min-content;
-  height: min-content; /* 2170px */
+  height: min-content;
+  /* 2170px */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -11859,8 +12720,10 @@ body {
 }
 .searchTotalFrame .infoScrollBox .artistSection .navBar .leftSide .text {
   flex-shrink: 0;
-  width: auto; /* 100px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 100px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11873,8 +12736,10 @@ body {
 }
 .searchTotalFrame .infoScrollBox .artistSection .navBar .leftSide .howMany {
   flex-shrink: 0;
-  width: auto; /* 47px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 47px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11888,8 +12753,10 @@ body {
 .searchTotalFrame .infoScrollBox .artistSection .navBar .showAll {
   cursor: pointer;
   flex-shrink: 0;
-  width: auto; /* 85px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 85px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11968,8 +12835,10 @@ body {
 }
 .searchTotalFrame .infoScrollBox .anotherInfoSection .navBar .leftSide .text {
   flex-shrink: 0;
-  width: auto; /* 100px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 100px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11982,8 +12851,10 @@ body {
 }
 .searchTotalFrame .infoScrollBox .anotherInfoSection .navBar .leftSide .howMany {
   flex-shrink: 0;
-  width: auto; /* 47px */
-  height: auto; /* 30px */
+  width: auto;
+  /* 47px */
+  height: auto;
+  /* 30px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -11996,8 +12867,10 @@ body {
 }
 .searchTotalFrame .infoScrollBox .anotherInfoSection .navBar .showAll {
   flex-shrink: 0;
-  width: auto; /* 85px */
-  height: auto; /* 24px */
+  width: auto;
+  /* 85px */
+  height: auto;
+  /* 24px */
   white-space: pre;
   position: relative;
   font-weight: 700;
@@ -12025,4 +12898,971 @@ body {
   flex-wrap: nowrap;
   gap: 0;
   border-radius: 20px;
+}
+
+.siteInfoContainer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 40px 20px;
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .infoSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1319px;
+  height: 576px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.siteInfoContainer .infoSection .faqItemBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 800px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 201px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.siteInfoContainer .infoSection .faqItemBox .topControlBar {
+  flex-shrink: 0;
+  width: 760px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 32px */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .infoSection .faqItemBox .topControlBar .faqTitle {
+  flex-shrink: 0;
+  width: 728px;
+  height: auto;
+  /* 30px */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 22px;
+  letter-spacing: -0.2px;
+  line-height: 1.4;
+}
+.siteInfoContainer .infoSection .faqItemBox .topControlBar .controlIcon {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.siteInfoContainer .infoSection .faqItemBox .middleLine {
+  flex-shrink: 0;
+  width: 760px;
+  height: 1px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .infoSection .faqItemBox .faqTextSection {
+  flex-shrink: 0;
+  width: 760px;
+  height: auto;
+  /* 108px */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 150%;
+}
+.siteInfoContainer .footerSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1319px;
+  height: 274px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 30px 80px 30px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.siteInfoContainer .footerSection .topInfoSection {
+  flex-shrink: 0;
+  width: 1259px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 166px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .footerSection .topInfoSection .sendEmailSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 400px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 166px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 20px 20px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  overflow: visible;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.siteInfoContainer .footerSection .topInfoSection .sendEmailSection :nth-child(1) {
+  flex-shrink: 0;
+  width: auto;
+  /* 226px */
+  height: auto;
+  /* 21px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+.siteInfoContainer .footerSection .topInfoSection .sendEmailSection .sendInputFrame {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.siteInfoContainer .footerSection .topInfoSection .sendEmailSection .sendInputFrame .sendInput {
+  width: 230px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+  color: #000000;
+  font-size: 16px;
+}
+.siteInfoContainer .footerSection .topInfoSection .sendEmailSection .sendInputFrame .sendInput:focus {
+  outline: none;
+}
+.siteInfoContainer .footerSection .topInfoSection .sendEmailSection .sendInputFrame .sendButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  background: linear-gradient(248deg, rgba(255, 0, 0, 0.6) 0%, rgba(255, 0, 0, 0.4) 100%);
+  border-radius: 10px;
+  height: 40px;
+  width: 80px;
+  border: rgba(255, 255, 255, 0.1);
+}
+.siteInfoContainer .footerSection .topInfoSection .sendEmailSection :nth-child(3) {
+  flex-shrink: 0;
+  width: 360px;
+  height: auto;
+  /* 21px */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  font-weight: 500;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 150%;
+  text-align: left;
+}
+.siteInfoContainer .footerSection .topInfoSection .addressSection {
+  flex-shrink: 0;
+  width: 400px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 152px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame {
+  flex-shrink: 0;
+  width: 185px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 152px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 100px;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .discordAdress,
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .gitHubAdress,
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .notionAdress {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 119px */
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 8px 8px 8px;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 10px;
+}
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .discordAdress > svg,
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .gitHubAdress > svg,
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .notionAdress > svg {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .discordAdress > div,
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .gitHubAdress > div,
+.siteInfoContainer .footerSection .topInfoSection .addressSection .adressFrame .notionAdress > div {
+  flex-shrink: 0;
+  width: auto;
+  /* 63px */
+  height: auto;
+  /* 21px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+.siteInfoContainer .footerSection .middleLine {
+  flex-shrink: 0;
+  width: 315px;
+  height: 1px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .footerSection .bottomInfoSection {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 369px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 21px */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.siteInfoContainer .footerSection .bottomInfoSection :nth-child(-n+3) {
+  flex-shrink: 0;
+  width: auto;
+  /* 89px */
+  height: auto;
+  /* 21px */
+  white-space: pre;
+  position: relative;
+  font-weight: 500;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 150%;
+}
+
+.songDetailContainer {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1359px;
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px 40px 20px;
+  background: radial-gradient(50% 50% at 50% 50%, #111827 0%, rgb(20, 23, 30) 100%);
+  overflow: hidden;
+  position: relative;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection {
+  flex-shrink: 0;
+  width: 1319px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 400px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection .songImg {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 400px;
+  height: 400px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  border: 1px solid rgba(179, 179, 179, 0.5);
+}
+.songDetailContainer .songInfoSection .songInfoBox {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 909px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px 20px 40px 20px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songTitleInfo {
+  flex-shrink: 0;
+  width: 762px;
+  height: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songTitleInfo :nth-child(1) {
+  flex-shrink: 0;
+  width: auto;
+  /* 595px */
+  height: auto;
+  /* 48px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songTitleInfo :nth-child(2) {
+  flex-shrink: 0;
+  width: auto;
+  /* 162px */
+  height: auto;
+  /* 36px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songTitleInfo :nth-child(3) {
+  flex-shrink: 0;
+  width: 762px;
+  height: 1px;
+  display: block;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songSubInfo {
+  flex-shrink: 0;
+  width: 604px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songSubInfo :nth-child(-n+2) {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 604px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 30px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songSubInfo :nth-child(-n+2) :nth-child(1) {
+  flex-shrink: 0;
+  width: auto;
+  /* 50px */
+  height: auto;
+  /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songSubInfo :nth-child(-n+2) :nth-child(2) {
+  flex-shrink: 0;
+  width: auto;
+  /* 544px */
+  height: auto;
+  /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songPlayButtonFrame {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 370px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 75px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songPlayButtonFrame .playButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 165px;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(227deg, rgba(18, 0, 255, 0.7) 0%, rgba(0, 229, 255, 0.7) 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songPlayButtonFrame .playButton:hover {
+  gap: 20px;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songPlayButtonFrame .playButton .playIcon {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songPlayButtonFrame .playButton .playText {
+  flex-shrink: 0;
+  width: auto;
+  /* 50px */
+  height: auto;
+  /* 30px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songPlayButtonFrame .buyButton {
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 165px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+  transition: 0.3s;
+}
+.songDetailContainer .songInfoSection .songInfoBox .songPlayButtonFrame .buyButton:hover {
+  border: 1px solid rgb(255, 255, 255);
+}
+.songDetailContainer .songTextSection {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 1319px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 40px 20px 40px;
+  overflow: hidden;
+  position: relative;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songTextSection .infoTextSection {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 891px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 74px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 25px;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songTextSection .infoTextSection :nth-child(1) {
+  flex-shrink: 0;
+  width: auto;
+  /* 80px */
+  height: auto;
+  /* 48px */
+  white-space: pre;
+  position: relative;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.songDetailContainer .songTextSection .infoTextSection :nth-child(2) {
+  flex-shrink: 0;
+  width: 891px;
+  height: 1px;
+  display: block;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+}
+.songDetailContainer .songTextSection .textSection {
+  flex-shrink: 0;
+  width: 1239px;
+  height: 316px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  padding: 0px 10px 0px 10px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 0px 0px 0px 0px;
+  flex-shrink: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.songDetailContainer .songTextSection .textSection::-webkit-scrollbar {
+  width: 15px;
+  background-color: transparent;
+}
+.songDetailContainer .songTextSection .textSection::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page404container {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 70px;
+  border-radius: 0px 0px 0px 0px;
+}
+.page404container .infoFrame {
+  flex-shrink: 0;
+  width: 65%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 106px */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  border-radius: 0px 0px 0px 0px;
+}
+.page404container .infoFrame .leftSideText {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 336px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 106px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border-radius: 0px 0px 0px 0px;
+}
+.page404container .infoFrame .leftSideText > div {
+  flex-shrink: 0;
+  width: auto;
+  /* 252px */
+  height: auto;
+  /* 48px */
+  white-space: pre;
+  position: relative;
+  font-weight: bold;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.page404container .infoFrame .rightSideButton {
+  flex-shrink: 0;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  /* 520px */
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  /* 70px */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 28px;
+  border-radius: 0px 0px 0px 0px;
+}
+.page404container .infoFrame .rightSideButton .homeButton {
+  cursor: pointer;
+  opacity: 0.6;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 35px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  transition: 0.4s;
+}
+.page404container .infoFrame .rightSideButton .homeButton:hover {
+  opacity: 1;
+}
+.page404container .infoFrame .rightSideButton .backButton {
+  cursor: pointer;
+  opacity: 0.6;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  align-content: center;
+  flex-wrap: nowrap;
+  gap: 10;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Inter-Bold", "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 35px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  transition: 0.4s;
+}
+.page404container .infoFrame .rightSideButton .backButton:hover {
+  opacity: 1;
+}
+.page404container .lostPageImg {
+  flex-shrink: 0;
+  width: 65%;
+  height: 55%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../../public/image/404Horse.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0px 0px 0px 0px;
 }

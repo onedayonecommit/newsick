@@ -1,4 +1,3 @@
-//
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchMakeIPFS, metadataReady, fetchCreateFund } from "@/middleware/fetchFund";
 import { PURGE } from "redux-persist";

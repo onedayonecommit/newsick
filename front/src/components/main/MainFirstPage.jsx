@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 const itemData = [
   {
     id: 1,
@@ -72,7 +74,7 @@ const MainFirstPage = () => {
   }, [result]);
 
   return (
-    <motion.div className="mainFirstFrame">
+    <motion.div className="mainFirstFrame" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
       {itemData.map((item, index) => {
         if (index === currentPage) {
           return (
@@ -80,10 +82,10 @@ const MainFirstPage = () => {
               <motion.div className="rankingInfoSection">
                 <div className="infoFrame">
                   <div className="titleSection">
-                    <div className="title">{item.title}</div>
-                    <div className="subTitle">{item.subTitle}</div>
+                    <div className="title">{`힙합은 안멋져`}</div>
+                    <div className="subTitle">{`hip hop is not cool`}</div>
                   </div>
-                  <div className="textSection">{item.text}</div>
+                  <div className="textSection">{`Hip-hop right now isn't too cool. However, with this funding, let's make cool hip-hop.`}</div>
                 </div>
               </motion.div>
               <motion.div
@@ -91,7 +93,7 @@ const MainFirstPage = () => {
                 variants={cardVariant}
                 initial={currentPage ? "initial" : ""}
                 drag="x"
-                dragConstraints={{ right: 0, left: 200 }}
+                dragConstraints={{ right: 0 }}
                 animate={currentPage ? "animate" : ""}
                 exit="exit"
                 onDragStart={(e) => {
@@ -113,7 +115,9 @@ const MainFirstPage = () => {
                   //     return;
                   //   }
                 }}
-              ></motion.div>
+              >
+                <Image src={`https://newsic-userprofile-nft-metadata-bucket.s3.ap-northeast-2.amazonaws.com/hiphop.png`} width={420} height={550} alt={`ranking` } />
+              </motion.div>
             </>
           );
         }

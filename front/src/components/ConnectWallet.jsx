@@ -4,12 +4,12 @@ import { fetchUserCheck } from "../middleware/fetchUser";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import useWeb3 from "../hooks/useWeb3";
-import userSlice, { userAction } from "@/redux/userSlice";
+import { userAction } from "@/redux/userSlice";
 
 // 계정을 바꾸면 다시 버튼이 생겨야함! 자동으로 로그아웃!
 const ConnectWallet = () => {
   const [account, setAccount] = useState("");
-  const { web3, changeAccount } = useWeb3();
+  const { web3 } = useWeb3();
   // console.log("웹3", web3);
   const dispatch = useDispatch();
   const router = useRouter();

@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useState } from "react";
+import { useEffect } from "react";
 import { MypageBackDrop } from "@/components";
 
 const dropIn = {
@@ -41,7 +43,7 @@ const subMenuAnimate = {
     },
   },
 };
-const RegisterNftSong = ({ handleClose, text }) => {
+const Modal = ({ handleClose, text }) => {
   const [isChoice, setIsChoice] = useState("Sub");
   const backgroundColorControls = useAnimation();
   const backgroundColorControls2 = useAnimation();
@@ -56,6 +58,7 @@ const RegisterNftSong = ({ handleClose, text }) => {
     setSelectedOption(option);
     toggleHover(false);
   };
+
   useEffect(() => {
     if (isChoice === "Sub") {
       backgroundColorControls.start({ backgroundColor: "rgba(0, 0, 0, 0.7)", color: "rgba(255, 255, 255, 1)", style: { border: "1px solid rgba(255, 255, 255, 0.1)" } });
@@ -70,6 +73,7 @@ const RegisterNftSong = ({ handleClose, text }) => {
       backgroundColorControls2.start({ backgroundColor: "rgba(255, 255, 255, 0.1)", color: "rgba(255, 255, 255, 0.2)", style: { border: "none" } });
     }
   }, [isChoice, backgroundColorControls2]);
+
   return (
     <MypageBackDrop onClick={handleClose}>
       <motion.div onClick={(e) => e.stopPropagation()} className="modal orangeGradient" variants={dropIn} initial="hidden" animate="visible" exit="exit">
@@ -117,6 +121,19 @@ const RegisterNftSong = ({ handleClose, text }) => {
                   {selectedOption}
                 </motion.div>
               </div>
+            </div>
+            <div className="bottomList">
+              <div>가사</div>
+              <motion.label
+                className="lyricsSource"
+                for="lyricsSource"
+                whileHover={{
+                  scale: 0.9,
+                }}
+              >
+                + 가사 첨부하기
+              </motion.label>
+              <input type="file" className="lyricsSource" id="lyricsSource" style={{ display: "none" }} />
             </div>
             <div className="bottomList">
               <div>음원 파일</div>
@@ -169,4 +186,4 @@ const RegisterNftSong = ({ handleClose, text }) => {
   );
 };
 
-export default RegisterNftSong;
+export default Modal;

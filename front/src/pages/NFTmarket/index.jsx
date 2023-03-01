@@ -7,7 +7,6 @@ import image1 from "../../../public/image/IRON.jpg";
 import image2 from "../../../public/image/dddepth-343.jpg";
 import PageNationFrame from "../../components/PageNationFrame";
 import Image from "next/image";
-import { NEWSIC_FUND_CA } from "@/web3.config";
 import { useDispatch, useSelector } from "react-redux";
 import { marketNftList } from "@/middleware/fetchNft";
 import { useRouter } from "next/router";
@@ -66,7 +65,7 @@ const NftMarketContainer = () => {
   }, []);
 
   return (
-    <div className="nftMarketContainerFrame">
+    <motion.div className="nftMarketContainerFrame" initial={{ opacity: 0, scale: 0, y: "-50vh" }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0, y: "-50vh" }} transition={{ duration: 0.3 }}>
       <div className="nftTopSection">
         <AnimatePresence initial={false} custom={direction}>
           <div className="nftTopFrame">
@@ -156,7 +155,7 @@ const NftMarketContainer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

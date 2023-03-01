@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUserCreated, fetchUserCheck, fetchUserImage, fetchApplyCreator } from "../middleware/fetchUser";
+import { PURGE } from "redux-persist";
 
 const initialState = {
   address: "",
@@ -9,7 +10,6 @@ const initialState = {
   userImage: "default_profile_image.png",
   isCreator: false,
   createStatus: false,
-  // 구독권 state 만들기
   ticket: "",
 };
 
@@ -33,6 +33,7 @@ const userSlice = createSlice({
         state.createStatus = false;
       })
       .addCase(fetchUserCheck.fulfilled, (state, action) => {
+        console.log("액션", action.payload);
         if (action.payload) {
           if (action.payload.createStatus != false) {
             state.address = action.payload.user_wallet_address;
@@ -42,13 +43,14 @@ const userSlice = createSlice({
             state.isCreator = action.payload.creator[0].is_creator;
             state.createStatus = action.payload.createStatus;
             state.ticket = action.payload.ticket[0].expired;
-            console.log("넘어온 유저정보 : ", action.payload);
+            // console.log("구독권 정보 : ", action.payload.ticket[0].expired);
           }
-        }
+        } else state.createStatus = false;
       })
       .addCase(fetchUserCheck.rejected, (state) => {
         state.createStatus = false;
       })
+      // 회원가입
       .addCase(fetchUserCreated.pending, (state) => {
         state = initialState;
       })
@@ -61,8 +63,8 @@ const userSlice = createSlice({
             state.address = action.payload.user_wallet_address;
             state.userName = action.payload.user_name;
             state.userEmail = action.payload.user_email;
-            state.userImage = action.payload.user_profile_image;
             state.createStatus = action.payload.createStatus;
+            state.userImage = action.payload.user_profile_image;
             alert("회원가입 추카추");
 
             console.log("넘어온 유저정보 : ", action.payload);
@@ -70,10 +72,10 @@ const userSlice = createSlice({
           }
         }
       })
-      // 유저 프로필 사진 변경
       .addCase(fetchUserCreated.rejected, (state) => {
         state = initialState;
       })
+      // 유저 프로필 사진 변경
       .addCase(fetchUserImage.pending, (state) => {
         state.userImage;
       })
@@ -88,7 +90,8 @@ const userSlice = createSlice({
           console.log("creator apply", action.payload);
           state.isCreator = action.payload.is_creator;
         }
-      });
+      })
+      .addCase(PURGE, () => initialState);
   },
 });
 
