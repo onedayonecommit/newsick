@@ -1,0 +1,70 @@
+프론트에서 보낼때 데이터 타입, 형식은 @Body() 부분 타입 dto 를 확인해 보면 알 수 있음
+
+모든 날짜 형식의 데이터를 주고 받을 땐 ISO8601 표준형식으로 주고 받아야 됌
+
+
+예를 들어 joinDto 를 보면 
+export class joinDto {
+  @IsEmail()
+  user_email: string;
+  @IsString()
+  @IsNotEmpty()
+  user_wallet_address: string;
+  @IsString()
+  user_name: string;
+  @IsBoolean()
+  is_creator: boolean;
+}
+이렇게 생겼는데 프론트에선 join서비스를 요청 할 경우 데이터를 보낼땐 axios({
+    url:~~:8080/user/join,
+    method:"post",
+    data:{
+        user_email: string;
+        user_wallet_address: string;
+        user_name: string;
+        is_creator: boolean;
+    }
+})
+이런식으로 보내면 된다 근데 create-fund 컨트롤러에선 dto를 확인해보면
+
+export class createFundMainDto {
+  @IsObject()
+  fund: createFundDto;
+  @IsObject()
+  lyrics_maker: createFundLyricsDto;
+  @IsObject()
+  music_maker: createFundMusicDto;
+  @IsObject()
+  singer: createFundSingerDto;
+}
+
+이러한 모양이다
+그렇다면 프론트에선 axios({
+    method:"post",
+    url:"~~:8080/create-fund",
+    data:{
+        fund:{},
+        lyrics_maker:{},
+        music_maker:{},
+        singer:{}
+    }
+})
+이런식으로 데이터 요청을 하면 되고 각 키별로 상세한 dto확인이 필요하면 createFundDto / createFundLyricsDto / createFundMusicDto / createFundSingerDto 각각 확인해 보면 된다
+
+initialState :{
+    playlist:[{
+        normal_music_id:null,funding_music_id:3
+    },{normal_music_id:3,funding_music_id:1},{normal_music_id:null,funding_music_id:4}]
+}
+
+    if(e.normal_music_id == null && e.funding_music_id != null){
+        axios({
+            post, url: localhost:8080/funding/streaming
+        })
+    }
+    else if(e.normal_music_id != null && e.funding_music_id == null){
+        axios({
+            method:post,
+            url:localhost:8080//normal/streaming
+        })
+    }
